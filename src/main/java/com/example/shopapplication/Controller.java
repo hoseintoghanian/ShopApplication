@@ -33,7 +33,7 @@ public class Controller {
         stage.show();
     }
 
-    public void switchToScene2(ActionEvent e) throws IOException {
+    public void goMainScene(ActionEvent e) throws IOException {//Main scene --> scene includes Items like (makaroni)
         if (txtCaptchaInput.getText().equals(captchaText)) {
             fxmlLoader = new FXMLLoader(Application.class.getResource("signUp.fxml"));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -43,6 +43,22 @@ public class Controller {
         } else {
             txtCaptchaInput.clear();
         }
+    }
+
+    public void changeScene(ActionEvent e, String fxml) throws IOException {
+        fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goSignUpScene(ActionEvent e) throws IOException {
+        changeScene(e, "signUP.fxml");
+    }
+
+    public void goLoginScene(ActionEvent e) throws IOException {
+        changeScene(e, "Login.fxml");
     }
 
 
@@ -78,7 +94,6 @@ public class Controller {
         }
         return sb.toString();
     }
-
 
 
 }

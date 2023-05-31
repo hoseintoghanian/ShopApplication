@@ -16,12 +16,12 @@
                 <Image url="@../img/1.png" />
             </image>
         </ImageView>
-        <Button layoutX="604.0" layoutY="500.0" mnemonicParsing="false" onAction="#switchToScene2" prefWidth="300.0" text="Sign Up">
+        <Button layoutX="604.0" layoutY="500.0" mnemonicParsing="false" onAction="#goSignUpScene" prefWidth="300.0" text="Sign Up">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="buttonLogin" layoutX="693.0" layoutY="357.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="30.0" prefWidth="120.0" text="Login">
+        <Button fx:id="buttonLogin" layoutX="693.0" layoutY="357.0" mnemonicParsing="false" onAction="#goSignUpScene" prefHeight="30.0" prefWidth="120.0" text="Login">
             <font>
                 <Font size="24.0" />
             </font>
