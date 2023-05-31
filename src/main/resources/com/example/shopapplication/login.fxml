@@ -16,30 +16,33 @@
                 <Image url="@../img/1.png" />
             </image>
         </ImageView>
-        <Button layoutX="1228.0" layoutY="566.0" mnemonicParsing="false" onAction="#switchToScene2" prefWidth="130.0" text="Sign Up">
+        <Button layoutX="604.0" layoutY="500.0" mnemonicParsing="false" onAction="#switchToScene2" prefWidth="300.0" text="Sign Up">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="buttonLogin" layoutX="1233.0" layoutY="334.0" mnemonicParsing="false" onAction="#switchToScene2" prefWidth="120.0" text="Login">
+        <Button fx:id="buttonLogin" layoutX="693.0" layoutY="357.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="30.0" prefWidth="120.0" text="Login">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <TextField layoutX="1144.0" layoutY="119.0" promptText="Username" AnchorPane.leftAnchor="1144.0" AnchorPane.rightAnchor="57.59999999999991">
+        <TextField layoutX="600.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="604.0" AnchorPane.rightAnchor="597.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
         </TextField>
-        <PasswordField layoutX="1144.0" layoutY="217.0" promptText="Password" AnchorPane.leftAnchor="1144.0" AnchorPane.rightAnchor="57.59999999999991">
+        <PasswordField layoutX="600.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="604.0" AnchorPane.rightAnchor="597.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
         </PasswordField>
-      <Label fx:id="txtCaptcha" layoutX="1012.0" layoutY="308.0" onMouseClicked="#captcha" prefHeight="102.0" prefWidth="202.0" text="Label" textFill="WHITE">
+      <Label fx:id="txtCaptcha" layoutX="600.0" layoutY="271.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <TextField fx:id="txtCaptchaInput" layoutX="985.0" layoutY="465.0" prefHeight="48.0" prefWidth="159.0" />
+      <TextField fx:id="txtCaptchaInput" alignment="CENTER" layoutX="742.0" layoutY="274.0" opacity="0.5" prefHeight="50.0" prefWidth="160.0" promptText="Captcha">
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
     </children>
 </AnchorPane>

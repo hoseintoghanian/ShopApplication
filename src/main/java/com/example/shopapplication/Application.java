@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
-     public static Shop shop = Shop.getInstance();
+    public static Shop shop = Shop.getInstance();
 
 
     @Override

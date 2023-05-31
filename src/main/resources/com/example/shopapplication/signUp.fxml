@@ -18,12 +18,12 @@
             <Image url="@../img/1.png" />
          </image>
       </ImageView>
-      <Button layoutX="1341.0" layoutY="660.0" mnemonicParsing="false" onAction="#switchToScene1" prefWidth="120.0" text="Back">
+      <Button layoutX="1350.0" layoutY="659.0" mnemonicParsing="false" onAction="#switchToScene1" opacity="0.8" prefWidth="120.0" text="Back">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="buttonRegister" layoutX="1249.0" layoutY="191.0" mnemonicParsing="false" prefWidth="120.0" text="Register">
+      <Button fx:id="buttonRegister" layoutX="1249.0" layoutY="191.0" mnemonicParsing="false" opacity="0.8" prefWidth="120.0" text="Register">
          <font>
             <Font size="24.0" />
          </font>
@@ -39,7 +39,7 @@
          <font>
             <Font size="24.0" />
          </font></RadioButton>
-      <Label fx:id="txtApplicant" layoutX="958.0" layoutY="190.0" text="Label" textFill="WHITE">
+      <Label fx:id="txtApplicant" layoutX="958.0" layoutY="190.0" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
