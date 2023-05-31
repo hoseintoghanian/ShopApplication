@@ -28,21 +28,6 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <TextField fx:id="txtUsername" layoutX="832.0" layoutY="243.0" promptText="Username" AnchorPane.leftAnchor="832.0" AnchorPane.rightAnchor="369.5999999999999">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </TextField>
-      <PasswordField fx:id="txtPassword" layoutX="846.0" layoutY="413.0" promptText="Password" AnchorPane.leftAnchor="846.0" AnchorPane.rightAnchor="355.5999999999999">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </PasswordField>
-      <TextField fx:id="txtEmail" layoutX="840.0" layoutY="611.0" promptText="e-mail" AnchorPane.leftAnchor="840.0" AnchorPane.rightAnchor="361.5999999999999">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </TextField>
       <RadioButton fx:id="buttonCustomer" layoutX="321.0" layoutY="575.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -64,21 +49,6 @@
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUsername2" layoutX="501.0" layoutY="191.0" prefHeight="53.6" promptText="Phone Number">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtUsername3" layoutX="501.0" layoutY="122.0" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </TextField>
-      <PasswordField fx:id="txtPassword1" layoutX="841.0" layoutY="512.0" promptText="Password">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </PasswordField>
       <Label layoutX="50.0" layoutY="50.0" text="Firstname" textFill="WHITE">
          <font>
             <Font size="36.0" />
@@ -114,5 +84,35 @@
             <Font size="36.0" />
          </font>
       </Label>
+      <TextField fx:id="txtUsername11" layoutX="500.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUsername12" layoutX="500.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUsername13" layoutX="500.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUsername16" layoutX="500.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <PasswordField layoutX="500.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </PasswordField>
+      <PasswordField layoutX="500.0" layoutY="400.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </PasswordField>
    </children>
 </AnchorPane>
