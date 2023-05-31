@@ -85,5 +85,19 @@ public class Controller {
         return sb.toString();
     }
 
+    @FXML
+    private RadioButton buttonRegister;
+    @FXML
+    private TextField txtFirstName,txtLastName,txtPhoneNumber,txtWorkPlace,txtUserName,txtPassWord;
+    public void Register() {
+        if (buttonSeller.isSelected()) /*if (buttonRegister.isSelected())*/{
+            Application.shop.sellers.add(new Seller(txtFirstName.getText(),txtLastName.getText(),txtPhoneNumber.getText(),txtWorkPlace.getText(),txtUserName.getText(),txtPassWord.getText()));
+            System.out.println(Application.shop.sellers.toString());
+        }
+        else if (buttonCustomer.isSelected()) /*if (buttonRegister.isSelected())*/{
+            Application.shop.customers.add(new Customer(txtFirstName.getText(),txtLastName.getText(),txtPhoneNumber.getText(),txtUserName.getText(),txtPassWord.getText()));
+            System.out.println(Application.shop.customers.toString());
+        }
+    }
 
 }

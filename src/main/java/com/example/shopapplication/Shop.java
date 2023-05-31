@@ -1,5 +1,8 @@
 package com.example.shopapplication;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
+
 import java.util.*;
 
 public class Shop {
@@ -14,9 +17,8 @@ public class Shop {
     }
 
 
-    Admin admin = new Admin("Admin","Admin","09927930896");
-    ArrayList<Seller> sellers = new ArrayList<>();
-    ArrayList<Customer> customers = new ArrayList<>();
-
+    public Admin admin = new Admin("Admin","Admin","09927930896","Admin_a","1234");
+    public List<Seller> sellers = new ArrayList<>();
+    public List<Customer> customers = new ArrayList<>();
 
 }

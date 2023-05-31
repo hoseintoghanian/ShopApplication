@@ -18,12 +18,7 @@
             <Image url="@../img/1.png" />
          </image>
       </ImageView>
-      <Button layoutX="1350.0" layoutY="659.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonRegister" layoutX="1249.0" layoutY="191.0" mnemonicParsing="false" opacity="0.8" prefWidth="120.0" text="Register">
+      <Button layoutX="1311.0" layoutY="579.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="120.0" text="Back">
          <font>
             <Font size="24.0" />
          </font>
@@ -44,7 +39,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsername1" layoutX="500.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
+      <TextField fx:id="txtFirstName" layoutX="500.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
          <font>
             <Font size="24.0" />
          </font>
@@ -84,35 +79,45 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsername11" layoutX="500.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
+      <TextField fx:id="txtLastName" layoutX="500.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUsername12" layoutX="500.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
+      <TextField fx:id="txtPhoneNumber" layoutX="500.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUsername13" layoutX="500.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
+      <TextField fx:id="txtUserName" layoutX="500.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUsername16" layoutX="500.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
+      <TextField fx:id="txtEmail" layoutX="500.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <PasswordField layoutX="500.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField fx:id="txtPassWord" layoutX="500.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
       </PasswordField>
-      <PasswordField layoutX="500.0" layoutY="400.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField fx:id="txtPassWord2" layoutX="500.0" layoutY="400.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
       </PasswordField>
+      <Label layoutX="54.0" layoutY="547.0" text="WorkPlace" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtWorkPlace" layoutX="502.0" layoutY="554.0" opacity="0.2" promptText="WorkPlace">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
