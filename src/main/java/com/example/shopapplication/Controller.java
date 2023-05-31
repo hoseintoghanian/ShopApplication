@@ -11,14 +11,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SceneController {
+public class Controller {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
 
 
-    public void switchToScene1(ActionEvent e) throws IOException {
-        fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
+    public void changeScene(ActionEvent e,String fxml) throws IOException {
+        fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

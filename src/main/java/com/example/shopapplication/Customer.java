@@ -1,5 +1,7 @@
 package com.example.shopapplication;
 
+import java.util.*;
+
 public class Customer extends Applicant {
 
     //yek arraylist baray sabad kharid bezan
@@ -7,7 +9,7 @@ public class Customer extends Applicant {
     public long wallet;
 
     //yek arraylist baraye buy history bezan
-    //yek arraylist baraye liste kod haye takhfif bezan
+    ArrayList<String> discountCode;
 
     public Customer(String firstname, String lastname, long phoneNumber) {
         super(firstname, lastname, phoneNumber);
