@@ -5,11 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,8 +23,8 @@ public class Controller {
     private String captchaText;
 
 
-    public void switchToScene1(ActionEvent e) throws IOException {
-        fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
+    public void changeScene(ActionEvent e, String fxml) throws IOException {
+        fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
@@ -43,15 +41,7 @@ public class Controller {
         } else {
             txtCaptchaInput.clear();
         }
-    }
-
-    public void changeScene(ActionEvent e, String fxml) throws IOException {
-        fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
-        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
-    }
+    }//this method calls by login button
 
     public void goSignUpScene(ActionEvent e) throws IOException {
         changeScene(e, "signUP.fxml");
