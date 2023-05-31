@@ -17,8 +17,8 @@ public class Controller {
     private FXMLLoader fxmlLoader;
 
 
-    public void changeScene(ActionEvent e,String fxml) throws IOException {
-        fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+    public void switchToScene1(ActionEvent e) throws IOException {
+        fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
