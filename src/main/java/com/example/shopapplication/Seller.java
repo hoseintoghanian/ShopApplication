@@ -4,7 +4,7 @@ public class Seller extends Applicant {
 
     public String workplace;
 
-    public Seller(String firstname, String lastname, long phoneNumber, String workplace) {
+    public Seller(String firstname, String lastname, String  phoneNumber, String workplace) {
         super(firstname, lastname, phoneNumber);
         applicantKind = "Seller";
 

@@ -14,7 +14,7 @@ public class Shop {
     }
 
 
-    ArrayList<Admin> admins = new ArrayList<>();
+    Admin admin = new Admin("Admin","Admin","09927930896");
     ArrayList<Seller> sellers = new ArrayList<>();
     ArrayList<Customer> customers = new ArrayList<>();
 

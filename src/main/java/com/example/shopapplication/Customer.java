@@ -11,7 +11,7 @@ public class Customer extends Applicant {
     //yek arraylist baraye buy history bezan
     ArrayList<String> discountCode;
 
-    public Customer(String firstname, String lastname, long phoneNumber) {
+    public Customer(String firstname, String lastname, String  phoneNumber) {
         super(firstname, lastname, phoneNumber);
         applicantKind = "Customer";
     }

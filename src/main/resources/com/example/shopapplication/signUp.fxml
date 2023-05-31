@@ -18,28 +18,28 @@
             <Image url="@../img/1.png" />
          </image>
       </ImageView>
-      <Button layoutX="1290.0" layoutY="299.0" mnemonicParsing="false" onAction="#switchToScene1" prefWidth="120.0" text="Back">
+      <Button layoutX="1341.0" layoutY="660.0" mnemonicParsing="false" onAction="#switchToScene1" prefWidth="120.0" text="Back">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="buttonRegister" layoutX="1210.0" layoutY="567.0" mnemonicParsing="false" prefWidth="120.0" text="Register">
+      <Button fx:id="buttonRegister" layoutX="1249.0" layoutY="191.0" mnemonicParsing="false" prefWidth="120.0" text="Register">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <RadioButton fx:id="buttonCustomer" layoutX="321.0" layoutY="575.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
+      <RadioButton fx:id="buttonCustomer" layoutX="958.0" layoutY="59.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="applicant" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="buttonSeller" layoutX="130.0" layoutY="575.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
+      <RadioButton fx:id="buttonSeller" layoutX="1249.0" layoutY="59.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
          <font>
             <Font size="24.0" />
          </font></RadioButton>
-      <Label fx:id="txtApplicant" layoutX="520.0" layoutY="566.0" text="Label" textFill="WHITE">
+      <Label fx:id="txtApplicant" layoutX="958.0" layoutY="190.0" text="Label" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>

@@ -7,12 +7,12 @@ public class Applicant {
     private String username;
     private String password;
     private String email;
-    private long phoneNumber;
+    private String  phoneNumber;
 
     public String applicantKind;
 
 
-    public Applicant(String firstname, String lastname, long phoneNumber) {//username & password & email ro toye sign up daryaft mikone
+    public Applicant(String firstname, String lastname, String  phoneNumber) {//username & password & email ro toye sign up daryaft mikone
         this.firstname = firstname;
         this.lastname = lastname;
         this.phoneNumber = phoneNumber;
@@ -50,11 +50,11 @@ public class Applicant {
         return email;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(String  phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public long getPhoneNumber() {
+    public String  getPhoneNumber() {
         return phoneNumber;
     }
 
