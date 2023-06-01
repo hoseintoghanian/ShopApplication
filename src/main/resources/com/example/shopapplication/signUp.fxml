@@ -15,31 +15,36 @@
    <children>
       <ImageView fitHeight="750.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/1.png" />
+            <Image url="@../img/login.png" />
          </image>
       </ImageView>
-      <Button layoutX="1311.0" layoutY="579.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="120.0" text="Back">
+      <Button layoutX="1350.0" layoutY="659.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <RadioButton fx:id="buttonCustomer" layoutX="958.0" layoutY="59.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
+      <Button fx:id="buttonRegister" layoutX="490.0" layoutY="659.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="120.0" text="Register">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="buttonCustomer" layoutX="555.0" layoutY="559.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="applicant" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="buttonSeller" layoutX="1249.0" layoutY="59.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
+      <RadioButton fx:id="buttonSeller" layoutX="400.0" layoutY="559.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
          <font>
             <Font size="24.0" />
          </font></RadioButton>
-      <Label fx:id="txtApplicant" layoutX="958.0" layoutY="190.0" textFill="WHITE">
+      <Label fx:id="txtApplicant" layoutX="50.0" layoutY="550.0" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="txtFirstName" layoutX="500.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
+      <TextField fx:id="txtUsername1" layoutX="400.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
          <font>
             <Font size="24.0" />
          </font>
@@ -79,45 +84,35 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="txtLastName" layoutX="500.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
+      <TextField fx:id="txtUsername11" layoutX="400.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtPhoneNumber" layoutX="500.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
+      <TextField fx:id="txtUsername12" layoutX="400.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUserName" layoutX="500.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
+      <TextField fx:id="txtUsername13" layoutX="400.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtEmail" layoutX="500.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
+      <TextField fx:id="txtUsername16" layoutX="400.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="txtPassWord" layoutX="500.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField layoutX="400.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
       </PasswordField>
-      <PasswordField fx:id="txtPassWord2" layoutX="500.0" layoutY="400.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField layoutX="400.0" layoutY="400.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
       </PasswordField>
-      <Label layoutX="54.0" layoutY="547.0" text="WorkPlace" textFill="WHITE">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtWorkPlace" layoutX="502.0" layoutY="554.0" opacity="0.2" promptText="WorkPlace">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </TextField>
    </children>
 </AnchorPane>

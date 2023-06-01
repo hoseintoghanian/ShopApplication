@@ -11,36 +11,36 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.Controller">
     <children>
-        <ImageView fitHeight="750.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView cache="true" fitHeight="750.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/1.png" />
+                <Image url="@../img/login.png" />
             </image>
         </ImageView>
-        <Button layoutX="604.0" layoutY="500.0" mnemonicParsing="false" onAction="#goSignUpScene" prefWidth="300.0" text="Sign Up">
+        <Button layoutX="214.0" layoutY="501.0" mnemonicParsing="false" onAction="#goSignUpScene" prefWidth="300.0" text="Sign Up">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="buttonLogin" layoutX="693.0" layoutY="357.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Login">
+        <Button fx:id="buttonLogin" layoutX="300.0" layoutY="357.0" mnemonicParsing="false" onAction="#goMainScene" prefHeight="30.0" prefWidth="120.0" text="Login">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <TextField layoutX="600.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="604.0" AnchorPane.rightAnchor="597.5999999999999">
+        <TextField layoutX="200.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
         </TextField>
-        <PasswordField layoutX="600.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="604.0" AnchorPane.rightAnchor="597.5999999999999">
+        <PasswordField layoutX="200.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
         </PasswordField>
-      <Label fx:id="txtCaptcha" layoutX="600.0" layoutY="271.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
+      <Label fx:id="txtCaptcha" layoutX="214.0" layoutY="274.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font size="34.0" />
          </font></Label>
-      <TextField fx:id="txtCaptchaInput" alignment="CENTER" layoutX="742.0" layoutY="274.0" opacity="0.5" prefHeight="50.0" prefWidth="160.0" promptText="Captcha">
+      <TextField fx:id="txtCaptchaInput" alignment="CENTER" layoutX="360.0" layoutY="274.0" opacity="0.5" prefHeight="50.0" prefWidth="151.0" promptText="Captcha">
          <font>
             <Font size="20.0" />
          </font></TextField>

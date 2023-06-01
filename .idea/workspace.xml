@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="sign up fxml (UI)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Applicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Applicant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +101,7 @@
       <workItem from="1685549699214" duration="2296000" />
       <workItem from="1685552017277" duration="2426000" />
       <workItem from="1685556081745" duration="1932000" />
+      <workItem from="1685577680778" duration="1010000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
