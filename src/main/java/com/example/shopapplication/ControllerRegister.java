@@ -40,7 +40,7 @@ public class ControllerRegister {
 
     public void goMainScene(ActionEvent e) throws IOException {
         if (txtCaptchaInput.getText().equals(captchaText)) {
-            fxmlLoader = new FXMLLoader(Application.class.getResource("mainPage.fxml"));
+            fxmlLoader = new FXMLLoader(Application.class.getResource("customer.fxml"));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
