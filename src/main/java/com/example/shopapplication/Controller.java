@@ -33,7 +33,7 @@ public class Controller {
 
     public void goMainScene(ActionEvent e) throws IOException {//Main scene --> scene includes Items like (makaroni)
         if (txtCaptchaInput.getText().equals(captchaText)) {
-            fxmlLoader = new FXMLLoader(Application.class.getResource("signUp.fxml"));
+            fxmlLoader = new FXMLLoader(Application.class.getResource("mainPage.fxml"));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
