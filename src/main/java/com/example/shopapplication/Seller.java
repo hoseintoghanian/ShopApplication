@@ -8,11 +8,10 @@ public class Seller extends Applicant {
 
     public String workplace;
 
-    public Seller(String firstname, String lastname, String  phoneNumber,String username,String password, String workplace) {
-        super(firstname, lastname, phoneNumber,username,password);
-        applicantKind = "Seller";
-
+    public Seller(String firstname, String lastname, String  phoneNumber,String username,String password, String email,String workplace) {
+        super(firstname, lastname, phoneNumber,username,password,email);
         this.workplace = workplace;
+        applicantKind = "Seller";
     }
 
 }

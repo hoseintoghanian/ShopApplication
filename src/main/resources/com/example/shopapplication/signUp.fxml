@@ -44,7 +44,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsername1" layoutX="400.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
+      <TextField fx:id="txtFirstname" layoutX="400.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
          <font>
             <Font size="24.0" />
          </font>
@@ -84,27 +84,27 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsername11" layoutX="400.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
+      <TextField fx:id="txtLastname" layoutX="400.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUsername12" layoutX="400.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
+      <TextField fx:id="txtPhoneNumber" layoutX="400.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUsername13" layoutX="400.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
+      <TextField fx:id="txtUserName" layoutX="400.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUsername16" layoutX="400.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
+      <TextField fx:id="txtEmail" layoutX="400.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <PasswordField layoutX="400.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField fx:id="txtPassWord" layoutX="400.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>

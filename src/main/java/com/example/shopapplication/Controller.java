@@ -72,7 +72,6 @@ public class Controller {
 
     public void captcha() throws Exception {
         captchaText = generateCaptchaText();
-
         txtCaptcha.setText(captchaText);
     }
 
@@ -84,15 +83,16 @@ public class Controller {
         }
         return sb.toString();
     }
+
     @FXML
-    private TextField txtFirstName, txtLastName, txtPhoneNumber, txtWorkPlace, txtUserName, txtPassWord;
+    private TextField txtFirstname, txtLastname, txtPhoneNumber, txtUserName, txtPassWord, txtEmail, txtWorkPlace;
 
     public void Register() {
         if (buttonSeller.isSelected()) /*if (buttonRegister.isSelected())*/ {
-            Application.shop.sellers.add(new Seller(txtFirstName.getText(), txtLastName.getText(), txtPhoneNumber.getText(), txtWorkPlace.getText(), txtUserName.getText(), txtPassWord.getText()));
+            Application.shop.sellers.add(new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPassWord.getText(), txtEmail.getText(), txtWorkPlace.getText()));//make again the work place text field
             System.out.println(Application.shop.sellers.toString());
         } else if (buttonCustomer.isSelected()) /*if (buttonRegister.isSelected())*/ {
-            Application.shop.customers.add(new Customer(txtFirstName.getText(), txtLastName.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPassWord.getText()));
+            Application.shop.customers.add(new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPassWord.getText(), txtEmail.getText()));
             System.out.println(Application.shop.customers.toString());
         }
     }

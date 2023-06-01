@@ -1,23 +1,24 @@
 package com.example.shopapplication;
 
-public class Applicant {
+public abstract class Applicant {
 
     private final String firstname;
     private final String lastname;
+    private String phoneNumber;
     private String username;
     private String password;
     private String email;
-    private String phoneNumber;
 
     public String applicantKind;
 
 
-    public Applicant(String firstname, String lastname, String phoneNumber, String username, String password) {//username & password & email ro toye sign up daryaft mikone
+    public Applicant(String firstname, String lastname, String phoneNumber, String username, String password, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.phoneNumber = phoneNumber;
         this.username = username;
         this.password = password;
+        this.email = email;
     }
 
     public String getFirstname() {
