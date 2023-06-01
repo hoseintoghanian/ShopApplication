@@ -16,4 +16,12 @@ public class Customer extends Applicant {
         applicantKind = "Customer";
     }
 
+    public boolean equals(Object other) {
+        if (other instanceof Customer) {
+            Customer c = (Customer) other;
+            return this.getUsername() == c.getUsername();
+        }
+        return false;
+    }
+
 }

@@ -65,5 +65,4 @@ public abstract class Applicant {
         return firstname + " " + lastname + " " + phoneNumber;
     }
 
-
 }

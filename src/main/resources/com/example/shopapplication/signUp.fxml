@@ -11,39 +11,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerRegister">
    <children>
       <ImageView fitHeight="750.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/login.png" />
          </image>
       </ImageView>
-      <Button layoutX="1350.0" layoutY="659.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
+      <Button layoutX="1350.0" layoutY="660.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="buttonRegister" layoutX="490.0" layoutY="659.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="120.0" text="Register">
+      <Button fx:id="buttonRegister" layoutX="490.0" layoutY="660.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="120.0" text="Register">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <RadioButton fx:id="buttonCustomer" layoutX="555.0" layoutY="559.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
+      <RadioButton fx:id="buttonCustomer" layoutX="555.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="applicant" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="buttonSeller" layoutX="400.0" layoutY="559.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
+      <RadioButton fx:id="buttonSeller" layoutX="400.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
          <font>
             <Font size="24.0" />
          </font></RadioButton>
-      <Label fx:id="txtApplicant" layoutX="50.0" layoutY="550.0" textFill="WHITE">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
       <TextField fx:id="txtFirstname" layoutX="400.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
          <font>
             <Font size="24.0" />
@@ -114,5 +109,15 @@
             <Font size="24.0" />
          </font>
       </PasswordField>
+      <TextField fx:id="txtWorkPlace" layoutX="50.0" layoutY="540.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Work Place" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Label fx:id="txtRegister" layoutX="50.0" layoutY="660.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
