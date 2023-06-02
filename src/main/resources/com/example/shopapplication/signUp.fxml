@@ -6,6 +6,9 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,107 +20,198 @@
          <image>
             <Image url="@../img/login.png" />
          </image>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <InnerShadow />
+               </input>
+            </InnerShadow>
+         </effect>
       </ImageView>
       <Button layoutX="1350.0" layoutY="660.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <SepiaTone>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </SepiaTone>
+               </input>
+            </InnerShadow>
+         </effect>
       </Button>
       <Button fx:id="buttonRegister" layoutX="490.0" layoutY="660.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="120.0" text="Register">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <SepiaTone>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </SepiaTone>
+               </input>
+            </InnerShadow>
+         </effect>
       </Button>
-      <RadioButton fx:id="buttonCustomer" layoutX="555.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
+      <RadioButton fx:id="buttonCustomer" layoutX="50.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="applicant" />
-         </toggleGroup></RadioButton>
-      <RadioButton fx:id="buttonSeller" layoutX="400.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
-         <font>
-            <Font size="24.0" />
-         </font></RadioButton>
-      <TextField fx:id="txtFirstname" layoutX="400.0" layoutY="50.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
+         </toggleGroup>
+         <effect>
+            <DropShadow>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DropShadow>
+         </effect></RadioButton>
+      <RadioButton fx:id="buttonSeller" layoutX="235.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DropShadow>
+         </effect></RadioButton>
+      <TextField fx:id="txtFirstname" layoutX="400.0" layoutY="50.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </TextField>
       <Label layoutX="50.0" layoutY="50.0" text="Firstname" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Label layoutX="50.0" layoutY="120.0" text="Lastname" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Label layoutX="50.0" layoutY="190.0" text="Phone Number" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Label layoutX="50.0" layoutY="260.0" text="Username" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Label layoutX="50.0" layoutY="470.0" text="E-mail" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Label layoutX="50.0" layoutY="330.0" text="Password" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Label layoutX="50.0" layoutY="400.0" text="Confirm Password" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
-      <TextField fx:id="txtLastname" layoutX="400.0" layoutY="120.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
+      <TextField fx:id="txtLastname" layoutX="400.0" layoutY="120.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </TextField>
-      <TextField fx:id="txtPhoneNumber" layoutX="400.0" layoutY="190.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
+      <TextField fx:id="txtPhoneNumber" layoutX="400.0" layoutY="190.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </TextField>
-      <TextField fx:id="txtUserName" layoutX="400.0" layoutY="260.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Username">
+      <TextField fx:id="txtUserName" layoutX="400.0" layoutY="260.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Username">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </TextField>
-      <TextField fx:id="txtEmail" layoutX="400.0" layoutY="470.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
+      <TextField fx:id="txtEmail" layoutX="400.0" layoutY="470.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </TextField>
-      <PasswordField fx:id="txtPassWord" layoutX="400.0" layoutY="330.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField fx:id="txtPassWord" layoutX="400.0" layoutY="330.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </PasswordField>
-      <PasswordField layoutX="400.0" layoutY="400.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField layoutX="400.0" layoutY="400.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </PasswordField>
-      <TextField fx:id="txtWorkPlace" layoutX="50.0" layoutY="540.0" opacity="0.2" prefHeight="53.6" prefWidth="300.0" promptText="Work Place" visible="false">
+      <TextField fx:id="txtWorkPlace" layoutX="400.0" layoutY="540.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Work Place" visible="false">
          <font>
             <Font size="24.0" />
          </font>
+         <effect>
+            <InnerShadow />
+         </effect>
       </TextField>
       <Label fx:id="txtRegister" layoutX="50.0" layoutY="660.0">
          <font>
             <Font size="32.0" />
          </font>
+         <effect>
+            <SepiaTone />
+         </effect>
       </Label>
    </children>
 </AnchorPane>

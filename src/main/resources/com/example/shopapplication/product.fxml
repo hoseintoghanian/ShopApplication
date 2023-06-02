@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerProduct">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" nodeOrientation="RIGHT_TO_LEFT" prefHeight="750.0" prefWidth="1500.0">
+        <items>
+          <AnchorPane maxWidth="500.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="500.0">
+               <children>
+                  <ScrollPane prefHeight="500.0" prefWidth="500.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="500.0" />
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane maxWidth="950.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="950.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

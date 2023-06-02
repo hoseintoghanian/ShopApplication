@@ -13,12 +13,16 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerMainPage">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerApplicant">
   <tabs>
     <Tab text="     Store     ">
       <content>
@@ -26,32 +30,65 @@
                <children>
                   <SplitPane dividerPositions="0.5" nodeOrientation="RIGHT_TO_LEFT" prefHeight="750.0" prefWidth="1500.0">
                     <items>
-                      <AnchorPane maxWidth="200.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #AD84FE;">
+                      <AnchorPane maxWidth="200.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #AD84FE;">
                            <children>
-                              <Button layoutY="120.0" mnemonicParsing="false" prefWidth="200.0" text="Grocery" />
-                              <Button layoutY="147.0" mnemonicParsing="false" prefWidth="200.0" text="Breakfast" />
-                              <Button layoutY="174.0" mnemonicParsing="false" prefWidth="200.0" text="Proteins" />
-                              <Button layoutY="201.0" mnemonicParsing="false" prefWidth="200.0" text="Dairy" />
-                              <Button layoutY="228.0" mnemonicParsing="false" prefWidth="200.0" text="Snacks" />
-                              <Button layoutY="255.0" mnemonicParsing="false" prefWidth="200.0" text="Fruit" />
-                              <TextField alignment="TOP_RIGHT" cache="true" prefWidth="200.0" promptText="Search">
+                              <Button layoutY="120.0" mnemonicParsing="false" prefWidth="200.0" text="Grocery">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="147.0" mnemonicParsing="false" prefWidth="200.0" text="Breakfast">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="174.0" mnemonicParsing="false" prefWidth="200.0" text="Proteins">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="201.0" mnemonicParsing="false" prefWidth="200.0" text="Dairy">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="228.0" mnemonicParsing="false" prefWidth="200.0" text="Snacks">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="255.0" mnemonicParsing="false" prefWidth="200.0" text="Fruit">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <TextField alignment="TOP_LEFT" cache="true" prefWidth="200.0" promptText="Search">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
                               </TextField>
-                              <Button layoutY="693.0" mnemonicParsing="false" prefWidth="200.0" text="Apply Filters" />
-                              <Button layoutY="282.0" mnemonicParsing="false" prefWidth="200.0" text="All" />
+                              <Button layoutY="693.0" mnemonicParsing="false" prefWidth="200.0" text="Apply Filters">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="282.0" mnemonicParsing="false" prefWidth="200.0" text="All">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
                               <SplitMenuButton alignment="CENTER" layoutY="342.0" mnemonicParsing="false" prefWidth="200.0" text="Brand">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="brand 1" />
                                   <MenuItem mnemonicParsing="false" text="brand 2" />
                                 </items>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
                               </SplitMenuButton>
                               <SplitMenuButton alignment="CENTER" layoutY="372.0" mnemonicParsing="false" prefWidth="200.0" text="Price">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="cheap to expensive" />
                                     <MenuItem mnemonicParsing="false" text="expensive cheap" />
                                  </items>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
                               </SplitMenuButton>
                               <SplitMenuButton alignment="CENTER" layoutY="402.0" mnemonicParsing="false" prefWidth="200.0" text="Score">
                                  <items>
@@ -61,50 +98,78 @@
                                     <MenuItem mnemonicParsing="false" text="2 star" />
                                     <MenuItem mnemonicParsing="false" text="1 star" />
                                  </items>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
                               </SplitMenuButton>
-                              <Button layoutY="60.0" mnemonicParsing="false" prefWidth="200.0" text="Auctions" />
-                              <Button layoutY="663.0" mnemonicParsing="false" prefWidth="200.0" text="Remove Filters" />
-                              <Button layoutY="462.0" mnemonicParsing="false" prefWidth="200.0" text="Purchase History" />
+                              <Button layoutY="60.0" mnemonicParsing="false" prefWidth="200.0" text="Auctions">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="663.0" mnemonicParsing="false" prefWidth="200.0" text="Remove Filters">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                              <Button layoutY="462.0" mnemonicParsing="false" prefWidth="200.0" text="Purchase History">
+                                 <effect>
+                                    <SepiaTone level="0.2">
+                                       <input>
+                                          <InnerShadow />
+                                       </input>
+                                    </SepiaTone>
+                                 </effect></Button>
+                              <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="20.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/cart.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </AnchorPane>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2600.0" prefWidth="1300.0" style="-fx-background-color: #CC9EFF;">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="2600.0" prefWidth="1300.0" style="-fx-background-color: #CC9EFF;">
                                  <children>
-                                    <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="300.0" prefWidth="200.0">
+                                    <AnchorPane layoutX="50.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="200.0">
                                        <children>
                                           <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#buy" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/istockphoto-1354202406-170667a.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Button layoutY="270.0" mnemonicParsing="false" text="add to cart" />
-                                          <Label alignment="CENTER_RIGHT" layoutY="200.0" prefWidth="200.0" text="name">
+                                          <Button layoutX="120.0" layoutY="270.0" mnemonicParsing="false" text="add to cart">
+                                             <effect>
+                                                <InnerShadow>
+                                                   <input>
+                                                      <SepiaTone level="0.2" />
+                                                   </input>
+                                                </InnerShadow>
+                                             </effect></Button>
+                                          <Label layoutY="200.0" prefWidth="200.0" text="name">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER_RIGHT" layoutY="234.0" prefWidth="200.0" text="Price :">
+                                          <Label layoutY="234.0" prefWidth="200.0" text="Price :">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
                                           </Label>
-                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="85.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/star.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="115.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="30.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/star.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="145.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="60.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/star.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="175.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="90.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/star.png" />
                                              </image>
@@ -112,6 +177,9 @@
                                        </children>
                                     </AnchorPane>
                                  </children>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
                               </AnchorPane>
                           </content>
                         </ScrollPane>
@@ -126,20 +194,65 @@
                <children>
                   <SplitPane dividerPositions="0.5" nodeOrientation="RIGHT_TO_LEFT" prefHeight="750.0" prefWidth="1500.0">
                      <items>
-                        <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #AD84FE;">
+                        <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #AD84FE;">
                            <children>
-                              <ImageView fitHeight="250.0" fitWidth="350.0" layoutX="25.0" layoutY="442.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="250.0" fitWidth="350.0" layoutX="32.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../gif/post-purchase-dribbble-animated-400x300.gif" />
                                  </image>
+                                 <effect>
+                                    <InnerShadow>
+                                       <input>
+                                          <SepiaTone>
+                                             <input>
+                                                <DropShadow />
+                                             </input>
+                                          </SepiaTone>
+                                       </input>
+                                    </InnerShadow>
+                                 </effect>
                               </ImageView>
+                              <Label layoutX="15.0" layoutY="80.0" text="Final Cost :">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                                 <effect>
+                                    <SepiaTone />
+                                 </effect>
+                              </Label>
+                              <Button layoutX="100.0" layoutY="160.0" mnemonicParsing="false" text="go to payment page">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow>
+                                       <input>
+                                          <InnerShadow>
+                                             <input>
+                                                <SepiaTone level="0.2" />
+                                             </input>
+                                          </InnerShadow>
+                                       </input>
+                                    </DropShadow>
+                                 </effect></Button>
+                              <Label layoutX="15.0" layoutY="15.0" text="Wallet Balance :">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                                 <effect>
+                                    <SepiaTone />
+                                 </effect>
+                              </Label>
                            </children>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
                         </AnchorPane>
                         <ScrollPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2600.0" prefWidth="1100.0" style="-fx-background-color: #CC9EFF;">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="2600.0" prefWidth="1100.0" style="-fx-background-color: #CC9EFF;">
                                  <children>
-                                    <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="970.0" style="-fx-background-color: #BA90E8;">
+                                    <AnchorPane layoutX="60.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="970.0" style="-fx-background-color: #BA90E8;">
                                        <children>
                                           <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="770.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -150,41 +263,87 @@
                                              <font>
                                                 <Font size="30.0" />
                                              </font>
+                                             <effect>
+                                                <SepiaTone />
+                                             </effect>
                                           </Label>
                                           <Label layoutX="15.0" layoutY="70.0" text="price">
                                              <font>
                                                 <Font size="30.0" />
                                              </font>
+                                             <effect>
+                                                <SepiaTone />
+                                             </effect>
                                           </Label>
-                                          <Label layoutX="15.0" layoutY="125.0" text="number :">
+                                          <Label layoutX="15.0" layoutY="125.0" text="Size :">
                                              <font>
                                                 <Font size="30.0" />
                                              </font>
+                                             <effect>
+                                                <SepiaTone />
+                                             </effect>
                                           </Label>
-                                          <Spinner editable="true" layoutX="150.0" layoutY="135.0" prefHeight="30.0" prefWidth="70.0" />
-                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="740.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                          <Spinner editable="true" layoutX="110.0" layoutY="135.0" prefHeight="30.0" prefWidth="70.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect></Spinner>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="740.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/star.png" />
                                              </image>
+                                             <effect>
+                                                <DropShadow>
+                                                   <color>
+                                                      <Color red="1.0" green="0.9566666483879089" blue="0.13333334028720856" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="740.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/star.png" />
                                              </image>
-                                          </ImageView>
-                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="740.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../img/star.png" />
-                                             </image>
+                                             <effect>
+                                                <DropShadow>
+                                                   <color>
+                                                      <Color red="1.0" green="0.9566666483879089" blue="0.13333334028720856" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="740.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/star.png" />
                                              </image>
+                                             <effect>
+                                                <DropShadow>
+                                                   <color>
+                                                      <Color red="1.0" green="0.9566666483879089" blue="0.13333334028720856" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="740.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../img/star.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow>
+                                                   <color>
+                                                      <Color red="1.0" green="0.9566666483879089" blue="0.13333334028720856" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                        </children>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
                                     </AnchorPane>
                                  </children>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
                               </AnchorPane>
                            </content>
                         </ScrollPane>
@@ -196,32 +355,47 @@
       </Tab>
       <Tab text="     Acount     ">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #CC9EFF;">
+            <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #CC9EFF;">
                <children>
                   <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/customer.png" />
                      </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </ImageView>
                   <Label layoutX="70.0" layoutY="340.0" text="Password :">
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
                   <Label layoutX="70.0" layoutY="270.0" text="Username :">
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
                   <Label layoutX="70.0" layoutY="200.0" text="Phone Number :">
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
                   <Label layoutX="70.0" layoutY="130.0" text="Lastname :">
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
                   <Label layoutX="70.0" layoutY="790.0" text="Label">
                      <font>
@@ -232,16 +406,25 @@
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
-                  <Label layoutX="1184.0" layoutY="380.0" text="Applicant Kind">
+                  <Label layoutX="1223.0" layoutY="385.0" text="Customer">
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
                   <Label layoutX="70.0" layoutY="60.0" text="Firstname :">
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
                   <Label layoutX="400.0" layoutY="200.0" text="....">
                      <font>
@@ -277,23 +460,43 @@
                   <Separator layoutX="1450.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
                   <Separator layoutX="1150.0" layoutY="50.0" prefWidth="300.0" />
                   <Separator layoutX="1150.0" layoutY="350.0" prefWidth="300.0" />
-                  <Separator layoutX="655.0" layoutY="50.0" orientation="VERTICAL" prefHeight="480.0" />
+                  <Separator layoutX="655.0" layoutY="50.0" orientation="VERTICAL" prefHeight="480.0">
+                     <effect>
+                        <DropShadow />
+                     </effect></Separator>
                   <Label layoutX="70.0" layoutY="610.0" text="Wallet Balance :">
                      <font>
                         <Font size="36.0" />
                      </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
                   </Label>
                   <Label layoutX="400.0" layoutY="610.0" text="...">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Button layoutX="755.0" layoutY="610.0" mnemonicParsing="false" opacity="0.9" prefWidth="300.0" text="Increase acount balance">
+                  <Button layoutX="755.0" layoutY="610.0" mnemonicParsing="false" opacity="0.9" prefWidth="300.0" text="Increase wallet balance">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <effect>
+                        <InnerShadow>
+                           <input>
+                              <SepiaTone level="0.2">
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </SepiaTone>
+                           </input>
+                        </InnerShadow>
+                     </effect>
                   </Button>
-                  <Separator layoutX="655.0" layoutY="600.0" orientation="VERTICAL" prefHeight="70.0" />
+                  <Separator layoutX="655.0" layoutY="600.0" orientation="VERTICAL" prefHeight="70.0">
+                     <effect>
+                        <DropShadow />
+                     </effect></Separator>
                   <TableView layoutX="705.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0">
                     <columns>
                       <TableColumn prefWidth="30.0" text="C1" />
@@ -301,9 +504,43 @@
                         <TableColumn prefWidth="30.0" text="C2" />
                         <TableColumn prefWidth="170.0" text="Discount code" />
                     </columns>
+                     <effect>
+                        <DropShadow>
+                           <input>
+                              <InnerShadow />
+                           </input>
+                        </DropShadow>
+                     </effect>
                   </TableView>
-               </children></AnchorPane>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="610.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/cart.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="1150.0" layoutY="610.0" mnemonicParsing="false" opacity="0.9" prefWidth="210.0" text="Purchase History">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow>
+                           <input>
+                              <SepiaTone level="0.2">
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </SepiaTone>
+                           </input>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+               </children>
+               <effect>
+                  <InnerShadow />
+               </effect></AnchorPane>
          </content>
       </Tab>
   </tabs>
+   <effect>
+      <InnerShadow />
+   </effect>
 </TabPane>

@@ -4,6 +4,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,34 +18,79 @@
             <image>
                 <Image url="@../img/login.png" />
             </image>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <InnerShadow />
+               </input>
+            </InnerShadow>
+         </effect>
         </ImageView>
         <Button layoutX="214.0" layoutY="501.0" mnemonicParsing="false" onAction="#goSignUpScene" prefWidth="300.0" text="Sign Up">
             <font>
                 <Font size="24.0" />
             </font>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <SepiaTone>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </SepiaTone>
+               </input>
+            </InnerShadow>
+         </effect>
         </Button>
         <Button fx:id="buttonLogin" layoutX="300.0" layoutY="357.0" mnemonicParsing="false" onAction="#goMainScene" prefHeight="30.0" prefWidth="120.0" text="Login">
             <font>
                 <Font size="24.0" />
             </font>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <SepiaTone>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </SepiaTone>
+               </input>
+            </InnerShadow>
+         </effect>
         </Button>
         <TextField layoutX="200.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
+         <effect>
+            <InnerShadow />
+         </effect>
         </TextField>
         <PasswordField layoutX="200.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
+         <effect>
+            <InnerShadow />
+         </effect>
         </PasswordField>
       <Label fx:id="txtCaptcha" layoutX="214.0" layoutY="274.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
          <font>
             <Font size="34.0" />
-         </font></Label>
+         </font>
+         <effect>
+            <SepiaTone>
+               <input>
+                  <DropShadow />
+               </input>
+            </SepiaTone>
+         </effect></Label>
       <TextField fx:id="txtCaptchaInput" alignment="CENTER" layoutX="360.0" layoutY="274.0" opacity="0.5" prefHeight="50.0" prefWidth="151.0" promptText="Captcha">
          <font>
             <Font size="20.0" />
-         </font></TextField>
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></TextField>
     </children>
 </AnchorPane>
