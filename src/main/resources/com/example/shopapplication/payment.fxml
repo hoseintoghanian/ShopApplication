@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -19,11 +18,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <Label layoutX="50.0" layoutY="130.0" text="Province :">
@@ -31,11 +26,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <TextField alignment="CENTER" layoutX="211.0" layoutY="137.0" prefWidth="250.0">
@@ -43,15 +34,15 @@
             <Font size="18.0" />
          </font>
          <effect>
-            <Reflection bottomOpacity="0.3" fraction="0.8">
+            <InnerShadow>
                <input>
-                  <InnerShadow choke="0.2" height="30.0" radius="12.25">
+                  <DropShadow>
                      <input>
-                        <SepiaTone level="0.8" />
+                        <SepiaTone />
                      </input>
-                  </InnerShadow>
+                  </DropShadow>
                </input>
-            </Reflection>
+            </InnerShadow>
          </effect>
       </TextField>
       <Label layoutX="552.0" layoutY="130.0" text="City :">
@@ -59,11 +50,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <TextField alignment="CENTER" layoutX="643.0" layoutY="137.0" prefWidth="250.0">
@@ -71,15 +58,15 @@
             <Font size="18.0" />
          </font>
          <effect>
-            <Reflection bottomOpacity="0.3" fraction="0.8">
+            <InnerShadow>
                <input>
-                  <InnerShadow choke="0.2" height="30.0" radius="12.25">
+                  <DropShadow>
                      <input>
-                        <SepiaTone level="0.8" />
+                        <SepiaTone />
                      </input>
-                  </InnerShadow>
+                  </DropShadow>
                </input>
-            </Reflection>
+            </InnerShadow>
          </effect>
       </TextField>
       <Label layoutX="983.0" layoutY="130.0" text="Postal Code :">
@@ -87,11 +74,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <TextField alignment="CENTER" layoutX="1199.0" layoutY="137.0" prefWidth="250.0">
@@ -99,15 +82,15 @@
             <Font size="18.0" />
          </font>
          <effect>
-            <Reflection bottomOpacity="0.3" fraction="0.8">
+            <InnerShadow>
                <input>
-                  <InnerShadow choke="0.2" height="30.0" radius="12.25">
+                  <DropShadow>
                      <input>
-                        <SepiaTone level="0.8" />
+                        <SepiaTone />
                      </input>
-                  </InnerShadow>
+                  </DropShadow>
                </input>
-            </Reflection>
+            </InnerShadow>
          </effect>
       </TextField>
       <TextArea layoutX="303.0" layoutY="210.0" prefHeight="150.0" prefWidth="1145.0">
@@ -115,15 +98,15 @@
             <Font size="20.0" />
          </font>
          <effect>
-            <Reflection bottomOpacity="0.3" fraction="0.8">
+            <InnerShadow>
                <input>
-                  <InnerShadow choke="0.2" height="31.5" radius="12.625">
+                  <DropShadow>
                      <input>
                         <SepiaTone />
                      </input>
-                  </InnerShadow>
+                  </DropShadow>
                </input>
-            </Reflection>
+            </InnerShadow>
          </effect>
       </TextArea>
       <Label layoutX="50.0" layoutY="210.0" text="Postal Address :">
@@ -131,11 +114,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <Separator layoutX="100.0" layoutY="400.0" prefWidth="1300.0" style="-fx-background-color: #C7001F;">
@@ -152,11 +131,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <Label layoutX="348.0" layoutY="430.0" text="Name :">
@@ -164,11 +139,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <TextField alignment="CENTER" layoutX="476.0" layoutY="437.0" prefWidth="250.0">
@@ -176,15 +147,15 @@
             <Font size="18.0" />
          </font>
          <effect>
-            <Reflection bottomOpacity="0.3" fraction="0.8">
+            <InnerShadow>
                <input>
-                  <InnerShadow choke="0.2" height="30.0" radius="12.25">
+                  <DropShadow>
                      <input>
-                        <SepiaTone level="0.8" />
+                        <SepiaTone />
                      </input>
-                  </InnerShadow>
+                  </DropShadow>
                </input>
-            </Reflection>
+            </InnerShadow>
          </effect>
       </TextField>
       <Label layoutX="820.0" layoutY="430.0" text="Phone Number : ">
@@ -192,11 +163,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <TextField alignment="CENTER" layoutX="1093.0" layoutY="437.0" prefWidth="250.0">
@@ -204,15 +171,15 @@
             <Font size="18.0" />
          </font>
          <effect>
-            <Reflection bottomOpacity="0.3" fraction="0.8">
+            <InnerShadow>
                <input>
-                  <InnerShadow choke="0.2" height="30.0" radius="12.25">
+                  <DropShadow>
                      <input>
-                        <SepiaTone level="0.8" />
+                        <SepiaTone />
                      </input>
-                  </InnerShadow>
+                  </DropShadow>
                </input>
-            </Reflection>
+            </InnerShadow>
          </effect>
       </TextField>
       <Separator layoutX="100.0" layoutY="595.0" prefWidth="1300.0" style="-fx-background-color: #C7001F;">
@@ -229,11 +196,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <TextField alignment="CENTER" layoutX="315.0" layoutY="517.0" prefWidth="250.0">
@@ -241,15 +204,15 @@
             <Font size="18.0" />
          </font>
          <effect>
-            <Reflection bottomOpacity="0.3" fraction="0.8">
+            <InnerShadow>
                <input>
-                  <InnerShadow choke="0.2" height="30.0" radius="12.25">
+                  <DropShadow>
                      <input>
-                        <SepiaTone level="0.8" />
+                        <SepiaTone />
                      </input>
-                  </InnerShadow>
+                  </DropShadow>
                </input>
-            </Reflection>
+            </InnerShadow>
          </effect>
       </TextField>
       <Button layoutX="1199.0" layoutY="650.0" mnemonicParsing="false" prefWidth="250.0" text="Payment" textFill="RED">
@@ -272,11 +235,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
          <effect>
-            <Reflection topOpacity="0.29">
-               <input>
-                  <SepiaTone />
-               </input>
-            </Reflection>
+            <SepiaTone />
          </effect>
       </Label>
       <Button layoutX="683.0" layoutY="511.0" mnemonicParsing="false" prefWidth="170.0" text="Apply Code" textFill="RED">

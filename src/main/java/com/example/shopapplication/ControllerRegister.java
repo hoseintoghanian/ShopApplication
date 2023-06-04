@@ -51,7 +51,7 @@ public class ControllerRegister {
     }
 
     public void goSignUpScene(ActionEvent e) throws IOException {
-        changeScene(e, "product.fxml");
+        changeScene(e, "admin.fxml");
     }
 
     public void goLoginScene(ActionEvent e) throws IOException {
