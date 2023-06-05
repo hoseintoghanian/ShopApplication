@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="check signup fields">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="complete signup and login page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Applicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Applicant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Warehouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +130,9 @@
       <workItem from="1685734410778" duration="809000" />
       <workItem from="1685944402417" duration="15724000" />
       <workItem from="1685961919353" duration="1135000" />
-      <workItem from="1685963088972" duration="1122000" />
+      <workItem from="1685963088972" duration="5777000" />
+      <workItem from="1685973340572" duration="459000" />
+      <workItem from="1685973833430" duration="159000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -234,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685952950835</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="complete signup and login page">
+      <created>1685964347465</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1685964347465</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +258,7 @@
     <MESSAGE value="add lib connector mysql-connector-j-8.0.32.jar" />
     <MESSAGE value="sql directory" />
     <MESSAGE value="check signup fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="check signup fields" />
+    <MESSAGE value="complete signup and login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete signup and login page" />
   </component>
 </project>

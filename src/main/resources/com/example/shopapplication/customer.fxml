@@ -354,7 +354,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="     Acount     ">
+      <Tab fx:id="tabaccount" onSelectionChanged="#displayInfo" text="     Acount     ">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #CC9EFF;">
                <children>
@@ -427,32 +427,32 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="400.0" layoutY="200.0" text="....">
+                  <Label fx:id="txtPNaccount" layoutX="400.0" layoutY="200.0" text="....">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="410.0" text="....">
+                  <Label fx:id="txtEMaccount" layoutX="400.0" layoutY="410.0" text="....">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="340.0" text="...">
+                  <Label fx:id="txtPWaccount" layoutX="400.0" layoutY="340.0" text="...">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="270.0" text="...">
+                  <Label fx:id="txtUNaccount" layoutX="400.0" layoutY="270.0" text="...">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="60.0" text="...">
+                  <Label fx:id="txtFNaccount" layoutX="400.0" layoutY="60.0" text="...">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="130.0" text="....">
+                  <Label fx:id="txtLNaccount" layoutX="400.0" layoutY="130.0" text="....">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -473,7 +473,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="400.0" layoutY="610.0" text="...">
+                  <Label fx:id="txtWBaccount" layoutX="400.0" layoutY="610.0" text="0 $">
                      <font>
                         <Font size="36.0" />
                      </font>

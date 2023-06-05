@@ -14,7 +14,9 @@ public class Shop {
     }
 
 
-    public Admin admin = new Admin("Admin", "Admin", "09927930896", "Admin1", "1234", "Admin@gamil.com");
+    public Admin admin = new Admin("admin", "5581");
+    public Seller currentSeller;
+    public Customer currentCustomer;
     public ArrayList<Seller> sellers = new ArrayList<>();
     public ArrayList<Customer> customers = new ArrayList<>();
 

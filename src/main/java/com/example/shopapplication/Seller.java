@@ -1,9 +1,5 @@
 package com.example.shopapplication;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-
 import java.util.Objects;
 
 public class Seller extends Applicant {
