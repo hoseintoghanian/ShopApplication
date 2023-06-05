@@ -42,7 +42,7 @@
             </InnerShadow>
          </effect>
         </Button>
-        <Button fx:id="buttonLogin" layoutX="300.0" layoutY="357.0" mnemonicParsing="false" onAction="#goMainScene" prefHeight="30.0" prefWidth="120.0" text="Login">
+        <Button fx:id="buttonLogin" layoutX="300.0" layoutY="357.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="120.0" text="Login">
             <font>
                 <Font size="24.0" />
             </font>
@@ -58,7 +58,7 @@
             </InnerShadow>
          </effect>
         </Button>
-        <TextField layoutX="200.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
+        <TextField fx:id="txtLoginUsername" layoutX="200.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
@@ -66,7 +66,7 @@
             <InnerShadow />
          </effect>
         </TextField>
-        <PasswordField layoutX="200.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
+        <PasswordField fx:id="txtLoginPass" layoutX="200.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
                 <Font size="24.0" />
             </font>
@@ -92,5 +92,15 @@
          <effect>
             <InnerShadow />
          </effect></TextField>
+      <Label fx:id="txtlogin" layoutX="92.0" layoutY="362.0" textFill="#d72121">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtlogin2" layoutX="108.0" layoutY="435.0" textFill="#f20b0b">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

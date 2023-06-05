@@ -13,7 +13,10 @@ public class Customer extends Applicant {
 
     public Customer(String firstname, String lastname, String phoneNumber, String username, String password, String email) {
         super(firstname, lastname, phoneNumber, username, password, email);
-        applicantKind = "Customer";
+        applicantKind = "customer";
+    }
+    public Customer(String username) {
+        super(username);
     }
 
     public boolean equals(Object other) {

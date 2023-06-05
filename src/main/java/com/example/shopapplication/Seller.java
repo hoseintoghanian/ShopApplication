@@ -13,7 +13,10 @@ public class Seller extends Applicant {
     public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace) {
         super(firstname, lastname, phoneNumber, username, password, email);
         this.workplace = workplace;
-        applicantKind = "Seller";
+        applicantKind = "seller";
+    }
+    public Seller(String username) {
+        super(username);
     }
 
     public boolean equals(Object other) {

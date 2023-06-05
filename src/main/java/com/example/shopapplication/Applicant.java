@@ -2,8 +2,8 @@ package com.example.shopapplication;
 
 public abstract class Applicant {
 
-    private final String firstname;
-    private final String lastname;
+    private  String firstname;
+    private  String lastname;
     private String phoneNumber;
     private String username;
     private String password;
@@ -19,6 +19,9 @@ public abstract class Applicant {
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+    public Applicant(String username) {
+        this.username = username;
     }
 
     public String getFirstname() {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
@@ -533,6 +534,11 @@
                         </InnerShadow>
                      </effect>
                   </Button>
+                  <Hyperlink layoutX="1400.0" layoutY="25.0" text="Log Out">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Hyperlink>
                </children>
                <effect>
                   <InnerShadow />

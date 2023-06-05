@@ -189,7 +189,7 @@
             <InnerShadow />
          </effect>
       </PasswordField>
-      <PasswordField layoutX="400.0" layoutY="400.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
+      <PasswordField fx:id="txtConfirmPassword" layoutX="400.0" layoutY="400.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
@@ -212,6 +212,11 @@
          <effect>
             <SepiaTone />
          </effect>
+      </Label>
+      <Label fx:id="txtconfirmpass" layoutX="439.0" layoutY="576.0" textFill="#fc0505">
+         <font>
+            <Font size="24.0" />
+         </font>
       </Label>
    </children>
 </AnchorPane>
