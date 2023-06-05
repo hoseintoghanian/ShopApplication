@@ -3,7 +3,7 @@ package com.example.shopapplication;
 import java.sql.*;
 
 public class Database {
-    public static Connection getDBC() {//get database connection
+    public static Connection getDBC() {//getDBC --> get database connection
         Connection connection = null;
 
         String URL = "jdbc:mysql://localhost:3306/shopapplicationdb";
@@ -17,5 +17,88 @@ public class Database {
         }
 
         return connection;
+    }
+
+
+    public static void writeSeller(Seller seller) throws SQLException {
+        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setString(1, seller.getFirstname());
+        statement.setString(2, seller.getLastname());
+        statement.setString(3, seller.getPhoneNumber());
+        statement.setString(4, seller.getUsername());
+        statement.setString(5, seller.getPassword());
+        statement.setString(6, seller.getEmail());
+        statement.setString(7, seller.workplace);
+
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void writeCustomer(Customer customer) throws SQLException {
+        String sql = "INSERT INTO customer (firstname, lastname, phoneNumber, username, pass, email) VALUES (?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setString(1, customer.getFirstname());
+        statement.setString(2, customer.getLastname());
+        statement.setString(3, customer.getPhoneNumber());
+        statement.setString(4, customer.getUsername());
+        statement.setString(5, customer.getPassword());
+        statement.setString(6, customer.getEmail());
+
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+
+    public static void readSeller(String table) throws SQLException {
+
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + table);
+
+        while (resultSet.next()) {
+            Application.shop.sellers.add(new Seller(
+                    resultSet.getString("firstname"),
+                    resultSet.getString("lastname"),
+                    resultSet.getString("phoneNumber"),
+                    resultSet.getString("username"),
+                    resultSet.getString("pass"),
+                    resultSet.getString("email"),
+                    resultSet.getString("workplace")
+            ));
+        }
+
+        statement.close();
+        resultSet.close();
+        getDBC().close();
+    }
+
+
+    public static void readCustomer(String table) throws SQLException {
+
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + table);
+
+        while (resultSet.next()) {
+            Application.shop.customers.add(new Customer(
+                    resultSet.getString("firstname"),
+                    resultSet.getString("lastname"),
+                    resultSet.getString("phoneNumber"),
+                    resultSet.getString("username"),
+                    resultSet.getString("pass"),
+                    resultSet.getString("email")
+            ));
+        }
+
+        statement.close();
+        resultSet.close();
+        getDBC().close();
     }
 }

@@ -127,7 +127,7 @@ public class ControllerRegister {
 
         if (!txtFirstname.getText().equals("") && !txtLastname.getText().equals("") && !txtPhoneNumber.getText().equals("") && !txtUserName.getText().equals("") && !txtPass.getText().equals("") && !txtEmail.getText().equals("")) {
             if (txtConfirmPassword.getText().equals(txtPass.getText())) {
-                /*try {
+                try {
                     if (buttonSeller.isSelected() && !txtWorkPlace.getText().equals("")) {
                         applicantKind = "Seller";
                         seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
@@ -162,7 +162,7 @@ public class ControllerRegister {
 
                 } catch (SQLException event) {
                     System.out.println("Connection failed: " + event.getMessage());
-                }*/
+                }
             } else if (!txtConfirmPassword.getText().equals(txtPass.getText())) {
                 txtRegister.setText("incorrect confirm password");
             }
