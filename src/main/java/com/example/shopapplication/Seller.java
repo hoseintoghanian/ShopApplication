@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 
+import java.util.Objects;
+
 public class Seller extends Applicant {
 
     public String workplace;
@@ -17,7 +19,7 @@ public class Seller extends Applicant {
     public boolean equals(Object other) {
         if (other instanceof Seller) {
             Seller s = (Seller) other;
-            return this.getUsername() == s.getUsername();
+            return Objects.equals(this.getUsername(), s.getUsername());
         }
         return false;
     }

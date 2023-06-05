@@ -1,5 +1,5 @@
-create database shopapplication;
-use shopapplication;
+create database shopapplicationdb;
+use shopapplicationdb;
 create table applicant(
 firstname varchar(50),
 lastname varchar(50),

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -22,13 +23,15 @@ public class ControllerRegister {
     private static final int CAPTCHA_LENGTH = 6;
     private String captchaText;
     @FXML
-    private TextField txtFirstname, txtLastname, txtPhoneNumber, txtUserName, txtPassWord, txtEmail, txtWorkPlace;
+    private TextField txtFirstname, txtLastname, txtPhoneNumber, txtUserName, txtPass, txtEmail, txtWorkPlace;
     @FXML
     private TextField txtCaptchaInput;
     @FXML
     private Label txtCaptcha, txtRegister;
     @FXML
     private RadioButton buttonSeller, buttonCustomer;
+    @FXML
+    Button buttonRegister;
 
 
     public void changeScene(ActionEvent e, String fxml) throws IOException {
@@ -84,42 +87,61 @@ public class ControllerRegister {
     public void Register() {
 
         String applicantKind = null;
+        boolean validUsername = true;
+        Seller seller = null;
+        Customer customer = null;
 
-        try {
+        if (!txtFirstname.getText().equals("") && !txtLastname.getText().equals("") && !txtPhoneNumber.getText().equals("") && !txtUserName.getText().equals("") && !txtPass.getText().equals("") && !txtEmail.getText().equals("")) {
+            try {
+                if (buttonSeller.isSelected() && !txtWorkPlace.getText().equals("")) {
+                    applicantKind = "Seller";
+                    seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
+                    if (Application.shop.sellers.contains(seller)) {
+                        applicantKind = null;
+                        validUsername = false;
+                    }
+                }
+                if (buttonCustomer.isSelected()) {
+                    applicantKind = "Customer";
+                    customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText());
+                    if (Application.shop.customers.contains(customer)) {
+                        applicantKind = null;
+                        validUsername = false;
+                    }
+                }
 
-            if (buttonSeller.isSelected()) {
-                Application.shop.sellers.add(new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPassWord.getText(), txtEmail.getText(), txtWorkPlace.getText()));
-                txtRegister.setText("Registered Successfully");
+                if (!validUsername) txtRegister.setText("invalid username");
 
-                applicantKind = "Seller";
+                if (applicantKind != null) {
+
+                    if (applicantKind.equals("Seller")) Application.shop.sellers.add(seller);
+                    if (applicantKind.equals("Customer")) Application.shop.customers.add(customer);
+
+                    txtRegister.setText("Registered Successfully");
+
+
+                    String sql = "INSERT INTO applicant (firstname, lastname, phoneNumber, username, pass, email, applicantKind) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                    PreparedStatement statement = Database.getDBC().prepareStatement(sql);
+
+                    statement.setString(1, txtFirstname.getText());
+                    statement.setString(2, txtLastname.getText());
+                    statement.setString(3, txtPhoneNumber.getText());
+                    statement.setString(4, txtUserName.getText());
+                    statement.setString(5, txtPass.getText());
+                    statement.setString(6, txtEmail.getText());
+                    statement.setString(7, applicantKind);
+
+                    statement.executeUpdate();
+
+                    statement.close();
+                    Database.getDBC().close();
+                }
+
+            } catch (SQLException event) {
+                System.out.println("Connection failed: " + event.getMessage());
             }
-            if (buttonCustomer.isSelected()) {
-                Application.shop.customers.add(new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPassWord.getText(), txtEmail.getText()));
-                txtRegister.setText("Registered Successfully");
-
-                applicantKind = "Customer";
-            }
-
-
-            String sql = "INSERT INTO applicant (firstname, lastname, phoneNumber, username, password, email, applicantKind) VALUES (?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement statement = Database.getDBC().prepareStatement(sql);
-
-            statement.setString(1, txtFirstname.getText());
-            statement.setString(2, txtLastname.getText());
-            statement.setString(3, txtPhoneNumber.getText());
-            statement.setString(4, txtUserName.getText());
-            statement.setString(5, txtPassWord.getText());
-            statement.setString(6, txtEmail.getText());
-            statement.setString(7, applicantKind);
-
-            int rowsAffected = statement.executeUpdate();
-            System.out.println(rowsAffected + " row(s) affected");
-
-            statement.close();
-            Database.getDBC().close();
-
-        } catch (SQLException e) {
-            System.out.println("Connection failed: " + e.getMessage());
+        } else {
+            txtRegister.setText("please fill all the fields");
         }
     }
 }

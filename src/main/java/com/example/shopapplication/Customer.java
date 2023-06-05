@@ -19,7 +19,7 @@ public class Customer extends Applicant {
     public boolean equals(Object other) {
         if (other instanceof Customer) {
             Customer c = (Customer) other;
-            return this.getUsername() == c.getUsername();
+            return Objects.equals(this.getUsername(), c.getUsername());
         }
         return false;
     }
