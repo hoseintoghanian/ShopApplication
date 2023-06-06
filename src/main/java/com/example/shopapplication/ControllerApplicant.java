@@ -153,13 +153,46 @@ public class ControllerApplicant {
             menuButtonBrand.getItems().addAll(aaliChin,delpazir,shahsavand);
         });
 
-
-
-
         menuButtonMinorKind.getItems().addAll(bread, rice, oil, brokenSugar, sugar, sauce, rob, pickle, lemonJuice, pasta, saffron, pea);
     }
 
     public void chooseKindBreakfast() {
+
+        menuButtonKind.setText("break fast");
+
+        MenuItem jam = new MenuItem("jam");
+        MenuItem honey = new MenuItem("honey");
+        MenuItem halva = new MenuItem("halva");
+
+        jam.setOnAction(event -> {
+            menuButtonMinorKind.setText("pea");
+
+            MenuItem bijan = new MenuItem("Bijan");
+            MenuItem mixLand = new MenuItem("Mix Land");
+            MenuItem yekOyek= new MenuItem("yek & yek");
+
+            menuButtonBrand.getItems().addAll(bijan,mixLand,yekOyek);
+        });
+        honey.setOnAction(event -> {
+            menuButtonMinorKind.setText("honey");
+
+            MenuItem rayehe = new MenuItem("Rayehe");
+            MenuItem segmen = new MenuItem("Segmen");
+            MenuItem shahsavand= new MenuItem("Shahsavand");
+
+            menuButtonBrand.getItems().addAll(rayehe,segmen,shahsavand);
+        });
+        halva.setOnAction(event -> {
+            menuButtonMinorKind.setText("halva");
+
+            MenuItem oghab = new MenuItem("Oghab");
+            MenuItem tahini = new MenuItem("Tahini");
+            MenuItem taksun = new MenuItem("Taksun");
+
+            menuButtonBrand.getItems().addAll(oghab,tahini,taksun);
+        });
+
+        menuButtonMinorKind.getItems().addAll(jam,honey,halva);
     }
 
     public void chooseKindProtein() {
