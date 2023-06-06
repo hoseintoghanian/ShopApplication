@@ -271,9 +271,60 @@ public class ControllerApplicant {
             menuButtonBrand.getItems().addAll(makenzi,shilton,tohfe);
         });
 
+        menuButtonMinorKind.getItems().addAll(bologna,lambMeet,chicken,egg,beef,shrimp,tuna);
+
     }
 
     public void chooseKindDairy() {
+
+        menuButtonKind.setText("dairy");
+
+        MenuItem milk = new MenuItem("milk");
+        MenuItem yogurt = new MenuItem("yogurt");
+        MenuItem cheese = new MenuItem("cheese");
+        MenuItem cream = new MenuItem("cream");
+
+        milk.setOnAction(event -> {
+            menuButtonMinorKind.setText("milk");
+
+            MenuItem damdaran = new MenuItem("Damdaran");
+            MenuItem kale = new MenuItem("Kale");
+            MenuItem mihan = new MenuItem("Mihan");
+
+            menuButtonBrand.getItems().addAll(damdaran,kale,mihan);
+        });
+
+        yogurt.setOnAction(event -> {
+            menuButtonMinorKind.setText("yogurt");
+
+            MenuItem kale = new MenuItem("Kale");
+            MenuItem mihan = new MenuItem("Mihan");
+            MenuItem ramak = new MenuItem("Ramak");
+
+            menuButtonBrand.getItems().addAll(kale,mihan,ramak);
+        });
+
+        cheese.setOnAction(event -> {
+            menuButtonMinorKind.setText("cheese");
+
+            MenuItem kale = new MenuItem("Kale");
+            MenuItem mihan = new MenuItem("Mihan");
+            MenuItem ruzane = new MenuItem("Ruzan");
+
+            menuButtonBrand.getItems().addAll(kale,mihan,ruzane);
+        });
+
+        cream.setOnAction(event -> {
+            menuButtonMinorKind.setText("cream");
+
+            MenuItem kale = new MenuItem("Kale");
+            MenuItem mihan = new MenuItem("Mihan");
+            MenuItem pegah = new MenuItem("Pegah");
+
+            menuButtonBrand.getItems().addAll(kale,mihan,pegah);
+        });
+
+        menuButtonMinorKind.getItems().addAll(milk,yogurt,cheese,cream);
     }
 
     public void chooseKindDrinks() {
