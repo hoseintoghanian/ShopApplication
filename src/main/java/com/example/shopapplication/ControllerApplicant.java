@@ -196,6 +196,81 @@ public class ControllerApplicant {
     }
 
     public void chooseKindProtein() {
+
+        menuButtonKind.setText("protein foods");
+
+        MenuItem bologna = new MenuItem("bologna");
+        MenuItem lambMeet = new MenuItem("lamb meet");
+        MenuItem chicken = new MenuItem("chicken");
+        MenuItem egg = new MenuItem("egg");
+        MenuItem beef = new MenuItem("beef");
+        MenuItem shrimp = new MenuItem("shrimp");
+        MenuItem tuna = new MenuItem("tuna");
+
+        bologna.setOnAction(event -> {
+            menuButtonMinorKind.setText("bologna");
+
+            MenuItem kampooreh = new MenuItem("Kampooreh");
+            MenuItem robat = new MenuItem("Robat");
+            MenuItem shamSham = new MenuItem("Sham Sham");
+
+            menuButtonBrand.getItems().addAll(kampooreh, robat, shamSham);
+        });
+        lambMeet.setOnAction(event -> {
+            menuButtonMinorKind.setText("lamb meet");
+
+            MenuItem ariaBahar = new MenuItem("Aria Bahar");
+            MenuItem mahya = new MenuItem("Mahya");
+            MenuItem puya = new MenuItem("Puya");
+
+            menuButtonBrand.getItems().addAll(ariaBahar,mahya,puya);
+        });
+        chicken.setOnAction(event -> {
+            menuButtonMinorKind.setText("chicken");
+
+            MenuItem mahya = new MenuItem("Mahya");
+            MenuItem puya = new MenuItem("Puya");
+            MenuItem telavang = new MenuItem("Puya");
+
+            menuButtonBrand.getItems().addAll(mahya,puya,telavang);
+        });
+        egg.setOnAction(event -> {
+            menuButtonMinorKind.setText("egg");
+
+            MenuItem morghdaran = new MenuItem("Morghdaran");
+            MenuItem porotana = new MenuItem("Porotana");
+            MenuItem telavang = new MenuItem("Telavang");
+
+            menuButtonBrand.getItems().addAll(morghdaran,porotana,telavang);
+        });
+        beef.setOnAction(event -> {
+            menuButtonMinorKind.setText("beef");
+
+            MenuItem khoram = new MenuItem("Khoram");
+            MenuItem mahya = new MenuItem("Mahya");
+            MenuItem puya = new MenuItem("Puya");
+
+            menuButtonBrand.getItems().addAll(khoram,mahya,puya);
+        });
+        shrimp.setOnAction(event -> {
+            menuButtonMinorKind.setText("shrimp");
+
+            MenuItem marine = new MenuItem("Marine");
+            MenuItem pemina = new MenuItem("Pemina");
+            MenuItem tohfe = new MenuItem("Tohfe");
+
+            menuButtonBrand.getItems().addAll(marine,pemina,tohfe);
+        });
+        tuna.setOnAction(event -> {
+            menuButtonMinorKind.setText("tuna");
+
+            MenuItem makenzi = new MenuItem("Makenzi");
+            MenuItem shilton = new MenuItem("Shilton");
+            MenuItem tohfe = new MenuItem("Tohfe");
+
+            menuButtonBrand.getItems().addAll(makenzi,shilton,tohfe);
+        });
+
     }
 
     public void chooseKindDairy() {
