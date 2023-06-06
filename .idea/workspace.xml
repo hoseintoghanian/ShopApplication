@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="controller applicant chooseKindProteinFoods method">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="controller applicant chooseKindDairy method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
     </list>
@@ -108,7 +108,7 @@
       <workItem from="1685734410778" duration="809000" />
       <workItem from="1685786032764" duration="2054000" />
       <workItem from="1685794809778" duration="183000" />
-      <workItem from="1686045724673" duration="6021000" />
+      <workItem from="1686045724673" duration="7485000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -222,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686050927617</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="controller applicant chooseKindDairy method">
+      <created>1686052121109</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686052121109</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +259,7 @@
     <MESSAGE value="controller applicant chooseKindGrocery method" />
     <MESSAGE value="controller applicant chooseKindBreakFast method" />
     <MESSAGE value="controller applicant chooseKindProteinFoods method" />
-    <option name="LAST_COMMIT_MESSAGE" value="controller applicant chooseKindProteinFoods method" />
+    <MESSAGE value="controller applicant chooseKindDairy method" />
+    <option name="LAST_COMMIT_MESSAGE" value="controller applicant chooseKindDairy method" />
   </component>
 </project>

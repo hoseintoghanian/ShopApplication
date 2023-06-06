@@ -328,6 +328,90 @@ public class ControllerApplicant {
     }
 
     public void chooseKindDrinks() {
+
+
+        menuButtonKind.setText("drinks");
+
+        MenuItem tea = new MenuItem("tea");
+        MenuItem herbalTea = new MenuItem("herbal tea");
+        MenuItem coffee = new MenuItem("coffee");
+        MenuItem water = new MenuItem("water");
+        MenuItem beer = new MenuItem("beer");
+        MenuItem soda = new MenuItem("soda");
+        MenuItem juice = new MenuItem("juice");
+
+        tea.setOnAction(event -> {
+            menuButtonMinorKind.setText("tea");
+
+            MenuItem debsh = new MenuItem("Debsh");
+            MenuItem golestan = new MenuItem("Golestan");
+            MenuItem shahrzad = new MenuItem("Shahrzad");
+
+            menuButtonBrand.getItems().addAll(debsh,golestan,shahrzad);
+        });
+
+        herbalTea.setOnAction(event -> {
+            menuButtonMinorKind.setText("herbal tea");
+
+            MenuItem golestan = new MenuItem("Golestan");
+            MenuItem seharKhiz = new MenuItem("Sehar Khiz");
+            MenuItem shahsavand = new MenuItem("Shahsavand");
+
+            menuButtonBrand.getItems().addAll(golestan,seharKhiz,shahsavand);
+        });
+
+        coffee.setOnAction(event -> {
+            menuButtonMinorKind.setText("coffee");
+
+            MenuItem aliCafe = new MenuItem("Ali Cafe");
+            MenuItem goodDay = new MenuItem("Good Day");
+            MenuItem nescafe = new MenuItem("Nescafe");
+
+            menuButtonBrand.getItems().addAll(aliCafe,goodDay,nescafe);
+        });
+
+        water.setOnAction(event -> {
+            menuButtonMinorKind.setText("water");
+
+            MenuItem damavand = new MenuItem("Damavand");
+            MenuItem miva = new MenuItem("Miva");
+            MenuItem oxab = new MenuItem("Oxab");
+
+            menuButtonBrand.getItems().addAll(damavand,miva,oxab);
+        });
+
+        beer.setOnAction(event -> {
+            menuButtonMinorKind.setText("cream");
+
+            MenuItem aalis = new MenuItem("Aalis");
+            MenuItem heyDay = new MenuItem("Hey Day");
+            MenuItem jojo = new MenuItem("Jojo");
+
+            menuButtonBrand.getItems().addAll(aalis,heyDay,jojo);
+        });
+
+        soda.setOnAction(event -> {
+            menuButtonMinorKind.setText("cream");
+
+            MenuItem cocaCola = new MenuItem("Coca Cola");
+            MenuItem fantaLemon = new MenuItem("Fanta Lemon");
+            MenuItem fantaOrange = new MenuItem("Fanta Orange");
+
+            menuButtonBrand.getItems().addAll(cocaCola,fantaLemon,fantaOrange);
+        });
+
+        juice.setOnAction(event -> {
+            menuButtonMinorKind.setText("cream");
+
+            MenuItem mihan = new MenuItem("Mihan");
+            MenuItem sanIch = new MenuItem("San Ich");
+            MenuItem takDaneh = new MenuItem("Tak Daneh");
+
+            menuButtonBrand.getItems().addAll(mihan,sanIch,takDaneh);
+        });
+
+        menuButtonMinorKind.getItems().addAll(tea,herbalTea,coffee,water,beer,soda,juice);
+
     }
 
     public void chooseKindSnacks() {
