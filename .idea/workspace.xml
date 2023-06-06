@@ -108,7 +108,8 @@
       <workItem from="1685734410778" duration="809000" />
       <workItem from="1685786032764" duration="2054000" />
       <workItem from="1685794809778" duration="183000" />
-      <workItem from="1686045724673" duration="7485000" />
+      <workItem from="1686045724673" duration="7859000" />
+      <workItem from="1686054635810" duration="1435000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -229,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686052121109</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="controller applicant chooseKindDairy method">
+      <created>1686053466702</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1686053466702</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

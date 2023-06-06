@@ -411,10 +411,92 @@ public class ControllerApplicant {
         });
 
         menuButtonMinorKind.getItems().addAll(tea,herbalTea,coffee,water,beer,soda,juice);
-
     }
 
     public void chooseKindSnacks() {
+
+        menuButtonKind.setText("snacks");
+
+        MenuItem chocolate = new MenuItem("chocolate");
+        MenuItem biscuit = new MenuItem("biscuit");
+        MenuItem nuts = new MenuItem("nuts");
+        MenuItem cake = new MenuItem("cake");
+        MenuItem chips = new MenuItem("chips");
+        MenuItem pofak = new MenuItem("pofak");
+        MenuItem chewingGum = new MenuItem("chewing gum");
+
+        chocolate.setOnAction(event -> {
+            menuButtonMinorKind.setText("chocolate");
+
+            MenuItem hiss = new MenuItem("Hiss");
+            MenuItem rangarang = new MenuItem("Rangarang");
+            MenuItem takTak = new MenuItem("Tak Daneh");
+
+            menuButtonBrand.getItems().addAll(hiss,rangarang,takTak);
+        });
+
+        biscuit.setOnAction(event -> {
+            menuButtonMinorKind.setText("biscuit");
+
+            MenuItem hiBye = new MenuItem("Hi Bye");
+            MenuItem petitBeurre = new MenuItem("petit Beurre");
+            MenuItem sagheTalai = new MenuItem("Saghe Talai");
+
+            menuButtonBrand.getItems().addAll(hiBye,petitBeurre,sagheTalai);
+        });
+
+        nuts.setOnAction(event -> {
+            menuButtonMinorKind.setText("nuts");
+
+            MenuItem mani = new MenuItem("Hi Bye");
+            MenuItem mazMaz = new MenuItem("Maz Maz");
+            MenuItem sanjaghak = new MenuItem("Sanjaghak");
+
+            menuButtonBrand.getItems().addAll(mani,mazMaz,sanjaghak);
+        });
+
+        cake.setOnAction(event -> {
+            menuButtonMinorKind.setText("nuts");
+
+            MenuItem cakeMake = new MenuItem("Cake Make");
+            MenuItem tTop = new MenuItem("T Top");
+            MenuItem tiny = new MenuItem("Tiny");
+
+            menuButtonBrand.getItems().addAll(cakeMake,tTop,tiny);
+        });
+
+        chips.setOnAction(event -> {
+            menuButtonMinorKind.setText("chips");
+
+            MenuItem chakelz = new MenuItem("Chakelz");
+            MenuItem cheetoz = new MenuItem("Cheeroz");
+            MenuItem delMaze = new MenuItem("delMaze");
+
+            menuButtonBrand.getItems().addAll(chakelz,cheetoz,delMaze);
+        });
+
+        pofak.setOnAction(event -> {
+            menuButtonMinorKind.setText("chips");
+
+            MenuItem chakelz = new MenuItem("Chakelz");
+            MenuItem cheetoz = new MenuItem("Cheeroz");
+            MenuItem pofakNamaki = new MenuItem("Pofak Namaki");
+
+            menuButtonBrand.getItems().addAll(chakelz,cheetoz,pofakNamaki);
+        });
+
+        chewingGum.setOnAction(event -> {
+            menuButtonMinorKind.setText("chewing gum");
+
+            MenuItem action = new MenuItem("Action");
+            MenuItem biodent = new MenuItem("Biodent");
+            MenuItem trident = new MenuItem("Trident");
+
+            menuButtonBrand.getItems().addAll(action,biodent,trident);
+        });
+
+        menuButtonMinorKind.getItems().addAll(chocolate,biscuit,nuts,cake,chips,pofak,chewingGum);
+
     }
 
 
