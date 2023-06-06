@@ -132,7 +132,7 @@
                                  <children>
                                     <AnchorPane layoutX="50.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#buy" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/istockphoto-1354202406-170667a.jpg" />
                                              </image>
@@ -354,7 +354,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab fx:id="tabaccount" onSelectionChanged="#displayInfo" text="     Acount     ">
+      <Tab fx:id="CustomerTabAccount" onSelectionChanged="#displayInfo" text="     Acount     ">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #CC9EFF;">
                <children>
@@ -429,32 +429,32 @@
                   </Label>
                   <Label fx:id="txtPNaccount" layoutX="400.0" layoutY="200.0" text="....">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtEMaccount" layoutX="400.0" layoutY="410.0" text="....">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtPWaccount" layoutX="400.0" layoutY="340.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtUNaccount" layoutX="400.0" layoutY="270.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtFNaccount" layoutX="400.0" layoutY="60.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtLNaccount" layoutX="400.0" layoutY="130.0" text="....">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Separator layoutX="1150.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
@@ -534,7 +534,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <Hyperlink layoutX="1400.0" layoutY="25.0" text="Log Out">
+                  <Hyperlink fx:id="txtLogout" layoutX="1400.0" layoutY="25.0" onAction="#changetoLoginSceneCustomer" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>

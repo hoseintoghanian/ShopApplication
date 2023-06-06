@@ -205,7 +205,7 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <Label fx:id="txtRegister" layoutX="50.0" layoutY="660.0">
+      <Label fx:id="txtRegister" layoutX="50.0" layoutY="660.0" textFill="#f72909">
          <font>
             <Font size="32.0" />
          </font>

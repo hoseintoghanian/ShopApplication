@@ -541,6 +541,16 @@
             <Image url="@../img/110912-font-awesome.png" />
          </image>
       </ImageView>
+      <Label layoutX="1273.0" layoutY="430.0" text="admin" textAlignment="CENTER" textFill="#4a20b2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1273.0" layoutY="480.0" text="8851" textFill="#271bcc">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
    <effect>
       <InnerShadow />

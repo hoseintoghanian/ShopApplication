@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -33,6 +30,8 @@ public class ControllerRegister {
     private RadioButton buttonSeller, buttonCustomer;
     @FXML
     Button buttonRegister;
+    @FXML
+    private Hyperlink txtLogOut,txtLogout;
 
 
     public void changeScene(ActionEvent e, String fxml) throws IOException {
@@ -74,7 +73,6 @@ public class ControllerRegister {
         return sb.toString();
     }
 
-
     public void login(ActionEvent e) throws IOException {
 
         if (!txtLoginUsername.getText().equals("") && !txtLoginPass.getText().equals("")) {
@@ -92,10 +90,12 @@ public class ControllerRegister {
                 if (Application.shop.sellers.contains(seller)) {
                     seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
                     URL = "seller.fxml";
+                    Application.shop.currentSeller=seller;
                 }
                 if (Application.shop.customers.contains(customer)) {
                     customer = Application.shop.customers.get(Application.shop.customers.indexOf(customer));
                     URL = "customer.fxml";
+                    Application.shop.currentCustomer=customer;
                 }
             }
 

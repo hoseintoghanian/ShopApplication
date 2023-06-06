@@ -127,7 +127,7 @@
                                  <children>
                                     <AnchorPane layoutX="50.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#buy" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/download.png" />
                                              </image>
@@ -186,7 +186,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="     Acount     ">
+      <Tab onSelectionChanged="#displayInfo" text="     Acount     ">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #759BEC;">
                <children>
@@ -259,34 +259,34 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="400.0" layoutY="200.0" text="....">
+                  <Label fx:id="txtpnaccount" layoutX="400.0" layoutY="200.0" text="....">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="410.0" text="....">
+                  <Label fx:id="txtemaccount" layoutX="400.0" layoutY="410.0" text="....">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="340.0" text="...">
+                  <Label fx:id="txtpwaccount" layoutX="400.0" layoutY="340.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="270.0" text="...">
+                  <Label fx:id="txtunaccount" layoutX="400.0" layoutY="270.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="60.0" text="...">
+                  <Label fx:id="txtfnaccount" layoutX="400.0" layoutY="60.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="400.0" layoutY="130.0" text="....">
+                  <Label fx:id="txtlnaccount" layoutX="400.0" layoutY="130.0" text="....">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Separator layoutX="1150.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
@@ -305,7 +305,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="400.0" layoutY="610.0" text="...">
+                  <Label layoutX="400.0" layoutY="610.0" text="0 $">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -439,7 +439,7 @@
                         </InnerShadow>
                      </effect>
                   </TextArea>
-                  <Hyperlink layoutX="1400.0" layoutY="25.0" text="Log Out">
+                  <Hyperlink fx:id="txtLogOut" layoutX="1400.0" layoutY="25.0" onAction="#changetoLoginSceneSeller" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>
