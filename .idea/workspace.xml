@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="some changes in cotrollerPayment and controllerApplicant">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-    </list>
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="some methods in CotrollerApplicant" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +104,7 @@
       <workItem from="1685794809778" duration="183000" />
       <workItem from="1686045724673" duration="7859000" />
       <workItem from="1686054635810" duration="1435000" />
-      <workItem from="1686169540641" duration="1768000" />
+      <workItem from="1686169540641" duration="2041000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -241,7 +239,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686171130840</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="changes in cotrollerApplicant">
+      <created>1686171354224</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686171354224</updated>
+    </task>
+    <task id="LOCAL-00021" summary="displayInfo method in CotrollerApplicant">
+      <created>1686171475864</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1686171475864</updated>
+    </task>
+    <task id="LOCAL-00022" summary="some methods in CotrollerApplicant">
+      <created>1686171543345</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1686171543345</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +292,9 @@
     <MESSAGE value="controller applicant chooseKindProteinFoods method" />
     <MESSAGE value="controller applicant chooseKindDairy method" />
     <MESSAGE value="some changes in cotrollerPayment and controllerApplicant" />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes in cotrollerPayment and controllerApplicant" />
+    <MESSAGE value="changes in cotrollerApplicant" />
+    <MESSAGE value="displayInfo method in CotrollerApplicant" />
+    <MESSAGE value="some methods in CotrollerApplicant" />
+    <option name="LAST_COMMIT_MESSAGE" value="some methods in CotrollerApplicant" />
   </component>
 </project>
