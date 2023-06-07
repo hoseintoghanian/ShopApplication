@@ -4,9 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ControllerApplicant {
 
@@ -37,6 +40,22 @@ public class ControllerApplicant {
             txtpwaccount.setText(Application.shop.currentSeller.getPassword());
             txtemaccount.setText(Application.shop.currentSeller.getEmail());
         }
+    }
+
+    public void changingScene(ActionEvent e, String fxml) throws IOException {
+        fxmlLoader2 = new FXMLLoader(Application.class.getResource(fxml));
+        stage2 = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene2 = new Scene(fxmlLoader2.load());
+        stage2.setScene(scene2);
+        stage2.show();
+    }
+
+    public void changetoLoginSceneCustomer(ActionEvent e) throws IOException {
+        changingScene(e, "Login.fxml");
+    }
+
+    public void changetoLoginSceneSeller(ActionEvent e) throws IOException {
+        changingScene(e, "Login.fxml");
     }
 
     public void chooseKindGrocery() {
