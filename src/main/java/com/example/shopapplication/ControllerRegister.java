@@ -104,15 +104,15 @@ public class ControllerRegister {
                     Objects.equals(seller.getPassword(), txtLoginPass.getText()) ||
                     Objects.equals(customer.getPassword(), txtLoginPass.getText())
             ) {
-                if (txtCaptchaInput.getText().equals(captchaText)) {
+                //if (txtCaptchaInput.getText().equals(captchaText)) {
                     fxmlLoader = new FXMLLoader(Application.class.getResource(URL));
                     stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                     scene = new Scene(fxmlLoader.load());
                     stage.setScene(scene);
                     stage.show();
-                } else {
-                    txtCaptchaInput.clear();
-                }
+                //} else {
+                  //  txtCaptchaInput.clear();
+                //}
             }
         }
     }
