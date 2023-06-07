@@ -3,19 +3,24 @@ package com.example.shopapplication;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 public class ControllerApplicant {
 
+    private Stage stage2;
+    private Scene scene2;
+    private FXMLLoader fxmlLoader2;
     @FXML
-    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtWBaccount;
-    private Tab tabaccount;
+    private Label txtFNaccount,txtLNaccount,txtPNaccount,txtUNaccount,txtPWaccount,txtEMaccount,txtWBaccount;
+    @FXML
+    private Label txtfnaccount,txtlnaccount,txtpnaccount,txtunaccount,txtpwaccount,txtemaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
 
-    public void displayInfo() {
-        //Applicant applicant=
-    }
+
 
     public void chooseKindGrocery() {
         menuButtonKind.setText("grocery");
