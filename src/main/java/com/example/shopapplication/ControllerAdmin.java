@@ -21,5 +21,20 @@ public class ControllerAdmin {
     @FXML
     private TableColumn<ControllerAdmin,String> TCOpeningDate;
 
+    /*public void Initialize(){
 
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
+
+        tableView.getColumns().addAll(nameColumn, ageColumn);
+
+        ObservableList<ControllerAdmin> data = FXCollections.observableArrayList(
+                new MyDataModel("John", 30),
+                new MyDataModel("Jane", 25),
+                new MyDataModel("Bob", 40)
+        );
+
+        tableView.setItems(data);
+
+    }*/
 }
