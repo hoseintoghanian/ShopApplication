@@ -20,7 +20,24 @@ public class ControllerApplicant {
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
 
-
+    public void displayInfo(){
+        if (Application.shop.customers.contains(Application.shop.currentCustomer)){
+            txtFNaccount.setText(Application.shop.currentCustomer.getFirstname());
+            txtLNaccount.setText(Application.shop.currentCustomer.getLastname());
+            txtPNaccount.setText(Application.shop.currentCustomer.getPhoneNumber());
+            txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
+            txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
+            txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
+        }
+        else if(Application.shop.sellers.contains(Application.shop.currentSeller)){
+            txtfnaccount.setText(Application.shop.currentSeller.getFirstname());
+            txtlnaccount.setText(Application.shop.currentSeller.getLastname());
+            txtpnaccount.setText(Application.shop.currentSeller.getPhoneNumber());
+            txtunaccount.setText(Application.shop.currentSeller.getUsername());
+            txtpwaccount.setText(Application.shop.currentSeller.getPassword());
+            txtemaccount.setText(Application.shop.currentSeller.getEmail());
+        }
+    }
 
     public void chooseKindGrocery() {
         menuButtonKind.setText("grocery");
