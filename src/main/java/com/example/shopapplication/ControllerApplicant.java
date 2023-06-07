@@ -10,25 +10,12 @@ public class ControllerApplicant {
     @FXML
     private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtWBaccount;
     private Tab tabaccount;
-
-    public void changeScene(ActionEvent e, String fxml) {
-
-    }
-
-    public void customerAccountTab(ActionEvent e) {
-
-    }
-
-    public void sellerAccountTab(ActionEvent e) {
-
-    }
+    @FXML
+    MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
 
     public void displayInfo() {
         //Applicant applicant=
     }
-
-    @FXML
-    MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
 
     public void chooseKindGrocery() {
         menuButtonKind.setText("grocery");
