@@ -57,5 +57,22 @@ public class ControllerAdmin {
         changingScene(e, "Login.fxml");
     }
 
+    public void Initialize(){
 
+        TCBankName.setCellValueFactory(new PropertyValueFactory<>("BankName"));
+        TCBranch.setCellValueFactory(new PropertyValueFactory<>("Branch"));
+        TCAccountNumber.setCellValueFactory(new PropertyValueFactory<>("AccountNumber"));
+        TCAccountType.setCellValueFactory(new PropertyValueFactory<>("AccountType"));
+        TCBalance.setCellValueFactory(new PropertyValueFactory<>("Balance"));
+        TCOpeningDate.setCellValueFactory(new PropertyValueFactory<>("openingDate"));
+
+        TVBankAccountsList.getColumns().addAll(TCBankName, TCBranch,TCAccountNumber,TCAccountType,TCBalance,TCOpeningDate);
+
+        ObservableList<ControllerAdmin> BAList = FXCollections.observableArrayList(
+                new ControllerAdmin("Melli", "longtime","4000000","6/8/2023",1155,568874)
+        );
+
+        TVBankAccountsList.setItems(BAList);
+
+    }
 }
