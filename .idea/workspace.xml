@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="CotrollerPayment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="changes in admin.fxml and ControllerRegister">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +107,7 @@
       <workItem from="1686045724673" duration="7859000" />
       <workItem from="1686054635810" duration="1435000" />
       <workItem from="1686169540641" duration="2431000" />
-      <workItem from="1686219444335" duration="1653000" />
+      <workItem from="1686219444335" duration="1956000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -280,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686171867650</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="changes in admin.fxml and ControllerRegister">
+      <created>1686221172182</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1686221172182</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +321,7 @@
     <MESSAGE value="some methods in CotrollerApplicant" />
     <MESSAGE value="define properties in CotrollerAdmin" />
     <MESSAGE value="Initialize method in CotrollerAdmin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialize method in CotrollerAdmin" />
+    <MESSAGE value="changes in admin.fxml and ControllerRegister" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in admin.fxml and ControllerRegister" />
   </component>
 </project>
