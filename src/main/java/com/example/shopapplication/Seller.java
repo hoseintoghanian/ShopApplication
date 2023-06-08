@@ -1,10 +1,13 @@
 package com.example.shopapplication;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Seller extends Applicant {
 
     public String workplace;
+
+    public ArrayList<Item> items = new ArrayList<>();
 
     public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace) {
         super(firstname, lastname, phoneNumber, username, password, email);
