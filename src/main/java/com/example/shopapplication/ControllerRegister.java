@@ -111,7 +111,7 @@ public class ControllerRegister {
                     stage.setScene(scene);
                     stage.show();
                 //} else {
-                  //  txtCaptchaInput.clear();
+                    //txtCaptchaInput.clear();
                 //}
             }
         }

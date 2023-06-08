@@ -30,18 +30,18 @@
    <children>
       <TabPane prefHeight="750.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Bank Account">
+          <Tab fx:id="TBankAccount" onSelectionChanged="#Initialize" text="Bank Account">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0">
+                        <TableView fx:id="TVBankAccountsList" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0">
                            <columns>
-                              <TableColumn prefWidth="150.0" text="Bank Name" />
-                              <TableColumn prefWidth="150.0" text="Branch" />
-                              <TableColumn prefWidth="200.0" text="Account Number" />
-                              <TableColumn prefWidth="100.0" text="Account Type" />
-                              <TableColumn prefWidth="200.0" text="Balance" />
-                              <TableColumn prefWidth="200.0" text="Opening Date" />
+                              <TableColumn fx:id="TCBankName" prefWidth="150.0" text="Bank Name" />
+                              <TableColumn fx:id="TCBranch" prefWidth="150.0" text="Branch" />
+                              <TableColumn fx:id="TCAccountNumber" prefWidth="200.0" text="Account Number" />
+                              <TableColumn fx:id="TCAccountType" prefWidth="100.0" text="Account Type" />
+                              <TableColumn fx:id="TCBalance" prefWidth="200.0" text="Balance" />
+                              <TableColumn fx:id="TCOpeningDate" prefWidth="200.0" text="Opening Date" />
                            </columns>
                            <effect>
                               <InnerShadow />
@@ -519,7 +519,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="1425.0" layoutY="7.0" text="Log out">
+      <Hyperlink layoutX="1425.0" layoutY="7.0" onAction="#changetoLoginSceneAdmin" text="Log out">
          <font>
             <Font size="15.0" />
          </font>
