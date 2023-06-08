@@ -186,7 +186,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab onSelectionChanged="#displayInfo" text="     Acount     ">
+      <Tab text="     Acount     ">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #759BEC;">
                <children>
@@ -259,34 +259,34 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtpnaccount" layoutX="400.0" layoutY="200.0" text="....">
+                  <Label fx:id="txtpnaccount" layoutX="400.0" layoutY="200.0" text="...">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtemaccount" layoutX="400.0" layoutY="410.0" text="....">
+                  <Label fx:id="txtemaccount" layoutX="400.0" layoutY="410.0" text="...">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtpwaccount" layoutX="400.0" layoutY="340.0" text="...">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtunaccount" layoutX="400.0" layoutY="270.0" text="...">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtfnaccount" layoutX="400.0" layoutY="60.0" text="...">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtlnaccount" layoutX="400.0" layoutY="130.0" text="....">
+                  <Label fx:id="txtlnaccount" layoutX="400.0" layoutY="130.0" text="...">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
                   <Separator layoutX="1150.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
@@ -305,7 +305,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="400.0" layoutY="610.0" text="0 $">
+                  <Label layoutX="400.0" layoutY="610.0" text="...">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -332,7 +332,7 @@
                      </effect></Separator>
                   <AnchorPane layoutX="700.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0">
                      <children>
-                        <TextField layoutX="15.0" layoutY="150.0" promptText="Price">
+                        <TextField fx:id="txtProductName" layoutX="15.0" layoutY="135.0" promptText="name">
                            <effect>
                               <DropShadow>
                                  <input>
@@ -340,7 +340,7 @@
                                  </input>
                               </DropShadow>
                            </effect></TextField>
-                        <TextField layoutX="15.0" layoutY="195.0" promptText="Size">
+                        <TextField fx:id="txtProductPrice" layoutX="15.0" layoutY="175.0" promptText="price">
                            <effect>
                               <DropShadow>
                                  <input>
@@ -353,7 +353,7 @@
                               <Image url="@../img/shop.png" />
                            </image>
                         </ImageView>
-                        <TextField layoutX="15.0" layoutY="240.0" promptText="Image URL">
+                        <TextField fx:id="txtProductSize" layoutX="15.0" layoutY="215.0" promptText="size">
                            <effect>
                               <DropShadow>
                                  <input>
@@ -361,7 +361,7 @@
                                  </input>
                               </DropShadow>
                            </effect></TextField>
-                        <Button layoutX="210.0" layoutY="240.0" mnemonicParsing="false" text="   add   ">
+                        <Button layoutX="210.0" layoutY="240.0" mnemonicParsing="false" onAction="#addProduct" text="   add   ">
                            <effect>
                               <DropShadow>
                                  <input>
@@ -369,10 +369,14 @@
                                  </input>
                               </DropShadow>
                            </effect></Button>
-                        <MenuButton layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefWidth="150.0" text="Kind i.e(grocery)">
+                        <MenuButton fx:id="menuButtonKind" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefWidth="150.0" text="Kind">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                            <MenuItem mnemonicParsing="false" onAction="#chooseKindGrocery" text="grocery" />
+                            <MenuItem mnemonicParsing="false" onAction="#chooseKindBreakfast" text="breakfast" />
+                              <MenuItem mnemonicParsing="false" onAction="#chooseKindProtein" text="protein" />
+                              <MenuItem mnemonicParsing="false" onAction="#chooseKindDairy" text="dairy" />
+                              <MenuItem mnemonicParsing="false" onAction="#chooseKindDrinks" text="drinks" />
+                              <MenuItem mnemonicParsing="false" onAction="#chooseKindSnacks" text="snacks" />
                           </items>
                            <effect>
                               <DropShadow>
@@ -382,24 +386,7 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <MenuButton layoutX="15.0" layoutY="60.0" mnemonicParsing="false" prefWidth="150.0" text="minor Kind i.e(makaroni)">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Action 1" />
-                              <MenuItem mnemonicParsing="false" text="Action 2" />
-                           </items>
-                           <effect>
-                              <DropShadow>
-                                 <input>
-                                    <InnerShadow />
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </MenuButton>
-                        <MenuButton layoutX="15.0" layoutY="105.0" mnemonicParsing="false" prefWidth="150.0" text="Brand">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Action 1" />
-                              <MenuItem mnemonicParsing="false" text="Action 2" />
-                           </items>
+                        <MenuButton fx:id="menuButtonMinorKind" layoutX="15.0" layoutY="55.0" mnemonicParsing="false" prefWidth="150.0" text="Minor Kind">
                            <effect>
                               <DropShadow>
                                  <input>
@@ -417,6 +404,24 @@
                               </DropShadow>
                            </effect>
                         </Button>
+                        <MenuButton fx:id="menuButtonBrand" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" prefWidth="150.0" text="Brand">
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </MenuButton>
+                        <TextField fx:id="txtProductNameImageURL" layoutX="15.0" layoutY="255.0" promptText="Image URL">
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
                      </children>
                   </AnchorPane>
                   <Separator layoutX="700.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
@@ -439,7 +444,7 @@
                         </InnerShadow>
                      </effect>
                   </TextArea>
-                  <Hyperlink fx:id="txtLogOut" layoutX="1400.0" layoutY="25.0" onAction="#changetoLoginSceneSeller" text="Log Out">
+                  <Hyperlink layoutX="1400.0" layoutY="25.0" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>

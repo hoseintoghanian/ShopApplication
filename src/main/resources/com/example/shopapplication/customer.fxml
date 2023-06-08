@@ -427,12 +427,12 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtPNaccount" layoutX="400.0" layoutY="200.0" text="....">
+                  <Label fx:id="txtPNaccount" layoutX="400.0" layoutY="200.0" text="...">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtEMaccount" layoutX="400.0" layoutY="410.0" text="....">
+                  <Label fx:id="txtEMaccount" layoutX="400.0" layoutY="410.0" text="...">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -452,7 +452,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtLNaccount" layoutX="400.0" layoutY="130.0" text="....">
+                  <Label fx:id="txtLNaccount" layoutX="400.0" layoutY="130.0" text="...">
                      <font>
                         <Font size="24.0" />
                      </font>
