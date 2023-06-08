@@ -36,7 +36,15 @@ public class ControllerAdmin {
     private Scene scene;
     private FXMLLoader fxmlLoader;
 
+    public ControllerAdmin(String bankName,String accountType,String balance,String openingDate,Integer branch,Integer accountNumber){
 
+        this.BankName=bankName;
+        this.AccountType=accountType;
+        this.Balance=balance;
+        this.OpeningDate=openingDate;
+        this.Branch=branch;
+        this.AccountNumber=accountNumber;
+    }
     public void changingScene(ActionEvent e, String fxml) throws IOException {
         fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
