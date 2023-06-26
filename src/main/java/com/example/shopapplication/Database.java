@@ -68,10 +68,10 @@ public class Database {
     }
 
 
-    public static void readCustomer(String table) throws SQLException {
+    public static void readCustomer() throws SQLException {
 
         Statement statement = getDBC().createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + table);
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
 
         while (resultSet.next()) {
             Application.shop.customers.add(new Customer(
@@ -89,10 +89,10 @@ public class Database {
         getDBC().close();
     }
 
-    public static void readSeller(String table) throws SQLException {
+    public static void readSeller() throws SQLException {
 
         Statement statement = getDBC().createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + table);
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM seller");
 
         while (resultSet.next()) {
             Application.shop.sellers.add(new Seller(
@@ -108,6 +108,27 @@ public class Database {
 
         statement.close();
         resultSet.close();
+        getDBC().close();
+    }
+
+
+    public static void addProduct(Item item) throws SQLException {
+        String sql = "INSERT INTO " + "items_" + Application.shop.currentSeller.getUsername() +
+                "(kind, minorKind, brand, productName, price, size, imageURL)VALUES( ?, ?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setString(1, item.kind);
+        statement.setString(2, item.minorKind);
+        statement.setString(3, item.brand);
+        statement.setString(4, item.name);
+        statement.setLong(5, item.price);
+        statement.setInt(6, item.size);
+        statement.setString(7, item.imageURL);
+
+        statement.executeUpdate();
+
+        statement.close();
         getDBC().close();
     }
 

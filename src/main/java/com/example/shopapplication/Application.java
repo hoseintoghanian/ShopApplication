@@ -14,8 +14,8 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
 
-        Database.readSeller("seller");
-        Database.readCustomer("customer");
+        Database.readSeller();
+        Database.readCustomer();
 
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
