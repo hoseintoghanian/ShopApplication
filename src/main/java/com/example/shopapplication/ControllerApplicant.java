@@ -1,7 +1,6 @@
 package com.example.shopapplication;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ControllerApplicant {
 
@@ -24,20 +24,20 @@ public class ControllerApplicant {
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
 
     public void displayInfo() {
-        if(Application.shop.sellers.contains(Application.shop.currentSeller)) {
-            txtfnaccount.setText(Application.shop.currentSeller.getFirstname());
-            txtlnaccount.setText(Application.shop.currentSeller.getLastname());
-            txtpnaccount.setText(Application.shop.currentSeller.getPhoneNumber());
-            txtunaccount.setText(Application.shop.currentSeller.getUsername());
-            txtpwaccount.setText(Application.shop.currentSeller.getPassword());
-            txtemaccount.setText(Application.shop.currentSeller.getEmail());
-        }else if (Application.shop.customers.contains(Application.shop.currentCustomer)) {
+        if (Application.shop.customers.contains(Application.shop.currentCustomer)) {
             txtFNaccount.setText(Application.shop.currentCustomer.getFirstname());
             txtLNaccount.setText(Application.shop.currentCustomer.getLastname());
             txtPNaccount.setText(Application.shop.currentCustomer.getPhoneNumber());
             txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
             txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
             txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
+        } else if (Application.shop.sellers.contains(Application.shop.currentSeller)) {
+            txtfnaccount.setText(Application.shop.currentSeller.getFirstname());
+            txtlnaccount.setText(Application.shop.currentSeller.getLastname());
+            txtpnaccount.setText(Application.shop.currentSeller.getPhoneNumber());
+            txtunaccount.setText(Application.shop.currentSeller.getUsername());
+            txtpwaccount.setText(Application.shop.currentSeller.getPassword());
+            txtemaccount.setText(Application.shop.currentSeller.getEmail());
         }
     }
 
@@ -49,16 +49,20 @@ public class ControllerApplicant {
         stage2.show();
     }
 
-    public void changetoLoginSceneCustomer(ActionEvent e) throws IOException {
+    public void changeToLoginSceneCustomer(ActionEvent e) throws IOException {
         changingScene(e, "Login.fxml");
     }
 
-    public void changetoLoginSceneSeller(ActionEvent e) throws IOException {
+    public void changeToLoginSceneSeller(ActionEvent e) throws IOException {
         changingScene(e, "Login.fxml");
     }
 
     public void chooseKindGrocery() {
+
         menuButtonKind.setText("grocery");
+        menuButtonMinorKind.getItems().clear();
+        addtxt.setText("");
+
 
         MenuItem bread = new MenuItem("bread");
         MenuItem rice = new MenuItem("rice");
@@ -78,6 +82,10 @@ public class ControllerApplicant {
 
             MenuItem mazrae = new MenuItem("Mazrae");
 
+            mazrae.setOnAction(ev -> {
+                menuButtonBrand.setText("mazrae");
+            });
+
             menuButtonBrand.getItems().add(mazrae);
         });
         rice.setOnAction(event -> {
@@ -86,6 +94,16 @@ public class ControllerApplicant {
             MenuItem behrooz = new MenuItem("Behrooz");
             MenuItem golestan = new MenuItem("Golestan");
             MenuItem tabiat = new MenuItem("Tabiat");
+
+            behrooz.setOnAction(ev -> {
+                menuButtonBrand.setText("behrooz");
+            });
+            golestan.setOnAction(ev -> {
+                menuButtonBrand.setText("golestan");
+            });
+            tabiat.setOnAction(ev -> {
+                menuButtonBrand.setText("tabiat");
+            });
 
             menuButtonBrand.getItems().addAll(behrooz, golestan, tabiat);
         });
@@ -184,8 +202,10 @@ public class ControllerApplicant {
     }
 
     public void chooseKindBreakfast() {
-
         menuButtonKind.setText("break fast");
+        menuButtonMinorKind.getItems().clear();
+        addtxt.setText("");
+
 
         MenuItem jam = new MenuItem("jam");
         MenuItem honey = new MenuItem("honey");
@@ -223,8 +243,10 @@ public class ControllerApplicant {
     }
 
     public void chooseKindProtein() {
-
         menuButtonKind.setText("protein foods");
+        menuButtonMinorKind.getItems().clear();
+        addtxt.setText("");
+
 
         MenuItem bologna = new MenuItem("bologna");
         MenuItem lambMeet = new MenuItem("lamb meet");
@@ -303,8 +325,10 @@ public class ControllerApplicant {
     }
 
     public void chooseKindDairy() {
-
         menuButtonKind.setText("dairy");
+        menuButtonMinorKind.getItems().clear();
+        addtxt.setText("");
+
 
         MenuItem milk = new MenuItem("milk");
         MenuItem yogurt = new MenuItem("yogurt");
@@ -355,9 +379,10 @@ public class ControllerApplicant {
     }
 
     public void chooseKindDrinks() {
-
-
         menuButtonKind.setText("drinks");
+        menuButtonMinorKind.getItems().clear();
+        addtxt.setText("");
+
 
         MenuItem tea = new MenuItem("tea");
         MenuItem herbalTea = new MenuItem("herbal tea");
@@ -441,8 +466,10 @@ public class ControllerApplicant {
     }
 
     public void chooseKindSnacks() {
-
         menuButtonKind.setText("snacks");
+        menuButtonMinorKind.getItems().clear();
+        addtxt.setText("");
+
 
         MenuItem chocolate = new MenuItem("chocolate");
         MenuItem biscuit = new MenuItem("biscuit");
@@ -529,21 +556,32 @@ public class ControllerApplicant {
 
     @FXML
     private TextField txtProductName, txtProductPrice, txtProductSize, txtProductNameImageURL;
+    @FXML
+    private Label addtxt;
 
-    public void addProduct() {
-        // if (!menuButtonKind.getText().equals("Kind") && !menuButtonMinorKind.getText().equals("Minor Kind") && !menuButtonBrand.getText().equals("Brand"))
-        if (!txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("") && !txtProductNameImageURL.getText().equals("")) {
-            Application.shop.currentSeller.items.add(
-                    new Item(
-                            menuButtonKind.getText(),
-                            menuButtonMinorKind.getText(),
-                            menuButtonBrand.getText(),
-                            txtProductName.getText(),
-                            Integer.parseInt(txtProductPrice.getText()),
-                            Integer.parseInt(txtProductSize.getText()),
-                            txtProductNameImageURL.getText())
-            );
-        }
+    public void addProduct() throws SQLException {
+        if (!menuButtonKind.getText().equals("Kind") && !menuButtonMinorKind.getText().equals("Minor Kind") && !menuButtonBrand.getText().equals("Brand"))
+            if (!txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("") && !txtProductNameImageURL.getText().equals("")) {
+                Item item = new Item(
+                        menuButtonKind.getText(),
+                        menuButtonMinorKind.getText(),
+                        menuButtonBrand.getText(),
+                        txtProductName.getText(),
+                        Integer.parseInt(txtProductPrice.getText()),
+                        Integer.parseInt(txtProductSize.getText()),
+                        txtProductNameImageURL.getText()
+                );
+
+                if (!Application.shop.currentSeller.items.contains(item)) {
+                    Application.shop.currentSeller.items.add(item);
+                    Database.addProduct(item);
+
+                    addtxt.setText("add successfully");
+                } else {
+                    addtxt.setText("product is valid");
+                }
+
+            }
     }
 
 

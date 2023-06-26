@@ -10,12 +10,13 @@ import java.sql.SQLException;
 public class Application extends javafx.application.Application {
     public static Shop shop = Shop.getInstance();
 
-
     @Override
     public void start(Stage stage) throws IOException, SQLException {
 
         Database.readSeller();
         Database.readCustomer();
+        Database.readItemTables();
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
