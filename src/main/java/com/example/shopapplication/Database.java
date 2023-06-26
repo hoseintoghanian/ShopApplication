@@ -20,25 +20,6 @@ public class Database {
     }
 
 
-    public static void writeSeller(Seller seller) throws SQLException {
-        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-        PreparedStatement statement = getDBC().prepareStatement(sql);
-
-        statement.setString(1, seller.getFirstname());
-        statement.setString(2, seller.getLastname());
-        statement.setString(3, seller.getPhoneNumber());
-        statement.setString(4, seller.getUsername());
-        statement.setString(5, seller.getPassword());
-        statement.setString(6, seller.getEmail());
-        statement.setString(7, seller.workplace);
-
-        statement.executeUpdate();
-
-        statement.close();
-        getDBC().close();
-    }
-
     public static void writeCustomer(Customer customer) throws SQLException {
         String sql = "INSERT INTO customer (firstname, lastname, phoneNumber, username, pass, email) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -57,6 +38,56 @@ public class Database {
         getDBC().close();
     }
 
+    public static void writeSeller(Seller seller) throws SQLException {
+        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setString(1, seller.getFirstname());
+        statement.setString(2, seller.getLastname());
+        statement.setString(3, seller.getPhoneNumber());
+        statement.setString(4, seller.getUsername());
+        statement.setString(5, seller.getPassword());
+        statement.setString(6, seller.getEmail());
+        statement.setString(7, seller.workplace);
+
+        statement.executeUpdate();
+
+        createItemTable(seller.getUsername());
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void createItemTable(String username) throws SQLException {
+        String sql = "create table " + "items_" + username +
+                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int,size int, imageURL varchar(200));";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+    }
+
+
+    public static void readCustomer(String table) throws SQLException {
+
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + table);
+
+        while (resultSet.next()) {
+            Application.shop.customers.add(new Customer(
+                    resultSet.getString("firstname"),
+                    resultSet.getString("lastname"),
+                    resultSet.getString("phoneNumber"),
+                    resultSet.getString("username"),
+                    resultSet.getString("pass"),
+                    resultSet.getString("email")
+            ));
+        }
+
+        statement.close();
+        resultSet.close();
+        getDBC().close();
+    }
 
     public static void readSeller(String table) throws SQLException {
 
@@ -81,24 +112,4 @@ public class Database {
     }
 
 
-    public static void readCustomer(String table) throws SQLException {
-
-        Statement statement = getDBC().createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + table);
-
-        while (resultSet.next()) {
-            Application.shop.customers.add(new Customer(
-                    resultSet.getString("firstname"),
-                    resultSet.getString("lastname"),
-                    resultSet.getString("phoneNumber"),
-                    resultSet.getString("username"),
-                    resultSet.getString("pass"),
-                    resultSet.getString("email")
-            ));
-        }
-
-        statement.close();
-        resultSet.close();
-        getDBC().close();
-    }
 }
