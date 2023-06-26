@@ -23,28 +23,20 @@ public class ControllerAdmin {
     @FXML
     private TableColumn<ControllerAdmin, Integer> TCBranch;
     @FXML
-    private TableColumn<ControllerAdmin,Integer> TCAccountNumber;
+    private TableColumn<ControllerAdmin, Integer> TCAccountNumber;
     @FXML
-    private TableColumn<ControllerAdmin,String> TCAccountType;
+    private TableColumn<ControllerAdmin, String> TCAccountType;
     @FXML
-    private TableColumn<ControllerAdmin,String> TCBalance;
+    private TableColumn<ControllerAdmin, String> TCBalance;
     @FXML
-    private TableColumn<ControllerAdmin,String> TCOpeningDate;
-    private String BankName,AccountType,Balance,OpeningDate;
-    private Integer Branch,AccountNumber;
+    private TableColumn<ControllerAdmin, String> TCOpeningDate;
+    private String BankName, AccountType, Balance, OpeningDate;
+    private Integer Branch, AccountNumber;
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
 
-    public ControllerAdmin(String bankName,String accountType,String balance,String openingDate,Integer branch,Integer accountNumber){
 
-        this.BankName=bankName;
-        this.AccountType=accountType;
-        this.Balance=balance;
-        this.OpeningDate=openingDate;
-        this.Branch=branch;
-        this.AccountNumber=accountNumber;
-    }
     public void changingScene(ActionEvent e, String fxml) throws IOException {
         fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -53,11 +45,11 @@ public class ControllerAdmin {
         stage.show();
     }
 
-    public void changetoLoginSceneAdmin(ActionEvent e) throws IOException {
+    public void changeToLoginSceneAdmin(ActionEvent e) throws IOException {
         changingScene(e, "Login.fxml");
     }
 
-    public void Initialize(){
+    public void Initialize() {
 
         TCBankName.setCellValueFactory(new PropertyValueFactory<>("BankName"));
         TCBranch.setCellValueFactory(new PropertyValueFactory<>("Branch"));
@@ -66,13 +58,13 @@ public class ControllerAdmin {
         TCBalance.setCellValueFactory(new PropertyValueFactory<>("Balance"));
         TCOpeningDate.setCellValueFactory(new PropertyValueFactory<>("openingDate"));
 
-        TVBankAccountsList.getColumns().addAll(TCBankName, TCBranch,TCAccountNumber,TCAccountType,TCBalance,TCOpeningDate);
+        TVBankAccountsList.getColumns().addAll(TCBankName, TCBranch, TCAccountNumber, TCAccountType, TCBalance, TCOpeningDate);
 
-        ObservableList<ControllerAdmin> BAList = FXCollections.observableArrayList(
-                new ControllerAdmin("Melli", "longtime","4000000","6/8/2023",1155,568874)
-        );
+      /*  ObservableList<ControllerAdmin> BAList = FXCollections.observableArrayList(
+                new ControllerAdmin("Melli", "longtime", "4000000", "6/8/2023", 1155, 568874)
+        );*/
 
-        TVBankAccountsList.setItems(BAList);
+        // TVBankAccountsList.setItems(BAList);
 
     }
 }

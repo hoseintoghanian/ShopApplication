@@ -30,7 +30,7 @@
    <children>
       <TabPane prefHeight="750.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab fx:id="TBankAccount" onSelectionChanged="#Initialize" text="Bank Account">
+          <Tab fx:id="TBankAccount" text="Bank Account">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -519,7 +519,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="1425.0" layoutY="7.0" onAction="#changetoLoginSceneAdmin" text="Log out">
+      <Hyperlink layoutX="1425.0" layoutY="7.0" onAction="#changeToLoginSceneAdmin" text="Log out">
          <font>
             <Font size="15.0" />
          </font>

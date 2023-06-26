@@ -1,0 +1,48 @@
+for comment a line in mysql use "--" instead "//"
+
+TRUNCATE TABLE applicant;  --> clear table command
+
+show indexes from tableName
+
+alter table applicant add column age int --> add column
+alter table applicant add column age int after username --> column age will be after username column
+
+select * from tableName --> show all rows and columns
+
+select column1,column2 from tableName --> select column1 and column2
+
+select * from applicant where firstname = "ali" --> give the datas that their firstnames are "ali";
+
+select * from applicant where age >= 18 --> give the datas that their ages are >= 18;
+
+select * from applicant where firstname is null --> give the datas that their fisrtnames don't have values
+
+select * from applicant where firstname is not null -->
+
+//you can use the column names instead of (*) like line 2 of this txt
+
+update tableName set columnName = some value where ...
+update applicant set firstname = "hossein" where username = 4011  --> change data which its firstname = "hossein" , you can use other variables instead of username
+update applicant set firstname = "hossein" where username = 4011 and lasrname = "ajezi" --> and   
+update applicant set firstname = "hossein" where username = 4011 or lasrname = "ajezi" --> or
+update applicant set firstname = "hossein" where not username = 4011 --> not
+update applicant set firstname = "hossein" where age berween 18 and 30 --> between 
+it can develop like : update firstname = "hossein",age = null,password = "55811",... where ...
+if you want to set the all of one column to an specific amount ,you can use the above code and don't use where
+
+
+delete from tableName --> delete all the rows of table
+delete from applicant where username = "4011" --> delete the row of applicant which its username is 4011
+
+for current date and current time --> see sql toturial at time 0:40:00 & 1:00:00
+for combine two or more tables together --> 1:44:25
+indexes --> 2:06:00
+stored procedure --> 2:34:00 create a method for call lines of code genrally for create sql methods
+
+useful methods from database i.e sum,count,... (maybe it have sort method base of date & what ever you need i.e sort base on cheapest , score etc)
+
+select * from applicant order by age --> sort base on age from small to big
+select * from applicant order by age desc --> sort base on age from big to small
+in above code age can be other columns like firstname or hireDate or ...
+select * from applicant order by age ,username,... -->
+
