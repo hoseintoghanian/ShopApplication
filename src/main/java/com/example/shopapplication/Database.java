@@ -19,7 +19,6 @@ public class Database {
         return connection;
     }
 
-
     public static void writeCustomer(Customer customer) throws SQLException {
         String sql = "INSERT INTO customer (firstname, lastname, phoneNumber, username, pass, email) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -67,7 +66,6 @@ public class Database {
         statement.executeUpdate();
     }
 
-
     public static void readCustomer() throws SQLException {
 
         Statement statement = getDBC().createStatement();
@@ -111,7 +109,6 @@ public class Database {
         getDBC().close();
     }
 
-
     public static void addProduct(Item item) throws SQLException {
         String sql = "INSERT INTO " + "items_" + Application.shop.currentSeller.getUsername() +
                 "(kind, minorKind, brand, productName, price, size, imageURL)VALUES( ?, ?, ?, ?, ?, ?, ?)";
@@ -132,5 +129,28 @@ public class Database {
         getDBC().close();
     }
 
+    public static void readItemTables() throws SQLException {
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = null;
 
+        for (int i = 0; i < Application.shop.sellers.size(); i++) {
+            resultSet = statement.executeQuery("SELECT * FROM items_" + Application.shop.sellers.get(i).getUsername());
+
+            while (resultSet.next()) {
+                Application.shop.sellers.get(i).items.add(new Item(
+                        resultSet.getString("kind"),
+                        resultSet.getString("minorKind"),
+                        resultSet.getString("brand"),
+                        resultSet.getString("productName"),
+                        resultSet.getInt("price"),
+                        resultSet.getInt("size"),
+                        resultSet.getString("imageURL")
+                ));
+            }
+        }
+
+        statement.close();
+        resultSet.close();
+        getDBC().close();
+    }
 }

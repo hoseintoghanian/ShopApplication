@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="class Item --&gt; toString &amp; equals method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="addProduct method in Database class">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +114,7 @@
       <workItem from="1686169540641" duration="2431000" />
       <workItem from="1686219444335" duration="2129000" />
       <workItem from="1687790213701" duration="2176000" />
-      <workItem from="1687809881996" duration="2173000" />
+      <workItem from="1687809881996" duration="2479000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -327,7 +326,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687811115113</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="create an items table for each seller">
+      <created>1687812110956</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1687812110956</updated>
+    </task>
+    <task id="LOCAL-00032" summary="addProduct method in Database class">
+      <created>1687812296929</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1687812296929</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +381,9 @@
     <MESSAGE value="changes in controllerAdmin" />
     <MESSAGE value="fixing admin fxml &amp; controllerAdmin class &amp; sql commands" />
     <MESSAGE value="class Item --&gt; toString &amp; equals method" />
-    <option name="LAST_COMMIT_MESSAGE" value="class Item --&gt; toString &amp; equals method" />
+    <MESSAGE value="create an items table for each seller" />
+    <MESSAGE value="addProduct method in Database class" />
+    <option name="LAST_COMMIT_MESSAGE" value="addProduct method in Database class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
