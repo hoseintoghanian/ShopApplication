@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="changes in controllerAdmin">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="fixing admin fxml &amp; controllerAdmin class &amp; sql commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
       <workItem from="1686169540641" duration="2431000" />
       <workItem from="1686219444335" duration="2129000" />
       <workItem from="1687790213701" duration="2176000" />
-      <workItem from="1687809881996" duration="407000" />
+      <workItem from="1687809881996" duration="1093000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -312,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686221557917</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fixing admin fxml &amp; controllerAdmin class &amp; sql commands">
+      <created>1687810662394</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1687810662394</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +359,8 @@
     <MESSAGE value="Initialize method in CotrollerAdmin" />
     <MESSAGE value="changes in admin.fxml and ControllerRegister" />
     <MESSAGE value="changes in controllerAdmin" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes in controllerAdmin" />
+    <MESSAGE value="fixing admin fxml &amp; controllerAdmin class &amp; sql commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing admin fxml &amp; controllerAdmin class &amp; sql commands" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

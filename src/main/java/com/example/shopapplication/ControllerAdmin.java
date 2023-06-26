@@ -60,7 +60,7 @@ public class ControllerAdmin {
 
         TVBankAccountsList.getColumns().addAll(TCBankName, TCBranch, TCAccountNumber, TCAccountType, TCBalance, TCOpeningDate);
 
-      /*  ObservableList<ControllerAdmin> BAList = FXCollections.observableArrayList(
+        /* ObservableList<ControllerAdmin> BAList = FXCollections.observableArrayList(
                 new ControllerAdmin("Melli", "longtime", "4000000", "6/8/2023", 1155, 568874)
         );*/
 
