@@ -534,7 +534,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <Hyperlink fx:id="txtLogout" layoutX="1400.0" layoutY="25.0" onAction="#changetoLoginSceneCustomer" text="Log Out">
+                  <Hyperlink fx:id="txtLogout" layoutX="1400.0" layoutY="25.0" onAction="#changeToLoginSceneCustomer" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>

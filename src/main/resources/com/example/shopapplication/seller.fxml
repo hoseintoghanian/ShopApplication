@@ -361,7 +361,7 @@
                                  </input>
                               </DropShadow>
                            </effect></TextField>
-                        <Button layoutX="210.0" layoutY="240.0" mnemonicParsing="false" onAction="#addProduct" text="   add   ">
+                        <Button layoutX="257.0" layoutY="255.0" mnemonicParsing="false" onAction="#addProduct" text="   add   ">
                            <effect>
                               <DropShadow>
                                  <input>
@@ -395,15 +395,6 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <Button layoutX="295.0" layoutY="240.0" mnemonicParsing="false" text="auction">
-                           <effect>
-                              <DropShadow>
-                                 <input>
-                                    <InnerShadow />
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </Button>
                         <MenuButton fx:id="menuButtonBrand" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" prefWidth="150.0" text="Brand">
                            <effect>
                               <DropShadow>
@@ -422,6 +413,11 @@
                               </DropShadow>
                            </effect>
                         </TextField>
+                        <Label fx:id="addtxt" layoutX="222.0" layoutY="214.0" text=" ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                   <Separator layoutX="700.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
@@ -444,7 +440,7 @@
                         </InnerShadow>
                      </effect>
                   </TextArea>
-                  <Hyperlink layoutX="1400.0" layoutY="25.0" onAction="#changetoLoginSceneSeller" text="Log Out">
+                  <Hyperlink layoutX="1400.0" layoutY="25.0" onAction="#changeToLoginSceneSeller" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>
