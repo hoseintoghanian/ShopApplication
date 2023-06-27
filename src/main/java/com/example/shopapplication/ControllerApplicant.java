@@ -398,6 +398,16 @@ public class ControllerApplicant {
             MenuItem robat = new MenuItem("Robat");
             MenuItem shamSham = new MenuItem("Sham Sham");
 
+            kampooreh.setOnAction(ev -> {
+                menuButtonBrand.setText("kampooreh");
+            });
+            robat.setOnAction(ev -> {
+                menuButtonBrand.setText("robat");
+            });
+            shamSham.setOnAction(ev -> {
+                menuButtonBrand.setText("sham sham");
+            });
+
             menuButtonBrand.getItems().addAll(kampooreh, robat, shamSham);
         });
         lambMeet.setOnAction(event -> {
@@ -406,6 +416,16 @@ public class ControllerApplicant {
             MenuItem ariaBahar = new MenuItem("Aria Bahar");
             MenuItem mahya = new MenuItem("Mahya");
             MenuItem puya = new MenuItem("Puya");
+
+            ariaBahar.setOnAction(ev -> {
+                menuButtonBrand.setText("aria bahar");
+            });
+            mahya.setOnAction(ev -> {
+                menuButtonBrand.setText("mahya");
+            });
+            puya.setOnAction(ev -> {
+                menuButtonBrand.setText("puya");
+            });
 
             menuButtonBrand.getItems().addAll(ariaBahar, mahya, puya);
         });
@@ -416,6 +436,16 @@ public class ControllerApplicant {
             MenuItem puya = new MenuItem("Puya");
             MenuItem telavang = new MenuItem("Puya");
 
+            mahya.setOnAction(ev -> {
+                menuButtonBrand.setText("mahya");
+            });
+            puya.setOnAction(ev -> {
+                menuButtonBrand.setText("puya");
+            });
+            telavang.setOnAction(ev -> {
+                menuButtonBrand.setText("telavang");
+            });
+
             menuButtonBrand.getItems().addAll(mahya, puya, telavang);
         });
         egg.setOnAction(event -> {
@@ -424,6 +454,16 @@ public class ControllerApplicant {
             MenuItem morghdaran = new MenuItem("Morghdaran");
             MenuItem porotana = new MenuItem("Porotana");
             MenuItem telavang = new MenuItem("Telavang");
+
+            morghdaran.setOnAction(ev -> {
+                menuButtonBrand.setText("morghdaran");
+            });
+            porotana.setOnAction(ev -> {
+                menuButtonBrand.setText("porotana");
+            });
+            telavang.setOnAction(ev -> {
+                menuButtonBrand.setText("telavang");
+            });
 
             menuButtonBrand.getItems().addAll(morghdaran, porotana, telavang);
         });
@@ -434,6 +474,16 @@ public class ControllerApplicant {
             MenuItem mahya = new MenuItem("Mahya");
             MenuItem puya = new MenuItem("Puya");
 
+            khoram.setOnAction(ev -> {
+                menuButtonBrand.setText("khoram");
+            });
+            mahya.setOnAction(ev -> {
+                menuButtonBrand.setText("mahya");
+            });
+            puya.setOnAction(ev -> {
+                menuButtonBrand.setText("puya");
+            });
+
             menuButtonBrand.getItems().addAll(khoram, mahya, puya);
         });
         shrimp.setOnAction(event -> {
@@ -443,6 +493,16 @@ public class ControllerApplicant {
             MenuItem pemina = new MenuItem("Pemina");
             MenuItem tohfe = new MenuItem("Tohfe");
 
+            marine.setOnAction(ev -> {
+                menuButtonBrand.setText("marine");
+            });
+            pemina.setOnAction(ev -> {
+                menuButtonBrand.setText("pemina");
+            });
+            tohfe.setOnAction(ev -> {
+                menuButtonBrand.setText("tohfe");
+            });
+
             menuButtonBrand.getItems().addAll(marine, pemina, tohfe);
         });
         tuna.setOnAction(event -> {
@@ -451,6 +511,16 @@ public class ControllerApplicant {
             MenuItem makenzi = new MenuItem("Makenzi");
             MenuItem shilton = new MenuItem("Shilton");
             MenuItem tohfe = new MenuItem("Tohfe");
+
+            makenzi.setOnAction(ev -> {
+                menuButtonBrand.setText("makenzi");
+            });
+            shilton.setOnAction(ev -> {
+                menuButtonBrand.setText("shilton");
+            });
+            tohfe.setOnAction(ev -> {
+                menuButtonBrand.setText("tohfe");
+            });
 
             menuButtonBrand.getItems().addAll(makenzi, shilton, tohfe);
         });
