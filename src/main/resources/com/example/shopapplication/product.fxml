@@ -17,7 +17,7 @@
    <children>
       <SplitPane dividerPositions="0.5" nodeOrientation="RIGHT_TO_LEFT" prefHeight="750.0" prefWidth="1500.0">
         <items>
-          <AnchorPane maxWidth="500.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="500.0" style="-fx-background-color: #DCC97E;">
+          <AnchorPane maxWidth="500.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="500.0" style="-fx-background-color: #E5BA1D;">
                <children>
                   <TextArea layoutX="50.0" layoutY="685.0" prefHeight="50.0" prefWidth="350.0">
                      <effect>

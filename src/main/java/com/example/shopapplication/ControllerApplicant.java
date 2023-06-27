@@ -1,16 +1,19 @@
 package com.example.shopapplication;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
@@ -20,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ControllerApplicant {
 
@@ -1067,6 +1071,19 @@ public class ControllerApplicant {
     public void addNewItemToMainPage(Item item) {
 
         ImageView imageView = new ImageView(item.image);
+        imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                try {
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("product.fxml")));
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage) imageView.getScene().getWindow();
+                    stage.setScene(scene);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         imageView.setFitWidth(150);
         imageView.setFitHeight(150);
 

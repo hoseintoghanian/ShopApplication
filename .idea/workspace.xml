@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="code cleaning &amp; filter buttons">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +122,7 @@
       <workItem from="1687878700132" duration="5977000" />
       <workItem from="1687890009589" duration="2156000" />
       <workItem from="1687893624063" duration="11868000" />
-      <workItem from="1687905954040" duration="10000" />
-    </task>
-    <task id="LOCAL-00004" summary="change UI">
-      <created>1685578881901</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1685578881902</updated>
+      <workItem from="1687905954040" duration="807000" />
     </task>
     <task id="LOCAL-00005" summary="merge">
       <created>1685579808838</created>
@@ -471,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687892042978</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant">
+      <created>1687906072998</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1687906072999</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changes in admin.fxml and ControllerRegister" />
     <MESSAGE value="changes in controllerAdmin" />
     <MESSAGE value="fixing admin fxml &amp; controllerAdmin class &amp; sql commands" />
     <MESSAGE value="class Item --&gt; toString &amp; equals method" />
@@ -514,7 +509,8 @@
     <MESSAGE value="update supermarket images (protein foods)" />
     <MESSAGE value="update supermarket images (dairy)" />
     <MESSAGE value="update supermarket images (drinks)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update supermarket images (drinks)" />
+    <MESSAGE value="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
