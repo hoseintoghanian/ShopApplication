@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="code cleaning">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="update supermarket images (drinks)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,22 +31,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/University/projects/term 2/ShopApplication/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="javafx.application" />
@@ -131,28 +114,8 @@
       <workItem from="1687864145169" duration="1413000" />
       <workItem from="1687870185229" duration="4445000" />
       <workItem from="1687876217362" duration="1381000" />
-      <workItem from="1687878700132" duration="13657000" />
-    </task>
-    <task id="LOCAL-00001" summary="sign up fxml (UI)">
-      <created>1685556342740</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1685556342740</updated>
-    </task>
-    <task id="LOCAL-00002" summary="sign up fxml (UI)">
-      <created>1685557361305</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1685557361305</updated>
-    </task>
-    <task id="LOCAL-00003" summary="change UI">
-      <created>1685578729787</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1685578729787</updated>
+      <workItem from="1687878700132" duration="5977000" />
+      <workItem from="1687890009589" duration="2156000" />
     </task>
     <task id="LOCAL-00004" summary="change UI">
       <created>1685578881901</created>
@@ -455,14 +418,49 @@
       <option name="project" value="LOCAL" />
       <updated>1687881484687</updated>
     </task>
-    <task id="LOCAL-00047" summary="code cleaning">
-      <created>1687884825269</created>
+    <task id="LOCAL-00047" summary="update supermarket images (grocery)">
+      <created>1687890519522</created>
       <option name="number" value="00047" />
       <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1687884825269</updated>
+      <updated>1687890519522</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="update supermarket images (breakfast)">
+      <created>1687891125855</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1687891125855</updated>
+    </task>
+    <task id="LOCAL-00049" summary="update supermarket images (protein foods)">
+      <created>1687891412393</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1687891412393</updated>
+    </task>
+    <task id="LOCAL-00050" summary="update supermarket images (protein foods)">
+      <created>1687891428391</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1687891428393</updated>
+    </task>
+    <task id="LOCAL-00051" summary="update supermarket images (dairy)">
+      <created>1687891736213</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1687891736213</updated>
+    </task>
+    <task id="LOCAL-00052" summary="update supermarket images (drinks)">
+      <created>1687892042978</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1687892042978</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,10 +478,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="displayInfo method in CotrollerApplicant" />
-    <MESSAGE value="some methods in CotrollerApplicant" />
-    <MESSAGE value="define properties in CotrollerAdmin" />
-    <MESSAGE value="Initialize method in CotrollerAdmin" />
     <MESSAGE value="changes in admin.fxml and ControllerRegister" />
     <MESSAGE value="changes in controllerAdmin" />
     <MESSAGE value="fixing admin fxml &amp; controllerAdmin class &amp; sql commands" />
@@ -504,8 +498,12 @@
     <MESSAGE value="customer &amp; seller main page &amp; seller account" />
     <MESSAGE value="setChatBackground method in controllerApplicant" />
     <MESSAGE value="code cleaning and chat background in admin fxml" />
-    <MESSAGE value="code cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="code cleaning" />
+    <MESSAGE value="update supermarket images (grocery)" />
+    <MESSAGE value="update supermarket images (breakfast)" />
+    <MESSAGE value="update supermarket images (protein foods)" />
+    <MESSAGE value="update supermarket images (dairy)" />
+    <MESSAGE value="update supermarket images (drinks)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update supermarket images (drinks)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
