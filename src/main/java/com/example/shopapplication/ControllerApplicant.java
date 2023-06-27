@@ -119,6 +119,16 @@ public class ControllerApplicant {
             MenuItem oila = new MenuItem("Oila");
             MenuItem tabiat = new MenuItem("Tabiat");
 
+            ladan.setOnAction(ev -> {
+                menuButtonBrand.setText("ladan");
+            });
+            oila.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("oila");
+            });
+            tabiat.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("tabiat");
+            });
+
             menuButtonBrand.getItems().addAll(ladan, oila, tabiat);
         });
         brokenSugar.setOnAction(event -> {
@@ -127,6 +137,16 @@ public class ControllerApplicant {
             MenuItem azughe = new MenuItem("Azughe");
             MenuItem ferdous = new MenuItem("Ferdous");
             MenuItem mashMash = new MenuItem("Mash Mash");
+
+            azughe.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("azughe");
+            });
+            ferdous.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("ferdous");
+            });
+            mashMash.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("mash mash");
+            });
 
             menuButtonBrand.getItems().addAll(azughe, ferdous, mashMash);
         });
@@ -137,6 +157,16 @@ public class ControllerApplicant {
             MenuItem golestan = new MenuItem("Golestan");
             MenuItem shahdane = new MenuItem("Shahdane");
 
+            emruz.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("emruz");
+            });
+            golestan.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("golestan");
+            });
+            shahdane.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("shahdane");
+            });
+
             menuButtonBrand.getItems().addAll(emruz, golestan, shahdane);
         });
         sauce.setOnAction(event -> {
@@ -145,6 +175,16 @@ public class ControllerApplicant {
             MenuItem behruz = new MenuItem("Behruz");
             MenuItem delvese = new MenuItem("Delvese");
             MenuItem mahram = new MenuItem("Mahram");
+
+            behruz.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("behruz");
+            });
+            delvese.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("delvese");
+            });
+            mahram.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("mahram");
+            });
 
             menuButtonBrand.getItems().addAll(behruz, delvese, mahram);
         });
@@ -155,6 +195,16 @@ public class ControllerApplicant {
             MenuItem tabarok = new MenuItem("Tabarok");
             MenuItem tabiat = new MenuItem("Tabiat");
 
+            chinChin.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("chin chin");
+            });
+            tabarok.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("tabarok");
+            });
+            tabiat.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("tabiat");
+            });
+
             menuButtonBrand.getItems().addAll(chinChin, tabarok, tabiat);
         });
         pickle.setOnAction(event -> {
@@ -163,6 +213,16 @@ public class ControllerApplicant {
             MenuItem behruz = new MenuItem("Behruz");
             MenuItem mahram = new MenuItem("Mahram");
             MenuItem yekOyek = new MenuItem("Yek & Yek");
+
+            behruz.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("behruz");
+            });
+            mahram.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("mahram");
+            });
+            yekOyek.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("yek & yek");
+            });
 
             menuButtonBrand.getItems().addAll(behruz, mahram, yekOyek);
         });
@@ -173,6 +233,16 @@ public class ControllerApplicant {
             MenuItem mahram = new MenuItem("Mahram");
             MenuItem yekOyek = new MenuItem("Yek & Yek");
 
+            behruz.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("behruz");
+            });
+            mahram.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("mahram");
+            });
+            yekOyek.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("yek & yek");
+            });
+
             menuButtonBrand.getItems().addAll(behruz, mahram, yekOyek);
         });
         pasta.setOnAction(event -> {
@@ -181,6 +251,16 @@ public class ControllerApplicant {
             MenuItem deCecco = new MenuItem("De Cecco");
             MenuItem tak = new MenuItem("Tak Makaron");
             MenuItem zar = new MenuItem("Zar Makaron");
+
+            deCecco.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("de cecco");
+            });
+            tak.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("tak makaron");
+            });
+            zar.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("zar makaron");
+            });
 
             menuButtonBrand.getItems().addAll(deCecco, tak, zar);
         });
@@ -191,6 +271,16 @@ public class ControllerApplicant {
             MenuItem momtaz = new MenuItem("Momtaz");
             MenuItem seharkhiz = new MenuItem("Seharkhiz");
 
+            bahraman.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("bahraman");
+            });
+            momtaz.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("momtaz");
+            });
+            seharkhiz.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("seharkhiz");
+            });
+
             menuButtonBrand.getItems().addAll(bahraman, momtaz, seharkhiz);
         });
         pea.setOnAction(event -> {
@@ -199,6 +289,16 @@ public class ControllerApplicant {
             MenuItem aaliChin = new MenuItem("Aali Chin");
             MenuItem delpazir = new MenuItem("Delpazir");
             MenuItem shahsavand = new MenuItem("Shahsavand");
+
+            aaliChin.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("aali chin");
+            });
+            delpazir.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("delpazir");
+            });
+            shahsavand.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("shahsavand");
+            });
 
             menuButtonBrand.getItems().addAll(aaliChin, delpazir, shahsavand);
         });
