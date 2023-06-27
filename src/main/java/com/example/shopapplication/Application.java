@@ -21,7 +21,7 @@ public class Application extends javafx.application.Application {
             for (int j = 0; j < shop.sellers.get(i).items.size(); j++) {
                 System.out.println(shop.sellers.get(i).items.get(j));
             }
-        }
+        }///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
