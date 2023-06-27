@@ -31,7 +31,7 @@ public class ControllerRegister {
     @FXML
     Button buttonRegister;
     @FXML
-    private Hyperlink txtLogOut,txtLogout;
+    private Hyperlink txtLogOut, txtLogout;
 
 
     public void changeScene(ActionEvent e, String fxml) throws IOException {
@@ -90,12 +90,12 @@ public class ControllerRegister {
                 if (Application.shop.sellers.contains(seller)) {
                     seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
                     URL = "seller.fxml";
-                    Application.shop.currentSeller=seller;
+                    Application.shop.currentSeller = seller;
                 }
                 if (Application.shop.customers.contains(customer)) {
                     customer = Application.shop.customers.get(Application.shop.customers.indexOf(customer));
                     URL = "customer.fxml";
-                    Application.shop.currentCustomer=customer;
+                    Application.shop.currentCustomer = customer;
                 }
             }
 
@@ -105,13 +105,13 @@ public class ControllerRegister {
                     Objects.equals(customer.getPassword(), txtLoginPass.getText())
             ) {
                 //if (txtCaptchaInput.getText().equals(captchaText)) {
-                    fxmlLoader = new FXMLLoader(Application.class.getResource(URL));
-                    stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                    scene = new Scene(fxmlLoader.load());
-                    stage.setScene(scene);
-                    stage.show();
+                fxmlLoader = new FXMLLoader(Application.class.getResource(URL));
+                stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                scene = new Scene(fxmlLoader.load());
+                stage.setScene(scene);
+                stage.show();
                 //} else {
-                    //txtCaptchaInput.clear();
+                //txtCaptchaInput.clear();
                 //}
             }
         }

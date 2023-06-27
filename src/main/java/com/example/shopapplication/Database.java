@@ -60,7 +60,7 @@ public class Database {
 
     public static void createItemTable(String username) throws SQLException {
         String sql = "create table " + "items_" + username +
-                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int,size int, imageURL varchar(200));";
+                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int,size int, imageURL varchar(300));";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -121,7 +121,7 @@ public class Database {
         statement.setString(4, item.name);
         statement.setLong(5, item.price);
         statement.setInt(6, item.size);
-        statement.setString(7, item.imageURL);
+        statement.setString(7, item.image.getUrl());
 
         statement.executeUpdate();
 
@@ -150,7 +150,7 @@ public class Database {
         }
 
         statement.close();
-        resultSet.close();
+        if (resultSet != null) resultSet.close();
         getDBC().close();
     }
 }

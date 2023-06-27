@@ -332,32 +332,32 @@
                      </effect></Separator>
                   <AnchorPane layoutX="700.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0">
                      <children>
-                        <TextField fx:id="txtProductName" layoutX="15.0" layoutY="135.0" promptText="name">
+                        <TextField fx:id="txtProductName" layoutX="15.0" layoutY="135.0" prefWidth="150.0" promptText="name">
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                  </input>
                               </DropShadow>
                            </effect></TextField>
-                        <TextField fx:id="txtProductPrice" layoutX="15.0" layoutY="175.0" promptText="price">
+                        <TextField fx:id="txtProductPrice" layoutX="15.0" layoutY="175.0" prefWidth="150.0" promptText="price">
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                  </input>
                               </DropShadow>
                            </effect></TextField>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="185.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="productImg" fitHeight="200.0" fitWidth="200.0" layoutX="185.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/shop.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtProductSize" layoutX="15.0" layoutY="215.0" promptText="size">
+                        <TextField fx:id="txtProductSize" layoutX="15.0" layoutY="215.0" prefWidth="150.0" promptText="size">
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                  </input>
                               </DropShadow>
                            </effect></TextField>
@@ -365,7 +365,7 @@
                            <effect>
                               <DropShadow>
                                  <input>
-                                    <InnerShadow />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                  </input>
                               </DropShadow>
                            </effect></Button>
@@ -379,45 +379,45 @@
                               <MenuItem mnemonicParsing="false" onAction="#chooseKindSnacks" text="snacks" />
                           </items>
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                  </input>
                               </DropShadow>
                            </effect>
                         </MenuButton>
                         <MenuButton fx:id="menuButtonMinorKind" layoutX="15.0" layoutY="55.0" mnemonicParsing="false" prefWidth="150.0" text="Minor Kind">
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                  </input>
                               </DropShadow>
                            </effect>
                         </MenuButton>
                         <MenuButton fx:id="menuButtonBrand" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" prefWidth="150.0" text="Brand">
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                  </input>
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <TextField fx:id="txtProductNameImageURL" layoutX="15.0" layoutY="255.0" promptText="Image URL">
-                           <effect>
-                              <DropShadow>
-                                 <input>
-                                    <InnerShadow />
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </TextField>
                         <Label fx:id="addtxt" layoutX="222.0" layoutY="214.0" text=" ">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <Button layoutX="15.0" layoutY="255.0" mnemonicParsing="false" onAction="#loadImage" prefWidth="150.0" text="Load Image">
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <Separator layoutX="700.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />

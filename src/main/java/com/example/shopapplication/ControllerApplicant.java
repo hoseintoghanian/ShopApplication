@@ -6,8 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -555,13 +560,15 @@ public class ControllerApplicant {
 
 
     @FXML
-    private TextField txtProductName, txtProductPrice, txtProductSize, txtProductNameImageURL;
+    private TextField txtProductName, txtProductPrice, txtProductSize;
     @FXML
     private Label addtxt;
+    @FXML
+    private ImageView productImg;
 
-    public void addProduct() throws SQLException {
+    public void addProduct() throws SQLException, IOException {
         if (!menuButtonKind.getText().equals("Kind") && !menuButtonMinorKind.getText().equals("Minor Kind") && !menuButtonBrand.getText().equals("Brand"))
-            if (!txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("") && !txtProductNameImageURL.getText().equals("")) {
+            if (!txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("")) {
                 Item item = new Item(
                         menuButtonKind.getText(),
                         menuButtonMinorKind.getText(),
@@ -569,13 +576,14 @@ public class ControllerApplicant {
                         txtProductName.getText(),
                         Integer.parseInt(txtProductPrice.getText()),
                         Integer.parseInt(txtProductSize.getText()),
-                        txtProductNameImageURL.getText()
+                        productImg.getImage()
                 );
 
                 if (!Application.shop.currentSeller.items.contains(item)) {
                     Application.shop.currentSeller.items.add(item);
                     Database.addProduct(item);
 
+                    productImg.setImage(item.image);
                     addtxt.setText("add successfully");
                 } else {
                     addtxt.setText("product is valid");
@@ -584,6 +592,20 @@ public class ControllerApplicant {
             }
     }
 
+    public void loadImage(ActionEvent e) {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image File");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Image files (*.png, *.jpg, *.gif)", "*.png", "*.jpg", "*.gif");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        File selectedFile = fileChooser.showOpenDialog(new Stage());
+
+        if (selectedFile != null) {
+            Image image = new Image(selectedFile.toURI().toString());
+            productImg.setImage(image);
+        }
+    }
 
     //for the spinner in cart tab see bro code
 }
