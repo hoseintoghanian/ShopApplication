@@ -17,6 +17,12 @@ public class Application extends javafx.application.Application {
         Database.readCustomer();
         Database.readItemTables();
 
+        for (int i = 0; i < shop.sellers.size(); i++) {
+            for (int j = 0; j < shop.sellers.get(i).items.size(); j++) {
+                System.out.println(shop.sellers.get(i).items.get(j));
+            }
+        }
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

@@ -60,7 +60,7 @@ public class Database {
 
     public static void createItemTable(String username) throws SQLException {
         String sql = "create table " + "items_" + username +
-                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int,size int, imageURL varchar(300));";
+                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int,size int, imageURL varchar(500));";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();

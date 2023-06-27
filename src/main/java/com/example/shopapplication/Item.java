@@ -34,7 +34,7 @@ public class Item {
 
 
     public String toString() {
-        return kind + " " + minorKind + " " + brand + " " + name + " " + price + " " + size;
+        return kind + " " + minorKind + " " + brand + " " + name + " " + price + " " + size + " " + image.getUrl();
     }
 
     public boolean equals(Object o) {
