@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="brand menu items grocery method">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="brand menu items protein method">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +125,7 @@
       <workItem from="1687845264714" duration="12732000" />
       <workItem from="1687863730648" duration="229000" />
       <workItem from="1687864145169" duration="1413000" />
-      <workItem from="1687870185229" duration="1819000" />
+      <workItem from="1687870185229" duration="2585000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -400,7 +400,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687871696527</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="brand menu items breakfast method">
+      <created>1687872059785</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1687872059786</updated>
+    </task>
+    <task id="LOCAL-00041" summary="brand menu items protein method">
+      <created>1687872639705</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1687872639705</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,8 +432,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seller &amp; customer &amp; bank portal &amp; payment UI" />
-    <MESSAGE value="add 21 images to project" />
     <MESSAGE value="controller applicant chooseKindGrocery method" />
     <MESSAGE value="controller applicant chooseKindBreakFast method" />
     <MESSAGE value="controller applicant chooseKindProteinFoods method" />
@@ -443,7 +455,9 @@
     <MESSAGE value="customer and seller main page fxml UI" />
     <MESSAGE value="card fxml UI" />
     <MESSAGE value="brand menu items grocery method" />
-    <option name="LAST_COMMIT_MESSAGE" value="brand menu items grocery method" />
+    <MESSAGE value="brand menu items breakfast method" />
+    <MESSAGE value="brand menu items protein method" />
+    <option name="LAST_COMMIT_MESSAGE" value="brand menu items protein method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

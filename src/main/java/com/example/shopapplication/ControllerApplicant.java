@@ -547,6 +547,16 @@ public class ControllerApplicant {
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
 
+            damdaran.setOnAction(ev -> {
+                menuButtonBrand.setText("damdaran");
+            });
+            kale.setOnAction(ev -> {
+                menuButtonBrand.setText("kale");
+            });
+            mihan.setOnAction(ev -> {
+                menuButtonBrand.setText("mihan");
+            });
+
             menuButtonBrand.getItems().addAll(damdaran, kale, mihan);
         });
 
@@ -557,6 +567,16 @@ public class ControllerApplicant {
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem ramak = new MenuItem("Ramak");
 
+            kale.setOnAction(ev -> {
+                menuButtonBrand.setText("kale");
+            });
+            mihan.setOnAction(ev -> {
+                menuButtonBrand.setText("mihan");
+            });
+            ramak.setOnAction(ev -> {
+                menuButtonBrand.setText("ramak");
+            });
+
             menuButtonBrand.getItems().addAll(kale, mihan, ramak);
         });
 
@@ -565,7 +585,17 @@ public class ControllerApplicant {
 
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
-            MenuItem ruzane = new MenuItem("Ruzan");
+            MenuItem ruzane = new MenuItem("Ruzane");
+
+            kale.setOnAction(ev -> {
+                menuButtonBrand.setText("kale");
+            });
+            mihan.setOnAction(ev -> {
+                menuButtonBrand.setText("mihan");
+            });
+            ruzane.setOnAction(ev -> {
+                menuButtonBrand.setText("ruzane");
+            });
 
             menuButtonBrand.getItems().addAll(kale, mihan, ruzane);
         });
@@ -576,6 +606,16 @@ public class ControllerApplicant {
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem pegah = new MenuItem("Pegah");
+
+            kale.setOnAction(ev -> {
+                menuButtonBrand.setText("kale");
+            });
+            mihan.setOnAction(ev -> {
+                menuButtonBrand.setText("mihan");
+            });
+            pegah.setOnAction(ev -> {
+                menuButtonBrand.setText("pegah");
+            });
 
             menuButtonBrand.getItems().addAll(kale, mihan, pegah);
         });
