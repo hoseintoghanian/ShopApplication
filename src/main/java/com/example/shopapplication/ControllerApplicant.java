@@ -3,17 +3,23 @@ package com.example.shopapplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ControllerApplicant {
 
@@ -1042,11 +1048,77 @@ public class ControllerApplicant {
 
                 productImg.setImage(item.image);
                 addtxt.setText("add successfully");
+
+
+                addNewItemToMainPage(item);
+
             } else {
                 addtxt.setText("product is valid");
             }
         } else {
             addtxt.setText("fill all the blanks");
+        }
+    }
+
+    @FXML
+    private AnchorPane sellerMainPage;
+    int icount = 0, jcount = 0;
+
+    public void addNewItemToMainPage(Item item) {
+
+        ImageView imageView = new ImageView(item.image);
+        imageView.setFitWidth(150);
+        imageView.setFitHeight(150);
+
+        ImageView scoreEmoji = new ImageView("1.png");
+        scoreEmoji.setEffect(new DropShadow());
+        scoreEmoji.setFitWidth(30);
+        scoreEmoji.setFitHeight(30);
+        scoreEmoji.setLayoutX(5);
+        scoreEmoji.setLayoutY(210);
+
+        Label name = new Label(item.name);
+        name.setFont(new Font("Arial", 20));
+        name.setPrefWidth(150);
+        name.setAlignment(Pos.CENTER);
+        name.setLayoutX(0);
+        name.setLayoutY(150);
+
+        Label price = new Label(String.valueOf(item.price));
+        price.setFont(new Font("Arial", 20));
+        price.setPrefWidth(150);
+        price.setAlignment(Pos.CENTER);
+        price.setLayoutX(0);
+        price.setLayoutY(180);
+
+        Label score = new Label(item.score + "%");
+        score.setFont(new Font("Arial", 15));
+        score.setLayoutX(37);
+        score.setLayoutY(217);
+
+        Button button = new Button("auction");
+        button.setEffect(new DropShadow());
+        button.setPrefHeight(30);
+        button.setLayoutX(90);
+        button.setLayoutY(210);
+
+        AnchorPane anchorPane = new AnchorPane();
+        anchorPane.setLayoutX(icount * 175 + 30);
+        anchorPane.setLayoutY(jcount * 225 + 30);
+        anchorPane.setPrefWidth(150);
+        anchorPane.setPrefHeight(250);
+        anchorPane.setStyle("-fx-background-color: #FFCF21;");
+        anchorPane.setEffect(new DropShadow());
+        anchorPane.setEffect(new InnerShadow());
+
+
+        anchorPane.getChildren().addAll(imageView, name, price, button, scoreEmoji, score);
+        sellerMainPage.getChildren().add(anchorPane);
+
+        icount++;
+        if (icount > 5) {
+            jcount++;
+            icount = 0;
         }
     }
 
