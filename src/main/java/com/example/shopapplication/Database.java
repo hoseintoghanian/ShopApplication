@@ -60,7 +60,7 @@ public class Database {
 
     public static void createItemTable(String username) throws SQLException {
         String sql = "create table " + "items_" + username +
-                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int,size int, imageURL varchar(500));";
+                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int, size int, score double, uploadDate datetime, imageURL varchar(500));";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -111,7 +111,7 @@ public class Database {
 
     public static void addProduct(Item item) throws SQLException {
         String sql = "INSERT INTO " + "items_" + Application.shop.currentSeller.getUsername() +
-                "(kind, minorKind, brand, productName, price, size, imageURL)VALUES( ?, ?, ?, ?, ?, ?, ?)";
+                "(kind, minorKind, brand, productName, price, size, score, uploadDate, imageURL)VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
@@ -121,7 +121,9 @@ public class Database {
         statement.setString(4, item.name);
         statement.setLong(5, item.price);
         statement.setInt(6, item.size);
-        statement.setString(7, item.image.getUrl());
+        statement.setDouble(7, item.score);
+        statement.setObject(8, item.uploadDate);
+        statement.setString(9, item.image.getUrl());
 
         statement.executeUpdate();
 
@@ -144,6 +146,8 @@ public class Database {
                         resultSet.getString("productName"),
                         resultSet.getInt("price"),
                         resultSet.getInt("size"),
+                        resultSet.getDouble("score"),
+                        resultSet.getObject("uploadDate"),
                         resultSet.getString("imageURL")
                 ));
             }

@@ -70,14 +70,14 @@
                                     </DropShadow>
                                  </effect>
                               </TextField>
-                              <MenuButton fx:id="menuButtonKind1" layoutX="35.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Kind">
+                              <MenuButton fx:id="filterButtonKind" layoutX="35.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Kind">
                                  <items>
-                                    <MenuItem mnemonicParsing="false" onAction="#chooseKindGrocery" text="grocery" />
-                                    <MenuItem mnemonicParsing="false" onAction="#chooseKindBreakfast" text="breakfast" />
-                                    <MenuItem mnemonicParsing="false" onAction="#chooseKindProtein" text="protein" />
-                                    <MenuItem mnemonicParsing="false" onAction="#chooseKindDairy" text="dairy" />
-                                    <MenuItem mnemonicParsing="false" onAction="#chooseKindDrinks" text="drinks" />
-                                    <MenuItem mnemonicParsing="false" onAction="#chooseKindSnacks" text="snacks" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterGrocery" text="grocery" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="breakfast" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterProtein" text="protein" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterDairy" text="dairy" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterDrinks" text="drinks" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterSnacks" text="snacks" />
                                  </items>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -110,7 +110,7 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
-                              <MenuButton fx:id="menuButtonKind11" layoutX="265.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Brand">
+                              <MenuButton fx:id="filterButtonBrand" layoutX="265.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Brand">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -126,7 +126,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <MenuButton fx:id="menuButtonKind12" layoutX="150.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Minor Kind">
+                              <MenuButton fx:id="filterButtonMinorKind" layoutX="150.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Minor Kind">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -498,12 +498,12 @@
                            </effect></Button>
                         <MenuButton fx:id="menuButtonKind" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefWidth="170.0" text="Kind">
                           <items>
-                            <MenuItem mnemonicParsing="false" onAction="#chooseKindGrocery" text="grocery" />
-                            <MenuItem mnemonicParsing="false" onAction="#chooseKindBreakfast" text="breakfast" />
-                              <MenuItem mnemonicParsing="false" onAction="#chooseKindProtein" text="protein" />
-                              <MenuItem mnemonicParsing="false" onAction="#chooseKindDairy" text="dairy" />
-                              <MenuItem mnemonicParsing="false" onAction="#chooseKindDrinks" text="drinks" />
-                              <MenuItem mnemonicParsing="false" onAction="#chooseKindSnacks" text="snacks" />
+                            <MenuItem mnemonicParsing="false" onAction="#kindGrocery" text="grocery" />
+                            <MenuItem mnemonicParsing="false" onAction="#kindBreakfast" text="breakfast" />
+                              <MenuItem mnemonicParsing="false" onAction="#kindProtein" text="protein" />
+                              <MenuItem mnemonicParsing="false" onAction="#kindDairy" text="dairy" />
+                              <MenuItem mnemonicParsing="false" onAction="#kindDrinks" text="drinks" />
+                              <MenuItem mnemonicParsing="false" onAction="#kindSnacks" text="snacks" />
                           </items>
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">

@@ -26,6 +26,8 @@ public class ControllerApplicant {
     private Label txtfnaccount, txtlnaccount, txtpnaccount, txtunaccount, txtpwaccount, txtemaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
+    @FXML
+    MenuButton filterButtonKind, filterButtonMinorKind, filterButtonBrand;
 
     public void displayInfo() {
         if (Application.shop.customers.contains(Application.shop.currentCustomer)) {
@@ -61,9 +63,59 @@ public class ControllerApplicant {
         changingScene(e, "Login.fxml");
     }
 
-    public void chooseKindGrocery() {
 
-        menuInfo(1, "grocery");
+    public void kindGrocery() {
+        grocery(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+    }
+
+    public void kindBreakfast() {
+        breakfast(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+    }
+
+    public void kindProtein() {
+        protein(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+    }
+
+    public void kindDairy() {
+        dairy(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+    }
+
+    public void kindDrinks() {
+        drinks(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+    }
+
+    public void kindSnacks() {
+        snacks(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+    }
+
+    public void filterGrocery() {
+        grocery(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+    }
+
+    public void filterBreakfast() {
+        breakfast(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+    }
+
+    public void filterProtein() {
+        protein(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+    }
+
+    public void filterDairy() {
+        dairy(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+    }
+
+    public void filterDrinks() {
+        drinks(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+    }
+
+    public void filterSnacks() {
+        snacks(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+    }
+
+
+    public void grocery(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
+
+        menuInfo(1, "grocery", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem bread = new MenuItem("bread");
         MenuItem rice = new MenuItem("rice");
@@ -80,7 +132,7 @@ public class ControllerApplicant {
 
         bread.setOnAction(event -> {
 
-            menuInfo(2, "bread");
+            menuInfo(2, "bread", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem mazrae = new MenuItem("Mazrae");
 
@@ -92,7 +144,7 @@ public class ControllerApplicant {
         });
         rice.setOnAction(event -> {
 
-            menuInfo(2, "rice");
+            menuInfo(2, "rice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem behrooz = new MenuItem("Behrooz");
             MenuItem golestan = new MenuItem("Golestan");
@@ -112,7 +164,7 @@ public class ControllerApplicant {
         });
         oil.setOnAction(event -> {
 
-            menuInfo(2, "oil");
+            menuInfo(2, "oil", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem ladan = new MenuItem("Ladan");
             MenuItem oila = new MenuItem("Oila");
@@ -132,7 +184,7 @@ public class ControllerApplicant {
         });
         brokenSugar.setOnAction(event -> {
 
-            menuInfo(2, "brokenSugar");
+            menuInfo(2, "brokenSugar", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem azughe = new MenuItem("Azughe");
             MenuItem ferdous = new MenuItem("Ferdous");
@@ -152,7 +204,7 @@ public class ControllerApplicant {
         });
         sugar.setOnAction(event -> {
 
-            menuInfo(2, "sugar");
+            menuInfo(2, "sugar", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem emruz = new MenuItem("Emruz");
             MenuItem golestan = new MenuItem("Golestan");
@@ -172,7 +224,7 @@ public class ControllerApplicant {
         });
         sauce.setOnAction(event -> {
 
-            menuInfo(2, "sauce");
+            menuInfo(2, "sauce", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem behruz = new MenuItem("Behruz");
             MenuItem delvese = new MenuItem("Delvese");
@@ -192,7 +244,7 @@ public class ControllerApplicant {
         });
         rob.setOnAction(event -> {
 
-            menuInfo(2, "rob");
+            menuInfo(2, "rob", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem chinChin = new MenuItem("Chin Chin");
             MenuItem tabarok = new MenuItem("Tabarok");
@@ -212,7 +264,7 @@ public class ControllerApplicant {
         });
         pickle.setOnAction(event -> {
 
-            menuInfo(2, "pickle");
+            menuInfo(2, "pickle", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem behruz = new MenuItem("Behruz");
             MenuItem mahram = new MenuItem("Mahram");
@@ -232,7 +284,7 @@ public class ControllerApplicant {
         });
         lemonJuice.setOnAction(event -> {
 
-            menuInfo(2, "lemonJuice");
+            menuInfo(2, "lemonJuice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem behruz = new MenuItem("Behruz");
             MenuItem mahram = new MenuItem("Mahram");
@@ -252,7 +304,7 @@ public class ControllerApplicant {
         });
         pasta.setOnAction(event -> {
 
-            menuInfo(2, "pasta");
+            menuInfo(2, "pasta", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem deCecco = new MenuItem("De Cecco");
             MenuItem tak = new MenuItem("Tak Makaron");
@@ -272,7 +324,7 @@ public class ControllerApplicant {
         });
         saffron.setOnAction(event -> {
 
-            menuInfo(2, "saffron");
+            menuInfo(2, "saffron", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem bahraman = new MenuItem("Bahraman");
             MenuItem momtaz = new MenuItem("Momtaz");
@@ -292,7 +344,7 @@ public class ControllerApplicant {
         });
         pea.setOnAction(event -> {
 
-            menuInfo(2, "pea");
+            menuInfo(2, "pea", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem aaliChin = new MenuItem("Aali Chin");
             MenuItem delpazir = new MenuItem("Delpazir");
@@ -314,9 +366,9 @@ public class ControllerApplicant {
         menuButtonMinorKind.getItems().addAll(bread, rice, oil, brokenSugar, sugar, sauce, rob, pickle, lemonJuice, pasta, saffron, pea);
     }
 
-    public void chooseKindBreakfast() {
+    public void breakfast(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "break fast");
+        menuInfo(1, "break fast", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem jam = new MenuItem("jam");
         MenuItem honey = new MenuItem("honey");
@@ -324,7 +376,7 @@ public class ControllerApplicant {
 
         jam.setOnAction(event -> {
 
-            menuInfo(2, "jam");
+            menuInfo(2, "jam", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem bijan = new MenuItem("Bijan");
             MenuItem mixLand = new MenuItem("Mix Land");
@@ -344,7 +396,7 @@ public class ControllerApplicant {
         });
         honey.setOnAction(event -> {
 
-            menuInfo(2, "honey");
+            menuInfo(2, "honey", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem rayehe = new MenuItem("Rayehe");
             MenuItem segmen = new MenuItem("Segmen");
@@ -364,7 +416,7 @@ public class ControllerApplicant {
         });
         halva.setOnAction(event -> {
 
-            menuInfo(2, "halva");
+            menuInfo(2, "halva", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem oghab = new MenuItem("Oghab");
             MenuItem tahini = new MenuItem("Tahini");
@@ -386,9 +438,9 @@ public class ControllerApplicant {
         menuButtonMinorKind.getItems().addAll(jam, honey, halva);
     }
 
-    public void chooseKindProtein() {
+    public void protein(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "protein foods");
+        menuInfo(1, "protein foods", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem bologna = new MenuItem("bologna");
         MenuItem lambMeet = new MenuItem("lamb meet");
@@ -400,7 +452,7 @@ public class ControllerApplicant {
 
         bologna.setOnAction(event -> {
 
-            menuInfo(2, "bologna");
+            menuInfo(2, "bologna", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem kampooreh = new MenuItem("Kampooreh");
             MenuItem robat = new MenuItem("Robat");
@@ -420,7 +472,7 @@ public class ControllerApplicant {
         });
         lambMeet.setOnAction(event -> {
 
-            menuInfo(2, "lambMeet");
+            menuInfo(2, "lambMeet", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem ariaBahar = new MenuItem("Aria Bahar");
             MenuItem mahya = new MenuItem("Mahya");
@@ -440,7 +492,7 @@ public class ControllerApplicant {
         });
         chicken.setOnAction(event -> {
 
-            menuInfo(2, "chicken");
+            menuInfo(2, "chicken", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem mahya = new MenuItem("Mahya");
             MenuItem puya = new MenuItem("Puya");
@@ -460,7 +512,7 @@ public class ControllerApplicant {
         });
         egg.setOnAction(event -> {
 
-            menuInfo(2, "egg");
+            menuInfo(2, "egg", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem morghdaran = new MenuItem("Morghdaran");
             MenuItem porotana = new MenuItem("Porotana");
@@ -480,7 +532,7 @@ public class ControllerApplicant {
         });
         beef.setOnAction(event -> {
 
-            menuInfo(2, "beef");
+            menuInfo(2, "beef", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem khoram = new MenuItem("Khoram");
             MenuItem mahya = new MenuItem("Mahya");
@@ -500,7 +552,7 @@ public class ControllerApplicant {
         });
         shrimp.setOnAction(event -> {
 
-            menuInfo(2, "shrimp");
+            menuInfo(2, "shrimp", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem marine = new MenuItem("Marine");
             MenuItem pemina = new MenuItem("Pemina");
@@ -520,7 +572,7 @@ public class ControllerApplicant {
         });
         tuna.setOnAction(event -> {
 
-            menuInfo(2, "tuna");
+            menuInfo(2, "tuna", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem makenzi = new MenuItem("Makenzi");
             MenuItem shilton = new MenuItem("Shilton");
@@ -542,9 +594,9 @@ public class ControllerApplicant {
         menuButtonMinorKind.getItems().addAll(bologna, lambMeet, chicken, egg, beef, shrimp, tuna);
     }
 
-    public void chooseKindDairy() {
+    public void dairy(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "dairy");
+        menuInfo(1, "dairy", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem milk = new MenuItem("milk");
         MenuItem yogurt = new MenuItem("yogurt");
@@ -553,7 +605,7 @@ public class ControllerApplicant {
 
         milk.setOnAction(event -> {
 
-            menuInfo(2, "milk");
+            menuInfo(2, "milk", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem damdaran = new MenuItem("Damdaran");
             MenuItem kale = new MenuItem("Kale");
@@ -573,7 +625,7 @@ public class ControllerApplicant {
         });
         yogurt.setOnAction(event -> {
 
-            menuInfo(2, "yogurt");
+            menuInfo(2, "yogurt", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
@@ -593,7 +645,7 @@ public class ControllerApplicant {
         });
         cheese.setOnAction(event -> {
 
-            menuInfo(2, "cheese");
+            menuInfo(2, "cheese", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
@@ -613,7 +665,7 @@ public class ControllerApplicant {
         });
         cream.setOnAction(event -> {
 
-            menuInfo(2, "cream");
+            menuInfo(2, "cream", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
@@ -635,9 +687,9 @@ public class ControllerApplicant {
         menuButtonMinorKind.getItems().addAll(milk, yogurt, cheese, cream);
     }
 
-    public void chooseKindDrinks() {
+    public void drinks(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "drinks");
+        menuInfo(1, "drinks", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem tea = new MenuItem("tea");
         MenuItem herbalTea = new MenuItem("herbal tea");
@@ -649,7 +701,7 @@ public class ControllerApplicant {
 
         tea.setOnAction(event -> {
 
-            menuInfo(2, "tea");
+            menuInfo(2, "tea", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem debsh = new MenuItem("Debsh");
             MenuItem golestan = new MenuItem("Golestan");
@@ -669,7 +721,7 @@ public class ControllerApplicant {
         });
         herbalTea.setOnAction(event -> {
 
-            menuInfo(2, "herbalTea");
+            menuInfo(2, "herbalTea", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem golestan = new MenuItem("Golestan");
             MenuItem seharKhiz = new MenuItem("Sehar Khiz");
@@ -689,7 +741,7 @@ public class ControllerApplicant {
         });
         coffee.setOnAction(event -> {
 
-            menuInfo(2, "coffee");
+            menuInfo(2, "coffee", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem aliCafe = new MenuItem("Ali Cafe");
             MenuItem goodDay = new MenuItem("Good Day");
@@ -709,7 +761,7 @@ public class ControllerApplicant {
         });
         water.setOnAction(event -> {
 
-            menuInfo(2, "water");
+            menuInfo(2, "water", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem damavand = new MenuItem("Damavand");
             MenuItem miva = new MenuItem("Miva");
@@ -729,7 +781,7 @@ public class ControllerApplicant {
         });
         beer.setOnAction(event -> {
 
-            menuInfo(2, "beer");
+            menuInfo(2, "beer", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem aalis = new MenuItem("Aalis");
             MenuItem heyDay = new MenuItem("Hey Day");
@@ -749,7 +801,7 @@ public class ControllerApplicant {
         });
         soda.setOnAction(event -> {
 
-            menuInfo(2, "soda");
+            menuInfo(2, "soda", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem cocaCola = new MenuItem("Coca Cola");
             MenuItem fantaLemon = new MenuItem("Fanta Lemon");
@@ -769,7 +821,7 @@ public class ControllerApplicant {
         });
         juice.setOnAction(event -> {
 
-            menuInfo(2, "juice");
+            menuInfo(2, "juice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem sanIch = new MenuItem("San Ich");
@@ -791,9 +843,9 @@ public class ControllerApplicant {
         menuButtonMinorKind.getItems().addAll(tea, herbalTea, coffee, water, beer, soda, juice);
     }
 
-    public void chooseKindSnacks() {
+    public void snacks(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "snacks");
+        menuInfo(1, "snacks", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem chocolate = new MenuItem("chocolate");
         MenuItem biscuit = new MenuItem("biscuit");
@@ -805,7 +857,7 @@ public class ControllerApplicant {
 
         chocolate.setOnAction(event -> {
 
-            menuInfo(2, "chocolate");
+            menuInfo(2, "chocolate", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem hiss = new MenuItem("Hiss");
             MenuItem rangarang = new MenuItem("Rangarang");
@@ -825,7 +877,7 @@ public class ControllerApplicant {
         });
         biscuit.setOnAction(event -> {
 
-            menuInfo(2, "biscuit");
+            menuInfo(2, "biscuit", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem hiBye = new MenuItem("Hi Bye");
             MenuItem petitBeurre = new MenuItem("petit Beurre");
@@ -845,7 +897,7 @@ public class ControllerApplicant {
         });
         nuts.setOnAction(event -> {
 
-            menuInfo(2, "nuts");
+            menuInfo(2, "nuts", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem mani = new MenuItem("Mani");
             MenuItem mazMaz = new MenuItem("Maz Maz");
@@ -865,7 +917,7 @@ public class ControllerApplicant {
         });
         cake.setOnAction(event -> {
 
-            menuInfo(2, "cake");
+            menuInfo(2, "cake", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem cakeMake = new MenuItem("Cake Make");
             MenuItem tTop = new MenuItem("T Top");
@@ -885,7 +937,7 @@ public class ControllerApplicant {
         });
         chips.setOnAction(event -> {
 
-            menuInfo(2, "chips");
+            menuInfo(2, "chips", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem chakelz = new MenuItem("Chakelz");
             MenuItem cheetoz = new MenuItem("Cheeroz");
@@ -906,7 +958,7 @@ public class ControllerApplicant {
         });
         pofak.setOnAction(event -> {
 
-            menuInfo(2, "pofak");
+            menuInfo(2, "pofak", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem chakelz = new MenuItem("Chakelz");
             MenuItem cheetoz = new MenuItem("Cheeroz");
@@ -926,7 +978,7 @@ public class ControllerApplicant {
         });
         chewingGum.setOnAction(event -> {
 
-            menuInfo(2, "chewingGum");
+            menuInfo(2, "chewingGum", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem action = new MenuItem("Action");
             MenuItem biodent = new MenuItem("Biodent");
@@ -948,7 +1000,7 @@ public class ControllerApplicant {
         menuButtonMinorKind.getItems().addAll(chocolate, biscuit, nuts, cake, chips, pofak, chewingGum);
     }
 
-    public void menuInfo(int code, String menuTitle) {
+    public void menuInfo(int code, String menuTitle, MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
         if (code == 1) {
             menuButtonKind.setText(menuTitle);
@@ -960,7 +1012,7 @@ public class ControllerApplicant {
         }
         menuButtonBrand.getItems().clear();
         menuButtonBrand.setText("Brand");
-        addtxt.setText("");
+        if (addtxt != null) addtxt.setText("");
     }
 
 
@@ -972,32 +1024,33 @@ public class ControllerApplicant {
     private ImageView productImg;
 
     public void addProduct() throws SQLException {
-        if (!menuButtonKind.getText().equals("Kind") && !menuButtonMinorKind.getText().equals("Minor Kind") && !menuButtonBrand.getText().equals("Brand"))
-            if (!txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("")) {
-                Item item = new Item(
-                        menuButtonKind.getText(),
-                        menuButtonMinorKind.getText(),
-                        menuButtonBrand.getText(),
-                        txtProductName.getText(),
-                        Integer.parseInt(txtProductPrice.getText()),
-                        Integer.parseInt(txtProductSize.getText()),
-                        productImg.getImage()
-                );
+        if (!menuButtonKind.getText().equals("Kind") && !menuButtonMinorKind.getText().equals("Minor Kind") && !menuButtonBrand.getText().equals("Brand") &&
+                !txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("")) {
+            Item item = new Item(
+                    menuButtonKind.getText(),
+                    menuButtonMinorKind.getText(),
+                    menuButtonBrand.getText(),
+                    txtProductName.getText(),
+                    Integer.parseInt(txtProductPrice.getText()),
+                    Integer.parseInt(txtProductSize.getText()),
+                    productImg.getImage()
+            );
 
-                if (!Application.shop.currentSeller.items.contains(item)) {
-                    Application.shop.currentSeller.items.add(item);
-                    Database.addProduct(item);
+            if (!Application.shop.currentSeller.items.contains(item)) {
+                Application.shop.currentSeller.items.add(item);
+                Database.addProduct(item);
 
-                    productImg.setImage(item.image);
-                    addtxt.setText("add successfully");
-                } else {
-                    addtxt.setText("product is valid");
-                }
-
+                productImg.setImage(item.image);
+                addtxt.setText("add successfully");
+            } else {
+                addtxt.setText("product is valid");
             }
+        } else {
+            addtxt.setText("fill all the blanks");
+        }
     }
 
-    public void loadImage(ActionEvent e) {
+    public void loadImage() {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
@@ -1049,6 +1102,7 @@ public class ControllerApplicant {
             chatBackgroundImg.setImage(t7);
         });
     }
+
 
     //for the spinner in cart tab see bro code
 }
