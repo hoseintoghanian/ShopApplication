@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="brand menu items drinks method" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="customer &amp; seller main page &amp; seller account" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,12 +31,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/University/projects/term 2/ShopApplication/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="javafx.application" />
@@ -123,8 +131,7 @@
       <workItem from="1687863730648" duration="229000" />
       <workItem from="1687864145169" duration="1413000" />
       <workItem from="1687870185229" duration="4445000" />
-      <workItem from="1687875946042" duration="22000" />
-      <workItem from="1687875985153" duration="307000" />
+      <workItem from="1687876217362" duration="421000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -427,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687874057466</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="customer &amp; seller main page &amp; seller account">
+      <created>1687876628623</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1687876628623</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +459,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="controller applicant chooseKindProteinFoods method" />
     <MESSAGE value="controller applicant chooseKindDairy method" />
     <MESSAGE value="some changes in cotrollerPayment and controllerApplicant" />
     <MESSAGE value="changes in cotrollerApplicant" />
@@ -470,7 +483,8 @@
     <MESSAGE value="brand menu items protein method" />
     <MESSAGE value="brand menu items dairy method" />
     <MESSAGE value="brand menu items drinks method" />
-    <option name="LAST_COMMIT_MESSAGE" value="brand menu items drinks method" />
+    <MESSAGE value="customer &amp; seller main page &amp; seller account" />
+    <option name="LAST_COMMIT_MESSAGE" value="customer &amp; seller main page &amp; seller account" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
