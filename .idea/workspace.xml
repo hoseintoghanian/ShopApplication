@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="update supermarket images (grocery)">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="update supermarket images (breakfast)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/6. sauce/mahram - sause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/1. jam/bijan - jam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/1. jam/mixland - jam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/1. jam/yek o yek - jam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/2. honey/rayehe - honey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/2. honey/segmen - honey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/2. honey/yek o yek - honey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/3. halva/oghab - halva.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/3. halva/tahini - halva.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/3. halva/taksun - halva.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -36,6 +46,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -114,7 +128,7 @@
       <workItem from="1687870185229" duration="4445000" />
       <workItem from="1687876217362" duration="1381000" />
       <workItem from="1687878700132" duration="5977000" />
-      <workItem from="1687890009589" duration="770000" />
+      <workItem from="1687890009589" duration="1120000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -445,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687890519522</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="update supermarket images (breakfast)">
+      <created>1687891125855</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1687891125855</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="displayInfo method in CotrollerApplicant" />
     <MESSAGE value="some methods in CotrollerApplicant" />
     <MESSAGE value="define properties in CotrollerAdmin" />
     <MESSAGE value="Initialize method in CotrollerAdmin" />
@@ -488,7 +508,8 @@
     <MESSAGE value="setChatBackground method in controllerApplicant" />
     <MESSAGE value="code cleaning and chat background in admin fxml" />
     <MESSAGE value="update supermarket images (grocery)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update supermarket images (grocery)" />
+    <MESSAGE value="update supermarket images (breakfast)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update supermarket images (breakfast)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
