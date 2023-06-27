@@ -297,7 +297,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="666.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/customer.png" />
                      </image>
@@ -305,33 +305,33 @@
                         <DropShadow />
                      </effect>
                   </ImageView>
-                  <Label layoutX="70.0" layoutY="340.0" text="Password :">
+                  <Label layoutX="40.0" layoutY="240.0" text="Password :">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="270.0" text="Username :">
+                  <Label layoutX="40.0" layoutY="190.0" text="Username :">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="200.0" text="Phone Number :">
+                  <Label layoutX="40.0" layoutY="140.0" text="Phone :">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="130.0" text="Lastname :">
+                  <Label layoutX="40.0" layoutY="90.0" text="Lastname :">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -342,7 +342,15 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="70.0" layoutY="410.0" text="E-mail :">
+                  <Label layoutX="40.0" layoutY="290.0" text="E-mail :">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </Label>
+                  <Label layoutX="772.0" layoutY="380.0" text="Seller">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -350,96 +358,87 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="1256.0" layoutY="385.0" text="Seller">
+                  <Label layoutX="40.0" layoutY="40.0" text="Firstname :">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="60.0" text="Firstname :">
+                  <Label fx:id="txtpnaccount" layoutX="230.0" layoutY="140.0" text="...">
                      <font>
-                        <Font size="36.0" />
-                     </font>
-                     <effect>
-                        <SepiaTone />
-                     </effect>
-                  </Label>
-                  <Label fx:id="txtpnaccount" layoutX="400.0" layoutY="200.0" text="...">
-                     <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtemaccount" layoutX="400.0" layoutY="410.0" text="...">
+                  <Label fx:id="txtemaccount" layoutX="230.0" layoutY="290.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtpwaccount" layoutX="400.0" layoutY="340.0" text="...">
+                  <Label fx:id="txtpwaccount" layoutX="230.0" layoutY="240.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtunaccount" layoutX="400.0" layoutY="270.0" text="...">
+                  <Label fx:id="txtunaccount" layoutX="230.0" layoutY="190.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtfnaccount" layoutX="400.0" layoutY="60.0" text="...">
+                  <Label fx:id="txtfnaccount" layoutX="230.0" layoutY="40.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtlnaccount" layoutX="400.0" layoutY="130.0" text="...">
+                  <Label fx:id="txtlnaccount" layoutX="230.0" layoutY="90.0" text="...">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
-                  <Separator layoutX="1150.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
-                  <Separator layoutX="1450.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
-                  <Separator layoutX="1150.0" layoutY="50.0" prefWidth="300.0" />
-                  <Separator layoutX="1150.0" layoutY="350.0" prefWidth="300.0" />
-                  <Separator layoutX="655.0" layoutY="50.0" orientation="VERTICAL" prefHeight="480.0">
+                  <Separator layoutX="666.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
+                  <Separator layoutX="966.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
+                  <Separator layoutX="666.0" layoutY="50.0" prefWidth="300.0" />
+                  <Separator layoutX="666.0" layoutY="350.0" prefWidth="300.0" />
+                  <Separator layoutX="655.0" layoutY="50.0" orientation="VERTICAL" prefHeight="600.0">
                      <effect>
                         <DropShadow />
                      </effect></Separator>
-                  <Label layoutX="70.0" layoutY="610.0" text="Wallet Balance :">
+                  <Label layoutX="40.0" layoutY="340.0" text="Wallet Balance :">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="376.0" layoutY="610.0" text="0 $">
+                  <Label layoutX="230.0" layoutY="340.0" text="0 $">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="759.0" layoutY="609.0" mnemonicParsing="false" opacity="0.9" prefWidth="300.0" text="Increase acount balance">
+                  <Button layoutX="370.0" layoutY="340.0" mnemonicParsing="false" opacity="0.9" prefWidth="250.0" text="Increase acount balance">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="18.0" />
                      </font>
                      <effect>
-                        <DropShadow>
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
                            <input>
-                              <SepiaTone level="0.2">
+                              <InnerShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow />
+                                    <ColorAdjust contrast="1.0" />
                                  </input>
-                              </SepiaTone>
+                              </InnerShadow>
                            </input>
+                           <color>
+                              <Color red="0.5789473652839661" green="0.4628719985485077" blue="0.14366471767425537" />
+                           </color>
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Separator layoutX="655.0" layoutY="600.0" orientation="VERTICAL" prefHeight="70.0">
-                     <effect>
-                        <DropShadow />
-                     </effect></Separator>
-                  <AnchorPane layoutX="700.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0">
+                  <AnchorPane layoutX="75.0" layoutY="406.0" prefHeight="300.0" prefWidth="500.0">
                      <children>
-                        <TextField fx:id="txtProductName" layoutX="15.0" layoutY="135.0" prefWidth="150.0" promptText="name">
+                        <TextField fx:id="txtProductName" layoutX="15.0" layoutY="135.0" prefWidth="170.0" promptText="name">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -453,7 +452,7 @@
                                  </color>
                               </DropShadow>
                            </effect></TextField>
-                        <TextField fx:id="txtProductPrice" layoutX="15.0" layoutY="175.0" prefWidth="150.0" promptText="price">
+                        <TextField fx:id="txtProductPrice" layoutX="15.0" layoutY="175.0" prefWidth="170.0" promptText="price">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -467,12 +466,12 @@
                                  </color>
                               </DropShadow>
                            </effect></TextField>
-                        <ImageView fx:id="productImg" fitHeight="200.0" fitWidth="200.0" layoutX="185.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="productImg" fitHeight="200.0" fitWidth="200.0" layoutX="270.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/shop.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtProductSize" layoutX="15.0" layoutY="215.0" prefWidth="150.0" promptText="size">
+                        <TextField fx:id="txtProductSize" layoutX="15.0" layoutY="215.0" prefWidth="170.0" promptText="size">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -486,7 +485,7 @@
                                  </color>
                               </DropShadow>
                            </effect></TextField>
-                        <Button layoutX="257.0" layoutY="255.0" mnemonicParsing="false" onAction="#addProduct" text="   add   ">
+                        <Button layoutX="342.0" layoutY="255.0" mnemonicParsing="false" onAction="#addProduct" text="   add   ">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -500,7 +499,7 @@
                                  </color>
                               </DropShadow>
                            </effect></Button>
-                        <MenuButton fx:id="menuButtonKind" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefWidth="150.0" text="Kind">
+                        <MenuButton fx:id="menuButtonKind" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefWidth="170.0" text="Kind">
                           <items>
                             <MenuItem mnemonicParsing="false" onAction="#chooseKindGrocery" text="grocery" />
                             <MenuItem mnemonicParsing="false" onAction="#chooseKindBreakfast" text="breakfast" />
@@ -523,7 +522,7 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <MenuButton fx:id="menuButtonMinorKind" layoutX="15.0" layoutY="55.0" mnemonicParsing="false" prefWidth="150.0" text="Minor Kind">
+                        <MenuButton fx:id="menuButtonMinorKind" layoutX="15.0" layoutY="55.0" mnemonicParsing="false" prefWidth="170.0" text="Minor Kind">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -538,7 +537,7 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <MenuButton fx:id="menuButtonBrand" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" prefWidth="150.0" text="Brand">
+                        <MenuButton fx:id="menuButtonBrand" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" prefWidth="170.0" text="Brand">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -553,12 +552,12 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <Label fx:id="addtxt" layoutX="222.0" layoutY="214.0" text=" ">
+                        <Label fx:id="addtxt" layoutX="306.0" layoutY="214.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button layoutX="15.0" layoutY="255.0" mnemonicParsing="false" onAction="#loadImage" prefWidth="150.0" text="Load Image">
+                        <Button layoutX="15.0" layoutY="255.0" mnemonicParsing="false" onAction="#loadImage" prefWidth="170.0" text="Load Image">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -575,31 +574,178 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <Separator layoutX="700.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
-                  <Separator layoutX="1100.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
-                  <Separator layoutX="700.0" layoutY="50.0" prefWidth="400.0" />
-                  <Separator layoutX="700.0" layoutY="350.0" prefWidth="400.0" />
-                  <TextArea layoutX="1150.0" layoutY="470.0" prefHeight="200.0" prefWidth="300.0" promptText="message to admin">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <effect>
-                        <InnerShadow blurType="TWO_PASS_BOX">
-                           <input>
-                              <DropShadow>
-                                 <input>
-                                    <SepiaTone level="0.3" />
-                                 </input>
-                              </DropShadow>
-                           </input>
-                        </InnerShadow>
-                     </effect>
-                  </TextArea>
-                  <Hyperlink layoutX="1400.0" layoutY="25.0" onAction="#changeToLoginSceneSeller" text="Log Out">
+                  <Separator layoutX="72.0" layoutY="401.0" orientation="VERTICAL" prefHeight="300.0" />
+                  <Separator layoutX="571.0" layoutY="401.0" orientation="VERTICAL" prefHeight="300.0" />
+                  <Separator layoutX="72.0" layoutY="401.0" prefWidth="500.0" />
+                  <Separator layoutX="72.0" layoutY="701.0" prefWidth="500.0" />
+                  <Hyperlink layoutX="914.0" layoutY="28.0" onAction="#changeToLoginSceneSeller" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>
                   </Hyperlink>
+                  <AnchorPane layoutX="989.0" maxWidth="500.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="750.0" prefWidth="500.0" style="-fx-background-color: #E5BA1D;">
+                     <children>
+                        <TextArea layoutY="670.0" prefHeight="50.0" prefWidth="450.0" promptText="Message to admin">
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
+                                 <input>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextArea>
+                        <Button layoutX="450.0" layoutY="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Send">
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
+                                 <input>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </Button>
+                        <Label layoutX="5.0" layoutY="17.0" text="Theme">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="80.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme1.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="200.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme3.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="140.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme2.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ScrollPane layoutY="70.0" prefHeight="600.0" prefWidth="515.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="500.0">
+                                 <children>
+                                    <ImageView fitHeight="2000.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/theme/t5.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="15.0" layoutY="15.0" text="username + message text" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </ScrollPane>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="260.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme4.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="320.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme5.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="380.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme6.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="440.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme7.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
                <effect>
                   <InnerShadow />

@@ -44,14 +44,14 @@
                            </input>
                         </DropShadow>
                      </effect></Button>
-                  <Label layoutX="20.0" layoutY="17.0" text="Theme">
+                  <Label layoutX="5.0" layoutY="17.0" text="Theme">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="95.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="80.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/theme/t%201.png" />
+                        <Image url="@../img/theme/theme1.png" />
                      </image>
                      <effect>
                         <DropShadow>
@@ -65,9 +65,9 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="215.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="200.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/theme/t%203.png" />
+                        <Image url="@../img/theme/theme3.png" />
                      </image>
                      <effect>
                         <DropShadow>
@@ -81,9 +81,9 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="155.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="140.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/theme/t%202.png" />
+                        <Image url="@../img/theme/theme2.png" />
                      </image>
                      <effect>
                         <DropShadow>
@@ -103,10 +103,10 @@
                            <children>
                               <ImageView fitHeight="2000.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/theme/theme%201.png" />
+                                    <Image url="@../img/theme/t5.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="15.0" layoutY="15.0" text="username + message text">
+                              <Label layoutX="15.0" layoutY="15.0" text="username + message text" textFill="WHITE">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -118,6 +118,70 @@
                         <InnerShadow />
                      </effect>
                   </ScrollPane>
+                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="260.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/theme/theme4.png" />
+                     </image>
+                     <effect>
+                        <DropShadow>
+                           <input>
+                              <InnerShadow>
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </InnerShadow>
+                           </input>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="320.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/theme/theme5.png" />
+                     </image>
+                     <effect>
+                        <DropShadow>
+                           <input>
+                              <InnerShadow>
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </InnerShadow>
+                           </input>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="380.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/theme/theme6.png" />
+                     </image>
+                     <effect>
+                        <DropShadow>
+                           <input>
+                              <InnerShadow>
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </InnerShadow>
+                           </input>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="440.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/theme/theme7.png" />
+                     </image>
+                     <effect>
+                        <DropShadow>
+                           <input>
+                              <InnerShadow>
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </InnerShadow>
+                           </input>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
                </children>
             </AnchorPane>
             <AnchorPane maxHeight="1000.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #DCC97E;">

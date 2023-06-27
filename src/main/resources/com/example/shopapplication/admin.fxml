@@ -363,7 +363,7 @@
                                  <children>
                                     <ImageView fitHeight="2000.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/theme/theme 3.png" />
+                                          <Image url="@../img/theme/t5.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -392,9 +392,9 @@
                         </Label>
                         <TextArea layoutX="720.0" layoutY="666.0" maxHeight="50.0" prefHeight="50.0" prefWidth="324.0" promptText="message">
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <SepiaTone />
                                        </input>
@@ -413,7 +413,7 @@
                            <effect>
                               <DropShadow>
                                  <input>
-                                    <InnerShadow>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <SepiaTone />
                                        </input>
@@ -432,7 +432,7 @@
                         </Label>
                         <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/theme/t 1.png" />
+                              <Image url="@../img/theme/theme1.png" />
                            </image>
                            <effect>
                               <DropShadow>
@@ -446,9 +446,9 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/theme/t 3.png" />
+                              <Image url="@../img/theme/theme5.png" />
                            </image>
                            <effect>
                               <DropShadow>
@@ -462,9 +462,9 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/theme/t 2.png" />
+                              <Image url="@../img/theme/theme2.png" />
                            </image>
                            <effect>
                               <DropShadow>
@@ -483,9 +483,9 @@
                               <Font size="20.0" />
                            </font>
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <SepiaTone />
                                        </input>
@@ -494,6 +494,70 @@
                               </DropShadow>
                            </effect>
                         </Button>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme3.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme4.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme6.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/theme/theme7.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow>
+                                       <input>
+                                          <DropShadow />
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content>
@@ -541,12 +605,12 @@
             <Image url="@../img/110912-font-awesome.png" />
          </image>
       </ImageView>
-      <Label layoutX="1273.0" layoutY="430.0" text="admin" textAlignment="CENTER" textFill="#4a20b2">
+      <Label layoutX="1255.0" layoutY="430.0" text="admin" textAlignment="CENTER" textFill="#2f176b">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="1273.0" layoutY="480.0" text="8851" textFill="#271bcc">
+      <Label layoutX="1255.0" layoutY="480.0" text="8851" textFill="#2f176b">
          <font>
             <Font size="24.0" />
          </font>
