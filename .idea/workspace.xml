@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="load item image">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="customer and seller main page fxml UI">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/card.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gif/discount.gif" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -124,7 +121,7 @@
       <workItem from="1686219444335" duration="2129000" />
       <workItem from="1687790213701" duration="2176000" />
       <workItem from="1687809881996" duration="8020000" />
-      <workItem from="1687845264714" duration="9707000" />
+      <workItem from="1687845264714" duration="11127000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -378,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687850607087</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="customer and seller main page fxml UI">
+      <created>1687860163372</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1687860163372</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +400,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="main page UI" />
     <MESSAGE value="work place in sign up fxml&#10;other UI changes" />
     <MESSAGE value="seller and customer account,cart and main page sections UI" />
     <MESSAGE value="seller &amp; customer &amp; bank portal &amp; payment UI" />
@@ -421,7 +424,8 @@
     <MESSAGE value="addProduct method in controllerApplicant class" />
     <MESSAGE value="fix" />
     <MESSAGE value="load item image" />
-    <option name="LAST_COMMIT_MESSAGE" value="load item image" />
+    <MESSAGE value="customer and seller main page fxml UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="customer and seller main page fxml UI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
