@@ -354,9 +354,6 @@
                      <font>
                         <Font size="36.0" />
                      </font>
-                     <effect>
-                        <SepiaTone />
-                     </effect>
                   </Label>
                   <Label layoutX="40.0" layoutY="40.0" text="Firstname :">
                      <font>
@@ -611,7 +608,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="80.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTheme1" fitHeight="60.0" fitWidth="50.0" layoutX="80.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme1.png" />
                            </image>
@@ -627,7 +624,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="200.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTheme3" fitHeight="60.0" fitWidth="50.0" layoutX="200.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme3.png" />
                            </image>
@@ -643,7 +640,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="140.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTheme2" fitHeight="60.0" fitWidth="50.0" layoutX="140.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme2.png" />
                            </image>
@@ -663,9 +660,9 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="500.0">
                                  <children>
-                                    <ImageView fitHeight="2000.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="chatBackgroundImg" fitHeight="2000.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/theme/t5.png" />
+                                          <Image url="@../../../t5.png" />
                                        </image>
                                     </ImageView>
                                     <Label layoutX="15.0" layoutY="15.0" text="username + message text" textFill="WHITE">
@@ -680,7 +677,7 @@
                               <InnerShadow />
                            </effect>
                         </ScrollPane>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="260.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTheme4" fitHeight="60.0" fitWidth="50.0" layoutX="260.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme4.png" />
                            </image>
@@ -696,7 +693,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="320.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTheme5" fitHeight="60.0" fitWidth="50.0" layoutX="320.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme5.png" />
                            </image>
@@ -712,7 +709,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="380.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTheme6" fitHeight="60.0" fitWidth="50.0" layoutX="380.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme6.png" />
                            </image>
@@ -728,7 +725,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="50.0" layoutX="440.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTheme7" fitHeight="60.0" fitWidth="50.0" layoutX="440.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme7.png" />
                            </image>
