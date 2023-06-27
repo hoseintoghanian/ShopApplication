@@ -4,28 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="update supermarket images (protein foods)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/1. bologna/kampooreh - bologna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/1. bologna/robat - bologna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/1. bologna/sham sham - bologna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/2. lamb meet/aria bahar - lamp meet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/2. lamb meet/mahya - lamp meet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/2. lamb meet/puya - lamp meet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/3. chicken/mahya - chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/3. chicken/puya - chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/3. chicken/telavang - chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/4. egg/morghdaran - egg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/4. egg/porotana - egg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/4. egg/telavang - egg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/5. beef/khoram - beef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/5. beef/mahya - beef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/5. beef/puya - beef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/6. shrimp/marine - shrimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/6. shrimp/pemina - shrimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/6. shrimp/tohfe - shrimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/7. tuna/makenzi - tuna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/7. tuna/shilton - tuna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/7. tuna/tohfe - tuna.png" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="update supermarket images (dairy)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/1. milk/damdaran - milk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/1. milk/kale - milk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/1. milk/mihan - milk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/2. yogurt/kale - yogurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/2. yogurt/mihan - yogurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/2. yogurt/ramak - yogurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/3. cheese/kale - cheese.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/3. cheese/mihan - cheese.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/3. cheese/ruzane - cheese.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/4. cream/kale - cream.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/4. cream/mihan - cream.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/4. cream/pegah - cream.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,14 +129,7 @@
       <workItem from="1687870185229" duration="4445000" />
       <workItem from="1687876217362" duration="1381000" />
       <workItem from="1687878700132" duration="5977000" />
-      <workItem from="1687890009589" duration="1462000" />
-    </task>
-    <task id="LOCAL-00002" summary="sign up fxml (UI)">
-      <created>1685557361305</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1685557361305</updated>
+      <workItem from="1687890009589" duration="1808000" />
     </task>
     <task id="LOCAL-00003" summary="change UI">
       <created>1685578729787</created>
@@ -482,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687891428393</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="update supermarket images (dairy)">
+      <created>1687891736213</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1687891736213</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="define properties in CotrollerAdmin" />
     <MESSAGE value="Initialize method in CotrollerAdmin" />
     <MESSAGE value="changes in admin.fxml and ControllerRegister" />
     <MESSAGE value="changes in controllerAdmin" />
@@ -525,7 +516,8 @@
     <MESSAGE value="update supermarket images (grocery)" />
     <MESSAGE value="update supermarket images (breakfast)" />
     <MESSAGE value="update supermarket images (protein foods)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update supermarket images (protein foods)" />
+    <MESSAGE value="update supermarket images (dairy)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update supermarket images (dairy)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
