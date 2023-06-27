@@ -24,7 +24,7 @@ public class Application extends javafx.application.Application {
         }
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("product.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Online Shop Application");
         stage.setScene(scene);

@@ -184,7 +184,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane maxHeight="1000.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #DCC97E;">
+            <AnchorPane maxHeight="1000.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #E5BA1D;">
                <children>
                   <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="500.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>
