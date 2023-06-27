@@ -644,6 +644,16 @@ public class ControllerApplicant {
             MenuItem golestan = new MenuItem("Golestan");
             MenuItem shahrzad = new MenuItem("Shahrzad");
 
+            debsh.setOnAction(ev -> {
+                menuButtonBrand.setText("debsh");
+            });
+            golestan.setOnAction(ev -> {
+                menuButtonBrand.setText("golestan");
+            });
+            shahrzad.setOnAction(ev -> {
+                menuButtonBrand.setText("shahrzad");
+            });
+
             menuButtonBrand.getItems().addAll(debsh, golestan, shahrzad);
         });
 
@@ -653,6 +663,16 @@ public class ControllerApplicant {
             MenuItem golestan = new MenuItem("Golestan");
             MenuItem seharKhiz = new MenuItem("Sehar Khiz");
             MenuItem shahsavand = new MenuItem("Shahsavand");
+
+            golestan.setOnAction(ev -> {
+                menuButtonBrand.setText("golestan");
+            });
+            shahsavand.setOnAction(ev -> {
+                menuButtonBrand.setText("shahsavand");
+            });
+            shahsavand.setOnAction(ev -> {
+                menuButtonBrand.setText("shahsavand");
+            });
 
             menuButtonBrand.getItems().addAll(golestan, seharKhiz, shahsavand);
         });
@@ -664,6 +684,16 @@ public class ControllerApplicant {
             MenuItem goodDay = new MenuItem("Good Day");
             MenuItem nescafe = new MenuItem("Nescafe");
 
+            aliCafe.setOnAction(ev -> {
+                menuButtonBrand.setText("ali cafe");
+            });
+            goodDay.setOnAction(ev -> {
+                menuButtonBrand.setText("good day");
+            });
+            nescafe.setOnAction(ev -> {
+                menuButtonBrand.setText("nescafe");
+            });
+
             menuButtonBrand.getItems().addAll(aliCafe, goodDay, nescafe);
         });
 
@@ -674,35 +704,75 @@ public class ControllerApplicant {
             MenuItem miva = new MenuItem("Miva");
             MenuItem oxab = new MenuItem("Oxab");
 
+            damavand.setOnAction(ev -> {
+                menuButtonBrand.setText("damavand");
+            });
+            miva.setOnAction(ev -> {
+                menuButtonBrand.setText("miva");
+            });
+            oxab.setOnAction(ev -> {
+                menuButtonBrand.setText("oxab");
+            });
+
             menuButtonBrand.getItems().addAll(damavand, miva, oxab);
         });
 
         beer.setOnAction(event -> {
-            menuButtonMinorKind.setText("cream");
+            menuButtonMinorKind.setText("beer");
 
             MenuItem aalis = new MenuItem("Aalis");
             MenuItem heyDay = new MenuItem("Hey Day");
             MenuItem jojo = new MenuItem("Jojo");
 
+            aalis.setOnAction(ev -> {
+                menuButtonBrand.setText("aalis");
+            });
+            heyDay.setOnAction(ev -> {
+                menuButtonBrand.setText("hey day");
+            });
+            jojo.setOnAction(ev -> {
+                menuButtonBrand.setText("jojo");
+            });
+
             menuButtonBrand.getItems().addAll(aalis, heyDay, jojo);
         });
 
         soda.setOnAction(event -> {
-            menuButtonMinorKind.setText("cream");
+            menuButtonMinorKind.setText("soda");
 
             MenuItem cocaCola = new MenuItem("Coca Cola");
             MenuItem fantaLemon = new MenuItem("Fanta Lemon");
             MenuItem fantaOrange = new MenuItem("Fanta Orange");
 
+            cocaCola.setOnAction(ev -> {
+                menuButtonBrand.setText("coca cola");
+            });
+            fantaLemon.setOnAction(ev -> {
+                menuButtonBrand.setText("fanta lemon");
+            });
+            fantaOrange.setOnAction(ev -> {
+                menuButtonBrand.setText("fanta orange");
+            });
+
             menuButtonBrand.getItems().addAll(cocaCola, fantaLemon, fantaOrange);
         });
 
         juice.setOnAction(event -> {
-            menuButtonMinorKind.setText("cream");
+            menuButtonMinorKind.setText("juice");
 
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem sanIch = new MenuItem("San Ich");
             MenuItem takDaneh = new MenuItem("Tak Daneh");
+
+            mihan.setOnAction(ev -> {
+                menuButtonBrand.setText("mihan");
+            });
+            sanIch.setOnAction(ev -> {
+                menuButtonBrand.setText("san ich");
+            });
+            takDaneh.setOnAction(ev -> {
+                menuButtonBrand.setText("tak daneh");
+            });
 
             menuButtonBrand.getItems().addAll(mihan, sanIch, takDaneh);
         });
