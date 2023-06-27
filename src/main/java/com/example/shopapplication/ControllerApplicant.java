@@ -323,6 +323,16 @@ public class ControllerApplicant {
             MenuItem mixLand = new MenuItem("Mix Land");
             MenuItem yekOyek = new MenuItem("yek & yek");
 
+            bijan.setOnAction(ev -> {
+                menuButtonBrand.setText("bijan");
+            });
+            mixLand.setOnAction(ev -> {
+                menuButtonBrand.setText("mix land");
+            });
+            yekOyek.setOnAction(ev -> {
+                menuButtonBrand.setText("yek & yek");
+            });
+
             menuButtonBrand.getItems().addAll(bijan, mixLand, yekOyek);
         });
         honey.setOnAction(event -> {
@@ -332,6 +342,16 @@ public class ControllerApplicant {
             MenuItem segmen = new MenuItem("Segmen");
             MenuItem shahsavand = new MenuItem("Shahsavand");
 
+            rayehe.setOnAction(ev -> {
+                menuButtonBrand.setText("rayehe");
+            });
+            segmen.setOnAction(ev -> {
+                menuButtonBrand.setText("segmen");
+            });
+            shahsavand.setOnAction(ev -> {
+                menuButtonBrand.setText("shahsavand");
+            });
+
             menuButtonBrand.getItems().addAll(rayehe, segmen, shahsavand);
         });
         halva.setOnAction(event -> {
@@ -340,6 +360,16 @@ public class ControllerApplicant {
             MenuItem oghab = new MenuItem("Oghab");
             MenuItem tahini = new MenuItem("Tahini");
             MenuItem taksun = new MenuItem("Taksun");
+
+            oghab.setOnAction(ev -> {
+                menuButtonBrand.setText("oghab");
+            });
+            tahini.setOnAction(ev -> {
+                menuButtonBrand.setText("tahini");
+            });
+            taksun.setOnAction(ev -> {
+                menuButtonBrand.setText("taksun");
+            });
 
             menuButtonBrand.getItems().addAll(oghab, tahini, taksun);
         });

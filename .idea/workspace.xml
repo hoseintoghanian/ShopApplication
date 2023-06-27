@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="card fxml UI">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="brand menu items grocery method">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +125,7 @@
       <workItem from="1687845264714" duration="12732000" />
       <workItem from="1687863730648" duration="229000" />
       <workItem from="1687864145169" duration="1413000" />
-      <workItem from="1687870185229" duration="1356000" />
+      <workItem from="1687870185229" duration="1819000" />
     </task>
     <task id="LOCAL-00001" summary="sign up fxml (UI)">
       <created>1685556342740</created>
@@ -396,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687861954039</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="brand menu items grocery method">
+      <created>1687871696527</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1687871696527</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seller and customer account,cart and main page sections UI" />
     <MESSAGE value="seller &amp; customer &amp; bank portal &amp; payment UI" />
     <MESSAGE value="add 21 images to project" />
     <MESSAGE value="controller applicant chooseKindGrocery method" />
@@ -439,7 +442,8 @@
     <MESSAGE value="load item image" />
     <MESSAGE value="customer and seller main page fxml UI" />
     <MESSAGE value="card fxml UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="card fxml UI" />
+    <MESSAGE value="brand menu items grocery method" />
+    <option name="LAST_COMMIT_MESSAGE" value="brand menu items grocery method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
