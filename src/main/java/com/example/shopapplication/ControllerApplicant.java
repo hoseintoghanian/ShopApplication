@@ -1,6 +1,7 @@
 package com.example.shopapplication;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -997,6 +998,7 @@ public class ControllerApplicant {
             MenuItem hiss = new MenuItem("Hiss");
             MenuItem rangarang = new MenuItem("Rangarang");
             MenuItem takTak = new MenuItem("Tak Daneh");
+            MenuItem snickers = new MenuItem("Snickers");
 
             hiss.setOnAction(ev -> {
                 menuButtonBrand.setText("hiss");
@@ -1007,8 +1009,11 @@ public class ControllerApplicant {
             takTak.setOnAction(ev -> {
                 menuButtonBrand.setText("tak tak");
             });
+            snickers.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("snickers");
+            });
 
-            menuButtonBrand.getItems().addAll(hiss, rangarang, takTak);
+            menuButtonBrand.getItems().addAll(hiss, rangarang, takTak,snickers);
         });
         biscuit.setOnAction(event -> {
 
@@ -1017,6 +1022,7 @@ public class ControllerApplicant {
             MenuItem hiBye = new MenuItem("Hi Bye");
             MenuItem petitBeurre = new MenuItem("petit Beurre");
             MenuItem sagheTalai = new MenuItem("Saghe Talai");
+            MenuItem oreo = new MenuItem("Oreo");
 
             hiBye.setOnAction(ev -> {
                 menuButtonBrand.setText("hi bye");
@@ -1027,8 +1033,11 @@ public class ControllerApplicant {
             sagheTalai.setOnAction(ev -> {
                 menuButtonBrand.setText("saghe talai");
             });
+            oreo.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("oreo");
+            });
 
-            menuButtonBrand.getItems().addAll(hiBye, petitBeurre, sagheTalai);
+            menuButtonBrand.getItems().addAll(hiBye, petitBeurre, sagheTalai,oreo);
         });
         nuts.setOnAction(event -> {
 
@@ -1037,6 +1046,8 @@ public class ControllerApplicant {
             MenuItem mani = new MenuItem("Mani");
             MenuItem mazMaz = new MenuItem("Maz Maz");
             MenuItem sanjaghak = new MenuItem("Sanjaghak");
+            MenuItem planters = new MenuItem("Planters");
+
 
             mani.setOnAction(ev -> {
                 menuButtonBrand.setText("mani");
@@ -1047,8 +1058,11 @@ public class ControllerApplicant {
             sanjaghak.setOnAction(ev -> {
                 menuButtonBrand.setText("sanjaghak");
             });
+            planters.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("planters");
+            });
 
-            menuButtonBrand.getItems().addAll(mani, mazMaz, sanjaghak);
+            menuButtonBrand.getItems().addAll(mani, mazMaz, sanjaghak,planters);
         });
         cake.setOnAction(event -> {
 
@@ -1057,6 +1071,7 @@ public class ControllerApplicant {
             MenuItem cakeMake = new MenuItem("Cake Make");
             MenuItem tTop = new MenuItem("T Top");
             MenuItem tiny = new MenuItem("Tiny");
+            MenuItem mrKipling = new MenuItem("Mr Kipling");
 
             cakeMake.setOnAction(ev -> {
                 menuButtonBrand.setText("cake make");
@@ -1067,8 +1082,11 @@ public class ControllerApplicant {
             tiny.setOnAction(ev -> {
                 menuButtonBrand.setText("tiny");
             });
+            mrKipling.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("mr kipling");
+            });
 
-            menuButtonBrand.getItems().addAll(cakeMake, tTop, tiny);
+            menuButtonBrand.getItems().addAll(cakeMake, tTop, tiny,mrKipling);
         });
         chips.setOnAction(event -> {
 
@@ -1077,6 +1095,7 @@ public class ControllerApplicant {
             MenuItem chakelz = new MenuItem("Chakelz");
             MenuItem cheetoz = new MenuItem("Cheeroz");
             MenuItem delMaze = new MenuItem("Del maze");
+            MenuItem lays = new MenuItem("Lay's");
 
             chakelz.setOnAction(ev -> {
                 menuButtonBrand.setText("chakelz");
@@ -1087,9 +1106,12 @@ public class ControllerApplicant {
             delMaze.setOnAction(ev -> {
                 menuButtonBrand.setText("del maze");
             });
+            lays.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("lays");
+            });
 
 
-            menuButtonBrand.getItems().addAll(chakelz, cheetoz, delMaze);
+            menuButtonBrand.getItems().addAll(chakelz, cheetoz, delMaze,lays);
         });
         pofak.setOnAction(event -> {
 
@@ -1098,6 +1120,7 @@ public class ControllerApplicant {
             MenuItem chakelz = new MenuItem("Chakelz");
             MenuItem cheetoz = new MenuItem("Cheeroz");
             MenuItem pofakNamaki = new MenuItem("Pofak Namaki");
+            MenuItem cheetos = new MenuItem("Cheetos");
 
             chakelz.setOnAction(ev -> {
                 menuButtonBrand.setText("chakelz");
@@ -1108,8 +1131,11 @@ public class ControllerApplicant {
             pofakNamaki.setOnAction(ev -> {
                 menuButtonBrand.setText("pofak namaki");
             });
+            cheetos.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("cheetos");
+            });
 
-            menuButtonBrand.getItems().addAll(chakelz, cheetoz, pofakNamaki);
+            menuButtonBrand.getItems().addAll(chakelz, cheetoz, pofakNamaki,cheetos);
         });
         chewingGum.setOnAction(event -> {
 
@@ -1118,6 +1144,7 @@ public class ControllerApplicant {
             MenuItem action = new MenuItem("Action");
             MenuItem biodent = new MenuItem("Biodent");
             MenuItem trident = new MenuItem("Trident");
+            MenuItem orbit = new MenuItem("Orbit");
 
             action.setOnAction(ev -> {
                 menuButtonBrand.setText("action");
@@ -1128,8 +1155,11 @@ public class ControllerApplicant {
             trident.setOnAction(ev -> {
                 menuButtonBrand.setText("trident");
             });
+            orbit.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("orbit");
+            });
 
-            menuButtonBrand.getItems().addAll(action, biodent, trident);
+            menuButtonBrand.getItems().addAll(action, biodent, trident,orbit);
         });
 
         menuButtonMinorKind.getItems().addAll(chocolate, biscuit, nuts, cake, chips, pofak, chewingGum);

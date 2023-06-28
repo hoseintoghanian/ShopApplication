@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="Adding some lines of code to the dairy method in the ControllerApplicant class">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="Adding some lines of code to the &quot;drinks&quot; method in the &quot;ControllerApplicant&quot; class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,14 +132,7 @@
       <workItem from="1687934137422" duration="2936000" />
       <workItem from="1687963493236" duration="1397000" />
       <workItem from="1687968218777" duration="1392000" />
-      <workItem from="1687974451659" duration="7006000" />
-    </task>
-    <task id="LOCAL-00016" summary="controller applicant chooseKindProteinFoods method">
-      <created>1686050927617</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1686050927617</updated>
+      <workItem from="1687974451659" duration="7825000" />
     </task>
     <task id="LOCAL-00017" summary="controller applicant chooseKindDairy method">
       <created>1686052121109</created>
@@ -476,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687981892171</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Adding some lines of code to the &quot;drinks&quot; method in the &quot;ControllerApplicant&quot; class">
+      <created>1687982512938</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1687982512938</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="brand menu items grocery method" />
     <MESSAGE value="brand menu items breakfast method" />
     <MESSAGE value="brand menu items protein method" />
     <MESSAGE value="brand menu items dairy method" />
@@ -519,7 +519,8 @@
     <MESSAGE value="Adding some lines of code to the breakfast method in the ControllerApplicant class" />
     <MESSAGE value="Adding some lines of code to the protein method in the ControllerApplicant class" />
     <MESSAGE value="Adding some lines of code to the dairy method in the ControllerApplicant class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding some lines of code to the dairy method in the ControllerApplicant class" />
+    <MESSAGE value="Adding some lines of code to the &quot;drinks&quot; method in the &quot;ControllerApplicant&quot; class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding some lines of code to the &quot;drinks&quot; method in the &quot;ControllerApplicant&quot; class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
