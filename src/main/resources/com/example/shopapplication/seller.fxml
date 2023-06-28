@@ -607,7 +607,7 @@
                            </input>
                         </DropShadow>
                      </effect></Separator>
-                  <Hyperlink layoutX="914.0" layoutY="28.0" onAction="#changeToLoginSceneSeller" text="Log Out">
+                  <Hyperlink layoutX="914.0" layoutY="28.0" onAction="#changeToLoginScene" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>

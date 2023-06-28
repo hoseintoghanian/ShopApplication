@@ -91,11 +91,13 @@ public class ControllerRegister {
                     seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
                     URL = "seller.fxml";
                     Application.shop.currentSeller = seller;
+                    Application.shop.currentCustomer = null;
                 }
                 if (Application.shop.customers.contains(customer)) {
                     customer = Application.shop.customers.get(Application.shop.customers.indexOf(customer));
                     URL = "customer.fxml";
                     Application.shop.currentCustomer = customer;
+                    Application.shop.currentSeller = null;
                 }
             }
 

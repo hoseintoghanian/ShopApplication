@@ -1,10 +1,98 @@
 package com.example.shopapplication;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ControllerProduct {
+
+    public void changingScene(ActionEvent e, String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void changeToSellerScene(ActionEvent e) throws IOException {
+        changingScene(e, "seller.fxml");
+    }
+
+    public void changeToCustomerScene(ActionEvent e) throws IOException {
+        changingScene(e, "customer.fxml");
+    }
+
+    @FXML
+    private ImageView emoji0, emoji1, emoji2, emoji3, emoji4;
+
+    public void emojiClick() {
+
+        emoji0.setOnMouseClicked(ev -> {
+            emojiProperty(emoji0, emoji1, emoji2, emoji3, emoji4);
+        });
+        emoji1.setOnMouseClicked(ev -> {
+            emojiProperty(emoji1, emoji0, emoji2, emoji3, emoji4);
+        });
+        emoji2.setOnMouseClicked(ev -> {
+            emojiProperty(emoji2, emoji0, emoji1, emoji3, emoji4);
+        });
+        emoji3.setOnMouseClicked(ev -> {
+            emojiProperty(emoji3, emoji0, emoji1, emoji2, emoji4);
+        });
+        emoji4.setOnMouseClicked(ev -> {
+            emojiProperty(emoji4, emoji0, emoji1, emoji2, emoji3);
+        });
+    }
+
+
+    private void emojiProperty(ImageView emoji0, ImageView emoji1, ImageView emoji2, ImageView emoji3, ImageView emoji4) {
+
+        if (!voteButton.isDisable()) {
+
+            emoji0.setOpacity(1);
+            emoji0.setEffect(null);
+
+            emoji1.setOpacity(0.5);
+            emoji1.setEffect(new InnerShadow());
+            emoji2.setOpacity(0.5);
+            emoji2.setEffect(new InnerShadow());
+            emoji3.setOpacity(0.5);
+            emoji3.setEffect(new InnerShadow());
+            emoji4.setOpacity(0.5);
+            emoji4.setEffect(new InnerShadow());
+        }
+    }
+
+    @FXML
+    private Button voteButton;
+
+    public void vote() {
+
+        if (emoji0.getOpacity() == 1)
+            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(0);
+        if (emoji1.getOpacity() == 1)
+            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(1);
+        if (emoji2.getOpacity() == 1)
+            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(2);
+        if (emoji3.getOpacity() == 1)
+            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(3);
+        if (emoji4.getOpacity() == 1)
+            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(4);
+
+        voteButton.setDisable(true);
+        voteButton.setVisible(false);
+    }
 
 
     @FXML
@@ -44,5 +132,4 @@ public class ControllerProduct {
             chatBackgroundImg.setImage(t7);
         });
     }
-
 }

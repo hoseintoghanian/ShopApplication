@@ -22,14 +22,10 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class ControllerApplicant {
 
-    private Stage stage2;
-    private Scene scene2;
-    private FXMLLoader fxmlLoader2;
     @FXML
     private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtWBaccount;
     @FXML
@@ -58,21 +54,16 @@ public class ControllerApplicant {
     }
 
     public void changingScene(ActionEvent e, String fxml) throws IOException {
-        fxmlLoader2 = new FXMLLoader(Application.class.getResource(fxml));
-        stage2 = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene2 = new Scene(fxmlLoader2.load());
-        stage2.setScene(scene2);
-        stage2.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void changeToLoginSceneCustomer(ActionEvent e) throws IOException {
+    public void changeToLoginScene(ActionEvent e) throws IOException {
         changingScene(e, "Login.fxml");
     }
-
-    public void changeToLoginSceneSeller(ActionEvent e) throws IOException {
-        changingScene(e, "Login.fxml");
-    }
-
 
     public void kindGrocery() {
         grocery(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
@@ -1074,8 +1065,18 @@ public class ControllerApplicant {
         imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+
+                Parent root = null;
+
                 try {
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("product.fxml")));
+                   /* if (Application.shop.currentSeller == null)
+                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("productCustomer.fxml")));
+                    if (Application.shop.currentCustomer == null)
+                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("productSeller.fxml")));*/
+
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("productCustomer.fxml")));
+
+
                     Scene scene = new Scene(root);
                     Stage stage = (Stage) imageView.getScene().getWindow();
                     stage.setScene(scene);
@@ -1087,7 +1088,7 @@ public class ControllerApplicant {
         imageView.setFitWidth(150);
         imageView.setFitHeight(150);
 
-        ImageView scoreEmoji = new ImageView("1.png");
+        ImageView scoreEmoji = new ImageView(item.scoreEmoji);
         scoreEmoji.setEffect(new DropShadow());
         scoreEmoji.setFitWidth(30);
         scoreEmoji.setFitHeight(30);
@@ -1138,6 +1139,7 @@ public class ControllerApplicant {
             icount = 0;
         }
     }
+
 
     public void loadImage() {
 
