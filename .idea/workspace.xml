@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="change fxmls font">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="add 3 images">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_2_54_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_2_54_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/4. broken suger/la perruche-broken sugar.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +31,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -39,19 +48,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/javaFX/ShopApplication/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="javafx.application" />
@@ -135,55 +138,7 @@
       <workItem from="1687934137422" duration="2936000" />
       <workItem from="1687963493236" duration="1397000" />
       <workItem from="1687968218777" duration="1392000" />
-    </task>
-    <task id="LOCAL-00005" summary="merge">
-      <created>1685579808838</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1685579808838</updated>
-    </task>
-    <task id="LOCAL-00006" summary="main page UI">
-      <created>1685613669782</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1685613669782</updated>
-    </task>
-    <task id="LOCAL-00007" summary="work place in sign up fxml&#10;other UI changes">
-      <created>1685622987582</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1685622987582</updated>
-    </task>
-    <task id="LOCAL-00008" summary="seller and customer account,cart and main page sections UI">
-      <created>1685654841147</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1685654841147</updated>
-    </task>
-    <task id="LOCAL-00009" summary="seller &amp; customer &amp; bank portal &amp; payment UI">
-      <created>1685708991307</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1685708991307</updated>
-    </task>
-    <task id="LOCAL-00010" summary="add 21 images to project">
-      <created>1685876696069</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1685876696069</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add 21 images to project">
-      <created>1685877004308</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1685877004308</updated>
+      <workItem from="1687974451659" duration="4651000" />
     </task>
     <task id="LOCAL-00012" summary="add 21 images to project">
       <created>1685877982624</created>
@@ -479,7 +434,56 @@
       <option name="project" value="LOCAL" />
       <updated>1687906072999</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="add some photos to &quot;1. grocery&quot; file">
+      <created>1687975005095</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1687975005095</updated>
+    </task>
+    <task id="LOCAL-00055" summary="add some photos to &quot;2. breakfast&quot; file">
+      <created>1687975295045</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1687975295045</updated>
+    </task>
+    <task id="LOCAL-00056" summary="add some photos to &quot;3. protein foods&quot; file">
+      <created>1687975534400</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1687975534401</updated>
+    </task>
+    <task id="LOCAL-00057" summary="add some photos to &quot;4. dairy&quot; file">
+      <created>1687975727079</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1687975727079</updated>
+    </task>
+    <task id="LOCAL-00058" summary="add some photos to &quot;5. drinks&quot; file">
+      <created>1687975882267</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1687975882267</updated>
+    </task>
+    <task id="LOCAL-00059" summary="add some photos to &quot;6. snacks&quot; file">
+      <created>1687976159260</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1687976159260</updated>
+    </task>
+    <task id="LOCAL-00060" summary="add 3 images">
+      <created>1687977818373</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1687977818373</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,13 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changes in controllerAdmin" />
-    <MESSAGE value="fixing admin fxml &amp; controllerAdmin class &amp; sql commands" />
-    <MESSAGE value="class Item --&gt; toString &amp; equals method" />
-    <MESSAGE value="create an items table for each seller" />
-    <MESSAGE value="addProduct method in Database class" />
-    <MESSAGE value="readItemTables method in Database class" />
-    <MESSAGE value="addProduct method in controllerApplicant class" />
     <MESSAGE value="fix" />
     <MESSAGE value="load item image" />
     <MESSAGE value="customer and seller main page fxml UI" />
@@ -522,7 +519,14 @@
     <MESSAGE value="update supermarket images (dairy)" />
     <MESSAGE value="update supermarket images (drinks)" />
     <MESSAGE value="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant" />
+    <MESSAGE value="add some photos to &quot;1. grocery&quot; file" />
+    <MESSAGE value="add some photos to &quot;2. breakfast&quot; file" />
+    <MESSAGE value="add some photos to &quot;3. protein foods&quot; file" />
+    <MESSAGE value="add some photos to &quot;4. dairy&quot; file" />
+    <MESSAGE value="add some photos to &quot;5. drinks&quot; file" />
+    <MESSAGE value="add some photos to &quot;6. snacks&quot; file" />
+    <MESSAGE value="add 3 images" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 3 images" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
