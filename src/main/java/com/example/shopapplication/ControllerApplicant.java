@@ -701,6 +701,7 @@ public class ControllerApplicant {
             MenuItem damdaran = new MenuItem("Damdaran");
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
+            MenuItem lactaid = new MenuItem("Lactaid");
 
             damdaran.setOnAction(ev -> {
                 menuButtonBrand.setText("damdaran");
@@ -711,8 +712,11 @@ public class ControllerApplicant {
             mihan.setOnAction(ev -> {
                 menuButtonBrand.setText("mihan");
             });
+            lactaid.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("lactaid");
+            });
 
-            menuButtonBrand.getItems().addAll(damdaran, kale, mihan);
+            menuButtonBrand.getItems().addAll(damdaran, kale, mihan,lactaid);
         });
         yogurt.setOnAction(event -> {
 
@@ -721,6 +725,7 @@ public class ControllerApplicant {
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem ramak = new MenuItem("Ramak");
+            MenuItem forager = new MenuItem("Forager");
 
             kale.setOnAction(ev -> {
                 menuButtonBrand.setText("kale");
@@ -731,8 +736,11 @@ public class ControllerApplicant {
             ramak.setOnAction(ev -> {
                 menuButtonBrand.setText("ramak");
             });
+            forager.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("forager");
+            });
 
-            menuButtonBrand.getItems().addAll(kale, mihan, ramak);
+            menuButtonBrand.getItems().addAll(kale, mihan, ramak,forager);
         });
         cheese.setOnAction(event -> {
 
@@ -741,6 +749,7 @@ public class ControllerApplicant {
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem ruzane = new MenuItem("Ruzane");
+            MenuItem theLaughingCow = new MenuItem("The Laughing Cow");
 
             kale.setOnAction(ev -> {
                 menuButtonBrand.setText("kale");
@@ -751,8 +760,11 @@ public class ControllerApplicant {
             ruzane.setOnAction(ev -> {
                 menuButtonBrand.setText("ruzane");
             });
+            theLaughingCow.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("the laughing cow");
+            });
 
-            menuButtonBrand.getItems().addAll(kale, mihan, ruzane);
+            menuButtonBrand.getItems().addAll(kale, mihan, ruzane,theLaughingCow);
         });
         cream.setOnAction(event -> {
 
@@ -761,6 +773,7 @@ public class ControllerApplicant {
             MenuItem kale = new MenuItem("Kale");
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem pegah = new MenuItem("Pegah");
+            MenuItem karoun = new MenuItem("Karoun");
 
             kale.setOnAction(ev -> {
                 menuButtonBrand.setText("kale");
@@ -771,8 +784,11 @@ public class ControllerApplicant {
             pegah.setOnAction(ev -> {
                 menuButtonBrand.setText("pegah");
             });
+            karoun.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("karoun");
+            });
 
-            menuButtonBrand.getItems().addAll(kale, mihan, pegah);
+            menuButtonBrand.getItems().addAll(kale, mihan, pegah,karoun);
         });
 
         menuButtonMinorKind.getItems().addAll(milk, yogurt, cheese, cream);
