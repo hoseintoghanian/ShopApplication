@@ -3,52 +3,73 @@ package com.example.shopapplication;
 import javafx.scene.image.Image;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Item {
+    private static int count;//should write in database
+
+    private int code;
     String kind;
     String minorKind;
     String brand;
     String name;
     long price;
     int size;
+    String property;
     double score;
-    private int code;
-    private int[] emojiNumber = new int[5];//add to database
+    int[] emojiNumber = new int[5];
     LocalDateTime uploadDate;
     Image image;
-    Image scoreEmoji;//based on score
+    Image scoreEmoji;
 
+    public Item(String kind, String minorKind, String brand, String name, long price, int size, String property, Image image) {
 
-    public Item(String kind, String minorKind, String brand, String name, long price, int size, Image image,int code) {
+        code = count;
+        count++;
+
         this.kind = kind;
         this.minorKind = minorKind;
         this.brand = brand;
         this.name = name;
         this.price = price;
         this.size = size;
+        this.property = property;
+
+        this.score = 0;
 
         for (int i = 0; i < 5; i++) emojiNumber[i] = 0;
 
         this.uploadDate = LocalDateTime.now();
         this.image = image;
-        this.code = code;
-
-        calculateScore(-1);
+        scoreEmoji = new Image("2.png");
     }
 
-    public Item(String kind, String minorKind, String brand, String name, long price, int size, double score, Object uploadDate, String imageURL,int code) {
+    public Item(int code, String kind, String minorKind, String brand, String name, long price, int size, String property,
+                double score, int e0, int e1, int e2, int e3, int e4,
+                Object uploadDate, String imageURL, String scoreEmojiURL) {
+
+        count++;
+
+        this.code = code;
         this.kind = kind;
         this.minorKind = minorKind;
         this.brand = brand;
         this.name = name;
         this.price = price;
         this.size = size;
+        this.property = property;
         this.score = score;
+        emojiNumber[0] = e0;
+        emojiNumber[1] = e1;
+        emojiNumber[2] = e2;
+        emojiNumber[3] = e3;
+        emojiNumber[4] = e4;
         this.uploadDate = (LocalDateTime) uploadDate;
         this.image = new Image(imageURL);
-        this.code = code;
+        this.scoreEmoji = new Image(scoreEmojiURL);
+    }
+
+    public int getCode() {
+        return code;
     }
 
 
@@ -71,9 +92,6 @@ public class Item {
         if (allVotes != 0) score = (max / allVotes) * 100;
 
         switch (maxIndex) {
-            case -1:
-                scoreEmoji = new Image("2.png");
-                break;
             case 0:
                 scoreEmoji = new Image("0.png");
                 break;
@@ -92,13 +110,10 @@ public class Item {
         }
     }
 
-    public int getCode() {
-        return code;
-    }
 
     public String toString() {
         return kind + " " + minorKind + " " + brand + " " + name + " " + price + " " + size + " " + score + " " + uploadDate;
-    }
+    }///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public boolean equals(Object o) {
         if (o instanceof Item) {

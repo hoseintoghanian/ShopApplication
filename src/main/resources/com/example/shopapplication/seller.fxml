@@ -439,7 +439,7 @@
                   </Button>
                   <AnchorPane layoutX="75.0" layoutY="406.0" prefHeight="300.0" prefWidth="500.0">
                      <children>
-                        <TextField fx:id="txtProductName" layoutX="15.0" layoutY="135.0" prefWidth="170.0" promptText="name">
+                        <TextField fx:id="txtProductName" layoutX="15.0" layoutY="135.0" prefWidth="220.0" promptText="name">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -453,7 +453,7 @@
                                  </color>
                               </DropShadow>
                            </effect></TextField>
-                        <TextField fx:id="txtProductPrice" layoutX="15.0" layoutY="175.0" prefWidth="170.0" promptText="price">
+                        <TextField fx:id="txtProductPrice" layoutX="135.0" layoutY="15.0" prefWidth="100.0" promptText="price">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -472,7 +472,7 @@
                               <Image url="@../img/shop.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtProductSize" layoutX="15.0" layoutY="215.0" prefWidth="170.0" promptText="size">
+                        <TextField fx:id="txtProductSize" layoutX="135.0" layoutY="55.0" prefWidth="100.0" promptText="size">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -500,7 +500,7 @@
                                  </color>
                               </DropShadow>
                            </effect></Button>
-                        <MenuButton fx:id="menuButtonKind" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefWidth="170.0" text="Kind">
+                        <MenuButton fx:id="menuButtonKind" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefWidth="100.0" text="Kind">
                           <items>
                             <MenuItem mnemonicParsing="false" onAction="#kindGrocery" text="grocery" />
                             <MenuItem mnemonicParsing="false" onAction="#kindBreakfast" text="breakfast" />
@@ -523,7 +523,7 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <MenuButton fx:id="menuButtonMinorKind" layoutX="15.0" layoutY="55.0" mnemonicParsing="false" prefWidth="170.0" text="Minor Kind">
+                        <MenuButton fx:id="menuButtonMinorKind" layoutX="15.0" layoutY="55.0" mnemonicParsing="false" prefWidth="100.0" text="Minor Kind">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -538,7 +538,7 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <MenuButton fx:id="menuButtonBrand" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" prefWidth="170.0" text="Brand">
+                        <MenuButton fx:id="menuButtonBrand" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" prefWidth="100.0" text="Brand">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -558,7 +558,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button layoutX="15.0" layoutY="255.0" mnemonicParsing="false" onAction="#loadImage" prefWidth="170.0" text="Load Image">
+                        <Button layoutX="135.0" layoutY="95.0" mnemonicParsing="false" onAction="#loadImage" prefWidth="100.0" text="Load Image">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -573,6 +573,18 @@
                               </DropShadow>
                            </effect>
                         </Button>
+                        <TextArea fx:id="txtProductProperty" layoutX="15.0" layoutY="175.0" prefHeight="100.0" prefWidth="220.0" promptText="properties">
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
+                                 <input>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                 </input>
+                                 <color>
+                                    <Color red="0.7368420958518982" green="0.6480571627616882" blue="0.07095516473054886" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextArea>
                      </children>
                   </AnchorPane>
                   <Separator layoutX="72.0" layoutY="401.0" orientation="VERTICAL" prefHeight="300.0">

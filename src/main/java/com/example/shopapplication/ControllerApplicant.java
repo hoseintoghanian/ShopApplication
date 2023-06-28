@@ -1019,16 +1019,15 @@ public class ControllerApplicant {
 
     @FXML
     private TextField txtProductName, txtProductPrice, txtProductSize;
+    TextArea txtProductProperty;
     @FXML
     private Label addtxt;
     @FXML
     private ImageView productImg;
-    private static int counter = 0;
 
     public void addProduct() throws SQLException {
         if (!menuButtonKind.getText().equals("Kind") && !menuButtonMinorKind.getText().equals("Minor Kind") && !menuButtonBrand.getText().equals("Brand") &&
                 !txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("")) {
-            counter++;
             Item item = new Item(
                     menuButtonKind.getText(),
                     menuButtonMinorKind.getText(),
@@ -1036,8 +1035,8 @@ public class ControllerApplicant {
                     txtProductName.getText(),
                     Integer.parseInt(txtProductPrice.getText()),
                     Integer.parseInt(txtProductSize.getText()),
-                    productImg.getImage(),
-                    counter
+                    txtProductProperty.getText(),
+                    productImg.getImage()
             );
 
             if (!Application.shop.currentSeller.items.contains(item)) {

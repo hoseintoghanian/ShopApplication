@@ -60,7 +60,9 @@ public class Database {
 
     public static void createItemTable(String username) throws SQLException {
         String sql = "create table " + "items_" + username +
-                "(kind varchar(15), minorKind varchar(20), brand varchar(20), productName varchar(50), price int, size int, score double, uploadDate datetime, imageURL varchar(500),code int);";
+                "(code int, kind varchar(15), minorKind varchar(20), brand varchar(20), name varchar(50), price int, size int, property varchar(500)," +
+                "score double, e0 int, e1 int, e2 int, e3 int, e4 int," +
+                "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500))";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -111,20 +113,32 @@ public class Database {
 
     public static void addProduct(Item item) throws SQLException {
         String sql = "INSERT INTO " + "items_" + Application.shop.currentSeller.getUsername() +
-                "(kind, minorKind, brand, productName, price, size, score, uploadDate, imageURL)VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "(code, kind, minorKind, brand, name, price, size, property," +
+                "score, e0, e1, e2, e3, e4," +
+                "uploadDate, imageURL, scoreEmojiURL)VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
-        statement.setString(1, item.kind);
-        statement.setString(2, item.minorKind);
-        statement.setString(3, item.brand);
-        statement.setString(4, item.name);
-        statement.setLong(5, item.price);
-        statement.setInt(6, item.size);
-        statement.setDouble(7, item.score);
-        statement.setObject(8, item.uploadDate);
-        statement.setString(9, item.image.getUrl());
-        statement.setInt(10,item.getCode());
+        statement.setInt(1, item.getCode());
+        statement.setString(2, item.kind);
+        statement.setString(3, item.minorKind);
+        statement.setString(4, item.brand);
+        statement.setString(5, item.name);
+        statement.setLong(6, item.price);
+        statement.setInt(7, item.size);
+        statement.setString(8, item.property);
+
+        statement.setDouble(9, item.score);
+        statement.setInt(10, item.emojiNumber[0]);
+        statement.setInt(11, item.emojiNumber[1]);
+        statement.setInt(12, item.emojiNumber[2]);
+        statement.setInt(13, item.emojiNumber[3]);
+        statement.setInt(14, item.emojiNumber[4]);
+
+        statement.setObject(15, item.uploadDate);
+        statement.setString(16, item.image.getUrl());
+        statement.setString(17, item.scoreEmoji.getUrl());
+
 
         statement.executeUpdate();
 
@@ -141,16 +155,25 @@ public class Database {
 
             while (resultSet.next()) {
                 Application.shop.sellers.get(i).items.add(new Item(
+                        resultSet.getInt("code"),
                         resultSet.getString("kind"),
                         resultSet.getString("minorKind"),
                         resultSet.getString("brand"),
-                        resultSet.getString("productName"),
+                        resultSet.getString("name"),
                         resultSet.getInt("price"),
                         resultSet.getInt("size"),
+                        resultSet.getString("property"),
+
                         resultSet.getDouble("score"),
+                        resultSet.getInt("e0"),
+                        resultSet.getInt("e1"),
+                        resultSet.getInt("e2"),
+                        resultSet.getInt("e3"),
+                        resultSet.getInt("e4"),
+
                         resultSet.getObject("uploadDate"),
                         resultSet.getString("imageURL"),
-                        resultSet.getInt("code")
+                        resultSet.getString("scoreEmojiURL")
                 ));
             }
         }
