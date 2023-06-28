@@ -432,6 +432,7 @@ public class ControllerApplicant {
             MenuItem bijan = new MenuItem("Bijan");
             MenuItem mixLand = new MenuItem("Mix Land");
             MenuItem yekOyek = new MenuItem("yek & yek");
+            MenuItem randallFamily = new MenuItem("Randall Family");
 
             bijan.setOnAction(ev -> {
                 menuButtonBrand.setText("bijan");
@@ -442,8 +443,11 @@ public class ControllerApplicant {
             yekOyek.setOnAction(ev -> {
                 menuButtonBrand.setText("yek & yek");
             });
+            randallFamily.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("randall family");
+            });
 
-            menuButtonBrand.getItems().addAll(bijan, mixLand, yekOyek);
+            menuButtonBrand.getItems().addAll(bijan, mixLand, yekOyek,randallFamily);
         });
         honey.setOnAction(event -> {
 
@@ -452,6 +456,7 @@ public class ControllerApplicant {
             MenuItem rayehe = new MenuItem("Rayehe");
             MenuItem segmen = new MenuItem("Segmen");
             MenuItem shahsavand = new MenuItem("Shahsavand");
+            MenuItem js = new MenuItem("JS");
 
             rayehe.setOnAction(ev -> {
                 menuButtonBrand.setText("rayehe");
@@ -462,8 +467,11 @@ public class ControllerApplicant {
             shahsavand.setOnAction(ev -> {
                 menuButtonBrand.setText("shahsavand");
             });
+            js.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("js");
+            });
 
-            menuButtonBrand.getItems().addAll(rayehe, segmen, shahsavand);
+            menuButtonBrand.getItems().addAll(rayehe, segmen, shahsavand,js);
         });
         halva.setOnAction(event -> {
 
@@ -472,6 +480,7 @@ public class ControllerApplicant {
             MenuItem oghab = new MenuItem("Oghab");
             MenuItem tahini = new MenuItem("Tahini");
             MenuItem taksun = new MenuItem("Taksun");
+            MenuItem koska = new MenuItem("Koska");
 
             oghab.setOnAction(ev -> {
                 menuButtonBrand.setText("oghab");
@@ -482,8 +491,11 @@ public class ControllerApplicant {
             taksun.setOnAction(ev -> {
                 menuButtonBrand.setText("taksun");
             });
+            koska.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("koska");
+            });
 
-            menuButtonBrand.getItems().addAll(oghab, tahini, taksun);
+            menuButtonBrand.getItems().addAll(oghab, tahini, taksun,koska);
         });
 
         menuButtonMinorKind.getItems().addAll(jam, honey, halva);
