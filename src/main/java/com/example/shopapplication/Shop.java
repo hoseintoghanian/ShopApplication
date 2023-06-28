@@ -15,11 +15,17 @@ public class Shop {
 
 
     public Admin admin = new Admin("admin", "5581");
+
+
     public Seller currentSeller;
     public Customer currentCustomer;
+    public Item currentItem;
+
+
     public ArrayList<Seller> sellers = new ArrayList<>();
     public ArrayList<Customer> customers = new ArrayList<>();
 
-    public ArrayList<Item> items = new ArrayList<>();
+
+    public ArrayList<Item> allItems = new ArrayList<>();
 
 }

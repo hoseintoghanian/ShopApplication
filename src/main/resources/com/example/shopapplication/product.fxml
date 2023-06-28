@@ -326,7 +326,7 @@
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="70.0" layoutY="700.0" mnemonicParsing="false" onAction="#changeToCustomerScene" prefHeight="30.0" prefWidth="860.0" text="back">
+                  <Button layoutX="70.0" layoutY="700.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="860.0" text="back">
                      <font>
                         <Font name="Book Antiqua" size="18.0" />
                      </font>

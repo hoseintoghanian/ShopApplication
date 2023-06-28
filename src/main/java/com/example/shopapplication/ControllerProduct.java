@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ControllerProduct {
 
@@ -25,12 +26,9 @@ public class ControllerProduct {
         stage.show();
     }
 
-    public void changeToSellerScene(ActionEvent e) throws IOException {
-        changingScene(e, "seller.fxml");
-    }
-
-    public void changeToCustomerScene(ActionEvent e) throws IOException {
-        changingScene(e, "customer.fxml");
+    public void back(ActionEvent e) throws IOException {
+        if (Application.shop.currentCustomer != null) changingScene(e, "customer.fxml");
+        if (Application.shop.currentSeller != null) changingScene(e, "seller.fxml");
     }
 
     @FXML
@@ -77,18 +75,28 @@ public class ControllerProduct {
     @FXML
     private Button voteButton;
 
-    public void vote() {
+    public void vote() throws SQLException {
 
-        if (emoji0.getOpacity() == 1)
-            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(0);
-        if (emoji1.getOpacity() == 1)
-            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(1);
-        if (emoji2.getOpacity() == 1)
-            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(2);
-        if (emoji3.getOpacity() == 1)
-            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(3);
-        if (emoji4.getOpacity() == 1)
-            Application.shop.currentSeller.items.get(0/*this arguments should not be 0*/).calculateScore(4);
+        if (emoji0.getOpacity() == 1) {
+            Application.shop.currentItem.calculateScore(0);
+            Database.updateItem(Application.shop.currentItem, "e0", 0);
+        }
+        if (emoji1.getOpacity() == 1) {
+            Application.shop.currentItem.calculateScore(1);
+            Database.updateItem(Application.shop.currentItem, "e1", 1);
+        }
+        if (emoji2.getOpacity() == 1) {
+            Application.shop.currentItem.calculateScore(2);
+            Database.updateItem(Application.shop.currentItem, "e2", 2);
+        }
+        if (emoji3.getOpacity() == 1) {
+            Application.shop.currentItem.calculateScore(3);
+            Database.updateItem(Application.shop.currentItem, "e3", 3);
+        }
+        if (emoji4.getOpacity() == 1) {
+            Application.shop.currentItem.calculateScore(4);
+            Database.updateItem(Application.shop.currentItem, "e4", 4);
+        }
 
         voteButton.setDisable(true);
         voteButton.setVisible(false);

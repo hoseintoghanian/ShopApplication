@@ -263,7 +263,7 @@
                            <children>
                               <ScrollPane prefHeight="750.0" prefWidth="1100.0">
                                  <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3000.0" prefWidth="1100.0" style="-fx-background-color: #E5BA1D;">
+                                    <AnchorPane fx:id="sellerMainPage" minHeight="0.0" minWidth="0.0" onMouseEntered="#showCustomer" prefHeight="3000.0" prefWidth="1100.0" style="-fx-background-color: #E5BA1D;">
                                        <effect>
                                           <InnerShadow>
                                              <input>

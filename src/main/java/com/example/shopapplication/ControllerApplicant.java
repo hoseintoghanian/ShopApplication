@@ -1,7 +1,6 @@
 package com.example.shopapplication;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,37 +22,43 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class ControllerApplicant {
 
+
+    public ControllerApplicant() {
+        //showItems();
+    }
+
+
     @FXML
-    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtWBaccount;
-    @FXML
-    private Label txtfnaccount, txtlnaccount, txtpnaccount, txtunaccount, txtpwaccount, txtemaccount,txtwpaccount;
+    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
     @FXML
     MenuButton filterButtonKind, filterButtonMinorKind, filterButtonBrand;
 
     public void displayInfo() {
-        if (Application.shop.customers.contains(Application.shop.currentCustomer)) {
+        if (Application.shop.currentSeller == null) {
             txtFNaccount.setText(Application.shop.currentCustomer.getFirstname());
             txtLNaccount.setText(Application.shop.currentCustomer.getLastname());
             txtPNaccount.setText(Application.shop.currentCustomer.getPhoneNumber());
             txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
             txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
             txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
-        } else if (Application.shop.sellers.contains(Application.shop.currentSeller)) {
-            txtfnaccount.setText(Application.shop.currentSeller.getFirstname());
-            txtlnaccount.setText(Application.shop.currentSeller.getLastname());
-            txtpnaccount.setText(Application.shop.currentSeller.getPhoneNumber());
-            txtunaccount.setText(Application.shop.currentSeller.getUsername());
-            txtpwaccount.setText(Application.shop.currentSeller.getPassword());
-            txtemaccount.setText(Application.shop.currentSeller.getEmail());
-            txtwpaccount.setText(Application.shop.currentSeller.workplace);
+        } else if (Application.shop.currentCustomer == null) {
+            txtFNaccount.setText(Application.shop.currentSeller.getFirstname());
+            txtLNaccount.setText(Application.shop.currentSeller.getLastname());
+            txtPNaccount.setText(Application.shop.currentSeller.getPhoneNumber());
+            txtUNaccount.setText(Application.shop.currentSeller.getUsername());
+            txtPWaccount.setText(Application.shop.currentSeller.getPassword());
+            txtEMaccount.setText(Application.shop.currentSeller.getEmail());
         }
     }
+
 
     public void changingScene(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
@@ -144,10 +149,10 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("mazrae");
             });
             newYorkBakery.setOnAction(actionEvent -> {
-               menuButtonBrand.setText("new york bakery");
+                menuButtonBrand.setText("new york bakery");
             });
 
-            menuButtonBrand.getItems().addAll(mazrae,newYorkBakery);
+            menuButtonBrand.getItems().addAll(mazrae, newYorkBakery);
         });
         rice.setOnAction(event -> {
 
@@ -171,7 +176,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("uncle ben's");
             });
 
-            menuButtonBrand.getItems().addAll(behrooz, golestan, tabiat,uncleBens);
+            menuButtonBrand.getItems().addAll(behrooz, golestan, tabiat, uncleBens);
         });
         oil.setOnAction(event -> {
 
@@ -196,7 +201,7 @@ public class ControllerApplicant {
             });
 
 
-            menuButtonBrand.getItems().addAll(ladan, oila, tabiat,louAna);
+            menuButtonBrand.getItems().addAll(ladan, oila, tabiat, louAna);
         });
         brokenSugar.setOnAction(event -> {
 
@@ -220,7 +225,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("la perruche");
             });
 
-            menuButtonBrand.getItems().addAll(azughe, ferdous, mashMash,laPerruche);
+            menuButtonBrand.getItems().addAll(azughe, ferdous, mashMash, laPerruche);
         });
         sugar.setOnAction(event -> {
 
@@ -244,7 +249,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("chelsea");
             });
 
-            menuButtonBrand.getItems().addAll(emruz, golestan, shahdane,chelsea);
+            menuButtonBrand.getItems().addAll(emruz, golestan, shahdane, chelsea);
         });
         sauce.setOnAction(event -> {
 
@@ -268,7 +273,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("heinz");
             });
 
-            menuButtonBrand.getItems().addAll(behruz, delvese, mahram,heinz);
+            menuButtonBrand.getItems().addAll(behruz, delvese, mahram, heinz);
         });
         rob.setOnAction(event -> {
 
@@ -292,7 +297,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("hunts");
             });
 
-            menuButtonBrand.getItems().addAll(chinChin, tabarok, tabiat,hunts);
+            menuButtonBrand.getItems().addAll(chinChin, tabarok, tabiat, hunts);
         });
         pickle.setOnAction(event -> {
 
@@ -316,7 +321,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("vlasic");
             });
 
-            menuButtonBrand.getItems().addAll(behruz, mahram, yekOyek,vlasic);
+            menuButtonBrand.getItems().addAll(behruz, mahram, yekOyek, vlasic);
         });
         lemonJuice.setOnAction(event -> {
 
@@ -340,7 +345,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("lakewood");
             });
 
-            menuButtonBrand.getItems().addAll(behruz, mahram, yekOyek,lakewood);
+            menuButtonBrand.getItems().addAll(behruz, mahram, yekOyek, lakewood);
         });
         pasta.setOnAction(event -> {
 
@@ -364,7 +369,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("goya");
             });
 
-            menuButtonBrand.getItems().addAll(deCecco, tak, zar,goya);
+            menuButtonBrand.getItems().addAll(deCecco, tak, zar, goya);
         });
         saffron.setOnAction(event -> {
 
@@ -388,7 +393,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("frintier");
             });
 
-            menuButtonBrand.getItems().addAll(bahraman, momtaz, seharkhiz,frintier);
+            menuButtonBrand.getItems().addAll(bahraman, momtaz, seharkhiz, frintier);
         });
         pea.setOnAction(event -> {
 
@@ -412,7 +417,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("ziyad");
             });
 
-            menuButtonBrand.getItems().addAll(aaliChin, delpazir, shahsavand,ziyad);
+            menuButtonBrand.getItems().addAll(aaliChin, delpazir, shahsavand, ziyad);
         });
 
         menuButtonMinorKind.getItems().addAll(bread, rice, oil, brokenSugar, sugar, sauce, rob, pickle, lemonJuice, pasta, saffron, pea);
@@ -448,7 +453,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("randall family");
             });
 
-            menuButtonBrand.getItems().addAll(bijan, mixLand, yekOyek,randallFamily);
+            menuButtonBrand.getItems().addAll(bijan, mixLand, yekOyek, randallFamily);
         });
         honey.setOnAction(event -> {
 
@@ -472,7 +477,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("js");
             });
 
-            menuButtonBrand.getItems().addAll(rayehe, segmen, shahsavand,js);
+            menuButtonBrand.getItems().addAll(rayehe, segmen, shahsavand, js);
         });
         halva.setOnAction(event -> {
 
@@ -496,7 +501,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("koska");
             });
 
-            menuButtonBrand.getItems().addAll(oghab, tahini, taksun,koska);
+            menuButtonBrand.getItems().addAll(oghab, tahini, taksun, koska);
         });
 
         menuButtonMinorKind.getItems().addAll(jam, honey, halva);
@@ -536,7 +541,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("principe");
             });
 
-            menuButtonBrand.getItems().addAll(kampooreh, robat, shamSham,principe);
+            menuButtonBrand.getItems().addAll(kampooreh, robat, shamSham, principe);
         });
         lambMeet.setOnAction(event -> {
 
@@ -560,7 +565,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("free range");
             });
 
-            menuButtonBrand.getItems().addAll(ariaBahar, mahya, puya,freeRange);
+            menuButtonBrand.getItems().addAll(ariaBahar, mahya, puya, freeRange);
         });
         chicken.setOnAction(event -> {
 
@@ -584,7 +589,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("mary's");
             });
 
-            menuButtonBrand.getItems().addAll(mahya, puya, telavang,marys);
+            menuButtonBrand.getItems().addAll(mahya, puya, telavang, marys);
         });
         egg.setOnAction(event -> {
 
@@ -608,7 +613,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("organic valley");
             });
 
-            menuButtonBrand.getItems().addAll(morghdaran, porotana, telavang,organicValley);
+            menuButtonBrand.getItems().addAll(morghdaran, porotana, telavang, organicValley);
         });
         beef.setOnAction(event -> {
 
@@ -628,11 +633,11 @@ public class ControllerApplicant {
             puya.setOnAction(ev -> {
                 menuButtonBrand.setText("puya");
             });
-            fresh.setOnAction(actionEvent ->{
+            fresh.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("fresh");
             });
 
-            menuButtonBrand.getItems().addAll(khoram, mahya, puya,fresh);
+            menuButtonBrand.getItems().addAll(khoram, mahya, puya, fresh);
         });
         shrimp.setOnAction(event -> {
 
@@ -652,11 +657,11 @@ public class ControllerApplicant {
             tohfe.setOnAction(ev -> {
                 menuButtonBrand.setText("tohfe");
             });
-            greatCatch.setOnAction(actionEvent ->{
+            greatCatch.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("great catch");
             });
 
-            menuButtonBrand.getItems().addAll(marine, pemina, tohfe,greatCatch);
+            menuButtonBrand.getItems().addAll(marine, pemina, tohfe, greatCatch);
         });
         tuna.setOnAction(event -> {
 
@@ -680,7 +685,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("ayam brand");
             });
 
-            menuButtonBrand.getItems().addAll(makenzi, shilton, tohfe,ayamBrand);
+            menuButtonBrand.getItems().addAll(makenzi, shilton, tohfe, ayamBrand);
         });
 
         menuButtonMinorKind.getItems().addAll(bologna, lambMeet, chicken, egg, beef, shrimp, tuna);
@@ -717,7 +722,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("lactaid");
             });
 
-            menuButtonBrand.getItems().addAll(damdaran, kale, mihan,lactaid);
+            menuButtonBrand.getItems().addAll(damdaran, kale, mihan, lactaid);
         });
         yogurt.setOnAction(event -> {
 
@@ -741,7 +746,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("forager");
             });
 
-            menuButtonBrand.getItems().addAll(kale, mihan, ramak,forager);
+            menuButtonBrand.getItems().addAll(kale, mihan, ramak, forager);
         });
         cheese.setOnAction(event -> {
 
@@ -765,7 +770,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("the laughing cow");
             });
 
-            menuButtonBrand.getItems().addAll(kale, mihan, ruzane,theLaughingCow);
+            menuButtonBrand.getItems().addAll(kale, mihan, ruzane, theLaughingCow);
         });
         cream.setOnAction(event -> {
 
@@ -789,7 +794,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("karoun");
             });
 
-            menuButtonBrand.getItems().addAll(kale, mihan, pegah,karoun);
+            menuButtonBrand.getItems().addAll(kale, mihan, pegah, karoun);
         });
 
         menuButtonMinorKind.getItems().addAll(milk, yogurt, cheese, cream);
@@ -829,7 +834,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("yorkshire");
             });
 
-            menuButtonBrand.getItems().addAll(debsh, golestan, shahrzad,yorkshire);
+            menuButtonBrand.getItems().addAll(debsh, golestan, shahrzad, yorkshire);
         });
         herbalTea.setOnAction(event -> {
 
@@ -853,7 +858,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("yogi");
             });
 
-            menuButtonBrand.getItems().addAll(golestan, seharKhiz, shahsavand,yogi);
+            menuButtonBrand.getItems().addAll(golestan, seharKhiz, shahsavand, yogi);
         });
         coffee.setOnAction(event -> {
 
@@ -877,7 +882,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("starbucks");
             });
 
-            menuButtonBrand.getItems().addAll(aliCafe, goodDay, nescafe,starbucks);
+            menuButtonBrand.getItems().addAll(aliCafe, goodDay, nescafe, starbucks);
         });
         water.setOnAction(event -> {
 
@@ -901,7 +906,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("smart water");
             });
 
-            menuButtonBrand.getItems().addAll(damavand, miva, oxab,smartWater);
+            menuButtonBrand.getItems().addAll(damavand, miva, oxab, smartWater);
         });
         beer.setOnAction(event -> {
 
@@ -925,7 +930,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("heineken");
             });
 
-            menuButtonBrand.getItems().addAll(aalis, heyDay, jojo,heineken);
+            menuButtonBrand.getItems().addAll(aalis, heyDay, jojo, heineken);
         });
         soda.setOnAction(event -> {
 
@@ -949,7 +954,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("dr pepper");
             });
 
-            menuButtonBrand.getItems().addAll(cocaCola, fantaLemon, fantaOrange,drPepper);
+            menuButtonBrand.getItems().addAll(cocaCola, fantaLemon, fantaOrange, drPepper);
         });
         juice.setOnAction(event -> {
 
@@ -973,7 +978,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("simply orange");
             });
 
-            menuButtonBrand.getItems().addAll(mihan, sanIch, takDaneh,simplyOrange);
+            menuButtonBrand.getItems().addAll(mihan, sanIch, takDaneh, simplyOrange);
         });
 
         menuButtonMinorKind.getItems().addAll(tea, herbalTea, coffee, water, beer, soda, juice);
@@ -1009,11 +1014,11 @@ public class ControllerApplicant {
             takTak.setOnAction(ev -> {
                 menuButtonBrand.setText("tak tak");
             });
-            snickers.setOnAction(actionEvent ->{
+            snickers.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("snickers");
             });
 
-            menuButtonBrand.getItems().addAll(hiss, rangarang, takTak,snickers);
+            menuButtonBrand.getItems().addAll(hiss, rangarang, takTak, snickers);
         });
         biscuit.setOnAction(event -> {
 
@@ -1037,7 +1042,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("oreo");
             });
 
-            menuButtonBrand.getItems().addAll(hiBye, petitBeurre, sagheTalai,oreo);
+            menuButtonBrand.getItems().addAll(hiBye, petitBeurre, sagheTalai, oreo);
         });
         nuts.setOnAction(event -> {
 
@@ -1062,7 +1067,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("planters");
             });
 
-            menuButtonBrand.getItems().addAll(mani, mazMaz, sanjaghak,planters);
+            menuButtonBrand.getItems().addAll(mani, mazMaz, sanjaghak, planters);
         });
         cake.setOnAction(event -> {
 
@@ -1086,7 +1091,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("mr kipling");
             });
 
-            menuButtonBrand.getItems().addAll(cakeMake, tTop, tiny,mrKipling);
+            menuButtonBrand.getItems().addAll(cakeMake, tTop, tiny, mrKipling);
         });
         chips.setOnAction(event -> {
 
@@ -1111,7 +1116,7 @@ public class ControllerApplicant {
             });
 
 
-            menuButtonBrand.getItems().addAll(chakelz, cheetoz, delMaze,lays);
+            menuButtonBrand.getItems().addAll(chakelz, cheetoz, delMaze, lays);
         });
         pofak.setOnAction(event -> {
 
@@ -1135,7 +1140,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("cheetos");
             });
 
-            menuButtonBrand.getItems().addAll(chakelz, cheetoz, pofakNamaki,cheetos);
+            menuButtonBrand.getItems().addAll(chakelz, cheetoz, pofakNamaki, cheetos);
         });
         chewingGum.setOnAction(event -> {
 
@@ -1159,7 +1164,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("orbit");
             });
 
-            menuButtonBrand.getItems().addAll(action, biodent, trident,orbit);
+            menuButtonBrand.getItems().addAll(action, biodent, trident, orbit);
         });
 
         menuButtonMinorKind.getItems().addAll(chocolate, biscuit, nuts, cake, chips, pofak, chewingGum);
@@ -1201,18 +1206,20 @@ public class ControllerApplicant {
                     Integer.parseInt(txtProductPrice.getText()),
                     Integer.parseInt(txtProductSize.getText()),
                     txtProductProperty.getText(),
-                    productImg.getImage()
+                    productImg.getImage(),
+                    Application.shop.currentSeller.getUsername()
             );
 
             if (!Application.shop.currentSeller.items.contains(item)) {
                 Application.shop.currentSeller.items.add(item);
+                Application.shop.allItems.add(item);
                 Database.addProduct(item);
 
                 productImg.setImage(item.image);
                 addtxt.setText("add successfully");
 
 
-                addNewItemToMainPage(item);
+                showItems(Application.shop.currentSeller.items);
 
             } else {
                 addtxt.setText("product is valid");
@@ -1224,88 +1231,112 @@ public class ControllerApplicant {
 
     @FXML
     private AnchorPane sellerMainPage;
-    int icount = 0, jcount = 0;
+    static int icount = 0;
+    static int jcount = 0;
 
-    public void addNewItemToMainPage(Item item) {
+    public void showItems(ArrayList<Item> items) {
 
-        ImageView imageView = new ImageView(item.image);
-        imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent e) {
+        sellerMainPage.getChildren().clear();
+        icount = 0;
+        jcount = 0;
 
-                try {
-                    FXMLLoader fxmlLoader = null;
+
+        for (int i = items.size() - 1; i >= 0; i--) {
+
+            ImageView imageView = new ImageView(items.get(i).image);
+            int finalI = i;
+            imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent e) {
+
+                    Item item = items.get(finalI);
+                    Application.shop.currentItem = item;
+
+                    try {
+                        FXMLLoader fxmlLoader = null;
 
                    /* if (Application.shop.currentSeller == null)
                         fxmlLoader = new FXMLLoader(Application.class.getResource("productCustomer.fxml"));
                     if (Application.shop.currentCustomer == null)
                         fxmlLoader = new FXMLLoader(Application.class.getResource("productSeller.fxml"));*/
-                    fxmlLoader = new FXMLLoader(Application.class.getResource("productCustomer.fxml"));//have to remove
+                        fxmlLoader = new FXMLLoader(Application.class.getResource("product.fxml"));//have to remove
 
-                    Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                    Scene scene = new Scene(fxmlLoader.load());
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
+                        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        Scene scene = new Scene(fxmlLoader.load());
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
+            });
+            imageView.setFitWidth(150);
+            imageView.setFitHeight(150);
+
+            ImageView scoreEmoji = new ImageView(items.get(i).scoreEmoji);
+            scoreEmoji.setEffect(new DropShadow());
+            scoreEmoji.setFitWidth(30);
+            scoreEmoji.setFitHeight(30);
+            scoreEmoji.setLayoutX(5);
+            scoreEmoji.setLayoutY(210);
+
+            Label name = new Label(items.get(i).name);
+            name.setFont(new Font("Arial", 20));
+            name.setPrefWidth(150);
+            name.setAlignment(Pos.CENTER);
+            name.setLayoutX(0);
+            name.setLayoutY(145);
+
+            Label price = new Label(String.valueOf(items.get(i).price));
+            price.setFont(new Font("Arial", 20));
+            price.setPrefWidth(150);
+            price.setAlignment(Pos.CENTER);
+            price.setLayoutX(0);
+            price.setLayoutY(175);
+
+
+            DecimalFormat decimalFormat = new DecimalFormat("##.##");
+
+            Label score = new Label(decimalFormat.format(items.get(i).score) + "%");
+            score.setFont(new Font("Arial", 15));
+            score.setLayoutX(37);
+            score.setLayoutY(217);
+
+            Button button = new Button("auction");
+            button.setEffect(new DropShadow());
+            button.setPrefHeight(30);
+            button.setLayoutX(90);
+            button.setLayoutY(210);
+
+            AnchorPane anchorPane = new AnchorPane();
+            anchorPane.setLayoutX(icount * 175 + 30);
+            anchorPane.setLayoutY(jcount * 275 + 30);
+            anchorPane.setPrefWidth(150);
+            anchorPane.setPrefHeight(250);
+            anchorPane.setStyle("-fx-background-color: #FFCF21;");
+            anchorPane.setEffect(new DropShadow());
+            anchorPane.setEffect(new InnerShadow());
+
+
+            anchorPane.getChildren().addAll(imageView, name, price, button, scoreEmoji, score);
+            sellerMainPage.getChildren().add(anchorPane);
+
+            icount++;
+            if (icount > 5) {
+                jcount++;
+                icount = 0;
             }
-        });
-        imageView.setFitWidth(150);
-        imageView.setFitHeight(150);
-
-        ImageView scoreEmoji = new ImageView(item.scoreEmoji);
-        scoreEmoji.setEffect(new DropShadow());
-        scoreEmoji.setFitWidth(30);
-        scoreEmoji.setFitHeight(30);
-        scoreEmoji.setLayoutX(5);
-        scoreEmoji.setLayoutY(210);
-
-        Label name = new Label(item.name);
-        name.setFont(new Font("Arial", 20));
-        name.setPrefWidth(150);
-        name.setAlignment(Pos.CENTER);
-        name.setLayoutX(0);
-        name.setLayoutY(145);
-
-        Label price = new Label(String.valueOf(item.price));
-        price.setFont(new Font("Arial", 20));
-        price.setPrefWidth(150);
-        price.setAlignment(Pos.CENTER);
-        price.setLayoutX(0);
-        price.setLayoutY(175);
-
-        Label score = new Label(item.score + "%");
-        score.setFont(new Font("Arial", 15));
-        score.setLayoutX(37);
-        score.setLayoutY(217);
-
-        Button button = new Button("auction");
-        button.setEffect(new DropShadow());
-        button.setPrefHeight(30);
-        button.setLayoutX(90);
-        button.setLayoutY(210);
-
-        AnchorPane anchorPane = new AnchorPane();
-        anchorPane.setLayoutX(icount * 175 + 30);
-        anchorPane.setLayoutY(jcount * 225 + 30);
-        anchorPane.setPrefWidth(150);
-        anchorPane.setPrefHeight(250);
-        anchorPane.setStyle("-fx-background-color: #FFCF21;");
-        anchorPane.setEffect(new DropShadow());
-        anchorPane.setEffect(new InnerShadow());
-
-
-        anchorPane.getChildren().addAll(imageView, name, price, button, scoreEmoji, score);
-        sellerMainPage.getChildren().add(anchorPane);
-
-        icount++;
-        if (icount > 5) {
-            jcount++;
-            icount = 0;
         }
+
     }
 
+    public void showSeller() {
+        showItems(Application.shop.currentSeller.items);
+    }
+
+    public void showCustomer() {
+        showItems(Application.shop.allItems);
+    }
 
     public void loadImage() {
 

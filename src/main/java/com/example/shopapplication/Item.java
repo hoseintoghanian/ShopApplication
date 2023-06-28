@@ -20,8 +20,9 @@ public class Item {
     LocalDateTime uploadDate;
     Image image;
     Image scoreEmoji;
+    String sellerUsername;
 
-    public Item(String kind, String minorKind, String brand, String name, long price, int size, String property, Image image) {
+    public Item(String kind, String minorKind, String brand, String name, long price, int size, String property, Image image, String sellerUsername) {
 
         code = count;
         count++;
@@ -41,11 +42,13 @@ public class Item {
         this.uploadDate = LocalDateTime.now();
         this.image = image;
         scoreEmoji = new Image("2.png");
+
+        this.sellerUsername = sellerUsername;
     }
 
     public Item(int code, String kind, String minorKind, String brand, String name, long price, int size, String property,
                 double score, int e0, int e1, int e2, int e3, int e4,
-                Object uploadDate, String imageURL, String scoreEmojiURL) {
+                Object uploadDate, String imageURL, String scoreEmojiURL, String sellerUsername) {
 
         count++;
 
@@ -66,6 +69,9 @@ public class Item {
         this.uploadDate = (LocalDateTime) uploadDate;
         this.image = new Image(imageURL);
         this.scoreEmoji = new Image(scoreEmojiURL);
+        this.sellerUsername = sellerUsername;
+
+        calculateScore(-1);
     }
 
     public int getCode() {
@@ -75,11 +81,10 @@ public class Item {
 
     public void calculateScore(int vote) {//vote range is between 0 to 4 // 0 means the best emoji and 4 means the worst
 
-        for (int i = 0; i < 5; i++) {
-            if (vote == i) emojiNumber[i]++;
-        }
+        for (int i = 0; i < 5; i++) if (vote == i) emojiNumber[i]++;
 
-        int allVotes = 0, max = 0, maxIndex = -1;
+
+        double allVotes = 0, max = 0, maxIndex = -1;
         for (int i = 0; i < 5; i++) {
             if (emojiNumber[i] > max) {
                 max = emojiNumber[i];
@@ -88,10 +93,9 @@ public class Item {
             allVotes += emojiNumber[i];
         }
 
-
         if (allVotes != 0) score = (max / allVotes) * 100;
 
-        switch (maxIndex) {
+        switch ((int) maxIndex) {
             case 0:
                 scoreEmoji = new Image("0.png");
                 break;
@@ -112,13 +116,13 @@ public class Item {
 
 
     public String toString() {
-        return kind + " " + minorKind + " " + brand + " " + name + " " + price + " " + size + " " + score + " " + uploadDate;
-    }///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        return name + " " + code + " " + sellerUsername;
+    }
 
     public boolean equals(Object o) {
         if (o instanceof Item) {
             Item other = (Item) o;
-            if (code == other.getCode()) return true;
+            if (name.equals(other.name) && brand.equals(other.brand)) return true;
         }
         return false;
     }

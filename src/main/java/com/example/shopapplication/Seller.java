@@ -9,6 +9,7 @@ public class Seller extends Applicant {
 
     public ArrayList<Item> items = new ArrayList<>();
 
+
     public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace) {
         super(firstname, lastname, phoneNumber, username, password, email);
         this.workplace = workplace;

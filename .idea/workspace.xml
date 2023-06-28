@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="Adding some lines of code to the &quot;drinks&quot; method in the &quot;ControllerApplicant&quot; class">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_2_54_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_2_54_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/productCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/productSeller.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +56,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/University/projects/term 2/ShopApplication/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="javafx.application" />
@@ -133,6 +154,7 @@
       <workItem from="1687963493236" duration="1397000" />
       <workItem from="1687968218777" duration="1392000" />
       <workItem from="1687974451659" duration="7825000" />
+      <workItem from="1687983948690" duration="2737000" />
     </task>
     <task id="LOCAL-00017" summary="controller applicant chooseKindDairy method">
       <created>1686052121109</created>
