@@ -35,7 +35,7 @@ public class ControllerApplicant {
 
 
     @FXML
-    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount,txtwpaccount;
+    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtwpaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
     @FXML
@@ -1220,7 +1220,7 @@ public class ControllerApplicant {
                 addtxt.setText("add successfully");
 
 
-                showItems(Application.shop.currentSeller.items);
+                showItems("seller",Application.shop.currentSeller.items);
 
             } else {
                 addtxt.setText("product is valid");
@@ -1235,7 +1235,7 @@ public class ControllerApplicant {
     static int icount = 0;
     static int jcount = 0;
 
-    public void showItems(ArrayList<Item> items) {
+    public void showItems(String applicantKind, ArrayList<Item> items) {
 
         sellerMainPage.getChildren().clear();
         icount = 0;
@@ -1303,8 +1303,16 @@ public class ControllerApplicant {
             score.setLayoutX(37);
             score.setLayoutY(217);
 
-            Button button = new Button("auction");
+            Button button = null;
+            if (applicantKind.equals("seller")) {
+                button = new Button("auction");
+            }
+            if (applicantKind.equals("customer")){
+                button = new Button("add");
+                button.setFont(new Font(15));
+            }
             button.setEffect(new DropShadow());
+            button.setPrefWidth(56);
             button.setPrefHeight(30);
             button.setLayoutX(90);
             button.setLayoutY(210);
@@ -1332,11 +1340,11 @@ public class ControllerApplicant {
     }
 
     public void showSeller() {
-        showItems(Application.shop.currentSeller.items);
+        showItems("seller", Application.shop.currentSeller.items);
     }
 
     public void showCustomer() {
-        showItems(Application.shop.allItems);
+        showItems("customer", Application.shop.allItems);
     }
 
     public void loadImage() {
