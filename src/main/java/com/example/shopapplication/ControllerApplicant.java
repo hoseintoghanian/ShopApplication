@@ -29,7 +29,7 @@ public class ControllerApplicant {
     @FXML
     private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtWBaccount;
     @FXML
-    private Label txtfnaccount, txtlnaccount, txtpnaccount, txtunaccount, txtpwaccount, txtemaccount;
+    private Label txtfnaccount, txtlnaccount, txtpnaccount, txtunaccount, txtpwaccount, txtemaccount,txtwpaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
     @FXML
@@ -50,6 +50,7 @@ public class ControllerApplicant {
             txtunaccount.setText(Application.shop.currentSeller.getUsername());
             txtpwaccount.setText(Application.shop.currentSeller.getPassword());
             txtemaccount.setText(Application.shop.currentSeller.getEmail());
+            txtwpaccount.setText(Application.shop.currentSeller.workplace);
         }
     }
 
@@ -1019,6 +1020,7 @@ public class ControllerApplicant {
 
     @FXML
     private TextField txtProductName, txtProductPrice, txtProductSize;
+    @FXML
     TextArea txtProductProperty;
     @FXML
     private Label addtxt;

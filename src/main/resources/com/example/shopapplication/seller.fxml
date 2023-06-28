@@ -309,7 +309,7 @@
                         <DropShadow />
                      </effect>
                   </ImageView>
-                  <Label layoutX="40.0" layoutY="240.0" text="Password :">
+                  <Label layoutX="40.0" layoutY="210.0" text="Password :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -317,7 +317,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="40.0" layoutY="190.0" text="Username :">
+                  <Label layoutX="40.0" layoutY="165.0" text="Username :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -325,7 +325,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="40.0" layoutY="140.0" text="Phone :">
+                  <Label layoutX="40.0" layoutY="120.0" text="Phone :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -333,7 +333,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="40.0" layoutY="90.0" text="Lastname :">
+                  <Label layoutX="40.0" layoutY="75.0" text="Lastname :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -346,7 +346,7 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="290.0" text="E-mail :">
+                  <Label layoutX="40.0" layoutY="255.0" text="E-mail :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -359,7 +359,7 @@
                         <Font name="Book Antiqua" size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="40.0" text="Firstname :">
+                  <Label layoutX="40.0" layoutY="30.0" text="Firstname :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -367,32 +367,32 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtpnaccount" layoutX="230.0" layoutY="140.0" text="...">
+                  <Label fx:id="txtpnaccount" layoutX="230.0" layoutY="120.0" text="...">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtemaccount" layoutX="230.0" layoutY="290.0" text="...">
+                  <Label fx:id="txtemaccount" layoutX="230.0" layoutY="255.0" text="...">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtpwaccount" layoutX="230.0" layoutY="240.0" text="...">
+                  <Label fx:id="txtpwaccount" layoutX="230.0" layoutY="210.0" text="...">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtunaccount" layoutX="230.0" layoutY="190.0" text="...">
+                  <Label fx:id="txtunaccount" layoutX="230.0" layoutY="165.0" text="...">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtfnaccount" layoutX="230.0" layoutY="40.0" text="...">
+                  <Label fx:id="txtfnaccount" layoutX="230.0" layoutY="30.0" text="...">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtlnaccount" layoutX="230.0" layoutY="90.0" text="...">
+                  <Label fx:id="txtlnaccount" layoutX="230.0" layoutY="75.0" text="...">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -405,7 +405,7 @@
                      <effect>
                         <DropShadow />
                      </effect></Separator>
-                  <Label layoutX="40.0" layoutY="340.0" text="Wallet Balance :">
+                  <Label layoutX="40.0" layoutY="345.0" text="Wallet Balance :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -413,12 +413,12 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="230.0" layoutY="340.0" text="0 $">
+                  <Label layoutX="230.0" layoutY="345.0" text="0 $">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="370.0" layoutY="340.0" mnemonicParsing="false" opacity="0.9" prefWidth="250.0" text="Increase acount balance">
+                  <Button layoutX="370.0" layoutY="345.0" mnemonicParsing="false" opacity="0.9" prefWidth="250.0" text="Increase acount balance">
                      <font>
                         <Font name="Book Antiqua" size="18.0" />
                      </font>
@@ -787,6 +787,19 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
+                  <Label layoutX="40.0" layoutY="300.0" text="Work place :">
+                     <font>
+                        <Font name="Book Antiqua" size="25.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </Label>
+                  <Label fx:id="txtwpaccount" layoutX="230.0" layoutY="300.0" text="...">
+                     <font>
+                        <Font name="Book Antiqua" size="25.0" />
+                     </font>
+                  </Label>
                </children>
                <effect>
                   <InnerShadow />
