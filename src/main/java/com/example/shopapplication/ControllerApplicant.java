@@ -813,6 +813,7 @@ public class ControllerApplicant {
             MenuItem debsh = new MenuItem("Debsh");
             MenuItem golestan = new MenuItem("Golestan");
             MenuItem shahrzad = new MenuItem("Shahrzad");
+            MenuItem yorkshire = new MenuItem("Yorkshire");
 
             debsh.setOnAction(ev -> {
                 menuButtonBrand.setText("debsh");
@@ -823,8 +824,11 @@ public class ControllerApplicant {
             shahrzad.setOnAction(ev -> {
                 menuButtonBrand.setText("shahrzad");
             });
+            yorkshire.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("yorkshire");
+            });
 
-            menuButtonBrand.getItems().addAll(debsh, golestan, shahrzad);
+            menuButtonBrand.getItems().addAll(debsh, golestan, shahrzad,yorkshire);
         });
         herbalTea.setOnAction(event -> {
 
@@ -833,6 +837,7 @@ public class ControllerApplicant {
             MenuItem golestan = new MenuItem("Golestan");
             MenuItem seharKhiz = new MenuItem("Sehar Khiz");
             MenuItem shahsavand = new MenuItem("Shahsavand");
+            MenuItem yogi = new MenuItem("Yogi");
 
             golestan.setOnAction(ev -> {
                 menuButtonBrand.setText("golestan");
@@ -843,8 +848,11 @@ public class ControllerApplicant {
             shahsavand.setOnAction(ev -> {
                 menuButtonBrand.setText("shahsavand");
             });
+            yogi.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("yogi");
+            });
 
-            menuButtonBrand.getItems().addAll(golestan, seharKhiz, shahsavand);
+            menuButtonBrand.getItems().addAll(golestan, seharKhiz, shahsavand,yogi);
         });
         coffee.setOnAction(event -> {
 
@@ -853,6 +861,7 @@ public class ControllerApplicant {
             MenuItem aliCafe = new MenuItem("Ali Cafe");
             MenuItem goodDay = new MenuItem("Good Day");
             MenuItem nescafe = new MenuItem("Nescafe");
+            MenuItem starbucks = new MenuItem("Starbucks");
 
             aliCafe.setOnAction(ev -> {
                 menuButtonBrand.setText("ali cafe");
@@ -863,8 +872,11 @@ public class ControllerApplicant {
             nescafe.setOnAction(ev -> {
                 menuButtonBrand.setText("nescafe");
             });
+            starbucks.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("starbucks");
+            });
 
-            menuButtonBrand.getItems().addAll(aliCafe, goodDay, nescafe);
+            menuButtonBrand.getItems().addAll(aliCafe, goodDay, nescafe,starbucks);
         });
         water.setOnAction(event -> {
 
@@ -873,6 +885,7 @@ public class ControllerApplicant {
             MenuItem damavand = new MenuItem("Damavand");
             MenuItem miva = new MenuItem("Miva");
             MenuItem oxab = new MenuItem("Oxab");
+            MenuItem smartWater = new MenuItem("Smart Water");
 
             damavand.setOnAction(ev -> {
                 menuButtonBrand.setText("damavand");
@@ -883,8 +896,11 @@ public class ControllerApplicant {
             oxab.setOnAction(ev -> {
                 menuButtonBrand.setText("oxab");
             });
+            smartWater.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("smart water");
+            });
 
-            menuButtonBrand.getItems().addAll(damavand, miva, oxab);
+            menuButtonBrand.getItems().addAll(damavand, miva, oxab,smartWater);
         });
         beer.setOnAction(event -> {
 
@@ -893,6 +909,7 @@ public class ControllerApplicant {
             MenuItem aalis = new MenuItem("Aalis");
             MenuItem heyDay = new MenuItem("Hey Day");
             MenuItem jojo = new MenuItem("Jojo");
+            MenuItem heineken = new MenuItem("Heineken");
 
             aalis.setOnAction(ev -> {
                 menuButtonBrand.setText("aalis");
@@ -903,8 +920,11 @@ public class ControllerApplicant {
             jojo.setOnAction(ev -> {
                 menuButtonBrand.setText("jojo");
             });
+            heineken.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("heineken");
+            });
 
-            menuButtonBrand.getItems().addAll(aalis, heyDay, jojo);
+            menuButtonBrand.getItems().addAll(aalis, heyDay, jojo,heineken);
         });
         soda.setOnAction(event -> {
 
@@ -913,6 +933,7 @@ public class ControllerApplicant {
             MenuItem cocaCola = new MenuItem("Coca Cola");
             MenuItem fantaLemon = new MenuItem("Fanta Lemon");
             MenuItem fantaOrange = new MenuItem("Fanta Orange");
+            MenuItem drPepper = new MenuItem("Dr Pepper");
 
             cocaCola.setOnAction(ev -> {
                 menuButtonBrand.setText("coca cola");
@@ -923,8 +944,11 @@ public class ControllerApplicant {
             fantaOrange.setOnAction(ev -> {
                 menuButtonBrand.setText("fanta orange");
             });
+            drPepper.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("dr pepper");
+            });
 
-            menuButtonBrand.getItems().addAll(cocaCola, fantaLemon, fantaOrange);
+            menuButtonBrand.getItems().addAll(cocaCola, fantaLemon, fantaOrange,drPepper);
         });
         juice.setOnAction(event -> {
 
@@ -933,6 +957,7 @@ public class ControllerApplicant {
             MenuItem mihan = new MenuItem("Mihan");
             MenuItem sanIch = new MenuItem("San Ich");
             MenuItem takDaneh = new MenuItem("Tak Daneh");
+            MenuItem simplyOrange = new MenuItem("Simply Orange");
 
             mihan.setOnAction(ev -> {
                 menuButtonBrand.setText("mihan");
@@ -943,8 +968,11 @@ public class ControllerApplicant {
             takDaneh.setOnAction(ev -> {
                 menuButtonBrand.setText("tak daneh");
             });
+            simplyOrange.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("simply orange");
+            });
 
-            menuButtonBrand.getItems().addAll(mihan, sanIch, takDaneh);
+            menuButtonBrand.getItems().addAll(mihan, sanIch, takDaneh,simplyOrange);
         });
 
         menuButtonMinorKind.getItems().addAll(tea, herbalTea, coffee, water, beer, soda, juice);
