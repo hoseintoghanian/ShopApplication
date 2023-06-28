@@ -520,6 +520,7 @@ public class ControllerApplicant {
             MenuItem kampooreh = new MenuItem("Kampooreh");
             MenuItem robat = new MenuItem("Robat");
             MenuItem shamSham = new MenuItem("Sham Sham");
+            MenuItem principe = new MenuItem("Principe");
 
             kampooreh.setOnAction(ev -> {
                 menuButtonBrand.setText("kampooreh");
@@ -530,8 +531,11 @@ public class ControllerApplicant {
             shamSham.setOnAction(ev -> {
                 menuButtonBrand.setText("sham sham");
             });
+            principe.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("principe");
+            });
 
-            menuButtonBrand.getItems().addAll(kampooreh, robat, shamSham);
+            menuButtonBrand.getItems().addAll(kampooreh, robat, shamSham,principe);
         });
         lambMeet.setOnAction(event -> {
 
@@ -540,6 +544,7 @@ public class ControllerApplicant {
             MenuItem ariaBahar = new MenuItem("Aria Bahar");
             MenuItem mahya = new MenuItem("Mahya");
             MenuItem puya = new MenuItem("Puya");
+            MenuItem freeRange = new MenuItem("Free Range");
 
             ariaBahar.setOnAction(ev -> {
                 menuButtonBrand.setText("aria bahar");
@@ -550,8 +555,11 @@ public class ControllerApplicant {
             puya.setOnAction(ev -> {
                 menuButtonBrand.setText("puya");
             });
+            freeRange.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("free range");
+            });
 
-            menuButtonBrand.getItems().addAll(ariaBahar, mahya, puya);
+            menuButtonBrand.getItems().addAll(ariaBahar, mahya, puya,freeRange);
         });
         chicken.setOnAction(event -> {
 
@@ -559,7 +567,8 @@ public class ControllerApplicant {
 
             MenuItem mahya = new MenuItem("Mahya");
             MenuItem puya = new MenuItem("Puya");
-            MenuItem telavang = new MenuItem("Puya");
+            MenuItem telavang = new MenuItem("Telavang");
+            MenuItem marys = new MenuItem("Mary's");
 
             mahya.setOnAction(ev -> {
                 menuButtonBrand.setText("mahya");
@@ -570,8 +579,11 @@ public class ControllerApplicant {
             telavang.setOnAction(ev -> {
                 menuButtonBrand.setText("telavang");
             });
+            marys.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("mary's");
+            });
 
-            menuButtonBrand.getItems().addAll(mahya, puya, telavang);
+            menuButtonBrand.getItems().addAll(mahya, puya, telavang,marys);
         });
         egg.setOnAction(event -> {
 
@@ -580,6 +592,7 @@ public class ControllerApplicant {
             MenuItem morghdaran = new MenuItem("Morghdaran");
             MenuItem porotana = new MenuItem("Porotana");
             MenuItem telavang = new MenuItem("Telavang");
+            MenuItem organicValley = new MenuItem("Organic Valley");
 
             morghdaran.setOnAction(ev -> {
                 menuButtonBrand.setText("morghdaran");
@@ -590,8 +603,11 @@ public class ControllerApplicant {
             telavang.setOnAction(ev -> {
                 menuButtonBrand.setText("telavang");
             });
+            organicValley.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("organic valley");
+            });
 
-            menuButtonBrand.getItems().addAll(morghdaran, porotana, telavang);
+            menuButtonBrand.getItems().addAll(morghdaran, porotana, telavang,organicValley);
         });
         beef.setOnAction(event -> {
 
@@ -600,6 +616,7 @@ public class ControllerApplicant {
             MenuItem khoram = new MenuItem("Khoram");
             MenuItem mahya = new MenuItem("Mahya");
             MenuItem puya = new MenuItem("Puya");
+            MenuItem fresh = new MenuItem("Fresh");
 
             khoram.setOnAction(ev -> {
                 menuButtonBrand.setText("khoram");
@@ -610,8 +627,11 @@ public class ControllerApplicant {
             puya.setOnAction(ev -> {
                 menuButtonBrand.setText("puya");
             });
+            fresh.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("fresh");
+            });
 
-            menuButtonBrand.getItems().addAll(khoram, mahya, puya);
+            menuButtonBrand.getItems().addAll(khoram, mahya, puya,fresh);
         });
         shrimp.setOnAction(event -> {
 
@@ -620,6 +640,7 @@ public class ControllerApplicant {
             MenuItem marine = new MenuItem("Marine");
             MenuItem pemina = new MenuItem("Pemina");
             MenuItem tohfe = new MenuItem("Tohfe");
+            MenuItem greatCatch = new MenuItem("Great Catch");
 
             marine.setOnAction(ev -> {
                 menuButtonBrand.setText("marine");
@@ -630,8 +651,11 @@ public class ControllerApplicant {
             tohfe.setOnAction(ev -> {
                 menuButtonBrand.setText("tohfe");
             });
+            greatCatch.setOnAction(actionEvent ->{
+                menuButtonBrand.setText("great catch");
+            });
 
-            menuButtonBrand.getItems().addAll(marine, pemina, tohfe);
+            menuButtonBrand.getItems().addAll(marine, pemina, tohfe,greatCatch);
         });
         tuna.setOnAction(event -> {
 
@@ -640,6 +664,7 @@ public class ControllerApplicant {
             MenuItem makenzi = new MenuItem("Makenzi");
             MenuItem shilton = new MenuItem("Shilton");
             MenuItem tohfe = new MenuItem("Tohfe");
+            MenuItem ayamBrand = new MenuItem("Ayam Brand");
 
             makenzi.setOnAction(ev -> {
                 menuButtonBrand.setText("makenzi");
@@ -650,8 +675,11 @@ public class ControllerApplicant {
             tohfe.setOnAction(ev -> {
                 menuButtonBrand.setText("tohfe");
             });
+            ayamBrand.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("ayam brand");
+            });
 
-            menuButtonBrand.getItems().addAll(makenzi, shilton, tohfe);
+            menuButtonBrand.getItems().addAll(makenzi, shilton, tohfe,ayamBrand);
         });
 
         menuButtonMinorKind.getItems().addAll(bologna, lambMeet, chicken, egg, beef, shrimp, tuna);
