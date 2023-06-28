@@ -11,7 +11,7 @@ public class Item {
     String name;
     long price;
     int size;
-    double score=68.23;
+    double score = 68.23;
     LocalDateTime uploadDate;
     Image image;
     Image scoreEmoji;//based on score

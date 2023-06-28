@@ -1099,14 +1099,14 @@ public class ControllerApplicant {
         name.setPrefWidth(150);
         name.setAlignment(Pos.CENTER);
         name.setLayoutX(0);
-        name.setLayoutY(150);
+        name.setLayoutY(145);
 
         Label price = new Label(String.valueOf(item.price));
         price.setFont(new Font("Arial", 20));
         price.setPrefWidth(150);
         price.setAlignment(Pos.CENTER);
         price.setLayoutX(0);
-        price.setLayoutY(180);
+        price.setLayoutY(175);
 
         Label score = new Label(item.score + "%");
         score.setFont(new Font("Arial", 15));

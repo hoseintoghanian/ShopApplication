@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerRegister">
@@ -28,14 +29,17 @@
         </ImageView>
         <Button layoutX="214.0" layoutY="501.0" mnemonicParsing="false" onAction="#goSignUpScene" prefWidth="300.0" text="Sign Up">
             <font>
-                <Font size="24.0" />
+                <Font name="Book Antiqua" size="24.0" />
             </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
                   <SepiaTone>
                      <input>
-                        <DropShadow />
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color red="0.7473683953285217" green="0.6118271350860596" blue="0.12179337441921234" />
+                           </color></DropShadow>
                      </input>
                   </SepiaTone>
                </input>
@@ -44,14 +48,17 @@
         </Button>
         <Button fx:id="buttonLogin" layoutX="300.0" layoutY="357.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="120.0" text="Login">
             <font>
-                <Font size="24.0" />
+                <Font name="Book Antiqua" size="24.0" />
             </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
                   <SepiaTone>
                      <input>
-                        <DropShadow />
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color red="0.7684210538864136" green="0.6616958975791931" blue="0.1280701756477356" />
+                           </color></DropShadow>
                      </input>
                   </SepiaTone>
                </input>
@@ -60,7 +67,7 @@
         </Button>
         <TextField fx:id="txtLoginUsername" layoutX="200.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
-                <Font size="24.0" />
+                <Font name="Book Antiqua" size="24.0" />
             </font>
          <effect>
             <InnerShadow />
@@ -68,15 +75,15 @@
         </TextField>
         <PasswordField fx:id="txtLoginPass" layoutX="200.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
             <font>
-                <Font size="24.0" />
+                <Font name="Book Antiqua" size="24.0" />
             </font>
          <effect>
             <InnerShadow />
          </effect>
         </PasswordField>
-      <Label fx:id="txtCaptcha" layoutX="214.0" layoutY="274.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
+      <Label fx:id="txtCaptcha" layoutX="214.0" layoutY="279.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
          <font>
-            <Font size="34.0" />
+            <Font name="Book Antiqua" size="30.0" />
          </font>
          <effect>
             <SepiaTone>
@@ -87,7 +94,7 @@
          </effect></Label>
       <TextField fx:id="txtCaptchaInput" alignment="CENTER" layoutX="360.0" layoutY="274.0" opacity="0.5" prefHeight="50.0" prefWidth="151.0" promptText="Captcha">
          <font>
-            <Font size="20.0" />
+            <Font name="Book Antiqua" size="20.0" />
          </font>
          <effect>
             <InnerShadow />

@@ -63,12 +63,12 @@
                   </ImageView>
                   <Label layoutX="35.0" layoutY="535.0" text="Final cost : ">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Book Antiqua" size="24.0" />
                      </font>
                   </Label>
                   <Label layoutX="35.0" layoutY="585.0" text="Wallet balance : ">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Book Antiqua" size="24.0" />
                      </font>
                   </Label>
                   <Button layoutX="110.0" layoutY="670.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Payment page">
@@ -90,7 +90,7 @@
                         </DropShadow>
                      </effect>
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Book Antiqua" size="20.0" />
                      </font>
                   </Button>
                </children>

@@ -15,15 +15,12 @@
    <children>
       <Label layoutX="50.0" layoutY="50.0" text="Adress :" textFill="#ae2a2a">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
-         <effect>
-            <SepiaTone />
-         </effect>
       </Label>
       <Label layoutX="50.0" layoutY="130.0" text="Province :">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
          <effect>
             <SepiaTone />
@@ -31,7 +28,7 @@
       </Label>
       <TextField alignment="CENTER" layoutX="211.0" layoutY="137.0" prefWidth="250.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
             <InnerShadow>
@@ -47,7 +44,7 @@
       </TextField>
       <Label layoutX="552.0" layoutY="130.0" text="City :">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
          <effect>
             <SepiaTone />
@@ -55,7 +52,7 @@
       </Label>
       <TextField alignment="CENTER" layoutX="643.0" layoutY="137.0" prefWidth="250.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
             <InnerShadow>
@@ -71,7 +68,7 @@
       </TextField>
       <Label layoutX="983.0" layoutY="130.0" text="Postal Code :">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
          <effect>
             <SepiaTone />
@@ -79,7 +76,7 @@
       </Label>
       <TextField alignment="CENTER" layoutX="1199.0" layoutY="137.0" prefWidth="250.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
             <InnerShadow>
@@ -95,7 +92,7 @@
       </TextField>
       <TextArea layoutX="303.0" layoutY="210.0" prefHeight="150.0" prefWidth="1145.0">
          <font>
-            <Font size="20.0" />
+            <Font name="Book Antiqua" size="20.0" />
          </font>
          <effect>
             <InnerShadow>
@@ -111,7 +108,7 @@
       </TextArea>
       <Label layoutX="50.0" layoutY="210.0" text="Postal Address :">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
          <effect>
             <SepiaTone />
@@ -128,15 +125,12 @@
       </Separator>
       <Label layoutX="50.0" layoutY="430.0" text="Information :" textFill="#ae2a2a">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
-         <effect>
-            <SepiaTone />
-         </effect>
       </Label>
       <Label layoutX="348.0" layoutY="430.0" text="Name :">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
          <effect>
             <SepiaTone />
@@ -144,7 +138,7 @@
       </Label>
       <TextField alignment="CENTER" layoutX="476.0" layoutY="437.0" prefWidth="250.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
             <InnerShadow>
@@ -160,7 +154,7 @@
       </TextField>
       <Label layoutX="820.0" layoutY="430.0" text="Phone Number : ">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
          <effect>
             <SepiaTone />
@@ -168,7 +162,7 @@
       </Label>
       <TextField alignment="CENTER" layoutX="1093.0" layoutY="437.0" prefWidth="250.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
             <InnerShadow>
@@ -193,15 +187,12 @@
       </Separator>
       <Label layoutX="50.0" layoutY="510.0" text="Discount Code :" textFill="#ae2a2a">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
-         <effect>
-            <SepiaTone />
-         </effect>
       </Label>
       <TextField alignment="CENTER" layoutX="315.0" layoutY="517.0" prefWidth="250.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
             <InnerShadow>
@@ -232,11 +223,8 @@
          </effect></Button>
       <Label layoutX="50.0" layoutY="649.0" text="Final Cost :" textFill="#ae2a2a">
          <font>
-            <Font name="System Italic" size="36.0" />
+            <Font name="Book Antiqua Italic" size="36.0" />
          </font>
-         <effect>
-            <SepiaTone />
-         </effect>
       </Label>
       <Button layoutX="683.0" layoutY="511.0" mnemonicParsing="false" prefWidth="170.0" text="Apply Code" textFill="RED">
          <font>

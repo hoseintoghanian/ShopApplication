@@ -65,12 +65,12 @@
                         </Separator>
                         <Label layoutX="65.0" layoutY="70.0" text="Incom">
                            <font>
-                              <Font size="30.0" />
+                              <Font name="Book Antiqua" size="30.0" />
                            </font>
                         </Label>
                         <Label layoutX="615.0" layoutY="70.0" text="Cost">
                            <font>
-                              <Font size="30.0" />
+                              <Font name="Book Antiqua" size="30.0" />
                            </font>
                         </Label>
                         <LineChart layoutX="20.0" layoutY="230.0">
@@ -108,7 +108,7 @@
                               <MenuItem mnemonicParsing="false" text="Action 2" />
                            </items>
                            <font>
-                              <Font size="18.0" />
+                              <Font name="Book Antiqua" size="18.0" />
                            </font>
                            <effect>
                               <DropShadow>
@@ -124,22 +124,22 @@
                         </SplitMenuButton>
                         <Label layoutX="40.0" layoutY="90.0" text="store name :">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <Label layoutX="40.0" layoutY="140.0" text="store admin :">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <Label layoutX="40.0" layoutY="190.0" text="address :">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <Label layoutX="40.0" layoutY="260.0" text="products :">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <TableView layoutX="40.0" layoutY="310.0" prefHeight="200.0" prefWidth="250.0">
@@ -165,19 +165,19 @@
                               </DropShadow>
                            </effect>
                         </Separator>
-                        <Label layoutX="786.0" layoutY="470.0" text="monthly properties chart">
+                        <Label layoutX="780.0" layoutY="470.0" text="monthly properties chart">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <Label layoutX="780.0" layoutY="240.0" text="weekly properties chart">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <Label layoutX="780.0" layoutY="10.0" text="daily properties chart">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <BarChart layoutX="760.0" layoutY="40.0" prefHeight="200.0" prefWidth="300.0">
@@ -238,7 +238,7 @@
                         </TableView>
                         <Label layoutX="375.0" layoutY="50.0" text="Inputs">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <TableView layoutX="480.0" layoutY="285.0" prefHeight="200.0" prefWidth="250.0">
@@ -257,7 +257,7 @@
                         </TableView>
                         <Label layoutX="375.0" layoutY="280.0" text="Outputs">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <AnchorPane layoutX="375.0" layoutY="558.0" prefHeight="120.0" prefWidth="355.0" style="-fx-background-color: #FFCF21;">
@@ -269,25 +269,37 @@
                               </InnerShadow>
                            </effect>
                            <children>
-                              <TextField layoutX="20.0" layoutY="15.0" promptText="name" />
+                              <TextField layoutX="20.0" layoutY="15.0" promptText="name">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></TextField>
                               <RadioButton layoutX="205.0" layoutY="18.0" mnemonicParsing="false" text="Input">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Book Antiqua" size="13.0" />
                                  </font>
                               </RadioButton>
                               <RadioButton layoutX="205.0" layoutY="50.0" mnemonicParsing="false" text="Output">
                                  <font>
-                                    <Font size="13.0" />
+                                    <Font name="Book Antiqua" size="13.0" />
                                  </font>
                               </RadioButton>
-                              <Button layoutX="290.0" layoutY="80.0" mnemonicParsing="false" prefWidth="50.0" text="add" />
-                              <TextField layoutX="20.0" layoutY="47.0" promptText="price" />
-                              <TextField layoutX="20.0" layoutY="80.0" promptText="price" />
+                              <Button layoutX="290.0" layoutY="80.0" mnemonicParsing="false" prefWidth="50.0" text="add">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></Button>
+                              <TextField layoutX="20.0" layoutY="47.0" promptText="price">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></TextField>
+                              <TextField layoutX="20.0" layoutY="80.0" promptText="size">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></TextField>
                            </children>
                         </AnchorPane>
                         <Button layoutX="480.0" layoutY="504.0" mnemonicParsing="false" prefWidth="250.0" text="download CSV file">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Book Antiqua" size="17.0" />
                            </font>
                            <effect>
                               <DropShadow>
@@ -319,10 +331,22 @@
                               </InnerShadow>
                            </effect>
                            <children>
-                              <TextField layoutX="20.0" layoutY="15.0" promptText="name" />
-                              <Button layoutX="180.0" layoutY="47.0" mnemonicParsing="false" prefWidth="100.0" text="add warehouse" />
-                              <TextField layoutX="20.0" layoutY="47.0" promptText="admin" />
-                              <TextField layoutX="20.0" layoutY="80.0" prefWidth="260.0" promptText="adress" />
+                              <TextField layoutX="15.0" layoutY="15.0" promptText="name">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></TextField>
+                              <Button layoutX="180.0" layoutY="47.0" mnemonicParsing="false" prefWidth="100.0" text="add warehouse">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></Button>
+                              <TextField layoutX="15.0" layoutY="47.0" promptText="admin">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></TextField>
+                              <TextField layoutX="15.0" layoutY="80.0" prefWidth="265.0" promptText="adress">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font></TextField>
                               <ImageView fitHeight="40.0" fitWidth="100.0" layoutX="180.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/warehouse.png" />
@@ -343,7 +367,7 @@
                             <MenuItem mnemonicParsing="false" text="Action 2" />
                           </items>
                            <font>
-                              <Font size="18.0" />
+                              <Font name="Book Antiqua" size="20.0" />
                            </font>
                            <effect>
                               <InnerShadow>
@@ -382,12 +406,12 @@
                         </ScrollPane>
                         <Label layoutX="40.0" layoutY="150.0" text="Seller name :">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <Label layoutX="40.0" layoutY="200.0" text="Seller username :">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
                         <TextArea layoutX="720.0" layoutY="666.0" maxHeight="50.0" prefHeight="50.0" prefWidth="324.0" promptText="message">
@@ -403,12 +427,12 @@
                               </DropShadow>
                            </effect>
                            <font>
-                              <Font size="15.0" />
+                              <Font name="Book Antiqua" size="15.0" />
                            </font>
                         </TextArea>
                         <Button layoutX="1046.0" layoutY="666.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="send">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Book Antiqua" size="14.0" />
                            </font>
                            <effect>
                               <DropShadow>
@@ -424,7 +448,7 @@
                         </Button>
                         <Label layoutX="505.0" layoutY="15.0" text="Theme">
                            <font>
-                              <Font size="20.0" />
+                              <Font name="Book Antiqua" size="20.0" />
                            </font>
                            <effect>
                               <SepiaTone />
@@ -480,7 +504,7 @@
                         </ImageView>
                         <Button layoutX="582.0" layoutY="666.0" mnemonicParsing="false" prefHeight="50.0" text="Chat History">
                            <font>
-                              <Font size="20.0" />
+                              <Font name="Book Antiqua" size="20.0" />
                            </font>
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -571,7 +595,7 @@
       </ImageView>
       <Label layoutX="1120.0" layoutY="430.0" text="Username :">
          <font>
-            <Font size="25.0" />
+            <Font name="Book Antiqua" size="25.0" />
          </font>
       </Label>
       <Separator layoutX="1097.0" layoutY="29.0" orientation="VERTICAL" prefHeight="700.0">
@@ -580,7 +604,7 @@
          </effect></Separator>
       <Label layoutX="1120.0" layoutY="480.0" text="Password  :">
          <font>
-            <Font size="25.0" />
+            <Font name="Book Antiqua" size="25.0" />
          </font>
       </Label>
       <Hyperlink layoutX="1425.0" layoutY="7.0" onAction="#changeToLoginSceneAdmin" text="Log out">
@@ -607,12 +631,12 @@
       </ImageView>
       <Label layoutX="1255.0" layoutY="430.0" text="admin" textAlignment="CENTER" textFill="#2f176b">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
       </Label>
       <Label layoutX="1255.0" layoutY="480.0" text="8851" textFill="#2f176b">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
       </Label>
    </children>

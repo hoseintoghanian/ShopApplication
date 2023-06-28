@@ -62,7 +62,7 @@
       </Button>
       <RadioButton fx:id="buttonCustomer" layoutX="50.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Customer" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="applicant" />
@@ -76,7 +76,7 @@
          </effect></RadioButton>
       <RadioButton fx:id="buttonSeller" layoutX="235.0" layoutY="550.0" mnemonicParsing="false" onAction="#chooseApplicant" text="Seller" textFill="WHITE" toggleGroup="$applicant">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <DropShadow>
@@ -87,7 +87,7 @@
          </effect></RadioButton>
       <TextField fx:id="txtFirstname" layoutX="400.0" layoutY="50.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Firstname">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -95,7 +95,7 @@
       </TextField>
       <Label layoutX="50.0" layoutY="50.0" text="Firstname" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Book Antiqua" size="36.0" />
          </font>
          <effect>
             <DropShadow />
@@ -103,7 +103,7 @@
       </Label>
       <Label layoutX="50.0" layoutY="120.0" text="Lastname" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Book Antiqua" size="36.0" />
          </font>
          <effect>
             <DropShadow />
@@ -111,7 +111,7 @@
       </Label>
       <Label layoutX="50.0" layoutY="190.0" text="Phone Number" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Book Antiqua" size="36.0" />
          </font>
          <effect>
             <DropShadow />
@@ -119,7 +119,7 @@
       </Label>
       <Label layoutX="50.0" layoutY="260.0" text="Username" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Book Antiqua" size="36.0" />
          </font>
          <effect>
             <DropShadow />
@@ -127,7 +127,7 @@
       </Label>
       <Label layoutX="50.0" layoutY="470.0" text="E-mail" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Book Antiqua" size="36.0" />
          </font>
          <effect>
             <DropShadow />
@@ -135,7 +135,7 @@
       </Label>
       <Label layoutX="50.0" layoutY="330.0" text="Password" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Book Antiqua" size="36.0" />
          </font>
          <effect>
             <DropShadow />
@@ -143,7 +143,7 @@
       </Label>
       <Label layoutX="50.0" layoutY="400.0" text="Confirm Password" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Book Antiqua" size="36.0" />
          </font>
          <effect>
             <DropShadow />
@@ -151,7 +151,7 @@
       </Label>
       <TextField fx:id="txtLastname" layoutX="400.0" layoutY="120.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Lastname">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -159,7 +159,7 @@
       </TextField>
       <TextField fx:id="txtPhoneNumber" layoutX="400.0" layoutY="190.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -167,7 +167,7 @@
       </TextField>
       <TextField fx:id="txtUserName" layoutX="400.0" layoutY="260.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Username">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -175,7 +175,7 @@
       </TextField>
       <TextField fx:id="txtEmail" layoutX="400.0" layoutY="470.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -183,7 +183,7 @@
       </TextField>
       <PasswordField fx:id="txtPass" layoutX="400.0" layoutY="330.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -191,7 +191,7 @@
       </PasswordField>
       <PasswordField fx:id="txtConfirmPassword" layoutX="400.0" layoutY="400.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />
@@ -199,7 +199,7 @@
       </PasswordField>
       <TextField fx:id="txtWorkPlace" layoutX="400.0" layoutY="540.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Work Place" visible="false">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
             <InnerShadow />

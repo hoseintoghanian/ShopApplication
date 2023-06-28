@@ -70,6 +70,9 @@
                                        </color>
                                     </DropShadow>
                                  </effect>
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font>
                               </TextField>
                               <MenuButton fx:id="filterButtonKind" layoutX="35.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Kind">
                                  <items>
@@ -308,7 +311,7 @@
                   </ImageView>
                   <Label layoutX="40.0" layoutY="240.0" text="Password :">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -316,7 +319,7 @@
                   </Label>
                   <Label layoutX="40.0" layoutY="190.0" text="Username :">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -324,7 +327,7 @@
                   </Label>
                   <Label layoutX="40.0" layoutY="140.0" text="Phone :">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -332,7 +335,7 @@
                   </Label>
                   <Label layoutX="40.0" layoutY="90.0" text="Lastname :">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -345,7 +348,7 @@
                   </Label>
                   <Label layoutX="40.0" layoutY="290.0" text="E-mail :">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -353,12 +356,12 @@
                   </Label>
                   <Label layoutX="772.0" layoutY="380.0" text="Seller">
                      <font>
-                        <Font size="36.0" />
+                        <Font name="Book Antiqua" size="36.0" />
                      </font>
                   </Label>
                   <Label layoutX="40.0" layoutY="40.0" text="Firstname :">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -366,32 +369,32 @@
                   </Label>
                   <Label fx:id="txtpnaccount" layoutX="230.0" layoutY="140.0" text="...">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtemaccount" layoutX="230.0" layoutY="290.0" text="...">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtpwaccount" layoutX="230.0" layoutY="240.0" text="...">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtunaccount" layoutX="230.0" layoutY="190.0" text="...">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtfnaccount" layoutX="230.0" layoutY="40.0" text="...">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="txtlnaccount" layoutX="230.0" layoutY="90.0" text="...">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                   <Separator layoutX="666.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
@@ -404,7 +407,7 @@
                      </effect></Separator>
                   <Label layoutX="40.0" layoutY="340.0" text="Wallet Balance :">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -412,12 +415,12 @@
                   </Label>
                   <Label layoutX="230.0" layoutY="340.0" text="0 $">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                   <Button layoutX="370.0" layoutY="340.0" mnemonicParsing="false" opacity="0.9" prefWidth="250.0" text="Increase acount balance">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Book Antiqua" size="18.0" />
                      </font>
                      <effect>
                         <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -620,7 +623,7 @@
                               </DropShadow>
                            </effect>
                            <font>
-                              <Font size="15.0" />
+                              <Font name="Book Antiqua" size="15.0" />
                            </font>
                         </TextArea>
                         <Button layoutX="450.0" layoutY="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Send">
@@ -634,7 +637,7 @@
                         </Button>
                         <Label layoutX="5.0" layoutY="17.0" text="Theme">
                            <font>
-                              <Font size="20.0" />
+                              <Font name="Book Antiqua" size="20.0" />
                            </font>
                         </Label>
                         <ImageView fx:id="imgTheme1" fitHeight="60.0" fitWidth="50.0" layoutX="80.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
@@ -696,7 +699,7 @@
                                     </ImageView>
                                     <Label layoutX="15.0" layoutY="15.0" text="username + message text" textFill="WHITE">
                                        <font>
-                                          <Font size="20.0" />
+                                          <Font name="Book Antiqua" size="20.0" />
                                        </font>
                                     </Label>
                                  </children>
