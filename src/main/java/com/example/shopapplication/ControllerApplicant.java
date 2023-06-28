@@ -1023,10 +1023,12 @@ public class ControllerApplicant {
     private Label addtxt;
     @FXML
     private ImageView productImg;
+    private static int counter = 0;
 
     public void addProduct() throws SQLException {
         if (!menuButtonKind.getText().equals("Kind") && !menuButtonMinorKind.getText().equals("Minor Kind") && !menuButtonBrand.getText().equals("Brand") &&
                 !txtProductName.getText().equals("") && !txtProductPrice.getText().equals("") && !txtProductSize.getText().equals("")) {
+            counter++;
             Item item = new Item(
                     menuButtonKind.getText(),
                     menuButtonMinorKind.getText(),
@@ -1034,7 +1036,8 @@ public class ControllerApplicant {
                     txtProductName.getText(),
                     Integer.parseInt(txtProductPrice.getText()),
                     Integer.parseInt(txtProductSize.getText()),
-                    productImg.getImage()
+                    productImg.getImage(),
+                    counter
             );
 
             if (!Application.shop.currentSeller.items.contains(item)) {
@@ -1064,24 +1067,23 @@ public class ControllerApplicant {
         ImageView imageView = new ImageView(item.image);
         imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
-            public void handle(MouseEvent mouseEvent) {
-
-                Parent root = null;
+            public void handle(MouseEvent e) {
 
                 try {
+                    FXMLLoader fxmlLoader = null;
+
                    /* if (Application.shop.currentSeller == null)
-                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("productCustomer.fxml")));
+                        fxmlLoader = new FXMLLoader(Application.class.getResource("productCustomer.fxml"));
                     if (Application.shop.currentCustomer == null)
-                        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("productSeller.fxml")));*/
+                        fxmlLoader = new FXMLLoader(Application.class.getResource("productSeller.fxml"));*/
+                    fxmlLoader = new FXMLLoader(Application.class.getResource("productCustomer.fxml"));//have to remove
 
-                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("productCustomer.fxml")));
-
-
-                    Scene scene = new Scene(root);
-                    Stage stage = (Stage) imageView.getScene().getWindow();
+                    Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(fxmlLoader.load());
                     stage.setScene(scene);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    stage.show();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });

@@ -14,13 +14,14 @@ public class Item {
     long price;
     int size;
     double score;
+    private int code;
     private int[] emojiNumber = new int[5];//add to database
     LocalDateTime uploadDate;
     Image image;
     Image scoreEmoji;//based on score
 
 
-    public Item(String kind, String minorKind, String brand, String name, long price, int size, Image image) {
+    public Item(String kind, String minorKind, String brand, String name, long price, int size, Image image,int code) {
         this.kind = kind;
         this.minorKind = minorKind;
         this.brand = brand;
@@ -32,11 +33,12 @@ public class Item {
 
         this.uploadDate = LocalDateTime.now();
         this.image = image;
+        this.code = code;
 
         calculateScore(-1);
     }
 
-    public Item(String kind, String minorKind, String brand, String name, long price, int size, double score, Object uploadDate, String imageURL) {
+    public Item(String kind, String minorKind, String brand, String name, long price, int size, double score, Object uploadDate, String imageURL,int code) {
         this.kind = kind;
         this.minorKind = minorKind;
         this.brand = brand;
@@ -46,6 +48,7 @@ public class Item {
         this.score = score;
         this.uploadDate = (LocalDateTime) uploadDate;
         this.image = new Image(imageURL);
+        this.code = code;
     }
 
 
@@ -89,6 +92,9 @@ public class Item {
         }
     }
 
+    public int getCode() {
+        return code;
+    }
 
     public String toString() {
         return kind + " " + minorKind + " " + brand + " " + name + " " + price + " " + size + " " + score + " " + uploadDate;
@@ -97,7 +103,7 @@ public class Item {
     public boolean equals(Object o) {
         if (o instanceof Item) {
             Item other = (Item) o;
-            if (name.equals(other.name) && brand.equals(other.brand)) return true;
+            if (code == other.getCode()) return true;
         }
         return false;
     }

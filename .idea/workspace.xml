@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="change fxmls font">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/product.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +37,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/University/projects/term 2/ShopApplication/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/University/projects/term 2/ShopApplication/lib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="javafx.application" />
@@ -139,7 +130,14 @@
       <workItem from="1687890009589" duration="2156000" />
       <workItem from="1687893624063" duration="11868000" />
       <workItem from="1687905954040" duration="807000" />
-      <workItem from="1687934137422" duration="16190000" />
+      <workItem from="1687934137422" duration="2936000" />
+    </task>
+    <task id="LOCAL-00005" summary="merge">
+      <created>1685579808838</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685579808838</updated>
     </task>
     <task id="LOCAL-00006" summary="main page UI">
       <created>1685613669782</created>
@@ -477,14 +475,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687906072999</updated>
     </task>
-    <task id="LOCAL-00054" summary="change fxmls font">
-      <created>1687937164434</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1687937164435</updated>
-    </task>
-    <option name="localTasksCounter" value="55" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,6 +493,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes in controllerAdmin" />
     <MESSAGE value="fixing admin fxml &amp; controllerAdmin class &amp; sql commands" />
     <MESSAGE value="class Item --&gt; toString &amp; equals method" />
     <MESSAGE value="create an items table for each seller" />
@@ -526,8 +518,7 @@
     <MESSAGE value="update supermarket images (dairy)" />
     <MESSAGE value="update supermarket images (drinks)" />
     <MESSAGE value="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant" />
-    <MESSAGE value="change fxmls font" />
-    <option name="LAST_COMMIT_MESSAGE" value="change fxmls font" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding items to seller main page &#10;addNewItemToMainPage method in ControllerApplicant" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
