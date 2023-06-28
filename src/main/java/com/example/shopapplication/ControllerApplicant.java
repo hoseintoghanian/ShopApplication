@@ -35,27 +35,28 @@ public class ControllerApplicant {
 
 
     @FXML
-    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount;
+    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount,txtwpaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
     @FXML
     MenuButton filterButtonKind, filterButtonMinorKind, filterButtonBrand;
 
     public void displayInfo() {
-        if (Application.shop.currentSeller == null) {
+        if (Application.shop.currentCustomer != null) {
             txtFNaccount.setText(Application.shop.currentCustomer.getFirstname());
             txtLNaccount.setText(Application.shop.currentCustomer.getLastname());
             txtPNaccount.setText(Application.shop.currentCustomer.getPhoneNumber());
             txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
             txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
             txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
-        } else if (Application.shop.currentCustomer == null) {
+        } else if (Application.shop.currentSeller != null) {
             txtFNaccount.setText(Application.shop.currentSeller.getFirstname());
             txtLNaccount.setText(Application.shop.currentSeller.getLastname());
             txtPNaccount.setText(Application.shop.currentSeller.getPhoneNumber());
             txtUNaccount.setText(Application.shop.currentSeller.getUsername());
             txtPWaccount.setText(Application.shop.currentSeller.getPassword());
             txtEMaccount.setText(Application.shop.currentSeller.getEmail());
+            txtwpaccount.setText(Application.shop.currentSeller.workplace);
         }
     }
 
