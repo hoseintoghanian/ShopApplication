@@ -47,7 +47,13 @@ public class ControllerProduct {
         changeScene(e, "payment.fxml");
     }
 
-
+    public void changeToCartScene(MouseEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("cart.fxml"));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     private Label nameLabel, kindLabel, minorKindLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
     @FXML
@@ -189,6 +195,9 @@ public class ControllerProduct {
 
         voteButton.setDisable(true);
         voteButton.setVisible(false);
+    }
+    public void addToCart() {
+        Application.shop.currentCustomer.items.add(Application.shop.currentItem);
     }
 
     @FXML

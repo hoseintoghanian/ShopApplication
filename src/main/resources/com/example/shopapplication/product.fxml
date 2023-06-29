@@ -257,7 +257,7 @@
                         <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <Button layoutX="730.0" layoutY="600.0" mnemonicParsing="false" prefHeight="50.0" text="add to cart">
+                  <Button layoutX="730.0" layoutY="600.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="50.0" text="add to cart">
                      <font>
                         <Font name="Book Antiqua" size="18.0" />
                      </font>
@@ -276,7 +276,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="880.0" layoutY="600.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="880.0" layoutY="600.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#changeToCartScene" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/cart.png" />
                      </image>
