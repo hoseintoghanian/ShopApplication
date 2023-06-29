@@ -15,7 +15,7 @@
    <children>
       <ScrollPane prefHeight="750.0" prefWidth="1500.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="1520.0" prefWidth="1500.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" onMouseEntered="#displayInfo2" prefHeight="1520.0" prefWidth="1500.0">
                <children>
                   <ImageView fitHeight="146.0" fitWidth="1120.0" layoutX="195.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -92,6 +92,11 @@
                         <Image url="@../img/payment4.png" />
                      </image>
                   </ImageView>
+                  <Label fx:id="labelFinalCost" layoutX="273.0" layoutY="594.0" onMouseEntered="#displayInfo" text="Label">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </content>

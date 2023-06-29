@@ -63,6 +63,16 @@ public class ControllerPayment {
         }
         labelfinalcost.setText(String.valueOf(sum));
     }
+
+    @FXML
+    private Label labelFinalCost;
+    public void displayInfo2(){
+        int sum = 0;
+        for (int i=0;i<Application.shop.currentCustomer.items.size();i++){
+            sum+=Application.shop.currentCustomer.items.get(i).price;
+        }
+        labelFinalCost.setText(String.valueOf(sum));
+    }
     public void buy() {
         System.out.println(2);
     }
