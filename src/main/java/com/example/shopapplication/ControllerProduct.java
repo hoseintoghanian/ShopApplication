@@ -47,26 +47,70 @@ public class ControllerProduct {
 
     @FXML
     private ImageView emoji0, emoji1, emoji2, emoji3, emoji4;
+    private boolean isClicked;
 
     public void emojiClick() {
 
-        emoji0.setOnMouseClicked(ev -> {
-            emojiProperty(emoji0, emoji1, emoji2, emoji3, emoji4);
-        });
-        emoji1.setOnMouseClicked(ev -> {
-            emojiProperty(emoji1, emoji0, emoji2, emoji3, emoji4);
-        });
-        emoji2.setOnMouseClicked(ev -> {
-            emojiProperty(emoji2, emoji0, emoji1, emoji3, emoji4);
-        });
-        emoji3.setOnMouseClicked(ev -> {
-            emojiProperty(emoji3, emoji0, emoji1, emoji2, emoji4);
-        });
-        emoji4.setOnMouseClicked(ev -> {
-            emojiProperty(emoji4, emoji0, emoji1, emoji2, emoji3);
-        });
+        if (!isClicked) {
+
+            emoji0.setOnMouseClicked(ev -> {
+                emojiProperty(emoji0, emoji1, emoji2, emoji3, emoji4);
+            });
+            emoji1.setOnMouseClicked(ev -> {
+                emojiProperty(emoji1, emoji0, emoji2, emoji3, emoji4);
+            });
+            emoji2.setOnMouseClicked(ev -> {
+                emojiProperty(emoji2, emoji0, emoji1, emoji3, emoji4);
+            });
+            emoji3.setOnMouseClicked(ev -> {
+                emojiProperty(emoji3, emoji0, emoji1, emoji2, emoji4);
+            });
+            emoji4.setOnMouseClicked(ev -> {
+                emojiProperty(emoji4, emoji0, emoji1, emoji2, emoji3);
+            });
+        }
+
+        isClicked = true;
     }
 
+    public void emojiEntered() {
+
+        if (!isClicked) {
+
+            emoji0.setOnMouseEntered(ev -> {
+                if (!isClicked) emojiProperty(emoji0, emoji1, emoji2, emoji3, emoji4);
+            });
+            emoji1.setOnMouseEntered(ev -> {
+                if (!isClicked) emojiProperty(emoji1, emoji0, emoji2, emoji3, emoji4);
+            });
+            emoji2.setOnMouseEntered(ev -> {
+                if (!isClicked) emojiProperty(emoji2, emoji0, emoji1, emoji3, emoji4);
+            });
+            emoji3.setOnMouseEntered(ev -> {
+                if (!isClicked) emojiProperty(emoji3, emoji0, emoji1, emoji2, emoji4);
+            });
+            emoji4.setOnMouseEntered(ev -> {
+                if (!isClicked) emojiProperty(emoji4, emoji0, emoji1, emoji2, emoji3);
+            });
+
+
+            emoji0.setOnMouseExited(ev -> {
+                if (!isClicked) emoji0.setOpacity(0.5);
+            });
+            emoji1.setOnMouseExited(ev -> {
+                if (!isClicked) emoji1.setOpacity(0.5);
+            });
+            emoji2.setOnMouseExited(ev -> {
+                if (!isClicked) emoji2.setOpacity(0.5);
+            });
+            emoji3.setOnMouseExited(ev -> {
+                if (!isClicked) emoji3.setOpacity(0.5);
+            });
+            emoji4.setOnMouseExited(ev -> {
+                if (!isClicked) emoji4.setOpacity(0.5);
+            });
+        }
+    }
 
     private void emojiProperty(ImageView emoji0, ImageView emoji1, ImageView emoji2, ImageView emoji3, ImageView emoji4) {
 
@@ -75,16 +119,21 @@ public class ControllerProduct {
             emoji0.setOpacity(1);
             emoji0.setEffect(null);
 
+            InnerShadow innerShadow = new InnerShadow();
+            innerShadow.setWidth(10);
+            innerShadow.setHeight(10);
+
             emoji1.setOpacity(0.5);
-            emoji1.setEffect(new InnerShadow());
+            emoji1.setEffect(innerShadow);
             emoji2.setOpacity(0.5);
-            emoji2.setEffect(new InnerShadow());
+            emoji2.setEffect(innerShadow);
             emoji3.setOpacity(0.5);
-            emoji3.setEffect(new InnerShadow());
+            emoji3.setEffect(innerShadow);
             emoji4.setOpacity(0.5);
-            emoji4.setEffect(new InnerShadow());
+            emoji4.setEffect(innerShadow);
         }
     }
+
 
     @FXML
     private Button voteButton;

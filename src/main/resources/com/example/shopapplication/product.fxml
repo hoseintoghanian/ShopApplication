@@ -221,44 +221,44 @@
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="emoji0" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="600.0" onMouseClicked="#emojiClick" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji0" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/imoji/0.png" />
                      </image>
                      <effect>
-                        <InnerShadow />
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji1" fitHeight="50.0" fitWidth="50.0" layoutX="280.0" layoutY="600.0" onMouseClicked="#emojiClick" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji1" fitHeight="50.0" fitWidth="50.0" layoutX="280.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/imoji/1.png" />
                      </image>
                      <effect>
-                        <InnerShadow />
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji4" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="600.0" onMouseClicked="#emojiClick" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji4" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/imoji/4.png" />
                      </image>
                      <effect>
-                        <InnerShadow />
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji3" fitHeight="50.0" fitWidth="50.0" layoutX="140.0" layoutY="600.0" onMouseClicked="#emojiClick" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji3" fitHeight="50.0" fitWidth="50.0" layoutX="140.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/imoji/3.png" />
                      </image>
                      <effect>
-                        <InnerShadow />
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji2" fitHeight="50.0" fitWidth="50.0" layoutX="210.0" layoutY="600.0" onMouseClicked="#emojiClick" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji2" fitHeight="50.0" fitWidth="50.0" layoutX="210.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/imoji/2.png" />
                      </image>
                      <effect>
-                        <InnerShadow />
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
                   <Button layoutX="730.0" layoutY="600.0" mnemonicParsing="false" prefHeight="50.0" text="add to cart">
