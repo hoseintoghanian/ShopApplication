@@ -17,7 +17,7 @@
    <children>
       <SplitPane dividerPositions="0.29797979797979796" nodeOrientation="RIGHT_TO_LEFT" prefHeight="750.0" prefWidth="1500.0">
          <items>
-            <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: #E5BA1D;">
+            <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" onMouseEntered="#showItems" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: #E5BA1D;">
                <effect>
                   <InnerShadow />
                </effect>
@@ -115,6 +115,14 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
+                  <Label fx:id="labelFinalCost" layoutX="169.0" layoutY="533.0" prefWidth="61.0" text="Label">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+                  <Label fx:id="labelWalletBalance" layoutX="229.0" layoutY="583.0" text="Label">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
                </children>
             </AnchorPane>
             <AnchorPane maxWidth="1100.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="1100.0">

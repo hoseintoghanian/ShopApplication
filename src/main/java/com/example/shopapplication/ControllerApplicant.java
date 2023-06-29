@@ -39,6 +39,7 @@ public class ControllerApplicant {
     @FXML
     MenuButton filterButtonKind, filterButtonMinorKind, filterButtonBrand;
 
+
     public void displayInfo() {
         if (Application.shop.currentCustomer != null) {
             txtFNaccount.setText(Application.shop.currentCustomer.getFirstname());
@@ -80,6 +81,8 @@ public class ControllerApplicant {
     }
 
 
+
+
     public void kindGrocery() {
         grocery(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
     }
@@ -107,7 +110,7 @@ public class ControllerApplicant {
     public void filterGrocery() {
         grocery(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
         Application.shop.SortByKind();
-        showItems("customer",Application.shop.tempitems);
+        showItems("customer", Application.shop.tempitems);
     }
 
     public void filterBreakfast() {

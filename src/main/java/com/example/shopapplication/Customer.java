@@ -3,7 +3,7 @@ package com.example.shopapplication;
 import java.util.*;
 
 public class Customer extends Applicant {
-    long wallet;
+    long wallet=0;
     ArrayList<Item> items = new ArrayList<>();
 
     //yek arraylist baraye buy history bezan
