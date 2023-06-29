@@ -17,7 +17,7 @@ public class ControllerRegister {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
-    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private static final String CHARACTERS = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789";
     private static final int CAPTCHA_LENGTH = 6;
     private String captchaText;
     @FXML
@@ -127,49 +127,80 @@ public class ControllerRegister {
         Seller seller = null;
         Customer customer = null;
 
-        if (!txtFirstname.getText().equals("") && !txtLastname.getText().equals("") && !txtPhoneNumber.getText().equals("") && !txtUserName.getText().equals("") && !txtPass.getText().equals("") && !txtEmail.getText().equals("")) {
-            if (txtConfirmPassword.getText().equals(txtPass.getText())) {
+
+        if (buttonSeller.isSelected()) applicantKind = "seller";
+        if (buttonCustomer.isSelected()) applicantKind = "customer";
+
+        if (registerCheck(applicantKind)) {
+
+            seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
+            if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
+                validUsername = false;
+            }
+
+            customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText());
+            if (Application.shop.customers.contains(customer) || Application.shop.sellers.contains(new Seller(customer.getUsername())) || txtUserName.getText().equals("admin")) {
+                validUsername = false;
+            }
+
+
+            if (validUsername) {
+
                 try {
-                    if (buttonSeller.isSelected() && !txtWorkPlace.getText().equals("")) {
-                        applicantKind = "Seller";
-                        seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
-                        if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
-                            applicantKind = null;
-                            validUsername = false;
-                        }
-                    }
-                    if (buttonCustomer.isSelected()) {
-                        applicantKind = "Customer";
-                        customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText());
-                        if (Application.shop.customers.contains(customer) || Application.shop.sellers.contains(new Seller(customer.getUsername())) || txtUserName.getText().equals("admin")) {
-                            applicantKind = null;
-                            validUsername = false;
-                        }
-                    }
 
-                    if (!validUsername) txtRegister.setText("invalid username");
-
-                    if (applicantKind != null) {
-                        if (applicantKind.equals("Seller")) {
-                            Application.shop.sellers.add(seller);//must not delete
-                            Database.writeSeller(seller);
-                            txtRegister.setText("Registered Successfully");
-                        }
-                        if (applicantKind.equals("Customer")) {
-                            Application.shop.customers.add(customer);//must not delete
-                            Database.writeCustomer(customer);
-                            txtRegister.setText("Registered Successfully");
-                        }
+                    if (applicantKind.equals("seller")) {
+                        Application.shop.sellers.add(seller);
+                        Database.writeSeller(seller);
+                        txtRegister.setText("Registered Successfully");
+                    }
+                    if (applicantKind.equals("customer")) {
+                        Application.shop.customers.add(customer);
+                        Database.writeCustomer(customer);
+                        txtRegister.setText("Registered Successfully");
                     }
 
                 } catch (SQLException event) {
-                    System.out.println("Connection failed: " + event.getMessage());
+                    //System.out.println("Connection failed: " + event.getMessage());
+                    event.printStackTrace();
                 }
-            } else if (!txtConfirmPassword.getText().equals(txtPass.getText())) {
-                txtRegister.setText("incorrect confirm password");
+
+            } else {
+                txtRegister.setText("Invalid username");
             }
-        } else {
-            txtRegister.setText("please fill all the fields");
         }
+
+
+    }
+
+
+    private boolean registerCheck(String applicantKind) {
+
+        if (applicantKind == null) {
+            txtRegister.setText("choose seller or customer !");
+            return false;
+        }
+
+
+        if (applicantKind.equals("customer")) {
+            if (txtFirstname.getText().equals("") || txtLastname.getText().equals("") || txtPhoneNumber.getText().equals("") || txtUserName.getText().equals("") || txtPass.getText().equals("") || txtEmail.getText().equals("")) {
+                txtRegister.setText("Please fill all the fields !");
+                return false;
+            }
+        }
+        if (applicantKind.equals("seller")) {
+            if (txtFirstname.getText().equals("") || txtLastname.getText().equals("") || txtPhoneNumber.getText().equals("") || txtUserName.getText().equals("") || txtPass.getText().equals("") || txtEmail.getText().equals("") || txtWorkPlace.getText().equals("")) {
+                txtRegister.setText("Please fill all the fields !");
+                return false;
+            }
+        }
+
+
+        if (!txtConfirmPassword.getText().equals(txtPass.getText())) {
+            txtRegister.setText("Confirm password and password\nare different !");
+            return false;
+        }
+
+
+        return true;
     }
 }

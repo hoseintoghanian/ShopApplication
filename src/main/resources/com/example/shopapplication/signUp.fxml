@@ -12,6 +12,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerRegister">
@@ -33,11 +34,14 @@
             <Font size="24.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
                   <SepiaTone>
                      <input>
-                        <DropShadow />
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color red="0.7263157963752747" green="0.5676023364067078" blue="0.09146198630332947" />
+                           </color></DropShadow>
                      </input>
                   </SepiaTone>
                </input>
@@ -49,11 +53,14 @@
             <Font size="24.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
                   <SepiaTone>
                      <input>
-                        <DropShadow />
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color red="0.7052631378173828" green="0.5313417911529541" blue="0.09142300486564636" />
+                           </color></DropShadow>
                      </input>
                   </SepiaTone>
                </input>
@@ -205,17 +212,9 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <Label fx:id="txtRegister" layoutX="50.0" layoutY="660.0" textFill="#f72909">
+      <Label fx:id="txtRegister" layoutX="50.0" layoutY="660.0" textFill="#bf2710">
          <font>
-            <Font size="32.0" />
-         </font>
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Label>
-      <Label fx:id="txtconfirmpass" layoutX="439.0" layoutY="576.0" textFill="#fc0505">
-         <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua Italic" size="25.0" />
          </font>
       </Label>
    </children>
