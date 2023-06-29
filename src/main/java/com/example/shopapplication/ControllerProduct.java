@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
@@ -46,6 +47,7 @@ public class ControllerProduct {
         propertyLabel.setText("Properties   :   " + Application.shop.currentItem.property);
         emojiscore.setImage(Application.shop.currentItem.scoreEmoji);
         itemImage.setImage(Application.shop.currentItem.image);
+        comment.setText(Application.shop.currentItem.comments);
     }
 
 
@@ -169,6 +171,23 @@ public class ControllerProduct {
         voteButton.setVisible(false);
     }
 
+    @FXML
+    private Label comment;
+    @FXML
+    private TextArea commentText;
+
+    public void sendComments() throws SQLException {
+
+        if (comment.getText().equals("")) {
+            comment.setText(comment.getText() + Application.shop.currentCustomer.getUsername() + "  :\n" + commentText.getText());
+        } else {
+            comment.setText(comment.getText() + "\n\n" + Application.shop.currentCustomer.getUsername() + "  :\n" + commentText.getText());
+        }
+
+        commentText.setText("");
+        Application.shop.currentItem.comments = comment.getText();
+        Database.updateItem(Application.shop.currentItem);
+    }
 
     @FXML
     private ImageView chatBackgroundImg;

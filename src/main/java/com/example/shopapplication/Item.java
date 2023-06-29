@@ -22,6 +22,8 @@ public class Item {
     Image scoreEmoji;
     String sellerUsername;
 
+    String comments;
+
     public Item(String kind, String minorKind, String brand, String name, long price, int size, String property, Image image, String sellerUsername) {
 
         code = count;
@@ -44,11 +46,12 @@ public class Item {
         scoreEmoji = new Image("2.png");
 
         this.sellerUsername = sellerUsername;
+        this.comments = "";
     }
 
     public Item(int code, String kind, String minorKind, String brand, String name, long price, int size, String property,
                 double score, int e0, int e1, int e2, int e3, int e4,
-                Object uploadDate, String imageURL, String scoreEmojiURL, String sellerUsername) {
+                Object uploadDate, String imageURL, String scoreEmojiURL, String sellerUsername, String comments) {
 
         count++;
 
@@ -70,6 +73,7 @@ public class Item {
         this.image = new Image(imageURL);
         this.scoreEmoji = new Image(scoreEmojiURL);
         this.sellerUsername = sellerUsername;
+        this.comments = comments;
 
         calculateScore(-1);
     }

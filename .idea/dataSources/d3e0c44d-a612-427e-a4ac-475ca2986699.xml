@@ -1137,31 +1137,35 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(50)|0s</DasType>
       <Position>18</Position>
     </column>
-    <column id="324" parent="299" name="firstname">
+    <column id="324" parent="298" name="comments">
+      <DasType>varchar(2000)|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="325" parent="299" name="firstname">
       <DasType>varchar(50)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="325" parent="299" name="lastname">
+    <column id="326" parent="299" name="lastname">
       <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="326" parent="299" name="phoneNumber">
+    <column id="327" parent="299" name="phoneNumber">
       <DasType>varchar(11)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="327" parent="299" name="username">
+    <column id="328" parent="299" name="username">
       <DasType>varchar(50)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="328" parent="299" name="pass">
+    <column id="329" parent="299" name="pass">
       <DasType>varchar(50)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="329" parent="299" name="email">
+    <column id="330" parent="299" name="email">
       <DasType>varchar(100)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="330" parent="299" name="workplace">
+    <column id="331" parent="299" name="workplace">
       <DasType>varchar(30)|0s</DasType>
       <Position>7</Position>
     </column>

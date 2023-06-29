@@ -62,7 +62,7 @@ public class Database {
         String sql = "create table " + "items_" + username +
                 "(code int, kind varchar(15), minorKind varchar(20), brand varchar(20), name varchar(50), price int, size int, property varchar(500)," +
                 "score double, e0 int, e1 int, e2 int, e3 int, e4 int," +
-                "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500), sellerUsername varchar(50))";
+                "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500), sellerUsername varchar(50), comments varchar(2000))";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -115,7 +115,7 @@ public class Database {
         String sql = "INSERT INTO " + "items_" + Application.shop.currentSeller.getUsername() +
                 "(code, kind, minorKind, brand, name, price, size, property," +
                 "score, e0, e1, e2, e3, e4," +
-                "uploadDate, imageURL, scoreEmojiURL, sellerUsername)VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "uploadDate, imageURL, scoreEmojiURL, sellerUsername, comments)VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
@@ -139,6 +139,7 @@ public class Database {
         statement.setString(16, item.image.getUrl());
         statement.setString(17, item.scoreEmoji.getUrl());
         statement.setString(18, item.sellerUsername);
+        statement.setString(19, item.comments);
 
 
         statement.executeUpdate();
@@ -175,7 +176,8 @@ public class Database {
                         resultSet.getObject("uploadDate"),
                         resultSet.getString("imageURL"),
                         resultSet.getString("scoreEmojiURL"),
-                        resultSet.getString("sellerUsername")
+                        resultSet.getString("sellerUsername"),
+                        resultSet.getString("comments")
                 ));
             }
         }
@@ -187,12 +189,20 @@ public class Database {
 
 
     public static void updateItem(Item item, String emoji, int i) throws SQLException {
-
         String sql = "update items_" + item.sellerUsername + " set " + emoji + " = " + item.emojiNumber[i] +
                 " , score = " + item.score + " where code = " + item.getCode();
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
 
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void updateItem(Item item) throws SQLException {
+        String sql = "update items_" + item.sellerUsername + " set comments = '" + item.comments + "' where code = " + item.getCode();
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
 
         statement.close();

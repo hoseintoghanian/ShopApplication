@@ -20,7 +20,7 @@
         <items>
           <AnchorPane maxWidth="500.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="500.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <TextArea layoutX="50.0" layoutY="685.0" prefHeight="50.0" prefWidth="350.0">
+                  <TextArea fx:id="commentText" layoutX="50.0" layoutY="685.0" prefHeight="50.0" prefWidth="350.0" promptText="comment">
                      <effect>
                         <DropShadow height="10.0" radius="4.5" width="10.0">
                            <input>
@@ -37,7 +37,7 @@
                      <font>
                         <Font name="Book Antiqua" size="15.0" />
                      </font></TextArea>
-                  <Button layoutX="400.0" layoutY="685.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Send">
+                  <Button layoutX="400.0" layoutY="685.0" mnemonicParsing="false" onAction="#sendComments" prefHeight="50.0" prefWidth="50.0" text="Send">
                      <effect>
                         <DropShadow height="10.0" radius="4.5" width="10.0">
                            <input>
@@ -116,9 +116,9 @@
                                     <Image url="@../../../t5.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="15.0" layoutY="15.0" text="username + message text" textFill="WHITE">
+                              <Label fx:id="comment" alignment="TOP_LEFT" layoutX="21.0" layoutY="14.0" prefHeight="1950.0" prefWidth="460.0" textFill="WHITE">
                                  <font>
-                                    <Font name="Book Antiqua" size="18.0" />
+                                    <Font name="Book Antiqua Italic" size="22.0" />
                                  </font>
                               </Label>
                            </children>
@@ -196,11 +196,7 @@
             </AnchorPane>
             <AnchorPane maxHeight="1000.0" nodeOrientation="LEFT_TO_RIGHT" onMouseEntered="#displayInfo" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fx:id="itemImage" fitHeight="400.0" fitWidth="400.0" layoutX="520.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/download.png" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="itemImage" fitHeight="400.0" fitWidth="400.0" layoutX="520.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="priceLabel" layoutX="70.0" layoutY="170.0" text="Price            :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
@@ -305,9 +301,6 @@
                      </effect>
                   </Button>
                   <ImageView fx:id="emojiscore" fitHeight="32.0" fitWidth="32.0" layoutX="310.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/imoji/2.png" />
-                     </image>
                      <effect>
                         <DropShadow height="10.0" radius="4.5" width="10.0">
                            <color>
