@@ -106,6 +106,8 @@ public class ControllerApplicant {
 
     public void filterGrocery() {
         grocery(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+        Application.shop.SortByKind();
+        showItems("customer",Application.shop.tempitems);
     }
 
     public void filterBreakfast() {
@@ -1365,7 +1367,8 @@ public class ControllerApplicant {
     }
 
     public void showCustomer() {
-        showItems("customer", Application.shop.allItems);
+        Application.shop.SortByDate();
+        showItems("customer", Application.shop.tempitems);
     }
 
     public void loadImage() {

@@ -130,7 +130,7 @@ public class ControllerRegister {
         if (buttonSeller.isSelected()) applicantKind = "seller";
         if (buttonCustomer.isSelected()) applicantKind = "customer";
 
-        if (registerCheck(applicantKind)) {
+        //if (registerCheck(applicantKind)) {
 
             seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
             if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
@@ -166,13 +166,13 @@ public class ControllerRegister {
             } else {
                 txtRegister.setText("Invalid username");
             }
-        }
+        //}
 
 
     }
 
 
-    private boolean registerCheck(String applicantKind) {
+    /*private boolean registerCheck(String applicantKind) {
 
         if (applicantKind == null) {
             txtRegister.setText("choose seller or customer !");
@@ -255,5 +255,5 @@ public class ControllerRegister {
         }
 
         return true;
-    }
+    }*/
 }

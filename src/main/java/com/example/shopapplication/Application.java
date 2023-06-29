@@ -35,6 +35,8 @@ public class Application extends javafx.application.Application {
             shop.allItems.addAll(shop.sellers.get(i).items);
         }
 
+        shop.tempitems.addAll(shop.allItems);
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
