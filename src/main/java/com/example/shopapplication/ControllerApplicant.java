@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
@@ -24,7 +23,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class ControllerApplicant {
 
@@ -61,7 +59,7 @@ public class ControllerApplicant {
     }
 
 
-    public void changingScene(ActionEvent e, String fxml) throws IOException {
+    public void changeScene(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
@@ -70,8 +68,17 @@ public class ControllerApplicant {
     }
 
     public void changeToLoginScene(ActionEvent e) throws IOException {
-        changingScene(e, "Login.fxml");
+        changeScene(e, "Login.fxml");
     }
+
+    public void changeToCartScene(MouseEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("cart.fxml"));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     public void kindGrocery() {
         grocery(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
@@ -1220,7 +1227,7 @@ public class ControllerApplicant {
                 addtxt.setText("add successfully");
 
 
-                showItems("seller",Application.shop.currentSeller.items);
+                showItems("seller", Application.shop.currentSeller.items);
 
             } else {
                 addtxt.setText("product is valid");
@@ -1305,17 +1312,31 @@ public class ControllerApplicant {
 
             Button button = null;
             if (applicantKind.equals("seller")) {
+
                 button = new Button("auction");
+
+
+                /*button.setOnAction(ev -> {
+
+                });*/
+
             }
-            if (applicantKind.equals("customer")){
+            if (applicantKind.equals("customer")) {
+
                 button = new Button("add");
                 button.setFont(new Font(15));
+
+                button.setOnAction(ev -> {
+                    Item item = items.get(finalI);
+                    Application.shop.currentCustomer.items.add(item);
+                });
             }
             button.setEffect(new DropShadow());
             button.setPrefWidth(56);
             button.setPrefHeight(30);
             button.setLayoutX(90);
             button.setLayoutY(210);
+
 
             AnchorPane anchorPane = new AnchorPane();
             anchorPane.setLayoutX(icount * 175 + 30);

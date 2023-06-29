@@ -83,7 +83,7 @@ public class Item {
     }
 
 
-    public void calculateScore(int vote) {//vote range is between 0 to 4 // 0 means the best emoji and 4 means the worst
+    public void calculateScore(int vote) {//vote range is between 0 and 4 // 0 means the best emoji and 4 means the worst
 
         for (int i = 0; i < 5; i++) if (vote == i) emojiNumber[i]++;
 

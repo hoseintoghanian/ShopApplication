@@ -1,6 +1,7 @@
 package com.example.shopapplication;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,14 +13,18 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 public class ControllerProduct {
 
-    public void changingScene(ActionEvent e, String fxml) throws IOException {
+    public void changeScene(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
@@ -28,8 +33,15 @@ public class ControllerProduct {
     }
 
     public void back(ActionEvent e) throws IOException {
-        if (Application.shop.currentCustomer != null) changingScene(e, "customer.fxml");
-        if (Application.shop.currentSeller != null) changingScene(e, "seller.fxml");
+        changeScene(e, Application.shop.pageURL);
+    }
+
+    public void backToCustomerPage(ActionEvent e) throws IOException {
+        changeScene(e, "customer.fxml");
+    }
+
+    public void changeToPaymentScene(ActionEvent e) throws IOException {
+        changeScene(e, "payment.fxml");
     }
 
 
@@ -226,4 +238,90 @@ public class ControllerProduct {
             chatBackgroundImg.setImage(t7);
         });
     }
+
+
+    //------------------------cart section------------------------
+
+
+    @FXML
+    private AnchorPane cartPage;
+    static int icount = 0;
+
+    public void showItems() {
+
+        cartPage.getChildren().clear();
+        icount = 0;
+
+        Application.shop.pageURL = "cart.fxml";
+
+
+        for (int i = 0; i < Application.shop.currentCustomer.items.size(); i++) {
+
+            int finalI = i;
+            ImageView imageView = new ImageView(Application.shop.currentCustomer.items.get(i).image);
+            imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent e) {
+
+                    Item item = Application.shop.currentCustomer.items.get(finalI);
+                    Application.shop.currentItem = item;
+
+                    try {
+                        FXMLLoader fxmlLoader = null;
+
+                   /* if (Application.shop.currentSeller == null)
+                        fxmlLoader = new FXMLLoader(Application.class.getResource("productCustomer.fxml"));
+                    if (Application.shop.currentCustomer == null)
+                        fxmlLoader = new FXMLLoader(Application.class.getResource("productSeller.fxml"));*/
+                        fxmlLoader = new FXMLLoader(Application.class.getResource("product.fxml"));//have to remove
+
+                        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        Scene scene = new Scene(fxmlLoader.load());
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            });
+            imageView.setFitWidth(200);
+            imageView.setFitHeight(200);
+
+
+            Label name = new Label(Application.shop.currentCustomer.items.get(i).name);
+            name.setFont(new Font("Arial", 20));
+            name.setLayoutX(200);
+            name.setLayoutY(0);
+
+            Label brand = new Label(Application.shop.currentCustomer.items.get(i).name);
+            brand.setFont(new Font("Arial", 20));
+            brand.setLayoutX(200);
+            brand.setLayoutY(100);
+
+            DecimalFormat decimalFormat = new DecimalFormat("##.##");
+
+            Label score = new Label("Score : " + decimalFormat.format(Application.shop.currentCustomer.items.get(i).score) + "%");
+            score.setFont(new Font("Arial", 20));
+            score.setLayoutX(400);
+            score.setLayoutY(0);
+
+
+            AnchorPane anchorPane = new AnchorPane();
+            anchorPane.setLayoutX(50);
+            anchorPane.setLayoutY(icount * 225 + 50);
+            anchorPane.setPrefWidth(1000);
+            anchorPane.setPrefHeight(200);
+            anchorPane.setStyle("-fx-background-color: #FFCF21;");
+            anchorPane.setEffect(new DropShadow());
+            anchorPane.setEffect(new InnerShadow());
+
+            anchorPane.getChildren().addAll(imageView, name, brand, score);
+            cartPage.getChildren().add(anchorPane);
+
+            icount++;
+        }
+
+
+    }
+
 }

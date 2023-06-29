@@ -3,21 +3,21 @@ package com.example.shopapplication;
 import java.util.*;
 
 public class Customer extends Applicant {
-
-    //yek arraylist baray sabad kharid bezan
-
-    public long wallet;
+    long wallet;
+    ArrayList<Item> items = new ArrayList<>();
 
     //yek arraylist baraye buy history bezan
-    ArrayList<String> discountCode;
+    ArrayList<String> discountCode;//it can be other data structures instead of arraylist
 
     public Customer(String firstname, String lastname, String phoneNumber, String username, String password, String email) {
         super(firstname, lastname, phoneNumber, username, password, email);
         applicantKind = "customer";
     }
+
     public Customer(String username) {
         super(username);
     }
+
 
     public boolean equals(Object other) {
         if (other instanceof Customer) {
@@ -25,6 +25,7 @@ public class Customer extends Applicant {
             return Objects.equals(this.getUsername(), c.getUsername());
         }
         return false;
-    }
 
+
+    }
 }

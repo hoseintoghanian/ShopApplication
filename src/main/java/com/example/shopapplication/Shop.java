@@ -28,4 +28,6 @@ public class Shop {
 
     public ArrayList<Item> allItems = new ArrayList<>();
 
+    String pageURL;
+
 }
