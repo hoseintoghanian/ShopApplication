@@ -132,47 +132,47 @@ public class ControllerRegister {
 
         //if (registerCheck(applicantKind)) {
 
-            seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
-            if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
-                validUsername = false;
-            }
+        seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
+        if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
+            validUsername = false;
+        }
 
-            customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText());
-            if (Application.shop.customers.contains(customer) || Application.shop.sellers.contains(new Seller(customer.getUsername())) || txtUserName.getText().equals("admin")) {
-                validUsername = false;
-            }
+        customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText());
+        if (Application.shop.customers.contains(customer) || Application.shop.sellers.contains(new Seller(customer.getUsername())) || txtUserName.getText().equals("admin")) {
+            validUsername = false;
+        }
 
 
-            if (validUsername) {
+        if (validUsername) {
 
-                try {
+            try {
 
-                    if (applicantKind.equals("seller")) {
-                        Application.shop.sellers.add(seller);
-                        Database.writeSeller(seller);
-                        txtRegister.setText("Registered Successfully");
-                    }
-                    if (applicantKind.equals("customer")) {
-                        Application.shop.customers.add(customer);
-                        Database.writeCustomer(customer);
-                        txtRegister.setText("Registered Successfully");
-                    }
-
-                } catch (SQLException event) {
-                    //System.out.println("Connection failed: " + event.getMessage());
-                    event.printStackTrace();
+                if (applicantKind.equals("seller")) {
+                    Application.shop.sellers.add(seller);
+                    Database.writeSeller(seller);
+                    txtRegister.setText("Registered Successfully");
+                }
+                if (applicantKind.equals("customer")) {
+                    Application.shop.customers.add(customer);
+                    Database.writeCustomer(customer);
+                    txtRegister.setText("Registered Successfully");
                 }
 
-            } else {
-                txtRegister.setText("Invalid username");
+            } catch (SQLException event) {
+                //System.out.println("Connection failed: " + event.getMessage());
+                event.printStackTrace();
             }
+
+        } else {
+            txtRegister.setText("Invalid username");
+        }
         //}
 
 
     }
 
 
-    /*private boolean registerCheck(String applicantKind) {
+    private boolean registerCheck(String applicantKind) {
 
         if (applicantKind == null) {
             txtRegister.setText("choose seller or customer !");
@@ -255,5 +255,5 @@ public class ControllerRegister {
         }
 
         return true;
-    }*/
+    }
 }

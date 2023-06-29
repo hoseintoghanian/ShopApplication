@@ -156,7 +156,7 @@ public class Database {
             resultSet = statement.executeQuery("SELECT * FROM items_" + Application.shop.sellers.get(i).getUsername());
 
             while (resultSet.next()) {
-                Application.shop.sellers.get(i).items.add(new Item(
+                Application.shop.sellers.get(i).allItems.add(new Item(
                         resultSet.getInt("code"),
                         resultSet.getString("kind"),
                         resultSet.getString("minorKind"),

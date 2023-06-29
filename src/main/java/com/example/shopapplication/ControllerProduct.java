@@ -54,18 +54,6 @@ public class ControllerProduct {
         stage.setScene(scene);
         stage.show();
     }
-
-    @FXML
-    private Label labelFinalCost, labelWalletBalance;
-    public void displayInfo2() {
-        int sum = 0;
-        labelWalletBalance.setText(String.valueOf(Application.shop.currentCustomer.wallet));
-        for (int i=0;i<Application.shop.currentCustomer.items.size();i++){
-            sum+=Application.shop.currentCustomer.items.get(i).price;
-        }
-        labelFinalCost.setText(String.valueOf(sum));
-    }
-
     @FXML
     private Label nameLabel, kindLabel, minorKindLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
     @FXML
@@ -397,6 +385,5 @@ public class ControllerProduct {
 
             icount++;
         }
-        displayInfo2();
     }
 }

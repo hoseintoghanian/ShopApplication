@@ -31,7 +31,7 @@
                <children>
                   <SplitPane dividerPositions="0.29797979797979796" nodeOrientation="RIGHT_TO_LEFT" prefHeight="750.0" prefWidth="1500.0">
                     <items>
-                      <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: #E5BA1D;">
+                      <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" onMouseEntered="#showSeller" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: #E5BA1D;">
                            <effect>
                               <InnerShadow />
                            </effect>
@@ -80,8 +80,8 @@
                                     <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="breakfast" />
                                     <MenuItem mnemonicParsing="false" onAction="#filterProtein" text="protein" />
                                     <MenuItem mnemonicParsing="false" onAction="#filterDairy" text="dairy" />
-                                    <MenuItem mnemonicParsing="false" onAction="#filterDrinks" text="drinks" />
-                                    <MenuItem mnemonicParsing="false" onAction="#filterSnacks" text="snacks" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterDrinks" text="drink" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterSnacks" text="snack" />
                                  </items>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -98,7 +98,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <Button layoutX="35.0" layoutY="420.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="apply filters">
+                              <Button layoutX="35.0" layoutY="420.0" mnemonicParsing="false" onAction="#applyFilters" prefHeight="26.0" prefWidth="160.0" text="apply filters">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -146,39 +146,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <MenuButton fx:id="menuButtonKind13" layoutX="35.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Score">
-                                 <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                             <input>
-                                                <ColorAdjust />
-                                             </input>
-                                          </InnerShadow>
-                                       </input>
-                                       <color>
-                                          <Color red="0.7894737124443054" green="0.6175438761711121" blue="0.05263157933950424" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </MenuButton>
-                              <MenuButton fx:id="menuButtonKind131" layoutX="150.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Price">
-                                 <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                             <input>
-                                                <ColorAdjust />
-                                             </input>
-                                          </InnerShadow>
-                                       </input>
-                                       <color>
-                                          <Color red="0.7894737124443054" green="0.6175438761711121" blue="0.05263157933950424" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </MenuButton>
-                              <Button layoutX="205.0" layoutY="420.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="remove filters">
+                              <Button layoutX="205.0" layoutY="420.0" mnemonicParsing="false" onAction="#removeFilters" prefHeight="26.0" prefWidth="160.0" text="remove filters">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -271,6 +239,46 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
+                              <MenuButton fx:id="filterButtonKind1" layoutX="35.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Price">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#filterGrocery" text="cheap to expensive" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="expensive to cheap" />
+                                 </items>
+                                 <effect>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
+                                             <input>
+                                                <ColorAdjust />
+                                             </input>
+                                          </InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.7894737124443054" green="0.6175438761711121" blue="0.05263157933950424" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </MenuButton>
+                              <MenuButton fx:id="filterButtonKind2" layoutX="150.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Score">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#filterGrocery" text="high to low" />
+                                    <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="low to high" />
+                                 </items>
+                                 <effect>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
+                                             <input>
+                                                <ColorAdjust />
+                                             </input>
+                                          </InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.7894737124443054" green="0.6175438761711121" blue="0.05263157933950424" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </MenuButton>
                            </children></AnchorPane>
                       <AnchorPane maxWidth="1100.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="1100.0">
                            <children>
@@ -506,8 +514,8 @@
                             <MenuItem mnemonicParsing="false" onAction="#kindBreakfast" text="breakfast" />
                               <MenuItem mnemonicParsing="false" onAction="#kindProtein" text="protein" />
                               <MenuItem mnemonicParsing="false" onAction="#kindDairy" text="dairy" />
-                              <MenuItem mnemonicParsing="false" onAction="#kindDrinks" text="drinks" />
-                              <MenuItem mnemonicParsing="false" onAction="#kindSnacks" text="snacks" />
+                              <MenuItem mnemonicParsing="false" onAction="#kindDrinks" text="drink" />
+                              <MenuItem mnemonicParsing="false" onAction="#kindSnacks" text="snack" />
                           </items>
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">

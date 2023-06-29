@@ -23,40 +23,42 @@ public class Shop {
     public ArrayList<Customer> customers = new ArrayList<>();
 
     public ArrayList<Item> allItems = new ArrayList<>();
-    public ArrayList<Item> tempitems = new ArrayList<>();
+    public ArrayList<Item> tempItems = new ArrayList<>();
     String pageURL;
 
 
-    public void SortByDate() {
+    public static void SortByDate(ArrayList<Item> allItems, ArrayList<Item> tempItems) {
         Collections.sort(allItems, new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
                 return item1.uploadDate.compareTo(item2.uploadDate);
             }
         });
+
+        tempItems.clear();
+        tempItems.addAll(allItems);
     }
 
-    public void SortByKind() {
-        for (int i=0;i<allItems.size();i++){
-            if (allItems.get(i).kind=="grocery") tempitems.add(allItems.get(i));
+    public static void SortByKind(ArrayList<Item> allItems, ArrayList<Item> tempItems, String kind) {
+
+        tempItems.clear();
+
+        for (int i = 0; i < allItems.size(); i++) {
+            if (allItems.get(i).kind.equals(kind) || allItems.get(i).minorKind.equals(kind))
+                tempItems.add(allItems.get(i));
         }
-        //new ControllerApplicant().showItems("customer",grocery);
     }
 
-    public void SortByMinorkind() {
-
-    }
-
-    public void SortByBrand() {
+    public static void SortByBrand() {
 
     }
 
-    public void SortByScore() {
+
+    public static void SortByScore(ArrayList<Item> items) {
 
     }
 
-    public void SortByPrice() {
+    public static void SortByPrice(ArrayList<Item> items) {
 
     }
-
 }

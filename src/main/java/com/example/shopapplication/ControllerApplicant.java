@@ -39,7 +39,6 @@ public class ControllerApplicant {
     @FXML
     MenuButton filterButtonKind, filterButtonMinorKind, filterButtonBrand;
 
-
     public void displayInfo() {
         if (Application.shop.currentCustomer != null) {
             txtFNaccount.setText(Application.shop.currentCustomer.getFirstname());
@@ -69,6 +68,7 @@ public class ControllerApplicant {
     }
 
     public void changeToLoginScene(ActionEvent e) throws IOException {
+        removeFilters();
         changeScene(e, "Login.fxml");
     }
 
@@ -79,8 +79,6 @@ public class ControllerApplicant {
         stage.setScene(scene);
         stage.show();
     }
-
-
 
 
     public void kindGrocery() {
@@ -107,30 +105,64 @@ public class ControllerApplicant {
         snacks(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
     }
 
+
+    String kind;
+
     public void filterGrocery() {
         grocery(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
-        Application.shop.SortByKind();
-        showItems("customer", Application.shop.tempitems);
+        kind = "grocery";
     }
 
     public void filterBreakfast() {
         breakfast(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+        kind = "breakfast";
     }
 
     public void filterProtein() {
         protein(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+        kind = "protein";
     }
 
     public void filterDairy() {
         dairy(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+        kind = "dairy";
     }
 
     public void filterDrinks() {
         drinks(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+        kind = "drink";
     }
 
     public void filterSnacks() {
         snacks(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
+        kind = "snack";
+    }
+
+
+    public void applyFilters() {
+
+        if (Application.shop.pageURL.equals("customer.fxml")) {
+            Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
+            showItems("customer", Application.shop.tempItems);
+        }
+        if (Application.shop.pageURL.equals("seller.fxml")) {
+            Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
+            showItems("seller", Application.shop.currentSeller.tempItems);
+        }
+    }
+
+
+    public void removeFilters() {
+        if (Application.shop.pageURL.equals("customer.fxml")) {
+            Application.shop.tempItems.clear();
+            Shop.SortByDate(Application.shop.allItems, Application.shop.tempItems);
+            showItems("customer", Application.shop.tempItems);
+        }
+        if (Application.shop.pageURL.equals("seller.fxml")) {
+            Application.shop.currentSeller.tempItems.clear();
+            Shop.SortByDate(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems);
+            showItems("seller", Application.shop.currentSeller.tempItems);
+        }
     }
 
 
@@ -152,6 +184,8 @@ public class ControllerApplicant {
         MenuItem pea = new MenuItem("pea");
 
         bread.setOnAction(event -> {
+
+            kind = "bread";
 
             menuInfo(2, "bread", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
@@ -438,7 +472,7 @@ public class ControllerApplicant {
 
     public void breakfast(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "break fast", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+        menuInfo(1, "breakfast", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem jam = new MenuItem("jam");
         MenuItem honey = new MenuItem("honey");
@@ -522,7 +556,7 @@ public class ControllerApplicant {
 
     public void protein(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "protein foods", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+        menuInfo(1, "protein", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem bologna = new MenuItem("bologna");
         MenuItem lambMeet = new MenuItem("lamb meet");
@@ -815,7 +849,7 @@ public class ControllerApplicant {
 
     public void drinks(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "drinks", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+        menuInfo(1, "drink", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem tea = new MenuItem("tea");
         MenuItem herbalTea = new MenuItem("herbal tea");
@@ -999,7 +1033,7 @@ public class ControllerApplicant {
 
     public void snacks(MenuButton menuButtonKind, MenuButton menuButtonMinorKind, MenuButton menuButtonBrand) {
 
-        menuInfo(1, "snacks", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+        menuInfo(1, "snack", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
         MenuItem chocolate = new MenuItem("chocolate");
         MenuItem biscuit = new MenuItem("biscuit");
@@ -1223,16 +1257,18 @@ public class ControllerApplicant {
                     Application.shop.currentSeller.getUsername()
             );
 
-            if (!Application.shop.currentSeller.items.contains(item)) {
-                Application.shop.currentSeller.items.add(item);
+            if (!Application.shop.currentSeller.allItems.contains(item)) {
+                Application.shop.currentSeller.allItems.add(item);
+                Application.shop.currentSeller.tempItems.add(item);
                 Application.shop.allItems.add(item);
+                Application.shop.tempItems.add(item);
                 Database.addProduct(item);
 
                 productImg.setImage(item.image);
                 addtxt.setText("add successfully");
 
 
-                showItems("seller", Application.shop.currentSeller.items);
+                showItems("seller", Application.shop.currentSeller.tempItems);
 
             } else {
                 addtxt.setText("product is valid");
@@ -1368,12 +1404,11 @@ public class ControllerApplicant {
     }
 
     public void showSeller() {
-        showItems("seller", Application.shop.currentSeller.items);
+        showItems("seller", Application.shop.currentSeller.tempItems);
     }
 
     public void showCustomer() {
-        Application.shop.SortByDate();
-        showItems("customer", Application.shop.tempitems);
+        showItems("customer", Application.shop.tempItems);
     }
 
     public void loadImage() {
