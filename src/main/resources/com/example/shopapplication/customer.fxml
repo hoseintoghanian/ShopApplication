@@ -227,8 +227,8 @@
                               </Button>
                               <MenuButton fx:id="filterButtonKind1" layoutX="35.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Price">
                                  <items>
-                                    <MenuItem mnemonicParsing="false" onAction="#filterGrocery" text="cheap to expensive" />
-                                    <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="expensive to cheap" />
+                                    <MenuItem mnemonicParsing="false" onAction="#priceLowToHigh" text="cheap to expensive" />
+                                    <MenuItem mnemonicParsing="false" onAction="#priceHighToLow" text="expensive to cheap" />
                                  </items>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -247,8 +247,8 @@
                               </MenuButton>
                               <MenuButton fx:id="filterButtonKind2" layoutX="150.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Score">
                                  <items>
-                                    <MenuItem mnemonicParsing="false" onAction="#filterGrocery" text="high to low" />
-                                    <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="low to high" />
+                                    <MenuItem mnemonicParsing="false" onAction="#scoreHighToLow" text="high to low" />
+                                    <MenuItem mnemonicParsing="false" onAction="#scoreLowToHigh" text="low to high" />
                                  </items>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">

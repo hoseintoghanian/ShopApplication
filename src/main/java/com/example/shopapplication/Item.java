@@ -15,7 +15,7 @@ public class Item {
     long price;
     int size;
     String property;
-    double score;
+    Double score;
     int[] emojiNumber = new int[5];
     LocalDateTime uploadDate;
     Image image;
@@ -39,7 +39,7 @@ public class Item {
         this.size = size;
         this.property = property;
 
-        this.score = 0;
+        this.score = 0.0;
 
         for (int i = 0; i < 5; i++) emojiNumber[i] = 0;
 

@@ -28,7 +28,7 @@ public class Shop {
 
 
     public static void SortByDate(ArrayList<Item> allItems, ArrayList<Item> tempItems) {
-        Collections.sort(allItems, new Comparator<Item>() {
+        allItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
                 return item1.uploadDate.compareTo(item2.uploadDate);
@@ -40,7 +40,6 @@ public class Shop {
     }
 
     public static void SortByKind(ArrayList<Item> allItems, ArrayList<Item> tempItems, String kind) {
-
         tempItems.clear();
 
         for (int i = 0; i < allItems.size(); i++) {
@@ -49,16 +48,86 @@ public class Shop {
         }
     }
 
-    public static void SortByBrand() {
+    public static void SortByBrand(ArrayList<Item> allItems, ArrayList<Item> tempItems, String brand) {
+        tempItems.clear();
 
+        for (int i = 0; i < allItems.size(); i++) {
+            if (allItems.get(i).brand.equals(brand)) tempItems.add(allItems.get(i));
+        }
     }
 
 
-    public static void SortByScore(ArrayList<Item> items) {
+    public static void SortByScore(ArrayList<Item> allItems, ArrayList<Item> tempItems, int sort) {
+        allItems.sort(new Comparator<Item>() {
+            @Override
+            public int compare(Item item1, Item item2) {
 
+                double score1 = 0, score2 = 0;
+                double max = 0, maxIndex = -1;
+
+                for (int i = 0; i < 5; i++) {
+                    if (item1.emojiNumber[i] > max) {
+                        max = item1.emojiNumber[i];
+                        maxIndex = i;
+                    }
+                }
+
+                if (maxIndex == 0) score1 = item1.score * max * 2;
+                if (maxIndex == 1) score1 = item1.score * max * 1;
+                if (maxIndex == 2) score1 = item1.score * max * 0;
+                if (maxIndex == 3) score1 = item1.score * max * (-1);
+                if (maxIndex == 4) score1 = item1.score * max * (-2);
+
+                max = 0;
+                maxIndex = -1;
+                for (int i = 0; i < 5; i++) {
+                    if (item2.emojiNumber[i] > max) {
+                        max = item2.emojiNumber[i];
+                        maxIndex = i;
+                    }
+                }
+
+                if (maxIndex == 0) score2 = item2.score * max * 2;
+                if (maxIndex == 1) score2 = item2.score * max * 1;
+                if (maxIndex == 2) score2 = item2.score * max * 0;
+                if (maxIndex == 3) score2 = item2.score * max * (-1);
+                if (maxIndex == 4) score2 = item2.score * max * (-2);
+
+
+                if (sort == 1) {
+                    if (score1 > score2) return 1;
+                    if (score1 < score2) return -1;
+                }
+                if (sort == -1) {
+                    if (score1 < score2) return 1;
+                    if (score1 > score2) return -1;
+                }
+                return 0;//both are equal
+            }
+        });
+
+        tempItems.clear();
+        tempItems.addAll(allItems);
     }
 
-    public static void SortByPrice(ArrayList<Item> items) {
+    public static void SortByPrice(ArrayList<Item> allItems, ArrayList<Item> tempItems, int sort) {
+        allItems.sort(new Comparator<Item>() {
+            @Override
+            public int compare(Item item1, Item item2) {
 
+                if (sort == 1) {
+                    if (item1.price > item2.price) return 1;
+                    if (item1.price < item2.price) return -1;
+                }
+                if (sort == -1) {
+                    if (item1.price < item2.price) return 1;
+                    if (item1.price > item2.price) return -1;
+                }
+                return 0;
+            }
+        });
+
+        tempItems.clear();
+        tempItems.addAll(allItems);
     }
 }
