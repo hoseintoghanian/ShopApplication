@@ -104,11 +104,11 @@ public class ControllerApplicant {
         snacks(menuButtonKind, menuButtonMinorKind, menuButtonBrand);
     }
 
-    /*public void filterGrocery() {
+    public void filterGrocery() {
         grocery(filterButtonKind, filterButtonMinorKind, filterButtonBrand);
         Application.shop.SortByKind();
         showItems("customer",Application.shop.tempitems);
-    }*/
+    }
 
     public void filterBreakfast() {
         breakfast(filterButtonKind, filterButtonMinorKind, filterButtonBrand);

@@ -36,6 +36,27 @@ public class Shop {
         });
     }
 
+    public void SortByKind() {
+        for (int i=0;i<allItems.size();i++){
+            if (allItems.get(i).kind=="grocery") tempitems.add(allItems.get(i));
+        }
+        //new ControllerApplicant().showItems("customer",grocery);
+    }
 
+    public void SortByMinorkind() {
+
+    }
+
+    public void SortByBrand() {
+
+    }
+
+    public void SortByScore() {
+
+    }
+
+    public void SortByPrice() {
+
+    }
 
 }
