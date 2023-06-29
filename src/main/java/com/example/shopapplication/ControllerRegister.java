@@ -239,8 +239,8 @@ public class ControllerRegister {
             }
         }
 
-        if (txtUserName.getText().length() < 3) {
-            txtRegister.setText("Username is too short!\nPlease enter at least 3 characters");
+        if (txtUserName.getText().length() < 8) {
+            txtRegister.setText("Username is too short!\nPlease enter at least 8 characters");
             return false;
         }
 

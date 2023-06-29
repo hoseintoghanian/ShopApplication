@@ -4,25 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="register controller change">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="showItem method in product page">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3e0c44d-a612-427e-a4ac-475ca2986699/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_29_2023_11_42_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_29_2023_11_42_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_29_2023_2_36_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_29_2023_2_36_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/imoji/4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/cart.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/payment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/payment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/product.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/product.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,13 +160,7 @@
       <workItem from="1687974451659" duration="7825000" />
       <workItem from="1687983948690" duration="2737000" />
       <workItem from="1688016805022" duration="6728000" />
-    </task>
-    <task id="LOCAL-00021" summary="displayInfo method in CotrollerApplicant">
-      <created>1686171475864</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1686171475864</updated>
+      <workItem from="1688042622626" duration="6168000" />
     </task>
     <task id="LOCAL-00022" summary="some methods in CotrollerApplicant">
       <created>1686171543345</created>
@@ -502,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688022668269</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="showItem method in product page">
+      <created>1688039985238</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1688039985238</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="customer &amp; seller main page &amp; seller account" />
     <MESSAGE value="setChatBackground method in controllerApplicant" />
     <MESSAGE value="code cleaning and chat background in admin fxml" />
     <MESSAGE value="update supermarket images (grocery)" />
@@ -545,7 +547,8 @@
     <MESSAGE value="displayInfo in controllerProduct" />
     <MESSAGE value="emojiEntered and emojiClick method in ControllerProduct" />
     <MESSAGE value="register controller change" />
-    <option name="LAST_COMMIT_MESSAGE" value="register controller change" />
+    <MESSAGE value="showItem method in product page" />
+    <option name="LAST_COMMIT_MESSAGE" value="showItem method in product page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
