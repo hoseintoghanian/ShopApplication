@@ -57,8 +57,10 @@ public class Shop {
     }
 
 
-    public static void SortByScore(ArrayList<Item> allItems, ArrayList<Item> tempItems, int sort) {
-        allItems.sort(new Comparator<Item>() {
+    public static void SortByScore(ArrayList<Item> tempItems, int sort) {
+
+
+        tempItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
 
@@ -106,12 +108,12 @@ public class Shop {
             }
         });
 
-        tempItems.clear();
-        tempItems.addAll(allItems);
     }
 
-    public static void SortByPrice(ArrayList<Item> allItems, ArrayList<Item> tempItems, int sort) {
-        allItems.sort(new Comparator<Item>() {
+    public static void SortByPrice(ArrayList<Item> tempItems, int sort) {
+
+
+        tempItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
 
@@ -127,7 +129,5 @@ public class Shop {
             }
         });
 
-        tempItems.clear();
-        tempItems.addAll(allItems);
     }
 }

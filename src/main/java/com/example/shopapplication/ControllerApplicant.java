@@ -139,26 +139,43 @@ public class ControllerApplicant {
     }
 
 
+    /* public void applyFilters() {
+
+         if (Application.shop.pageURL.equals("customer.fxml")) {
+             Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
+             showItems("customer", Application.shop.tempItems);
+         }
+         if (Application.shop.pageURL.equals("seller.fxml")) {
+             Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
+             showItems("seller", Application.shop.currentSeller.tempItems);
+         }
+     }*/
     public void applyFilters() {
 
-        if (Application.shop.pageURL.equals("customer.fxml")) {
-            Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
-            showItems("customer", Application.shop.tempItems);
+        if (kind != null) {
+
+            if (Application.shop.pageURL.equals("customer.fxml")) {
+                Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
+                showItems("customer", Application.shop.tempItems);
+            }
+            if (Application.shop.pageURL.equals("seller.fxml")) {
+                Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
+                showItems("seller", Application.shop.currentSeller.tempItems);
+            }
+
+            kind = null;
         }
-        if (Application.shop.pageURL.equals("seller.fxml")) {
-            Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
-            showItems("seller", Application.shop.currentSeller.tempItems);
-        }
+
     }
 
     private void filterScore(int sort) {
 
         if (Application.shop.pageURL.equals("customer.fxml")) {
-            Shop.SortByScore(Application.shop.allItems, Application.shop.tempItems, sort);
+            Shop.SortByScore(Application.shop.tempItems, sort);
             showItems("customer", Application.shop.tempItems);
         }
         if (Application.shop.pageURL.equals("seller.fxml")) {
-            Shop.SortByScore(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, sort);
+            Shop.SortByScore(Application.shop.currentSeller.tempItems, sort);
             showItems("seller", Application.shop.currentSeller.tempItems);
         }
     }
@@ -166,11 +183,11 @@ public class ControllerApplicant {
     private void filterPrice(int sort) {
 
         if (Application.shop.pageURL.equals("customer.fxml")) {
-            Shop.SortByPrice(Application.shop.allItems, Application.shop.tempItems, sort);
+            Shop.SortByPrice(Application.shop.tempItems, sort);
             showItems("customer", Application.shop.tempItems);
         }
         if (Application.shop.pageURL.equals("seller.fxml")) {
-            Shop.SortByPrice(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, sort);
+            Shop.SortByPrice(Application.shop.currentSeller.tempItems, sort);
             showItems("seller", Application.shop.currentSeller.tempItems);
         }
     }
