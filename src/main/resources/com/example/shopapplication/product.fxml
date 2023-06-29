@@ -201,22 +201,22 @@
                         <Image url="@../img/download.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="priceLabel" layoutX="70.0" layoutY="170.0" text="Price   :">
+                  <Label fx:id="priceLabel" layoutX="70.0" layoutY="170.0" text="Price            :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="propertyLabel" layoutX="70.0" layoutY="320.0" text="Properties :">
+                  <Label fx:id="propertyLabel" layoutX="70.0" layoutY="320.0" text="Properties   :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="scoreLabel" layoutX="70.0" layoutY="270.0" text="Score  : ">
+                  <Label fx:id="scoreLabel" layoutX="70.0" layoutY="270.0" text="Score            :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="sizeLabel" layoutX="70.0" layoutY="220.0" text="Size    :">
+                  <Label fx:id="sizeLabel" layoutX="70.0" layoutY="220.0" text="Size              :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -304,7 +304,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="245.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="310.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/imoji/2.png" />
                      </image>
@@ -316,12 +316,12 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <Label fx:id="brandLabel" layoutX="70.0" layoutY="120.0" text="Brand : ">
+                  <Label fx:id="brandLabel" layoutX="70.0" layoutY="120.0" text="Brand          :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="nameLabel" layoutX="70.0" layoutY="70.0" text="Name : ">
+                  <Label fx:id="nameLabel" layoutX="70.0" layoutY="70.0" text="Name          :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>

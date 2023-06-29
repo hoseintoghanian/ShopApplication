@@ -36,12 +36,12 @@ public class ControllerProduct {
     private Label nameLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
 
     public void displayInfo() {
-        nameLabel.setText("Name : " + Application.shop.currentItem.name);
-        brandLabel.setText("Brand : " + Application.shop.currentItem.brand);
-        priceLabel.setText("Price   : " + Application.shop.currentItem.price);
-        sizeLabel.setText("Size    : " + Application.shop.currentItem.size);
-        scoreLabel.setText("Score  : " + Application.shop.currentItem.score);
-        propertyLabel.setText("Properties : " + Application.shop.currentItem.property);
+        nameLabel.setText("Name          :   " + Application.shop.currentItem.name);
+        brandLabel.setText("Brand          :   " + Application.shop.currentItem.brand);
+        priceLabel.setText("Price            :   " + Application.shop.currentItem.price);
+        sizeLabel.setText("Size              :   " + Application.shop.currentItem.size);
+        scoreLabel.setText("Score            :   " + Application.shop.currentItem.score + "%");
+        propertyLabel.setText("Properties   :   " + Application.shop.currentItem.property);
     }
 
 

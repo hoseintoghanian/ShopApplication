@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="emojiEntered and emojiClick method in ControllerProduct">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="register controller change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,14 +141,7 @@
       <workItem from="1687968218777" duration="1392000" />
       <workItem from="1687974451659" duration="7825000" />
       <workItem from="1687983948690" duration="2737000" />
-      <workItem from="1688016805022" duration="5673000" />
-    </task>
-    <task id="LOCAL-00020" summary="changes in cotrollerApplicant">
-      <created>1686171354224</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1686171354224</updated>
+      <workItem from="1688016805022" duration="6728000" />
     </task>
     <task id="LOCAL-00021" summary="displayInfo method in CotrollerApplicant">
       <created>1686171475864</created>
@@ -487,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688018819083</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="register controller change">
+      <created>1688022668268</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1688022668269</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="brand menu items drinks method" />
     <MESSAGE value="customer &amp; seller main page &amp; seller account" />
     <MESSAGE value="setChatBackground method in controllerApplicant" />
     <MESSAGE value="code cleaning and chat background in admin fxml" />
@@ -530,7 +528,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="displayInfo in controllerProduct" />
     <MESSAGE value="emojiEntered and emojiClick method in ControllerProduct" />
-    <option name="LAST_COMMIT_MESSAGE" value="emojiEntered and emojiClick method in ControllerProduct" />
+    <MESSAGE value="register controller change" />
+    <option name="LAST_COMMIT_MESSAGE" value="register controller change" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
