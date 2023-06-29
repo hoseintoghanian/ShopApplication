@@ -38,7 +38,7 @@
                            <children>
                               <ImageView fitHeight="220.0" fitWidth="330.0" layoutX="35.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/auction/auction%201.png" />
+                                    <Image url="@../img/auction/Super-Sale.jpg" />
                                  </image>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -50,7 +50,7 @@
                                           </InnerShadow>
                                        </input>
                                        <color>
-                                          <Color red="0.04210526496171951" green="0.04210526496171951" blue="0.04210526496171951" />
+                                          <Color red="0.7157894968986511" green="0.5872125029563904" blue="0.20148147642612457" />
                                        </color>
                                     </DropShadow>
                                  </effect>

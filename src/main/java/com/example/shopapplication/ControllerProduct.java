@@ -126,13 +126,13 @@ public class ControllerProduct {
             innerShadow.setWidth(10);
             innerShadow.setHeight(10);
 
-            emoji1.setOpacity(0.5);
+            emoji1.setOpacity(0.3);
             emoji1.setEffect(innerShadow);
-            emoji2.setOpacity(0.5);
+            emoji2.setOpacity(0.3);
             emoji2.setEffect(innerShadow);
-            emoji3.setOpacity(0.5);
+            emoji3.setOpacity(0.3);
             emoji3.setEffect(innerShadow);
-            emoji4.setOpacity(0.5);
+            emoji4.setOpacity(0.3);
             emoji4.setEffect(innerShadow);
         }
     }
