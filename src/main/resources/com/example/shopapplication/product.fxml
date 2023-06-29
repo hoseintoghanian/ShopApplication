@@ -304,7 +304,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="310.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emojiscore" fitHeight="32.0" fitWidth="32.0" layoutX="310.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/imoji/2.png" />
                      </image>

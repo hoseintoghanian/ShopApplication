@@ -34,6 +34,8 @@ public class ControllerProduct {
 
     @FXML
     private Label nameLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
+    @FXML
+    private ImageView emojiscore;
 
     public void displayInfo() {
         nameLabel.setText("Name          :   " + Application.shop.currentItem.name);
@@ -42,6 +44,7 @@ public class ControllerProduct {
         sizeLabel.setText("Size              :   " + Application.shop.currentItem.size);
         scoreLabel.setText("Score            :   " + Application.shop.currentItem.score + "%");
         propertyLabel.setText("Properties   :   " + Application.shop.currentItem.property);
+        emojiscore.setImage(Application.shop.currentItem.scoreEmoji);
     }
 
 
