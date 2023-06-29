@@ -21,8 +21,10 @@ public class Item {
     Image image;
     Image scoreEmoji;
     String sellerUsername;
-
     String comments;
+
+    int tempSize = 1;
+
 
     public Item(String kind, String minorKind, String brand, String name, long price, int size, String property, Image image, String sellerUsername) {
 

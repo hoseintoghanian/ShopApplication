@@ -4,10 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextArea;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
@@ -15,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -46,17 +49,22 @@ public class ControllerProduct {
 
 
     @FXML
-    private Label nameLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
+    private Label nameLabel, kindLabel, minorKindLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
     @FXML
     private ImageView emojiscore, itemImage;
 
     public void displayInfo() {
-        nameLabel.setText("Name          :   " + Application.shop.currentItem.name);
-        brandLabel.setText("Brand          :   " + Application.shop.currentItem.brand);
-        priceLabel.setText("Price            :   " + Application.shop.currentItem.price);
-        sizeLabel.setText("Size              :   " + Application.shop.currentItem.size);
-        scoreLabel.setText("Score            :   " + Application.shop.currentItem.score + "%");
-        propertyLabel.setText("Properties   :   " + Application.shop.currentItem.property);
+
+        DecimalFormat decimalFormat = new DecimalFormat("##.##");
+
+        nameLabel.setText("Name             :   " + Application.shop.currentItem.name);
+        kindLabel.setText("Kind               :   " + Application.shop.currentItem.kind);
+        minorKindLabel.setText("Minor Kind   :   " + Application.shop.currentItem.minorKind);
+        brandLabel.setText("Brand             :   " + Application.shop.currentItem.brand);
+        priceLabel.setText("Price               :   " + Application.shop.currentItem.price);
+        sizeLabel.setText("Size                 :   " + Application.shop.currentItem.size);
+        scoreLabel.setText("Score               :   " + decimalFormat.format(Application.shop.currentItem.score) + "%");
+        propertyLabel.setText(Application.shop.currentItem.property);
         emojiscore.setImage(Application.shop.currentItem.scoreEmoji);
         itemImage.setImage(Application.shop.currentItem.image);
         comment.setText(Application.shop.currentItem.comments);
@@ -287,41 +295,85 @@ public class ControllerProduct {
             imageView.setFitWidth(200);
             imageView.setFitHeight(200);
 
+            ImageView scoreEmoji = new ImageView(Application.shop.currentCustomer.items.get(i).scoreEmoji);
+            scoreEmoji.setEffect(new DropShadow());
+            scoreEmoji.setFitWidth(30);
+            scoreEmoji.setFitHeight(30);
+            scoreEmoji.setLayoutX(380);
+            scoreEmoji.setLayoutY(160);
 
-            Label name = new Label(Application.shop.currentCustomer.items.get(i).name);
-            name.setFont(new Font("Arial", 20));
+
+            Label name = new Label("Name :  " + Application.shop.currentCustomer.items.get(i).name);
+            name.setFont(new Font("Arial", 25));
             name.setLayoutX(200);
-            name.setLayoutY(0);
+            name.setLayoutY(10);
 
-            Label brand = new Label(Application.shop.currentCustomer.items.get(i).name);
-            brand.setFont(new Font("Arial", 20));
+            Label brand = new Label("Brand :  " + Application.shop.currentCustomer.items.get(i).brand);
+            brand.setFont(new Font("Arial", 25));
             brand.setLayoutX(200);
-            brand.setLayoutY(100);
+            brand.setLayoutY(60);
+
+            Label price = new Label("Price  :  " + Application.shop.currentCustomer.items.get(i).price);
+            price.setFont(new Font("Arial", 25));
+            price.setLayoutX(200);
+            price.setLayoutY(110);
 
             DecimalFormat decimalFormat = new DecimalFormat("##.##");
+            Label score = new Label("Score :  " + decimalFormat.format(Application.shop.currentCustomer.items.get(i).score) + "%");
+            score.setFont(new Font("Arial", 25));
+            score.setLayoutX(200);
+            score.setLayoutY(160);
 
-            Label score = new Label("Score : " + decimalFormat.format(Application.shop.currentCustomer.items.get(i).score) + "%");
-            score.setFont(new Font("Arial", 20));
-            score.setLayoutX(400);
-            score.setLayoutY(0);
+            Label property = new Label("Properties  :\n" + Application.shop.currentCustomer.items.get(i).property);
+            property.setFont(new Font("Arial", 25));
+            property.setLayoutX(500);
+            property.setLayoutY(10);
+
+            Label size = new Label("Size");
+            size.setFont(new Font("Arial", 25));
+            size.setLayoutX(500);
+            size.setLayoutY(160);
+
+            Spinner<Integer> spinner = new Spinner<>(1, 100, 1);
+            spinner.valueProperty().addListener((observable, oldValue, newValue) -> {
+                Item item = Application.shop.currentCustomer.items.get(finalI);
+                item.tempSize = newValue;
+            });
+            VBox root = new VBox(10, spinner, size);
+            root.setPadding(new Insets(10));
+            root.setLayoutX(550);
+            root.setLayoutY(153);
+            root.setPrefWidth(100);
+
+            Button button = null;
+
+            button = new Button("remove");
+            button.setFont(new Font(15));
+            button.setOnAction(ev -> {
+                Item item = Application.shop.currentCustomer.items.get(finalI);
+                Application.shop.currentCustomer.items.remove(item);
+                showItems();
+            });
+            button.setEffect(new DropShadow());
+            button.setPrefWidth(150);
+            button.setPrefHeight(30);
+            button.setLayoutX(700);
+            button.setLayoutY(160);
 
 
             AnchorPane anchorPane = new AnchorPane();
-            anchorPane.setLayoutX(50);
+            anchorPane.setLayoutX(100);
             anchorPane.setLayoutY(icount * 225 + 50);
-            anchorPane.setPrefWidth(1000);
+            anchorPane.setPrefWidth(900);
             anchorPane.setPrefHeight(200);
             anchorPane.setStyle("-fx-background-color: #FFCF21;");
             anchorPane.setEffect(new DropShadow());
-            anchorPane.setEffect(new InnerShadow());
 
-            anchorPane.getChildren().addAll(imageView, name, brand, score);
+
+            anchorPane.getChildren().addAll(imageView, scoreEmoji, name, brand, price, score, property, size, root, button);
             cartPage.getChildren().add(anchorPane);
 
             icount++;
         }
-
-
     }
-
 }

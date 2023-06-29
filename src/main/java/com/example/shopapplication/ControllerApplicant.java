@@ -1330,7 +1330,9 @@ public class ControllerApplicant {
 
                 button.setOnAction(ev -> {
                     Item item = items.get(finalI);
-                    Application.shop.currentCustomer.items.add(item);
+                    if (!Application.shop.currentCustomer.items.contains(item)) {
+                        Application.shop.currentCustomer.items.add(item);
+                    }
                 });
             }
             button.setEffect(new DropShadow());
