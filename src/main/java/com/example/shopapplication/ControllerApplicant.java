@@ -139,7 +139,7 @@ public class ControllerApplicant {
     }
 
 
-    /* public void applyFilters() {
+     public void applyFilters() {
 
          if (Application.shop.pageURL.equals("customer.fxml")) {
              Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
@@ -149,24 +149,7 @@ public class ControllerApplicant {
              Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
              showItems("seller", Application.shop.currentSeller.tempItems);
          }
-     }*/
-    public void applyFilters() {
-
-        if (kind != null) {
-
-            if (Application.shop.pageURL.equals("customer.fxml")) {
-                Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
-                showItems("customer", Application.shop.tempItems);
-            }
-            if (Application.shop.pageURL.equals("seller.fxml")) {
-                Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
-                showItems("seller", Application.shop.currentSeller.tempItems);
-            }
-
-            kind = null;
-        }
-
-    }
+     }
 
     private void filterScore(int sort) {
 

@@ -73,6 +73,8 @@ public class ControllerPayment {
         }
         labelFinalCost.setText(String.valueOf(sum));
     }
+
+
     public void buy() {
         System.out.println(2);
     }

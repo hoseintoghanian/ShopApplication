@@ -92,7 +92,7 @@
                         <Image url="@../img/payment4.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="labelFinalCost" layoutX="273.0" layoutY="594.0" onMouseEntered="#displayInfo" text="Label">
+                  <Label fx:id="labelFinalCost" layoutX="291.0" layoutY="592.0" text="Label">
                      <font>
                         <Font size="24.0" />
                      </font>
