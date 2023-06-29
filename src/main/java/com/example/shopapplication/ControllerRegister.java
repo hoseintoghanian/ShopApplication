@@ -187,6 +187,7 @@ public class ControllerRegister {
                 return false;
             }
         }
+
         if (applicantKind.equals("seller")) {
             if (txtFirstname.getText().equals("") || txtLastname.getText().equals("") || txtPhoneNumber.getText().equals("") || txtUserName.getText().equals("") || txtPass.getText().equals("") || txtEmail.getText().equals("") || txtWorkPlace.getText().equals("")) {
                 txtRegister.setText("Please fill all the fields !");
@@ -200,6 +201,59 @@ public class ControllerRegister {
             return false;
         }
 
+
+        if (txtFirstname.getText().length()<3) {
+            txtRegister.setText("First name is too short!\nPlease enter at least 3 characters");
+            return false;
+        }
+
+        for (int i=0;i<txtFirstname.getText().length();i++) {
+            if (txtFirstname.getText().charAt(i)<=64 || (txtFirstname.getText().charAt(i)<=96
+                    && txtFirstname.getText().charAt(i)>=91) || txtFirstname.getText().charAt(i)>=123) {
+                txtRegister.setText("Please do not enter a number in the first name!");
+                return false;
+            }
+        }
+
+        if (txtLastname.getText().length()<3) {
+            txtRegister.setText("Last name is too short!\nPlease enter at least 3 characters");
+            return false;
+        }
+
+        for (int i=0;i<txtLastname.getText().length();i++) {
+            if (txtLastname.getText().charAt(i)<=64 || (txtLastname.getText().charAt(i)<=96
+                    && txtLastname.getText().charAt(i)>=91) || txtLastname.getText().charAt(i)>=123) {
+                txtRegister.setText("Please do not enter a number in the last name!");
+                return false;
+            }
+        }
+
+        if(txtPhoneNumber.getText().length()!=11) {
+            txtRegister.setText("The number entered is invalid!\nPlease enter an 11-digit mobile number");
+            return false;
+        }
+
+        for (int i=0 ; i<11 ;i++) {
+            if (txtPhoneNumber.getText().charAt(i)<48||txtPhoneNumber.getText().charAt(i)>57) {
+                txtRegister.setText("The entered number is invalid!\nThere are invalid characters in the number");
+                return false;
+            }
+        }
+
+        if(txtUserName.getText().length()<3) {
+            txtRegister.setText("Username is too short!\nPlease enter at least 3 characters");
+            return false;
+        }
+
+        if(txtPass.getText().length()<4) {
+            txtRegister.setText("Password is too weak!\nPlease enter at least 4 characters");
+            return false;
+        }
+
+        if(!txtEmail.getText().endsWith("@gmail.com")) {
+            txtRegister.setText("The email address is invalid! Please\nenter the address in the form \"*****@gmail.com\"");
+            return false;
+        }
 
         return true;
     }
