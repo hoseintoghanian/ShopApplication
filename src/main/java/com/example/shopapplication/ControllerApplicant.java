@@ -251,8 +251,8 @@ public class ControllerApplicant {
 
             menuInfo(2, "bread", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem mazrae = new MenuItem("Mazrae");
-            MenuItem newYorkBakery = new MenuItem("New York bakery");
+            MenuItem mazrae = new MenuItem("mazrae");
+            MenuItem newYorkBakery = new MenuItem("new york bakery");
 
             mazrae.setOnAction(ev -> {
                 menuButtonBrand.setText("mazrae");
@@ -265,12 +265,14 @@ public class ControllerApplicant {
         });
         rice.setOnAction(event -> {
 
+            kind = "rice";
+
             menuInfo(2, "rice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem behrooz = new MenuItem("Behrooz");
-            MenuItem golestan = new MenuItem("Golestan");
-            MenuItem tabiat = new MenuItem("Tabiat");
-            MenuItem uncleBens = new MenuItem("Uncle Ben's");
+            MenuItem behrooz = new MenuItem("behrooz");
+            MenuItem golestan = new MenuItem("golestan");
+            MenuItem tabiat = new MenuItem("tabiat");
+            MenuItem uncleBens = new MenuItem("uncle ben's");
 
             behrooz.setOnAction(ev -> {
                 menuButtonBrand.setText("behrooz");
@@ -293,9 +295,9 @@ public class ControllerApplicant {
 
             menuInfo(2, "oil", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem ladan = new MenuItem("Ladan");
-            MenuItem oila = new MenuItem("Oila");
-            MenuItem tabiat = new MenuItem("Tabiat");
+            MenuItem ladan = new MenuItem("ladan");
+            MenuItem oila = new MenuItem("oila");
+            MenuItem tabiat = new MenuItem("tabiat");
             MenuItem louAna = new MenuItem("louAna");
 
             ladan.setOnAction(ev -> {
@@ -320,10 +322,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "brokenSugar", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem azughe = new MenuItem("Azughe");
-            MenuItem ferdous = new MenuItem("Ferdous");
-            MenuItem mashMash = new MenuItem("Mash Mash");
-            MenuItem laPerruche = new MenuItem("La Perruche");
+            MenuItem azughe = new MenuItem("azughe");
+            MenuItem ferdous = new MenuItem("ferdous");
+            MenuItem mashMash = new MenuItem("mash mash");
+            MenuItem laPerruche = new MenuItem("la perruche");
 
             azughe.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("azughe");
@@ -346,10 +348,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "sugar", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem emruz = new MenuItem("Emruz");
-            MenuItem golestan = new MenuItem("Golestan");
-            MenuItem shahdane = new MenuItem("Shahdane");
-            MenuItem chelsea = new MenuItem("Chelsea");
+            MenuItem emruz = new MenuItem("emruz");
+            MenuItem golestan = new MenuItem("golestan");
+            MenuItem shahdane = new MenuItem("shahdane");
+            MenuItem chelsea = new MenuItem("chelsea");
 
             emruz.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("emruz");
@@ -372,13 +374,13 @@ public class ControllerApplicant {
 
             menuInfo(2, "sauce", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem behruz = new MenuItem("Behruz");
-            MenuItem delvese = new MenuItem("Delvese");
-            MenuItem mahram = new MenuItem("Mahram");
-            MenuItem heinz = new MenuItem("Heinz");
+            MenuItem behrooz = new MenuItem("behrooz");
+            MenuItem delvese = new MenuItem("delvese");
+            MenuItem mahram = new MenuItem("mahram");
+            MenuItem heinz = new MenuItem("heinz");
 
-            behruz.setOnAction(actionEvent -> {
-                menuButtonBrand.setText("behruz");
+            behrooz.setOnAction(actionEvent -> {
+                menuButtonBrand.setText("behrooz");
             });
             delvese.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("delvese");
@@ -390,16 +392,18 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("heinz");
             });
 
-            menuButtonBrand.getItems().addAll(behruz, delvese, mahram, heinz);
+            menuButtonBrand.getItems().addAll(behrooz, delvese, mahram, heinz);
         });
         rob.setOnAction(event -> {
 
+            kind = "rob";
+
             menuInfo(2, "rob", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem chinChin = new MenuItem("Chin Chin");
-            MenuItem tabarok = new MenuItem("Tabarok");
-            MenuItem tabiat = new MenuItem("Tabiat");
-            MenuItem hunts = new MenuItem("Hunts");
+            MenuItem chinChin = new MenuItem("chin chin");
+            MenuItem tabarok = new MenuItem("tabarok");
+            MenuItem tabiat = new MenuItem("tabiat");
+            MenuItem hunts = new MenuItem("hunts");
 
             chinChin.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("chin chin");
@@ -422,12 +426,12 @@ public class ControllerApplicant {
 
             menuInfo(2, "pickle", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem behruz = new MenuItem("Behruz");
-            MenuItem mahram = new MenuItem("Mahram");
-            MenuItem yekOyek = new MenuItem("Yek & Yek");
-            MenuItem vlasic = new MenuItem("Vlasic");
+            MenuItem behrooz = new MenuItem("behrooz");
+            MenuItem mahram = new MenuItem("mahram");
+            MenuItem yekOyek = new MenuItem("yek & yek");
+            MenuItem vlasic = new MenuItem("vlasic");
 
-            behruz.setOnAction(actionEvent -> {
+            behrooz.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("behruz");
             });
             mahram.setOnAction(actionEvent -> {
@@ -440,7 +444,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("vlasic");
             });
 
-            menuButtonBrand.getItems().addAll(behruz, mahram, yekOyek, vlasic);
+            menuButtonBrand.getItems().addAll(behrooz, mahram, yekOyek, vlasic);
         });
         lemonJuice.setOnAction(event -> {
 
@@ -448,10 +452,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "lemonJuice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem behruz = new MenuItem("Behruz");
-            MenuItem mahram = new MenuItem("Mahram");
-            MenuItem yekOyek = new MenuItem("Yek & Yek");
-            MenuItem lakewood = new MenuItem("Lakewood");
+            MenuItem behruz = new MenuItem("behruz");
+            MenuItem mahram = new MenuItem("mahram");
+            MenuItem yekOyek = new MenuItem("yek & yek");
+            MenuItem lakewood = new MenuItem("lakewood");
 
             behruz.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("behruz");
@@ -474,10 +478,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "pasta", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem deCecco = new MenuItem("De Cecco");
-            MenuItem tak = new MenuItem("Tak Makaron");
-            MenuItem zar = new MenuItem("Zar Makaron");
-            MenuItem goya = new MenuItem("Goya");
+            MenuItem deCecco = new MenuItem("de cecco");
+            MenuItem tak = new MenuItem("tak makaron");
+            MenuItem zar = new MenuItem("zar makaron");
+            MenuItem goya = new MenuItem("goya");
 
             deCecco.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("de cecco");
@@ -500,10 +504,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "saffron", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem bahraman = new MenuItem("Bahraman");
-            MenuItem momtaz = new MenuItem("Momtaz");
-            MenuItem seharkhiz = new MenuItem("Seharkhiz");
-            MenuItem frintier = new MenuItem("Frintier");
+            MenuItem bahraman = new MenuItem("bahraman");
+            MenuItem momtaz = new MenuItem("momtaz");
+            MenuItem seharkhiz = new MenuItem("seharkhiz");
+            MenuItem frintier = new MenuItem("frintier");
 
             bahraman.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("bahraman");
@@ -526,10 +530,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "pea", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem aaliChin = new MenuItem("Aali Chin");
-            MenuItem delpazir = new MenuItem("Delpazir");
-            MenuItem shahsavand = new MenuItem("Shahsavand");
-            MenuItem ziyad = new MenuItem("Ziyad");
+            MenuItem aaliChin = new MenuItem("aali Chin");
+            MenuItem delpazir = new MenuItem("delpazir");
+            MenuItem shahsavand = new MenuItem("shahsavand");
+            MenuItem ziyad = new MenuItem("ziyad");
 
             aaliChin.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("aali chin");
@@ -564,10 +568,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "jam", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem bijan = new MenuItem("Bijan");
-            MenuItem mixLand = new MenuItem("Mix Land");
+            MenuItem bijan = new MenuItem("bijan");
+            MenuItem mixLand = new MenuItem("mix land");
             MenuItem yekOyek = new MenuItem("yek & yek");
-            MenuItem randallFamily = new MenuItem("Randall Family");
+            MenuItem randallFamily = new MenuItem("randall family");
 
             bijan.setOnAction(ev -> {
                 menuButtonBrand.setText("bijan");
@@ -590,10 +594,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "honey", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem rayehe = new MenuItem("Rayehe");
-            MenuItem segmen = new MenuItem("Segmen");
-            MenuItem shahsavand = new MenuItem("Shahsavand");
-            MenuItem js = new MenuItem("JS");
+            MenuItem rayehe = new MenuItem("rayehe");
+            MenuItem segmen = new MenuItem("segmen");
+            MenuItem shahsavand = new MenuItem("shahsavand");
+            MenuItem js = new MenuItem("js");
 
             rayehe.setOnAction(ev -> {
                 menuButtonBrand.setText("rayehe");
@@ -616,10 +620,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "halva", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem oghab = new MenuItem("Oghab");
-            MenuItem tahini = new MenuItem("Tahini");
-            MenuItem taksun = new MenuItem("Taksun");
-            MenuItem koska = new MenuItem("Koska");
+            MenuItem oghab = new MenuItem("oghab");
+            MenuItem tahini = new MenuItem("tahini");
+            MenuItem taksun = new MenuItem("taksun");
+            MenuItem koska = new MenuItem("koska");
 
             oghab.setOnAction(ev -> {
                 menuButtonBrand.setText("oghab");
@@ -658,10 +662,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "bologna", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem kampooreh = new MenuItem("Kampooreh");
-            MenuItem robat = new MenuItem("Robat");
-            MenuItem shamSham = new MenuItem("Sham Sham");
-            MenuItem principe = new MenuItem("Principe");
+            MenuItem kampooreh = new MenuItem("kampooreh");
+            MenuItem robat = new MenuItem("robat");
+            MenuItem shamSham = new MenuItem("sham sham");
+            MenuItem principe = new MenuItem("principe");
 
             kampooreh.setOnAction(ev -> {
                 menuButtonBrand.setText("kampooreh");
@@ -684,10 +688,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "lambMeet", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem ariaBahar = new MenuItem("Aria Bahar");
-            MenuItem mahya = new MenuItem("Mahya");
-            MenuItem puya = new MenuItem("Puya");
-            MenuItem freeRange = new MenuItem("Free Range");
+            MenuItem ariaBahar = new MenuItem("aria bahar");
+            MenuItem mahya = new MenuItem("mahya");
+            MenuItem puya = new MenuItem("puya");
+            MenuItem freeRange = new MenuItem("free range");
 
             ariaBahar.setOnAction(ev -> {
                 menuButtonBrand.setText("aria bahar");
@@ -710,10 +714,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "chicken", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem mahya = new MenuItem("Mahya");
-            MenuItem puya = new MenuItem("Puya");
-            MenuItem telavang = new MenuItem("Telavang");
-            MenuItem marys = new MenuItem("Mary's");
+            MenuItem mahya = new MenuItem("mahya");
+            MenuItem puya = new MenuItem("puya");
+            MenuItem telavang = new MenuItem("telavang");
+            MenuItem marys = new MenuItem("mary's");
 
             mahya.setOnAction(ev -> {
                 menuButtonBrand.setText("mahya");
@@ -736,10 +740,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "egg", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem morghdaran = new MenuItem("Morghdaran");
-            MenuItem porotana = new MenuItem("Porotana");
-            MenuItem telavang = new MenuItem("Telavang");
-            MenuItem organicValley = new MenuItem("Organic Valley");
+            MenuItem morghdaran = new MenuItem("morghdaran");
+            MenuItem porotana = new MenuItem("porotana");
+            MenuItem telavang = new MenuItem("telavang");
+            MenuItem organicValley = new MenuItem("organic valley");
 
             morghdaran.setOnAction(ev -> {
                 menuButtonBrand.setText("morghdaran");
@@ -762,10 +766,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "beef", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem khoram = new MenuItem("Khoram");
-            MenuItem mahya = new MenuItem("Mahya");
-            MenuItem puya = new MenuItem("Puya");
-            MenuItem fresh = new MenuItem("Fresh");
+            MenuItem khoram = new MenuItem("khoram");
+            MenuItem mahya = new MenuItem("mahya");
+            MenuItem puya = new MenuItem("puya");
+            MenuItem fresh = new MenuItem("fresh");
 
             khoram.setOnAction(ev -> {
                 menuButtonBrand.setText("khoram");
@@ -788,10 +792,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "shrimp", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem marine = new MenuItem("Marine");
-            MenuItem pemina = new MenuItem("Pemina");
-            MenuItem tohfe = new MenuItem("Tohfe");
-            MenuItem greatCatch = new MenuItem("Great Catch");
+            MenuItem marine = new MenuItem("marine");
+            MenuItem pemina = new MenuItem("pemina");
+            MenuItem tohfe = new MenuItem("tohfe");
+            MenuItem greatCatch = new MenuItem("great catch");
 
             marine.setOnAction(ev -> {
                 menuButtonBrand.setText("marine");
@@ -814,10 +818,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "tuna", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem makenzi = new MenuItem("Makenzi");
-            MenuItem shilton = new MenuItem("Shilton");
-            MenuItem tohfe = new MenuItem("Tohfe");
-            MenuItem ayamBrand = new MenuItem("Ayam Brand");
+            MenuItem makenzi = new MenuItem("makenzi");
+            MenuItem shilton = new MenuItem("shilton");
+            MenuItem tohfe = new MenuItem("tohfe");
+            MenuItem ayamBrand = new MenuItem("ayam brand");
 
             makenzi.setOnAction(ev -> {
                 menuButtonBrand.setText("makenzi");
@@ -853,10 +857,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "milk", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem damdaran = new MenuItem("Damdaran");
-            MenuItem kale = new MenuItem("Kale");
-            MenuItem mihan = new MenuItem("Mihan");
-            MenuItem lactaid = new MenuItem("Lactaid");
+            MenuItem damdaran = new MenuItem("damdaran");
+            MenuItem kale = new MenuItem("kale");
+            MenuItem mihan = new MenuItem("mihan");
+            MenuItem lactaid = new MenuItem("lactaid");
 
             damdaran.setOnAction(ev -> {
                 menuButtonBrand.setText("damdaran");
@@ -879,10 +883,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "yogurt", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem kale = new MenuItem("Kale");
-            MenuItem mihan = new MenuItem("Mihan");
-            MenuItem ramak = new MenuItem("Ramak");
-            MenuItem forager = new MenuItem("Forager");
+            MenuItem kale = new MenuItem("kale");
+            MenuItem mihan = new MenuItem("mihan");
+            MenuItem ramak = new MenuItem("ramak");
+            MenuItem forager = new MenuItem("forager");
 
             kale.setOnAction(ev -> {
                 menuButtonBrand.setText("kale");
@@ -905,10 +909,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "cheese", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem kale = new MenuItem("Kale");
-            MenuItem mihan = new MenuItem("Mihan");
-            MenuItem ruzane = new MenuItem("Ruzane");
-            MenuItem theLaughingCow = new MenuItem("The Laughing Cow");
+            MenuItem kale = new MenuItem("kale");
+            MenuItem mihan = new MenuItem("mihan");
+            MenuItem ruzane = new MenuItem("ruzane");
+            MenuItem theLaughingCow = new MenuItem("the laughing cow");
 
             kale.setOnAction(ev -> {
                 menuButtonBrand.setText("kale");
@@ -931,10 +935,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "cream", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem kale = new MenuItem("Kale");
-            MenuItem mihan = new MenuItem("Mihan");
-            MenuItem pegah = new MenuItem("Pegah");
-            MenuItem karoun = new MenuItem("Karoun");
+            MenuItem kale = new MenuItem("kale");
+            MenuItem mihan = new MenuItem("mihan");
+            MenuItem pegah = new MenuItem("pegah");
+            MenuItem karoun = new MenuItem("karoun");
 
             kale.setOnAction(ev -> {
                 menuButtonBrand.setText("kale");
@@ -973,10 +977,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "tea", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem debsh = new MenuItem("Debsh");
-            MenuItem golestan = new MenuItem("Golestan");
-            MenuItem shahrzad = new MenuItem("Shahrzad");
-            MenuItem yorkshire = new MenuItem("Yorkshire");
+            MenuItem debsh = new MenuItem("debsh");
+            MenuItem golestan = new MenuItem("golestan");
+            MenuItem shahrzad = new MenuItem("shahrzad");
+            MenuItem yorkshire = new MenuItem("yorkshire");
 
             debsh.setOnAction(ev -> {
                 menuButtonBrand.setText("debsh");
@@ -999,16 +1003,16 @@ public class ControllerApplicant {
 
             menuInfo(2, "herbalTea", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem golestan = new MenuItem("Golestan");
-            MenuItem seharKhiz = new MenuItem("Sehar Khiz");
-            MenuItem shahsavand = new MenuItem("Shahsavand");
-            MenuItem yogi = new MenuItem("Yogi");
+            MenuItem golestan = new MenuItem("golestan");
+            MenuItem seharKhiz = new MenuItem("sehar khiz");
+            MenuItem shahsavand = new MenuItem("shahsavand");
+            MenuItem yogi = new MenuItem("yogi");
 
             golestan.setOnAction(ev -> {
                 menuButtonBrand.setText("golestan");
             });
-            shahsavand.setOnAction(ev -> {
-                menuButtonBrand.setText("shahsavand");
+            seharKhiz.setOnAction(ev -> {
+                menuButtonBrand.setText("sehar khiz");
             });
             shahsavand.setOnAction(ev -> {
                 menuButtonBrand.setText("shahsavand");
@@ -1025,10 +1029,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "coffee", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem aliCafe = new MenuItem("Ali Cafe");
-            MenuItem goodDay = new MenuItem("Good Day");
-            MenuItem nescafe = new MenuItem("Nescafe");
-            MenuItem starbucks = new MenuItem("Starbucks");
+            MenuItem aliCafe = new MenuItem("ali cafe");
+            MenuItem goodDay = new MenuItem("good day");
+            MenuItem nescafe = new MenuItem("nescafe");
+            MenuItem starbucks = new MenuItem("starbucks");
 
             aliCafe.setOnAction(ev -> {
                 menuButtonBrand.setText("ali cafe");
@@ -1051,10 +1055,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "water", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem damavand = new MenuItem("Damavand");
-            MenuItem miva = new MenuItem("Miva");
-            MenuItem oxab = new MenuItem("Oxab");
-            MenuItem smartWater = new MenuItem("Smart Water");
+            MenuItem damavand = new MenuItem("damavand");
+            MenuItem miva = new MenuItem("miva");
+            MenuItem oxab = new MenuItem("oxab");
+            MenuItem smartWater = new MenuItem("smart water");
 
             damavand.setOnAction(ev -> {
                 menuButtonBrand.setText("damavand");
@@ -1077,10 +1081,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "beer", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem aalis = new MenuItem("Aalis");
-            MenuItem heyDay = new MenuItem("Hey Day");
-            MenuItem jojo = new MenuItem("Jojo");
-            MenuItem heineken = new MenuItem("Heineken");
+            MenuItem aalis = new MenuItem("aalis");
+            MenuItem heyDay = new MenuItem("hey day");
+            MenuItem jojo = new MenuItem("jojo");
+            MenuItem heineken = new MenuItem("heineken");
 
             aalis.setOnAction(ev -> {
                 menuButtonBrand.setText("aalis");
@@ -1103,10 +1107,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "soda", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem cocaCola = new MenuItem("Coca Cola");
-            MenuItem fantaLemon = new MenuItem("Fanta Lemon");
-            MenuItem fantaOrange = new MenuItem("Fanta Orange");
-            MenuItem drPepper = new MenuItem("Dr Pepper");
+            MenuItem cocaCola = new MenuItem("coca cola");
+            MenuItem fantaLemon = new MenuItem("fanta lemon");
+            MenuItem fantaOrange = new MenuItem("fanta orange");
+            MenuItem drPepper = new MenuItem("dr pepper");
 
             cocaCola.setOnAction(ev -> {
                 menuButtonBrand.setText("coca cola");
@@ -1129,10 +1133,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "juice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem mihan = new MenuItem("Mihan");
-            MenuItem sanIch = new MenuItem("San Ich");
-            MenuItem takDaneh = new MenuItem("Tak Daneh");
-            MenuItem simplyOrange = new MenuItem("Simply Orange");
+            MenuItem mihan = new MenuItem("mihan");
+            MenuItem sanIch = new MenuItem("san ich");
+            MenuItem takDaneh = new MenuItem("tak daneh");
+            MenuItem simplyOrange = new MenuItem("simply orange");
 
             mihan.setOnAction(ev -> {
                 menuButtonBrand.setText("mihan");
@@ -1171,10 +1175,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "chocolate", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem hiss = new MenuItem("Hiss");
-            MenuItem rangarang = new MenuItem("Rangarang");
-            MenuItem takTak = new MenuItem("Tak Daneh");
-            MenuItem snickers = new MenuItem("Snickers");
+            MenuItem hiss = new MenuItem("hiss");
+            MenuItem rangarang = new MenuItem("rangarang");
+            MenuItem takTak = new MenuItem("tak daneh");
+            MenuItem snickers = new MenuItem("snickers");
 
             hiss.setOnAction(ev -> {
                 menuButtonBrand.setText("hiss");
@@ -1197,10 +1201,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "biscuit", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem hiBye = new MenuItem("Hi Bye");
-            MenuItem petitBeurre = new MenuItem("petit Beurre");
-            MenuItem sagheTalai = new MenuItem("Saghe Talai");
-            MenuItem oreo = new MenuItem("Oreo");
+            MenuItem hiBye = new MenuItem("hi bye");
+            MenuItem petitBeurre = new MenuItem("petit beurre");
+            MenuItem sagheTalai = new MenuItem("saghe talai");
+            MenuItem oreo = new MenuItem("oreo");
 
             hiBye.setOnAction(ev -> {
                 menuButtonBrand.setText("hi bye");
@@ -1223,10 +1227,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "nuts", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem mani = new MenuItem("Mani");
-            MenuItem mazMaz = new MenuItem("Maz Maz");
-            MenuItem sanjaghak = new MenuItem("Sanjaghak");
-            MenuItem planters = new MenuItem("Planters");
+            MenuItem mani = new MenuItem("mani");
+            MenuItem mazMaz = new MenuItem("maz maz");
+            MenuItem sanjaghak = new MenuItem("sanjaghak");
+            MenuItem planters = new MenuItem("planters");
 
 
             mani.setOnAction(ev -> {
@@ -1250,10 +1254,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "cake", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem cakeMake = new MenuItem("Cake Make");
-            MenuItem tTop = new MenuItem("T Top");
-            MenuItem tiny = new MenuItem("Tiny");
-            MenuItem mrKipling = new MenuItem("Mr Kipling");
+            MenuItem cakeMake = new MenuItem("cake make");
+            MenuItem tTop = new MenuItem("t top");
+            MenuItem tiny = new MenuItem("tiny");
+            MenuItem mrKipling = new MenuItem("mr kipling");
 
             cakeMake.setOnAction(ev -> {
                 menuButtonBrand.setText("cake make");
@@ -1276,10 +1280,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "chips", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem chakelz = new MenuItem("Chakelz");
-            MenuItem cheetoz = new MenuItem("Cheeroz");
-            MenuItem delMaze = new MenuItem("Del maze");
-            MenuItem lays = new MenuItem("Lay's");
+            MenuItem chakelz = new MenuItem("chakelz");
+            MenuItem cheetoz = new MenuItem("cheeroz");
+            MenuItem delMaze = new MenuItem("del maze");
+            MenuItem lays = new MenuItem("lay's");
 
             chakelz.setOnAction(ev -> {
                 menuButtonBrand.setText("chakelz");
@@ -1303,10 +1307,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "pofak", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem chakelz = new MenuItem("Chakelz");
-            MenuItem cheetoz = new MenuItem("Cheeroz");
-            MenuItem pofakNamaki = new MenuItem("Pofak Namaki");
-            MenuItem cheetos = new MenuItem("Cheetos");
+            MenuItem chakelz = new MenuItem("chakelz");
+            MenuItem cheetoz = new MenuItem("cheetoz");
+            MenuItem pofakNamaki = new MenuItem("pofak namaki");
+            MenuItem cheetos = new MenuItem("cheetos");
 
             chakelz.setOnAction(ev -> {
                 menuButtonBrand.setText("chakelz");
@@ -1329,10 +1333,10 @@ public class ControllerApplicant {
 
             menuInfo(2, "chewingGum", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
-            MenuItem action = new MenuItem("Action");
-            MenuItem biodent = new MenuItem("Biodent");
-            MenuItem trident = new MenuItem("Trident");
-            MenuItem orbit = new MenuItem("Orbit");
+            MenuItem action = new MenuItem("action");
+            MenuItem biodent = new MenuItem("biodent");
+            MenuItem trident = new MenuItem("trident");
+            MenuItem orbit = new MenuItem("orbit");
 
             action.setOnAction(ev -> {
                 menuButtonBrand.setText("action");
