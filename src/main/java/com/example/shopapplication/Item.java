@@ -84,6 +84,10 @@ public class Item {
         calculateScore(-1);
     }
 
+    public Item(String name,long price,int size){
+
+    }
+
     public int getCode() {
         return code;
     }

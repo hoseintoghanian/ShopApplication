@@ -2,7 +2,7 @@ package com.example.shopapplication;
 
 import java.util.*;
 
-public class Warehouse {//anbar
+public class Warehouse {
 
     public String name;
     public String storeAdmin;

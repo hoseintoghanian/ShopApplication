@@ -1,5 +1,6 @@
 package com.example.shopapplication;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,8 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -65,7 +70,7 @@ public class ControllerAdmin {
     @FXML
     private Label storeName, storeAdmin, storeAddress;
 
-    public void displayInfo() {
+    public void insertWarehouseItems() {
 
         for (int i = 0; i < Application.shop.warehouses.size(); i++) {
             MenuItem menuItem = new MenuItem(Application.shop.warehouses.get(i).name);
@@ -73,18 +78,64 @@ public class ControllerAdmin {
             menuItem.setOnAction(ev -> {
                 warehouseMenu.setText(Application.shop.warehouses.get(finalI).name);
                 Application.shop.currentWarehouse = Application.shop.warehouses.get(finalI);
+                displayInfo();
             });
 
             warehouseMenu.getItems().add(menuItem);
         }
+    }
+
+    @FXML
+    private AnchorPane warehousePage;
+
+    public void displayInfo() {
 
         if (Application.shop.currentWarehouse != null) {
 
             storeName.setText("store name   : " + Application.shop.currentWarehouse.name);
             storeAdmin.setText("store admin : " + Application.shop.currentWarehouse.storeAdmin);
             storeAddress.setText("address : " + Application.shop.currentWarehouse.address);
-
         }
+
+
+        for(int i=0;i<5;i++){
+            //Application.shop.currentWarehouse.items.add(new Item)
+        }
+
+
+
+        TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameColumn.setPrefWidth(120);
+
+        TableColumn<Item, String> priceColumn = new TableColumn<>("Price");
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceColumn.setPrefWidth(90);
+
+        TableColumn<Item, String> sizeColumn = new TableColumn<>("Size");
+        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
+        sizeColumn.setPrefWidth(40);
+
+
+        TableView<Item> tableView = new TableView<>();
+        tableView.setItems(FXCollections.observableArrayList(Application.shop.currentWarehouse.items));
+        tableView.getColumns().addAll(nameColumn, priceColumn, sizeColumn);
+
+        tableView.setLayoutX(35);
+        tableView.setLayoutY(310);
+        tableView.setPrefWidth(250);
+        tableView.setPrefHeight(200);
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setWidth(10);
+        dropShadow.setHeight(10);
+        InnerShadow innerShadow = new InnerShadow();
+        innerShadow.setWidth(10);
+        innerShadow.setHeight(10);
+        tableView.setEffect(innerShadow);
+        tableView.setEffect(dropShadow);
+
+        warehousePage.getChildren().add(tableView);
+
     }
 
 

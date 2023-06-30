@@ -19,6 +19,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.SepiaTone?>
@@ -99,21 +100,21 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-            <Tab onSelectionChanged="#displayInfo" text="Warehouse">
+            <Tab onSelectionChanged="#insertWarehouseItems" text="Warehouse">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane fx:id="warehousePage" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="35.0" layoutY="90.0" text="store name :">
+                        <Label fx:id="storeName" layoutX="35.0" layoutY="90.0" text="store name   : ">
                            <font>
                               <Font name="Book Antiqua" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="35.0" layoutY="140.0" text="store admin :">
+                        <Label fx:id="storeAdmin" layoutX="35.0" layoutY="140.0" text="store admin : ">
                            <font>
                               <Font name="Book Antiqua" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="35.0" layoutY="190.0" text="address :">
+                        <Label fx:id="storeAddress" layoutX="35.0" layoutY="190.0" text="address : ">
                            <font>
                               <Font name="Book Antiqua" size="20.0" />
                            </font>
@@ -261,8 +262,11 @@
                                  <font>
                                     <Font name="Book Antiqua" size="13.0" />
                                  </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="inputOutput" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="170.0" layoutY="50.0" mnemonicParsing="false" text="Output">
+                              <RadioButton layoutX="170.0" layoutY="50.0" mnemonicParsing="false" text="Output" toggleGroup="$inputOutput">
                                  <font>
                                     <Font name="Book Antiqua" size="13.0" />
                                  </font>
