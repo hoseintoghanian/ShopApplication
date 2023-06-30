@@ -94,6 +94,20 @@ public class ControllerPayment {
         System.out.println(2);
     }
 
+    public boolean check () {
+        if (txtcardnumber.getText().length()!=16) return false ;
+        for (int i=0 ; i<16 ; i++) {
+            if (txtcardnumber.getText().charAt(i)<48||txtcardnumber.getText().charAt(i)>57) return false;
+        }
+        if (txtcvv2.getText().length()!=4 && txtcvv2.getText().length()!=5) return false ;
+        if (txtcardexpireyear.getText().length()!=4) return false;
+        int cardExpireMonth = Integer.parseInt(txtcardexpiremonth.getText());
+        if (cardExpireMonth>12 || cardExpireMonth<0) return false;
+        if (txtcardsecondcode.getText().length()!=5 && txtcardsecondcode.getText().length()!=4) return false ;
+        if (!txtemail.getText().endsWith("@gmail.com")) return false;
+        return true;
+    }
+
 
     //for the spinner in cart tab see bro code
 }
