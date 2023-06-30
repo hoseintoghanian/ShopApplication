@@ -222,7 +222,233 @@ public class ControllerApplicant {
         createMenuItem("tabiat");
         createMenuItem("uncle ben's");
 
+        //oil
+        createMenuItem("ladan");
+        createMenuItem("oila");
+        createMenuItem("tabiat");
+        createMenuItem("louAna");
 
+        //broken sugar
+        createMenuItem("azughe");
+        createMenuItem("ferdous");
+        createMenuItem("mash mash");
+        createMenuItem("la perruche");
+
+        //sugar
+        createMenuItem("emruz");
+        createMenuItem("golestan");
+        createMenuItem("shahdane");
+        createMenuItem("chelsea");
+
+        //sauce
+        createMenuItem("behrooz");
+        createMenuItem("delvese");
+        createMenuItem("mahram");
+        createMenuItem("heinz");
+
+        //rob
+        createMenuItem("chin chin");
+        createMenuItem("tabarok");
+        createMenuItem("tabiat");
+        createMenuItem("hunts");
+
+        //pickle
+        createMenuItem("behrooz");
+        createMenuItem("mahram");
+        createMenuItem("yek & yek");
+        createMenuItem("vlasic");
+
+        //lemon juice
+        createMenuItem("behrooz");
+        createMenuItem("mahram");
+        createMenuItem("yek & yek");
+        createMenuItem("lakewood");
+
+        //pasta
+        createMenuItem("de cecco");
+        createMenuItem("tak makaron");
+        createMenuItem("zar makaron");
+        createMenuItem("goya");
+
+        //saffron
+        createMenuItem("bahraman");
+        createMenuItem("momtaz");
+        createMenuItem("seharkhiz");
+        createMenuItem("frintier");
+
+        //pea
+        createMenuItem("aali chin");
+        createMenuItem("delpazir");
+        createMenuItem("shahsavand");
+        createMenuItem("ziyad");
+
+        //jam
+        createMenuItem("bijan");
+        createMenuItem("mix land");
+        createMenuItem("yek & yek");
+        createMenuItem("randall family");
+
+        //honey
+        createMenuItem("rayehe");
+        createMenuItem("segmen");
+        createMenuItem("shahsavand");
+        createMenuItem("js");
+
+        //halva
+        createMenuItem("oghab");
+        createMenuItem("tahini");
+        createMenuItem("taksun");
+        createMenuItem("koska");
+
+        //bologna
+        createMenuItem("kampooreh");
+        createMenuItem("robat");
+        createMenuItem("sham sham");
+        createMenuItem("principe");
+
+        //lamb meet
+        createMenuItem("aria bahar");
+        createMenuItem("mahya");
+        createMenuItem("poya");
+        createMenuItem("free range");
+
+        //chicken
+        createMenuItem("mahya");
+        createMenuItem("puya");
+        createMenuItem("telavang");
+        createMenuItem("mary's");
+
+        //egg
+        createMenuItem("morghdaran");
+        createMenuItem("porotana");
+        createMenuItem("telavang");
+        createMenuItem("organic valley");
+
+        //beef
+        createMenuItem("khoram");
+        createMenuItem("mahya");
+        createMenuItem("puya");
+        createMenuItem("fresh");
+
+        //shrimp
+        createMenuItem("marine");
+        createMenuItem("pemina");
+        createMenuItem("tohfe");
+        createMenuItem("great catch");
+
+        //tuna
+        createMenuItem("makenzi");
+        createMenuItem("shilton");
+        createMenuItem("tohfe");
+        createMenuItem("ayam brand");
+
+        //milk
+        createMenuItem("damdaran");
+        createMenuItem("kale");
+        createMenuItem("mihan");
+        createMenuItem("lactaid");
+
+        //yogurt
+        createMenuItem("kale");
+        createMenuItem("mihan");
+        createMenuItem("ramak");
+        createMenuItem("forager");
+
+        //cheese
+        createMenuItem("kale");
+        createMenuItem("mihan");
+        createMenuItem("ruzane");
+        createMenuItem("the laughing cow");
+
+        //cream
+        createMenuItem("kale");
+        createMenuItem("mihan");
+        createMenuItem("pegah");
+        createMenuItem("karoun");
+
+        //tea
+        createMenuItem("debsh");
+        createMenuItem("golestan");
+        createMenuItem("shahrzad");
+        createMenuItem("yorkshire");
+
+        //herbal tea
+        createMenuItem("golestan");
+        createMenuItem("sehar khiz");
+        createMenuItem("shahsavand");
+        createMenuItem("yogi");
+
+        //coffee
+        createMenuItem("ali cafe");
+        createMenuItem("good day");
+        createMenuItem("nescafe");
+        createMenuItem("starbucks");
+
+        //water
+        createMenuItem("damavand");
+        createMenuItem("miva");
+        createMenuItem("oxab");
+        createMenuItem("smart water");
+
+        //beer
+        createMenuItem("aalis");
+        createMenuItem("hey day");
+        createMenuItem("jojo");
+        createMenuItem("heineken");
+
+        //soda
+        createMenuItem("coca cola");
+        createMenuItem("fanta orange");
+        createMenuItem("fanta lemon");
+        createMenuItem("dr pepper");
+
+        //juice
+        createMenuItem("mihan");
+        createMenuItem("san ich");
+        createMenuItem("tak daneh");
+        createMenuItem("simply orange");
+
+        //chocolate
+        createMenuItem("hiss");
+        createMenuItem("rangarang");
+        createMenuItem("tak tak");
+        createMenuItem("snickers");
+
+        //biscuit
+        createMenuItem("hi bye");
+        createMenuItem("petit beurre");
+        createMenuItem("saghe talai");
+        createMenuItem("oreo");
+
+        //nuts
+        createMenuItem("mani");
+        createMenuItem("maz maz");
+        createMenuItem("sanjaghak");
+        createMenuItem("planters");
+
+        //cake
+        createMenuItem("cake make");
+        createMenuItem("t top");
+        createMenuItem("tiny");
+        createMenuItem("mr kipling");
+
+        //chips
+        createMenuItem("chakelz");
+        createMenuItem("cheetoz");
+        createMenuItem("del maze");
+        createMenuItem("lay's");
+
+        //pofak
+        createMenuItem("chakelz");
+        createMenuItem("cheetoz");
+        createMenuItem("pofak namaki");
+        createMenuItem("cheetos");
+
+        //chewing gum
+        createMenuItem("action");
+        createMenuItem("biodent");
+        createMenuItem("trident");
+        createMenuItem("orbit");
     }
 
     private void createMenuItem(String text) {
@@ -1208,7 +1434,7 @@ public class ControllerApplicant {
 
             MenuItem hiss = new MenuItem("hiss");
             MenuItem rangarang = new MenuItem("rangarang");
-            MenuItem takTak = new MenuItem("tak daneh");
+            MenuItem takTak = new MenuItem("tak tak");
             MenuItem snickers = new MenuItem("snickers");
 
             hiss.setOnAction(ev -> {
