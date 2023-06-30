@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="customer auction page + database">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_1_20_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_1_20_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_3_54_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_3_54_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

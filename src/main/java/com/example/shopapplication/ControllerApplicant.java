@@ -12,6 +12,8 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
@@ -467,6 +469,26 @@ public class ControllerApplicant {
         });
 
         filterButtonBrand.getItems().add(menuItem);
+    }
+
+    @FXML
+    private TextField searchBoxText;
+
+    public void filterName() {
+
+        searchBoxText.setOnKeyPressed(ev ->{
+            if (ev.getCode() == KeyCode.ENTER) {
+
+                if (Application.shop.pageURL.equals("customer.fxml")) {
+                    Shop.sortByName(Application.shop.allItems, Application.shop.tempItems, searchBoxText.getText());
+                    showItems("customer", Application.shop.tempItems);
+                }
+                if (Application.shop.pageURL.equals("seller.fxml")) {
+                    Shop.sortByName(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, searchBoxText.getText());
+                    showItems("seller", Application.shop.currentSeller.tempItems);
+                }
+            }
+        });
     }
 
 
