@@ -48,7 +48,7 @@ public class Shop {
         }
     }
 
-    public static void SortByBrand(ArrayList<Item> allItems, ArrayList<Item> tempItems, String brand) {
+    public static void sortByBrand(ArrayList<Item> allItems, ArrayList<Item> tempItems, String brand) {
         tempItems.clear();
 
         for (int i = 0; i < allItems.size(); i++) {
@@ -138,4 +138,6 @@ public class Shop {
             if (allItems.get(i).isAuction) tempItems.add(allItems.get(i));
         }
     }
+
+
 }

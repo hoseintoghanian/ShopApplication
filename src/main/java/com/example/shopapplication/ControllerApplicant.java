@@ -208,6 +208,38 @@ public class ControllerApplicant {
         filterPrice(-1);
     }
 
+    public void filterBrand() {//set the filter brand menuButton
+
+        filterButtonBrand.getItems().clear();
+
+        //bread
+        createMenuItem("mazrae");
+        createMenuItem("new york bakery");
+
+        //rice
+        createMenuItem("behrooz");
+        createMenuItem("golestan");
+        createMenuItem("tabiat");
+        createMenuItem("uncle ben's");
+
+
+    }
+
+    private void createMenuItem(String text) {
+
+        MenuItem menuItem = new MenuItem(text);
+
+        menuItem.setOnAction(ev -> {
+            filterButtonBrand.setText(text);
+            if (Application.shop.currentCustomer != null)
+                Shop.sortByBrand(Application.shop.allItems, Application.shop.tempItems, menuItem.getText());
+            if (Application.shop.currentSeller != null)
+                Shop.sortByBrand(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, menuItem.getText());
+        });
+
+        filterButtonBrand.getItems().add(menuItem);
+    }
+
 
     public void removeFilters() {
         if (Application.shop.pageURL.equals("customer.fxml")) {
@@ -220,11 +252,10 @@ public class ControllerApplicant {
             Shop.SortByDate(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems);
             showItems("seller", Application.shop.currentSeller.tempItems);
         }
-    }
 
-
-    public void setBrands() {//set the filter brand menuButton
-
+        filterButtonKind.setText("Kind");
+        filterButtonMinorKind.setText("Minor Kind");
+        filterButtonBrand.setText("Brand");
     }
 
 
@@ -1683,6 +1714,7 @@ public class ControllerApplicant {
             chatBackgroundImg.setImage(t7);
         });
     }
+
     @FXML
     private Label labelauctionname, labelauctionbrand, labelauctionmaxbid;
     @FXML

@@ -25,7 +25,7 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerApplicant">
   <tabs>
-      <Tab text="     Store     ">
+      <Tab onSelectionChanged="#removeFilters" text="     Store     ">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -114,7 +114,7 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
-                              <MenuButton fx:id="filterButtonBrand" layoutX="265.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Brand">
+                              <MenuButton fx:id="filterButtonBrand" layoutX="265.0" layoutY="335.0" mnemonicParsing="false" onMouseEntered="#filterBrand" prefWidth="100.0" text="Brand">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -187,25 +187,6 @@
                                     </DropShadow>
                                  </effect>
                               </ImageView>
-                              <Button layoutX="265.0" layoutY="375.0" mnemonicParsing="false" onAction="#auction" prefHeight="0.0" prefWidth="100.0" text="Auctions">
-                                 <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                             <color>
-                                                <Color red="0.09473684430122375" green="0.09473684430122375" blue="0.09473684430122375" />
-                                             </color>
-                                             <input>
-                                                <ColorAdjust />
-                                             </input>
-                                          </InnerShadow>
-                                       </input>
-                                       <color>
-                                          <Color red="0.8105263113975525" green="0.6979532241821289" blue="0.060038987547159195" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </Button>
                               <MenuButton fx:id="filterButtonKind1" layoutX="35.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Price">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#priceLowToHigh" text="cheap to expensive" />
@@ -273,6 +254,22 @@
                </effect>
             </AnchorPane>
          </content>
+      </Tab>
+      <Tab onSelectionChanged="#auction" text="     Auctions     ">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ScrollPane prefHeight="750.0" prefWidth="1500.0">
+                    <content>
+                      <AnchorPane fx:id="auctionPage" minHeight="0.0" minWidth="0.0" prefHeight="5000.0" prefWidth="1500.0" style="-fx-background-color: #E5BA1D;">
+                           <effect>
+                              <InnerShadow />
+                           </effect></AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+        </content>
       </Tab>
       <Tab fx:id="CustomerTabAccount" onSelectionChanged="#displayInfo" text="     Acount     ">
          <content>
