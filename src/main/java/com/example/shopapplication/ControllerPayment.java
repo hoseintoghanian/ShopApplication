@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -33,15 +34,13 @@ public class ControllerPayment {
         ChangeScene2(e, "cart.fxml");
     }
 
+    @FXML
+    private Button buttonpayment;
     public void changeToBankScene(ActionEvent e) throws IOException {
 
         Application.shop.pageURL = "payment.fxml";
 
         ChangeScene2(e, "bankPortal.fxml");
-    }
-
-    public void changeToPaymentScene(ActionEvent e) throws IOException {
-        ChangeScene2(e, "payment.fxml");
     }
 
     public void back(ActionEvent e) throws IOException {
@@ -69,7 +68,7 @@ public class ControllerPayment {
     public void displayInfo() {
         int sum = 0;
         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price;
+            sum += Application.shop.currentCustomer.cartItems.get(i).price* Application.shop.currentCustomer.cartItems.get(i).tempSize;
         }
         labelfinalcost.setText(String.valueOf(sum));
     }
