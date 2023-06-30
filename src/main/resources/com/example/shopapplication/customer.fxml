@@ -395,7 +395,7 @@
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="755.0" layoutY="610.0" mnemonicParsing="false" opacity="0.9" prefWidth="300.0" text="Increase wallet balance">
+                  <Button layoutX="755.0" layoutY="610.0" mnemonicParsing="false" onAction="#changeToBankPortalScene" opacity="0.9" prefWidth="300.0" text="Increase wallet balance">
                      <font>
                         <Font name="Book Antiqua" size="22.0" />
                      </font>
