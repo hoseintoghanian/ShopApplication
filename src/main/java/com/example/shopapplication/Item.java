@@ -79,6 +79,8 @@ public class Item {
         this.comments = comments;
         this.isAuction = isAuction;
 
+        System.out.println(isAuction);
+
         calculateScore(-1);
     }
 

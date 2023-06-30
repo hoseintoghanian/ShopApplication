@@ -130,4 +130,12 @@ public class Shop {
         });
 
     }
+
+    public static void sortByAuction(ArrayList<Item> allItems, ArrayList<Item> tempItems) {
+        tempItems.clear();
+
+        for (int i = 0; i < allItems.size(); i++) {
+            if (allItems.get(i).isAuction) tempItems.add(allItems.get(i));
+        }
+    }
 }

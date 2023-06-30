@@ -1494,6 +1494,11 @@ public class ControllerApplicant {
                     if (Application.shop.currentSeller.auction == null) {
                         Application.shop.currentSeller.auction = item;
                         item.isAuction = true;
+                        try {
+                            Database.updateItemAuction(item);
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
                     } else {
                         if (!Application.shop.currentSeller.auction.equals(item)) {
                             Application.shop.currentSeller.auction = item;
@@ -1554,38 +1559,36 @@ public class ControllerApplicant {
     }
 
 
+    @FXML
+    private AnchorPane auctionPage;
+
     public void auction() {
 
+        Shop.sortByAuction(Application.shop.allItems, Application.shop.tempItems);
+
+
         icount = 0;
-        mainPage.getChildren().clear();
+        jcount = 0;
+        auctionPage.getChildren().clear();
 
-        for (int i = 0; i < Application.shop.sellers.size(); i++) {
+        for (int i = 0; i < Application.shop.tempItems.size(); i++) {
 
-            int finalI = i;
-
-            ImageView imageView = new ImageView(Application.shop.currentSeller.auction.image);
+            ImageView imageView = new ImageView(Application.shop.tempItems.get(i).image);
             imageView.setFitWidth(200);
             imageView.setFitHeight(200);
 
-            ImageView scoreEmoji = new ImageView(Application.shop.currentSeller.auction.scoreEmoji);
-            scoreEmoji.setEffect(new DropShadow());
-            scoreEmoji.setFitWidth(30);
-            scoreEmoji.setFitHeight(30);
-            scoreEmoji.setLayoutX(380);
-            scoreEmoji.setLayoutY(160);
 
-
-            Label name = new Label("Name :  " + Application.shop.currentSeller.auction.name);
+            Label name = new Label("Name :  " + Application.shop.tempItems.get(i).name);
             name.setFont(new Font("Arial", 25));
             name.setLayoutX(200);
             name.setLayoutY(10);
 
-            Label brand = new Label("Brand :  " + Application.shop.currentSeller.auction.brand);
+            Label brand = new Label("Brand :  " + Application.shop.tempItems.get(i).brand);
             brand.setFont(new Font("Arial", 25));
             brand.setLayoutX(200);
             brand.setLayoutY(60);
 
-            Label price = new Label("Price  :  " + Application.shop.currentSeller.auction.price);
+            Label price = new Label("Price  :  " + Application.shop.tempItems.get(i).price);
             price.setFont(new Font("Arial", 25));
             price.setLayoutX(200);
             price.setLayoutY(110);
@@ -1599,24 +1602,29 @@ public class ControllerApplicant {
             button.setEffect(new DropShadow());
             button.setPrefWidth(50);
             button.setPrefHeight(30);
-            button.setLayoutX(750);
+            button.setLayoutX(700);
             button.setLayoutY(160);
 
 
             AnchorPane anchorPane = new AnchorPane();
-            anchorPane.setLayoutX(100);
-            anchorPane.setLayoutY(icount * 225 + 50);
-            anchorPane.setPrefWidth(900);
+            anchorPane.setLayoutX(50);
+            anchorPane.setLayoutX(icount * 650 + 50);
+            anchorPane.setLayoutY(jcount * 225 + 50);
+            anchorPane.setPrefWidth(600);
             anchorPane.setPrefHeight(200);
             anchorPane.setStyle("-fx-background-color: #FFCF21;");
             anchorPane.setEffect(new DropShadow());
 
 
-            anchorPane.getChildren().addAll(imageView, scoreEmoji, name, brand, price, button);
-            mainPage.getChildren().add(anchorPane);
+            anchorPane.getChildren().addAll(imageView, name, brand, price, button);
+            auctionPage.getChildren().add(anchorPane);
 
             icount++;
 
+            if (icount > 1) {
+                jcount++;
+                icount = 0;
+            }
 
         }
 

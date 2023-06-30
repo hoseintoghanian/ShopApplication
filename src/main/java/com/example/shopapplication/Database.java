@@ -211,4 +211,14 @@ public class Database {
         statement.close();
         getDBC().close();
     }
+
+    public static void updateItemAuction(Item item) throws SQLException {
+        String sql = "update items_" + item.sellerUsername + " set isAuction = " + item.isAuction + " where code = " + item.getCode();
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
 }
