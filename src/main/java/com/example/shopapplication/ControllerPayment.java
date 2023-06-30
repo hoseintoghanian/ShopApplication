@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -67,9 +68,11 @@ public class ControllerPayment {
     }
 
     @FXML
-    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentpostaladdress, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
+    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
     @FXML
     private TextField txtcardnumber, txtcvv2, txtcardexpiremonth, txtcardexpireyear, txtcaptchainput2, txtcardsecondcode, txtemail;
+    @FXML
+    private TextArea txtpaymentpostaladdress;
     @FXML
     private Label txtCaptcha2;
 
