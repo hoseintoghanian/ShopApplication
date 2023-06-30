@@ -267,30 +267,30 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="     Auction     ">
+      <Tab onSelectionChanged="#displayauction" text="     Auction     ">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#displayauction" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFCF21;">
+                  <AnchorPane layoutX="45.0" layoutY="29.0" prefHeight="261.0" prefWidth="659.0" style="-fx-background-color: #FFCF21;">
                      <effect>
                         <DropShadow />
                      </effect>
                      <children>
-                        <Label layoutX="220.0" layoutY="10.0" text="your auction :">
+                        <Label layoutX="379.0" layoutY="8.0" text="your auction" textFill="#49a354">
                            <font>
-                              <Font name="Book Antiqua" size="25.0" />
+                              <Font name="Book Antiqua" size="27.0" />
                            </font></Label>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgauctionimage" fitHeight="200.0" fitWidth="200.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../0.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="220.0" layoutY="160.0" text="max bid :">
+                        <Label layoutX="220.0" layoutY="171.0" text="max bid :">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <Button layoutX="470.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Sale">
+                        <Button layoutX="496.0" layoutY="172.0" mnemonicParsing="false" onAction="#auction" prefHeight="30.0" prefWidth="100.0" text="Sale">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -312,14 +312,29 @@
                               <Font name="Book Antiqua" size="15.0" />
                            </font>
                         </Button>
-                        <Label layoutX="220.0" layoutY="60.0" text="Name :">
+                        <Label layoutX="232.0" layoutY="63.0" text="Name :">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="220.0" layoutY="110.0" text="Brand :">
+                        <Label layoutX="232.0" layoutY="115.0" text="Brand :">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelauctionname" layoutX="358.0" layoutY="61.0" text="Label">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelauctionbrand" layoutX="358.0" layoutY="113.0" text="Label">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelauctionmaxbid" layoutX="358.0" layoutY="169.0" text="Label">
+                           <font>
+                              <Font size="25.0" />
                            </font>
                         </Label>
                      </children>
