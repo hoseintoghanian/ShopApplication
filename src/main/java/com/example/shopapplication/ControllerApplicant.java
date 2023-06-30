@@ -1683,6 +1683,17 @@ public class ControllerApplicant {
             chatBackgroundImg.setImage(t7);
         });
     }
+    @FXML
+    private Label labelauctionname, labelauctionbrand, labelauctionmaxbid;
+    @FXML
+    private ImageView imgauctionimage;
+
+    public void displayauction() {
+        labelauctionname.setText(Application.shop.currentSeller.auction.name);
+        labelauctionbrand.setText(Application.shop.currentSeller.auction.brand);
+        labelauctionmaxbid.setText(String.valueOf(Application.shop.currentSeller.auction.price));
+        imgauctionimage.setImage(Application.shop.currentSeller.auction.image);
+    }
 
 
     //for the spinner in cart tab see bro code
