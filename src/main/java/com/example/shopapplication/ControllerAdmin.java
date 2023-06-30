@@ -98,15 +98,9 @@ public class ControllerAdmin {
         }
 
 
-        for(int i=0;i<5;i++){
-            //Application.shop.currentWarehouse.items.add(new Item)
-        }
-
-
-
         TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameColumn.setPrefWidth(120);
+        nameColumn.setPrefWidth(100);
 
         TableColumn<Item, String> priceColumn = new TableColumn<>("Price");
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -135,6 +129,36 @@ public class ControllerAdmin {
         tableView.setEffect(dropShadow);
 
         warehousePage.getChildren().add(tableView);
+
+    }
+
+    @FXML
+    private TextField txtAddItemName, txtAddItemPrice, txtAddItemSize;
+    @FXML
+    private RadioButton outputButton, inputButton;
+
+    public void addItem() {
+
+        if (!txtAddItemName.getText().equals("") && !txtAddItemPrice.getText().equals("") && !txtAddItemSize.getText().equals(""))
+            if (Application.shop.currentWarehouse != null) {
+
+                Item item = new Item(txtAddItemName.getText(), "brand", Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()));
+
+                if (inputButton.isSelected()) {
+                    if (!Application.shop.currentWarehouse.items.contains(item)) {
+                        Application.shop.currentWarehouse.items.add(item);
+                        Application.shop.currentWarehouse.inputs.add(item);
+                    }
+                }
+                if (outputButton.isSelected()) {
+                    if (Application.shop.currentWarehouse.items.contains(item)) {
+                        Application.shop.currentWarehouse.outputs.add(item);
+                        Application.shop.currentWarehouse.items.remove(item);
+                    }
+                }
+
+                displayInfo();
+            }
 
     }
 

@@ -20,7 +20,6 @@ public class Application extends javafx.application.Application {
         Database.readItemTables();
 
 
-
         for (int i = 0; i < shop.sellers.size(); i++) {
 
             for (int j = 0; j < shop.sellers.get(i).allItems.size(); j++) {

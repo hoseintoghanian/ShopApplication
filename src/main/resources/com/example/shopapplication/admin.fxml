@@ -251,14 +251,14 @@
                               </InnerShadow>
                            </effect>
                            <children>
-                              <TextField layoutX="15.0" layoutY="10.0" prefWidth="150.0" promptText="name">
+                              <TextField fx:id="txtAddItemName" layoutX="15.0" layoutY="10.0" prefWidth="150.0" promptText="name">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0" />
                                  </effect></TextField>
-                              <RadioButton layoutX="170.0" layoutY="15.0" mnemonicParsing="false" text="Input">
+                              <RadioButton fx:id="inputButton" layoutX="170.0" layoutY="15.0" mnemonicParsing="false" text="Input">
                                  <font>
                                     <Font name="Book Antiqua" size="13.0" />
                                  </font>
@@ -266,26 +266,26 @@
                                     <ToggleGroup fx:id="inputOutput" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="170.0" layoutY="50.0" mnemonicParsing="false" text="Output" toggleGroup="$inputOutput">
+                              <RadioButton fx:id="outputButton" layoutX="170.0" layoutY="50.0" mnemonicParsing="false" text="Output" toggleGroup="$inputOutput">
                                  <font>
                                     <Font name="Book Antiqua" size="13.0" />
                                  </font>
                               </RadioButton>
-                              <Button layoutX="15.0" layoutY="115.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="225.0" text="add">
+                              <Button layoutX="15.0" layoutY="115.0" mnemonicParsing="false" onAction="#addItem" prefHeight="26.0" prefWidth="225.0" text="add">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0" />
                                  </effect></Button>
-                              <TextField layoutX="15.0" layoutY="45.0" prefWidth="150.0" promptText="price">
+                              <TextField fx:id="txtAddItemPrice" layoutX="15.0" layoutY="45.0" prefWidth="150.0" promptText="price">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0" />
                                  </effect></TextField>
-                              <TextField layoutX="15.0" layoutY="80.0" prefWidth="150.0" promptText="size">
+                              <TextField fx:id="txtAddItemSize" layoutX="15.0" layoutY="80.0" prefWidth="150.0" promptText="size">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>

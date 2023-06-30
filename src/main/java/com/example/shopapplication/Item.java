@@ -84,8 +84,23 @@ public class Item {
         calculateScore(-1);
     }
 
-    public Item(String name,long price,int size){
+    public Item(String name, String brand, long price, int size) {
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+        this.size = size;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public int getCode() {
