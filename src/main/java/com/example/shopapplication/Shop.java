@@ -19,8 +19,14 @@ public class Shop {
     public Customer currentCustomer;
     public Item currentItem;
 
+    public Warehouse currentWarehouse;
+
     public ArrayList<Seller> sellers = new ArrayList<>();
     public ArrayList<Customer> customers = new ArrayList<>();
+
+
+    public ArrayList<Warehouse> warehouses = new ArrayList<>();
+
 
     public ArrayList<Item> allItems = new ArrayList<>();
     public ArrayList<Item> tempItems = new ArrayList<>();

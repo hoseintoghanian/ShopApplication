@@ -1,48 +1,24 @@
 package com.example.shopapplication;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ControllerAdmin {
-
-    @FXML
-    private TableView<ControllerAdmin> TVBankAccountsList;
-    @FXML
-    private TableColumn<ControllerAdmin, String> TCBankName;
-    @FXML
-    private TableColumn<ControllerAdmin, Integer> TCBranch;
-    @FXML
-    private TableColumn<ControllerAdmin, Integer> TCAccountNumber;
-    @FXML
-    private TableColumn<ControllerAdmin, String> TCAccountType;
-    @FXML
-    private TableColumn<ControllerAdmin, String> TCBalance;
-    @FXML
-    private TableColumn<ControllerAdmin, String> TCOpeningDate;
-    private String BankName, AccountType, Balance, OpeningDate;
-    private Integer Branch, AccountNumber;
-    private Stage stage;
-    private Scene scene;
-    private FXMLLoader fxmlLoader;
-
-
     public void changingScene(ActionEvent e, String fxml) throws IOException {
-        fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
-        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene = new Scene(fxmlLoader.load());
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
     }
@@ -51,25 +27,65 @@ public class ControllerAdmin {
         changingScene(e, "Login.fxml");
     }
 
-    public void Initialize() {
+    @FXML
+    private TextField txtAddName, txtAddAdmin;
+    @FXML
+    private TextArea txtAddAddress;
 
-        TCBankName.setCellValueFactory(new PropertyValueFactory<>("BankName"));
-        TCBranch.setCellValueFactory(new PropertyValueFactory<>("Branch"));
-        TCAccountNumber.setCellValueFactory(new PropertyValueFactory<>("AccountNumber"));
-        TCAccountType.setCellValueFactory(new PropertyValueFactory<>("AccountType"));
-        TCBalance.setCellValueFactory(new PropertyValueFactory<>("Balance"));
-        TCOpeningDate.setCellValueFactory(new PropertyValueFactory<>("openingDate"));
+    public void addWarehouse() throws SQLException {
 
-        TVBankAccountsList.getColumns().addAll(TCBankName, TCBranch, TCAccountNumber, TCAccountType, TCBalance, TCOpeningDate);
+        if (!txtAddName.getText().equals("") && !txtAddAdmin.getText().equals("") && !txtAddAddress.getText().equals("")) {
+            Warehouse warehouse = new Warehouse(txtAddName.getText(), txtAddAdmin.getText(), txtAddAddress.getText());
 
-        /* ObservableList<ControllerAdmin> BAList = FXCollections.observableArrayList(
-                new ControllerAdmin("Melli", "longtime", "4000000", "6/8/2023", 1155, 568874)
-        );*/
+            if (!Application.shop.warehouses.contains(warehouse)) {
+                Application.shop.warehouses.add(warehouse);
+                Database.addWarehouse(warehouse);
 
-        // TVBankAccountsList.setItems(BAList);
+                createMenuItem(warehouse);
+            }
 
+        }
     }
 
+    @FXML
+    private MenuButton warehouseMenu;
+
+    public void createMenuItem(Warehouse warehouse) {
+        String text = txtAddName.getText();
+        MenuItem menuItem = new MenuItem(text);
+
+        menuItem.setOnAction(ev -> {
+            warehouseMenu.setText(text);
+            Application.shop.currentWarehouse = warehouse;
+        });
+
+        warehouseMenu.getItems().add(menuItem);
+    }
+
+    @FXML
+    private Label storeName, storeAdmin, storeAddress;
+
+    public void displayInfo() {
+
+        for (int i = 0; i < Application.shop.warehouses.size(); i++) {
+            MenuItem menuItem = new MenuItem(Application.shop.warehouses.get(i).name);
+            int finalI = i;
+            menuItem.setOnAction(ev -> {
+                warehouseMenu.setText(Application.shop.warehouses.get(finalI).name);
+                Application.shop.currentWarehouse = Application.shop.warehouses.get(finalI);
+            });
+
+            warehouseMenu.getItems().add(menuItem);
+        }
+
+        if (Application.shop.currentWarehouse != null) {
+
+            storeName.setText("store name   : " + Application.shop.currentWarehouse.name);
+            storeAdmin.setText("store admin : " + Application.shop.currentWarehouse.storeAdmin);
+            storeAddress.setText("address : " + Application.shop.currentWarehouse.address);
+
+        }
+    }
 
 
     @FXML

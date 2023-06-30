@@ -65,7 +65,7 @@ public class ControllerProduct {
         int sum = 0;
         labelWalletBalance.setText(String.valueOf(Application.shop.currentCustomer.wallet));
         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+            sum += Application.shop.currentCustomer.cartItems.get(i).price;
         }
         labelFinalCost.setText(String.valueOf(sum));
     }
@@ -361,13 +361,10 @@ public class ControllerProduct {
             size.setLayoutX(500);
             size.setLayoutY(160);
 
-            Spinner<Integer> spinner = new Spinner<>(1, 100, Application.shop.currentCustomer.cartItems.get(i).tempSize);
+            Spinner<Integer> spinner = new Spinner<>(1, 100, 1);
             spinner.valueProperty().addListener((observable, oldValue, newValue) -> {
                 Item item = Application.shop.currentCustomer.cartItems.get(finalI);
                 item.tempSize = newValue;
-
-                showItems();
-
             });
             VBox root = new VBox(10, spinner, size);
             root.setPadding(new Insets(10));

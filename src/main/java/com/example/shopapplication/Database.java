@@ -1,6 +1,7 @@
 package com.example.shopapplication;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Database {
     public static Connection getDBC() {//getDBC --> get database connection
@@ -32,6 +33,8 @@ public class Database {
         statement.setString(6, customer.getEmail());
 
         statement.executeUpdate();
+
+        createItemTable(customer.getUsername());
 
         statement.close();
         getDBC().close();
@@ -111,6 +114,24 @@ public class Database {
         getDBC().close();
     }
 
+    public static void readWarehouse() throws SQLException {
+
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM warehouse");
+
+        while (resultSet.next()) {
+            Application.shop.warehouses.add(new Warehouse(
+                    resultSet.getString("name"),
+                    resultSet.getString("storeAdmin"),
+                    resultSet.getString("address")
+            ));
+        }
+
+        statement.close();
+        resultSet.close();
+        getDBC().close();
+    }
+
     public static void addProduct(Item item) throws SQLException {
         String sql = "INSERT INTO " + "items_" + Application.shop.currentSeller.getUsername() +
                 "(code, kind, minorKind, brand, name, price, size, property," +
@@ -143,6 +164,21 @@ public class Database {
         statement.setString(19, item.comments);
         statement.setBoolean(20, item.isAuction);
 
+
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void addWarehouse(Warehouse warehouse) throws SQLException {
+        String sql = "INSERT INTO warehouse(name, storeAdmin, address)VALUES( ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setString(1, warehouse.name);
+        statement.setString(2, warehouse.storeAdmin);
+        statement.setString(3, warehouse.address);
 
         statement.executeUpdate();
 

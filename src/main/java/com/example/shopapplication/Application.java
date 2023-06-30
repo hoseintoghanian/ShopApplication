@@ -16,7 +16,9 @@ public class Application extends javafx.application.Application {
 
         Database.readSeller();
         Database.readCustomer();
+        Database.readWarehouse();
         Database.readItemTables();
+        ;
 
 
         for (int i = 0; i < shop.sellers.size(); i++) {
