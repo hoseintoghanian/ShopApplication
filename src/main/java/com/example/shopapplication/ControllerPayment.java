@@ -33,13 +33,21 @@ public class ControllerPayment {
         ChangeScene2(e, "cart.fxml");
     }
 
-    public void changeToBakScene(ActionEvent e) throws IOException {
+    public void changeToBankScene(ActionEvent e) throws IOException {
+
+        Application.shop.pageURL = "payment.fxml";
+
         ChangeScene2(e, "bankPortal.fxml");
     }
 
     public void changeToPaymentScene(ActionEvent e) throws IOException {
         ChangeScene2(e, "payment.fxml");
     }
+
+    public void back(ActionEvent e) throws IOException {
+        ChangeScene2(e, Application.shop.pageURL);
+    }/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     public void captcha2() throws Exception {
         captchaText = generateCaptchaText();

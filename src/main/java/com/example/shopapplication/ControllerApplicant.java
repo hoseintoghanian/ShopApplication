@@ -76,11 +76,19 @@ public class ControllerApplicant {
         removeFilters();
         changeScene(e, "Login.fxml");
     }
+
     public void changeToBankPortalScene(ActionEvent e) throws IOException {
+
+        if (Application.shop.currentCustomer != null) Application.shop.pageURL = "customer.fxml";
+        if (Application.shop.currentSeller != null) Application.shop.pageURL = "seller.fxml";
+
         changeScene(e, "bankportal.fxml");
     }
 
     public void changeToCartScene(MouseEvent e) throws IOException {
+
+        Application.shop.pageURL = "customer.fxml";
+
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("cart.fxml"));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
@@ -479,7 +487,7 @@ public class ControllerApplicant {
 
     public void filterName() {
 
-        searchBoxText.setOnKeyPressed(ev ->{
+        searchBoxText.setOnKeyPressed(ev -> {
             if (ev.getCode() == KeyCode.ENTER) {
 
                 if (Application.shop.pageURL.equals("customer.fxml")) {
