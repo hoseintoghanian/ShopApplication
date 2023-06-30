@@ -29,42 +29,42 @@
                               <Image url="@../img/payment1.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="154.0" layoutY="238.0" text="Captcha">
+                        <Label fx:id="txtCaptcha2" layoutX="154.0" layoutY="238.0" onMouseClicked="#captcha2" text="Captcha">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="165.0" layoutY="52.0" prefHeight="37.0" prefWidth="310.0">
+                        <TextField fx:id="txtcardnumber" layoutX="165.0" layoutY="52.0" prefHeight="37.0" prefWidth="310.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
-                        <PasswordField alignment="CENTER" layoutX="165.0" layoutY="114.0" prefHeight="37.0" prefWidth="310.0">
+                        <PasswordField fx:id="txtcvv2" alignment="CENTER" layoutX="165.0" layoutY="114.0" prefHeight="37.0" prefWidth="310.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </PasswordField>
-                        <TextField alignment="CENTER" layoutX="442.0" layoutY="176.0" prefHeight="37.0" prefWidth="50.0">
+                        <TextField fx:id="txtcardexpiremonth" alignment="CENTER" layoutX="442.0" layoutY="176.0" prefHeight="37.0" prefWidth="50.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
-                        <TextField alignment="CENTER" layoutX="307.0" layoutY="176.0" prefHeight="37.0" prefWidth="50.0">
+                        <TextField fx:id="txtcardexpireyear" alignment="CENTER" layoutX="307.0" layoutY="176.0" prefHeight="37.0" prefWidth="50.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
-                        <TextField alignment="CENTER" layoutX="307.0" layoutY="238.0" prefHeight="38.0" prefWidth="185.0">
+                        <TextField fx:id="txtcaptchainput2" alignment="CENTER" layoutX="307.0" layoutY="238.0" prefHeight="38.0" prefWidth="185.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
-                        <TextField alignment="CENTER" layoutX="307.0" layoutY="300.0" prefHeight="38.0" prefWidth="185.0">
+                        <TextField fx:id="txtcardsecondcode" alignment="CENTER" layoutX="307.0" layoutY="300.0" prefHeight="38.0" prefWidth="185.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
-                        <TextField layoutX="165.0" layoutY="361.0" prefHeight="37.0" prefWidth="330.0">
+                        <TextField fx:id="txtemail" layoutX="165.0" layoutY="361.0" prefHeight="37.0" prefWidth="330.0">
                            <font>
                               <Font size="16.0" />
                            </font>

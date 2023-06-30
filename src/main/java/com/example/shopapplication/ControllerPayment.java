@@ -17,10 +17,6 @@ public class ControllerPayment {
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private static final int CAPTCHA_LENGTH = 6;
     private String captchaText;
-    @FXML
-    private TextField txtcaptchainput2;
-    @FXML
-    private Label txtCaptcha2;
 
     public void ChangeScene2(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
@@ -36,6 +32,7 @@ public class ControllerPayment {
 
     @FXML
     private Button buttonpayment;
+
     public void changeToBankScene(ActionEvent e) throws IOException {
 
         Application.shop.pageURL = "payment.fxml";
@@ -47,6 +44,34 @@ public class ControllerPayment {
         ChangeScene2(e, Application.shop.pageURL);
     }/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    @FXML
+    private Label labelfinalcost;
+
+    public void displayInfo() {
+        int sum = 0;
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+        }
+        labelfinalcost.setText(String.valueOf(sum));
+    }
+
+    @FXML
+    private Label labelFinalCost;
+
+    public void displayInfo2() {
+        int sum = 0;
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+        }
+        labelFinalCost.setText(String.valueOf(sum));
+    }
+
+    @FXML
+    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentpostaladdress, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
+    @FXML
+    private TextField txtcardnumber, txtcvv2, txtcardexpiremonth, txtcardexpireyear, txtcaptchainput2, txtcardsecondcode, txtemail;
+    @FXML
+    private Label txtCaptcha2;
 
     public void captcha2() throws Exception {
         captchaText = generateCaptchaText();
@@ -61,32 +86,6 @@ public class ControllerPayment {
         }
         return sb.toString();
     }
-
-    @FXML
-    private Label labelfinalcost;
-
-    public void displayInfo() {
-        int sum = 0;
-        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price* Application.shop.currentCustomer.cartItems.get(i).tempSize;
-        }
-        labelfinalcost.setText(String.valueOf(sum));
-    }
-
-    @FXML
-    private Label labelFinalCost;
-
-    public void displayInfo2() {
-        int sum = 0;
-        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price;
-        }
-        labelFinalCost.setText(String.valueOf(sum));
-    }
-
-    /*@FXML
-    private TextField txtpaymentprovince,txtpaymentcity,txtpaymentpostalcode,txtpaymentpostaladdress,txtpaymentname,txtpaymentphonenumber,txtpaymentdiscountcode;
-*/
 
     public void buy() {
         System.out.println(2);
