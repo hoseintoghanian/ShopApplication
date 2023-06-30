@@ -77,9 +77,9 @@ public class ControllerPayment {
         labelFinalCost.setText(String.valueOf(sum));
     }
 
-    @FXML
+    /*@FXML
     private TextField txtpaymentprovince,txtpaymentcity,txtpaymentpostalcode,txtpaymentpostaladdress,txtpaymentname,txtpaymentphonenumber,txtpaymentdiscountcode;
-
+*/
 
     public void buy() {
         System.out.println(2);
