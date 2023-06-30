@@ -21,7 +21,7 @@ public class ControllerPayment {
     @FXML
     private Label txtCaptcha2;
 
-    public void ChangeScene2(ActionEvent e,String fxml) throws IOException {
+    public void ChangeScene2(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
@@ -32,11 +32,13 @@ public class ControllerPayment {
     public void ChangeToCartScene(ActionEvent e) throws IOException {
         ChangeScene2(e, "cart.fxml");
     }
+
     public void changeToBakScene(ActionEvent e) throws IOException {
         ChangeScene2(e, "bankPortal.fxml");
     }
-    public void changeToPaymentScene(ActionEvent e) throws IOException{
-        ChangeScene2(e,"payment.fxml");
+
+    public void changeToPaymentScene(ActionEvent e) throws IOException {
+        ChangeScene2(e, "payment.fxml");
     }
 
     public void captcha2() throws Exception {
@@ -52,25 +54,31 @@ public class ControllerPayment {
         }
         return sb.toString();
     }
+
     @FXML
     private Label labelfinalcost;
-    public void displayInfo(){
+
+    public void displayInfo() {
         int sum = 0;
-        for (int i = 0; i<Application.shop.currentCustomer.cartItems.size(); i++){
-            sum+=Application.shop.currentCustomer.cartItems.get(i).price;
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+            sum += Application.shop.currentCustomer.cartItems.get(i).price;
         }
         labelfinalcost.setText(String.valueOf(sum));
     }
 
     @FXML
     private Label labelFinalCost;
-    public void displayInfo2(){
+
+    public void displayInfo2() {
         int sum = 0;
-        for (int i = 0; i<Application.shop.currentCustomer.cartItems.size(); i++){
-            sum+=Application.shop.currentCustomer.cartItems.get(i).price;
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+            sum += Application.shop.currentCustomer.cartItems.get(i).price;
         }
         labelFinalCost.setText(String.valueOf(sum));
     }
+
+    @FXML
+    private TextField txtpaymentprovince,txtpaymentcity,txtpaymentpostalcode,txtpaymentpostaladdress,txtpaymentname,txtpaymentphonenumber,txtpaymentdiscountcode;
 
 
     public void buy() {
