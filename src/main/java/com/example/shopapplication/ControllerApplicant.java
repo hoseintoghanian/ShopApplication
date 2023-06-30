@@ -74,6 +74,9 @@ public class ControllerApplicant {
         removeFilters();
         changeScene(e, "Login.fxml");
     }
+    public void changeToBankPortalScene(ActionEvent e) throws IOException {
+        changeScene(e, "bankportal.fxml");
+    }
 
     public void changeToCartScene(MouseEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("cart.fxml"));
