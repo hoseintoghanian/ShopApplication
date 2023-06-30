@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="changes on ControllerPayment an it fxml">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="customer auction page + database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/bankPortal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/bankPortal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
     </list>
@@ -145,6 +145,20 @@
       <workItem from="1688083629204" duration="3149000" />
       <workItem from="1688106874915" duration="1446000" />
       <workItem from="1688108449303" duration="1896000" />
+    </task>
+    <task id="LOCAL-00022" summary="some methods in CotrollerApplicant">
+      <created>1686171543345</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1686171543345</updated>
+    </task>
+    <task id="LOCAL-00023" summary="define properties in CotrollerAdmin">
+      <created>1686171727506</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686171727506</updated>
     </task>
     <task id="LOCAL-00024" summary="Initialize method in CotrollerAdmin">
       <created>1686171867650</created>
@@ -475,21 +489,7 @@
       <option name="project" value="LOCAL" />
       <updated>1688109196033</updated>
     </task>
-    <task id="LOCAL-00071" summary=".....">
-      <created>1688127980034</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1688127980034</updated>
-    </task>
-    <task id="LOCAL-00072" summary="changes on ControllerPayment an it fxml">
-      <created>1688128034543</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1688128034543</updated>
-    </task>
-    <option name="localTasksCounter" value="73" />
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,6 +507,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="brand menu items drinks method" />
+    <MESSAGE value="customer &amp; seller main page &amp; seller account" />
     <MESSAGE value="setChatBackground method in controllerApplicant" />
     <MESSAGE value="code cleaning and chat background in admin fxml" />
     <MESSAGE value="update supermarket images (grocery)" />
@@ -530,9 +532,7 @@
     <MESSAGE value="displayInfo in controllerProduct" />
     <MESSAGE value="emojiEntered and emojiClick method in ControllerProduct" />
     <MESSAGE value="..." />
-    <MESSAGE value="....." />
-    <MESSAGE value="changes on ControllerPayment an it fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes on ControllerPayment an it fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

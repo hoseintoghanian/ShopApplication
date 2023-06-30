@@ -55,7 +55,7 @@
                                     </DropShadow>
                                  </effect>
                               </ImageView>
-                              <TextField layoutX="50.0" layoutY="15.0" prefWidth="300.0" promptText="Search">
+                              <TextField fx:id="searchBoxText" layoutX="50.0" layoutY="15.0" onMouseEntered="#filterName" prefWidth="300.0" promptText="Search">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
