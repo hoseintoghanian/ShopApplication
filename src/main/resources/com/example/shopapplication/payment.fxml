@@ -258,7 +258,7 @@
             </InnerShadow>
          </effect>
       </Button>
-      <Label fx:id="labelfinalcost" layoutX="252.0" layoutY="649.0" text="Label">
+      <Label fx:id="labelfinalcost" layoutX="252.0" layoutY="649.0">
          <font>
             <Font size="36.0" />
          </font>

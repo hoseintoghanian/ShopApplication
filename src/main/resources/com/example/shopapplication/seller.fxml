@@ -74,7 +74,7 @@
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                               </TextField>
-                              <MenuButton fx:id="filterButtonKind" layoutX="35.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Kind">
+                              <MenuButton fx:id="filterButtonKind" layoutX="30.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Kind">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#filterGrocery" text="grocery" />
                                     <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="breakfast" />
@@ -98,7 +98,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <Button layoutX="35.0" layoutY="420.0" mnemonicParsing="false" onAction="#applyFilters" prefHeight="26.0" prefWidth="160.0" text="apply filters">
+                              <Button layoutX="30.0" layoutY="420.0" mnemonicParsing="false" onAction="#applyFilters" prefHeight="26.0" prefWidth="165.0" text="apply filters">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -114,7 +114,7 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
-                              <MenuButton fx:id="filterButtonBrand" layoutX="265.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Brand">
+                              <MenuButton fx:id="filterButtonBrand" layoutX="270.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Brand">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -146,7 +146,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <Button layoutX="205.0" layoutY="420.0" mnemonicParsing="false" onAction="#removeFilters" prefHeight="26.0" prefWidth="160.0" text="remove filters">
+                              <Button layoutX="205.0" layoutY="420.0" mnemonicParsing="false" onAction="#removeFilters" prefHeight="26.0" prefWidth="165.0" text="remove filters">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -163,7 +163,7 @@
                                  </effect>
                               </Button>
                               <Label layoutX="34.0" layoutY="285.0" text="above picture is just an advertisement (this label shoud delete)" />
-                              <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="205.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="210.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/auction/auction%202.png" />
                                  </image>
@@ -182,7 +182,7 @@
                                     </DropShadow>
                                  </effect>
                               </ImageView>
-                              <Button layoutX="205.0" layoutY="665.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" text="all auctions">
+                              <Button layoutX="290.0" layoutY="375.0" mnemonicParsing="false" onAction="#auction" prefWidth="80.0" text="all auctions">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -201,7 +201,7 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
-                              <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="35.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="30.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/auction/auction%203.png" />
                                  </image>
@@ -220,26 +220,7 @@
                                     </DropShadow>
                                  </effect>
                               </ImageView>
-                              <Button layoutX="35.0" layoutY="665.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" text="my auction">
-                                 <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                             <color>
-                                                <Color red="0.09473684430122375" green="0.09473684430122375" blue="0.09473684430122375" />
-                                             </color>
-                                             <input>
-                                                <ColorAdjust />
-                                             </input>
-                                          </InnerShadow>
-                                       </input>
-                                       <color>
-                                          <Color red="0.8105263113975525" green="0.6979532241821289" blue="0.060038987547159195" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </Button>
-                              <MenuButton fx:id="filterButtonKind11" layoutX="35.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Price">
+                              <MenuButton fx:id="filterButtonKind11" layoutX="30.0" layoutY="375.0" mnemonicParsing="false" prefWidth="80.0" text="Price">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#priceLowToHigh" text="cheap to expensive" />
                                     <MenuItem mnemonicParsing="false" onAction="#priceHighToLow" text="expensive to cheap" />
@@ -259,7 +240,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <MenuButton fx:id="filterButtonKind21" layoutX="150.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Score">
+                              <MenuButton fx:id="filterButtonKind21" layoutX="115.0" layoutY="375.0" mnemonicParsing="false" prefWidth="80.0" text="Score">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#scoreHighToLow" text="high to low" />
                                     <MenuItem mnemonicParsing="false" onAction="#scoreLowToHigh" text="low to high" />
@@ -279,12 +260,31 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
+                              <Button layoutX="205.0" layoutY="375.0" mnemonicParsing="false" prefWidth="80.0" text="my auction">
+                                 <effect>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
+                                             <color>
+                                                <Color red="0.09473684430122375" green="0.09473684430122375" blue="0.09473684430122375" />
+                                             </color>
+                                             <input>
+                                                <ColorAdjust />
+                                             </input>
+                                          </InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.8105263113975525" green="0.6979532241821289" blue="0.060038987547159195" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </Button>
                            </children></AnchorPane>
                       <AnchorPane maxWidth="1100.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="1100.0">
                            <children>
                               <ScrollPane prefHeight="750.0" prefWidth="1100.0">
                                 <content>
-                                  <AnchorPane fx:id="sellerMainPage" minHeight="0.0" minWidth="0.0" onMouseEntered="#showSeller" prefHeight="5000.0" prefWidth="1100.0" style="-fx-background-color: #E5BA1D;">
+                                  <AnchorPane fx:id="mainPage" minHeight="0.0" minWidth="0.0" onMouseEntered="#showSeller" prefHeight="5000.0" prefWidth="1100.0" style="-fx-background-color: #E5BA1D;">
                                        <effect>
                                           <InnerShadow>
                                              <input>
@@ -304,6 +304,36 @@
                </effect>
             </AnchorPane>
          </content>
+      </Tab>
+      <Tab text="     Auction     ">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
+               <children>
+                  <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="1400.0" style="-fx-background-color: #FFCF21;">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <children>
+                        <Label layoutX="220.0" layoutY="10.0" text="your auction :">
+                           <font>
+                              <Font name="Book Antiqua" size="25.0" />
+                           </font></Label>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../0.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="220.0" layoutY="60.0" text="max bid :">
+                           <font>
+                              <Font name="Book Antiqua" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="246.0" layoutY="151.0" mnemonicParsing="false" text="Sl" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
       </Tab>
       <Tab onSelectionChanged="#displayInfo" text="     Acount     ">
          <content>

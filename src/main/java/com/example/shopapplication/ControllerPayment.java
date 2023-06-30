@@ -4,11 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -58,8 +56,8 @@ public class ControllerPayment {
     private Label labelfinalcost;
     public void displayInfo(){
         int sum = 0;
-        for (int i=0;i<Application.shop.currentCustomer.items.size();i++){
-            sum+=Application.shop.currentCustomer.items.get(i).price;
+        for (int i = 0; i<Application.shop.currentCustomer.cartItems.size(); i++){
+            sum+=Application.shop.currentCustomer.cartItems.get(i).price;
         }
         labelfinalcost.setText(String.valueOf(sum));
     }
@@ -68,8 +66,8 @@ public class ControllerPayment {
     private Label labelFinalCost;
     public void displayInfo2(){
         int sum = 0;
-        for (int i=0;i<Application.shop.currentCustomer.items.size();i++){
-            sum+=Application.shop.currentCustomer.items.get(i).price;
+        for (int i = 0; i<Application.shop.currentCustomer.cartItems.size(); i++){
+            sum+=Application.shop.currentCustomer.cartItems.get(i).price;
         }
         labelFinalCost.setText(String.valueOf(sum));
     }

@@ -9,6 +9,7 @@ public class Seller extends Applicant {
 
     public ArrayList<Item> allItems = new ArrayList<>();
     public ArrayList<Item> tempItems = new ArrayList<>();
+    public Item auction;
 
 
     public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace) {

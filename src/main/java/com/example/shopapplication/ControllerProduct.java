@@ -60,8 +60,8 @@ public class ControllerProduct {
     public void displayInfo2() {
         int sum = 0;
         labelWalletBalance.setText(String.valueOf(Application.shop.currentCustomer.wallet));
-        for (int i=0;i<Application.shop.currentCustomer.items.size();i++){
-            sum+=Application.shop.currentCustomer.items.get(i).price;
+        for (int i = 0; i<Application.shop.currentCustomer.cartItems.size(); i++){
+            sum+=Application.shop.currentCustomer.cartItems.get(i).price;
         }
         labelFinalCost.setText(String.valueOf(sum));
     }
@@ -208,8 +208,8 @@ public class ControllerProduct {
         voteButton.setVisible(false);
     }
     public void addToCart() {
-        if (!Application.shop.currentCustomer.items.contains(Application.shop.currentItem))
-            Application.shop.currentCustomer.items.add(Application.shop.currentItem);
+        if (!Application.shop.currentCustomer.cartItems.contains(Application.shop.currentItem))
+            Application.shop.currentCustomer.cartItems.add(Application.shop.currentItem);
     }
 
     @FXML
@@ -284,15 +284,15 @@ public class ControllerProduct {
         Application.shop.pageURL = "cart.fxml";
 
 
-        for (int i = 0; i < Application.shop.currentCustomer.items.size(); i++) {
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
 
             int finalI = i;
-            ImageView imageView = new ImageView(Application.shop.currentCustomer.items.get(i).image);
+            ImageView imageView = new ImageView(Application.shop.currentCustomer.cartItems.get(i).image);
             imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent e) {
 
-                    Item item = Application.shop.currentCustomer.items.get(finalI);
+                    Item item = Application.shop.currentCustomer.cartItems.get(finalI);
                     Application.shop.currentItem = item;
 
                     try {
@@ -316,7 +316,7 @@ public class ControllerProduct {
             imageView.setFitWidth(200);
             imageView.setFitHeight(200);
 
-            ImageView scoreEmoji = new ImageView(Application.shop.currentCustomer.items.get(i).scoreEmoji);
+            ImageView scoreEmoji = new ImageView(Application.shop.currentCustomer.cartItems.get(i).scoreEmoji);
             scoreEmoji.setEffect(new DropShadow());
             scoreEmoji.setFitWidth(30);
             scoreEmoji.setFitHeight(30);
@@ -324,28 +324,28 @@ public class ControllerProduct {
             scoreEmoji.setLayoutY(160);
 
 
-            Label name = new Label("Name :  " + Application.shop.currentCustomer.items.get(i).name);
+            Label name = new Label("Name :  " + Application.shop.currentCustomer.cartItems.get(i).name);
             name.setFont(new Font("Arial", 25));
             name.setLayoutX(200);
             name.setLayoutY(10);
 
-            Label brand = new Label("Brand :  " + Application.shop.currentCustomer.items.get(i).brand);
+            Label brand = new Label("Brand :  " + Application.shop.currentCustomer.cartItems.get(i).brand);
             brand.setFont(new Font("Arial", 25));
             brand.setLayoutX(200);
             brand.setLayoutY(60);
 
-            Label price = new Label("Price  :  " + Application.shop.currentCustomer.items.get(i).price);
+            Label price = new Label("Price  :  " + Application.shop.currentCustomer.cartItems.get(i).price);
             price.setFont(new Font("Arial", 25));
             price.setLayoutX(200);
             price.setLayoutY(110);
 
             DecimalFormat decimalFormat = new DecimalFormat("##.##");
-            Label score = new Label("Score :  " + decimalFormat.format(Application.shop.currentCustomer.items.get(i).score) + "%");
+            Label score = new Label("Score :  " + decimalFormat.format(Application.shop.currentCustomer.cartItems.get(i).score) + "%");
             score.setFont(new Font("Arial", 25));
             score.setLayoutX(200);
             score.setLayoutY(160);
 
-            Label property = new Label("Properties  :\n" + Application.shop.currentCustomer.items.get(i).property);
+            Label property = new Label("Properties  :\n" + Application.shop.currentCustomer.cartItems.get(i).property);
             property.setFont(new Font("Arial", 25));
             property.setLayoutX(500);
             property.setLayoutY(10);
@@ -357,7 +357,7 @@ public class ControllerProduct {
 
             Spinner<Integer> spinner = new Spinner<>(1, 100, 1);
             spinner.valueProperty().addListener((observable, oldValue, newValue) -> {
-                Item item = Application.shop.currentCustomer.items.get(finalI);
+                Item item = Application.shop.currentCustomer.cartItems.get(finalI);
                 item.tempSize = newValue;
             });
             VBox root = new VBox(10, spinner, size);
@@ -371,8 +371,8 @@ public class ControllerProduct {
             button = new Button("remove");
             button.setFont(new Font(15));
             button.setOnAction(ev -> {
-                Item item = Application.shop.currentCustomer.items.get(finalI);
-                Application.shop.currentCustomer.items.remove(item);
+                Item item = Application.shop.currentCustomer.cartItems.get(finalI);
+                Application.shop.currentCustomer.cartItems.remove(item);
                 showItems();
             });
             button.setEffect(new DropShadow());

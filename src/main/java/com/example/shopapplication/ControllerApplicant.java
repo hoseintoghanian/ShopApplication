@@ -1415,13 +1415,13 @@ public class ControllerApplicant {
     }
 
     @FXML
-    private AnchorPane sellerMainPage;
+    private AnchorPane mainPage;
     static int icount = 0;
     static int jcount = 0;
 
     public void showItems(String applicantKind, ArrayList<Item> items) {
 
-        sellerMainPage.getChildren().clear();
+        mainPage.getChildren().clear();
         icount = 0;
         jcount = 0;
 
@@ -1438,14 +1438,7 @@ public class ControllerApplicant {
                     Application.shop.currentItem = item;
 
                     try {
-                        FXMLLoader fxmlLoader = null;
-
-                   /* if (Application.shop.currentSeller == null)
-                        fxmlLoader = new FXMLLoader(Application.class.getResource("productCustomer.fxml"));
-                    if (Application.shop.currentCustomer == null)
-                        fxmlLoader = new FXMLLoader(Application.class.getResource("productSeller.fxml"));*/
-                        fxmlLoader = new FXMLLoader(Application.class.getResource("product.fxml"));//have to remove
-
+                        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("product.fxml"));
                         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                         Scene scene = new Scene(fxmlLoader.load());
                         stage.setScene(scene);
@@ -1492,10 +1485,19 @@ public class ControllerApplicant {
 
                 button = new Button("auction");
 
+                button.setOnAction(ev -> {
+                    Item item = items.get(finalI);
+                    if (Application.shop.currentSeller.auction == null) {
+                        Application.shop.currentSeller.auction = item;
+                        item.isAuction = true;
+                    } else {
+                        if (!Application.shop.currentSeller.auction.equals(item)) {
+                            Application.shop.currentSeller.auction = item;
+                            item.isAuction = true;
+                        }
+                    }
 
-                /*button.setOnAction(ev -> {
-
-                });*/
+                });
 
             }
             if (applicantKind.equals("customer")) {
@@ -1505,8 +1507,8 @@ public class ControllerApplicant {
 
                 button.setOnAction(ev -> {
                     Item item = items.get(finalI);
-                    if (!Application.shop.currentCustomer.items.contains(item)) {
-                        Application.shop.currentCustomer.items.add(item);
+                    if (!Application.shop.currentCustomer.cartItems.contains(item)) {
+                        Application.shop.currentCustomer.cartItems.add(item);
                     }
                 });
             }
@@ -1528,7 +1530,7 @@ public class ControllerApplicant {
 
 
             anchorPane.getChildren().addAll(imageView, name, price, button, scoreEmoji, score);
-            sellerMainPage.getChildren().add(anchorPane);
+            mainPage.getChildren().add(anchorPane);
 
             icount++;
             if (icount > 5) {
@@ -1546,6 +1548,76 @@ public class ControllerApplicant {
     public void showCustomer() {
         showItems("customer", Application.shop.tempItems);
     }
+
+
+    public void auction() {
+
+        icount = 0;
+        mainPage.getChildren().clear();
+
+        for (int i = 0; i < Application.shop.sellers.size(); i++) {
+
+            int finalI = i;
+
+            ImageView imageView = new ImageView(Application.shop.currentSeller.auction.image);
+            imageView.setFitWidth(200);
+            imageView.setFitHeight(200);
+
+            ImageView scoreEmoji = new ImageView(Application.shop.currentSeller.auction.scoreEmoji);
+            scoreEmoji.setEffect(new DropShadow());
+            scoreEmoji.setFitWidth(30);
+            scoreEmoji.setFitHeight(30);
+            scoreEmoji.setLayoutX(380);
+            scoreEmoji.setLayoutY(160);
+
+
+            Label name = new Label("Name :  " + Application.shop.currentSeller.auction.name);
+            name.setFont(new Font("Arial", 25));
+            name.setLayoutX(200);
+            name.setLayoutY(10);
+
+            Label brand = new Label("Brand :  " + Application.shop.currentSeller.auction.brand);
+            brand.setFont(new Font("Arial", 25));
+            brand.setLayoutX(200);
+            brand.setLayoutY(60);
+
+            Label price = new Label("Price  :  " + Application.shop.currentSeller.auction.price);
+            price.setFont(new Font("Arial", 25));
+            price.setLayoutX(200);
+            price.setLayoutY(110);
+
+
+            Button button = new Button("bid");
+            button.setFont(new Font(15));
+            /*button.setOnAction(ev -> {
+
+            });*/
+            button.setEffect(new DropShadow());
+            button.setPrefWidth(50);
+            button.setPrefHeight(30);
+            button.setLayoutX(750);
+            button.setLayoutY(160);
+
+
+            AnchorPane anchorPane = new AnchorPane();
+            anchorPane.setLayoutX(100);
+            anchorPane.setLayoutY(icount * 225 + 50);
+            anchorPane.setPrefWidth(900);
+            anchorPane.setPrefHeight(200);
+            anchorPane.setStyle("-fx-background-color: #FFCF21;");
+            anchorPane.setEffect(new DropShadow());
+
+
+            anchorPane.getChildren().addAll(imageView, scoreEmoji, name, brand, price, button);
+            mainPage.getChildren().add(anchorPane);
+
+            icount++;
+
+
+        }
+
+    }
+
 
     public void loadImage() {
 
