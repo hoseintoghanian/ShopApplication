@@ -25,6 +25,7 @@ public class Item {
     boolean isAuction;
 
     int tempSize = 1;
+    long tempPrice;
 
 
     public Item(String kind, String minorKind, String brand, String name, long price, int size, String property, Image image, String sellerUsername) {

@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ControllerApplicant {
 
@@ -436,7 +439,7 @@ public class ControllerApplicant {
         createMenuItem("chakelz");
         createMenuItem("cheetoz");
         createMenuItem("del maze");
-        createMenuItem("lay's");
+        createMenuItem("lays");
 
         //pofak
         createMenuItem("chakelz");
@@ -1677,6 +1680,8 @@ public class ControllerApplicant {
 
     @FXML
     private AnchorPane mainPage;
+    @FXML
+    private TabPane tabPane;
     static int icount = 0;
     static int jcount = 0;
 
@@ -1763,6 +1768,13 @@ public class ControllerApplicant {
                         }
                     }
 
+                    for (int j = 0; j < Application.shop.currentSeller.allItems.size(); j++) {
+                        if (!Application.shop.currentSeller.allItems.get(j).equals(item))
+                            Application.shop.currentSeller.allItems.get(j).isAuction = false;
+                    }
+
+                    displayauction();
+                    tabPane.getSelectionModel().select(1);
                 });
 
             }
@@ -1830,6 +1842,9 @@ public class ControllerApplicant {
 
         for (int i = 0; i < Application.shop.tempItems.size(); i++) {
 
+            int finalI = i;
+
+
             ImageView imageView = new ImageView(Application.shop.tempItems.get(i).image);
             imageView.setFitWidth(200);
             imageView.setFitHeight(200);
@@ -1845,35 +1860,53 @@ public class ControllerApplicant {
             brand.setLayoutX(200);
             brand.setLayoutY(60);
 
-            Label price = new Label("Price  :  " + Application.shop.tempItems.get(i).price);
+            AtomicInteger maxBid = new AtomicInteger();
+
+            Label price = new Label("Max Bid  :  " + Application.shop.tempItems.get(i).tempPrice);
             price.setFont(new Font("Arial", 25));
             price.setLayoutX(200);
             price.setLayoutY(110);
 
+            TextField bid = new TextField();
+            bid.setPromptText("offer a price");
+            bid.setEffect(new DropShadow());
+            bid.setPrefWidth(150);
+            bid.setPrefHeight(30);
+            bid.setLayoutX(400);
+            bid.setLayoutY(160);
+
 
             Button button = new Button("bid");
             button.setFont(new Font(15));
-            /*button.setOnAction(ev -> {
+            button.setOnAction(ev -> {
 
-            });*/
+                //if (Application.shop.currentCustomer.wallet > Integer.parseInt(bid.getText())) {
+                if (Integer.parseInt(bid.getText()) > Application.shop.tempItems.get(finalI).tempPrice) {
+                    Application.shop.currentCustomer.wallet -= Application.shop.tempItems.get(finalI).tempPrice;
+                    Application.shop.tempItems.get(finalI).tempPrice = Integer.parseInt(bid.getText());
+                    price.setText("Max Bid  :  " + Application.shop.tempItems.get(finalI).tempPrice);
+                }
+                //}
+
+            });
             button.setEffect(new DropShadow());
             button.setPrefWidth(50);
             button.setPrefHeight(30);
-            button.setLayoutX(700);
+            button.setLayoutX(580);
             button.setLayoutY(160);
 
 
             AnchorPane anchorPane = new AnchorPane();
             anchorPane.setLayoutX(50);
-            anchorPane.setLayoutX(icount * 650 + 50);
-            anchorPane.setLayoutY(jcount * 225 + 50);
-            anchorPane.setPrefWidth(600);
+            anchorPane.setLayoutX(icount * 700 + 60);
+            anchorPane.setLayoutY(jcount * 240 + 50);
+            anchorPane.setPrefWidth(660);
             anchorPane.setPrefHeight(200);
             anchorPane.setStyle("-fx-background-color: #FFCF21;");
             anchorPane.setEffect(new DropShadow());
 
 
-            anchorPane.getChildren().addAll(imageView, name, brand, price, button);
+            anchorPane.getChildren().addAll(imageView, name, brand, price, bid, button);
             auctionPage.getChildren().add(anchorPane);
 
             icount++;
@@ -1947,10 +1980,14 @@ public class ControllerApplicant {
     private ImageView imgauctionimage;
 
     public void displayauction() {
-        labelauctionname.setText(Application.shop.currentSeller.auction.name);
-        labelauctionbrand.setText(Application.shop.currentSeller.auction.brand);
-        labelauctionmaxbid.setText(String.valueOf(Application.shop.currentSeller.auction.price));
-        imgauctionimage.setImage(Application.shop.currentSeller.auction.image);
+
+        if (Application.shop.currentSeller.auction != null) {
+
+            labelauctionname.setText(Application.shop.currentSeller.auction.name);
+            labelauctionbrand.setText(Application.shop.currentSeller.auction.brand);
+            labelauctionmaxbid.setText(String.valueOf(Application.shop.currentSeller.auction.tempPrice));
+            imgauctionimage.setImage(Application.shop.currentSeller.auction.image);
+        }
     }
 
 

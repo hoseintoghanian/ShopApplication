@@ -51,9 +51,12 @@ public class Shop {
     public static void sortByBrand(ArrayList<Item> allItems, ArrayList<Item> tempItems, String brand) {
         tempItems.clear();
 
+
         for (int i = 0; i < allItems.size(); i++) {
             if (allItems.get(i).brand.equals(brand)) tempItems.add(allItems.get(i));
         }
+
+
     }
 
 

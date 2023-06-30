@@ -23,7 +23,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerApplicant">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerApplicant">
   <tabs>
       <Tab onSelectionChanged="#removeFilters" text="     My Products     ">
          <content>
@@ -271,75 +271,68 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#displayauction" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <AnchorPane layoutX="45.0" layoutY="29.0" prefHeight="261.0" prefWidth="659.0" style="-fx-background-color: #FFCF21;">
+                  <Label layoutX="300.0" layoutY="50.0" text="your auction" textFill="#323aa4">
+                     <font>
+                        <Font name="Book Antiqua" size="70.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imgauctionimage" fitHeight="500.0" fitWidth="500.0" layoutX="900.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="100.0" layoutY="450.0" text="max bid :">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="372.0" layoutY="600.0" mnemonicParsing="false" onAction="#auction" prefHeight="50.0" prefWidth="250.0" text="Sale">
                      <effect>
-                        <DropShadow />
-                     </effect>
-                     <children>
-                        <Label layoutX="379.0" layoutY="8.0" text="your auction" textFill="#49a354">
-                           <font>
-                              <Font name="Book Antiqua" size="27.0" />
-                           </font></Label>
-                        <ImageView fx:id="imgauctionimage" fitHeight="200.0" fitWidth="200.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../0.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="220.0" layoutY="171.0" text="max bid :">
-                           <font>
-                              <Font name="Book Antiqua" size="25.0" />
-                           </font>
-                        </Label>
-                        <Button layoutX="496.0" layoutY="172.0" mnemonicParsing="false" onAction="#auction" prefHeight="30.0" prefWidth="100.0" text="Sale">
-                           <effect>
-                              <DropShadow height="10.0" radius="4.5" width="10.0">
-                                 <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                       <color>
-                                          <Color red="0.09473684430122375" green="0.09473684430122375" blue="0.09473684430122375" />
-                                       </color>
-                                       <input>
-                                          <ColorAdjust />
-                                       </input>
-                                    </InnerShadow>
-                                 </input>
+                        <DropShadow height="10.0" radius="7.0" width="20.0">
+                           <input>
+                              <InnerShadow height="10.0" radius="4.5" width="10.0">
                                  <color>
-                                    <Color red="0.8105263113975525" green="0.6979532241821289" blue="0.060038987547159195" />
+                                    <Color red="0.09473684430122375" green="0.09473684430122375" blue="0.09473684430122375" />
                                  </color>
-                              </DropShadow>
-                           </effect>
-                           <font>
-                              <Font name="Book Antiqua" size="15.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="232.0" layoutY="63.0" text="Name :">
-                           <font>
-                              <Font name="Book Antiqua" size="25.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="232.0" layoutY="115.0" text="Brand :">
-                           <font>
-                              <Font name="Book Antiqua" size="25.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="labelauctionname" layoutX="358.0" layoutY="61.0" text="Label">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="labelauctionbrand" layoutX="358.0" layoutY="113.0" text="Label">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="labelauctionmaxbid" layoutX="358.0" layoutY="169.0" text="Label">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
+                                 <input>
+                                    <SepiaTone />
+                                 </input>
+                              </InnerShadow>
+                           </input>
+                           <color>
+                              <Color red="0.6736842393875122" green="0.6040701866149902" blue="0.20959064364433289" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="Book Antiqua" size="30.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="100.0" layoutY="250.0" text="Name :">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="350.0" text="Brand :">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelauctionname" layoutX="320.0" layoutY="250.0">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelauctionbrand" layoutX="320.0" layoutY="350.0">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelauctionmaxbid" layoutX="320.0" layoutY="450.0">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
                </children>
+               <effect>
+                  <InnerShadow height="10.0" radius="4.5" width="10.0" />
+               </effect>
             </AnchorPane>
         </content>
       </Tab>

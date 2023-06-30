@@ -20,6 +20,11 @@ public class Application extends javafx.application.Application {
 
         for (int i = 0; i < shop.sellers.size(); i++) {
 
+            for (int j = 0; j < shop.sellers.get(i).allItems.size(); j++) {
+                if (shop.sellers.get(i).allItems.get(j).isAuction)
+                    shop.sellers.get(i).auction = shop.sellers.get(i).allItems.get(j);
+            }
+
             shop.sellers.get(i).tempItems.addAll(shop.sellers.get(i).allItems);
 
             shop.allItems.addAll(shop.sellers.get(i).allItems);
