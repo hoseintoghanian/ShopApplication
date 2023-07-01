@@ -149,9 +149,8 @@ public class ControllerAdmin {
 
             Application.shop.currentWarehouse = warehouse;
 
-            displayInfo(warehouse.items, 35, 310);
-            displayInfo(warehouse.inputs, 480, 55);
-            displayInfo(warehouse.outputs, 480, 285);
+            displayInfo(warehouse.inputs, 375, 80);
+            displayInfo(warehouse.outputs, 6550, 80);
         }
     }
 
@@ -175,9 +174,8 @@ public class ControllerAdmin {
         menuItem.setOnAction(ev -> {
             warehouseMenu.setText(text);
             Application.shop.currentWarehouse = warehouse;
-            displayInfo(warehouse.items, 35, 310);
-            displayInfo(warehouse.inputs, 480, 55);
-            displayInfo(warehouse.outputs, 480, 285);
+            displayInfo(warehouse.inputs, 375, 80);
+            displayInfo(warehouse.outputs, 650, 80);
 
             delete.setDisable(false);
             delete.setOpacity(1);
@@ -209,9 +207,8 @@ public class ControllerAdmin {
             menuItem.setOnAction(ev -> {
                 warehouseMenu.setText(Application.shop.warehouses.get(finalI).name);
                 Application.shop.currentWarehouse = Application.shop.warehouses.get(finalI);
-                displayInfo(Application.shop.warehouses.get(finalI).items, 35, 310);
-                displayInfo(Application.shop.warehouses.get(finalI).inputs, 480, 55);
-                displayInfo(Application.shop.warehouses.get(finalI).outputs, 480, 285);
+                displayInfo(Application.shop.warehouses.get(finalI).inputs, 375, 80);
+                displayInfo(Application.shop.warehouses.get(finalI).outputs, 650, 80);
 
                 delete.setDisable(false);
                 delete.setOpacity(1);
@@ -288,9 +285,8 @@ public class ControllerAdmin {
                     }
                 }
 
-                displayInfo(Application.shop.currentWarehouse.items, 35, 310);
-                displayInfo(Application.shop.currentWarehouse.inputs, 480, 55);
-                displayInfo(Application.shop.currentWarehouse.outputs, 480, 285);
+                displayInfo(Application.shop.currentWarehouse.inputs, 375, 80);
+                displayInfo(Application.shop.currentWarehouse.outputs, 6500, 80);
             }
 
     }

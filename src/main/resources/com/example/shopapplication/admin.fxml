@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -115,68 +114,6 @@
                               <Font name="Book Antiqua" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="35.0" layoutY="260.0" text="products :">
-                           <font>
-                              <Font name="Book Antiqua" size="25.0" />
-                           </font>
-                        </Label>
-                        <Separator layoutX="750.0" layoutY="60.0" orientation="VERTICAL" prefHeight="600.0">
-                           <effect>
-                              <DropShadow>
-                                 <input>
-                                    <SepiaTone />
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </Separator>
-                        <Label layoutX="780.0" layoutY="470.0" text="monthly properties chart">
-                           <font>
-                              <Font name="Book Antiqua" size="25.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="780.0" layoutY="240.0" text="weekly properties chart">
-                           <font>
-                              <Font name="Book Antiqua" size="25.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="780.0" layoutY="10.0" text="daily properties chart">
-                           <font>
-                              <Font name="Book Antiqua" size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="760.0" layoutY="40.0" prefHeight="200.0" prefWidth="300.0">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                           <effect>
-                              <InnerShadow />
-                           </effect>
-                        </BarChart>
-                        <BarChart layoutX="760.0" layoutY="270.0" prefHeight="200.0" prefWidth="300.0">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                           <effect>
-                              <InnerShadow />
-                           </effect>
-                        </BarChart>
-                        <BarChart layoutX="760.0" layoutY="500.0" prefHeight="200.0" prefWidth="300.0">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                           <effect>
-                              <InnerShadow />
-                           </effect>
-                        </BarChart>
                         <Separator layoutX="350.0" layoutY="60.0" orientation="VERTICAL" prefHeight="600.0">
                            <effect>
                               <DropShadow>
@@ -186,17 +123,17 @@
                               </DropShadow>
                            </effect>
                         </Separator>
-                        <Label layoutX="375.0" layoutY="50.0" text="Inputs">
+                        <Label layoutX="375.0" layoutY="30.0" text="Inputs">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="375.0" layoutY="280.0" text="Outputs">
+                        <Label layoutX="650.0" layoutY="30.0" text="Outputs">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <AnchorPane layoutX="480.0" layoutY="558.0" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #FFCF21;">
+                        <AnchorPane layoutX="835.0" layoutY="28.0" prefHeight="218.0" prefWidth="250.0" style="-fx-background-color: #FFCF21;">
                            <effect>
                               <InnerShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -215,7 +152,7 @@
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0" />
                                  </effect></TextField>
-                              <RadioButton fx:id="inputButton" layoutX="170.0" layoutY="15.0" mnemonicParsing="false" text="Input">
+                              <RadioButton fx:id="inputButton" layoutX="26.0" layoutY="121.0" mnemonicParsing="false" text="Input">
                                  <font>
                                     <Font name="Book Antiqua" size="13.0" />
                                  </font>
@@ -223,12 +160,12 @@
                                     <ToggleGroup fx:id="inputOutput" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="outputButton" layoutX="170.0" layoutY="50.0" mnemonicParsing="false" text="Output" toggleGroup="$inputOutput">
+                              <RadioButton fx:id="outputButton" layoutX="92.0" layoutY="121.0" mnemonicParsing="false" text="Output" toggleGroup="$inputOutput">
                                  <font>
                                     <Font name="Book Antiqua" size="13.0" />
                                  </font>
                               </RadioButton>
-                              <Button layoutX="15.0" layoutY="115.0" mnemonicParsing="false" onAction="#addItem" prefHeight="26.0" prefWidth="225.0" text="add">
+                              <Button layoutX="12.0" layoutY="177.0" mnemonicParsing="false" onAction="#addItem" prefHeight="26.0" prefWidth="225.0" text="add">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
@@ -324,7 +261,7 @@
                               </TextArea>
                            </children>
                         </AnchorPane>
-                        <MenuButton fx:id="warehouseMenu" layoutX="35.0" layoutY="29.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="165.0" text="Warehouses">
+                        <MenuButton fx:id="warehouseMenu" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="165.0" text="Warehouses">
                            <font>
                               <Font name="Book Antiqua" size="20.0" />
                            </font>
@@ -378,14 +315,17 @@
                               <Font name="Book Antiqua" size="20.0" />
                            </font>
                            <effect>
-                              <InnerShadow>
+                              <InnerShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <DropShadow>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <SepiaTone />
                                        </input>
                                     </DropShadow>
                                  </input>
+                                 <color>
+                                    <Color red="0.6315789222717285" green="0.5099415183067322" blue="0.1450292468070984" />
+                                 </color>
                               </InnerShadow>
                            </effect>
                         </SplitMenuButton>

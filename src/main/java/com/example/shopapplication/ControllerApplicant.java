@@ -39,7 +39,7 @@ public class ControllerApplicant {
 
 
     @FXML
-    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtwpaccount;
+    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtwpaccount,txtWBaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
     @FXML
@@ -53,6 +53,7 @@ public class ControllerApplicant {
             txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
             txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
             txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
+            txtWBaccount.setText(String.valueOf(Application.shop.currentCustomer.wallet));
         } else if (Application.shop.currentSeller != null) {
             txtFNaccount.setText(Application.shop.currentSeller.getFirstname());
             txtLNaccount.setText(Application.shop.currentSeller.getLastname());

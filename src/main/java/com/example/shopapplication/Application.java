@@ -36,7 +36,7 @@ public class Application extends javafx.application.Application {
         Shop.SortByDate(shop.allItems, shop.tempItems);
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("admin.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Online Shop Application");
         stage.setScene(scene);
