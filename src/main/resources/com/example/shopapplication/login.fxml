@@ -109,5 +109,10 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label fx:id="txtloginerror" layoutX="495.0" layoutY="358.0" textFill="#cc2424">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
