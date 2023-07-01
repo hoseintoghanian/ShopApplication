@@ -25,7 +25,7 @@ public class ControllerRegister {
     @FXML
     private TextField txtCaptchaInput, txtLoginUsername, txtLoginPass;
     @FXML
-    private Label txtCaptcha, txtRegister;
+    private Label txtCaptcha, txtRegister, txtloginerror;
     @FXML
     private RadioButton buttonSeller, buttonCustomer;
     @FXML
@@ -85,18 +85,42 @@ public class ControllerRegister {
                 Application.shop.pageURL = "admin.fxml";
 
             } else {
-
-                if (Application.shop.sellers.contains(seller)) {
-                    seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
-                    Application.shop.pageURL = "seller.fxml";
-                    Application.shop.currentSeller = seller;
-                    Application.shop.currentCustomer = null;
-                }
-                if (Application.shop.customers.contains(customer)) {
-                    customer = Application.shop.customers.get(Application.shop.customers.indexOf(customer));
-                    Application.shop.pageURL = "customer.fxml";
-                    Application.shop.currentCustomer = customer;
-                    Application.shop.currentSeller = null;
+                if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(customer)) {
+                    if (Application.shop.sellers.contains(seller)) {
+                        seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
+                        Application.shop.pageURL = "seller.fxml";
+                        Application.shop.currentSeller = seller;
+                        Application.shop.currentCustomer = null;
+                    }
+                    if (Application.shop.customers.contains(customer)) {
+                        customer = Application.shop.customers.get(Application.shop.customers.indexOf(customer));
+                        Application.shop.pageURL = "customer.fxml";
+                        Application.shop.currentCustomer = customer;
+                        Application.shop.currentSeller = null;
+                    }
+                } else {
+                    int sum = 0;
+                    for (int i = 0; i < Application.shop.customers.size(); i++) {
+                        if (customer.getUsername() != Application.shop.customers.get(i).getUsername())
+                            sum++;
+                    }
+                    for (int i = 0; i < Application.shop.sellers.size(); i++) {
+                        if (customer.getUsername() != Application.shop.customers.get(i).getUsername())
+                            sum++;
+                    }
+                    if (sum == Application.shop.customers.size() + Application.shop.sellers.size()) {
+                        txtloginerror.setText("invalid username\nplease sign up first");
+                    }
+                    sum = 0;
+                    for (int i = 0;i<Application.shop.sellers.size();i++){
+                        if (Application.shop.sellers.get(i).equals(seller)) sum++;
+                    }
+                    for (int i = 0;i<Application.shop.customers.size();i++){
+                        if (Application.shop.customers.get(i).equals(customer)) sum++;
+                    }
+                    if (sum == 1)
+                        //if (txtLoginPass.getText() != seller.getPassword() || txtLoginPass.getText() != customer.getPassword())
+                            txtloginerror.setText("incorrect password");
                 }
             }
 
