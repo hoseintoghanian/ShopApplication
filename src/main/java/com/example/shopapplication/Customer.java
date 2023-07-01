@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Customer extends Applicant {
     long wallet = 1000;
+    long increaseAmount = 0;
     ArrayList<Item> cartItems = new ArrayList<>();
     ArrayList<Item> purchase = new ArrayList<>();
 

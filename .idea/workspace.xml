@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="update auction in database&#10;seller product.fxml (dont commenting)">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_1_24_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_1_24_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_4_02_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_4_02_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_32_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="create items &amp; inputs &amp; output tables for each warehouse (displayInfo method),&#10;delete warehouse and its database,&#10;create csv file,&#10;Transaction &amp; Account innerClasses for bankAccount tableView">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_51_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_51_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,10 +150,14 @@
       <workItem from="1688083629204" duration="3149000" />
       <workItem from="1688106874915" duration="1446000" />
       <workItem from="1688108449303" duration="1896000" />
-      <workItem from="1688190592878" duration="10002000" />
-      <workItem from="1688209408751" duration="5585000" />
-      <workItem from="1688215123125" duration="509000" />
-      <workItem from="1688215646631" duration="2014000" />
+      <workItem from="1688190592878" duration="9744000" />
+    </task>
+    <task id="LOCAL-00026" summary="changes in controllerAdmin">
+      <created>1686221431299</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1686221431299</updated>
     </task>
     <task id="LOCAL-00027" summary="changes in controllerAdmin">
       <created>1686221526341</created>
@@ -493,14 +495,7 @@
       <option name="project" value="LOCAL" />
       <updated>1688194896485</updated>
     </task>
-    <task id="LOCAL-00075" summary="update auction in database&#10;seller product.fxml (dont commenting)">
-      <created>1688200625061</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1688200625062</updated>
-    </task>
-    <option name="localTasksCounter" value="76" />
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,6 +513,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="code cleaning and chat background in admin fxml" />
     <MESSAGE value="update supermarket images (grocery)" />
     <MESSAGE value="update supermarket images (breakfast)" />
     <MESSAGE value="update supermarket images (protein foods)" />
@@ -542,8 +538,7 @@
     <MESSAGE value="admin controller section add Warehouse and displayInfo" />
     <MESSAGE value="login errors" />
     <MESSAGE value="create purchase table (database) for customers" />
-    <MESSAGE value="update auction in database&#10;seller product.fxml (dont commenting)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update auction in database&#10;seller product.fxml (dont commenting)" />
+    <option name="LAST_COMMIT_MESSAGE" value="create purchase table (database) for customers" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
