@@ -15,6 +15,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -73,7 +74,10 @@ public class ControllerProduct {
     @FXML
     private Label nameLabel, kindLabel, minorKindLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
     @FXML
-    private ImageView emojiscore, itemImage;
+    private ImageView emojiscore, itemImage, cartImageView;
+
+    @FXML
+    private Button sendButton;
 
     public void displayInfo() {
 
@@ -90,6 +94,28 @@ public class ControllerProduct {
         emojiscore.setImage(Application.shop.currentItem.scoreEmoji);
         itemImage.setImage(Application.shop.currentItem.image);
         comment.setText(Application.shop.currentItem.comments);
+
+
+        if (Application.shop.currentSeller != null) {
+
+            commentText.setDisable(true);
+            sendButton.setDisable(true);
+
+            voteButton.setDisable(true);
+            voteButton.setVisible(false);
+
+            emoji0.setVisible(false);
+            emoji1.setVisible(false);
+            emoji2.setVisible(false);
+            emoji3.setVisible(false);
+            emoji4.setVisible(false);
+
+            addToCartButton.setVisible(false);
+            addToCartButton.setDisable(true);
+
+            cartImageView.setVisible(false);
+            cartImageView.setDisable(true);
+        }
     }
 
 
@@ -184,7 +210,7 @@ public class ControllerProduct {
 
 
     @FXML
-    private Button voteButton;
+    private Button voteButton, addToCartButton;
 
     public void vote() throws SQLException {
 
@@ -224,16 +250,24 @@ public class ControllerProduct {
     private TextArea commentText;
 
     public void sendComments() throws SQLException {
+        if (!commentText.getText().equals("")) {
 
-        if (comment.getText().equals("")) {
-            comment.setText(comment.getText() + Application.shop.currentCustomer.getUsername() + "  :\n" + commentText.getText());
-        } else {
-            comment.setText(comment.getText() + "\n\n" + Application.shop.currentCustomer.getUsername() + "  :\n" + commentText.getText());
+            String isBought = null;
+
+            if (Application.shop.currentCustomer.purchase.contains(Application.shop.currentItem))
+                isBought = Application.shop.currentCustomer.getUsername() + " bought this product";
+            else isBought = Application.shop.currentCustomer.getUsername() + " did not buy this product";
+
+            if (comment.getText().equals("")) {
+                comment.setText(comment.getText() + Application.shop.currentCustomer.getUsername() + "  :\n" + commentText.getText() + "\n\"" + isBought + "\"");
+            } else {
+                comment.setText(comment.getText() + "\n\n" + Application.shop.currentCustomer.getUsername() + "  :\n" + commentText.getText() + "\n\"" + isBought + "\"");
+            }
+
+            commentText.setText("");
+            Application.shop.currentItem.comments = comment.getText();
+            Database.updateItem(Application.shop.currentItem);
         }
-
-        commentText.setText("");
-        Application.shop.currentItem.comments = comment.getText();
-        Database.updateItem(Application.shop.currentItem);
     }
 
     @FXML
@@ -302,14 +336,7 @@ public class ControllerProduct {
                     Application.shop.currentItem = item;
 
                     try {
-                        FXMLLoader fxmlLoader = null;
-
-                   /* if (Application.shop.currentSeller == null)
-                        fxmlLoader = new FXMLLoader(Application.class.getResource("productCustomer.fxml"));
-                    if (Application.shop.currentCustomer == null)
-                        fxmlLoader = new FXMLLoader(Application.class.getResource("productSeller.fxml"));*/
-                        fxmlLoader = new FXMLLoader(Application.class.getResource("product.fxml"));//have to remove
-
+                        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("product.fxml"));//have to remove
                         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                         Scene scene = new Scene(fxmlLoader.load());
                         stage.setScene(scene);

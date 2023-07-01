@@ -1787,21 +1787,27 @@ public class ControllerApplicant {
                     if (Application.shop.currentSeller.auction == null) {
                         Application.shop.currentSeller.auction = item;
                         item.isAuction = true;
-                        try {
-                            Database.updateItemAuction(item);
-                        } catch (SQLException e) {
-                            throw new RuntimeException(e);
-                        }
                     } else {
                         if (!Application.shop.currentSeller.auction.equals(item)) {
                             Application.shop.currentSeller.auction = item;
                             item.isAuction = true;
                         }
                     }
+                    try {
+                        Database.updateItemAuction(item);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     for (int j = 0; j < Application.shop.currentSeller.allItems.size(); j++) {
-                        if (!Application.shop.currentSeller.allItems.get(j).equals(item))
+                        if (!Application.shop.currentSeller.allItems.get(j).equals(item)) {
                             Application.shop.currentSeller.allItems.get(j).isAuction = false;
+                            try {
+                                Database.updateItemAuction(Application.shop.currentSeller.allItems.get(j));
+                            } catch (SQLException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
                     }
 
                     displayauction();

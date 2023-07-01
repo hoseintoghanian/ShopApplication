@@ -37,7 +37,7 @@
                      <font>
                         <Font name="Book Antiqua" size="15.0" />
                      </font></TextArea>
-                  <Button layoutX="400.0" layoutY="685.0" mnemonicParsing="false" onAction="#sendComments" prefHeight="50.0" prefWidth="50.0" text="Send">
+                  <Button fx:id="sendButton" layoutX="400.0" layoutY="685.0" mnemonicParsing="false" onAction="#sendComments" prefHeight="50.0" prefWidth="50.0" text="Send">
                      <effect>
                         <DropShadow height="10.0" radius="4.5" width="10.0">
                            <input>
@@ -116,7 +116,7 @@
                                     <Image url="@../../../t5.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="comment" alignment="TOP_LEFT" layoutX="21.0" layoutY="14.0" prefHeight="1950.0" prefWidth="460.0" textFill="WHITE">
+                              <Label fx:id="comment" alignment="TOP_LEFT" layoutX="21.0" layoutY="14.0" onMouseEntered="#displayInfo" prefHeight="1950.0" prefWidth="460.0" textFill="WHITE">
                                  <font>
                                     <Font name="Book Antiqua Italic" size="22.0" />
                                  </font>
@@ -196,7 +196,7 @@
             </AnchorPane>
             <AnchorPane maxHeight="1000.0" nodeOrientation="LEFT_TO_RIGHT" onMouseEntered="#displayInfo" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fx:id="itemImage" fitHeight="400.0" fitWidth="400.0" layoutX="540.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="itemImage" fitHeight="400.0" fitWidth="400.0" layoutX="540.0" layoutY="50.0" onMouseEntered="#displayInfo" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="priceLabel" layoutX="50.0" layoutY="240.0" text="Price               :   ">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
@@ -257,7 +257,7 @@
                         <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <Button layoutX="730.0" layoutY="600.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="50.0" text="add to cart">
+                  <Button fx:id="addToCartButton" layoutX="730.0" layoutY="600.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="50.0" text="add to cart">
                      <font>
                         <Font name="Book Antiqua" size="18.0" />
                      </font>
@@ -276,7 +276,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="880.0" layoutY="600.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#changeToCartScene" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="cartImageView" fitHeight="50.0" fitWidth="50.0" layoutX="880.0" layoutY="600.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#changeToCartScene" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/cart.png" />
                      </image>
