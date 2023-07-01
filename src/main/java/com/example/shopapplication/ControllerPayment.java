@@ -59,11 +59,16 @@ public class ControllerPayment {
     private Label labelFinalCost;
 
     public void displayInfo2() {
-        int sum = 0;
-        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+        if (Application.shop.pageURL=="payment.fxml") {
+            int sum = 0;
+            for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+                sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+            }
+            labelFinalCost.setText(String.valueOf(sum));
         }
-        labelFinalCost.setText(String.valueOf(sum));
+        else if (Application.shop.pageURL=="customer.fxml"){
+            labelFinalCost.setText(String.valueOf(Application.shop.currentCustomer.increaseAmount));
+        }
     }
 
 
@@ -145,7 +150,7 @@ public class ControllerPayment {
                 txtcardsecondcode.getText().equals("") ||
                 txtemail.getText().equals("")
         ) {
-            txtbankportalerror.setText("لطفا تمام فیلد ها رو پر کنید");
+            txtbankportalerror.setText("لطفا تمام فیلد ها را پر کنید");
             return false;
         }
         return true;
@@ -171,22 +176,29 @@ public class ControllerPayment {
         }
     }
 
-    public void pay() throws SQLException {
+    public void pay(ActionEvent e) throws SQLException, IOException {
 
-        if (Application.shop.pageURL.equals("payment.fxml")) {
+        if (Application.shop.pageURL.equals("payment.fxml") || Application.shop.pageURL.equals("customer.fxml")) {
             checkBankScene();
             if (checkBankScene()) {
-                if (Application.shop.currentCustomer.wallet >= Long.valueOf(labelFinalCost.getText())) {
+                if (Application.shop.currentCustomer.wallet >= Long.valueOf(labelFinalCost.getText()) || Application.shop.pageURL == "customer.fxml") {
 
-                    Application.shop.currentCustomer.purchase.addAll(Application.shop.currentCustomer.cartItems);
-                    Application.shop.currentCustomer.cartItems.clear();
-
-                    for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
-                        Database.addProduct("purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
+                    if (Application.shop.pageURL != "customer.fxml") {
+                        Application.shop.currentCustomer.purchase.addAll(Application.shop.currentCustomer.cartItems);
+                        Application.shop.currentCustomer.cartItems.clear();
+                        Application.shop.currentCustomer.wallet -= Long.valueOf(labelFinalCost.getText());
+                        for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
+                            Database.addProduct("purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
+                        }
+                    }
+                    if (Application.shop.pageURL == "customer.fxml") {
+                        Application.shop.currentCustomer.wallet += Long.valueOf(labelFinalCost.getText());
+                        labelFinalCost.setText("0");
                     }
                     txtbankportalerror.setStyle("-fx-text-fill: green;");
                     txtbankportalerror.setText("خرید با موفقیت انجام شد");
-                    Application.shop.currentCustomer.wallet -= Long.valueOf(labelFinalCost.getText());
+                    //if (Application.shop.pageURL == "customer.fxml") ChangeScene2(e, "customer.fxml");
+                    //if (Application.shop.pageURL == "seller.fxml") ChangeScene2(e, "seller.fxml");
                     return;
                 } else
                     txtbankportalerror.setStyle("-fx-text-fill: red;");
