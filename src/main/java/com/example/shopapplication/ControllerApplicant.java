@@ -1,7 +1,5 @@
 package com.example.shopapplication;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,7 +8,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
@@ -30,7 +27,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
@@ -57,8 +53,6 @@ public class ControllerApplicant {
             txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
             txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
             txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
-
-            showDiscountCode();
         } else if (Application.shop.currentSeller != null) {
             txtFNaccount.setText(Application.shop.currentSeller.getFirstname());
             txtLNaccount.setText(Application.shop.currentSeller.getLastname());
@@ -68,71 +62,6 @@ public class ControllerApplicant {
             txtEMaccount.setText(Application.shop.currentSeller.getEmail());
             txtwpaccount.setText(Application.shop.currentSeller.workplace);
         }
-    }
-
-    @FXML
-    private AnchorPane customerAccountPage;
-
-    public void showDiscountCode() {
-
-        TableColumn<DiscountCode, String> discountCode = new TableColumn<>("Discount Code");
-        discountCode.setCellValueFactory(new PropertyValueFactory<>("discountCode"));
-        discountCode.setPrefWidth(128);
-
-        TableColumn<DiscountCode, Double> discountAmount = new TableColumn<>("Discount Amount");
-        discountAmount.setCellValueFactory(new PropertyValueFactory<>("discountAmount"));
-        discountAmount.setPrefWidth(170);
-
-
-        TableView<DiscountCode> discountTable = new TableView<>();
-        discountTable.getColumns().addAll(discountCode, discountAmount);
-
-        ObservableList<DiscountCode> dis = FXCollections.observableArrayList(
-                new DiscountCode(100_000),
-                new DiscountCode(70_000),
-                new DiscountCode(200_000)
-        );
-        discountTable.setItems(dis);
-
-        discountTable.setLayoutX(1160);
-        discountTable.setLayoutY(470);
-        discountTable.setPrefWidth(300);
-        discountTable.setPrefHeight(200);
-        discountTable.setEffect(new InnerShadow());
-
-
-        TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameColumn.setPrefWidth(120);
-
-        TableColumn<Item, String> brandColumn = new TableColumn<>("Brand");
-        brandColumn.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        brandColumn.setPrefWidth(120);
-
-        TableColumn<Item, String> priceColumn = new TableColumn<>("Price");
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        priceColumn.setPrefWidth(100);
-
-        TableColumn<Item, String> sizeColumn = new TableColumn<>("Size");
-        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
-        sizeColumn.setPrefWidth(58);
-
-
-        TableView<Item> purchaseTable = new TableView<>();
-        purchaseTable.setItems(FXCollections.observableArrayList(Application.shop.currentCustomer.purchase));
-        purchaseTable.getColumns().addAll(nameColumn, brandColumn, priceColumn, sizeColumn);
-
-        purchaseTable.setLayoutX(705);
-        purchaseTable.setLayoutY(100);
-        purchaseTable.setPrefWidth(400);
-        purchaseTable.setPrefHeight(570);
-        InnerShadow innerShadow = new InnerShadow();
-        innerShadow.setWidth(10);
-        innerShadow.setHeight(10);
-        purchaseTable.setEffect(innerShadow);
-
-
-        customerAccountPage.getChildren().addAll(discountTable, purchaseTable);
     }
 
 
@@ -2099,47 +2028,5 @@ public class ControllerApplicant {
     }
 
 
-    //------------------inner classes-----------------
-
-
-    public static class DiscountCode {
-        private String discountCode;
-        private long discountAmount;
-
-
-        private static final String CHARACTERS = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789";
-        private static final int CAPTCHA_LENGTH = 10;
-
-        public DiscountCode(long amount) {
-            discountCode = generateCaptchaText();
-            discountAmount = amount;
-        }
-
-        public String getDiscountCode() {
-            return discountCode;
-        }
-
-        public long getDiscountAmount() {
-            return discountAmount;
-        }
-
-        private String generateCaptchaText() {
-            Random random = new Random();
-            StringBuilder sb = new StringBuilder(CAPTCHA_LENGTH);
-            for (int i = 0; i < CAPTCHA_LENGTH; i++) {
-                sb.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
-            }
-            return sb.toString();
-        }
-
-        public boolean equals(Object o) {
-            if (o instanceof DiscountCode) {
-                DiscountCode other = (DiscountCode) o;
-                if (this.discountCode.equals(other.discountCode)) return true;
-            }
-            return false;
-        }
-    }
-
-
+    //for the spinner in cart tab see bro code
 }
