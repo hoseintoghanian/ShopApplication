@@ -83,6 +83,7 @@ public class ControllerRegister {
 
             if (Application.shop.admin.getUsername().equals(txtLoginUsername.getText())) {
                 Application.shop.pageURL = "admin.fxml";
+                changeScene(e, "admin.fxml");
 
             } else {
                 if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(customer)) {
@@ -105,24 +106,15 @@ public class ControllerRegister {
                             Objects.equals(customer.getPassword(), txtLoginPass.getText())
                     ) {
                         //if (txtCaptchaInput.getText().equals(captchaText)) {
-                        fxmlLoader = new FXMLLoader(Application.class.getResource(Application.shop.pageURL));
-                        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                        scene = new Scene(fxmlLoader.load());
-                        stage.setScene(scene);
-                        stage.show();
+                        changeScene(e, Application.shop.pageURL);
                         //} else {
                         //txtCaptchaInput.clear();
                         //}
-                    } else {
-                        txtloginerror.setText("PassWord is incorrect");
-                    }
-                } else {
-                    txtloginerror.setText("Username is invalid\nplease sign up first");
-                }
+                    } else txtloginerror.setText("PassWord is incorrect");
+
+                } else txtloginerror.setText("Username is invalid\nplease sign up first");
             }
-        } else {
-            txtloginerror.setText("please fill all the blanks");
-        }
+        } else txtloginerror.setText("please fill all the blanks");
     }
 
 

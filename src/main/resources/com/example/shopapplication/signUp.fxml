@@ -22,11 +22,7 @@
             <Image url="@../img/login.png" />
          </image>
          <effect>
-            <InnerShadow>
-               <input>
-                  <InnerShadow />
-               </input>
-            </InnerShadow>
+            <InnerShadow />
          </effect>
       </ImageView>
       <Button layoutX="1350.0" layoutY="660.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
@@ -97,7 +93,10 @@
             <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input></InnerShadow>
          </effect>
       </TextField>
       <Label layoutX="50.0" layoutY="50.0" text="Firstname" textFill="WHITE">
@@ -161,7 +160,10 @@
             <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input></InnerShadow>
          </effect>
       </TextField>
       <TextField fx:id="txtPhoneNumber" layoutX="400.0" layoutY="190.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Phone Number">
@@ -169,7 +171,10 @@
             <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input></InnerShadow>
          </effect>
       </TextField>
       <TextField fx:id="txtUserName" layoutX="400.0" layoutY="260.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Username">
@@ -177,7 +182,10 @@
             <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input></InnerShadow>
          </effect>
       </TextField>
       <TextField fx:id="txtEmail" layoutX="400.0" layoutY="470.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="E-mail">
@@ -185,7 +193,10 @@
             <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input></InnerShadow>
          </effect>
       </TextField>
       <PasswordField fx:id="txtPass" layoutX="400.0" layoutY="330.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
@@ -193,7 +204,10 @@
             <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input></InnerShadow>
          </effect>
       </PasswordField>
       <PasswordField fx:id="txtConfirmPassword" layoutX="400.0" layoutY="400.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Password">
@@ -201,7 +215,10 @@
             <Font name="Book Antiqua" size="24.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input></InnerShadow>
          </effect>
       </PasswordField>
       <TextField fx:id="txtWorkPlace" layoutX="400.0" layoutY="540.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Work Place" visible="false">

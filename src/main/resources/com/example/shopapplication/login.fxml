@@ -20,11 +20,7 @@
                 <Image url="@../img/login.png" />
             </image>
          <effect>
-            <InnerShadow>
-               <input>
-                  <InnerShadow />
-               </input>
-            </InnerShadow>
+            <InnerShadow />
          </effect>
         </ImageView>
         <Button layoutX="214.0" layoutY="501.0" mnemonicParsing="false" onAction="#goSignUpScene" prefWidth="300.0" text="Sign Up">
@@ -70,7 +66,14 @@
                 <Font name="Book Antiqua" size="24.0" />
             </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
+                     <input>
+                        <SepiaTone />
+                     </input>
+                  </DropShadow>
+               </input></InnerShadow>
          </effect>
         </TextField>
         <PasswordField fx:id="txtLoginPass" layoutX="200.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
@@ -78,7 +81,13 @@
                 <Font name="Book Antiqua" size="24.0" />
             </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
+                     <input>
+                        <SepiaTone />
+                     </input></DropShadow>
+               </input></InnerShadow>
          </effect>
         </PasswordField>
       <Label fx:id="txtCaptcha" layoutX="214.0" layoutY="279.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
@@ -97,7 +106,13 @@
             <Font name="Book Antiqua" size="20.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
+                     <input>
+                        <SepiaTone />
+                     </input></DropShadow>
+               </input></InnerShadow>
          </effect></TextField>
       <Label fx:id="txtloginerror" layoutX="215.0" layoutY="600.0" textFill="#cc2424">
          <font>

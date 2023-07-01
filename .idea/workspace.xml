@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="create purchase table (database) for customers">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="update auction in database&#10;seller product.fxml (dont commenting)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/product.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/product.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,14 +151,10 @@
       <workItem from="1688083629204" duration="3149000" />
       <workItem from="1688106874915" duration="1446000" />
       <workItem from="1688108449303" duration="1896000" />
-      <workItem from="1688190592878" duration="9744000" />
-    </task>
-    <task id="LOCAL-00026" summary="changes in controllerAdmin">
-      <created>1686221431299</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1686221431299</updated>
+      <workItem from="1688190592878" duration="10002000" />
+      <workItem from="1688209408751" duration="5585000" />
+      <workItem from="1688215123125" duration="509000" />
+      <workItem from="1688215646631" duration="2014000" />
     </task>
     <task id="LOCAL-00027" summary="changes in controllerAdmin">
       <created>1686221526341</created>
@@ -493,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688194896485</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="update auction in database&#10;seller product.fxml (dont commenting)">
+      <created>1688200625061</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1688200625062</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +517,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="code cleaning and chat background in admin fxml" />
     <MESSAGE value="update supermarket images (grocery)" />
     <MESSAGE value="update supermarket images (breakfast)" />
     <MESSAGE value="update supermarket images (protein foods)" />
@@ -536,7 +541,8 @@
     <MESSAGE value="admin controller section add Warehouse and displayInfo" />
     <MESSAGE value="login errors" />
     <MESSAGE value="create purchase table (database) for customers" />
-    <option name="LAST_COMMIT_MESSAGE" value="create purchase table (database) for customers" />
+    <MESSAGE value="update auction in database&#10;seller product.fxml (dont commenting)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update auction in database&#10;seller product.fxml (dont commenting)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
