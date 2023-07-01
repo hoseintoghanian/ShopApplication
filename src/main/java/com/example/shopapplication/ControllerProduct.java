@@ -321,7 +321,7 @@ public class ControllerProduct {
         cartPage.getChildren().clear();
         icount = 0;
 
-        Application.shop.pageURL = "cart.fxml";
+        Application.shop.pageURL = "customer.fxml";
 
 
         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
