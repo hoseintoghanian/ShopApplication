@@ -39,7 +39,7 @@ public class ControllerApplicant {
 
 
     @FXML
-    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtwpaccount,txtWBaccount;
+    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtwpaccount;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
     @FXML
@@ -53,7 +53,6 @@ public class ControllerApplicant {
             txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
             txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
             txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
-            txtWBaccount.setText(String.valueOf(Application.shop.currentCustomer.wallet));
         } else if (Application.shop.currentSeller != null) {
             txtFNaccount.setText(Application.shop.currentSeller.getFirstname());
             txtLNaccount.setText(Application.shop.currentSeller.getLastname());
@@ -79,12 +78,34 @@ public class ControllerApplicant {
         changeScene(e, "Login.fxml");
     }
 
-    public void changeToBankPortalScene(ActionEvent e) throws IOException {
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+    @FXML
+    private TextField txtincreaseamount;
+    @FXML
+    private Label labelincreasewalleterror;
+
+    public void changeToBankPortalScene(ActionEvent e) throws IOException, NumberFormatException {
 
         if (Application.shop.currentCustomer != null) Application.shop.pageURL = "customer.fxml";
         if (Application.shop.currentSeller != null) Application.shop.pageURL = "seller.fxml";
 
-        changeScene(e, "bankportal.fxml");
+        txtincreaseamount.setOpacity(1.0);
+
+        if (txtincreaseamount.getText() == "") {
+            labelincreasewalleterror.setText("please enter your desired amount");
+        }
+        else if (isNumeric(txtincreaseamount.getText())) {
+            Application.shop.currentCustomer.increaseAmount = Long.valueOf(txtincreaseamount.getText());
+            changeScene(e, "bankportal.fxml");
+        } else if (!isNumeric(txtincreaseamount.getText()) && txtincreaseamount.getText() != "")
+            labelincreasewalleterror.setText("please enter a valid amount and\nmore than 0");
     }
 
     public void changeToCartScene(MouseEvent e) throws IOException {
