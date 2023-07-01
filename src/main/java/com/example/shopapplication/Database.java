@@ -186,6 +186,16 @@ public class Database {
         getDBC().close();
     }
 
+    public static void deleteWarehouse(String name) throws SQLException {
+        String sql = "delete from warehouse where name = '" + name + "'";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
     public static void readItemTables() throws SQLException {
         Statement statement = getDBC().createStatement();
         ResultSet resultSet = null;

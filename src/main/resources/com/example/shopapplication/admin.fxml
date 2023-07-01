@@ -15,8 +15,6 @@
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -26,29 +24,27 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #E5BA1D;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerAdmin">
+<AnchorPane onMouseEntered="#displayBankPage" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #E5BA1D;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerAdmin">
    <children>
       <TabPane prefHeight="750.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="TBankAccount" text="Bank Account">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane fx:id="bankPage" minHeight="0.0" minWidth="0.0" onMouseEntered="#displayBankPage" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="TVBankAccountsList" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0">
-                           <columns>
-                              <TableColumn fx:id="TCBankName" prefWidth="150.0" text="Bank Name" />
-                              <TableColumn fx:id="TCBranch" prefWidth="150.0" text="Branch" />
-                              <TableColumn fx:id="TCAccountNumber" prefWidth="200.0" text="Account Number" />
-                              <TableColumn fx:id="TCAccountType" prefWidth="100.0" text="Account Type" />
-                              <TableColumn fx:id="TCBalance" prefWidth="200.0" text="Balance" />
-                              <TableColumn fx:id="TCOpeningDate" prefWidth="200.0" text="Opening Date" />
-                           </columns>
-                           <effect>
-                              <InnerShadow />
-                           </effect>
-                        </TableView>
+                        <Label layoutX="50.0" layoutY="50.0" text="Bank Accounts :">
+                           <font>
+                              <Font name="Book Antiqua" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="750.0" layoutY="50.0" text="Transactions :">
+                           <font>
+                              <Font name="Book Antiqua" size="30.0" />
+                           </font>
+                        </Label>
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -124,20 +120,6 @@
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="35.0" layoutY="310.0" prefHeight="200.0" prefWidth="250.0">
-                          <columns>
-                            <TableColumn prefWidth="120.0" text="name" />
-                            <TableColumn prefWidth="40.0" text="size" />
-                              <TableColumn prefWidth="90.0" text="price" />
-                          </columns>
-                           <effect>
-                              <DropShadow height="10.0" radius="4.5" width="10.0">
-                                 <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </TableView>
                         <Separator layoutX="750.0" layoutY="60.0" orientation="VERTICAL" prefHeight="600.0">
                            <effect>
                               <DropShadow>
@@ -204,39 +186,11 @@
                               </DropShadow>
                            </effect>
                         </Separator>
-                        <TableView layoutX="480.0" layoutY="55.0" prefHeight="200.0" prefWidth="250.0">
-                           <columns>
-                              <TableColumn prefWidth="120.0" text="name" />
-                              <TableColumn prefWidth="40.0" text="size" />
-                              <TableColumn prefWidth="90.0" text="price" />
-                           </columns>
-                           <effect>
-                              <DropShadow height="10.0" radius="4.5" width="10.0">
-                                 <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </TableView>
                         <Label layoutX="375.0" layoutY="50.0" text="Inputs">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="480.0" layoutY="285.0" prefHeight="200.0" prefWidth="250.0">
-                           <columns>
-                              <TableColumn prefWidth="120.0" text="name" />
-                              <TableColumn prefWidth="40.0" text="size" />
-                              <TableColumn prefWidth="90.0" text="price" />
-                           </columns>
-                           <effect>
-                              <DropShadow height="10.0" radius="4.5" width="10.0">
-                                 <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </TableView>
                         <Label layoutX="375.0" layoutY="280.0" text="Outputs">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
@@ -246,7 +200,10 @@
                            <effect>
                               <InnerShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6736842393875122" green="0.568389892578125" blue="0.14721247553825378" />
+                                       </color></DropShadow>
                                  </input>
                               </InnerShadow>
                            </effect>
@@ -294,7 +251,7 @@
                                  </effect></TextField>
                            </children>
                         </AnchorPane>
-                        <Button layoutX="480.0" layoutY="504.0" mnemonicParsing="false" prefWidth="250.0" text="download CSV file">
+                        <Button layoutX="480.0" layoutY="504.0" mnemonicParsing="false" onAction="#downloadCSV" prefWidth="250.0" text="download CSV files">
                            <font>
                               <Font name="Book Antiqua" size="17.0" />
                            </font>
@@ -307,6 +264,9 @@
                                        </input>
                                     </SepiaTone>
                                  </input>
+                                 <color>
+                                    <Color red="0.621052622795105" green="0.5410058498382568" blue="0.22081871330738068" />
+                                 </color>
                               </DropShadow>
                            </effect>
                         </Button>
@@ -323,7 +283,10 @@
                            <effect>
                               <InnerShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.7894737124443054" green="0.6602339148521423" blue="0.19298245012760162" />
+                                       </color></DropShadow>
                                  </input>
                               </InnerShadow>
                            </effect>
@@ -361,7 +324,7 @@
                               </TextArea>
                            </children>
                         </AnchorPane>
-                        <MenuButton fx:id="warehouseMenu" layoutX="35.0" layoutY="29.0" mnemonicParsing="false" prefHeight="39.2" prefWidth="163.2" text="Warehouses">
+                        <MenuButton fx:id="warehouseMenu" layoutX="35.0" layoutY="29.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="165.0" text="Warehouses">
                            <font>
                               <Font name="Book Antiqua" size="20.0" />
                            </font>
@@ -370,13 +333,35 @@
                                  <input>
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
-                                          <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                          <DropShadow height="10.0" radius="4.5" width="10.0">
+                                             <color>
+                                                <Color red="1.0" green="0.8125925660133362" blue="0.06296296417713165" />
+                                             </color></DropShadow>
                                        </input>
                                     </InnerShadow>
                                  </input>
                               </SepiaTone>
                            </effect>
                         </MenuButton>
+                        <Button fx:id="delete" layoutX="220.0" layoutY="30.0" mnemonicParsing="false" onAction="#deleteWarehouse" prefHeight="40.0" prefWidth="100.0" text="delete">
+                           <font>
+                              <Font name="Book Antiqua" size="17.0" />
+                           </font>
+                           <effect>
+                              <SepiaTone>
+                                 <input>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                       </input>
+                                       <color>
+                                          <Color red="0.6842105388641357" green="0.575750470161438" blue="0.14191032946109772" />
+                                       </color>
+                                    </DropShadow>
+                                 </input>
+                              </SepiaTone>
+                           </effect>
+                        </Button>
                      </children></AnchorPane>
                </content>
             </Tab>
@@ -611,7 +596,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="1100.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="1100.0" onMouseEntered="#displayBankPage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/admin.png" />
          </image>
@@ -642,12 +627,12 @@
             </InnerShadow>
          </effect>
       </Hyperlink>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1100.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1100.0" layoutY="550.0" onMouseEntered="#displayBankPage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/111451-business-chart-pictograms.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1300.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1300.0" layoutY="550.0" onMouseEntered="#displayBankPage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/110912-font-awesome.png" />
          </image>
