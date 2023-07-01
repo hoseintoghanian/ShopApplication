@@ -99,19 +99,9 @@
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <Label fx:id="txtlogin" layoutX="92.0" layoutY="362.0" textFill="#d72121">
+      <Label fx:id="txtloginerror" layoutX="215.0" layoutY="600.0" textFill="#cc2424">
          <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="txtlogin2" layoutX="108.0" layoutY="435.0" textFill="#f20b0b">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="txtloginerror" layoutX="495.0" layoutY="358.0" textFill="#cc2424">
-         <font>
-            <Font size="23.0" />
+            <Font name="Book Antiqua Italic" size="30.0" />
          </font>
       </Label>
     </children>

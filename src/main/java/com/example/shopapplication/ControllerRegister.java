@@ -73,6 +73,7 @@ public class ControllerRegister {
         return sb.toString();
     }
 
+
     public void login(ActionEvent e) throws IOException {
 
         if (!txtLoginUsername.getText().equals("") && !txtLoginPass.getText().equals("")) {
@@ -98,47 +99,32 @@ public class ControllerRegister {
                         Application.shop.currentCustomer = customer;
                         Application.shop.currentSeller = null;
                     }
+
+
+                    if (Objects.equals(Application.shop.admin.getPassword(), txtLoginPass.getText()) ||
+                            Objects.equals(seller.getPassword(), txtLoginPass.getText()) ||
+                            Objects.equals(customer.getPassword(), txtLoginPass.getText())
+                    ) {
+                        //if (txtCaptchaInput.getText().equals(captchaText)) {
+                        fxmlLoader = new FXMLLoader(Application.class.getResource(Application.shop.pageURL));
+                        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        scene = new Scene(fxmlLoader.load());
+                        stage.setScene(scene);
+                        stage.show();
+                        //} else {
+                        //txtCaptchaInput.clear();
+                        //}
+                    } else {
+                        txtloginerror.setText("PassWord is incorrect");
+                    }
+
+
                 } else {
-                    int sum = 0;
-                    for (int i = 0; i < Application.shop.customers.size(); i++) {
-                        if (customer.getUsername() != Application.shop.customers.get(i).getUsername())
-                            sum++;
-                    }
-                    for (int i = 0; i < Application.shop.sellers.size(); i++) {
-                        if (customer.getUsername() != Application.shop.customers.get(i).getUsername())
-                            sum++;
-                    }
-                    if (sum == Application.shop.customers.size() + Application.shop.sellers.size()) {
-                        txtloginerror.setText("invalid username\nplease sign up first");
-                    }
-                    sum = 0;
-                    for (int i = 0;i<Application.shop.sellers.size();i++){
-                        if (Application.shop.sellers.get(i).equals(seller)) sum++;
-                    }
-                    for (int i = 0;i<Application.shop.customers.size();i++){
-                        if (Application.shop.customers.get(i).equals(customer)) sum++;
-                    }
-                    if (sum == 1)
-                        //if (txtLoginPass.getText() != seller.getPassword() || txtLoginPass.getText() != customer.getPassword())
-                            txtloginerror.setText("incorrect password");
+                    txtloginerror.setText("Username is invalid\nplease sign up first");
                 }
             }
-
-
-            if (Objects.equals(Application.shop.admin.getPassword(), txtLoginPass.getText()) ||
-                    Objects.equals(seller.getPassword(), txtLoginPass.getText()) ||
-                    Objects.equals(customer.getPassword(), txtLoginPass.getText())
-            ) {
-                //if (txtCaptchaInput.getText().equals(captchaText)) {
-                fxmlLoader = new FXMLLoader(Application.class.getResource(Application.shop.pageURL));
-                stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                scene = new Scene(fxmlLoader.load());
-                stage.setScene(scene);
-                stage.show();
-                //} else {
-                //txtCaptchaInput.clear();
-                //}
-            }
+        } else {
+            txtloginerror.setText("please fill all the blanks");
         }
     }
 

@@ -43,7 +43,7 @@ public class ControllerPayment {
 
     public void back(ActionEvent e) throws IOException {
         ChangeScene2(e, Application.shop.pageURL);
-    }/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    }
 
     @FXML
     private Label labelfinalcost;
@@ -90,20 +90,17 @@ public class ControllerPayment {
         return sb.toString();
     }
 
-    public void buy() {
-        System.out.println(2);
-    }
 
-    public boolean check () {
-        if (txtcardnumber.getText().length()!=16) return false ;
-        for (int i=0 ; i<16 ; i++) {
-            if (txtcardnumber.getText().charAt(i)<48||txtcardnumber.getText().charAt(i)>57) return false;
+    public boolean check() {
+        if (txtcardnumber.getText().length() != 16) return false;
+        for (int i = 0; i < 16; i++) {
+            if (txtcardnumber.getText().charAt(i) < 48 || txtcardnumber.getText().charAt(i) > 57) return false;
         }
-        if (txtcvv2.getText().length()!=4 && txtcvv2.getText().length()!=5) return false ;
-        if (txtcardexpireyear.getText().length()!=4) return false;
+        if (txtcvv2.getText().length() != 4 && txtcvv2.getText().length() != 5) return false;
+        if (txtcardexpireyear.getText().length() != 4) return false;
         int cardExpireMonth = Integer.parseInt(txtcardexpiremonth.getText());
-        if (cardExpireMonth>12 || cardExpireMonth<0) return false;
-        if (txtcardsecondcode.getText().length()!=5 && txtcardsecondcode.getText().length()!=4) return false ;
+        if (cardExpireMonth > 12 || cardExpireMonth < 0) return false;
+        if (txtcardsecondcode.getText().length() != 5 && txtcardsecondcode.getText().length() != 4) return false;
         if (!txtemail.getText().endsWith("@gmail.com")) return false;
         return true;
     }
