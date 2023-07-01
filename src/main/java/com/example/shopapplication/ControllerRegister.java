@@ -81,7 +81,6 @@ public class ControllerRegister {
             Seller seller = new Seller(txtLoginUsername.getText());
             Customer customer = new Customer(txtLoginUsername.getText());
 
-
             if (Application.shop.admin.getUsername().equals(txtLoginUsername.getText())) {
                 Application.shop.pageURL = "admin.fxml";
 
@@ -117,8 +116,6 @@ public class ControllerRegister {
                     } else {
                         txtloginerror.setText("PassWord is incorrect");
                     }
-
-
                 } else {
                     txtloginerror.setText("Username is invalid\nplease sign up first");
                 }

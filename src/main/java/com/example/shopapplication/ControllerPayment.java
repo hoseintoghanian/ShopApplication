@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Random;
 
 public class ControllerPayment {
@@ -37,12 +38,42 @@ public class ControllerPayment {
     public void changeToBankScene(ActionEvent e) throws IOException {
 
         Application.shop.pageURL = "payment.fxml";
-
         ChangeScene2(e, "bankPortal.fxml");
+    }
+
+    public void checkPayment() {
+
+        if (!txtpaymentprovince.getText().equals("") &&
+                !txtpaymentcity.getText().equals("") &&
+                !txtpaymentpostalcode.getText().equals("") &&
+                !txtpaymentname.getText().equals("") &&
+                !txtpaymentphonenumber.getText().equals("")
+        ) {
+            buttonpayment.setDisable(false);
+        } else {
+            buttonpayment.setDisable(true);
+        }
     }
 
     public void back(ActionEvent e) throws IOException {
         ChangeScene2(e, Application.shop.pageURL);
+    }
+
+    @FXML
+    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
+
+    public void pay() throws SQLException {
+
+        if (Application.shop.pageURL.equals("payment.fxml")) {
+
+            Application.shop.currentCustomer.purchase.addAll(Application.shop.currentCustomer.cartItems);
+            Application.shop.currentCustomer.cartItems.clear();
+
+            for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
+                Database.addProduct("purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
+            }
+        }
+
     }
 
     @FXML
@@ -54,6 +85,8 @@ public class ControllerPayment {
             sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
         }
         labelfinalcost.setText(String.valueOf(sum));
+
+        checkPayment();
     }
 
     @FXML
@@ -67,8 +100,7 @@ public class ControllerPayment {
         labelFinalCost.setText(String.valueOf(sum));
     }
 
-    @FXML
-    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
+
     @FXML
     private TextField txtcardnumber, txtcvv2, txtcardexpiremonth, txtcardexpireyear, txtcaptchainput2, txtcardsecondcode, txtemail;
     @FXML

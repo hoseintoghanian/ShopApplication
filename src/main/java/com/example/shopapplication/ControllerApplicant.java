@@ -30,7 +30,6 @@ import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-
 public class ControllerApplicant {
 
 
@@ -156,18 +155,15 @@ public class ControllerApplicant {
         kind = "snack";
     }
 
+    public void filterPurchase() {
 
-    /* public void applyFilters() {
+        if (Application.shop.pageURL.equals("customer.fxml")) {
+            Application.shop.tempItems.clear();
+            Application.shop.tempItems.addAll(Application.shop.currentCustomer.purchase);
+            showItems("customer", Application.shop.tempItems);
+        }
+    }
 
-         if (Application.shop.pageURL.equals("customer.fxml")) {
-             Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
-             showItems("customer", Application.shop.tempItems);
-         }
-         if (Application.shop.pageURL.equals("seller.fxml")) {
-             Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
-             showItems("seller", Application.shop.currentSeller.tempItems);
-         }
-     }*/
     public void applyFilters() {
 
         if (kind != null) {
@@ -1697,7 +1693,7 @@ public class ControllerApplicant {
                 Application.shop.currentSeller.tempItems.add(item);
                 Application.shop.allItems.add(item);
                 Application.shop.tempItems.add(item);
-                Database.addProduct(item);
+                Database.addProduct("items_", item, Application.shop.currentSeller.getUsername());
 
                 productImg.setImage(item.image);
                 addtxt.setText("add successfully");

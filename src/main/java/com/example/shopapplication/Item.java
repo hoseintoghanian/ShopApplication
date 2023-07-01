@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import java.time.LocalDateTime;
 
 public class Item {
-    private static int count;//should write in database
+    private static int count;
 
     private int code;
     String kind;

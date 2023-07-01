@@ -9,9 +9,10 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#displayInfo" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #E5BA1D;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerPayment">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#displayInfo" onMouseMoved="#displayInfo" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #E5BA1D;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopapplication.ControllerPayment">
    <children>
       <Label layoutX="50.0" layoutY="50.0" text="Adress :" textFill="#ae2a2a">
          <font>
@@ -31,12 +32,15 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
-                  <DropShadow>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
                      <input>
                         <SepiaTone />
                      </input>
+                     <color>
+                        <Color red="0.7894737124443054" green="0.725682258605957" blue="0.2426900565624237" />
+                     </color>
                   </DropShadow>
                </input>
             </InnerShadow>
@@ -55,12 +59,15 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
-                  <DropShadow>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
                      <input>
                         <SepiaTone />
                      </input>
+                     <color>
+                        <Color red="0.75789475440979" green="0.6327953338623047" blue="0.22175438702106476" />
+                     </color>
                   </DropShadow>
                </input>
             </InnerShadow>
@@ -79,12 +86,15 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
-                  <DropShadow>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
                      <input>
                         <SepiaTone />
                      </input>
+                     <color>
+                        <Color red="0.75789475440979" green="0.6327953338623047" blue="0.22175438702106476" />
+                     </color>
                   </DropShadow>
                </input>
             </InnerShadow>
@@ -95,12 +105,15 @@
             <Font name="Book Antiqua" size="20.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
-                  <DropShadow>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
                      <input>
                         <SepiaTone />
                      </input>
+                     <color>
+                        <Color red="0.75789475440979" green="0.6327953338623047" blue="0.22175438702106476" />
+                     </color>
                   </DropShadow>
                </input>
             </InnerShadow>
@@ -141,12 +154,15 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
-                  <DropShadow>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
                      <input>
                         <SepiaTone />
                      </input>
+                     <color>
+                        <Color red="0.7894737124443054" green="0.725682258605957" blue="0.2426900565624237" />
+                     </color>
                   </DropShadow>
                </input>
             </InnerShadow>
@@ -165,12 +181,15 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
-                  <DropShadow>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
                      <input>
                         <SepiaTone />
                      </input>
+                     <color>
+                        <Color red="0.75789475440979" green="0.6327953338623047" blue="0.22175438702106476" />
+                     </color>
                   </DropShadow>
                </input>
             </InnerShadow>
@@ -195,27 +214,33 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
-                  <DropShadow>
+                  <DropShadow height="10.0" radius="4.5" width="10.0">
                      <input>
                         <SepiaTone />
                      </input>
+                     <color>
+                        <Color red="0.7894737124443054" green="0.725682258605957" blue="0.2426900565624237" />
+                     </color>
                   </DropShadow>
                </input>
             </InnerShadow>
          </effect>
       </TextField>
-      <Button fx:id="buttonpayment" layoutX="1199.0" layoutY="650.0" mnemonicParsing="false" onAction="#changeToBankScene" opacity="0.25" prefWidth="250.0" text="Payment" textFill="RED">
+      <Button fx:id="buttonpayment" disable="true" layoutX="1250.0" layoutY="650.0" mnemonicParsing="false" onAction="#changeToBankScene" prefWidth="150.0" text="Payment" textFill="RED">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
                   <SepiaTone level="0.7">
                      <input>
-                        <DropShadow />
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color red="0.7473683953285217" green="0.5392124652862549" blue="0.22697855532169342" />
+                           </color></DropShadow>
                      </input>
                   </SepiaTone>
                </input>
@@ -231,27 +256,33 @@
             <Font name="System Italic" size="24.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
                   <SepiaTone level="0.7">
                      <input>
-                        <DropShadow />
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color red="0.6842105388641357" green="0.6289668679237366" blue="0.13177387416362762" />
+                           </color></DropShadow>
                      </input>
                   </SepiaTone>
                </input>
             </InnerShadow>
          </effect>
       </Button>
-      <Button layoutX="942.0" layoutY="650.0" mnemonicParsing="false" onAction="#ChangeToCartScene" prefWidth="250.0" text="Cancel" textFill="RED">
+      <Button layoutX="1080.0" layoutY="650.0" mnemonicParsing="false" onAction="#ChangeToCartScene" prefWidth="150.0" text="Cancel" textFill="RED">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
          <effect>
-            <InnerShadow>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
                <input>
                   <SepiaTone level="0.7">
                      <input>
-                        <DropShadow />
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color red="0.7473683953285217" green="0.5392124652862549" blue="0.22697855532169342" />
+                           </color></DropShadow>
                      </input>
                   </SepiaTone>
                </input>

@@ -5,6 +5,7 @@ import java.util.*;
 public class Customer extends Applicant {
     long wallet = 0;
     ArrayList<Item> cartItems = new ArrayList<>();
+    ArrayList<Item> purchase = new ArrayList<>();
 
     //yek arraylist baraye buy history bezan
     ArrayList<String> discountCode;//it can be other data structures instead of arraylist

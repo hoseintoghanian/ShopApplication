@@ -34,7 +34,7 @@ public class Database {
 
         statement.executeUpdate();
 
-        createItemTable(customer.getUsername());
+        createItemTable(customer.getUsername(), "purchase_");
 
         statement.close();
         getDBC().close();
@@ -55,14 +55,14 @@ public class Database {
 
         statement.executeUpdate();
 
-        createItemTable(seller.getUsername());
+        createItemTable(seller.getUsername(), "items_");
 
         statement.close();
         getDBC().close();
     }
 
-    public static void createItemTable(String username) throws SQLException {
-        String sql = "create table " + "items_" + username +
+    public static void createItemTable(String username, String str) throws SQLException {
+        String sql = "create table " + str + username +
                 "(code int, kind varchar(15), minorKind varchar(20), brand varchar(20), name varchar(50), price int, size int, property varchar(500)," +
                 "score double, e0 int, e1 int, e2 int, e3 int, e4 int," +
                 "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500), sellerUsername varchar(50), comments varchar(2000), isAuction boolean)";
@@ -132,8 +132,8 @@ public class Database {
         getDBC().close();
     }
 
-    public static void addProduct(Item item) throws SQLException {
-        String sql = "INSERT INTO " + "items_" + Application.shop.currentSeller.getUsername() +
+    public static void addProduct(String str, Item item, String username) throws SQLException {
+        String sql = "INSERT INTO " + str + username +
                 "(code, kind, minorKind, brand, name, price, size, property," +
                 "score, e0, e1, e2, e3, e4," +
                 "uploadDate, imageURL, scoreEmojiURL, sellerUsername, comments, isAuction)" +
@@ -147,7 +147,10 @@ public class Database {
         statement.setString(4, item.brand);
         statement.setString(5, item.name);
         statement.setLong(6, item.price);
-        statement.setInt(7, item.size);
+
+        if (str.equals("items_")) statement.setInt(7, item.size);
+        if (str.equals("purchase_")) statement.setInt(7, item.tempSize);
+
         statement.setString(8, item.property);
 
         statement.setDouble(9, item.score);
@@ -205,6 +208,46 @@ public class Database {
 
             while (resultSet.next()) {
                 Application.shop.sellers.get(i).allItems.add(new Item(
+                        resultSet.getInt("code"),
+                        resultSet.getString("kind"),
+                        resultSet.getString("minorKind"),
+                        resultSet.getString("brand"),
+                        resultSet.getString("name"),
+                        resultSet.getInt("price"),
+                        resultSet.getInt("size"),
+                        resultSet.getString("property"),
+
+                        resultSet.getDouble("score"),
+                        resultSet.getInt("e0"),
+                        resultSet.getInt("e1"),
+                        resultSet.getInt("e2"),
+                        resultSet.getInt("e3"),
+                        resultSet.getInt("e4"),
+
+                        resultSet.getObject("uploadDate"),
+                        resultSet.getString("imageURL"),
+                        resultSet.getString("scoreEmojiURL"),
+                        resultSet.getString("sellerUsername"),
+                        resultSet.getString("comments"),
+                        resultSet.getBoolean("isAuction")
+                ));
+            }
+        }
+
+        statement.close();
+        if (resultSet != null) resultSet.close();
+        getDBC().close();
+    }
+
+    public static void readPurchaseTables() throws SQLException {
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = null;
+
+        for (int i = 0; i < Application.shop.customers.size(); i++) {
+            resultSet = statement.executeQuery("SELECT * FROM purchase_" + Application.shop.customers.get(i).getUsername());
+
+            while (resultSet.next()) {
+                Application.shop.customers.get(i).purchase.add(new Item(
                         resultSet.getInt("code"),
                         resultSet.getString("kind"),
                         resultSet.getString("minorKind"),
