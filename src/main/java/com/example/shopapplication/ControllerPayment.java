@@ -32,48 +32,14 @@ public class ControllerPayment {
         ChangeScene2(e, "cart.fxml");
     }
 
-    @FXML
-    private Button buttonpayment;
-
     public void changeToBankScene(ActionEvent e) throws IOException {
 
         Application.shop.pageURL = "payment.fxml";
         ChangeScene2(e, "bankPortal.fxml");
     }
 
-    public void checkPayment() {
-
-        if (!txtpaymentprovince.getText().equals("") &&
-                !txtpaymentcity.getText().equals("") &&
-                !txtpaymentpostalcode.getText().equals("") &&
-                !txtpaymentname.getText().equals("") &&
-                !txtpaymentphonenumber.getText().equals("")
-        ) {
-            buttonpayment.setDisable(false);
-        } else {
-            buttonpayment.setDisable(true);
-        }
-    }
-
     public void back(ActionEvent e) throws IOException {
         ChangeScene2(e, Application.shop.pageURL);
-    }
-
-    @FXML
-    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
-
-    public void pay() throws SQLException {
-
-        if (Application.shop.pageURL.equals("payment.fxml")) {
-
-            Application.shop.currentCustomer.purchase.addAll(Application.shop.currentCustomer.cartItems);
-            Application.shop.currentCustomer.cartItems.clear();
-
-            for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
-                Database.addProduct("purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
-            }
-        }
-
     }
 
     @FXML
@@ -123,20 +89,109 @@ public class ControllerPayment {
     }
 
 
-    public boolean check() {
-        if (txtcardnumber.getText().length() != 16) return false;
-        for (int i = 0; i < 16; i++) {
-            if (txtcardnumber.getText().charAt(i) < 48 || txtcardnumber.getText().charAt(i) > 57) return false;
+    //////////////////////////////////   buy conditions   ////////////////////////////////////////////////
+    @FXML
+    private Label txtbankportalerror;
+
+    public boolean checkBankScene() {
+
+        if (!txtcardnumber.getText().equals("") &&
+                !txtcvv2.getText().equals("") &&
+                !txtcardexpireyear.getText().equals("") &&
+                !txtcardexpiremonth.getText().equals("") &&
+                !txtcardsecondcode.getText().equals("") &&
+                !txtemail.getText().equals("")
+        ) {
+            if (txtcardnumber.getText().length() != 16) {
+                txtbankportalerror.setText("شماره کارت نامعتبر است");
+                return false;
+            }
+            for (int i = 0; i < 16; i++) {
+                if (txtcardnumber.getText().charAt(i) < 48 || txtcardnumber.getText().charAt(i) > 57) {
+                    txtbankportalerror.setText("شماره کارت نامعتبر است");
+                    return false;
+                }
+            }
+            if (txtcvv2.getText().length() != 4) {
+                txtbankportalerror.setText("cvv2 نامعتبر است");
+                return false;
+            }
+            if (txtcardexpireyear.getText().length() != 4) {
+                txtbankportalerror.setText("تاریخ انقضای سال نامعتبر است");
+                return false;
+            }
+            int cardExpireMonth = Integer.parseInt(txtcardexpiremonth.getText());
+            if (cardExpireMonth > 12 || cardExpireMonth < 0) {
+                txtbankportalerror.setText("تاریخ انقضای ماه نامعتبر است");
+                return false;
+            }
+            if (!txtcaptchainput2.getText().equals(captchaText)) {
+                txtcaptchainput2.clear();
+                txtbankportalerror.setText("کپچا را اشتباه وارد کردید");
+                return false;
+            }
+            if (txtcardsecondcode.getText().length() != 5) {
+                txtbankportalerror.setText("رمز اینترنتی نامعتبر است");
+                return false;
+            }
+            if (!txtemail.getText().endsWith("@gmail.com")) {
+                txtbankportalerror.setText("ایمیل نامعتبر است");
+                return false;
+            }
+        } else if (txtcardnumber.getText().equals("") ||
+                txtcvv2.getText().equals("") ||
+                txtcardexpireyear.getText().equals("") ||
+                txtcardexpiremonth.getText().equals("") ||
+                txtcardsecondcode.getText().equals("") ||
+                txtemail.getText().equals("")
+        ) {
+            txtbankportalerror.setText("لطفا تمام فیلد ها رو پر کنید");
+            return false;
         }
-        if (txtcvv2.getText().length() != 4 && txtcvv2.getText().length() != 5) return false;
-        if (txtcardexpireyear.getText().length() != 4) return false;
-        int cardExpireMonth = Integer.parseInt(txtcardexpiremonth.getText());
-        if (cardExpireMonth > 12 || cardExpireMonth < 0) return false;
-        if (txtcardsecondcode.getText().length() != 5 && txtcardsecondcode.getText().length() != 4) return false;
-        if (!txtemail.getText().endsWith("@gmail.com")) return false;
         return true;
     }
 
+    @FXML
+    private Button buttonpayment;
+    @FXML
+    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
 
-    //for the spinner in cart tab see bro code
+    public void checkPayment() {
+
+        if (!txtpaymentprovince.getText().equals("") &&
+                !txtpaymentcity.getText().equals("") &&
+                !txtpaymentpostalcode.getText().equals("") &&
+                !txtpaymentname.getText().equals("") &&
+                !txtpaymentphonenumber.getText().equals("") &&
+                !txtpaymentpostaladdress.getText().equals("")
+        ) {
+            buttonpayment.setDisable(false);
+        } else {
+            buttonpayment.setDisable(true);
+        }
+    }
+
+    public void pay() throws SQLException {
+
+        if (Application.shop.pageURL.equals("payment.fxml")) {
+            checkBankScene();
+            if (checkBankScene()) {
+                if (Application.shop.currentCustomer.wallet >= Long.valueOf(labelFinalCost.getText())) {
+
+                    Application.shop.currentCustomer.purchase.addAll(Application.shop.currentCustomer.cartItems);
+                    Application.shop.currentCustomer.cartItems.clear();
+
+                    for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
+                        Database.addProduct("purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
+                    }
+                    txtbankportalerror.setStyle("-fx-text-fill: green;");
+                    txtbankportalerror.setText("خرید با موفقیت انجام شد");
+                    Application.shop.currentCustomer.wallet -= Long.valueOf(labelFinalCost.getText());
+                    return;
+                } else
+                    txtbankportalerror.setStyle("-fx-text-fill: red;");
+                txtbankportalerror.setText("موجودی ناکافی");
+            }
+        }
+    }
 }
