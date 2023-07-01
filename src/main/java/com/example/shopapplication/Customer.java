@@ -3,7 +3,7 @@ package com.example.shopapplication;
 import java.util.*;
 
 public class Customer extends Applicant {
-    long wallet = 0;
+    long wallet = 1000;
     ArrayList<Item> cartItems = new ArrayList<>();
     ArrayList<Item> purchase = new ArrayList<>();
 
