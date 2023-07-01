@@ -478,6 +478,16 @@
                         <InnerShadow />
                      </effect>
                   </Hyperlink>
+                  <TextField fx:id="txtincreaseamount" alignment="CENTER" layoutX="807.0" layoutY="518.0" opacity="0.44" prefHeight="55.0" prefWidth="194.0" promptText="enter your desired amount">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="labelincreasewalleterror" layoutX="1093.0" layoutY="482.0" textFill="#df0a0a">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
                </children>
                <effect>
                   <InnerShadow />
