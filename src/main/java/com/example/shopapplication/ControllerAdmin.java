@@ -240,7 +240,7 @@ public class ControllerAdmin {
 
             if (!Application.shop.warehouses.contains(warehouse)) {
                 Application.shop.warehouses.add(warehouse);
-                Database.addWarehouse(warehouse);
+                Database.writeWarehouse(warehouse);
 
                 Application.shop.currentWarehouse = warehouse;
 
@@ -304,22 +304,27 @@ public class ControllerAdmin {
         }
     }
 
-    public void addWarehouseItem() {
+    public void addWarehouseItem() throws SQLException {
 
         if (!txtAddItemName.getText().equals("") && !txtAddItemPrice.getText().equals("") && !txtAddItemSize.getText().equals(""))
             if (Application.shop.currentWarehouse != null) {
 
-                WarehouseItem item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()));
+                WarehouseItem item;
 
                 if (inputButton.isSelected()) {
+                    item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()), "input");
                     if (!Application.shop.currentWarehouse.inputs.contains(item)) {
                         Application.shop.currentWarehouse.inputs.add(item);
+                        Database.addWarehouseItem(item, Application.shop.currentWarehouse.name);
                     }
                 }
                 if (outputButton.isSelected()) {
+                    item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()), "output");
                     if (Application.shop.currentWarehouse.inputs.contains(item)) {
                         Application.shop.currentWarehouse.outputs.add(item);
                         Application.shop.currentWarehouse.inputs.remove(item);
+                        item.kind = "output";
+                        Database.updateWarehouseItem(Application.shop.currentWarehouse, item);
                     }
                 }
 
@@ -492,16 +497,26 @@ public class ControllerAdmin {
 //-------------------------------------------------inner classes--------------------------------
 
     public static class WarehouseItem {
-        String name;
-        long price;
-        int size;
-        LocalDateTime uploadDate;
+        private String name;
+        private long price;
+        private int size;
+        private LocalDateTime uploadDate;
+        String kind;
 
-        public WarehouseItem(String name, long price, int size) {
+        public WarehouseItem(String name, long price, int size, String kind) {
             this.name = name;
             this.price = price;
             this.size = size;
             this.uploadDate = LocalDateTime.now();
+            this.kind = kind;
+        }
+
+        public WarehouseItem(String name, long price, int size, Object uploadDate, String kind) {
+            this.name = name;
+            this.price = price;
+            this.size = size;
+            this.uploadDate = (LocalDateTime) uploadDate;
+            this.kind = kind;
         }
 
         public String getName() {
@@ -515,6 +530,7 @@ public class ControllerAdmin {
         public int getSize() {
             return size;
         }
+
         public LocalDateTime getUploadDate() {
             return uploadDate;
         }
@@ -523,7 +539,7 @@ public class ControllerAdmin {
         public boolean equals(Object o) {
             if (o instanceof WarehouseItem) {
                 WarehouseItem other = (WarehouseItem) o;
-                if (name.equals(other.name)) return true;
+                if (name.equals(other.name) && price == other.price && size == other.size) return true;
             }
             return false;
         }

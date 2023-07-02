@@ -11,11 +11,11 @@ public class CSVFile {
         writer.append("Name, Price, Size\n"); // add header row
 
         for (ControllerAdmin.WarehouseItem item : data) {
-            writer.append(item.name);
+            writer.append(item.getName());
             writer.append(",");
-            writer.append(String.valueOf(item.price));
+            writer.append(String.valueOf(item.getPrice()));
             writer.append(",");
-            writer.append(String.valueOf(item.size));
+            writer.append(String.valueOf(item.getSize()));
             writer.append("\n");
         }
 

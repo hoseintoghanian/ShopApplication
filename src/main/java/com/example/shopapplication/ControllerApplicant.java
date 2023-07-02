@@ -291,13 +291,13 @@ public class ControllerApplicant {
         //pickle
         createMenuItem("behrooz");
         createMenuItem("mahram");
-        createMenuItem("yek & yek");
+        createMenuItem("yek o yek");
         createMenuItem("vlasic");
 
         //lemon juice
         createMenuItem("behrooz");
         createMenuItem("mahram");
-        createMenuItem("yek & yek");
+        createMenuItem("yek o yek");
         createMenuItem("lakewood");
 
         //pasta
@@ -321,7 +321,7 @@ public class ControllerApplicant {
         //jam
         createMenuItem("bijan");
         createMenuItem("mix land");
-        createMenuItem("yek & yek");
+        createMenuItem("yek o yek");
         createMenuItem("randall family");
 
         //honey
@@ -410,7 +410,7 @@ public class ControllerApplicant {
 
         //herbal tea
         createMenuItem("golestan");
-        createMenuItem("sehar khiz");
+        createMenuItem("sahar khiz");
         createMenuItem("shahsavand");
         createMenuItem("yogi");
 
@@ -633,7 +633,7 @@ public class ControllerApplicant {
 
             kind = "broken sugar";
 
-            menuInfo(2, "brokenSugar", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+            menuInfo(2, "broken sugar", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem azughe = new MenuItem("azughe");
             MenuItem ferdous = new MenuItem("ferdous");
@@ -741,7 +741,7 @@ public class ControllerApplicant {
 
             MenuItem behrooz = new MenuItem("behrooz");
             MenuItem mahram = new MenuItem("mahram");
-            MenuItem yekOyek = new MenuItem("yek & yek");
+            MenuItem yekOyek = new MenuItem("yek o yek");
             MenuItem vlasic = new MenuItem("vlasic");
 
             behrooz.setOnAction(actionEvent -> {
@@ -751,7 +751,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("mahram");
             });
             yekOyek.setOnAction(actionEvent -> {
-                menuButtonBrand.setText("yek & yek");
+                menuButtonBrand.setText("yek o yek");
             });
             vlasic.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("vlasic");
@@ -763,21 +763,21 @@ public class ControllerApplicant {
 
             kind = "lemon juice";
 
-            menuInfo(2, "lemonJuice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+            menuInfo(2, "lemon juice", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem behruz = new MenuItem("behruz");
             MenuItem mahram = new MenuItem("mahram");
-            MenuItem yekOyek = new MenuItem("yek & yek");
+            MenuItem yekOyek = new MenuItem("yek o yek");
             MenuItem lakewood = new MenuItem("lakewood");
 
             behruz.setOnAction(actionEvent -> {
-                menuButtonBrand.setText("behruz");
+                menuButtonBrand.setText("behrooz");
             });
             mahram.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("mahram");
             });
             yekOyek.setOnAction(actionEvent -> {
-                menuButtonBrand.setText("yek & yek");
+                menuButtonBrand.setText("yek o yek");
             });
             lakewood.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("lakewood");
@@ -883,7 +883,7 @@ public class ControllerApplicant {
 
             MenuItem bijan = new MenuItem("bijan");
             MenuItem mixLand = new MenuItem("mix land");
-            MenuItem yekOyek = new MenuItem("yek & yek");
+            MenuItem yekOyek = new MenuItem("yek o yek");
             MenuItem randallFamily = new MenuItem("randall family");
 
             bijan.setOnAction(ev -> {
@@ -893,7 +893,7 @@ public class ControllerApplicant {
                 menuButtonBrand.setText("mix land");
             });
             yekOyek.setOnAction(ev -> {
-                menuButtonBrand.setText("yek & yek");
+                menuButtonBrand.setText("yek o yek");
             });
             randallFamily.setOnAction(actionEvent -> {
                 menuButtonBrand.setText("randall family");
@@ -1644,7 +1644,7 @@ public class ControllerApplicant {
 
             kind = "chewing gum";
 
-            menuInfo(2, "chewingGum", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
+            menuInfo(2, "chewing gum", menuButtonKind, menuButtonMinorKind, menuButtonBrand);
 
             MenuItem action = new MenuItem("action");
             MenuItem biodent = new MenuItem("biodent");
@@ -1715,7 +1715,7 @@ public class ControllerApplicant {
                 Application.shop.currentSeller.tempItems.add(item);
                 Application.shop.allItems.add(item);
                 Application.shop.tempItems.add(item);
-                Database.addProduct("items_", item, Application.shop.currentSeller.getUsername());
+                Database.addProduct("seller_items_", item, Application.shop.currentSeller.getUsername());
 
                 productImg.setImage(item.image);
                 addtxt.setText("add successfully");

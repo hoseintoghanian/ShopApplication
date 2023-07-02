@@ -188,7 +188,7 @@ public class ControllerPayment {
                         Application.shop.currentCustomer.cartItems.clear();
                         Application.shop.currentCustomer.wallet -= Long.valueOf(labelFinalCost.getText());
                         for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
-                            Database.addProduct("purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
+                            Database.addProduct("customer_purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
                         }
                     }
                     if (Application.shop.pageURL == "customer.fxml") {

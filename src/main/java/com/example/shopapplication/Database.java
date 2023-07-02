@@ -1,7 +1,6 @@
 package com.example.shopapplication;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class Database {
     public static Connection getDBC() {//getDBC --> get database connection
@@ -34,7 +33,7 @@ public class Database {
 
         statement.executeUpdate();
 
-        createItemTable(customer.getUsername(), "purchase_");
+        createItemTable(customer.getUsername(), "customer_purchase_");
 
         statement.close();
         getDBC().close();
@@ -55,7 +54,7 @@ public class Database {
 
         statement.executeUpdate();
 
-        createItemTable(seller.getUsername(), "items_");
+        createItemTable(seller.getUsername(), "seller_items_");
 
         statement.close();
         getDBC().close();
@@ -71,7 +70,7 @@ public class Database {
         statement.executeUpdate();
     }
 
-    public static void readCustomer() throws SQLException {
+    public static void readCustomers() throws SQLException {
 
         Statement statement = getDBC().createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
@@ -92,7 +91,7 @@ public class Database {
         getDBC().close();
     }
 
-    public static void readSeller() throws SQLException {
+    public static void readSellers() throws SQLException {
 
         Statement statement = getDBC().createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM seller");
@@ -111,91 +110,6 @@ public class Database {
 
         statement.close();
         resultSet.close();
-        getDBC().close();
-    }
-
-    public static void readWarehouse() throws SQLException {
-
-        Statement statement = getDBC().createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM warehouse");
-
-        while (resultSet.next()) {
-            Application.shop.warehouses.add(new Warehouse(
-                    resultSet.getString("name"),
-                    resultSet.getString("storeAdmin"),
-                    resultSet.getString("address")
-            ));
-        }
-
-        statement.close();
-        resultSet.close();
-        getDBC().close();
-    }
-
-    public static void addProduct(String str, Item item, String username) throws SQLException {
-        String sql = "INSERT INTO " + str + username +
-                "(code, kind, minorKind, brand, name, price, size, property," +
-                "score, e0, e1, e2, e3, e4," +
-                "uploadDate, imageURL, scoreEmojiURL, sellerUsername, comments, isAuction)" +
-                "VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        PreparedStatement statement = getDBC().prepareStatement(sql);
-
-        statement.setInt(1, item.getCode());
-        statement.setString(2, item.kind);
-        statement.setString(3, item.minorKind);
-        statement.setString(4, item.brand);
-        statement.setString(5, item.name);
-        statement.setLong(6, item.price);
-
-        if (str.equals("items_")) statement.setInt(7, item.size);
-        if (str.equals("purchase_")) statement.setInt(7, item.tempSize);
-
-        statement.setString(8, item.property);
-
-        statement.setDouble(9, item.score);
-        statement.setInt(10, item.emojiNumber[0]);
-        statement.setInt(11, item.emojiNumber[1]);
-        statement.setInt(12, item.emojiNumber[2]);
-        statement.setInt(13, item.emojiNumber[3]);
-        statement.setInt(14, item.emojiNumber[4]);
-
-        statement.setObject(15, item.uploadDate);
-        statement.setString(16, item.image.getUrl());
-        statement.setString(17, item.scoreEmoji.getUrl());
-        statement.setString(18, item.sellerUsername);
-        statement.setString(19, item.comments);
-        statement.setBoolean(20, item.isAuction);
-
-
-        statement.executeUpdate();
-
-        statement.close();
-        getDBC().close();
-    }
-
-    public static void addWarehouse(Warehouse warehouse) throws SQLException {
-        String sql = "INSERT INTO warehouse(name, storeAdmin, address)VALUES( ?, ?, ?)";
-
-        PreparedStatement statement = getDBC().prepareStatement(sql);
-
-        statement.setString(1, warehouse.name);
-        statement.setString(2, warehouse.storeAdmin);
-        statement.setString(3, warehouse.address);
-
-        statement.executeUpdate();
-
-        statement.close();
-        getDBC().close();
-    }
-
-    public static void deleteWarehouse(String name) throws SQLException {
-        String sql = "delete from warehouse where name = '" + name + "'";
-
-        PreparedStatement statement = getDBC().prepareStatement(sql);
-        statement.executeUpdate();
-
-        statement.close();
         getDBC().close();
     }
 
@@ -232,7 +146,19 @@ public class Database {
                         resultSet.getBoolean("isAuction")
                 ));
             }
+
+            for (int j = 0; j < Application.shop.sellers.get(i).allItems.size(); j++) {
+                if (Application.shop.sellers.get(i).allItems.get(j).isAuction)
+                    Application.shop.sellers.get(i).auction = Application.shop.sellers.get(i).allItems.get(j);
+            }
+
+            Application.shop.sellers.get(i).tempItems.addAll(Application.shop.sellers.get(i).allItems);
+
+            Application.shop.allItems.addAll(Application.shop.sellers.get(i).allItems);
+            Application.shop.tempItems.addAll(Application.shop.sellers.get(i).allItems);
         }
+        Shop.SortByDate(Application.shop.allItems, Application.shop.tempItems);
+
 
         statement.close();
         if (resultSet != null) resultSet.close();
@@ -279,6 +205,47 @@ public class Database {
         getDBC().close();
     }
 
+    public static void addProduct(String str, Item item, String username) throws SQLException {//str is one of these items_ or purchase_
+        String sql = "INSERT INTO " + str + username +
+                "(code, kind, minorKind, brand, name, price, size, property," +
+                "score, e0, e1, e2, e3, e4," +
+                "uploadDate, imageURL, scoreEmojiURL, sellerUsername, comments, isAuction)" +
+                "VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setInt(1, item.getCode());
+        statement.setString(2, item.kind);
+        statement.setString(3, item.minorKind);
+        statement.setString(4, item.brand);
+        statement.setString(5, item.name);
+        statement.setLong(6, item.price);
+
+        if (str.equals("seller_items_")) statement.setInt(7, item.size);
+        if (str.equals("customer_purchase_")) statement.setInt(7, item.tempSize);
+
+        statement.setString(8, item.property);
+
+        statement.setDouble(9, item.score);
+        statement.setInt(10, item.emojiNumber[0]);
+        statement.setInt(11, item.emojiNumber[1]);
+        statement.setInt(12, item.emojiNumber[2]);
+        statement.setInt(13, item.emojiNumber[3]);
+        statement.setInt(14, item.emojiNumber[4]);
+
+        statement.setObject(15, item.uploadDate);
+        statement.setString(16, item.image.getUrl());
+        statement.setString(17, item.scoreEmoji.getUrl());
+        statement.setString(18, item.sellerUsername);
+        statement.setString(19, item.comments);
+        statement.setBoolean(20, item.isAuction);
+
+
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
 
     public static void updateItem(Item item, String emoji, int i) throws SQLException {
         String sql = "update items_" + item.sellerUsername + " set " + emoji + " = " + item.emojiNumber[i] +
@@ -310,4 +277,123 @@ public class Database {
         statement.close();
         getDBC().close();
     }
+
+
+    //---------------------------warehouse-----------------------------
+
+    public static void readWarehouse() throws SQLException {
+
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM warehouse");
+
+        while (resultSet.next()) {
+            Application.shop.warehouses.add(new Warehouse(
+                    resultSet.getString("name"),
+                    resultSet.getString("storeAdmin"),
+                    resultSet.getString("address")
+            ));
+        }
+
+        statement.close();
+        resultSet.close();
+        getDBC().close();
+    }
+
+    public static void writeWarehouse(Warehouse warehouse) throws SQLException {
+        String sql = "INSERT INTO warehouse(name, storeAdmin, address)VALUES( ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setString(1, warehouse.name);
+        statement.setString(2, warehouse.storeAdmin);
+        statement.setString(3, warehouse.address);
+
+        statement.executeUpdate();
+
+        createWarehouseItemTable(warehouse.name);
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void createWarehouseItemTable(String warehouseName) throws SQLException {
+        String sql = "create table warehouse_items_" + warehouseName +
+                "(name varchar(100),price long,size int,uploadDate datetime,kind varchar(10))";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+    }
+
+    public static void deleteWarehouse(String name) throws SQLException {
+        String sql = "delete from warehouse where name = '" + name + "'";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+
+    public static void readWarehouseTables() throws SQLException {
+        Statement statement = getDBC().createStatement();
+        ResultSet resultSet = null;
+
+        for (int i = 0; i < Application.shop.warehouses.size(); i++) {
+            resultSet = statement.executeQuery("SELECT * FROM warehouse_items_" + Application.shop.warehouses.get(i).name);
+
+            while (resultSet.next()) {
+
+                ControllerAdmin.WarehouseItem warehouseItem = new ControllerAdmin.WarehouseItem(
+                        resultSet.getString("name"),
+                        resultSet.getLong("price"),
+                        resultSet.getInt("size"),
+                        resultSet.getObject("uploadDate"),
+                        resultSet.getString("kind")
+                );
+
+                if (warehouseItem.kind.equals("input")) {
+                    Application.shop.warehouses.get(i).inputs.add(warehouseItem);
+                }
+                if (warehouseItem.kind.equals("output")) {
+                    Application.shop.warehouses.get(i).outputs.add(warehouseItem);
+                }
+            }
+        }
+
+        statement.close();
+        if (resultSet != null) resultSet.close();
+        getDBC().close();
+    }
+
+
+    public static void addWarehouseItem(ControllerAdmin.WarehouseItem warehouseItem, String name) throws SQLException {
+        String sql = "INSERT INTO warehouse_items_" + name +
+                "(name, price, size, uploadDate, kind)VALUES( ?, ?, ?, ?, ?)";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+
+        statement.setString(1, warehouseItem.getName());
+        statement.setDouble(2, warehouseItem.getPrice());
+        statement.setInt(3, warehouseItem.getSize());
+        statement.setObject(4, warehouseItem.getUploadDate());
+        statement.setString(5, warehouseItem.kind);
+
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void updateWarehouseItem(Warehouse warehouse, ControllerAdmin.WarehouseItem warehouseItem) throws SQLException {
+        String sql = "update warehouse_items_" + warehouse.name + " set kind = '" + warehouseItem.kind + "' where name = " + warehouseItem.getName();
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+
 }
