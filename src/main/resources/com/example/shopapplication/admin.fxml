@@ -4,6 +4,7 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
@@ -135,7 +136,10 @@
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.5789473652839661" green="0.4758089780807495" blue="0.10292397439479828" />
+                                       </color></DropShadow>
                                  </effect></TextField>
                               <RadioButton fx:id="inputButton" layoutX="15.0" layoutY="120.0" mnemonicParsing="false" text="Input">
                                  <font>
@@ -155,22 +159,40 @@
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.5263158082962036" green="0.40175437927246094" blue="0.1111111119389534" />
+                                       </color></DropShadow>
                                  </effect></Button>
-                              <TextField fx:id="txtAddItemPrice" layoutX="15.0" layoutY="45.0" prefWidth="130.0" promptText="price">
+                              <TextField fx:id="txtAddItemPrice" layoutX="15.0" layoutY="45.0" prefWidth="60.0" promptText="price">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6105263233184814" green="0.47726574540138245" blue="0.11079922318458557" />
+                                       </color></DropShadow>
                                  </effect></TextField>
-                              <TextField fx:id="txtAddItemSize" layoutX="15.0" layoutY="80.0" prefWidth="130.0" promptText="size">
+                              <TextField fx:id="txtAddItemSize" layoutX="85.0" layoutY="45.0" prefWidth="60.0" promptText="size">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6105263233184814" green="0.47726574540138245" blue="0.11079922318458557" />
+                                       </color></DropShadow>
                                  </effect></TextField>
+                              <DatePicker fx:id="addItemDate" layoutX="15.0" layoutY="80.0" prefWidth="130.0" promptText="date">
+                                 <effect>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6105263233184814" green="0.47726574540138245" blue="0.11079922318458557" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </DatePicker>
                            </children>
                         </AnchorPane>
                         <Button fx:id="downloadCSVButton" layoutX="920.0" layoutY="15.0" mnemonicParsing="false" onAction="#downloadCSV" prefHeight="32.0" prefWidth="160.0" text="download CSV files">
@@ -209,14 +231,20 @@
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6000000238418579" green="0.44740739464759827" blue="0.14222222566604614" />
+                                       </color></DropShadow>
                                  </effect></TextField>
                               <TextField fx:id="txtAddAdmin" layoutX="20.0" layoutY="85.0" prefWidth="150.0" promptText="admin">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6000000238418579" green="0.44740739464759827" blue="0.14222222566604614" />
+                                       </color></DropShadow>
                                  </effect></TextField>
                               <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="180.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -225,7 +253,10 @@
                               </ImageView>
                               <TextArea fx:id="txtAddAddress" layoutX="20.0" layoutY="125.0" prefHeight="60.0" prefWidth="260.0" promptText="address">
                                  <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6000000238418579" green="0.44740739464759827" blue="0.14222222566604614" />
+                                       </color></DropShadow>
                                  </effect>
                               </TextArea>
                               <Button layoutX="20.0" layoutY="198.0" mnemonicParsing="false" onAction="#addWarehouse" prefHeight="35.0" prefWidth="260.0" text="add warehouse">

@@ -29,6 +29,8 @@ import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class ControllerAdmin {
@@ -155,6 +157,8 @@ public class ControllerAdmin {
     @FXML
     private TextArea txtAddAddress;
     @FXML
+    private DatePicker addItemDate;
+    @FXML
     private Button deleteButton, editButton, downloadCSVButton;
     @FXML
     private MenuButton warehouseMenu, chartMenuButton;
@@ -185,6 +189,8 @@ public class ControllerAdmin {
 
         warehouseInputsLabel.setVisible(false);
         warehouseOutputsLabel.setVisible(false);
+
+        addItemDate.setValue(null);
 
         addItemAnchorPane.setVisible(false);
 
@@ -256,6 +262,7 @@ public class ControllerAdmin {
         } else addWarehouseErrorLabel.setText("fill all the blanks");
     }
 
+
     public void deleteWarehouse() throws SQLException {
         Database.deleteWarehouse(Application.shop.currentWarehouse.name);
         Application.shop.warehouses.remove(Application.shop.currentWarehouse);
@@ -270,23 +277,23 @@ public class ControllerAdmin {
             storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.storeAdmin);
             storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
 
-            //-------------------------------------------------------------------------
 
             TableColumn<ControllerAdmin.WarehouseItem, String> nameColumn = new TableColumn<>("Name");
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-            nameColumn.setPrefWidth(120);
 
             TableColumn<ControllerAdmin.WarehouseItem, String> priceColumn = new TableColumn<>("Price");
             priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-            priceColumn.setPrefWidth(80);
 
             TableColumn<ControllerAdmin.WarehouseItem, String> sizeColumn = new TableColumn<>("Size");
             sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
-            sizeColumn.setPrefWidth(50);
+
+            TableColumn<ControllerAdmin.WarehouseItem, String> dateColumn = new TableColumn<>("Date");
+            dateColumn.setCellValueFactory(new PropertyValueFactory<>("uploadDate"));
+
 
             TableView<ControllerAdmin.WarehouseItem> tableView = new TableView<>();
             tableView.setItems(FXCollections.observableArrayList(arrays));
-            tableView.getColumns().addAll(nameColumn, priceColumn, sizeColumn);
+            tableView.getColumns().addAll(nameColumn, priceColumn, sizeColumn, dateColumn);
 
             tableView.setLayoutX(x);
             tableView.setLayoutY(y);
@@ -312,18 +319,19 @@ public class ControllerAdmin {
                 WarehouseItem item;
 
                 if (inputButton.isSelected()) {
-                    item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()), "input");
+                    item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()), addItemDate.getValue(), "input");
                     if (!Application.shop.currentWarehouse.inputs.contains(item)) {
                         Application.shop.currentWarehouse.inputs.add(item);
                         Database.addWarehouseItem(item, Application.shop.currentWarehouse.name);
                     }
                 }
                 if (outputButton.isSelected()) {
-                    item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()), "output");
+                    item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()), addItemDate.getValue(), "output");
                     if (Application.shop.currentWarehouse.inputs.contains(item)) {
                         Application.shop.currentWarehouse.outputs.add(item);
                         Application.shop.currentWarehouse.inputs.remove(item);
                         item.kind = "output";
+                        item.uploadDate = addItemDate.getValue().atTime(LocalTime.now());
                         Database.updateWarehouseItem(Application.shop.currentWarehouse, item);
                     }
                 }
@@ -369,6 +377,7 @@ public class ControllerAdmin {
                     return o1.uploadDate.compareTo(o2.uploadDate);
                 }
             });
+
 
             LineChart<String, Number> chart = createLineChart(title);
 
@@ -500,14 +509,14 @@ public class ControllerAdmin {
         private String name;
         private long price;
         private int size;
-        private LocalDateTime uploadDate;
+        LocalDateTime uploadDate;
         String kind;
 
-        public WarehouseItem(String name, long price, int size, String kind) {
+        public WarehouseItem(String name, long price, int size, LocalDate uploadDate, String kind) {
             this.name = name;
             this.price = price;
             this.size = size;
-            this.uploadDate = LocalDateTime.now();
+            this.uploadDate = uploadDate.atTime(LocalTime.now());
             this.kind = kind;
         }
 
@@ -543,6 +552,7 @@ public class ControllerAdmin {
             }
             return false;
         }
+
     }
 
     public static class Transaction {

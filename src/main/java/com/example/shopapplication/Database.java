@@ -325,14 +325,19 @@ public class Database {
     }
 
     public static void deleteWarehouse(String name) throws SQLException {
-        String sql = "delete from warehouse where name = '" + name + "'";
+        String sql1 = "DELETE FROM warehouse WHERE name = '" + name + "'";
+        String sql2 = "DROP TABLE warehouse_items_" + name;
 
-        PreparedStatement statement = getDBC().prepareStatement(sql);
+        PreparedStatement statement = getDBC().prepareStatement(sql1);
+        statement.executeUpdate();
+
+        statement = getDBC().prepareStatement(sql2);
         statement.executeUpdate();
 
         statement.close();
         getDBC().close();
     }
+
 
 
     public static void readWarehouseTables() throws SQLException {
@@ -386,8 +391,7 @@ public class Database {
     }
 
     public static void updateWarehouseItem(Warehouse warehouse, ControllerAdmin.WarehouseItem warehouseItem) throws SQLException {
-        String sql = "update warehouse_items_" + warehouse.name + " set kind = '" + warehouseItem.kind + "' where name = " + warehouseItem.getName();
-
+        String sql = "UPDATE warehouse_items_" + warehouse.name + " SET kind = '" + warehouseItem.kind + "', uploadDate = '" + warehouseItem.uploadDate + "' WHERE name = '" + warehouseItem.getName() + "'";
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
 
