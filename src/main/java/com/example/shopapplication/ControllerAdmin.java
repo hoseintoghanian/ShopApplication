@@ -8,7 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
@@ -16,6 +19,8 @@ import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -24,9 +29,25 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.*;
 
 public class ControllerAdmin {
+
+    DropShadow dropShadow;
+    InnerShadow innerShadow;
+
+    public ControllerAdmin() {
+        dropShadow = new DropShadow();
+        dropShadow.setWidth(10);
+        dropShadow.setHeight(10);
+
+        innerShadow = new InnerShadow();
+        innerShadow.setWidth(10);
+        innerShadow.setHeight(10);
+    }
+
+
     public void changingScene(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -149,13 +170,16 @@ public class ControllerAdmin {
 
             Application.shop.currentWarehouse = warehouse;
 
-            displayInfo(warehouse.inputs, 375, 80);
-            displayInfo(warehouse.outputs, 6550, 80);
+            warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+            chartText.setText("");
+
+            displayInfo(warehouse.inputs, 375, 65);
+            displayInfo(warehouse.outputs, 650, 65);
         }
     }
 
     @FXML
-    private Button delete;
+    private Button deleteButton, editButton;
 
     public void deleteWarehouse() throws SQLException {
 
@@ -165,20 +189,29 @@ public class ControllerAdmin {
     }
 
     @FXML
-    private MenuButton warehouseMenu;
+    private MenuButton warehouseMenu, chartMenuButton;
 
     public void createMenuItem(Warehouse warehouse) {
         String text = txtAddName.getText();
         MenuItem menuItem = new MenuItem(text);
 
         menuItem.setOnAction(ev -> {
-            warehouseMenu.setText(text);
-            Application.shop.currentWarehouse = warehouse;
-            displayInfo(warehouse.inputs, 375, 80);
-            displayInfo(warehouse.outputs, 650, 80);
 
-            delete.setDisable(false);
-            delete.setOpacity(1);
+            warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+            chartText.setText("");
+
+            Application.shop.currentWarehouse = warehouse;
+            displayInfo(warehouse.inputs, 375, 65);
+            displayInfo(warehouse.outputs, 650, 65);
+
+            deleteButton.setDisable(false);
+            deleteButton.setOpacity(1);
+
+            editButton.setDisable(false);
+            editButton.setOpacity(1);
+
+            chartMenuButton.setDisable(false);
+            chartMenuButton.setOpacity(1);
         });
 
         warehouseMenu.getItems().add(menuItem);
@@ -189,15 +222,24 @@ public class ControllerAdmin {
 
     public void insertWarehouseItems() {
 
-        delete.setDisable(true);
-        delete.setOpacity(0);
+        warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+        chartText.setText("");
+
+
+        deleteButton.setDisable(true);
+        deleteButton.setOpacity(0);
+
+        editButton.setDisable(true);
+        editButton.setOpacity(0);
+
+        chartMenuButton.setDisable(true);
+        chartMenuButton.setOpacity(0);
 
         warehouseMenu.getItems().clear();
-        warehouseMenu.setText("Warehouses");
 
-        storeName.setText("store name   : ");
-        storeAdmin.setText("store admin : ");
-        storeAddress.setText("address : ");
+        storeName.setText("Name     : ");
+        storeAdmin.setText("Admin   : ");
+        storeAddress.setText("Address : ");
 
         Application.shop.currentWarehouse = null;
 
@@ -205,13 +247,19 @@ public class ControllerAdmin {
             MenuItem menuItem = new MenuItem(Application.shop.warehouses.get(i).name);
             int finalI = i;
             menuItem.setOnAction(ev -> {
-                warehouseMenu.setText(Application.shop.warehouses.get(finalI).name);
                 Application.shop.currentWarehouse = Application.shop.warehouses.get(finalI);
-                displayInfo(Application.shop.warehouses.get(finalI).inputs, 375, 80);
-                displayInfo(Application.shop.warehouses.get(finalI).outputs, 650, 80);
 
-                delete.setDisable(false);
-                delete.setOpacity(1);
+                displayInfo(Application.shop.warehouses.get(finalI).inputs, 375, 65);
+                displayInfo(Application.shop.warehouses.get(finalI).outputs, 650, 65);
+
+                deleteButton.setDisable(false);
+                deleteButton.setOpacity(1);
+
+                editButton.setDisable(false);
+                editButton.setOpacity(1);
+
+                chartMenuButton.setDisable(false);
+                chartMenuButton.setOpacity(1);
             });
 
             warehouseMenu.getItems().add(menuItem);
@@ -220,14 +268,21 @@ public class ControllerAdmin {
 
     @FXML
     private AnchorPane warehousePage;
+    @FXML
+    private Label chartText;
 
-    public void displayInfo(ArrayList<Item> items, int x, int y) {
+    LineChart<String, Number> currentChart;
+    TableView inputTable, outputTable;
+
+    public void displayInfo(ArrayList<Item> arrays, int x, int y) {
 
         if (Application.shop.currentWarehouse != null) {
 
             storeName.setText("store name   : " + Application.shop.currentWarehouse.name);
             storeAdmin.setText("store admin : " + Application.shop.currentWarehouse.storeAdmin);
             storeAddress.setText("address : " + Application.shop.currentWarehouse.address);
+
+            //-------------------------------------------------------------------------
 
             TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -241,9 +296,8 @@ public class ControllerAdmin {
             sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
             sizeColumn.setPrefWidth(50);
 
-
             TableView<Item> tableView = new TableView<>();
-            tableView.setItems(FXCollections.observableArrayList(items));
+            tableView.setItems(FXCollections.observableArrayList(arrays));
             tableView.getColumns().addAll(nameColumn, priceColumn, sizeColumn);
 
             tableView.setLayoutX(x);
@@ -255,8 +309,92 @@ public class ControllerAdmin {
             innerShadow.setHeight(10);
             tableView.setEffect(innerShadow);
 
-            warehousePage.getChildren().add(tableView);
+
+            warehousePage.getChildren().addAll(tableView);
         }
+    }
+
+    private LineChart<String, Number> createLineChart(String title) {
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        final LineChart<String, Number> chart = new LineChart<>(xAxis, yAxis);
+        chart.setPrefWidth(700);
+        chart.setLayoutX(370);
+        chart.setLayoutY(320);
+        chart.setEffect(dropShadow);
+        chartText.setText(title);
+
+        currentChart = chart;
+
+        return chart;
+    }
+
+    public void createChart(String title) {
+
+        warehousePage.getChildren().remove(currentChart);
+
+        if (Application.shop.currentWarehouse != null) {
+
+            ArrayList<Item> items = Application.shop.currentWarehouse.inputs;
+            items.sort(new Comparator<Item>() {
+                @Override
+                public int compare(Item item1, Item item2) {
+                    return item1.uploadDate.compareTo(item2.uploadDate);
+                }
+            });
+
+            LineChart<String, Number> chart = createLineChart(title);
+
+
+            Map<LocalDate, Integer> dayMap = new HashMap<>();
+            Map<LocalDate, Integer> weekMap = new HashMap<>();
+            Map<String, Integer> monthMap = new TreeMap<>();
+
+            for (Item item : items) {
+                LocalDate date = item.getUploadDate().toLocalDate();
+                dayMap.put(date, dayMap.getOrDefault(date, 0) + 1);
+
+                LocalDate weekStart = date.minusDays(date.getDayOfWeek().getValue() - 1);
+                weekMap.put(weekStart, weekMap.getOrDefault(weekStart, 0) + 1);
+
+                String month = String.format("%d-%02d", date.getYear(), date.getMonthValue());
+                monthMap.put(month, monthMap.getOrDefault(month, 0) + 1);
+            }
+
+            XYChart.Series<String, Number> series = new XYChart.Series<>();
+            ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
+
+            if (title.equals("Uploads by Day"))
+                for (Map.Entry<LocalDate, Integer> entry : dayMap.entrySet()) {
+                    data.add(new XYChart.Data<>(entry.getKey().toString(), entry.getValue()));
+                }
+            if (title.equals("Uploads by Week"))
+                for (Map.Entry<LocalDate, Integer> entry : weekMap.entrySet()) {
+                    LocalDate weekEnd = entry.getKey().plusDays(6);
+                    String label = String.format("%s - %s", entry.getKey().toString(), weekEnd.toString());
+                    data.add(new XYChart.Data<>(label, entry.getValue()));
+                }
+            if (title.equals("Uploads by Month"))
+                for (Map.Entry<String, Integer> entry : monthMap.entrySet()) {
+                    data.add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
+                }
+
+            series.setData(data);
+            chart.getData().add(series);
+            warehousePage.getChildren().add(chart);
+        }
+    }
+
+    public void chartByDay() {
+        createChart("Uploads by Day");
+    }
+
+    public void chartByWeek() {
+        createChart("Uploads by Week");
+    }
+
+    public void chartByMonth() {
+        createChart("Uploads by Month");
     }
 
     @FXML
@@ -285,8 +423,11 @@ public class ControllerAdmin {
                     }
                 }
 
-                displayInfo(Application.shop.currentWarehouse.inputs, 375, 80);
-                displayInfo(Application.shop.currentWarehouse.outputs, 6500, 80);
+                warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+                chartText.setText("");
+
+                displayInfo(Application.shop.currentWarehouse.inputs, 375, 65);
+                displayInfo(Application.shop.currentWarehouse.outputs, 650, 65);
             }
 
     }

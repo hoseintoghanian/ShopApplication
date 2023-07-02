@@ -89,11 +89,13 @@ public class Item {
         this.brand = brand;
         this.price = price;
         this.size = size;
+        this.uploadDate = LocalDateTime.now();
     }
 
     public String getName() {
         return name;
     }
+
     public String getBrand() {
         return brand;
     }
@@ -108,6 +110,10 @@ public class Item {
 
     public int getCode() {
         return code;
+    }
+
+    public LocalDateTime getUploadDate() {
+        return uploadDate;
     }
 
 
