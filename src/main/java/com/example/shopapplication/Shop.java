@@ -13,23 +13,20 @@ public class Shop {
         return instance;
     }
 
-    public Admin admin = new Admin("admin", "5581");
 
+    public Admin admin = new Admin("admin", "5581");
     public Seller currentSeller;
     public Customer currentCustomer;
-    public Item currentItem;
-
     public Warehouse currentWarehouse;
+    public Item currentItem;
 
     public ArrayList<Seller> sellers = new ArrayList<>();
     public ArrayList<Customer> customers = new ArrayList<>();
-
-
     public ArrayList<Warehouse> warehouses = new ArrayList<>();
-
 
     public ArrayList<Item> allItems = new ArrayList<>();
     public ArrayList<Item> tempItems = new ArrayList<>();
+
     String pageURL;
 
 
@@ -62,10 +59,7 @@ public class Shop {
         }
     }
 
-
     public static void SortByScore(ArrayList<Item> tempItems, int sort) {
-
-
         tempItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
@@ -117,8 +111,6 @@ public class Shop {
     }
 
     public static void SortByPrice(ArrayList<Item> tempItems, int sort) {
-
-
         tempItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
@@ -134,7 +126,6 @@ public class Shop {
                 return 0;
             }
         });
-
     }
 
     public static void sortByAuction(ArrayList<Item> allItems, ArrayList<Item> tempItems) {
@@ -152,6 +143,5 @@ public class Shop {
             if (allItems.get(i).name.equals(name)) tempItems.add(allItems.get(i));
         }
     }
-
 
 }

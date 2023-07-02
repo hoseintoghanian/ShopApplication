@@ -50,7 +50,7 @@
                                           </InnerShadow>
                                        </input>
                                        <color>
-                                          <Color red="0.04210526496171951" green="0.04210526496171951" blue="0.04210526496171951" />
+                                          <Color red="0.5473684072494507" green="0.47050032019615173" blue="0.192592591047287" />
                                        </color>
                                     </DropShadow>
                                  </effect>
@@ -248,11 +248,7 @@
                                 <content>
                                   <AnchorPane fx:id="mainPage" minHeight="0.0" minWidth="0.0" onMouseEntered="#showSeller" prefHeight="5000.0" prefWidth="1100.0" style="-fx-background-color: #E5BA1D;">
                                        <effect>
-                                          <InnerShadow>
-                                             <input>
-                                                <DropShadow />
-                                             </input>
-                                          </InnerShadow>
+                                          <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                        </effect></AnchorPane>
                                 </content>
                               </ScrollPane>
@@ -340,7 +336,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="666.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="656.0" layoutY="50.0" onMouseClicked="#loadImage" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/customer.png" />
                      </image>
@@ -348,33 +344,33 @@
                         <DropShadow />
                      </effect>
                   </ImageView>
-                  <Label layoutX="40.0" layoutY="210.0" text="Password :">
+                  <Label layoutX="40.0" layoutY="230.0" text="Password    :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="40.0" layoutY="165.0" text="Username :">
+                  <Label layoutX="40.0" layoutY="180.0" text="Username   :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="40.0" layoutY="120.0" text="Phone :">
+                  <Label layoutX="40.0" layoutY="130.0" text="Phone         :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="40.0" layoutY="75.0" text="Lastname :">
+                  <Label layoutX="40.0" layoutY="80.0" text="Lastname    :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -385,66 +381,66 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="255.0" text="E-mail :">
+                  <Label layoutX="40.0" layoutY="280.0" text="E-mail         :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="772.0" layoutY="380.0" text="Seller">
+                  <Label layoutX="760.0" layoutY="10.0" text="' Seller '">
                      <font>
-                        <Font name="Book Antiqua" size="36.0" />
+                        <Font name="Book Antiqua Italic" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="30.0" text="Firstname :">
+                  <Label layoutX="40.0" layoutY="30.0" text="Firstname   :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtPNaccount" layoutX="230.0" layoutY="120.0" text="...">
+                  <Label fx:id="txtPNaccount" layoutX="210.0" layoutY="130.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtEMaccount" layoutX="230.0" layoutY="255.0" text="...">
+                  <Label fx:id="txtEMaccount" layoutX="210.0" layoutY="280.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtPWaccount" layoutX="230.0" layoutY="210.0" text="...">
+                  <Label fx:id="txtPWaccount" layoutX="210.0" layoutY="230.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtUNaccount" layoutX="230.0" layoutY="165.0" text="...">
+                  <Label fx:id="txtUNaccount" layoutX="210.0" layoutY="180.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtFNaccount" layoutX="230.0" layoutY="30.0" text="...">
+                  <Label fx:id="txtFNaccount" layoutX="210.0" layoutY="30.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtLNaccount" layoutX="230.0" layoutY="75.0" text="...">
+                  <Label fx:id="txtLNaccount" layoutX="210.0" layoutY="80.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Separator layoutX="666.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
-                  <Separator layoutX="966.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
-                  <Separator layoutX="666.0" layoutY="50.0" prefWidth="300.0" />
-                  <Separator layoutX="666.0" layoutY="350.0" prefWidth="300.0" />
-                  <Separator layoutX="655.0" layoutY="50.0" orientation="VERTICAL" prefHeight="600.0">
+                  <Separator layoutX="656.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
+                  <Separator layoutX="956.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
+                  <Separator layoutX="656.0" layoutY="50.0" prefWidth="300.0" />
+                  <Separator layoutX="656.0" layoutY="350.0" prefWidth="300.0" />
+                  <Separator layoutX="975.0" layoutY="50.0" orientation="VERTICAL" prefHeight="630.0">
                      <effect>
                         <DropShadow />
                      </effect></Separator>
-                  <Label layoutX="40.0" layoutY="345.0" text="Wallet Balance :">
+                  <Label layoutX="40.0" layoutY="420.0" text="Wallet Balance :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -452,12 +448,12 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="230.0" layoutY="345.0" text="0 $">
+                  <Label layoutX="230.0" layoutY="420.0" text="0 $">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="370.0" layoutY="345.0" mnemonicParsing="false" onAction="#changeToBankPortalScene" opacity="0.9" prefWidth="250.0" text="Increase account balance">
+                  <Button layoutX="50.0" layoutY="645.0" mnemonicParsing="false" onAction="#changeToBankPortalScene" opacity="0.9" prefHeight="40.0" prefWidth="350.0" text="Increase account balance">
                      <font>
                         <Font name="Book Antiqua" size="18.0" />
                      </font>
@@ -468,6 +464,9 @@
                                  <input>
                                     <ColorAdjust contrast="1.0" />
                                  </input>
+                                 <color>
+                                    <Color red="0.6105263233184814" green="0.5140103697776794" blue="0.16506822407245636" />
+                                 </color>
                               </InnerShadow>
                            </input>
                            <color>
@@ -476,7 +475,7 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <AnchorPane layoutX="75.0" layoutY="406.0" prefHeight="300.0" prefWidth="500.0">
+                  <AnchorPane layoutX="455.0" layoutY="390.0" prefHeight="300.0" prefWidth="500.0">
                      <children>
                         <TextField fx:id="txtProductName" layoutX="10.0" layoutY="135.0" prefWidth="220.0" promptText="name">
                            <effect>
@@ -485,7 +484,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -499,7 +501,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -518,7 +523,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -532,7 +540,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -554,7 +565,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -569,7 +583,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -584,7 +601,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -604,7 +624,10 @@
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
                                           <ColorAdjust />
-                                       </input></InnerShadow>
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
                                     <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
@@ -616,17 +639,23 @@
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <ColorAdjust />
+                                       </input>
+                                       <color>
+                                          <Color red="0.17159999907016754" green="0.5186735391616821" blue="0.5199999809265137" />
+                                       </color></InnerShadow>
                                  </input>
                                  <color>
-                                    <Color red="0.7368420958518982" green="0.6480571627616882" blue="0.07095516473054886" />
+                                    <Color red="0.7894737124443054" green="0.6443957090377808" blue="0.11988303810358047" />
                                  </color>
                               </DropShadow>
                            </effect>
                         </TextArea>
                      </children>
                   </AnchorPane>
-                  <Separator layoutX="72.0" layoutY="401.0" orientation="VERTICAL" prefHeight="300.0">
+                  <Separator layoutX="452.0" layoutY="385.0" orientation="VERTICAL" prefHeight="300.0">
                      <effect>
                         <DropShadow>
                            <input>
@@ -634,7 +663,7 @@
                            </input>
                         </DropShadow>
                      </effect></Separator>
-                  <Separator layoutX="571.0" layoutY="401.0" orientation="VERTICAL" prefHeight="300.0">
+                  <Separator layoutX="951.0" layoutY="385.0" orientation="VERTICAL" prefHeight="300.0">
                      <effect>
                         <DropShadow>
                            <input>
@@ -642,7 +671,7 @@
                            </input>
                         </DropShadow>
                      </effect></Separator>
-                  <Separator layoutX="72.0" layoutY="401.0" prefWidth="500.0">
+                  <Separator layoutX="452.0" layoutY="385.0" prefWidth="500.0">
                      <effect>
                         <DropShadow>
                            <input>
@@ -650,7 +679,7 @@
                            </input>
                         </DropShadow>
                      </effect></Separator>
-                  <Separator layoutX="72.0" layoutY="701.0" prefWidth="500.0">
+                  <Separator layoutX="452.0" layoutY="685.0" prefWidth="500.0">
                      <effect>
                         <DropShadow>
                            <input>
@@ -658,7 +687,7 @@
                            </input>
                         </DropShadow>
                      </effect></Separator>
-                  <Hyperlink layoutX="914.0" layoutY="28.0" onAction="#changeToLoginScene" text="Log Out">
+                  <Hyperlink layoutX="904.0" layoutY="28.0" onAction="#changeToLoginScene" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>
@@ -668,8 +697,11 @@
                         <TextArea layoutY="670.0" prefHeight="50.0" prefWidth="450.0" promptText="Message to admin">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
+                                 <color>
+                                    <Color red="0.9578947424888611" green="0.739352822303772" blue="0.1383625715970993" />
+                                 </color>
                                  <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                    <SepiaTone level="0.5" />
                                  </input>
                               </DropShadow>
                            </effect>
@@ -677,11 +709,11 @@
                               <Font name="Book Antiqua" size="15.0" />
                            </font>
                         </TextArea>
-                        <Button layoutX="450.0" layoutY="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Send">
+                        <Button layoutX="452.0" layoutY="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Send">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                    <SepiaTone level="0.5" />
                                  </input>
                               </DropShadow>
                            </effect>
@@ -757,7 +789,7 @@
                               </AnchorPane>
                            </content>
                            <effect>
-                              <InnerShadow />
+                              <InnerShadow height="10.0" radius="4.5" width="10.0" />
                            </effect>
                         </ScrollPane>
                         <ImageView fx:id="imgTheme4" fitHeight="60.0" fitWidth="50.0" layoutX="260.0" layoutY="5.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
@@ -826,22 +858,49 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="40.0" layoutY="300.0" text="Work place :">
+                  <Label layoutX="40.0" layoutY="330.0" text="Work place  :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtwpaccount" layoutX="230.0" layoutY="300.0" text="...">
+                  <Label fx:id="txtwpaccount" layoutX="210.0" layoutY="330.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtincreaseamount" alignment="CENTER" layoutX="100.0" layoutY="599.0" prefHeight="30.0" prefWidth="250.0" promptText="enter your desired amount">
+                     <font>
+                        <Font name="Georgia" size="13.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow height="10.0" radius="4.5" width="10.0">
+                           <input>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
+                                 <color>
+                                    <Color red="0.6736842393875122" green="0.5942559838294983" blue="0.1971150040626526" />
+                                 </color>
+                                 <input>
+                                    <ColorAdjust brightness="0.3" />
+                                 </input>
+                              </DropShadow>
+                           </input>
+                           <color>
+                              <Color red="0.6526315808296204" green="0.5387030243873596" blue="0.1643664687871933" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </TextField>
+                  <Label fx:id="labelincreasewalleterror" layoutX="50.0" layoutY="510.0" textFill="#b40808">
+                     <font>
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
                </children>
                <effect>
-                  <InnerShadow />
+                  <InnerShadow height="10.0" radius="4.5" width="10.0" />
                </effect>
             </AnchorPane>
          </content>

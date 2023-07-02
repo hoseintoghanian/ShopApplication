@@ -10,8 +10,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
@@ -251,11 +249,7 @@
                                  <content>
                                     <AnchorPane fx:id="mainPage" minHeight="0.0" minWidth="0.0" onMouseEntered="#showCustomer" prefHeight="5000.0" prefWidth="1100.0" style="-fx-background-color: #E5BA1D;">
                                        <effect>
-                                          <InnerShadow>
-                                             <input>
-                                                <DropShadow />
-                                             </input>
-                                          </InnerShadow>
+                                          <InnerShadow height="10.0" radius="4.5" width="10.0" />
                                        </effect>
                                     </AnchorPane>
                                  </content>
@@ -279,7 +273,7 @@
                     <content>
                       <AnchorPane fx:id="auctionPage" minHeight="0.0" minWidth="0.0" prefHeight="5000.0" prefWidth="1500.0" style="-fx-background-color: #E5BA1D;">
                            <effect>
-                              <InnerShadow />
+                              <InnerShadow height="10.0" radius="4.5" width="10.0" />
                            </effect></AnchorPane>
                     </content>
                   </ScrollPane>
@@ -287,11 +281,11 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab fx:id="CustomerTabAccount" onSelectionChanged="#displayInfo" text="     Acount     ">
+      <Tab onSelectionChanged="#displayInfo" text="     Acount     ">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
+            <AnchorPane fx:id="customerAccountPage" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" onMouseClicked="#loadImage" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/customer.png" />
                      </image>
@@ -299,33 +293,33 @@
                         <DropShadow />
                      </effect>
                   </ImageView>
-                  <Label layoutX="70.0" layoutY="340.0" text="Password :">
+                  <Label layoutX="50.0" layoutY="290.0" text="Password :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="270.0" text="Username :">
+                  <Label layoutX="50.0" layoutY="230.0" text="Username :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="200.0" text="Phone Number :">
+                  <Label layoutX="50.0" layoutY="170.0" text="Phone Number :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="130.0" text="Lastname :">
+                  <Label layoutX="50.0" layoutY="110.0" text="Lastname :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
@@ -336,69 +330,69 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="70.0" layoutY="410.0" text="E-mail :">
+                  <Label layoutX="50.0" layoutY="350.0" text="E-mail :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="1223.0" layoutY="385.0" text="Customer">
+                  <Label layoutX="1222.0" layoutY="10.0" text="' Customer '">
                      <font>
-                        <Font name="Book Antiqua" size="36.0" />
+                        <Font name="Book Antiqua Italic" size="30.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="70.0" layoutY="60.0" text="Firstname :">
+                  <Label layoutX="50.0" layoutY="50.0" text="Firstname :">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                      <effect>
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtPNaccount" layoutX="400.0" layoutY="200.0" text="...">
+                  <Label fx:id="txtPNaccount" layoutX="250.0" layoutY="170.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtEMaccount" layoutX="400.0" layoutY="410.0" text="...">
+                  <Label fx:id="txtEMaccount" layoutX="250.0" layoutY="350.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtPWaccount" layoutX="400.0" layoutY="340.0" text="...">
+                  <Label fx:id="txtPWaccount" layoutX="250.0" layoutY="290.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtUNaccount" layoutX="400.0" layoutY="270.0" text="...">
+                  <Label fx:id="txtUNaccount" layoutX="250.0" layoutY="230.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtFNaccount" layoutX="400.0" layoutY="60.0" text="...">
+                  <Label fx:id="txtFNaccount" layoutX="250.0" layoutY="50.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtLNaccount" layoutX="400.0" layoutY="130.0" text="...">
+                  <Label fx:id="txtLNaccount" layoutX="250.0" layoutY="110.0" text="...">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
                   <Separator layoutX="1150.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
                   <Separator layoutX="1450.0" layoutY="50.0" orientation="VERTICAL" prefHeight="300.0" />
                   <Separator layoutX="1150.0" layoutY="50.0" prefWidth="300.0" />
                   <Separator layoutX="1150.0" layoutY="350.0" prefWidth="300.0" />
-                  <Separator layoutX="655.0" layoutY="50.0" orientation="VERTICAL" prefHeight="480.0">
+                  <Separator layoutX="655.0" layoutY="50.0" orientation="VERTICAL" prefHeight="620.0">
                      <effect>
                         <DropShadow />
                      </effect></Separator>
-                  <Label layoutX="70.0" layoutY="610.0" text="Wallet Balance :">
+                  <Label layoutX="50.0" layoutY="450.0" text="Wallet Balance :">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -406,91 +400,84 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtWBaccount" layoutX="400.0" layoutY="610.0">
+                  <Label fx:id="txtWBaccount" layoutX="250.0" layoutY="450.0" text="0">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="755.0" layoutY="610.0" mnemonicParsing="false" onAction="#changeToBankPortalScene" opacity="0.9" prefWidth="300.0" text="Increase wallet balance">
-                     <font>
-                        <Font name="Book Antiqua" size="22.0" />
-                     </font>
-                     <effect>
-                        <InnerShadow height="10.0" radius="4.5" width="10.0">
-                           <input>
-                              <SepiaTone level="0.2">
-                                 <input>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
-                                 </input>
-                              </SepiaTone>
-                           </input>
-                        </InnerShadow>
-                     </effect>
-                  </Button>
-                  <Separator layoutX="655.0" layoutY="600.0" orientation="VERTICAL" prefHeight="70.0">
-                     <effect>
-                        <DropShadow />
-                     </effect></Separator>
-                  <TableView layoutX="705.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0">
-                    <columns>
-                      <TableColumn prefWidth="30.0" text="C1" />
-                      <TableColumn prefWidth="170.0" text="Discount code" />
-                        <TableColumn prefWidth="30.0" text="C2" />
-                        <TableColumn prefWidth="170.0" text="Discount code" />
-                    </columns>
-                     <effect>
-                        <DropShadow height="10.0" radius="4.5" width="10.0">
-                           <input>
-                              <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                 <input>
-                                    <ColorAdjust />
-                                 </input></InnerShadow>
-                           </input>
-                           <color>
-                              <Color red="0.4736842215061188" green="0.4167836308479309" blue="0.22982455790042877" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </TableView>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="610.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/cart.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="1150.0" layoutY="610.0" mnemonicParsing="false" opacity="0.9" prefWidth="210.0" text="Purchase History">
-                     <font>
-                        <Font name="Book Antiqua" size="22.0" />
-                     </font>
-                     <effect>
-                        <InnerShadow height="10.0" radius="4.5" width="10.0">
-                           <input>
-                              <SepiaTone level="0.2">
-                                 <input>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
-                                 </input>
-                              </SepiaTone>
-                           </input>
-                        </InnerShadow>
-                     </effect>
-                  </Button>
                   <Hyperlink fx:id="txtLogout" layoutX="1400.0" layoutY="25.0" onAction="#changeToLoginScene" text="Log Out">
                      <effect>
                         <InnerShadow />
                      </effect>
                   </Hyperlink>
-                  <TextField fx:id="txtincreaseamount" alignment="CENTER" layoutX="807.0" layoutY="518.0" opacity="0.44" prefHeight="55.0" prefWidth="194.0" promptText="enter your desired amount">
+                  <Label fx:id="labelincreasewalleterror" layoutX="50.0" layoutY="530.0" textFill="#b40808">
+                     <font>
+                        <Font name="Book Antiqua Italic" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="705.0" layoutY="50.0" text="Purchase History :">
+                     <font>
+                        <Font name="Book Antiqua" size="25.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </Label>
+                  <Label layoutX="1218.0" layoutY="425.0" text="Discount Codes">
+                     <font>
+                        <Font name="Book Antiqua" size="25.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </Label>
+                  <Button layoutX="50.0" layoutY="630.0" mnemonicParsing="false" onAction="#changeToBankPortalScene" opacity="0.9" prefHeight="40.0" prefWidth="350.0" text="Increase account balance">
+                     <font>
+                        <Font name="Book Antiqua" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <input>
+                              <InnerShadow height="10.0" radius="4.5" width="10.0">
+                                 <input>
+                                    <ColorAdjust contrast="1.0" />
+                                 </input>
+                                 <color>
+                                    <Color red="0.6105263233184814" green="0.5140103697776794" blue="0.16506822407245636" />
+                                 </color>
+                              </InnerShadow>
+                           </input>
+                           <color>
+                              <Color red="0.5789473652839661" green="0.4628719985485077" blue="0.14366471767425537" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <TextField fx:id="txtincreaseamount" alignment="CENTER" layoutX="425.0" layoutY="630.0" prefHeight="40.0" prefWidth="200.0" promptText="enter your desired amount">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
+                     <effect>
+                        <InnerShadow height="10.0" radius="4.5" width="10.0">
+                           <input>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
+                                 <color>
+                                    <Color red="0.6736842393875122" green="0.5942559838294983" blue="0.1971150040626526" />
+                                 </color>
+                                 <input>
+                                    <ColorAdjust brightness="0.3" />
+                                 </input>
+                              </DropShadow>
+                           </input>
+                           <color>
+                              <Color red="0.6526315808296204" green="0.5387030243873596" blue="0.1643664687871933" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </TextField>
-                  <Label fx:id="labelincreasewalleterror" layoutX="1093.0" layoutY="482.0" textFill="#df0a0a">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
                </children>
                <effect>
-                  <InnerShadow />
+                  <InnerShadow height="10.0" radius="4.5" width="10.0" />
                </effect></AnchorPane>
          </content>
       </Tab>

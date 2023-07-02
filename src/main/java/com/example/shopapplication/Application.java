@@ -21,7 +21,7 @@ public class Application extends javafx.application.Application {
         Database.readWarehouseTables();//warehouse inputs and outputs
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("admin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Online Shop Application");
         stage.setScene(scene);

@@ -118,7 +118,7 @@ public class Database {
         ResultSet resultSet = null;
 
         for (int i = 0; i < Application.shop.sellers.size(); i++) {
-            resultSet = statement.executeQuery("SELECT * FROM items_" + Application.shop.sellers.get(i).getUsername());
+            resultSet = statement.executeQuery("SELECT * FROM seller_items_" + Application.shop.sellers.get(i).getUsername());
 
             while (resultSet.next()) {
                 Application.shop.sellers.get(i).allItems.add(new Item(
@@ -170,7 +170,7 @@ public class Database {
         ResultSet resultSet = null;
 
         for (int i = 0; i < Application.shop.customers.size(); i++) {
-            resultSet = statement.executeQuery("SELECT * FROM purchase_" + Application.shop.customers.get(i).getUsername());
+            resultSet = statement.executeQuery("SELECT * FROM customer_purchase_" + Application.shop.customers.get(i).getUsername());
 
             while (resultSet.next()) {
                 Application.shop.customers.get(i).purchase.add(new Item(
@@ -205,7 +205,7 @@ public class Database {
         getDBC().close();
     }
 
-    public static void addProduct(String str, Item item, String username) throws SQLException {//str is one of these items_ or purchase_
+    public static void addProduct(String str, Item item, String username) throws SQLException {//str is one of these seller_items_ or customer_purchase_
         String sql = "INSERT INTO " + str + username +
                 "(code, kind, minorKind, brand, name, price, size, property," +
                 "score, e0, e1, e2, e3, e4," +
@@ -248,7 +248,7 @@ public class Database {
     }
 
     public static void updateItem(Item item, String emoji, int i) throws SQLException {
-        String sql = "update items_" + item.sellerUsername + " set " + emoji + " = " + item.emojiNumber[i] +
+        String sql = "update seller_items_" + item.sellerUsername + " set " + emoji + " = " + item.emojiNumber[i] +
                 " , score = " + item.score + " where code = " + item.getCode();
 
         PreparedStatement statement = getDBC().prepareStatement(sql);

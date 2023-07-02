@@ -61,7 +61,7 @@ public class ControllerAdmin {
         changingScene(e, "Login.fxml");
     }
 
-    //-------------------------------bankPage----------------------------
+    //-------------------------------bankPage-------------------------------------------------------
     @FXML
     private AnchorPane bankPage;
 
@@ -143,13 +143,102 @@ public class ControllerAdmin {
         bankPage.getChildren().addAll(table, transactionTable);
     }
 
-    //-------------------chart tab--------------------------
-    public void chartTab() {
+    //-----------------------------chart tab-------------------------------------------------------
 
+    @FXML
+    private AnchorPane chartPage;
+
+    LineChart<String, Number> currentIncomeChart, currentCostChart;
+
+
+    public void displayChartPage() {
+
+        chartPage.getChildren().removeAll(currentIncomeChart, currentCostChart);
+
+
+        // Create a list of all items in all warehouses
+        ArrayList<WarehouseItem> cost = new ArrayList<>();
+        for (Warehouse warehouse : Application.shop.warehouses) {
+            cost.addAll(warehouse.inputs);
+        }
+
+        // Create a line chart
+        CategoryAxis xAxis = new CategoryAxis();
+        NumberAxis yAxis = new NumberAxis();
+        LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
+
+        // Set the chart title and axis labels
+        xAxis.setLabel("Date");
+        yAxis.setLabel("Price");
+
+        // Create a series for the chart
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("Cost");
+
+        // Add the data to the series
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        for (WarehouseItem item : cost) {
+            String dateStr = item.getUploadDate().format(formatter);
+            series.getData().add(new XYChart.Data<>(dateStr, item.getPrice()));
+        }
+
+        // Add the series to the chart
+        ObservableList<XYChart.Series<String, Number>> chartData = FXCollections.observableArrayList();
+        chartData.add(series);
+        lineChart.setData(chartData);
+
+        lineChart.setPrefWidth(530);
+        lineChart.setPrefHeight(530);
+        lineChart.setLayoutX(550);
+        lineChart.setLayoutY(130);
+        lineChart.setEffect(dropShadow);
+
+        currentCostChart = lineChart;
+
+
+        // Create a list of all items in all warehouses
+        ArrayList<WarehouseItem> allItems = new ArrayList<>();
+        for (Warehouse warehouse : Application.shop.warehouses) {
+            allItems.addAll(warehouse.outputs);
+        }
+
+        // Create a line chart
+        CategoryAxis xAxis2 = new CategoryAxis();
+        NumberAxis yAxis2 = new NumberAxis();
+        LineChart<String, Number> lineChart2 = new LineChart<>(xAxis2, yAxis2);
+
+        // Set the chart title and axis labels
+        xAxis2.setLabel("Date");
+        yAxis2.setLabel("Price");
+
+        // Create a series for the chart
+        XYChart.Series<String, Number> series2 = new XYChart.Series<>();
+        series2.setName("Income");
+
+        // Add the data to the series
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        for (WarehouseItem item : allItems) {
+            String dateStr = item.getUploadDate().format(formatter2);
+            series2.getData().add(new XYChart.Data<>(dateStr, item.getPrice()));
+        }
+
+        // Add the series to the chart
+        ObservableList<XYChart.Series<String, Number>> chartData2 = FXCollections.observableArrayList();
+        chartData2.add(series2);
+        lineChart2.setData(chartData2);
+
+        lineChart2.setPrefWidth(530);
+        lineChart2.setPrefHeight(530);
+        lineChart2.setLayoutY(130);
+        lineChart2.setEffect(dropShadow);
+
+        currentIncomeChart = lineChart2;
+
+
+        chartPage.getChildren().addAll(lineChart, lineChart2);
     }
 
-
-    //---------------------------warehouse--------------------------------
+    //---------------------------warehouse--------------------------------------------------------
     @FXML
     private AnchorPane warehousePage, addItemAnchorPane;
     @FXML
@@ -166,13 +255,13 @@ public class ControllerAdmin {
     private RadioButton outputButton, inputButton;
     @FXML
     private Label storeName, storeAdmin, storeAddress, chartText, addWarehouseErrorLabel, warehouseInputsLabel, warehouseOutputsLabel;
-    LineChart<String, Number> currentChart;
+    LineChart<String, Number> currentWarehouseChart;
     TableView inputTable, outputTable;
 
 
     public void displayWarehousePage() {
 
-        warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+        warehousePage.getChildren().removeAll(inputTable, outputTable, currentWarehouseChart);
         chartText.setText("");
 
         deleteButton.setDisable(true);
@@ -194,6 +283,7 @@ public class ControllerAdmin {
 
         addItemAnchorPane.setVisible(false);
 
+        addWarehouseErrorLabel.setText("");
 
         warehouseMenu.getItems().clear();
         Application.shop.currentWarehouse = null;
@@ -212,7 +302,7 @@ public class ControllerAdmin {
 
         menuItem.setOnAction(ev -> {
 
-            warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+            warehousePage.getChildren().removeAll(inputTable, outputTable, currentWarehouseChart);
             chartText.setText("");
 
             Application.shop.currentWarehouse = warehouse;
@@ -336,7 +426,7 @@ public class ControllerAdmin {
                     }
                 }
 
-                warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+                warehousePage.getChildren().removeAll(inputTable, outputTable, currentWarehouseChart);
                 chartText.setText("");
 
                 warehouseTableViews(Application.shop.currentWarehouse.inputs, 375, 65);
@@ -359,14 +449,14 @@ public class ControllerAdmin {
         chart.setEffect(dropShadow);
         chartText.setText(title);
 
-        currentChart = chart;
+        currentWarehouseChart = chart;
 
         return chart;
     }
 
     public void createChart(String title) {
 
-        warehousePage.getChildren().remove(currentChart);
+        warehousePage.getChildren().remove(currentWarehouseChart);
 
         if (Application.shop.currentWarehouse != null) {
 
@@ -400,20 +490,26 @@ public class ControllerAdmin {
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
 
-            if (title.equals("Uploads by Day"))
+            if (title.equals("Uploads by Day")) {
                 for (Map.Entry<LocalDate, Integer> entry : dayMap.entrySet()) {
                     data.add(new XYChart.Data<>(entry.getKey().toString(), entry.getValue()));
                 }
-            if (title.equals("Uploads by Week"))
+                series.setName("Uploads by Day");
+            }
+            if (title.equals("Uploads by Week")) {
                 for (Map.Entry<LocalDate, Integer> entry : weekMap.entrySet()) {
                     LocalDate weekEnd = entry.getKey().plusDays(6);
                     String label = String.format("%s - %s", entry.getKey().toString(), weekEnd.toString());
                     data.add(new XYChart.Data<>(label, entry.getValue()));
                 }
-            if (title.equals("Uploads by Month"))
+                series.setName("Uploads by Week");
+            }
+            if (title.equals("Uploads by Month")) {
                 for (Map.Entry<String, Integer> entry : monthMap.entrySet()) {
                     data.add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
                 }
+                series.setName("Uploads by Month");
+            }
 
             series.setData(data);
             chart.getData().add(series);
@@ -503,7 +599,7 @@ public class ControllerAdmin {
         });
     }
 
-//-------------------------------------------------inner classes--------------------------------
+//------------------------------inner classes--------------------------------
 
     public static class WarehouseItem {
         private String name;
@@ -511,6 +607,7 @@ public class ControllerAdmin {
         private int size;
         LocalDateTime uploadDate;
         String kind;
+        Warehouse warehouse;
 
         public WarehouseItem(String name, long price, int size, LocalDate uploadDate, String kind) {
             this.name = name;
@@ -518,6 +615,8 @@ public class ControllerAdmin {
             this.size = size;
             this.uploadDate = uploadDate.atTime(LocalTime.now());
             this.kind = kind;
+
+            warehouse = Application.shop.currentWarehouse;
         }
 
         public WarehouseItem(String name, long price, int size, Object uploadDate, String kind) {
@@ -526,6 +625,9 @@ public class ControllerAdmin {
             this.size = size;
             this.uploadDate = (LocalDateTime) uploadDate;
             this.kind = kind;
+
+            warehouse = Application.shop.currentWarehouse;
+
         }
 
         public String getName() {
@@ -544,6 +646,9 @@ public class ControllerAdmin {
             return uploadDate;
         }
 
+        public Warehouse getWarehouse() {
+            return warehouse;
+        }
 
         public boolean equals(Object o) {
             if (o instanceof WarehouseItem) {

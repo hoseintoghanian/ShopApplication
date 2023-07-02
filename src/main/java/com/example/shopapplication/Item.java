@@ -100,6 +100,10 @@ public class Item {
         return code;
     }
 
+    public LocalDateTime getUploadDate() {
+        return uploadDate;
+    }
+
 
     public void calculateScore(int vote) {//vote range is between 0 and 4 // 0 means the best emoji and 4 means the worst
 
