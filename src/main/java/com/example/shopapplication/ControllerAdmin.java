@@ -19,8 +19,6 @@ import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -30,6 +28,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class ControllerAdmin {
@@ -148,83 +147,29 @@ public class ControllerAdmin {
     }
 
 
-    //----------------------warehouse--------------------------------
-
-
+    //---------------------------warehouse--------------------------------
     @FXML
-    private TextField txtAddName, txtAddAdmin;
+    private AnchorPane warehousePage, addItemAnchorPane;
+    @FXML
+    private TextField txtAddName, txtAddAdmin, txtAddItemName, txtAddItemPrice, txtAddItemSize;
     @FXML
     private TextArea txtAddAddress;
-
-    public void addWarehouse() throws SQLException {
-
-        if (!txtAddName.getText().equals("") && !txtAddAdmin.getText().equals("") && !txtAddAddress.getText().equals("")) {
-            Warehouse warehouse = new Warehouse(txtAddName.getText(), txtAddAdmin.getText(), txtAddAddress.getText());
-
-            if (!Application.shop.warehouses.contains(warehouse)) {
-                Application.shop.warehouses.add(warehouse);
-                Database.addWarehouse(warehouse);
-
-                createMenuItem(warehouse);
-            }
-
-            Application.shop.currentWarehouse = warehouse;
-
-            warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
-            chartText.setText("");
-
-            displayInfo(warehouse.inputs, 375, 65);
-            displayInfo(warehouse.outputs, 650, 65);
-        }
-    }
-
     @FXML
-    private Button deleteButton, editButton;
-
-    public void deleteWarehouse() throws SQLException {
-
-        Database.deleteWarehouse(Application.shop.currentWarehouse.name);
-        Application.shop.warehouses.remove(Application.shop.currentWarehouse);
-        insertWarehouseItems();
-    }
-
+    private Button deleteButton, editButton, downloadCSVButton;
     @FXML
     private MenuButton warehouseMenu, chartMenuButton;
-
-    public void createMenuItem(Warehouse warehouse) {
-        String text = txtAddName.getText();
-        MenuItem menuItem = new MenuItem(text);
-
-        menuItem.setOnAction(ev -> {
-
-            warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
-            chartText.setText("");
-
-            Application.shop.currentWarehouse = warehouse;
-            displayInfo(warehouse.inputs, 375, 65);
-            displayInfo(warehouse.outputs, 650, 65);
-
-            deleteButton.setDisable(false);
-            deleteButton.setOpacity(1);
-
-            editButton.setDisable(false);
-            editButton.setOpacity(1);
-
-            chartMenuButton.setDisable(false);
-            chartMenuButton.setOpacity(1);
-        });
-
-        warehouseMenu.getItems().add(menuItem);
-    }
-
     @FXML
-    private Label storeName, storeAdmin, storeAddress;
+    private RadioButton outputButton, inputButton;
+    @FXML
+    private Label storeName, storeAdmin, storeAddress, chartText, addWarehouseErrorLabel, warehouseInputsLabel, warehouseOutputsLabel;
+    LineChart<String, Number> currentChart;
+    TableView inputTable, outputTable;
 
-    public void insertWarehouseItems() {
+
+    public void displayWarehousePage() {
 
         warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
         chartText.setText("");
-
 
         deleteButton.setDisable(true);
         deleteButton.setOpacity(0);
@@ -235,68 +180,111 @@ public class ControllerAdmin {
         chartMenuButton.setDisable(true);
         chartMenuButton.setOpacity(0);
 
+        downloadCSVButton.setDisable(true);
+        downloadCSVButton.setOpacity(0);
+
+        warehouseInputsLabel.setVisible(false);
+        warehouseOutputsLabel.setVisible(false);
+
+        addItemAnchorPane.setVisible(false);
+
+
         warehouseMenu.getItems().clear();
+        Application.shop.currentWarehouse = null;
 
         storeName.setText("Name     : ");
         storeAdmin.setText("Admin   : ");
         storeAddress.setText("Address : ");
 
-        Application.shop.currentWarehouse = null;
-
         for (int i = 0; i < Application.shop.warehouses.size(); i++) {
             MenuItem menuItem = new MenuItem(Application.shop.warehouses.get(i).name);
-            int finalI = i;
-            menuItem.setOnAction(ev -> {
-                Application.shop.currentWarehouse = Application.shop.warehouses.get(finalI);
-
-                displayInfo(Application.shop.warehouses.get(finalI).inputs, 375, 65);
-                displayInfo(Application.shop.warehouses.get(finalI).outputs, 650, 65);
-
-                deleteButton.setDisable(false);
-                deleteButton.setOpacity(1);
-
-                editButton.setDisable(false);
-                editButton.setOpacity(1);
-
-                chartMenuButton.setDisable(false);
-                chartMenuButton.setOpacity(1);
-            });
-
-            warehouseMenu.getItems().add(menuItem);
+            warehouseMenuItemsOnAction(menuItem, Application.shop.warehouses.get(i));
         }
     }
 
-    @FXML
-    private AnchorPane warehousePage;
-    @FXML
-    private Label chartText;
+    private void warehouseMenuItemsOnAction(MenuItem menuItem, Warehouse warehouse) {
 
-    LineChart<String, Number> currentChart;
-    TableView inputTable, outputTable;
+        menuItem.setOnAction(ev -> {
 
-    public void displayInfo(ArrayList<Item> arrays, int x, int y) {
+            warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+            chartText.setText("");
+
+            Application.shop.currentWarehouse = warehouse;
+            warehouseTableViews(warehouse.inputs, 375, 65);
+            warehouseTableViews(warehouse.outputs, 650, 65);
+
+            deleteButton.setDisable(false);
+            deleteButton.setOpacity(1);
+
+            editButton.setDisable(false);
+            editButton.setOpacity(1);
+
+            chartMenuButton.setDisable(false);
+            chartMenuButton.setOpacity(1);
+
+            downloadCSVButton.setDisable(false);
+            downloadCSVButton.setOpacity(1);
+
+            warehouseInputsLabel.setVisible(true);
+            warehouseOutputsLabel.setVisible(true);
+
+            addItemAnchorPane.setVisible(true);
+        });
+        warehouseMenu.getItems().add(menuItem);
+    }
+
+    public void addWarehouse() throws SQLException {
+
+        if (!txtAddName.getText().equals("") && !txtAddAdmin.getText().equals("") && !txtAddAddress.getText().equals("")) {
+            Warehouse warehouse = new Warehouse(txtAddName.getText(), txtAddAdmin.getText(), txtAddAddress.getText());
+
+            if (!Application.shop.warehouses.contains(warehouse)) {
+                Application.shop.warehouses.add(warehouse);
+                Database.addWarehouse(warehouse);
+
+                Application.shop.currentWarehouse = warehouse;
+
+                MenuItem menuItem = new MenuItem(txtAddName.getText());
+                warehouseMenuItemsOnAction(menuItem, warehouse);
+
+                txtAddName.setText("");
+                txtAddAdmin.setText("");
+                txtAddAddress.setText("");
+
+                addWarehouseErrorLabel.setText("add successfully");
+            } else addWarehouseErrorLabel.setText("warehouse has already been added");
+        } else addWarehouseErrorLabel.setText("fill all the blanks");
+    }
+
+    public void deleteWarehouse() throws SQLException {
+        Database.deleteWarehouse(Application.shop.currentWarehouse.name);
+        Application.shop.warehouses.remove(Application.shop.currentWarehouse);
+        displayWarehousePage();
+    }
+
+    public void warehouseTableViews(ArrayList<ControllerAdmin.WarehouseItem> arrays, int x, int y) {
 
         if (Application.shop.currentWarehouse != null) {
 
-            storeName.setText("store name   : " + Application.shop.currentWarehouse.name);
-            storeAdmin.setText("store admin : " + Application.shop.currentWarehouse.storeAdmin);
-            storeAddress.setText("address : " + Application.shop.currentWarehouse.address);
+            storeName.setText("Name     : " + Application.shop.currentWarehouse.name);
+            storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.storeAdmin);
+            storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
 
             //-------------------------------------------------------------------------
 
-            TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
+            TableColumn<ControllerAdmin.WarehouseItem, String> nameColumn = new TableColumn<>("Name");
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
             nameColumn.setPrefWidth(120);
 
-            TableColumn<Item, String> priceColumn = new TableColumn<>("Price");
+            TableColumn<ControllerAdmin.WarehouseItem, String> priceColumn = new TableColumn<>("Price");
             priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
             priceColumn.setPrefWidth(80);
 
-            TableColumn<Item, String> sizeColumn = new TableColumn<>("Size");
+            TableColumn<ControllerAdmin.WarehouseItem, String> sizeColumn = new TableColumn<>("Size");
             sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
             sizeColumn.setPrefWidth(50);
 
-            TableView<Item> tableView = new TableView<>();
+            TableView<ControllerAdmin.WarehouseItem> tableView = new TableView<>();
             tableView.setItems(FXCollections.observableArrayList(arrays));
             tableView.getColumns().addAll(nameColumn, priceColumn, sizeColumn);
 
@@ -309,9 +297,43 @@ public class ControllerAdmin {
             innerShadow.setHeight(10);
             tableView.setEffect(innerShadow);
 
+            if (x == 375) inputTable = tableView;
+            if (x == 650) outputTable = tableView;
 
-            warehousePage.getChildren().addAll(tableView);
+            warehousePage.getChildren().add(tableView);
         }
+    }
+
+    public void addWarehouseItem() {
+
+        if (!txtAddItemName.getText().equals("") && !txtAddItemPrice.getText().equals("") && !txtAddItemSize.getText().equals(""))
+            if (Application.shop.currentWarehouse != null) {
+
+                WarehouseItem item = new WarehouseItem(txtAddItemName.getText(), Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()));
+
+                if (inputButton.isSelected()) {
+                    if (!Application.shop.currentWarehouse.inputs.contains(item)) {
+                        Application.shop.currentWarehouse.inputs.add(item);
+                    }
+                }
+                if (outputButton.isSelected()) {
+                    if (Application.shop.currentWarehouse.inputs.contains(item)) {
+                        Application.shop.currentWarehouse.outputs.add(item);
+                        Application.shop.currentWarehouse.inputs.remove(item);
+                    }
+                }
+
+                warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
+                chartText.setText("");
+
+                warehouseTableViews(Application.shop.currentWarehouse.inputs, 375, 65);
+                warehouseTableViews(Application.shop.currentWarehouse.outputs, 650, 65);
+
+                txtAddItemName.setText("");
+                txtAddItemPrice.setText("");
+                txtAddItemSize.setText("");
+            }
+
     }
 
     private LineChart<String, Number> createLineChart(String title) {
@@ -335,11 +357,11 @@ public class ControllerAdmin {
 
         if (Application.shop.currentWarehouse != null) {
 
-            ArrayList<Item> items = Application.shop.currentWarehouse.inputs;
-            items.sort(new Comparator<Item>() {
+            ArrayList<ControllerAdmin.WarehouseItem> items = Application.shop.currentWarehouse.inputs;
+            items.sort(new Comparator<ControllerAdmin.WarehouseItem>() {
                 @Override
-                public int compare(Item item1, Item item2) {
-                    return item1.uploadDate.compareTo(item2.uploadDate);
+                public int compare(WarehouseItem o1, WarehouseItem o2) {
+                    return o1.uploadDate.compareTo(o2.uploadDate);
                 }
             });
 
@@ -350,7 +372,7 @@ public class ControllerAdmin {
             Map<LocalDate, Integer> weekMap = new HashMap<>();
             Map<String, Integer> monthMap = new TreeMap<>();
 
-            for (Item item : items) {
+            for (WarehouseItem item : items) {
                 LocalDate date = item.getUploadDate().toLocalDate();
                 dayMap.put(date, dayMap.getOrDefault(date, 0) + 1);
 
@@ -397,42 +419,7 @@ public class ControllerAdmin {
         createChart("Uploads by Month");
     }
 
-    @FXML
-    private TextField txtAddItemName, txtAddItemPrice, txtAddItemSize;
-    @FXML
-    private RadioButton outputButton, inputButton;
-
-    public void addItem() {
-
-        if (!txtAddItemName.getText().equals("") && !txtAddItemPrice.getText().equals("") && !txtAddItemSize.getText().equals(""))
-            if (Application.shop.currentWarehouse != null) {
-
-                Item item = new Item(txtAddItemName.getText(), "brand", Integer.parseInt(txtAddItemPrice.getText()), Integer.parseInt(txtAddItemSize.getText()));
-
-                if (inputButton.isSelected()) {
-                    if (!Application.shop.currentWarehouse.items.contains(item)) {
-                        Application.shop.currentWarehouse.items.add(item);
-                        Application.shop.currentWarehouse.inputs.add(item);
-                    }
-                }
-                if (outputButton.isSelected()) {
-                    if (Application.shop.currentWarehouse.items.contains(item)) {
-                        Application.shop.currentWarehouse.outputs.add(item);
-                        Application.shop.currentWarehouse.items.remove(item);
-                        Application.shop.currentWarehouse.inputs.remove(item);
-                    }
-                }
-
-                warehousePage.getChildren().removeAll(inputTable, outputTable, currentChart);
-                chartText.setText("");
-
-                displayInfo(Application.shop.currentWarehouse.inputs, 375, 65);
-                displayInfo(Application.shop.currentWarehouse.outputs, 650, 65);
-            }
-
-    }
-
-    public void csv(ArrayList<Item> data, String filename) throws IOException {
+    public void csv(ArrayList<ControllerAdmin.WarehouseItem> data, String filename) throws IOException {
         CSVFile.writeToFile(data, filename);
 
         // download the file
@@ -447,9 +434,9 @@ public class ControllerAdmin {
             byte[] dataBytes = Files.readAllBytes(file.toPath());
             Path path = Paths.get(file.getName());
             Files.write(path, dataBytes);
-        } else {
-            System.out.println("File does not exist.");
-        }
+
+        } else System.out.println("File does not exist.");
+
     }
 
     public void downloadCSV() throws IOException {
@@ -503,6 +490,44 @@ public class ControllerAdmin {
     }
 
 //-------------------------------------------------inner classes--------------------------------
+
+    public static class WarehouseItem {
+        String name;
+        long price;
+        int size;
+        LocalDateTime uploadDate;
+
+        public WarehouseItem(String name, long price, int size) {
+            this.name = name;
+            this.price = price;
+            this.size = size;
+            this.uploadDate = LocalDateTime.now();
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public int getSize() {
+            return size;
+        }
+        public LocalDateTime getUploadDate() {
+            return uploadDate;
+        }
+
+
+        public boolean equals(Object o) {
+            if (o instanceof WarehouseItem) {
+                WarehouseItem other = (WarehouseItem) o;
+                if (name.equals(other.name)) return true;
+            }
+            return false;
+        }
+    }
 
     public static class Transaction {
 

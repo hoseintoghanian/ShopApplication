@@ -95,7 +95,7 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-            <Tab onSelectionChanged="#insertWarehouseItems" text="Warehouse">
+            <Tab onSelectionChanged="#displayWarehousePage" text="Warehouse">
                <content>
                   <AnchorPane fx:id="warehousePage" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -108,17 +108,17 @@
                               </DropShadow>
                            </effect>
                         </Separator>
-                        <Label layoutX="375.0" layoutY="15.0" text="Inputs">
+                        <Label fx:id="warehouseInputsLabel" layoutX="375.0" layoutY="15.0" text="Inputs">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="650.0" layoutY="15.0" text="Outputs">
+                        <Label fx:id="warehouseOutputsLabel" layoutX="650.0" layoutY="15.0" text="Outputs">
                            <font>
                               <Font name="Book Antiqua" size="25.0" />
                            </font>
                         </Label>
-                        <AnchorPane layoutX="920.0" layoutY="65.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #FFCF21;">
+                        <AnchorPane fx:id="addItemAnchorPane" layoutX="920.0" layoutY="65.0" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #FFCF21;">
                            <effect>
                               <InnerShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -150,7 +150,7 @@
                                     <Font name="Book Antiqua" size="13.0" />
                                  </font>
                               </RadioButton>
-                              <Button layoutX="15.0" layoutY="160.0" mnemonicParsing="false" onAction="#addItem" prefHeight="26.0" prefWidth="130.0" text="apply">
+                              <Button layoutX="15.0" layoutY="160.0" mnemonicParsing="false" onAction="#addWarehouseItem" prefHeight="26.0" prefWidth="130.0" text="apply">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
@@ -173,7 +173,7 @@
                                  </effect></TextField>
                            </children>
                         </AnchorPane>
-                        <Button layoutX="920.0" layoutY="15.0" mnemonicParsing="false" onAction="#downloadCSV" prefHeight="32.0" prefWidth="160.0" text="download CSV files">
+                        <Button fx:id="downloadCSVButton" layoutX="920.0" layoutY="15.0" mnemonicParsing="false" onAction="#downloadCSV" prefHeight="32.0" prefWidth="160.0" text="download CSV files">
                            <font>
                               <Font name="Book Antiqua" size="15.0" />
                            </font>
@@ -204,21 +204,21 @@
                               </InnerShadow>
                            </effect>
                            <children>
-                              <TextField fx:id="txtAddName" layoutX="20.0" layoutY="25.0" prefHeight="30.0" prefWidth="150.0" promptText="name">
+                              <TextField fx:id="txtAddName" layoutX="20.0" layoutY="45.0" prefWidth="150.0" promptText="name">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0" />
                                  </effect></TextField>
-                              <TextField fx:id="txtAddAdmin" layoutX="20.0" layoutY="75.0" prefHeight="30.0" prefWidth="150.0" promptText="admin">
+                              <TextField fx:id="txtAddAdmin" layoutX="20.0" layoutY="85.0" prefWidth="150.0" promptText="admin">
                                  <font>
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0" />
                                  </effect></TextField>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="180.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="180.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/warehouse/warehouse%20(4).png" />
                                  </image>
@@ -228,7 +228,7 @@
                                     <DropShadow height="10.0" radius="4.5" width="10.0" />
                                  </effect>
                               </TextArea>
-                              <Button layoutX="20.0" layoutY="200.0" mnemonicParsing="false" onAction="#addWarehouse" prefWidth="260.0" text="add warehouse">
+                              <Button layoutX="20.0" layoutY="198.0" mnemonicParsing="false" onAction="#addWarehouse" prefHeight="35.0" prefWidth="260.0" text="add warehouse">
                                  <font>
                                     <Font name="Book Antiqua" size="17.0" />
                                  </font>
@@ -247,6 +247,11 @@
                                     </SepiaTone>
                                  </effect>
                               </Button>
+                              <Label fx:id="addWarehouseErrorLabel" layoutX="20.0" layoutY="15.0">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="25.0" layoutY="40.0" prefHeight="350.0" prefWidth="300.0" style="-fx-background-color: #FFCF21;">

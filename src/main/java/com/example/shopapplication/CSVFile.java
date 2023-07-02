@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class CSVFile {
 
-    public static void writeToFile(ArrayList<Item> data, String filename) throws IOException {
+    public static void writeToFile(ArrayList<ControllerAdmin.WarehouseItem> data, String filename) throws IOException {
         FileWriter writer = new FileWriter(filename);
         writer.append("Name, Price, Size\n"); // add header row
 
-        for (Item item : data) {
+        for (ControllerAdmin.WarehouseItem item : data) {
             writer.append(item.name);
             writer.append(",");
             writer.append(String.valueOf(item.price));

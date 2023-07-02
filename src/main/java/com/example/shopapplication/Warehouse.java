@@ -7,9 +7,8 @@ public class Warehouse {
     public String name;
     public String storeAdmin;
     public String address;
-    ArrayList<Item> items = new ArrayList<>();
-    ArrayList<Item> inputs = new ArrayList<>();
-    ArrayList<Item> outputs = new ArrayList<>();
+    ArrayList<ControllerAdmin.WarehouseItem> inputs = new ArrayList<>();
+    ArrayList<ControllerAdmin.WarehouseItem> outputs = new ArrayList<>();
 
 
     public Warehouse(String name, String storeAdmin, String address) {

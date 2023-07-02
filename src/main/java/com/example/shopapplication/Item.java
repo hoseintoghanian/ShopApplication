@@ -84,20 +84,8 @@ public class Item {
         calculateScore(-1);
     }
 
-    public Item(String name, String brand, long price, int size) {
-        this.name = name;
-        this.brand = brand;
-        this.price = price;
-        this.size = size;
-        this.uploadDate = LocalDateTime.now();
-    }
-
     public String getName() {
         return name;
-    }
-
-    public String getBrand() {
-        return brand;
     }
 
     public double getPrice() {
@@ -110,10 +98,6 @@ public class Item {
 
     public int getCode() {
         return code;
-    }
-
-    public LocalDateTime getUploadDate() {
-        return uploadDate;
     }
 
 
