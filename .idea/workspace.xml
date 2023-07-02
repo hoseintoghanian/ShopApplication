@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c27bb2b-471e-4ac6-a8f8-d909fe43ae5e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c27bb2b-471e-4ac6-a8f8-d909fe43ae5e.xml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="charts in admin fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/seller.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,14 +150,7 @@
       <workItem from="1688277368218" duration="401000" />
       <workItem from="1688277800402" duration="7555000" />
       <workItem from="1688296860755" duration="25453000" />
-      <workItem from="1688325209668" duration="3408000" />
-    </task>
-    <task id="LOCAL-00029" summary="fixing admin fxml &amp; controllerAdmin class &amp; sql commands">
-      <created>1687810662394</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1687810662394</updated>
+      <workItem from="1688325209668" duration="4973000" />
     </task>
     <task id="LOCAL-00030" summary="class Item --&gt; toString &amp; equals method">
       <created>1687811115113</created>
@@ -504,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688306773186</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="charts in admin fxml">
+      <created>1688329530497</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1688329530498</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update supermarket images (breakfast)" />
     <MESSAGE value="update supermarket images (protein foods)" />
     <MESSAGE value="update supermarket images (dairy)" />
     <MESSAGE value="update supermarket images (drinks)" />
@@ -547,7 +537,8 @@
     <MESSAGE value="warehouse section in admin fxml&#10;and warehouse charts" />
     <MESSAGE value="warehouse tables database" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="charts in admin fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="charts in admin fxml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

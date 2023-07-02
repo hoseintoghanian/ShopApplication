@@ -278,7 +278,6 @@ public class Database {
         getDBC().close();
     }
 
-
     //---------------------------warehouse-----------------------------
 
     public static void readWarehouse() throws SQLException {
@@ -338,8 +337,6 @@ public class Database {
         getDBC().close();
     }
 
-
-
     public static void readWarehouseTables() throws SQLException {
         Statement statement = getDBC().createStatement();
         ResultSet resultSet = null;
@@ -371,7 +368,6 @@ public class Database {
         getDBC().close();
     }
 
-
     public static void addWarehouseItem(ControllerAdmin.WarehouseItem warehouseItem, String name) throws SQLException {
         String sql = "INSERT INTO warehouse_items_" + name +
                 "(name, price, size, uploadDate, kind)VALUES( ?, ?, ?, ?, ?)";
@@ -398,6 +394,4 @@ public class Database {
         statement.close();
         getDBC().close();
     }
-
-
 }
