@@ -259,7 +259,7 @@ public class Database {
     }
 
     public static void updateItem(Item item) throws SQLException {
-        String sql = "update items_" + item.sellerUsername + " set comments = '" + item.comments + "' where code = " + item.getCode();
+        String sql = "update seller_items_" + item.sellerUsername + " set comments = '" + item.comments + "' where code = " + item.getCode();
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -269,7 +269,7 @@ public class Database {
     }
 
     public static void updateItemAuction(Item item) throws SQLException {
-        String sql = "update items_" + item.sellerUsername + " set isAuction = " + item.isAuction + " where code = " + item.getCode();
+        String sql = "update seller_items_" + item.sellerUsername + " set isAuction = " + item.isAuction + " where code = " + item.getCode();
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
