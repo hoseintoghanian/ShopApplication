@@ -5,173 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="add javafx.scene.media Package and ProjectSound.java class to project">
-      <change afterPath="$PROJECT_DIR$/lib/jfxrt.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/java/ProjectSound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/1. bread/jo - bread.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/1. bread/new york bakery - bread.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/1. bread/sandewichi - bread.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/1. bread/tost - bread.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/10. pasta/de cecco - pasta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/10. pasta/goya - pasta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/10. pasta/tak - pasta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/10. pasta/zar - pasta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/11. saffron/bahraman - saffron.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/11. saffron/frintier - saffron.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/11. saffron/momtaz - saffron.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/11. saffron/seharkhiz - saffron.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/12. pea/aali chin - pea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/12. pea/delpazir - pea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/12. pea/shahsavand - pea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/12. pea/ziyad - pea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/2. rice/behruz - rice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/2. rice/golestan - rice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/2. rice/tabiat - rice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/2. rice/uncle ben's - rice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/3. oil/ladan - oil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/3. oil/louAna - oil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/3. oil/oila - oil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/3. oil/tabiat - oil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/4. broken suger/azughe - broken suger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/4. broken suger/ferdous - broken suger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/4. broken suger/la perruche - broken sugar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/4. broken suger/mash mash - broken suger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/5. suger/chelsea - sugar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/5. suger/emruz - suger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/5. suger/golestan - suger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/5. suger/shahdane - suger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/6. sauce/behruz - sauce.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/6. sauce/delvese - sauce.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/6. sauce/heinz - sauce.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/6. sauce/mahram - sause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/7. rob/chin chin - rob.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/7. rob/hunts - rob.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/7. rob/tabarok - rob.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/7. rob/tabiat - rob.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/8. pickle/behruz - pickle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/8. pickle/mahram - pickle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/8. pickle/vlasic - pickle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/8. pickle/yek o yek - pickle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/9. lemon juice/behruz - lemon juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/9. lemon juice/lakewood - lemon juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/9. lemon juice/mahram - lemon juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/1. grocery/9. lemon juice/yek o yek - lemon juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/1. jam/bijan - jam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/1. jam/mixland - jam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/1. jam/randall family - jam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/1. jam/yek o yek - jam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/2. honey/js - honey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/2. honey/rayehe - honey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/2. honey/segmen - honey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/2. honey/yek o yek - honey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/3. halva/koska - halva.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/3. halva/oghab - halva.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/3. halva/tahini - halva.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/2. breakfast/3. halva/taksun - halva.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/1. bologna/kampooreh - bologna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/1. bologna/principe - bolonga.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/1. bologna/robat - bologna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/1. bologna/sham sham - bologna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/2. lamb meet/aria bahar - lamp meet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/2. lamb meet/free range - lamb meet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/2. lamb meet/mahya - lamp meet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/2. lamb meet/puya - lamp meet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/3. chicken/mahya - chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/3. chicken/mary's - chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/3. chicken/puya - chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/3. chicken/telavang - chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/4. egg/morghdaran - egg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/4. egg/organic valley - egg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/4. egg/porotana - egg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/4. egg/telavang - egg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/5. beef/fresh - beef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/5. beef/khoram - beef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/5. beef/mahya - beef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/5. beef/puya - beef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/6. shrimp/great catch - shrimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/6. shrimp/marine - shrimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/6. shrimp/pemina - shrimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/6. shrimp/tohfe - shrimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/7. tuna/ayam brand - tuna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/7. tuna/makenzi - tuna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/7. tuna/shilton - tuna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/3. protein foods/7. tuna/tohfe - tuna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/1. milk/damdaran - milk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/1. milk/kale - milk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/1. milk/lactaid - milk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/1. milk/mihan - milk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/2. yogurt/forager - yogurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/2. yogurt/kale - yogurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/2. yogurt/mihan - yogurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/2. yogurt/ramak - yogurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/3. cheese/kale - cheese.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/3. cheese/mihan - cheese.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/3. cheese/ruzane - cheese.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/3. cheese/the laughing cow - cheese.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/4. cream/kale - cream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/4. cream/karoun - cream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/4. cream/mihan - cream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/4. dairy/4. cream/pegah - cream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/1. tea/debsh - tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/1. tea/golestan - tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/1. tea/shahrzad - tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/1. tea/yorkshire - tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/2. herbel tea/golestan - herbel tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/2. herbel tea/sehar khiz - herbel tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/2. herbel tea/shahsavand - herbel tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/2. herbel tea/yogi - herbel tea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/3. coffee/ali cafe - coffee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/3. coffee/good day - coffee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/3. coffee/nescafe - coffee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/3. coffee/starbucks - coffee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/4. water/damavand - water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/4. water/miva - water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/4. water/oxab - water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/4. water/smart water - water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/5. beer/aalis - beer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/5. beer/heineken - beer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/5. beer/hey day - beer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/5. beer/jojo - beer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/6. soda/coca cola - soda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/6. soda/dr pepper - soda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/6. soda/fanta - lemon soda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/6. soda/fanta - orange soda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/7. juice/mihan - juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/7. juice/san ich - juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/7. juice/simply orange - juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/5. drinks/7. juice/tak daneh - juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/1. chocolate/hiss - chocolate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/1. chocolate/rangarang - chocolate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/1. chocolate/snickers - chocolate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/1. chocolate/tak tak - chocolate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/2. biscuit/hi bye - biscuit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/2. biscuit/oreo - biscuit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/2. biscuit/petit beurre - biscuit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/2. biscuit/saghe talai - biscuit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/3. nuts/mani - nuts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/3. nuts/maz maz - nuts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/3. nuts/planters - nuts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/3. nuts/sanjaghak - nuts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/4. cake/cake make - cake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/4. cake/mr kipling - cake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/4. cake/t top - cake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/4. cake/tiny - cake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/5. chips/chakelz - chips.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/5. chips/cheetoz - chips.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/5. chips/del maze - chips.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/5. chips/lays - chips.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/6. pofak/chakelz - pofak.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/6. pofak/cheetos - pofak.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/6. pofak/cheetoz - pofak.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/6. pofak/pofak namaki - pofak.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/7. chewing gum/action - chewing gum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/7. chewing gum/biodent - chewing gum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/7. chewing gum/orbit - chewing gum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/supermarket images/6. snacks/7. chewing gum/trident - chewing gum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music and sound effects/Cash out sound effect.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music and sound effects/Click sound effect.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music and sound effects/Colorful flowers.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/SoundThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c27bb2b-471e-4ac6-a8f8-d909fe43ae5e.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_2_54_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_2_54_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_28_2023_4_32_PM__Changes_1.xml" afterDir="false" />
@@ -216,7 +51,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_51_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_51_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2023_12_56_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2023_12_56_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/java/ProjectSound.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/music and sound effects/Cash out sound effect.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/music and sound effects/Click sound effect.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/music and sound effects/Colorful flowers.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,13 +93,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jfxrt.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.13563219" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/University/projects/term 2/ShopApplication&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="javafx.application" />
@@ -356,6 +205,9 @@
       <workItem from="1688325209668" duration="4973000" />
       <workItem from="1688331453550" duration="809000" />
       <workItem from="1688332401273" duration="452000" />
+      <workItem from="1688337012991" duration="1569000" />
+      <workItem from="1688367890439" duration="634000" />
+      <workItem from="1688368865077" duration="316000" />
     </task>
     <task id="LOCAL-00031" summary="create an items table for each seller">
       <created>1687812110956</created>
