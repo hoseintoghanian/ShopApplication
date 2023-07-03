@@ -32,7 +32,14 @@ public class ControllerProduct {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Online Shop Application");
+        stage.getIcons().add(new Image("shop.png"));
+        stage.setResizable(false);
+        stage.setOnCloseRequest(ev -> {
+            System.exit(0);
+        });
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -101,21 +108,26 @@ public class ControllerProduct {
             commentText.setDisable(true);
             sendButton.setDisable(true);
 
-            voteButton.setDisable(true);
-            voteButton.setVisible(false);
-
-            emoji0.setVisible(false);
-            emoji1.setVisible(false);
-            emoji2.setVisible(false);
-            emoji3.setVisible(false);
-            emoji4.setVisible(false);
-
             addToCartButton.setVisible(false);
             addToCartButton.setDisable(true);
 
             cartImageView.setVisible(false);
             cartImageView.setDisable(true);
         }
+
+        if (Application.shop.currentCustomer != null)
+            if (Application.shop.currentCustomer.purchase.contains(Application.shop.currentItem)) {
+
+                emoji0.setVisible(true);
+                emoji1.setVisible(true);
+                emoji2.setVisible(true);
+                emoji3.setVisible(true);
+                emoji4.setVisible(true);
+
+                voteButton.setVisible(true);
+                voteButton.setDisable(false);
+            }
+
     }
 
 

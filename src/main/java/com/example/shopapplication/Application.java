@@ -2,6 +2,7 @@ package com.example.shopapplication;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import javax.sound.sampled.*;
@@ -26,15 +27,18 @@ public class Application extends javafx.application.Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Online Shop Application");
+        stage.getIcons().add(new Image("shop.png"));
+        stage.setResizable(false);
         stage.setOnCloseRequest(ev->{
             System.exit(0);
         });
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
 
 
-        SoundThread t = new SoundThread();
-        t.start();
+       /* SoundThread t = new SoundThread();
+        t.start();*/
     }
 
 

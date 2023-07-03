@@ -53,7 +53,14 @@ public class ControllerAdmin {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Online Shop Application");
+        stage.getIcons().add(new Image("shop.png"));
+        stage.setResizable(false);
+        stage.setOnCloseRequest(ev -> {
+            System.exit(0);
+        });
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 

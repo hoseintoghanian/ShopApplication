@@ -143,7 +143,14 @@ public class ControllerApplicant {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Online Shop Application");
+        stage.getIcons().add(new Image("shop.png"));
+        stage.setResizable(false);
+        stage.setOnCloseRequest(ev -> {
+            System.exit(0);
+        });
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -180,6 +187,7 @@ public class ControllerApplicant {
             changeScene(e, "bankPortal.fxml");
         } else if (!isNumeric(txtincreaseamount.getText()) && !txtincreaseamount.getText().equals(""))
             labelincreasewalleterror.setText("please enter a valid amount and\nmore than 0");
+
     }
 
     public void changeToCartScene(MouseEvent e) throws IOException {
@@ -1993,7 +2001,6 @@ public class ControllerApplicant {
             brand.setLayoutX(200);
             brand.setLayoutY(60);
 
-            AtomicInteger maxBid = new AtomicInteger();
 
             Label price = new Label("Max Bid  :  " + Application.shop.tempItems.get(i).tempPrice);
             price.setFont(new Font("Arial", 25));

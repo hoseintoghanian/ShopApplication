@@ -337,12 +337,12 @@
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
                   <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="656.0" layoutY="50.0" onMouseClicked="#loadImage" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/customer.png" />
-                     </image>
                      <effect>
                         <DropShadow />
                      </effect>
+                     <image>
+                        <Image url="@../img/customer.png" />
+                     </image>
                   </ImageView>
                   <Label layoutX="40.0" layoutY="230.0" text="Password    :">
                      <font>

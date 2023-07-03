@@ -217,7 +217,7 @@
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="emoji0" fitHeight="50.0" fitWidth="50.0" layoutX="330.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji0" fitHeight="50.0" fitWidth="50.0" layoutX="330.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../img/imoji/0.png" />
                      </image>
@@ -225,7 +225,7 @@
                         <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji1" fitHeight="50.0" fitWidth="50.0" layoutX="260.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji1" fitHeight="50.0" fitWidth="50.0" layoutX="260.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../img/imoji/1.png" />
                      </image>
@@ -233,7 +233,7 @@
                         <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji4" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji4" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../img/imoji/4.png" />
                      </image>
@@ -241,7 +241,7 @@
                         <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji3" fitHeight="50.0" fitWidth="50.0" layoutX="120.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji3" fitHeight="50.0" fitWidth="50.0" layoutX="120.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../img/imoji/3.png" />
                      </image>
@@ -249,7 +249,7 @@
                         <InnerShadow height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="emoji2" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji2" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="600.0" onMouseClicked="#emojiClick" onMouseEntered="#emojiEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../img/imoji/2.png" />
                      </image>
@@ -281,7 +281,7 @@
                         <Image url="@../img/cart.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="voteButton" layoutX="400.0" layoutY="600.0" mnemonicParsing="false" onAction="#vote" prefHeight="50.0" text="vote">
+                  <Button fx:id="voteButton" disable="true" layoutX="400.0" layoutY="600.0" mnemonicParsing="false" onAction="#vote" prefHeight="50.0" text="vote" visible="false">
                      <font>
                         <Font name="Book Antiqua" size="18.0" />
                      </font>

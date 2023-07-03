@@ -25,7 +25,7 @@
             <InnerShadow />
          </effect>
       </ImageView>
-      <Button layoutX="1350.0" layoutY="660.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
+      <Button layoutX="1350.0" layoutY="30.0" mnemonicParsing="false" onAction="#goLoginScene" opacity="0.8" prefWidth="120.0" text="Back">
          <font>
             <Font size="24.0" />
          </font>
@@ -44,7 +44,7 @@
             </InnerShadow>
          </effect>
       </Button>
-      <Button fx:id="buttonRegister" layoutX="490.0" layoutY="660.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="120.0" text="Register">
+      <Button fx:id="buttonRegister" layoutX="450.0" layoutY="615.0" mnemonicParsing="false" onAction="#Register" opacity="0.8" prefWidth="200.0" text="Register">
          <font>
             <Font size="24.0" />
          </font>
