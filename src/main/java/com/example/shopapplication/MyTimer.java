@@ -21,19 +21,14 @@ public abstract class MyTimer {
     private static Boolean hours_digit_1_add_SW ;
     private static Boolean hours_digit_2_add_SW ;
 
-    private String seconds_digit_1_String = String.format("%.2d" , seconds_digit_1);
-    private String seconds_digit_2_String = String.format("%.2d" , seconds_digit_2);
-    private String minutes_digit_1_String = String.format("%.2d" , minute_digit_1);
-    private String minutes_digit_2_String = String.format("%.2d" , minute_digit_2);
-    private String hours_digit_1_String = String.format("%.2d" , hours_digit_1);
-    private String hours_digit_2_String = String.format("%.2d" , hours_digit_2);
+    private static String seconds_digit_1_String = String.format("%.1d" , seconds_digit_1);
+    private static String seconds_digit_2_String = String.format("%.1d" , seconds_digit_2);
+    private static String minutes_digit_1_String = String.format("%.1d" , minute_digit_1);
+    private static String minutes_digit_2_String = String.format("%.1d" , minute_digit_2);
+    private static String hours_digit_1_String = String.format("%.1d" , hours_digit_1);
+    private static String hours_digit_2_String = String.format("%.1d" , hours_digit_2);
 
-    private String seconds_digit_1_Image_Name ;
-    private String seconds_digit_2_Image_Name;
-    private String minutes_digit_1_Image_Name;
-    private String minutes_digit_2_Image_Name;
-    private String hours_digit_1_Image_Name;
-    private String hours_digit_2_Image_Name;
+    private static String[] imageNameList = new String[6];
 
     public static void time () {
 
@@ -80,7 +75,23 @@ public abstract class MyTimer {
                         i=0 ;
                     }
                 }
+                seconds_digit_1_String = String.format("%.1d" , seconds_digit_1);
+                seconds_digit_2_String = String.format("%.1d" , seconds_digit_2);
+                minutes_digit_1_String = String.format("%.1d" , minute_digit_1);
+                minutes_digit_2_String = String.format("%.1d" , minute_digit_2);
+                hours_digit_1_String = String.format("%.1d" , hours_digit_1);
+                hours_digit_2_String = String.format("%.1d" , hours_digit_2);
             }
         }, 0, 200);
+    }
+
+    public static String[] getImageNameList () {
+        imageNameList[0] = seconds_digit_1_String + ".jpg";
+        imageNameList[1] = seconds_digit_2_String + ".jpg";
+        imageNameList[2] = minutes_digit_1_String + ".jpg";
+        imageNameList[3] = minutes_digit_2_String + ".jpg";
+        imageNameList[4] = hours_digit_1_String + ".jpg";
+        imageNameList[5] = hours_digit_2_String + ".jpg";
+        return null;
     }
 }
