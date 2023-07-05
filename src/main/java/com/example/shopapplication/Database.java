@@ -317,7 +317,7 @@ public class Database {
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
         statement.setString(1, warehouse.name);
-        statement.setString(2, warehouse.storeAdmin);
+        statement.setString(2, warehouse.admin);
         statement.setString(3, warehouse.address);
 
         statement.executeUpdate();
@@ -348,6 +348,31 @@ public class Database {
 
         statement.close();
         getDBC().close();
+    }
+
+    public static void editWarehouse(String previousName, Warehouse warehouse) throws SQLException {
+
+        renameWarehouseItemTable(previousName, warehouse.name);
+
+        String sql = "update warehouse set name = '" + warehouse.name + "', storeAdmin = '" + warehouse.admin + "', " +
+                "address = '" + warehouse.address + "'" + "where name = '" + previousName + "'";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+    private static void renameWarehouseItemTable(String previousName, String newName) throws SQLException {
+        String sql = "rename table warehouse_items_" + previousName + " to warehouse_items_" + newName ;
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+
     }
 
     public static void readWarehouseTables() throws SQLException {

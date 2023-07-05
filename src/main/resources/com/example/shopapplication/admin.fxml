@@ -369,7 +369,7 @@
                                     </SepiaTone>
                                  </effect>
                               </Button>
-                              <Button fx:id="editButton" layoutX="15.0" layoutY="300.0" mnemonicParsing="false" prefWidth="130.0" text="edit">
+                              <Button fx:id="editButton" layoutX="15.0" layoutY="300.0" mnemonicParsing="false" onAction="#editWarehouse" prefWidth="130.0" text="edit">
                                  <font>
                                     <Font name="Book Antiqua" size="17.0" />
                                  </font>
@@ -388,6 +388,39 @@
                                     </SepiaTone>
                                  </effect>
                               </Button>
+                              <TextField fx:id="editNameTextField" disable="true" layoutX="115.0" layoutY="85.0" prefHeight="26.4" prefWidth="160.0" promptText="name" visible="false">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6000000238418579" green="0.44740739464759827" blue="0.14222222566604614" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <TextField fx:id="editAdminTextField" disable="true" layoutX="115.0" layoutY="135.0" prefHeight="26.4" prefWidth="160.0" promptText="admin" visible="false">
+                                 <font>
+                                    <Font name="Book Antiqua" size="12.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.6000000238418579" green="0.44740739464759827" blue="0.14222222566604614" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <TextArea fx:id="editAddressTextField" disable="true" layoutX="15.0" layoutY="218.0" prefHeight="60.0" prefWidth="270.0" promptText="address" visible="false">
+                                 <effect>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.5473684072494507" green="0.4097154140472412" blue="0.1540740728378296" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextArea>
                            </children>
                         </AnchorPane>
                         <MenuButton fx:id="chartMenuButton" layoutX="415.0" layoutY="285.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="160.0" text="Properties">

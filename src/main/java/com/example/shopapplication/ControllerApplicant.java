@@ -1840,7 +1840,6 @@ public class ControllerApplicant {
                 productImg.setImage(item.image);
                 addtxt.setText("add successfully");
 
-
                 showItems("seller", Application.shop.currentSeller.tempItems);
 
             } else {
@@ -1849,6 +1848,15 @@ public class ControllerApplicant {
         } else {
             addtxt.setText("fill all the blanks");
         }
+
+        txtProductName.setText("");
+        txtProductPrice.setText("");
+        txtProductSize.setText("");
+        txtProductProperty.setText("");
+
+        menuButtonKind.setText("Kind");
+        menuButtonMinorKind.setText("Minor Kind");
+        menuButtonBrand.setText("Brand");
     }
 
     @FXML

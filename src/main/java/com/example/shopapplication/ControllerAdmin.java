@@ -388,12 +388,60 @@ public class ControllerAdmin {
         displayWarehousePage();
     }
 
+    @FXML
+    private TextField editNameTextField, editAdminTextField;
+    @FXML
+    private TextArea editAddressTextField;
+
+    public void editWarehouse() throws SQLException {
+
+        storeName.setText("Name     : ");
+        storeAdmin.setText("Admin   : ");
+        storeAddress.setText("Address : ");
+
+        editNameTextField.setDisable(false);
+        editAdminTextField.setDisable(false);
+        editAddressTextField.setDisable(false);
+
+        editNameTextField.setVisible(true);
+        editAdminTextField.setVisible(true);
+        editAddressTextField.setVisible(true);
+
+        if (!editNameTextField.getText().equals("") && !editAdminTextField.getText().equals("") && !editAddressTextField.getText().equals("")) {
+
+            String previousName = Application.shop.currentWarehouse.name;
+
+            Application.shop.currentWarehouse.name = editNameTextField.getText();
+            Application.shop.currentWarehouse.admin = editAdminTextField.getText();
+            Application.shop.currentWarehouse.address = editAddressTextField.getText();
+
+            storeName.setText("Name     : " + Application.shop.currentWarehouse.name);
+            storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.admin);
+            storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
+
+            Database.editWarehouse(previousName, Application.shop.currentWarehouse);
+
+            editNameTextField.setText("");
+            editAdminTextField.setText("");
+            editAddressTextField.setText("");
+
+            editNameTextField.setDisable(true);
+            editAdminTextField.setDisable(true);
+            editAddressTextField.setDisable(true);
+
+            editNameTextField.setVisible(false);
+            editAdminTextField.setVisible(false);
+            editAddressTextField.setVisible(false);
+        }
+
+    }
+
     public void warehouseTableViews(ArrayList<WarehouseItem> arrays, int x, int y) {
 
         if (Application.shop.currentWarehouse != null) {
 
             storeName.setText("Name     : " + Application.shop.currentWarehouse.name);
-            storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.storeAdmin);
+            storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.admin);
             storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
 
 
