@@ -10,15 +10,18 @@ public class Seller extends Applicant {
     public ArrayList<Item> allItems = new ArrayList<>();
     public ArrayList<Item> tempItems = new ArrayList<>();
     public Item auction;
+    public String chat;
 
 
-    public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace) {
+    public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace, String chat) {
         super(firstname, lastname, phoneNumber, username, password, email);
         this.workplace = workplace;
         applicantKind = "seller";
+        this.chat = chat;
 
         tempItems.addAll(allItems);
     }
+
     public Seller(String username) {
         super(username);
     }

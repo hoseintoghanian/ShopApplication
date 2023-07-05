@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -38,6 +37,14 @@ public class ControllerAdmin {
     DropShadow dropShadow;
     InnerShadow innerShadow;
 
+    Server server;
+
+
+    @FXML
+    private TextArea chatTextArea;
+    @FXML
+    private Label chatText;
+
     public ControllerAdmin() {
         dropShadow = new DropShadow();
         dropShadow.setWidth(10);
@@ -46,6 +53,10 @@ public class ControllerAdmin {
         innerShadow = new InnerShadow();
         innerShadow.setWidth(10);
         innerShadow.setHeight(10);
+
+
+        server = new Server();
+        server.start();
     }
 
 
@@ -57,6 +68,7 @@ public class ControllerAdmin {
         stage.getIcons().add(new Image("shop.png"));
         stage.setResizable(false);
         stage.setOnCloseRequest(ev -> {
+            closeFiles();
             System.exit(0);
         });
         stage.setScene(scene);
@@ -65,7 +77,17 @@ public class ControllerAdmin {
     }
 
     public void changeToLoginSceneAdmin(ActionEvent e) throws IOException {
+        closeFiles();
+
         changingScene(e, "Login.fxml");
+    }
+
+    public void closeFiles() {
+        for (int i = 0; i < Application.shop.sellers.size(); i++) {
+            if (server.clientsMap.get(Application.shop.sellers.get(i).getUsername()) != null)
+                server.clientsMap.get(Application.shop.sellers.get(i).getUsername()).closeClientManagersStreams();
+        }
+        server.closeServer();
     }
 
     //-------------------------------bankPage-------------------------------------------------------
@@ -105,7 +127,7 @@ public class ControllerAdmin {
         transactionTable.setLayoutY(100);
         transactionTable.setPrefWidth(300);
         transactionTable.setPrefHeight(570);
-        transactionTable.setEffect(new InnerShadow());
+        transactionTable.setEffect(innerShadow);
 
 
         TableColumn<Account, String> bankNameColumn = new TableColumn<>("Bank Name");
@@ -144,7 +166,7 @@ public class ControllerAdmin {
         table.setLayoutY(100);
         table.setPrefWidth(650);
         table.setPrefHeight(570);
-        table.setEffect(new InnerShadow());
+        table.setEffect(innerShadow);
 
 
         bankPage.getChildren().addAll(table, transactionTable);
@@ -366,7 +388,7 @@ public class ControllerAdmin {
         displayWarehousePage();
     }
 
-    public void warehouseTableViews(ArrayList<ControllerAdmin.WarehouseItem> arrays, int x, int y) {
+    public void warehouseTableViews(ArrayList<WarehouseItem> arrays, int x, int y) {
 
         if (Application.shop.currentWarehouse != null) {
 
@@ -375,20 +397,20 @@ public class ControllerAdmin {
             storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
 
 
-            TableColumn<ControllerAdmin.WarehouseItem, String> nameColumn = new TableColumn<>("Name");
+            TableColumn<WarehouseItem, String> nameColumn = new TableColumn<>("Name");
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-            TableColumn<ControllerAdmin.WarehouseItem, String> priceColumn = new TableColumn<>("Price");
+            TableColumn<WarehouseItem, String> priceColumn = new TableColumn<>("Price");
             priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-            TableColumn<ControllerAdmin.WarehouseItem, String> sizeColumn = new TableColumn<>("Size");
+            TableColumn<WarehouseItem, String> sizeColumn = new TableColumn<>("Size");
             sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
 
-            TableColumn<ControllerAdmin.WarehouseItem, String> dateColumn = new TableColumn<>("Date");
+            TableColumn<WarehouseItem, String> dateColumn = new TableColumn<>("Date");
             dateColumn.setCellValueFactory(new PropertyValueFactory<>("uploadDate"));
 
 
-            TableView<ControllerAdmin.WarehouseItem> tableView = new TableView<>();
+            TableView<WarehouseItem> tableView = new TableView<>();
             tableView.setItems(FXCollections.observableArrayList(arrays));
             tableView.getColumns().addAll(nameColumn, priceColumn, sizeColumn, dateColumn);
 
@@ -467,8 +489,8 @@ public class ControllerAdmin {
 
         if (Application.shop.currentWarehouse != null) {
 
-            ArrayList<ControllerAdmin.WarehouseItem> items = Application.shop.currentWarehouse.inputs;
-            items.sort(new Comparator<ControllerAdmin.WarehouseItem>() {
+            ArrayList<WarehouseItem> items = Application.shop.currentWarehouse.inputs;
+            items.sort(new Comparator<WarehouseItem>() {
                 @Override
                 public int compare(WarehouseItem o1, WarehouseItem o2) {
                     return o1.uploadDate.compareTo(o2.uploadDate);
@@ -536,7 +558,7 @@ public class ControllerAdmin {
         createChart("Uploads by Month");
     }
 
-    public void csv(ArrayList<ControllerAdmin.WarehouseItem> data, String filename) throws IOException {
+    public void csv(ArrayList<WarehouseItem> data, String filename) throws IOException {
         CSVFile.writeToFile(data, filename);
 
         // download the file
@@ -610,15 +632,15 @@ public class ControllerAdmin {
     private Label chatPageFirstname, chatPageLastname, chatPageUsername;
     @FXML
     private MenuButton sellersMenuButton;
+    @FXML
+    private Button sendButton;
 
     public void displayChatPage() {
 
-        chatPageFirstname.setText("Firstname : " + Application.shop.currentSeller.getFirstname());
-        chatPageLastname.setText("Lastname  : " + Application.shop.currentSeller.getLastname());
-        chatPageUsername.setText("Username : " + Application.shop.currentSeller.getUsername());
-    }
+        chatText.setText("");
+        chatTextArea.setDisable(true);
+        sendButton.setDisable(true);
 
-    public void setSellersMenuButton() {
         sellersMenuButton.getItems().clear();
 
         for (int i = 0; i < Application.shop.sellers.size(); i++) {
@@ -626,11 +648,39 @@ public class ControllerAdmin {
             int finalI = i;
             menuItem.setOnAction(ev -> {
                 Application.shop.currentSeller = Application.shop.sellers.get(finalI);
-                displayChatPage();
+                chatText.setText(Application.shop.currentSeller.chat);
+
+                chatTextArea.setDisable(false);
+                sendButton.setDisable(false);
+
+                chatPageFirstname.setText("Firstname : " + Application.shop.currentSeller.getFirstname());
+                chatPageLastname.setText("Lastname  : " + Application.shop.currentSeller.getLastname());
+                chatPageUsername.setText("Username : " + Application.shop.currentSeller.getUsername());
             });
             sellersMenuButton.getItems().add(menuItem);
         }
     }
+
+    public void send() throws SQLException {
+        if (Application.shop.currentSeller != null) {
+            String msg = chatTextArea.getText();
+            chatText.setText(chatText.getText() + "\nAdmin : " + msg);
+            Application.shop.currentSeller.chat = chatText.getText();
+            Database.updateSeller(Application.shop.currentSeller);
+            chatTextArea.setText("");
+
+            if (server.clientsMap.get(Application.shop.currentSeller.getUsername()) != null)//means the client is online
+                server.clientsMap.get(Application.shop.currentSeller.getUsername()).sendMessageToClient("Admin : " + msg);
+        }
+    }
+
+    public void receive() throws IOException {
+        if (Application.shop.currentSeller != null && server.clientsMap.get(Application.shop.currentSeller.getUsername()) != null) {//means both server & client are online
+            String msg = server.clientsMap.get(Application.shop.currentSeller.getUsername()).getMessageFromClient();
+            if (!msg.equals("")) chatText.setText(chatText.getText() + "\n" + msg);
+        }
+    }
+
 
 //------------------------------inner classes--------------------------------
 

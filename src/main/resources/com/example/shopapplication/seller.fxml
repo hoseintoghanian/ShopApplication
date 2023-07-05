@@ -694,7 +694,7 @@
                   </Hyperlink>
                   <AnchorPane layoutX="989.0" maxWidth="500.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="750.0" prefWidth="500.0" style="-fx-background-color: #E5BA1D;">
                      <children>
-                        <TextArea layoutY="670.0" prefHeight="50.0" prefWidth="450.0" promptText="Message to admin">
+                        <TextArea fx:id="chatTextArea" layoutY="670.0" prefHeight="50.0" prefWidth="450.0" promptText="Message to admin">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <color>
@@ -709,7 +709,7 @@
                               <Font name="Book Antiqua" size="15.0" />
                            </font>
                         </TextArea>
-                        <Button layoutX="452.0" layoutY="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Send">
+                        <Button layoutX="453.0" layoutY="670.0" mnemonicParsing="false" onAction="#send" prefHeight="50.0" prefWidth="50.0" text="Send">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -780,9 +780,9 @@
                                           <Image url="@../../../t5.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="15.0" layoutY="15.0" text="username + message text" textFill="WHITE">
+                                    <Label fx:id="chatText" alignment="TOP_LEFT" layoutX="15.0" layoutY="-25.0" onMouseMoved="#receive" prefHeight="2000.0" prefWidth="470.0" textFill="WHITE">
                                        <font>
-                                          <Font name="Book Antiqua" size="20.0" />
+                                          <Font name="Book Antiqua Italic" size="25.0" />
                                        </font>
                                     </Label>
                                  </children>

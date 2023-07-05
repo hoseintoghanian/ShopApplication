@@ -40,7 +40,7 @@ public class Database {
     }
 
     public static void writeSeller(Seller seller) throws SQLException {
-        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace, chat) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
@@ -51,6 +51,7 @@ public class Database {
         statement.setString(5, seller.getPassword());
         statement.setString(6, seller.getEmail());
         statement.setString(7, seller.workplace);
+        statement.setString(8, seller.chat);
 
         statement.executeUpdate();
 
@@ -64,7 +65,7 @@ public class Database {
         String sql = "create table " + str + username +
                 "(code int, kind varchar(15), minorKind varchar(20), brand varchar(20), name varchar(50), price int, size int, property varchar(500)," +
                 "score double, e0 int, e1 int, e2 int, e3 int, e4 int," +
-                "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500), sellerUsername varchar(50), comments varchar(2000), isAuction boolean)";
+                "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500), sellerUsername varchar(50), comments varchar(5000), isAuction boolean)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -104,7 +105,8 @@ public class Database {
                     resultSet.getString("username"),
                     resultSet.getString("pass"),
                     resultSet.getString("email"),
-                    resultSet.getString("workplace")
+                    resultSet.getString("workplace"),
+                    resultSet.getString("chat")
             ));
         }
 
@@ -270,6 +272,17 @@ public class Database {
 
     public static void updateItemAuction(Item item) throws SQLException {
         String sql = "update seller_items_" + item.sellerUsername + " set isAuction = " + item.isAuction + " where code = " + item.getCode();
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+
+    public static synchronized void updateSeller(Seller seller) throws SQLException {
+        String sql = "update seller set chat = '" + seller.chat + "' where username = '" + seller.getUsername() + "'";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();

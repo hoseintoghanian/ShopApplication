@@ -10,9 +10,9 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Random;
-import java.sql.*;
 
 public class ControllerRegister {
     private static final String CHARACTERS = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789";
@@ -136,40 +136,49 @@ public class ControllerRegister {
 
         //if (registerCheck(applicantKind)) {
 
-            seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText());
-            if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
-                validUsername = false;
-            }
+        seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText(), "");
+        if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
+            validUsername = false;
+        }
 
-            customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText());
-            if (Application.shop.customers.contains(customer) || Application.shop.sellers.contains(new Seller(customer.getUsername())) || txtUserName.getText().equals("admin")) {
-                validUsername = false;
-            }
+        customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText());
+        if (Application.shop.customers.contains(customer) || Application.shop.sellers.contains(new Seller(customer.getUsername())) || txtUserName.getText().equals("admin")) {
+            validUsername = false;
+        }
 
 
-            if (validUsername) {
+        if (validUsername) {
 
-                try {
+            try {
 
-                    if (applicantKind.equals("seller")) {
-                        Application.shop.sellers.add(seller);
-                        Database.writeSeller(seller);
-                        txtRegister.setText("Registered Successfully");
-                    }
-                    if (applicantKind.equals("customer")) {
-                        Application.shop.customers.add(customer);
-                        Database.writeCustomer(customer);
-                        txtRegister.setText("Registered Successfully");
-                    }
-
-                } catch (SQLException event) {
-                    //System.out.println("Connection failed: " + event.getMessage());
-                    event.printStackTrace();
+                if (applicantKind.equals("seller")) {
+                    Application.shop.sellers.add(seller);
+                    Database.writeSeller(seller);
+                    txtRegister.setText("Registered Successfully");
+                }
+                if (applicantKind.equals("customer")) {
+                    Application.shop.customers.add(customer);
+                    Database.writeCustomer(customer);
+                    txtRegister.setText("Registered Successfully");
                 }
 
-            } else {
-                txtRegister.setText("Invalid username");
+                txtFirstname.setText("");
+                txtLastname.setText("");
+                txtPhoneNumber.setText("");
+                txtUserName.setText("");
+                txtPass.setText("");
+                txtEmail.setText("");
+                txtWorkPlace.setText("");
+                txtConfirmPassword.setText("");
+
+            } catch (SQLException event) {
+                //System.out.println("Connection failed: " + event.getMessage());
+                event.printStackTrace();
             }
+
+        } else {
+            txtRegister.setText("Invalid username");
+        }
         //}
 
 

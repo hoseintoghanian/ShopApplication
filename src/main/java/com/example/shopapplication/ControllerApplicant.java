@@ -16,7 +16,6 @@ import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
@@ -28,17 +27,50 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class ControllerApplicant {
 
+    Client client;
+    @FXML
+    private TextArea chatTextArea;
+    @FXML
+    private Label chatText;
+
+    private DropShadow dropShadow = new DropShadow();
+    private InnerShadow innerShadow = new InnerShadow();
+
 
     public ControllerApplicant() {
-        //showItems();
+
+        dropShadow.setWidth(10);
+        dropShadow.setHeight(10);
+        innerShadow.setWidth(10);
+        innerShadow.setHeight(10);
+
+        if (Application.shop.currentSeller != null) {
+            client = new Client();
+            client.start();
+        }
+    }
+
+    public void send() throws SQLException {
+        String msg = chatTextArea.getText();
+        chatText.setText(chatText.getText() + "\n" + Application.shop.currentSeller.getUsername() + " : " + msg);
+        Application.shop.currentSeller.chat = chatText.getText();
+        Database.updateSeller(Application.shop.currentSeller);
+        chatTextArea.setText("");
+
+        if (client.clientSocket != null)
+            client.sendMessageToServer(Application.shop.currentSeller.getUsername() + " : " + msg);
+    }
+
+    public void receive() throws IOException {
+        if (client.clientSocket != null) {
+            String msg = client.getMessageFromServer();
+            if (!msg.equals("")) chatText.setText(chatText.getText() + "\n" + msg);
+        }
     }
 
 
@@ -67,6 +99,9 @@ public class ControllerApplicant {
             txtPWaccount.setText(Application.shop.currentSeller.getPassword());
             txtEMaccount.setText(Application.shop.currentSeller.getEmail());
             txtwpaccount.setText(Application.shop.currentSeller.workplace);
+
+
+            chatText.setText(Application.shop.currentSeller.chat);
         }
 
         txtincreaseamount.setOpacity(0);
@@ -147,6 +182,7 @@ public class ControllerApplicant {
         stage.getIcons().add(new Image("shop.png"));
         stage.setResizable(false);
         stage.setOnCloseRequest(ev -> {
+            if (client != null) client.closeClientStreams();
             System.exit(0);
         });
         stage.setScene(scene);
@@ -156,8 +192,10 @@ public class ControllerApplicant {
 
     public void changeToLoginScene(ActionEvent e) throws IOException {
         removeFilters();
+        if (client != null) client.closeClientStreams();
         changeScene(e, "Login.fxml");
     }
+
 
     public static boolean isNumeric(String str) {
         try {
@@ -1944,8 +1982,8 @@ public class ControllerApplicant {
             anchorPane.setPrefWidth(150);
             anchorPane.setPrefHeight(250);
             anchorPane.setStyle("-fx-background-color: #FFCF21;");
-            anchorPane.setEffect(new DropShadow());
-            anchorPane.setEffect(new InnerShadow());
+            anchorPane.setEffect(dropShadow);
+            anchorPane.setEffect(innerShadow);
 
 
             anchorPane.getChildren().addAll(imageView, name, price, button, scoreEmoji, score);
