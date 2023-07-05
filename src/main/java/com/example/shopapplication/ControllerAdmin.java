@@ -606,6 +606,32 @@ public class ControllerAdmin {
         });
     }
 
+    @FXML
+    private Label chatPageFirstname, chatPageLastname, chatPageUsername;
+    @FXML
+    private MenuButton sellersMenuButton;
+
+    public void displayChatPage() {
+
+        chatPageFirstname.setText("Firstname : " + Application.shop.currentSeller.getFirstname());
+        chatPageLastname.setText("Lastname  : " + Application.shop.currentSeller.getLastname());
+        chatPageUsername.setText("Username : " + Application.shop.currentSeller.getUsername());
+    }
+
+    public void setSellersMenuButton() {
+        sellersMenuButton.getItems().clear();
+
+        for (int i = 0; i < Application.shop.sellers.size(); i++) {
+            MenuItem menuItem = new MenuItem(Application.shop.sellers.get(i).getLastname());
+            int finalI = i;
+            menuItem.setOnAction(ev -> {
+                Application.shop.currentSeller = Application.shop.sellers.get(finalI);
+                displayChatPage();
+            });
+            sellersMenuButton.getItems().add(menuItem);
+        }
+    }
+
 //------------------------------inner classes--------------------------------
 
     public static class WarehouseItem {

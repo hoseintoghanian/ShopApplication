@@ -221,18 +221,22 @@
                </input></InnerShadow>
          </effect>
       </PasswordField>
-      <TextField fx:id="txtWorkPlace" layoutX="400.0" layoutY="540.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Work Place" visible="false">
-         <font>
-            <Font name="Book Antiqua" size="24.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </TextField>
       <Label fx:id="txtRegister" layoutX="50.0" layoutY="660.0" textFill="#bf2710">
          <font>
             <Font name="Book Antiqua Italic" size="25.0" />
          </font>
       </Label>
+      <TextField fx:id="txtWorkPlace" layoutX="400.0" layoutY="540.0" opacity="0.3" prefHeight="53.6" prefWidth="300.0" promptText="Work Place" visible="false">
+         <font>
+            <Font name="Book Antiqua" size="24.0" />
+         </font>
+         <effect>
+            <InnerShadow height="10.0" radius="4.5" width="10.0">
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </TextField>
    </children>
 </AnchorPane>

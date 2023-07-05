@@ -9,7 +9,6 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
@@ -424,33 +423,10 @@
                      </children></AnchorPane>
                </content>
             </Tab>
-            <Tab text="Sellers">
+            <Tab onSelectionChanged="#setSellersMenuButton" text="Sellers">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <SplitMenuButton alignment="CENTER" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefWidth="150.0" text="Sellers">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
-                          </items>
-                           <font>
-                              <Font name="Book Antiqua" size="20.0" />
-                           </font>
-                           <effect>
-                              <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                 <input>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <SepiaTone />
-                                       </input>
-                                    </DropShadow>
-                                 </input>
-                                 <color>
-                                    <Color red="0.6315789222717285" green="0.5099415183067322" blue="0.1450292468070984" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                        </SplitMenuButton>
                         <ScrollPane layoutX="582.0" layoutY="4.0" prefHeight="660.0" prefWidth="515.0">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="500.0">
@@ -462,7 +438,10 @@
                                     </ImageView>
                                  </children>
                                  <effect>
-                                    <DropShadow />
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <color>
+                                          <Color red="0.7157894968986511" green="0.5926913619041443" blue="0.188226118683815" />
+                                       </color></DropShadow>
                                  </effect>
                               </AnchorPane>
                           </content>
@@ -474,17 +453,17 @@
                               </DropShadow>
                            </effect>
                         </ScrollPane>
-                        <Label layoutX="40.0" layoutY="150.0" text="Seller name :">
+                        <Label fx:id="chatPageFirstname" layoutX="30.0" layoutY="150.0" text="Firstname : ">
                            <font>
-                              <Font name="Book Antiqua" size="25.0" />
+                              <Font name="Book Antiqua Italic" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="40.0" layoutY="200.0" text="Seller username :">
+                        <Label fx:id="chatPageUsername" layoutX="30.0" layoutY="250.0" text="Username :">
                            <font>
-                              <Font name="Book Antiqua" size="25.0" />
+                              <Font name="Book Antiqua Italic" size="25.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="720.0" layoutY="666.0" maxHeight="50.0" prefHeight="50.0" prefWidth="324.0" promptText="message">
+                        <TextArea layoutX="583.0" layoutY="666.0" maxHeight="50.0" prefHeight="50.0" prefWidth="461.0" promptText="message">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -494,6 +473,9 @@
                                        </input>
                                     </InnerShadow>
                                  </input>
+                                 <color>
+                                    <Color red="0.7052631378173828" green="0.5140149593353271" blue="0.2063547819852829" />
+                                 </color>
                               </DropShadow>
                            </effect>
                            <font>
@@ -505,7 +487,7 @@
                               <Font name="Book Antiqua" size="14.0" />
                            </font>
                            <effect>
-                              <DropShadow>
+                              <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
                                     <InnerShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -513,6 +495,9 @@
                                        </input>
                                     </InnerShadow>
                                  </input>
+                                 <color>
+                                    <Color red="0.5684210658073425" green="0.46231579780578613" blue="0.17052631080150604" />
+                                 </color>
                               </DropShadow>
                            </effect>
                         </Button>
@@ -572,22 +557,6 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <Button layoutX="582.0" layoutY="666.0" mnemonicParsing="false" prefHeight="50.0" text="Chat History">
-                           <font>
-                              <Font name="Book Antiqua" size="20.0" />
-                           </font>
-                           <effect>
-                              <DropShadow height="10.0" radius="4.5" width="10.0">
-                                 <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <SepiaTone />
-                                       </input>
-                                    </InnerShadow>
-                                 </input>
-                              </DropShadow>
-                           </effect>
-                        </Button>
                         <ImageView fx:id="imgTheme3" fitHeight="60.0" fitWidth="50.0" layoutX="510.0" layoutY="220.0" onMouseClicked="#setChatBackground" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/theme/theme3.png" />
@@ -652,6 +621,31 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
+                        <MenuButton fx:id="sellersMenuButton" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Sellers">
+                           <font>
+                              <Font name="Book Antiqua" size="15.0" />
+                           </font>
+                           <effect>
+                              <SepiaTone>
+                                 <input>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <DropShadow height="10.0" radius="4.5" width="10.0">
+                                             <color>
+                                                <Color red="1.0" green="0.8125925660133362" blue="0.06296296417713165" />
+                                             </color>
+                                          </DropShadow>
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </SepiaTone>
+                           </effect>
+                        </MenuButton>
+                        <Label fx:id="chatPageLastname" layoutX="30.0" layoutY="200.0" text="Lastname  : ">
+                           <font>
+                              <Font name="Book Antiqua Italic" size="25.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </content>
