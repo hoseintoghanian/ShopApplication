@@ -1955,7 +1955,7 @@ public class ControllerApplicant {
             name.setLayoutX(0);
             name.setLayoutY(145);
 
-            Label price = new Label(String.valueOf(items.get(i).price));
+            Label price = new Label(items.get(i).price + "$");
             price.setFont(new Font("Arial", 20));
             price.setPrefWidth(150);
             price.setAlignment(Pos.CENTER);
@@ -2091,7 +2091,7 @@ public class ControllerApplicant {
             brand.setLayoutY(60);
 
 
-            Label price = new Label("Max Bid  :  " + Application.shop.tempItems.get(i).tempPrice);
+            Label price = new Label("Max Bid  :  " + Application.shop.tempItems.get(i).tempPrice + "$");
             price.setFont(new Font("Arial", 25));
             price.setLayoutX(200);
             price.setLayoutY(110);
@@ -2113,7 +2113,7 @@ public class ControllerApplicant {
                 if (Integer.parseInt(bid.getText()) > Application.shop.tempItems.get(finalI).tempPrice) {
                     Application.shop.currentCustomer.wallet -= Application.shop.tempItems.get(finalI).tempPrice;
                     Application.shop.tempItems.get(finalI).tempPrice = Integer.parseInt(bid.getText());
-                    price.setText("Max Bid  :  " + Application.shop.tempItems.get(finalI).tempPrice);
+                    price.setText("Max Bid  :  " + Application.shop.tempItems.get(finalI).tempPrice + "$");
                     Application.shop.currentCustomer.AuctionItems.add(Application.shop.tempItems.get(finalI));
                     try {
                         Database.updateItemAuction(Application.shop.tempItems.get(finalI));
@@ -2220,7 +2220,7 @@ public class ControllerApplicant {
 
             labelauctionname.setText(Application.shop.currentSeller.auction.name);
             labelauctionbrand.setText(Application.shop.currentSeller.auction.brand);
-            labelauctionmaxbid.setText(String.valueOf(Application.shop.currentSeller.auction.tempPrice));
+            labelauctionmaxbid.setText(Application.shop.currentSeller.auction.tempPrice + "$");
             imgauctionimage.setImage(Application.shop.currentSeller.auction.image);
         }
     }

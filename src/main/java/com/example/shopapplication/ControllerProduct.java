@@ -61,8 +61,7 @@ public class ControllerProduct {
         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
             if (Application.shop.currentCustomer.cartItems.get(i).size >= Application.shop.currentCustomer.cartItems.get(i).tempSize) {
                 sum++;
-            }
-            else{
+            } else {
                 txtcarterror.setText("the requested amount\nis not available");
                 break;
             }
@@ -107,7 +106,7 @@ public class ControllerProduct {
         kindLabel.setText("Kind               :   " + Application.shop.currentItem.kind);
         minorKindLabel.setText("Minor Kind   :   " + Application.shop.currentItem.minorKind);
         brandLabel.setText("Brand             :   " + Application.shop.currentItem.brand);
-        priceLabel.setText("Price               :   " + Application.shop.currentItem.price);
+        priceLabel.setText("Price               :   " + Application.shop.currentItem.price + "$");
         sizeLabel.setText("Size                 :   " + Application.shop.currentItem.size);
         scoreLabel.setText("Score               :   " + decimalFormat.format(Application.shop.currentItem.score) + "%");
         propertyLabel.setText(Application.shop.currentItem.property);
@@ -392,7 +391,7 @@ public class ControllerProduct {
             brand.setLayoutX(200);
             brand.setLayoutY(60);
 
-            Label price = new Label("Price  :  " + Application.shop.currentCustomer.cartItems.get(i).price);
+            Label price = new Label("Price  :  " + Application.shop.currentCustomer.cartItems.get(i).price + "$");
             price.setFont(new Font("Arial", 25));
             price.setLayoutX(200);
             price.setLayoutY(110);

@@ -114,7 +114,7 @@ public class Database {
                     resultSet.getString("pass"),
                     resultSet.getString("email"),
                     resultSet.getString("workplace"),
-                    resultSet.getLong("walletbalance"),
+                    resultSet.getLong("wallet"),
                     resultSet.getString("imageurl"),
                     resultSet.getString("chat")
             ));
@@ -223,8 +223,8 @@ public class Database {
         statement.setString(5, item.name);
         statement.setLong(6, item.price);
 
-        if (str.equals("items_")) statement.setInt(7, item.size);
-        if (str.equals("purchase_")) statement.setInt(7, item.tempSize);
+        if (str.equals("seller_items_")) statement.setInt(7, item.size);
+        if (str.equals("customer_purchase_")) statement.setInt(7, item.tempSize);
 
         statement.setString(8, item.property);
 
