@@ -1,5 +1,7 @@
 package com.example.shopapplication;
 
+import javafx.scene.image.Image;
+
 import java.sql.*;
 
 public class Database {
@@ -20,7 +22,7 @@ public class Database {
     }
 
     public static void writeCustomer(Customer customer) throws SQLException {
-        String sql = "INSERT INTO customer (firstname, lastname, phoneNumber, username, pass, email) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO customer (firstname, lastname, phoneNumber, username, pass, email, wallet, imageurl) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
@@ -30,6 +32,8 @@ public class Database {
         statement.setString(4, customer.getUsername());
         statement.setString(5, customer.getPassword());
         statement.setString(6, customer.getEmail());
+        statement.setLong(7, customer.wallet);
+        statement.setString(8,customer.image.getUrl());
 
         statement.executeUpdate();
 
@@ -38,9 +42,8 @@ public class Database {
         statement.close();
         getDBC().close();
     }
-
     public static void writeSeller(Seller seller) throws SQLException {
-        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace, chat) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace, walletbalance, imageurl, chat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
@@ -51,7 +54,9 @@ public class Database {
         statement.setString(5, seller.getPassword());
         statement.setString(6, seller.getEmail());
         statement.setString(7, seller.workplace);
-        statement.setString(8, seller.chat);
+        statement.setLong(8, seller.walletbalance);
+        statement.setString(9,seller.image.getUrl());
+        statement.setString(10, seller.chat);
 
         statement.executeUpdate();
 
@@ -65,7 +70,7 @@ public class Database {
         String sql = "create table " + str + username +
                 "(code int, kind varchar(15), minorKind varchar(20), brand varchar(20), name varchar(50), price int, size int, property varchar(500)," +
                 "score double, e0 int, e1 int, e2 int, e3 int, e4 int," +
-                "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500), sellerUsername varchar(50), comments varchar(5000), isAuction boolean)";
+                "uploadDate datetime, imageURL varchar(500), scoreEmojiURL varchar(500), sellerUsername varchar(50), comments varchar(2000), isAuction boolean, tempPrice long)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -75,6 +80,7 @@ public class Database {
 
         Statement statement = getDBC().createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
+        Image image;
 
         while (resultSet.next()) {
             Application.shop.customers.add(new Customer(
@@ -83,7 +89,9 @@ public class Database {
                     resultSet.getString("phoneNumber"),
                     resultSet.getString("username"),
                     resultSet.getString("pass"),
-                    resultSet.getString("email")
+                    resultSet.getString("email"),
+                    resultSet.getLong("wallet"),
+                    resultSet.getString("imageurl")
             ));
         }
 
@@ -106,6 +114,8 @@ public class Database {
                     resultSet.getString("pass"),
                     resultSet.getString("email"),
                     resultSet.getString("workplace"),
+                    resultSet.getLong("walletbalance"),
+                    resultSet.getString("imageurl"),
                     resultSet.getString("chat")
             ));
         }
@@ -145,22 +155,11 @@ public class Database {
                         resultSet.getString("scoreEmojiURL"),
                         resultSet.getString("sellerUsername"),
                         resultSet.getString("comments"),
-                        resultSet.getBoolean("isAuction")
+                        resultSet.getBoolean("isAuction"),
+                        resultSet.getLong("tempPrice")
                 ));
             }
-
-            for (int j = 0; j < Application.shop.sellers.get(i).allItems.size(); j++) {
-                if (Application.shop.sellers.get(i).allItems.get(j).isAuction)
-                    Application.shop.sellers.get(i).auction = Application.shop.sellers.get(i).allItems.get(j);
-            }
-
-            Application.shop.sellers.get(i).tempItems.addAll(Application.shop.sellers.get(i).allItems);
-
-            Application.shop.allItems.addAll(Application.shop.sellers.get(i).allItems);
-            Application.shop.tempItems.addAll(Application.shop.sellers.get(i).allItems);
         }
-        Shop.SortByDate(Application.shop.allItems, Application.shop.tempItems);
-
 
         statement.close();
         if (resultSet != null) resultSet.close();
@@ -197,7 +196,8 @@ public class Database {
                         resultSet.getString("scoreEmojiURL"),
                         resultSet.getString("sellerUsername"),
                         resultSet.getString("comments"),
-                        resultSet.getBoolean("isAuction")
+                        resultSet.getBoolean("isAuction"),
+                        resultSet.getLong("tempPrice")
                 ));
             }
         }
@@ -207,12 +207,12 @@ public class Database {
         getDBC().close();
     }
 
-    public static void addProduct(String str, Item item, String username) throws SQLException {//str is one of these seller_items_ or customer_purchase_
+    public static void addProduct(String str, Item item, String username) throws SQLException {
         String sql = "INSERT INTO " + str + username +
                 "(code, kind, minorKind, brand, name, price, size, property," +
                 "score, e0, e1, e2, e3, e4," +
-                "uploadDate, imageURL, scoreEmojiURL, sellerUsername, comments, isAuction)" +
-                "VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "uploadDate, imageURL, scoreEmojiURL, sellerUsername, comments, isAuction, tempPrice)" +
+                "VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
@@ -223,8 +223,8 @@ public class Database {
         statement.setString(5, item.name);
         statement.setLong(6, item.price);
 
-        if (str.equals("seller_items_")) statement.setInt(7, item.size);
-        if (str.equals("customer_purchase_")) statement.setInt(7, item.tempSize);
+        if (str.equals("items_")) statement.setInt(7, item.size);
+        if (str.equals("purchase_")) statement.setInt(7, item.tempSize);
 
         statement.setString(8, item.property);
 
@@ -241,8 +241,22 @@ public class Database {
         statement.setString(18, item.sellerUsername);
         statement.setString(19, item.comments);
         statement.setBoolean(20, item.isAuction);
+        statement.setLong(21, item.tempPrice);
 
 
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void removeProduct(String username,int code) throws SQLException {
+
+        String tableName = "items_" + username;
+        String sql = "DELETE FROM " + tableName + " WHERE code = ?";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.setInt(1, code);
         statement.executeUpdate();
 
         statement.close();
@@ -271,13 +285,67 @@ public class Database {
     }
 
     public static void updateItemAuction(Item item) throws SQLException {
-        String sql = "update seller_items_" + item.sellerUsername + " set isAuction = " + item.isAuction + " where code = " + item.getCode();
+
+        String sql = "UPDATE items_" + item.sellerUsername + " SET isAuction = ?, tempPrice = ? WHERE code = ?";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.setBoolean(1, item.isAuction);
+        statement.setLong(2,item.tempPrice);
+        statement.setInt(3,item.getCode());
+
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void updateSellerWallet(Seller seller)throws SQLException{
+
+        String sql = "update seller  set walletbalance = " + seller.walletbalance + " where username = '" + seller.getUsername()+"'";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
 
         statement.close();
         getDBC().close();
+    }
+
+    public static void updateCustomerWallet(Customer customer)throws SQLException{
+
+        String sql = "update customer  set wallet = " + customer.wallet + " where username = '" + customer.getUsername()+"'";
+
+        PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.executeUpdate();
+
+        statement.close();
+        getDBC().close();
+    }
+
+    public static void updateApplicantImage(Applicant applicant)throws SQLException{
+
+        if (applicant.applicantKind=="customer") {
+
+            Customer customer = (Customer) applicant;
+            String sql = "update customer  set imageurl = '" + customer.image.getUrl() + "' where username = '" + customer.getUsername() + "'";
+
+            PreparedStatement statement = getDBC().prepareStatement(sql);
+            statement.executeUpdate();
+
+            statement.close();
+            getDBC().close();
+        }
+
+        if (applicant.applicantKind=="seller"){
+
+            Seller seller = (Seller) applicant;
+            String sql = "update seller  set imageurl = '" + seller.image.getUrl() + "' where username = '" + seller.getUsername()+"'";
+
+            PreparedStatement statement = getDBC().prepareStatement(sql);
+            statement.executeUpdate();
+
+            statement.close();
+            getDBC().close();
+        }
     }
 
 
