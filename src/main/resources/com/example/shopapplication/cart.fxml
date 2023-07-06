@@ -61,12 +61,12 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <Label layoutX="35.0" layoutY="535.0" text="Final cost : ">
+                  <Label layoutX="34.0" layoutY="492.0" text="Final cost : ">
                      <font>
                         <Font name="Book Antiqua" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="35.0" layoutY="585.0" text="Wallet balance : ">
+                  <Label layoutX="28.0" layoutY="543.0" text="Wallet balance : ">
                      <font>
                         <Font name="Book Antiqua" size="24.0" />
                      </font>
@@ -115,14 +115,19 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Label fx:id="labelFinalCost" layoutX="169.0" layoutY="533.0" prefWidth="61.0" text="Label">
+                  <Label fx:id="labelFinalCost" layoutX="164.0" layoutY="492.0" prefWidth="61.0" text="Label">
                      <font>
                         <Font size="24.0" />
                      </font></Label>
-                  <Label fx:id="labelWalletBalance" layoutX="229.0" layoutY="583.0" text="Label">
+                  <Label fx:id="labelWalletBalance" layoutX="226.0" layoutY="543.0" text="Label">
                      <font>
                         <Font size="24.0" />
                      </font></Label>
+                  <Label fx:id="txtcarterror" layoutX="55.0" layoutY="596.0" textFill="#df0c0c">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane maxWidth="1100.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="1100.0">
