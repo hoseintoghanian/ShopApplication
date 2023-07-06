@@ -1,5 +1,9 @@
 package com.example.shopapplication;
 
+import javafx.scene.image.Image;
+
+import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -11,11 +15,15 @@ public class Seller extends Applicant {
     public ArrayList<Item> tempItems = new ArrayList<>();
     public Item auction;
     public String chat;
+    public long walletbalance;
 
 
-    public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace, String chat) {
+    public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace, Long walletbalance, String imageurl, String chat) {
         super(firstname, lastname, phoneNumber, username, password, email);
         this.workplace = workplace;
+        this.walletbalance = walletbalance;
+        //File file = new File(imageurl);
+        this.image = new Image(imageurl);
         applicantKind = "seller";
         this.chat = chat;
 
