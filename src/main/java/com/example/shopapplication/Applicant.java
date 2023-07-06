@@ -1,5 +1,7 @@
 package com.example.shopapplication;
 
+import javafx.scene.image.Image;
+
 public abstract class Applicant {
 
     private  String firstname;
@@ -10,6 +12,7 @@ public abstract class Applicant {
     private String email;
 
     public String applicantKind;
+    public Image image;
 
 
     public Applicant(String firstname, String lastname, String phoneNumber, String username, String password, String email) {
