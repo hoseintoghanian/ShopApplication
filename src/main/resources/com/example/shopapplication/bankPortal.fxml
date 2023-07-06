@@ -114,7 +114,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Label fx:id="txtbankportalerror" layoutX="100.0" layoutY="530.0" textFill="#fec617" textOverrun="CLIP">
+      <Label fx:id="txtbankportalerror" layoutX="100.0" layoutY="537.0" textFill="#fc3b19" textOverrun="CLIP">
          <font>
             <Font name="Cambria Italic" size="27.0" />
          </font>
