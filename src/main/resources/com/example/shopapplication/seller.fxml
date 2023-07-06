@@ -267,7 +267,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#displayauction" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <Label layoutX="300.0" layoutY="50.0" text="your auction" textFill="#323aa4">
+                  <Label layoutX="570.0" layoutY="55.0" text="your auction" textFill="#323aa4">
                      <font>
                         <Font name="Book Antiqua" size="70.0" />
                      </font>
@@ -278,7 +278,7 @@
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
-                  <Button layoutX="372.0" layoutY="600.0" mnemonicParsing="false" onAction="#auction" prefHeight="50.0" prefWidth="250.0" text="Sale">
+                  <Button layoutX="630.0" layoutY="581.0" mnemonicParsing="false" onAction="#auction" prefHeight="50.0" prefWidth="250.0" text="Sale">
                      <effect>
                         <DropShadow height="10.0" radius="7.0" width="20.0">
                            <input>
@@ -332,17 +332,14 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab onSelectionChanged="#displayInfo" text="     Acount     ">
+      <Tab onSelectionChanged="#displayInfo" text="     Account     ">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="656.0" layoutY="50.0" onMouseClicked="#loadImage" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgseller" fitHeight="300.0" fitWidth="300.0" layoutX="656.0" layoutY="50.0" onMouseClicked="#addProfile" pickOnBounds="true" preserveRatio="true">
                      <effect>
                         <DropShadow />
                      </effect>
-                     <image>
-                        <Image url="@../img/customer.png" />
-                     </image>
                   </ImageView>
                   <Label layoutX="40.0" layoutY="230.0" text="Password    :">
                      <font>
@@ -448,7 +445,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="230.0" layoutY="420.0" text="0 $">
+                  <Label layoutX="276.0" layoutY="422.0" text="\$">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -896,6 +893,11 @@
                   <Label fx:id="labelincreasewalleterror" layoutX="50.0" layoutY="510.0" textFill="#b40808">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txtsellerWB" layoutX="229.0" layoutY="420.0">
+                     <font>
+                        <Font size="24.0" />
                      </font>
                   </Label>
                </children>
