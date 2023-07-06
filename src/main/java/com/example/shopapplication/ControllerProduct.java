@@ -51,11 +51,24 @@ public class ControllerProduct {
         changeScene(e, "customer.fxml");
     }
 
+    @FXML
+    private Label txtcarterror;
+
     public void changeToPaymentScene(ActionEvent e) throws IOException {
 
+        int sum = 0;
         Application.shop.pageURL = "cart.fxml";
-
-        changeScene(e, "payment.fxml");
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+            if (Application.shop.currentCustomer.cartItems.get(i).size >= Application.shop.currentCustomer.cartItems.get(i).tempSize) {
+                sum++;
+            }
+            else{
+                txtcarterror.setText("the requested amount\nis not available");
+                break;
+            }
+        }
+        if (sum == Application.shop.currentCustomer.cartItems.size())
+            changeScene(e, "payment.fxml");
     }
 
     public void changeToCartScene(MouseEvent e) throws IOException {
