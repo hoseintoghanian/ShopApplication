@@ -25,7 +25,7 @@ public class Item {
     boolean isAuction;
 
     int tempSize = 1;
-    long tempPrice;
+    long tempPrice = 0;
 
 
     public Item(String kind, String minorKind, String brand, String name, long price, int size, String property, Image image, String sellerUsername) {
@@ -55,7 +55,7 @@ public class Item {
 
     public Item(int code, String kind, String minorKind, String brand, String name, long price, int size, String property,
                 double score, int e0, int e1, int e2, int e3, int e4,
-                Object uploadDate, String imageURL, String scoreEmojiURL, String sellerUsername, String comments, boolean isAuction) {
+                Object uploadDate, String imageURL, String scoreEmojiURL, String sellerUsername, String comments, boolean isAuction, long tempPrice) {
 
         count++;
 
@@ -79,6 +79,7 @@ public class Item {
         this.sellerUsername = sellerUsername;
         this.comments = comments;
         this.isAuction = isAuction;
+        this.tempPrice = tempPrice;
 
 
         calculateScore(-1);
