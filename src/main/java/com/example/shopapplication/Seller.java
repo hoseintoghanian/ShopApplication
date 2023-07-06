@@ -6,22 +6,19 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Seller extends Applicant {
-
     public String workplace;
+    public long wallet;
+    public String chat;
+    public Item auction;
 
     public ArrayList<Item> allItems = new ArrayList<>();
     public ArrayList<Item> tempItems = new ArrayList<>();
-    public Item auction;
-    public String chat;
-    public long wallet;
 
-
-    public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace, Long walletbalance, String imageurl, String chat) {
+    public Seller(String firstname, String lastname, String phoneNumber, String username, String password, String email, String workplace, Long walletBalance, String imageURL, String chat) {
         super(firstname, lastname, phoneNumber, username, password, email);
         this.workplace = workplace;
-        this.wallet = walletbalance;
-        //File file = new File(imageurl);
-        this.image = new Image(imageurl);
+        this.wallet = walletBalance;
+        this.image = new Image(imageURL);
         applicantKind = "seller";
         this.chat = chat;
 
@@ -39,5 +36,4 @@ public class Seller extends Applicant {
         }
         return false;
     }
-
 }

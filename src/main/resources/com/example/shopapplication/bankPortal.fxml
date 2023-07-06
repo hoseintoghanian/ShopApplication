@@ -42,27 +42,27 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtcardnumber" layoutX="459.0" layoutY="285.0" prefWidth="412.0" promptText="0000-0000-0000-0000">
+      <TextField fx:id="txtCardNumber" layoutX="459.0" layoutY="285.0" prefWidth="412.0" promptText="0000-0000-0000-0000">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="txtcvv2" alignment="CENTER" layoutX="747.0" layoutY="393.0" prefWidth="126.0" promptText="o o o">
+      <PasswordField fx:id="txtCVV2" alignment="CENTER" layoutX="747.0" layoutY="393.0" prefWidth="126.0" promptText="o o o">
          <font>
             <Font size="16.0" />
          </font>
       </PasswordField>
-      <TextField fx:id="txtcardexpiremonth" alignment="CENTER" layoutX="564.0" layoutY="393.0" prefWidth="100.0" promptText="month">
+      <TextField fx:id="txtCardExpireMonth" alignment="CENTER" layoutX="564.0" layoutY="393.0" prefWidth="100.0" promptText="month">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtcardexpireyear" alignment="CENTER" layoutX="459.0" layoutY="393.0" prefWidth="100.0" promptText="year">
+      <TextField fx:id="txtCardExpireYear" alignment="CENTER" layoutX="459.0" layoutY="393.0" prefWidth="100.0" promptText="year">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtcaptchainput2" alignment="CENTER" layoutX="459.0" layoutY="500.0" prefWidth="120.0" promptText="o o o">
+      <TextField fx:id="txtCaptchaInput2" alignment="CENTER" layoutX="459.0" layoutY="500.0" prefWidth="120.0" promptText="o o o">
          <font>
             <Font size="16.0" />
          </font>
@@ -72,12 +72,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtcardsecondcode" alignment="CENTER" layoutX="747.0" layoutY="500.0" prefWidth="126.0" promptText="o o o">
+      <TextField fx:id="txtCardSecondCode" alignment="CENTER" layoutX="747.0" layoutY="500.0" prefWidth="126.0" promptText="o o o">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtemail" layoutX="459.0" layoutY="607.0" prefWidth="412.0" promptText="*****@example.com">
+      <TextField fx:id="txtEmail" layoutX="459.0" layoutY="607.0" prefWidth="412.0" promptText="*****@example.com">
          <font>
             <Font size="16.0" />
          </font>
@@ -89,12 +89,12 @@
       </AnchorPane>
       <AnchorPane layoutX="455.0" layoutY="169.0" prefHeight="50.0" prefWidth="402.0" style="-fx-background-color: #F2F4F6;">
          <children>
-            <Label layoutX="10.0" layoutY="5.0" text="You have to pay :                 $">
+            <Label layoutX="10.0" layoutY="5.0" text="You have to pay :           $">
                <font>
                   <Font name="System Bold Italic" size="25.0" />
                </font>
             </Label>
-            <Label fx:id="labelFinalCost" layoutX="235.0" layoutY="5.0">
+            <Label fx:id="labelFinalCost" layoutX="225.0" layoutY="6.0">
                <font>
                   <Font name="System Italic" size="25.0" />
                </font>
@@ -114,7 +114,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Label fx:id="txtbankportalerror" layoutX="100.0" layoutY="537.0" textFill="#fc3b19" textOverrun="CLIP">
+      <Label fx:id="txtBankPortalError" layoutX="100.0" layoutY="537.0" textFill="#fc3b19" textOverrun="CLIP">
          <font>
             <Font name="Cambria Italic" size="27.0" />
          </font>

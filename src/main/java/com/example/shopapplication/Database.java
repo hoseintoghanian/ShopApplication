@@ -161,6 +161,7 @@ public class Database {
                 );
 
                 Application.shop.sellers.get(i).allItems.add(item);
+                if (item.isAuction) Application.shop.sellers.get(i).auction = item;
             }
             Application.shop.allItems.addAll(Application.shop.sellers.get(i).allItems);
             Application.shop.tempItems.addAll(Application.shop.sellers.get(i).allItems);
@@ -353,7 +354,6 @@ public class Database {
             getDBC().close();
         }
     }
-
 
     public static synchronized void updateSeller(Seller seller) throws SQLException {
         String sql = "update seller set chat = '" + seller.chat + "' where username = '" + seller.getUsername() + "'";

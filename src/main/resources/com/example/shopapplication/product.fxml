@@ -300,7 +300,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <ImageView fx:id="emojiscore" fitHeight="32.0" fitWidth="32.0" layoutX="320.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emojiScore" fitHeight="32.0" fitWidth="32.0" layoutX="320.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
                      <effect>
                         <DropShadow height="10.0" radius="4.5" width="10.0">
                            <color>

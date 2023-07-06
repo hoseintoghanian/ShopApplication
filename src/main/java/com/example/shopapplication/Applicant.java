@@ -3,17 +3,14 @@ package com.example.shopapplication;
 import javafx.scene.image.Image;
 
 public abstract class Applicant {
-
-    private  String firstname;
-    private  String lastname;
+    private String firstname;
+    private String lastname;
     private String phoneNumber;
     private String username;
     private String password;
     private String email;
-
     public String applicantKind;
     public Image image;
-
 
     public Applicant(String firstname, String lastname, String phoneNumber, String username, String password, String email) {
         this.firstname = firstname;
@@ -23,6 +20,7 @@ public abstract class Applicant {
         this.password = password;
         this.email = email;
     }
+
     public Applicant(String username) {
         this.username = username;
     }
@@ -70,5 +68,4 @@ public abstract class Applicant {
     public String toString() {
         return firstname + " " + lastname + " " + phoneNumber;
     }
-
 }

@@ -17,9 +17,17 @@ import java.sql.SQLException;
 import java.util.Random;
 
 public class ControllerPayment {
-    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private static final String CHARACTERS = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789";
     private static final int CAPTCHA_LENGTH = 6;
     private String captchaText;
+
+    @FXML
+    private Label labelfinalcost, labelFinalCost, txtCaptcha2;
+    @FXML
+    private TextField txtCardNumber, txtCVV2, txtCardExpireMonth, txtCardExpireYear, txtCaptchaInput2, txtCardSecondCode, txtEmail;
+    @FXML
+    private TextArea txtPaymentPostalAddress;
+
 
     public void ChangeScene2(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
@@ -41,7 +49,6 @@ public class ControllerPayment {
     }
 
     public void changeToBankScene(ActionEvent e) throws IOException {
-
         Application.shop.pageURL = "payment.fxml";
         ChangeScene2(e, "bankPortal.fxml");
     }
@@ -49,9 +56,6 @@ public class ControllerPayment {
     public void back(ActionEvent e) throws IOException {
         ChangeScene2(e, Application.shop.pageURL);
     }
-
-    @FXML
-    private Label labelfinalcost;
 
     public void displayInfo() {
         int sum = 0;
@@ -62,9 +66,6 @@ public class ControllerPayment {
 
         checkPayment();
     }
-
-    @FXML
-    private Label labelFinalCost;
 
     public void displayInfo2() {
         if (Application.shop.pageURL == "payment.fxml") {
@@ -78,15 +79,7 @@ public class ControllerPayment {
         }
     }
 
-
-    @FXML
-    private TextField txtcardnumber, txtcvv2, txtcardexpiremonth, txtcardexpireyear, txtcaptchainput2, txtcardsecondcode, txtemail;
-    @FXML
-    private TextArea txtpaymentpostaladdress;
-    @FXML
-    private Label txtCaptcha2;
-
-    public void captcha2() throws Exception {
+    public void captcha2() {
         captchaText = generateCaptchaText();
         txtCaptcha2.setText(captchaText);
     }
@@ -100,90 +93,88 @@ public class ControllerPayment {
         return sb.toString();
     }
 
-
-    //////////////////////////////////   buy conditions   ////////////////////////////////////////////////
+    ////////////////////////////////////////   buy conditions   ////////////////////////////////////////////////
     @FXML
-    private Label txtbankportalerror;
+    private Label txtBankPortalError;
+    @FXML
+    private Button buttonPayment;
+    @FXML
+    private TextField txtPaymentProvince, txtPaymentCity, txtPaymentPostalCode, txtPaymentName, txtPaymentPhoneNumber, txtPaymentDiscountCode;
 
     public boolean checkBankScene() {
 
-        if (!txtcardnumber.getText().equals("") &&
-                !txtcvv2.getText().equals("") &&
-                !txtcardexpireyear.getText().equals("") &&
-                !txtcardexpiremonth.getText().equals("") &&
-                !txtcardsecondcode.getText().equals("") &&
-                !txtemail.getText().equals("")
+        if (!txtCardNumber.getText().equals("") &&
+                !txtCVV2.getText().equals("") &&
+                !txtCardExpireYear.getText().equals("") &&
+                !txtCardExpireMonth.getText().equals("") &&
+                !txtCardSecondCode.getText().equals("") &&
+                !txtEmail.getText().equals("")
         ) {
-            if (txtcardnumber.getText().length() != 16) {
-                txtbankportalerror.setText("card number is invalid");
+            if (txtCardNumber.getText().length() != 16) {
+                txtBankPortalError.setText("card number is invalid");
                 return false;
             }
             for (int i = 0; i < 16; i++) {
-                if (txtcardnumber.getText().charAt(i) < 48 || txtcardnumber.getText().charAt(i) > 57) {
-                    txtbankportalerror.setText("card number is invalid");
+                if (txtCardNumber.getText().charAt(i) < 48 || txtCardNumber.getText().charAt(i) > 57) {
+                    txtBankPortalError.setText("card number is invalid");
                     return false;
                 }
             }
-            if (txtcvv2.getText().length() != 4) {
-                txtbankportalerror.setText("cvv2 is invalid");
+            if (txtCVV2.getText().length() != 4) {
+                txtBankPortalError.setText("cvv2 is invalid");
                 return false;
             }
-            if (txtcardexpireyear.getText().length() != 4) {
-                txtbankportalerror.setText("expire year is invalid");
+            if (txtCardExpireYear.getText().length() != 4) {
+                txtBankPortalError.setText("expire year is invalid");
                 return false;
             }
-            int cardExpireMonth = Integer.parseInt(txtcardexpiremonth.getText());
+            int cardExpireMonth = Integer.parseInt(txtCardExpireMonth.getText());
             if (cardExpireMonth > 12 || cardExpireMonth < 0) {
-                txtbankportalerror.setText("expire month is invalid");
+                txtBankPortalError.setText("expire month is invalid");
                 return false;
             }
-            if (!txtcaptchainput2.getText().equals(captchaText)) {
-                txtcaptchainput2.clear();
-                txtbankportalerror.setText("captcha is incorrect");
+            if (!txtCaptchaInput2.getText().equals(captchaText)) {
+                txtCaptchaInput2.clear();
+                txtBankPortalError.setText("captcha is incorrect");
                 return false;
             }
-            if (txtcardsecondcode.getText().length() != 5) {
-                txtbankportalerror.setText("internet code is invalid");
+            if (txtCardSecondCode.getText().length() != 5) {
+                txtBankPortalError.setText("internet code is invalid");
                 return false;
             }
-            if (!txtemail.getText().endsWith("@gmail.com")) {
-                txtbankportalerror.setText("email is invalid");
+            if (!txtEmail.getText().endsWith("@gmail.com")) {
+                txtBankPortalError.setText("email is invalid");
                 return false;
             }
-        } else if (txtcardnumber.getText().equals("") ||
-                txtcvv2.getText().equals("") ||
-                txtcardexpireyear.getText().equals("") ||
-                txtcardexpiremonth.getText().equals("") ||
-                txtcardsecondcode.getText().equals("") ||
-                txtemail.getText().equals("")
+        } else if (txtCardNumber.getText().equals("") ||
+                txtCVV2.getText().equals("") ||
+                txtCardExpireYear.getText().equals("") ||
+                txtCardExpireMonth.getText().equals("") ||
+                txtCardSecondCode.getText().equals("") ||
+                txtEmail.getText().equals("")
         ) {
-            txtbankportalerror.setText("please fill all the fields");
+            txtBankPortalError.setText("please fill all the fields");
             return false;
         }
         return true;
     }
 
-    @FXML
-    private Button buttonpayment;
-    @FXML
-    private TextField txtpaymentprovince, txtpaymentcity, txtpaymentpostalcode, txtpaymentname, txtpaymentphonenumber, txtpaymentdiscountcode;
-
     public void checkPayment() {
 
-        if (!txtpaymentprovince.getText().equals("") &&
-                !txtpaymentcity.getText().equals("") &&
-                !txtpaymentpostalcode.getText().equals("") &&
-                !txtpaymentname.getText().equals("") &&
-                !txtpaymentphonenumber.getText().equals("") &&
-                !txtpaymentpostaladdress.getText().equals("")
+        if (!txtPaymentProvince.getText().equals("") &&
+                !txtPaymentCity.getText().equals("") &&
+                !txtPaymentPostalCode.getText().equals("") &&
+                !txtPaymentName.getText().equals("") &&
+                !txtPaymentPhoneNumber.getText().equals("") &&
+                !txtPaymentPostalAddress.getText().equals("")
         ) {
-            buttonpayment.setDisable(false);
+            buttonPayment.setDisable(false);
         } else {
-            buttonpayment.setDisable(true);
+            buttonPayment.setDisable(true);
         }
     }
 
-    public void pay(ActionEvent e) throws SQLException, IOException {
+    public void pay() throws SQLException {
 
         Item item;
 
@@ -230,14 +221,14 @@ public class ControllerPayment {
                         Database.updateCustomerWallet(Application.shop.currentCustomer);
                         labelFinalCost.setText("0");
                     }
-                    txtbankportalerror.setStyle("-fx-text-fill: green;");
-                    txtbankportalerror.setText("The purchase was made successfully");
+                    txtBankPortalError.setStyle("-fx-text-fill: green;");
+                    txtBankPortalError.setText("The purchase was made successfully");
                     //if (Application.shop.pageURL == "customer.fxml") ChangeScene2(e, "customer.fxml");
                     //if (Application.shop.pageURL == "seller.fxml") ChangeScene2(e, "seller.fxml");
                     return;
                 } else
-                    txtbankportalerror.setStyle("-fx-text-fill: red;");
-                txtbankportalerror.setText("the balance is not enough");
+                    txtBankPortalError.setStyle("-fx-text-fill: red;");
+                txtBankPortalError.setText("the balance is not enough");
             }
         }
     }

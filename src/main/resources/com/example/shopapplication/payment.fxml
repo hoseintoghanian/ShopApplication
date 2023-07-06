@@ -27,7 +27,7 @@
             <SepiaTone />
          </effect>
       </Label>
-      <TextField fx:id="txtpaymentprovince" alignment="CENTER" layoutX="211.0" layoutY="137.0" prefWidth="250.0">
+      <TextField fx:id="txtPaymentProvince" alignment="CENTER" layoutX="211.0" layoutY="137.0" prefWidth="250.0">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>
@@ -54,7 +54,7 @@
             <SepiaTone />
          </effect>
       </Label>
-      <TextField fx:id="txtpaymentcity" alignment="CENTER" layoutX="643.0" layoutY="137.0" prefWidth="250.0">
+      <TextField fx:id="txtPaymentCity" alignment="CENTER" layoutX="643.0" layoutY="137.0" prefWidth="250.0">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>
@@ -81,7 +81,7 @@
             <SepiaTone />
          </effect>
       </Label>
-      <TextField fx:id="txtpaymentpostalcode" alignment="CENTER" layoutX="1199.0" layoutY="137.0" prefWidth="250.0">
+      <TextField fx:id="txtPaymentPostalCode" alignment="CENTER" layoutX="1199.0" layoutY="137.0" prefWidth="250.0">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>
@@ -100,7 +100,7 @@
             </InnerShadow>
          </effect>
       </TextField>
-      <TextArea fx:id="txtpaymentpostaladdress" layoutX="303.0" layoutY="210.0" prefHeight="150.0" prefWidth="1145.0">
+      <TextArea fx:id="txtPaymentPostalAddress" layoutX="303.0" layoutY="210.0" prefHeight="150.0" prefWidth="1145.0">
          <font>
             <Font name="Book Antiqua" size="20.0" />
          </font>
@@ -149,7 +149,7 @@
             <SepiaTone />
          </effect>
       </Label>
-      <TextField fx:id="txtpaymentname" alignment="CENTER" layoutX="476.0" layoutY="437.0" prefWidth="250.0">
+      <TextField fx:id="txtPaymentName" alignment="CENTER" layoutX="476.0" layoutY="437.0" prefWidth="250.0">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>
@@ -176,7 +176,7 @@
             <SepiaTone />
          </effect>
       </Label>
-      <TextField fx:id="txtpaymentphonenumber" alignment="CENTER" layoutX="1093.0" layoutY="437.0" prefWidth="250.0">
+      <TextField fx:id="txtPaymentPhoneNumber" alignment="CENTER" layoutX="1093.0" layoutY="437.0" prefWidth="250.0">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>
@@ -209,7 +209,7 @@
             <Font name="Book Antiqua Italic" size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="txtpaymentdiscountcode" alignment="CENTER" layoutX="315.0" layoutY="517.0" prefWidth="250.0">
+      <TextField fx:id="txtPaymentDiscountCode" alignment="CENTER" layoutX="315.0" layoutY="517.0" prefWidth="250.0">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>
@@ -228,7 +228,7 @@
             </InnerShadow>
          </effect>
       </TextField>
-      <Button fx:id="buttonpayment" disable="true" layoutX="1250.0" layoutY="650.0" mnemonicParsing="false" onAction="#changeToBankScene" prefWidth="150.0" text="Payment" textFill="RED">
+      <Button fx:id="buttonPayment" disable="true" layoutX="1250.0" layoutY="650.0" mnemonicParsing="false" onAction="#changeToBankScene" prefWidth="150.0" text="Payment" textFill="RED">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>

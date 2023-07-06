@@ -89,6 +89,10 @@ public class Item {
         return name;
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
     public double getPrice() {
         return price;
     }

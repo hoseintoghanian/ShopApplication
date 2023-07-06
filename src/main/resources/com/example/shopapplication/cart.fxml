@@ -24,7 +24,7 @@
                <children>
                   <ImageView fitHeight="220.0" fitWidth="330.0" layoutX="35.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/auction/auction%201.png" />
+                        <Image url="@../img/auction/Super-Sale.jpg" />
                      </image>
                      <effect>
                         <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -41,7 +41,6 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <Label layoutX="34.0" layoutY="259.0" text="above picture is just an advertisement (this label shoud delete)" />
                   <ImageView fitHeight="174.0" fitWidth="231.0" layoutX="84.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../gif/post-purchase-dribbble-animated-400x300.gif" />
@@ -61,12 +60,12 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <Label layoutX="34.0" layoutY="492.0" text="Final cost : ">
+                  <Label layoutX="25.0" layoutY="505.0" text="Final cost          :">
                      <font>
                         <Font name="Book Antiqua" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="28.0" layoutY="543.0" text="Wallet balance : ">
+                  <Label layoutX="25.0" layoutY="555.0" text="Wallet balance :">
                      <font>
                         <Font name="Book Antiqua" size="24.0" />
                      </font>
@@ -115,15 +114,15 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Label fx:id="labelFinalCost" layoutX="164.0" layoutY="492.0" prefWidth="61.0" text="Label">
+                  <Label fx:id="labelFinalCost" layoutX="205.0" layoutY="505.0" prefWidth="61.0">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Book Antiqua" size="24.0" />
                      </font></Label>
-                  <Label fx:id="labelWalletBalance" layoutX="226.0" layoutY="543.0" text="Label">
+                  <Label fx:id="labelWalletBalance" layoutX="205.0" layoutY="555.0">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Book Antiqua" size="24.0" />
                      </font></Label>
-                  <Label fx:id="txtcarterror" layoutX="55.0" layoutY="596.0" textFill="#df0c0c">
+                  <Label fx:id="txtCartError" layoutX="55.0" layoutY="596.0" textFill="#df0c0c">
                      <font>
                         <Font size="25.0" />
                      </font>

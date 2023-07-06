@@ -1,18 +1,12 @@
 package com.example.shopapplication;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.ArrayList;
+import java.io.*;
+import java.net.*;
 import java.util.HashMap;
 
 public class Server extends Thread {
     ServerSocket serverSocket;
     HashMap<String, ClientManager> clientsMap = new HashMap<>();
-
 
     public void run() {
         try {
@@ -53,12 +47,10 @@ public class Server extends Thread {
         BufferedReader in;
         PrintWriter out;
 
-
         public ClientManager(Server server, Socket client) {
             this.server = server;
             this.client = client;
         }
-
 
         @Override
         public void run() {

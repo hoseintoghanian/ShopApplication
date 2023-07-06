@@ -53,7 +53,7 @@
                                     </DropShadow>
                                  </effect>
                               </ImageView>
-                              <TextField fx:id="searchBoxText" layoutX="50.0" layoutY="15.0" onMouseEntered="#filterName" prefWidth="300.0" promptText="Search">
+                              <TextField fx:id="searchBoxText" layoutX="50.0" layoutY="15.0" onMouseEntered="#search" prefWidth="300.0" promptText="Search">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -72,7 +72,7 @@
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                               </TextField>
-                              <MenuButton fx:id="filterButtonKind" layoutX="35.0" layoutY="335.0" mnemonicParsing="false" prefWidth="105.0" text="Kind">
+                              <MenuButton fx:id="filterButtonKind" layoutX="35.0" layoutY="330.0" mnemonicParsing="false" prefWidth="105.0" text="Kind">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#filterGrocery" text="grocery" />
                                     <MenuItem mnemonicParsing="false" onAction="#filterBreakfast" text="breakfast" />
@@ -96,7 +96,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <Button layoutX="35.0" layoutY="420.0" mnemonicParsing="false" onAction="#applyFilters" prefHeight="26.0" prefWidth="160.0" text="apply filters">
+                              <Button layoutX="35.0" layoutY="415.0" mnemonicParsing="false" onAction="#applyFilters" prefHeight="26.0" prefWidth="160.0" text="apply filters">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -112,7 +112,7 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
-                              <MenuButton fx:id="filterButtonBrand" layoutX="260.0" layoutY="335.0" mnemonicParsing="false" onMouseEntered="#filterBrand" prefWidth="105.0" text="Brand">
+                              <MenuButton fx:id="filterButtonBrand" layoutX="260.0" layoutY="330.0" mnemonicParsing="false" onMouseEntered="#filterBrand" prefWidth="105.0" text="Brand">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -128,7 +128,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <MenuButton fx:id="filterButtonMinorKind" layoutX="150.0" layoutY="335.0" mnemonicParsing="false" prefWidth="100.0" text="Minor Kind">
+                              <MenuButton fx:id="filterButtonMinorKind" layoutX="150.0" layoutY="330.0" mnemonicParsing="false" prefWidth="100.0" text="Minor Kind">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -144,7 +144,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <Button layoutX="205.0" layoutY="420.0" mnemonicParsing="false" onAction="#removeFilters" prefHeight="26.0" prefWidth="160.0" text="remove filters">
+                              <Button layoutX="205.0" layoutY="415.0" mnemonicParsing="false" onAction="#removeFilters" prefHeight="26.0" prefWidth="160.0" text="remove filters">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -165,7 +165,6 @@
                                     <Image url="@../img/cart.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="34.0" layoutY="285.0" text="above picture is just an advertisement (this label shoud delete)" />
                               <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="205.0" layoutY="510.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/auction/auction%202.png" />
@@ -185,7 +184,7 @@
                                     </DropShadow>
                                  </effect>
                               </ImageView>
-                              <MenuButton fx:id="filterButtonKind1" layoutX="35.0" layoutY="375.0" mnemonicParsing="false" prefWidth="105.0" text="Price">
+                              <MenuButton fx:id="filterButtonKind1" layoutX="35.0" layoutY="370.0" mnemonicParsing="false" prefWidth="105.0" text="Price">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#priceLowToHigh" text="cheap to expensive" />
                                     <MenuItem mnemonicParsing="false" onAction="#priceHighToLow" text="expensive to cheap" />
@@ -205,7 +204,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <MenuButton fx:id="filterButtonKind2" layoutX="150.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" text="Score">
+                              <MenuButton fx:id="filterButtonKind2" layoutX="150.0" layoutY="370.0" mnemonicParsing="false" prefWidth="100.0" text="Score">
                                  <items>
                                     <MenuItem mnemonicParsing="false" onAction="#scoreHighToLow" text="high to low" />
                                     <MenuItem mnemonicParsing="false" onAction="#scoreLowToHigh" text="low to high" />
@@ -225,7 +224,7 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <Button layoutX="260.0" layoutY="374.0" mnemonicParsing="false" onAction="#filterPurchase" prefWidth="105.0" text="purchase history">
+                              <Button layoutX="260.0" layoutY="369.0" mnemonicParsing="false" onAction="#filterPurchase" prefWidth="105.0" text="purchase history">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -285,7 +284,7 @@
          <content>
             <AnchorPane fx:id="customerAccountPage" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fx:id="imgcustomer" fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" onMouseClicked="#addProfile" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="customerImg" fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" onMouseClicked="#addProfile" pickOnBounds="true" preserveRatio="true">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -351,32 +350,32 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtPNaccount" layoutX="250.0" layoutY="170.0" text="...">
+                  <Label fx:id="txtPNAccount" layoutX="250.0" layoutY="170.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtEMaccount" layoutX="250.0" layoutY="350.0" text="...">
+                  <Label fx:id="txtEMAccount" layoutX="250.0" layoutY="350.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtPWaccount" layoutX="250.0" layoutY="290.0" text="...">
+                  <Label fx:id="txtPWAccount" layoutX="250.0" layoutY="290.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtUNaccount" layoutX="250.0" layoutY="230.0" text="...">
+                  <Label fx:id="txtUNAccount" layoutX="250.0" layoutY="230.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtFNaccount" layoutX="250.0" layoutY="50.0" text="...">
+                  <Label fx:id="txtFNAccount" layoutX="250.0" layoutY="50.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtLNaccount" layoutX="250.0" layoutY="110.0" text="...">
+                  <Label fx:id="txtLNAccount" layoutX="250.0" layoutY="110.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
@@ -397,9 +396,9 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtWBaccount" layoutX="250.0" layoutY="450.0">
+                  <Label fx:id="txtWBAccount" layoutX="235.0" layoutY="450.0">
                      <font>
-                        <Font name="Book Antiqua" size="25.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
                   <Hyperlink fx:id="txtLogout" layoutX="1400.0" layoutY="25.0" onAction="#changeToLoginScene" text="Log Out">
@@ -407,7 +406,7 @@
                         <InnerShadow />
                      </effect>
                   </Hyperlink>
-                  <Label fx:id="labelincreasewalleterror" layoutX="50.0" layoutY="530.0" textFill="#b40808">
+                  <Label fx:id="labelIncreaseWalletError" layoutX="50.0" layoutY="530.0" textFill="#b40808">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
@@ -450,7 +449,7 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <TextField fx:id="txtincreaseamount" alignment="CENTER" layoutX="425.0" layoutY="630.0" prefHeight="40.0" prefWidth="200.0" promptText="enter your desired amount">
+                  <TextField fx:id="txtIncreaseAmount" alignment="CENTER" layoutX="425.0" layoutY="630.0" prefHeight="40.0" prefWidth="200.0" promptText="enter your desired amount">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
@@ -472,9 +471,9 @@
                         </InnerShadow>
                      </effect>
                   </TextField>
-                  <Label layoutX="310.0" layoutY="448.0" text="\$">
+                  <Label layoutX="310.0" layoutY="451.0" text="\$">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Book Antiqua" size="25.0" />
                      </font>
                   </Label>
                </children>

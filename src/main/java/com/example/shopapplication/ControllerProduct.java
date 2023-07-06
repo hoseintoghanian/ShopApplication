@@ -15,7 +15,6 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -27,6 +26,20 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 
 public class ControllerProduct {
+    @FXML
+    private Label txtCartError, labelFinalCost, labelWalletBalance, comment;
+    @FXML
+    private Label nameLabel, kindLabel, minorKindLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
+    @FXML
+    private ImageView emojiScore, itemImage, cartImageView, emoji0, emoji1, emoji2, emoji3, emoji4;
+    @FXML
+    private ImageView chatBackgroundImg, imgTheme1, imgTheme2, imgTheme3, imgTheme4, imgTheme5, imgTheme6, imgTheme7;
+    @FXML
+    private Button sendButton, voteButton, addToCartButton;
+    @FXML
+    private TextArea commentText;
+    private boolean isClicked;
+
 
     public void changeScene(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
@@ -43,26 +56,14 @@ public class ControllerProduct {
         stage.show();
     }
 
-    public void back(ActionEvent e) throws IOException {
-        changeScene(e, Application.shop.pageURL);
-    }
-
-    public void backToCustomerPage(ActionEvent e) throws IOException {
-        changeScene(e, "customer.fxml");
-    }
-
-    @FXML
-    private Label txtcarterror;
-
     public void changeToPaymentScene(ActionEvent e) throws IOException {
-
         int sum = 0;
         Application.shop.pageURL = "cart.fxml";
         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
             if (Application.shop.currentCustomer.cartItems.get(i).size >= Application.shop.currentCustomer.cartItems.get(i).tempSize) {
                 sum++;
             } else {
-                txtcarterror.setText("the requested amount\nis not available");
+                txtCartError.setText("the requested amount\nis not available");
                 break;
             }
         }
@@ -78,25 +79,13 @@ public class ControllerProduct {
         stage.show();
     }
 
-    @FXML
-    private Label labelFinalCost, labelWalletBalance;
-
-    public void displayInfo2() {
-        int sum = 0;
-        labelWalletBalance.setText(String.valueOf(Application.shop.currentCustomer.wallet));
-        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
-        }
-        labelFinalCost.setText(String.valueOf(sum));
+    public void back(ActionEvent e) throws IOException {
+        changeScene(e, Application.shop.pageURL);
     }
 
-    @FXML
-    private Label nameLabel, kindLabel, minorKindLabel, brandLabel, priceLabel, sizeLabel, scoreLabel, propertyLabel;
-    @FXML
-    private ImageView emojiscore, itemImage, cartImageView;
-
-    @FXML
-    private Button sendButton;
+    public void backToCustomerPage(ActionEvent e) throws IOException {
+        changeScene(e, "customer.fxml");
+    }
 
     public void displayInfo() {
 
@@ -106,14 +95,13 @@ public class ControllerProduct {
         kindLabel.setText("Kind               :   " + Application.shop.currentItem.kind);
         minorKindLabel.setText("Minor Kind   :   " + Application.shop.currentItem.minorKind);
         brandLabel.setText("Brand             :   " + Application.shop.currentItem.brand);
-        priceLabel.setText("Price               :   " + Application.shop.currentItem.price + "$");
+        priceLabel.setText("Price               :   " + Application.shop.currentItem.price + " $");
         sizeLabel.setText("Size                 :   " + Application.shop.currentItem.size);
         scoreLabel.setText("Score               :   " + decimalFormat.format(Application.shop.currentItem.score) + "%");
         propertyLabel.setText(Application.shop.currentItem.property);
-        emojiscore.setImage(Application.shop.currentItem.scoreEmoji);
+        emojiScore.setImage(Application.shop.currentItem.scoreEmoji);
         itemImage.setImage(Application.shop.currentItem.image);
         comment.setText(Application.shop.currentItem.comments);
-
 
         if (Application.shop.currentSeller != null) {
 
@@ -139,13 +127,16 @@ public class ControllerProduct {
                 voteButton.setVisible(true);
                 voteButton.setDisable(false);
             }
-
     }
 
-
-    @FXML
-    private ImageView emoji0, emoji1, emoji2, emoji3, emoji4;
-    private boolean isClicked;
+    public void displayInfo2() {
+        int sum = 0;
+        labelWalletBalance.setText(String.valueOf(Application.shop.currentCustomer.wallet));
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+        }
+        labelFinalCost.setText(String.valueOf(sum));
+    }
 
     public void emojiClick() {
 
@@ -232,10 +223,6 @@ public class ControllerProduct {
         }
     }
 
-
-    @FXML
-    private Button voteButton, addToCartButton;
-
     public void vote() throws SQLException {
 
         if (emoji0.getOpacity() == 1) {
@@ -268,11 +255,6 @@ public class ControllerProduct {
             Application.shop.currentCustomer.cartItems.add(Application.shop.currentItem);
     }
 
-    @FXML
-    private Label comment;
-    @FXML
-    private TextArea commentText;
-
     public void sendComments() throws SQLException {
         if (!commentText.getText().equals("")) {
 
@@ -293,11 +275,6 @@ public class ControllerProduct {
             Database.updateItem(Application.shop.currentItem);
         }
     }
-
-    @FXML
-    private ImageView chatBackgroundImg;
-    @FXML
-    private ImageView imgTheme1, imgTheme2, imgTheme3, imgTheme4, imgTheme5, imgTheme6, imgTheme7;
 
     public void setChatBackground() {
 
@@ -332,10 +309,7 @@ public class ControllerProduct {
         });
     }
 
-
     //------------------------cart section------------------------
-
-
     @FXML
     private AnchorPane cartPage;
     static int icount = 0;
@@ -346,7 +320,6 @@ public class ControllerProduct {
         icount = 0;
 
         Application.shop.pageURL = "customer.fxml";
-
 
         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
 
@@ -380,39 +353,38 @@ public class ControllerProduct {
             scoreEmoji.setLayoutX(380);
             scoreEmoji.setLayoutY(160);
 
-
             Label name = new Label("Name :  " + Application.shop.currentCustomer.cartItems.get(i).name);
-            name.setFont(new Font("Arial", 25));
+            name.setFont(new Font("Book Antiqua", 25));
             name.setLayoutX(200);
             name.setLayoutY(10);
 
             Label brand = new Label("Brand :  " + Application.shop.currentCustomer.cartItems.get(i).brand);
-            brand.setFont(new Font("Arial", 25));
+            brand.setFont(new Font("Book Antiqua", 25));
             brand.setLayoutX(200);
             brand.setLayoutY(60);
 
-            Label price = new Label("Price  :  " + Application.shop.currentCustomer.cartItems.get(i).price + "$");
-            price.setFont(new Font("Arial", 25));
+            Label price = new Label("Price  :  " + Application.shop.currentCustomer.cartItems.get(i).price + " $");
+            price.setFont(new Font("Book Antiqua", 25));
             price.setLayoutX(200);
             price.setLayoutY(110);
 
             DecimalFormat decimalFormat = new DecimalFormat("##.##");
             Label score = new Label("Score :  " + decimalFormat.format(Application.shop.currentCustomer.cartItems.get(i).score) + "%");
-            score.setFont(new Font("Arial", 25));
+            score.setFont(new Font("Book Antiqua", 25));
             score.setLayoutX(200);
             score.setLayoutY(160);
 
             Label property = new Label("Properties  :\n" + Application.shop.currentCustomer.cartItems.get(i).property);
-            property.setFont(new Font("Arial", 25));
+            property.setFont(new Font("Book Antiqua", 25));
             property.setLayoutX(500);
             property.setLayoutY(10);
 
             Label size = new Label("Size");
-            size.setFont(new Font("Arial", 25));
+            size.setFont(new Font("Book Antiqua", 25));
             size.setLayoutX(500);
             size.setLayoutY(160);
 
-            Spinner<Integer> spinner = new Spinner<>(1, 100, Application.shop.currentCustomer.cartItems.get(i).tempSize);
+            Spinner<Integer> spinner = new Spinner<>(1, Application.shop.currentCustomer.cartItems.get(i).size, Application.shop.currentCustomer.cartItems.get(i).tempSize);
             spinner.valueProperty().addListener((observable, oldValue, newValue) -> {
                 Item item = Application.shop.currentCustomer.cartItems.get(finalI);
                 item.tempSize = newValue;
@@ -427,7 +399,7 @@ public class ControllerProduct {
             Button button = null;
 
             button = new Button("remove");
-            button.setFont(new Font(15));
+            button.setFont(new Font("Book Antiqua", 15));
             button.setOnAction(ev -> {
                 Item item = Application.shop.currentCustomer.cartItems.get(finalI);
                 Application.shop.currentCustomer.cartItems.remove(item);
@@ -439,7 +411,6 @@ public class ControllerProduct {
             button.setLayoutX(700);
             button.setLayoutY(160);
 
-
             AnchorPane anchorPane = new AnchorPane();
             anchorPane.setLayoutX(100);
             anchorPane.setLayoutY(icount * 225 + 50);
@@ -447,7 +418,6 @@ public class ControllerProduct {
             anchorPane.setPrefHeight(200);
             anchorPane.setStyle("-fx-background-color: #FFCF21;");
             anchorPane.setEffect(new DropShadow());
-
 
             anchorPane.getChildren().addAll(imageView, scoreEmoji, name, brand, price, score, property, size, root, button);
             cartPage.getChildren().add(anchorPane);

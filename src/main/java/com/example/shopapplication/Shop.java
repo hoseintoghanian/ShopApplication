@@ -3,8 +3,7 @@ package com.example.shopapplication;
 import java.util.*;
 
 public class Shop {
-
-    private static Shop instance = new Shop();
+    private static final Shop instance = new Shop();
 
     private Shop() {
     }
@@ -15,17 +14,16 @@ public class Shop {
 
 
     public Admin admin = new Admin("admin", "5581");
+    public ArrayList<Seller> sellers = new ArrayList<>();
+    public ArrayList<Customer> customers = new ArrayList<>();
+    public ArrayList<Warehouse> warehouses = new ArrayList<>();
+    public ArrayList<Item> allItems = new ArrayList<>();
+    public ArrayList<Item> tempItems = new ArrayList<>();
+
     public Seller currentSeller;
     public Customer currentCustomer;
     public Warehouse currentWarehouse;
     public Item currentItem;
-
-    public ArrayList<Seller> sellers = new ArrayList<>();
-    public ArrayList<Customer> customers = new ArrayList<>();
-    public ArrayList<Warehouse> warehouses = new ArrayList<>();
-
-    public ArrayList<Item> allItems = new ArrayList<>();
-    public ArrayList<Item> tempItems = new ArrayList<>();
 
     String pageURL;
 
@@ -143,5 +141,4 @@ public class Shop {
             if (allItems.get(i).name.equals(name)) tempItems.add(allItems.get(i));
         }
     }
-
 }

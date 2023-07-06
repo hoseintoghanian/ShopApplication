@@ -11,9 +11,7 @@ public class SoundThread extends Thread {
         AudioInputStream audioIn = null;
         try {
             audioIn = AudioSystem.getAudioInputStream(soundFile);
-        } catch (UnsupportedAudioFileException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (UnsupportedAudioFileException | IOException e) {
             throw new RuntimeException(e);
         }
         AudioFormat format = audioIn.getFormat();

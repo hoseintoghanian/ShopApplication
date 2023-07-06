@@ -34,15 +34,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class ControllerAdmin {
-
     Server server;
 
     DropShadow dropShadow;
     InnerShadow innerShadow;
-    @FXML
-    private TextArea chatTextArea;
-    @FXML
-    private Label chatText;
 
     public ControllerAdmin() {
         dropShadow = new DropShadow();
@@ -173,7 +168,6 @@ public class ControllerAdmin {
     //-----------------------------chart tab-------------------------------------------------------
     @FXML
     private AnchorPane chartPage;
-
     LineChart<String, Number> currentIncomeChart, currentCostChart;
 
     public void displayChartPage() {
@@ -258,7 +252,6 @@ public class ControllerAdmin {
         lineChart2.setEffect(dropShadow);
 
         currentIncomeChart = lineChart2;
-
 
         chartPage.getChildren().addAll(lineChart, lineChart2);
     }
@@ -535,7 +528,6 @@ public class ControllerAdmin {
                 txtAddItemPrice.setText("");
                 txtAddItemSize.setText("");
             }
-
     }
 
     private LineChart<String, Number> createLineChart(String title) {
@@ -553,7 +545,6 @@ public class ControllerAdmin {
         return chart;
     }
 
-
     public void createChart(String title) {
 
         warehousePage.getChildren().remove(currentWarehouseChart);
@@ -568,9 +559,7 @@ public class ControllerAdmin {
                 }
             });
 
-
             LineChart<String, Number> chart = createLineChart(title);
-
 
             Map<LocalDate, Integer> dayMap = new HashMap<>();
             Map<String, Integer> monthMap = new TreeMap<>();
@@ -612,7 +601,6 @@ public class ControllerAdmin {
                 series.setName("Uploads by Year");
             }
 
-
             // sort the data in ascending order based on the x-values (i.e., the upload dates)
             if (title.equals("Uploads by Day")) {
                 data.sort(new Comparator<XYChart.Data<String, Number>>() {
@@ -630,7 +618,6 @@ public class ControllerAdmin {
             warehousePage.getChildren().add(chart);
         }
     }
-
 
     public void chartByDay() {
         createChart("Uploads by Day");
@@ -674,11 +661,12 @@ public class ControllerAdmin {
 
 
     //------------------------------------chat---------------------------------
-
     @FXML
-    private ImageView chatBackgroundImg;
+    private TextArea chatTextArea;
     @FXML
-    private ImageView imgTheme1, imgTheme2, imgTheme3, imgTheme4, imgTheme5, imgTheme6, imgTheme7;
+    private Label chatText;
+    @FXML
+    private ImageView chatBackgroundImg, imgTheme1, imgTheme2, imgTheme3, imgTheme4, imgTheme5, imgTheme6, imgTheme7;
     @FXML
     private Label chatPageFirstname, chatPageLastname, chatPageUsername;
     @FXML
@@ -765,13 +753,12 @@ public class ControllerAdmin {
         }
     }
 
-
 //------------------------------inner classes--------------------------------
 
     public static class WarehouseItem {
-        private String name;
-        private long price;
-        private int size;
+        private final String name;
+        private final long price;
+        private final int size;
         LocalDateTime uploadDate;
         String kind;
         Warehouse warehouse;
@@ -828,11 +815,10 @@ public class ControllerAdmin {
     }
 
     public static class Transaction {
-
-        private String date;
-        private String description;
-        private double amount;
-        private double balance;
+        private final String date;
+        private final String description;
+        private final double amount;
+        private final double balance;
 
         public Transaction(String date, String description, double amount, double balance) {
             this.date = date;
@@ -859,13 +845,12 @@ public class ControllerAdmin {
     }
 
     public static class Account {
-
-        private String bankName;
-        private String branch;
-        private String accountNumber;
-        private String accountType;
-        private double balance;
-        private String openingDate;
+        private final String bankName;
+        private final String branch;
+        private final String accountNumber;
+        private final String accountType;
+        private final double balance;
+        private final String openingDate;
 
         public Account(String bankName, String branch, String accountNumber, String accountType, double balance, String openingDate) {
             this.bankName = bankName;

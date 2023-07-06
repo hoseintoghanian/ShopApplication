@@ -38,7 +38,7 @@
                            <children>
                               <ImageView fitHeight="220.0" fitWidth="330.0" layoutX="35.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/auction/auction%201.png" />
+                                    <Image url="@../img/auction/Super-Sale.jpg" />
                                  </image>
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
@@ -55,7 +55,7 @@
                                     </DropShadow>
                                  </effect>
                               </ImageView>
-                              <TextField fx:id="searchBoxText" layoutX="50.0" layoutY="15.0" onMouseEntered="#filterName" prefWidth="300.0" promptText="Search">
+                              <TextField fx:id="searchBoxText" layoutX="50.0" layoutY="15.0" onMouseEntered="#search" prefWidth="300.0" promptText="Search">
                                  <effect>
                                     <DropShadow height="10.0" radius="4.5" width="10.0">
                                        <input>
@@ -74,7 +74,7 @@
                                     <Font name="Book Antiqua" size="12.0" />
                                  </font>
                               </TextField>
-                              <Label layoutX="34.0" layoutY="285.0" text="above picture is just an advertisement (this label shoud delete)" />
+                              <Label alignment="CENTER" layoutX="34.0" layoutY="285.0" prefHeight="18.0" prefWidth="332.0" text="your advertisment" />
                               <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="210.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/auction/auction%202.png" />
@@ -263,22 +263,22 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab onSelectionChanged="#displayauction" text="     Auction     ">
+      <Tab onSelectionChanged="#displayAuctionTab" text="     Auction     ">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#displayauction" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#displayAuctionTab" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <Label layoutX="570.0" layoutY="55.0" text="your auction" textFill="#323aa4">
+                  <Label layoutX="400.0" layoutY="40.0" text="your auction" textFill="#323aa4">
                      <font>
                         <Font name="Book Antiqua" size="70.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="imgauctionimage" fitHeight="500.0" fitWidth="500.0" layoutX="900.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="100.0" layoutY="450.0" text="max bid :">
+                  <ImageView fx:id="auctionImage" fitHeight="600.0" fitWidth="600.0" layoutX="850.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="100.0" layoutY="400.0" text="max bid :">
                      <font>
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
-                  <Button layoutX="630.0" layoutY="581.0" mnemonicParsing="false" onAction="#auction" prefHeight="50.0" prefWidth="250.0" text="Sale">
+                  <Button layoutX="400.0" layoutY="580.0" mnemonicParsing="false" onAction="#sellAuction" prefHeight="50.0" prefWidth="395.0" text="Sale">
                      <effect>
                         <DropShadow height="10.0" radius="7.0" width="20.0">
                            <input>
@@ -300,27 +300,27 @@
                         <Font name="Book Antiqua" size="30.0" />
                      </font>
                   </Button>
-                  <Label layoutX="100.0" layoutY="250.0" text="Name :">
+                  <Label layoutX="100.0" layoutY="200.0" text="Name     :">
                      <font>
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
-                  <Label layoutX="100.0" layoutY="350.0" text="Brand :">
+                  <Label layoutX="100.0" layoutY="300.0" text="Brand     :">
                      <font>
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelauctionname" layoutX="320.0" layoutY="250.0">
+                  <Label fx:id="labelAuctionName" layoutX="320.0" layoutY="200.0">
                      <font>
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelauctionbrand" layoutX="320.0" layoutY="350.0">
+                  <Label fx:id="labelAuctionBrand" layoutX="320.0" layoutY="300.0">
                      <font>
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelauctionmaxbid" layoutX="320.0" layoutY="450.0">
+                  <Label fx:id="labelAuctionMaxBid" layoutX="320.0" layoutY="400.0">
                      <font>
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
@@ -336,7 +336,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fx:id="imgseller" fitHeight="300.0" fitWidth="300.0" layoutX="656.0" layoutY="50.0" onMouseClicked="#addProfile" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="sellerImg" fitHeight="300.0" fitWidth="300.0" layoutX="656.0" layoutY="50.0" onMouseClicked="#addProfile" pickOnBounds="true" preserveRatio="true">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -399,32 +399,32 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtPNaccount" layoutX="210.0" layoutY="130.0" text="...">
+                  <Label fx:id="txtPNAccount" layoutX="210.0" layoutY="130.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtEMaccount" layoutX="210.0" layoutY="280.0" text="...">
+                  <Label fx:id="txtEMAccount" layoutX="210.0" layoutY="280.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtPWaccount" layoutX="210.0" layoutY="230.0" text="...">
+                  <Label fx:id="txtPWAccount" layoutX="210.0" layoutY="230.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtUNaccount" layoutX="210.0" layoutY="180.0" text="...">
+                  <Label fx:id="txtUNAccount" layoutX="210.0" layoutY="180.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtFNaccount" layoutX="210.0" layoutY="30.0" text="...">
+                  <Label fx:id="txtFNAccount" layoutX="210.0" layoutY="30.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtLNaccount" layoutX="210.0" layoutY="80.0" text="...">
+                  <Label fx:id="txtLNAccount" layoutX="210.0" layoutY="80.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
@@ -445,7 +445,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label layoutX="276.0" layoutY="422.0" text="\$">
+                  <Label layoutX="300.0" layoutY="422.0" text="\$">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -530,7 +530,7 @@
                                  </color>
                               </DropShadow>
                            </effect></TextField>
-                        <Button layoutX="342.0" layoutY="255.0" mnemonicParsing="false" onAction="#addProduct" text="   add   ">
+                        <Button layoutX="320.0" layoutY="255.0" mnemonicParsing="false" onAction="#addProduct" prefWidth="100.0" text="   add   ">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -609,9 +609,9 @@
                               </DropShadow>
                            </effect>
                         </MenuButton>
-                        <Label fx:id="addtxt" layoutX="306.0" layoutY="214.0">
+                        <Label fx:id="addTxt" alignment="CENTER" layoutX="260.0" layoutY="215.0" prefWidth="220.0" textFill="#9e1212">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="Book Antiqua Italic" size="20.0" />
                            </font>
                         </Label>
                         <Button layoutX="150.0" layoutY="95.0" mnemonicParsing="false" onAction="#loadImage" prefWidth="80.0" text="Load Image">
@@ -632,7 +632,7 @@
                               </DropShadow>
                            </effect>
                         </Button>
-                        <TextArea fx:id="txtProductProperty" layoutX="10.0" layoutY="175.0" prefHeight="100.0" prefWidth="220.0" promptText="properties">
+                        <TextArea fx:id="txtProductProperty" layoutX="10.0" layoutY="175.0" prefHeight="105.0" prefWidth="220.0" promptText="properties">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0">
                                  <input>
@@ -863,12 +863,12 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtwpaccount" layoutX="210.0" layoutY="330.0" text="...">
+                  <Label fx:id="txtWPAccount" layoutX="210.0" layoutY="330.0" text="...">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtincreaseamount" alignment="CENTER" layoutX="100.0" layoutY="599.0" prefHeight="30.0" prefWidth="250.0" promptText="enter your desired amount">
+                  <TextField fx:id="txtIncreaseAmount" alignment="CENTER" layoutX="100.0" layoutY="599.0" prefHeight="30.0" prefWidth="250.0" promptText="enter your desired amount">
                      <font>
                         <Font name="Georgia" size="13.0" />
                      </font>
@@ -890,12 +890,12 @@
                         </InnerShadow>
                      </effect>
                   </TextField>
-                  <Label fx:id="labelincreasewalleterror" layoutX="50.0" layoutY="510.0" textFill="#b40808">
+                  <Label fx:id="labelIncreaseWalletError" layoutX="50.0" layoutY="510.0" textFill="#b40808">
                      <font>
                         <Font name="Book Antiqua Italic" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txtsellerWB" layoutX="229.0" layoutY="420.0">
+                  <Label fx:id="txtSellerWB" layoutX="225.0" layoutY="420.0">
                      <font>
                         <Font size="24.0" />
                      </font>

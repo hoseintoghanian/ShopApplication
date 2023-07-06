@@ -1,20 +1,14 @@
 package com.example.shopapplication;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 public class Client extends Thread {
-
     Socket clientSocket;
     BufferedReader in;
     PrintWriter out;
     BufferedReader stdIn;
-
     String clientUsername;
-
 
     public void run() {
         try {
@@ -35,7 +29,6 @@ public class Client extends Thread {
         } catch (IOException e) {
             System.out.println("Server isn't online");
         }
-
     }
 
     public void sendUsername() {
@@ -54,9 +47,7 @@ public class Client extends Thread {
         return userInput;
     }
 
-
     public void closeClientStreams() {
-
         try {
             if (clientSocket != null) clientSocket.close();
             if (in != null) in.close();

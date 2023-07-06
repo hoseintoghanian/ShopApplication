@@ -10,13 +10,11 @@ public class Warehouse {
     ArrayList<ControllerAdmin.WarehouseItem> inputs = new ArrayList<>();
     ArrayList<ControllerAdmin.WarehouseItem> outputs = new ArrayList<>();
 
-
     public Warehouse(String name, String storeAdmin, String address) {
         this.name = name;
         this.admin = storeAdmin;
         this.address = address;
     }
-
 
     public boolean equals(Object o) {
         if (o instanceof Warehouse) {
