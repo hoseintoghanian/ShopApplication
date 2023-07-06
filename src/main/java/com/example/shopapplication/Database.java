@@ -43,7 +43,7 @@ public class Database {
         getDBC().close();
     }
     public static void writeSeller(Seller seller) throws SQLException {
-        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace, walletbalance, imageurl, chat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace, wallet, imageurl, chat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
 
@@ -433,7 +433,7 @@ public class Database {
     }
 
     private static void renameWarehouseItemTable(String previousName, String newName) throws SQLException {
-        String sql = "rename table warehouse_items_" + previousName + " to warehouse_items_" + newName ;
+        String sql = "rename table warehouse_items_" + previousName + " to warehouse_items_" + newName;
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();

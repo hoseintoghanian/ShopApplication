@@ -421,6 +421,25 @@
                                     </DropShadow>
                                  </effect>
                               </TextArea>
+                              <Button fx:id="cancelButton" disable="true" layoutX="215.0" layoutY="15.0" mnemonicParsing="false" onAction="#cancelEdit" prefHeight="35.0" text="cancel" visible="false">
+                                 <font>
+                                    <Font name="Book Antiqua" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <SepiaTone>
+                                       <input>
+                                          <DropShadow height="10.0" radius="4.5" width="10.0">
+                                             <input>
+                                                <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                             </input>
+                                             <color>
+                                                <Color red="0.6842105388641357" green="0.575750470161438" blue="0.14191032946109772" />
+                                             </color>
+                                          </DropShadow>
+                                       </input>
+                                    </SepiaTone>
+                                 </effect>
+                              </Button>
                            </children>
                         </AnchorPane>
                         <MenuButton fx:id="chartMenuButton" layoutX="415.0" layoutY="285.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="160.0" text="Properties">
@@ -444,8 +463,8 @@
                            </effect>
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#chartByDay" text="Upload by Day" />
-                              <MenuItem mnemonicParsing="false" onAction="#chartByWeek" text="Upload by Week" />
                               <MenuItem mnemonicParsing="false" onAction="#chartByMonth" text="Upload by Month" />
+                              <MenuItem mnemonicParsing="false" onAction="#chartByYear" text="Upload by Year" />
                            </items>
                         </MenuButton>
                         <Label fx:id="chartText" layoutX="640.0" layoutY="285.0">

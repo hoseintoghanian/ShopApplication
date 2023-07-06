@@ -21,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,12 +35,10 @@ import java.util.*;
 
 public class ControllerAdmin {
 
-    DropShadow dropShadow;
-    InnerShadow innerShadow;
-
     Server server;
 
-
+    DropShadow dropShadow;
+    InnerShadow innerShadow;
     @FXML
     private TextArea chatTextArea;
     @FXML
@@ -58,7 +57,6 @@ public class ControllerAdmin {
         server = new Server();
         server.start();
     }
-
 
     public void changingScene(ActionEvent e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
@@ -173,12 +171,10 @@ public class ControllerAdmin {
     }
 
     //-----------------------------chart tab-------------------------------------------------------
-
     @FXML
     private AnchorPane chartPage;
 
     LineChart<String, Number> currentIncomeChart, currentCostChart;
-
 
     public void displayChartPage() {
 
@@ -271,13 +267,13 @@ public class ControllerAdmin {
     @FXML
     private AnchorPane warehousePage, addItemAnchorPane;
     @FXML
-    private TextField txtAddName, txtAddAdmin, txtAddItemName, txtAddItemPrice, txtAddItemSize;
+    private TextField txtAddName, txtAddAdmin, txtAddItemName, txtAddItemPrice, txtAddItemSize, editNameTextField, editAdminTextField;
     @FXML
-    private TextArea txtAddAddress;
+    private TextArea txtAddAddress, editAddressTextField;
     @FXML
     private DatePicker addItemDate;
     @FXML
-    private Button deleteButton, editButton, downloadCSVButton;
+    private Button deleteButton, editButton, cancelButton, downloadCSVButton;
     @FXML
     private MenuButton warehouseMenu, chartMenuButton;
     @FXML
@@ -377,21 +373,21 @@ public class ControllerAdmin {
                 txtAddAddress.setText("");
 
                 addWarehouseErrorLabel.setText("add successfully");
-            } else addWarehouseErrorLabel.setText("warehouse has already been added");
+            } else {
+                txtAddName.setText("");
+                txtAddAdmin.setText("");
+                txtAddAddress.setText("");
+
+                addWarehouseErrorLabel.setText("warehouse has already been added");
+            }
         } else addWarehouseErrorLabel.setText("fill all the blanks");
     }
-
 
     public void deleteWarehouse() throws SQLException {
         Database.deleteWarehouse(Application.shop.currentWarehouse.name);
         Application.shop.warehouses.remove(Application.shop.currentWarehouse);
         displayWarehousePage();
     }
-
-    @FXML
-    private TextField editNameTextField, editAdminTextField;
-    @FXML
-    private TextArea editAddressTextField;
 
     public void editWarehouse() throws SQLException {
 
@@ -402,38 +398,64 @@ public class ControllerAdmin {
         editNameTextField.setDisable(false);
         editAdminTextField.setDisable(false);
         editAddressTextField.setDisable(false);
+        cancelButton.setDisable(false);
 
         editNameTextField.setVisible(true);
         editAdminTextField.setVisible(true);
         editAddressTextField.setVisible(true);
+        cancelButton.setVisible(true);
 
-        if (!editNameTextField.getText().equals("") && !editAdminTextField.getText().equals("") && !editAddressTextField.getText().equals("")) {
+        if (!editNameTextField.getText().equals("") && !editAdminTextField.getText().equals("") && !editAddressTextField.getText().equals(""))
+            if (!Application.shop.warehouses.contains(new Warehouse(editNameTextField.getText(), editAdminTextField.getText(), editAddressTextField.getText()))) {
 
-            String previousName = Application.shop.currentWarehouse.name;
+                String previousName = Application.shop.currentWarehouse.name;
 
-            Application.shop.currentWarehouse.name = editNameTextField.getText();
-            Application.shop.currentWarehouse.admin = editAdminTextField.getText();
-            Application.shop.currentWarehouse.address = editAddressTextField.getText();
+                Application.shop.currentWarehouse.name = editNameTextField.getText();
+                Application.shop.currentWarehouse.admin = editAdminTextField.getText();
+                Application.shop.currentWarehouse.address = editAddressTextField.getText();
 
-            storeName.setText("Name     : " + Application.shop.currentWarehouse.name);
-            storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.admin);
-            storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
+                storeName.setText("Name     : " + Application.shop.currentWarehouse.name);
+                storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.admin);
+                storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
 
-            Database.editWarehouse(previousName, Application.shop.currentWarehouse);
+                Database.editWarehouse(previousName, Application.shop.currentWarehouse);
 
-            editNameTextField.setText("");
-            editAdminTextField.setText("");
-            editAddressTextField.setText("");
+                editNameTextField.setText("");
+                editAdminTextField.setText("");
+                editAddressTextField.setText("");
 
-            editNameTextField.setDisable(true);
-            editAdminTextField.setDisable(true);
-            editAddressTextField.setDisable(true);
+                editNameTextField.setDisable(true);
+                editAdminTextField.setDisable(true);
+                editAddressTextField.setDisable(true);
+                cancelButton.setDisable(true);
 
-            editNameTextField.setVisible(false);
-            editAdminTextField.setVisible(false);
-            editAddressTextField.setVisible(false);
-        }
+                editNameTextField.setVisible(false);
+                editAdminTextField.setVisible(false);
+                editAddressTextField.setVisible(false);
+                cancelButton.setVisible(false);
+            }
 
+    }
+
+    public void cancelEdit() {
+
+        editNameTextField.setText("");
+        editAdminTextField.setText("");
+        editAddressTextField.setText("");
+
+        editNameTextField.setDisable(true);
+        editAdminTextField.setDisable(true);
+        editAddressTextField.setDisable(true);
+        cancelButton.setDisable(true);
+
+        editNameTextField.setVisible(false);
+        editAdminTextField.setVisible(false);
+        editAddressTextField.setVisible(false);
+        cancelButton.setVisible(false);
+
+        storeName.setText("Name     : " + Application.shop.currentWarehouse.name);
+        storeAdmin.setText("Admin   : " + Application.shop.currentWarehouse.admin);
+        storeAddress.setText("Address : " + Application.shop.currentWarehouse.address);
     }
 
     public void warehouseTableViews(ArrayList<WarehouseItem> arrays, int x, int y) {
@@ -531,6 +553,7 @@ public class ControllerAdmin {
         return chart;
     }
 
+
     public void createChart(String title) {
 
         warehousePage.getChildren().remove(currentWarehouseChart);
@@ -550,22 +573,23 @@ public class ControllerAdmin {
 
 
             Map<LocalDate, Integer> dayMap = new HashMap<>();
-            Map<LocalDate, Integer> weekMap = new HashMap<>();
             Map<String, Integer> monthMap = new TreeMap<>();
+            Map<Integer, Integer> yearMap = new TreeMap<>();
 
             for (WarehouseItem item : items) {
-                LocalDate date = item.getUploadDate().toLocalDate();
-                dayMap.put(date, dayMap.getOrDefault(date, 0) + 1);
-
-                LocalDate weekStart = date.minusDays(date.getDayOfWeek().getValue() - 1);
-                weekMap.put(weekStart, weekMap.getOrDefault(weekStart, 0) + 1);
+                LocalDate date = item.uploadDate.toLocalDate();
+                dayMap.put(date, (dayMap.getOrDefault(date, 0) + item.getSize()));
 
                 String month = String.format("%d-%02d", date.getYear(), date.getMonthValue());
-                monthMap.put(month, monthMap.getOrDefault(month, 0) + 1);
+                monthMap.put(month, monthMap.getOrDefault(month, 0) + item.getSize());
+
+                int year = date.getYear();
+                yearMap.put(year, yearMap.getOrDefault(year, 0) + item.getSize());
             }
 
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
+
 
             if (title.equals("Uploads by Day")) {
                 for (Map.Entry<LocalDate, Integer> entry : dayMap.entrySet()) {
@@ -573,19 +597,32 @@ public class ControllerAdmin {
                 }
                 series.setName("Uploads by Day");
             }
-            if (title.equals("Uploads by Week")) {
-                for (Map.Entry<LocalDate, Integer> entry : weekMap.entrySet()) {
-                    LocalDate weekEnd = entry.getKey().plusDays(6);
-                    String label = String.format("%s - %s", entry.getKey().toString(), weekEnd.toString());
-                    data.add(new XYChart.Data<>(label, entry.getValue()));
-                }
-                series.setName("Uploads by Week");
-            }
+
             if (title.equals("Uploads by Month")) {
                 for (Map.Entry<String, Integer> entry : monthMap.entrySet()) {
                     data.add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
                 }
                 series.setName("Uploads by Month");
+            }
+
+            if (title.equals("Uploads by Year")) {
+                for (Map.Entry<Integer, Integer> entry : yearMap.entrySet()) {
+                    data.add(new XYChart.Data<>(entry.getKey().toString(), entry.getValue()));
+                }
+                series.setName("Uploads by Year");
+            }
+
+
+            // sort the data in ascending order based on the x-values (i.e., the upload dates)
+            if (title.equals("Uploads by Day")) {
+                data.sort(new Comparator<XYChart.Data<String, Number>>() {
+                    @Override
+                    public int compare(XYChart.Data<String, Number> o1, XYChart.Data<String, Number> o2) {
+                        LocalDate date1 = LocalDate.parse(o1.getXValue());
+                        LocalDate date2 = LocalDate.parse(o2.getXValue());
+                        return date1.compareTo(date2);
+                    }
+                });
             }
 
             series.setData(data);
@@ -594,16 +631,17 @@ public class ControllerAdmin {
         }
     }
 
+
     public void chartByDay() {
         createChart("Uploads by Day");
     }
 
-    public void chartByWeek() {
-        createChart("Uploads by Week");
-    }
-
     public void chartByMonth() {
         createChart("Uploads by Month");
+    }
+
+    public void chartByYear() {
+        createChart("Uploads by Year");
     }
 
     public void csv(ArrayList<WarehouseItem> data, String filename) throws IOException {
@@ -635,13 +673,18 @@ public class ControllerAdmin {
     }
 
 
-    //------------------------------------chat--------------------------
-
+    //------------------------------------chat---------------------------------
 
     @FXML
     private ImageView chatBackgroundImg;
     @FXML
     private ImageView imgTheme1, imgTheme2, imgTheme3, imgTheme4, imgTheme5, imgTheme6, imgTheme7;
+    @FXML
+    private Label chatPageFirstname, chatPageLastname, chatPageUsername;
+    @FXML
+    private MenuButton sellersMenuButton;
+    @FXML
+    private Button sendButton;
 
     public void setChatBackground() {
 
@@ -675,13 +718,6 @@ public class ControllerAdmin {
             chatBackgroundImg.setImage(t7);
         });
     }
-
-    @FXML
-    private Label chatPageFirstname, chatPageLastname, chatPageUsername;
-    @FXML
-    private MenuButton sellersMenuButton;
-    @FXML
-    private Button sendButton;
 
     public void displayChatPage() {
 
@@ -862,6 +898,27 @@ public class ControllerAdmin {
 
         public String getOpeningDate() {
             return openingDate;
+        }
+    }
+
+    public static class CSVFile {
+        public static void writeToFile(ArrayList<WarehouseItem> data, String filename) throws IOException {
+            FileWriter writer = new FileWriter(filename);
+            writer.append("Name, Price, Size, date\n"); // add header row
+
+            for (WarehouseItem item : data) {
+                writer.append(item.getName());
+                writer.append(",");
+                writer.append(String.valueOf(item.getPrice()));
+                writer.append(",");
+                writer.append(String.valueOf(item.getSize()));
+                writer.append(",");
+                writer.append(String.valueOf(item.getUploadDate()));
+                writer.append("\n");
+            }
+
+            writer.flush();
+            writer.close();
         }
     }
 }

@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class SoundThread extends Thread {
-
     public void run() {
 
         File soundFile = new File("src/main/resources/com/example/music and sound effects/Colorful flowers.wav");

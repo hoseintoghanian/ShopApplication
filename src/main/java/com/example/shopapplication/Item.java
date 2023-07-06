@@ -149,7 +149,7 @@ public class Item {
     public boolean equals(Object o) {
         if (o instanceof Item) {
             Item other = (Item) o;
-            if (name.equals(other.name) && brand.equals(other.brand)) return true;
+            if (name.equals(other.name) && brand.equals(other.brand) && minorKind.equals(other.minorKind)) return true;
         }
         return false;
     }
