@@ -23,7 +23,7 @@ public class ControllerRegister {
     @FXML
     private TextField txtCaptchaInput, txtLoginUsername, txtLoginPass;
     @FXML
-    private Label txtCaptcha, txtRegister, txtloginError;
+    private Label txtCaptcha, txtRegister, txtLoginError;
     @FXML
     private RadioButton buttonSeller, buttonCustomer;
     @FXML
@@ -108,12 +108,13 @@ public class ControllerRegister {
                             changeScene(e, Application.shop.pageURL);
                         } else {
                             txtCaptchaInput.clear();
+                            txtLoginError.setText("incorrect captcha");
                         }
-                    } else txtloginError.setText("PassWord is incorrect");
+                    } else txtLoginError.setText("PassWord is incorrect");
 
-                } else txtloginError.setText("Username is invalid\nplease sign up first");
+                } else txtLoginError.setText("Username is invalid\nplease sign up first");
             }
-        } else txtloginError.setText("please fill all the blanks");
+        } else txtLoginError.setText("please fill all the blanks");
     }
 
     public void Register() {

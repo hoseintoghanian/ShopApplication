@@ -93,7 +93,7 @@ public class ControllerPayment {
         return sb.toString();
     }
 
-    ////////////////////////////////////////   buy conditions   ////////////////////////////////////////////////
+    //---------------------------------------------------buy----------------------------------------
     @FXML
     private Label txtBankPortalError;
     @FXML

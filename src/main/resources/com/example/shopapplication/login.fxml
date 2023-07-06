@@ -114,7 +114,7 @@
                      </input></DropShadow>
                </input></InnerShadow>
          </effect></TextField>
-      <Label fx:id="txtloginError" layoutX="215.0" layoutY="600.0" textFill="#cc2424">
+      <Label fx:id="txtLoginError" layoutX="215.0" layoutY="600.0" textFill="#cc2424">
          <font>
             <Font name="Book Antiqua Italic" size="30.0" />
          </font>

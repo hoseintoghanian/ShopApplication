@@ -34,8 +34,8 @@ public class Application extends javafx.application.Application {
         stage.centerOnScreen();
         stage.show();
 
-        SoundThread t = new SoundThread();
-        t.start();
+        /*SoundThread t = new SoundThread();
+        t.start();*/
     }
 
     public static void main(String[] args) {
