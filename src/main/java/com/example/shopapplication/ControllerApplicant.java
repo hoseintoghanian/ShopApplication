@@ -75,7 +75,7 @@ public class ControllerApplicant {
 
 
     @FXML
-    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtwpaccount;
+    private Label txtFNaccount, txtLNaccount, txtPNaccount, txtUNaccount, txtPWaccount, txtEMaccount, txtwpaccount, txtWBaccount, txtsellerWB;
     @FXML
     MenuButton menuButtonKind, menuButtonMinorKind, menuButtonBrand;
     @FXML
@@ -89,6 +89,8 @@ public class ControllerApplicant {
             txtUNaccount.setText(Application.shop.currentCustomer.getUsername());
             txtPWaccount.setText(Application.shop.currentCustomer.getPassword());
             txtEMaccount.setText(Application.shop.currentCustomer.getEmail());
+            txtWBaccount.setText(String.valueOf(Application.shop.currentCustomer.wallet));
+            imgcustomer.setImage(Application.shop.currentCustomer.image);
 
             showDiscountCode();
         } else if (Application.shop.currentSeller != null) {
@@ -99,6 +101,8 @@ public class ControllerApplicant {
             txtPWaccount.setText(Application.shop.currentSeller.getPassword());
             txtEMaccount.setText(Application.shop.currentSeller.getEmail());
             txtwpaccount.setText(Application.shop.currentSeller.workplace);
+            txtsellerWB.setText(String.valueOf(Application.shop.currentSeller.walletbalance));
+            imgseller.setImage(Application.shop.currentSeller.image);
 
 
             chatText.setText(Application.shop.currentSeller.chat);
@@ -218,14 +222,13 @@ public class ControllerApplicant {
 
         txtincreaseamount.setOpacity(1.0);
 
-        if (txtincreaseamount.getText().equals("")) {
+        if (txtincreaseamount.getText() == "") {
             labelincreasewalleterror.setText("please enter your desired amount");
         } else if (isNumeric(txtincreaseamount.getText())) {
             Application.shop.currentCustomer.increaseAmount = Long.valueOf(txtincreaseamount.getText());
-            changeScene(e, "bankPortal.fxml");
-        } else if (!isNumeric(txtincreaseamount.getText()) && !txtincreaseamount.getText().equals(""))
+            changeScene(e, "bankportal.fxml");
+        } else if (!isNumeric(txtincreaseamount.getText()) && txtincreaseamount.getText() != "")
             labelincreasewalleterror.setText("please enter a valid amount and\nmore than 0");
-
     }
 
     public void changeToCartScene(MouseEvent e) throws IOException {
@@ -1860,6 +1863,46 @@ public class ControllerApplicant {
     }
 
     @FXML
+    private ImageView imgcustomer, imgseller;
+
+    public void addProfile() throws SQLException {
+
+        if (Application.shop.currentSeller != null) {
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Image File");
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Image files (*.png, *.jpg, *.gif)", "*.png", "*.jpg", "*.gif");
+            fileChooser.getExtensionFilters().add(extFilter);
+
+            File selectedFile = fileChooser.showOpenDialog(new Stage());
+
+            if (selectedFile != null) {
+                Image image = new Image(selectedFile.toURI().toString());
+                imgseller.setImage(image);
+                Application.shop.currentSeller.image = image;
+                Database.updateApplicantImage(Application.shop.currentSeller);
+            }
+        }
+
+        if (Application.shop.currentCustomer != null) {
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Image File");
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Image files (*.png, *.jpg, *.gif)", "*.png", "*.jpg", "*.gif");
+            fileChooser.getExtensionFilters().add(extFilter);
+
+            File selectedFile = fileChooser.showOpenDialog(new Stage());
+
+            if (selectedFile != null) {
+                Image image = new Image(selectedFile.toURI().toString());
+                imgcustomer.setImage(image);
+                Application.shop.currentCustomer.image = image;
+                Database.updateApplicantImage(Application.shop.currentCustomer);
+            }
+        }
+    }
+
+    @FXML
     private AnchorPane mainPage;
     @FXML
     private TabPane tabPane;
@@ -2071,6 +2114,12 @@ public class ControllerApplicant {
                     Application.shop.currentCustomer.wallet -= Application.shop.tempItems.get(finalI).tempPrice;
                     Application.shop.tempItems.get(finalI).tempPrice = Integer.parseInt(bid.getText());
                     price.setText("Max Bid  :  " + Application.shop.tempItems.get(finalI).tempPrice);
+                    Application.shop.currentCustomer.AuctionItems.add(Application.shop.tempItems.get(finalI));
+                    try {
+                        Database.updateItemAuction(Application.shop.tempItems.get(finalI));
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 //}
 
@@ -2173,6 +2222,43 @@ public class ControllerApplicant {
             labelauctionbrand.setText(Application.shop.currentSeller.auction.brand);
             labelauctionmaxbid.setText(String.valueOf(Application.shop.currentSeller.auction.tempPrice));
             imgauctionimage.setImage(Application.shop.currentSeller.auction.image);
+        }
+    }
+
+    @FXML
+    private Label txtsellmessage;
+
+    public void sellAuction() throws SQLException {
+
+        Item item;
+        outerloop:
+        for (int i = 0; i < Application.shop.customers.size(); i++) {
+            for (int j = 0; j < Application.shop.customers.get(i).AuctionItems.size(); j++) {
+
+                if (Application.shop.currentSeller.auction == Application.shop.customers.get(i).AuctionItems.get(j)) {
+
+                    for (int k = 0; k < Application.shop.allItems.size(); k++) {
+
+                        if (Application.shop.customers.get(i).AuctionItems.get(j).tempPrice == Application.shop.tempItems.get(k).tempPrice) {
+
+                            Application.shop.currentSeller.walletbalance += Application.shop.tempItems.get(k).tempPrice;
+                            Application.shop.customers.get(i).wallet -= Application.shop.tempItems.get(k).tempPrice;
+                            Database.updateCustomerWallet(Application.shop.customers.get(i));
+                            Database.updateSellerWallet(Application.shop.currentSeller);
+                            item = Application.shop.currentSeller.auction;
+                            Database.updateItemAuction(item);
+                            Application.shop.customers.get(i).AuctionItems.remove(j);
+                            Application.shop.currentSeller.allItems.remove(Application.shop.currentSeller.auction);
+                            Application.shop.allItems.remove(Application.shop.currentSeller.auction);
+                            Application.shop.currentSeller.auction = null;
+                            Database.removeProduct(item.sellerUsername, item.getCode());
+                            txtsellmessage.setText("Auction Saled Successfully");
+
+                            break outerloop;
+                        }
+                    }
+                }
+            }
         }
     }
 
