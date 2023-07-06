@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="cancel button in warehouse page&#10;make charts ascending">
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="fix database errors">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c27bb2b-471e-4ac6-a8f8-d909fe43ae5e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c27bb2b-471e-4ac6-a8f8-d909fe43ae5e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/bankPortal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/bankPortal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,14 +184,7 @@
       <workItem from="1688599291314" duration="759000" />
       <workItem from="1688636043032" duration="11811000" />
       <workItem from="1688651357081" duration="1955000" />
-      <workItem from="1688654089164" duration="2415000" />
-    </task>
-    <task id="LOCAL-00044" summary="customer &amp; seller main page &amp; seller account">
-      <created>1687876628623</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1687876628623</updated>
+      <workItem from="1688654089164" duration="3772000" />
     </task>
     <task id="LOCAL-00045" summary="setChatBackground method in controllerApplicant">
       <created>1687876861659</created>
@@ -525,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688655488760</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="fix database errors">
+      <created>1688656787018</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1688656787018</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding some lines of code to the protein method in the ControllerApplicant class" />
     <MESSAGE value="Adding some lines of code to the dairy method in the ControllerApplicant class" />
     <MESSAGE value="Adding some lines of code to the &quot;drinks&quot; method in the &quot;ControllerApplicant&quot; class" />
     <MESSAGE value="displayInfo in controllerProduct" />
@@ -568,7 +571,8 @@
     <MESSAGE value="change Customer.java" />
     <MESSAGE value="change customer.fxml" />
     <MESSAGE value="cancel button in warehouse page&#10;make charts ascending" />
-    <option name="LAST_COMMIT_MESSAGE" value="cancel button in warehouse page&#10;make charts ascending" />
+    <MESSAGE value="fix database errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix database errors" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

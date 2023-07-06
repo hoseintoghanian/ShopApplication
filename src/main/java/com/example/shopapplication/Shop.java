@@ -30,7 +30,7 @@ public class Shop {
     String pageURL;
 
 
-    public static void SortByDate(ArrayList<Item> allItems, ArrayList<Item> tempItems) {
+    public static void sortByDate(ArrayList<Item> allItems, ArrayList<Item> tempItems) {
         allItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
@@ -42,7 +42,7 @@ public class Shop {
         tempItems.addAll(allItems);
     }
 
-    public static void SortByKind(ArrayList<Item> allItems, ArrayList<Item> tempItems, String kind) {
+    public static void sortByKind(ArrayList<Item> allItems, ArrayList<Item> tempItems, String kind) {
         tempItems.clear();
 
         for (int i = 0; i < allItems.size(); i++) {
@@ -59,7 +59,7 @@ public class Shop {
         }
     }
 
-    public static void SortByScore(ArrayList<Item> tempItems, int sort) {
+    public static void sortByScore(ArrayList<Item> tempItems, int sort) {
         tempItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {
@@ -110,7 +110,7 @@ public class Shop {
 
     }
 
-    public static void SortByPrice(ArrayList<Item> tempItems, int sort) {
+    public static void sortByPrice(ArrayList<Item> tempItems, int sort) {
         tempItems.sort(new Comparator<Item>() {
             @Override
             public int compare(Item item1, Item item2) {

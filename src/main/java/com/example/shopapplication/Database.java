@@ -33,7 +33,7 @@ public class Database {
         statement.setString(5, customer.getPassword());
         statement.setString(6, customer.getEmail());
         statement.setLong(7, customer.wallet);
-        statement.setString(8,customer.image.getUrl());
+        statement.setString(8, customer.image.getUrl());
 
         statement.executeUpdate();
 
@@ -42,6 +42,7 @@ public class Database {
         statement.close();
         getDBC().close();
     }
+
     public static void writeSeller(Seller seller) throws SQLException {
         String sql = "INSERT INTO seller (firstname, lastname, phoneNumber, username, pass, email, workPlace, wallet, imageurl, chat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -54,8 +55,8 @@ public class Database {
         statement.setString(5, seller.getPassword());
         statement.setString(6, seller.getEmail());
         statement.setString(7, seller.workplace);
-        statement.setLong(8, seller.walletbalance);
-        statement.setString(9,seller.image.getUrl());
+        statement.setLong(8, seller.wallet);
+        statement.setString(9, seller.image.getUrl());
         statement.setString(10, seller.chat);
 
         statement.executeUpdate();
@@ -133,7 +134,7 @@ public class Database {
             resultSet = statement.executeQuery("SELECT * FROM seller_items_" + Application.shop.sellers.get(i).getUsername());
 
             while (resultSet.next()) {
-                Application.shop.sellers.get(i).allItems.add(new Item(
+                Item item = new Item(
                         resultSet.getInt("code"),
                         resultSet.getString("kind"),
                         resultSet.getString("minorKind"),
@@ -157,9 +158,14 @@ public class Database {
                         resultSet.getString("comments"),
                         resultSet.getBoolean("isAuction"),
                         resultSet.getLong("tempPrice")
-                ));
+                );
+
+                Application.shop.sellers.get(i).allItems.add(item);
             }
+            Application.shop.allItems.addAll(Application.shop.sellers.get(i).allItems);
+            Application.shop.tempItems.addAll(Application.shop.sellers.get(i).allItems);
         }
+        Shop.sortByDate(Application.shop.allItems, Application.shop.tempItems);
 
         statement.close();
         if (resultSet != null) resultSet.close();
@@ -250,9 +256,9 @@ public class Database {
         getDBC().close();
     }
 
-    public static void removeProduct(String username,int code) throws SQLException {
+    public static void removeProduct(String username, int code) throws SQLException {
 
-        String tableName = "items_" + username;
+        String tableName = "seller_items_" + username;
         String sql = "DELETE FROM " + tableName + " WHERE code = ?";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
@@ -286,12 +292,12 @@ public class Database {
 
     public static void updateItemAuction(Item item) throws SQLException {
 
-        String sql = "UPDATE items_" + item.sellerUsername + " SET isAuction = ?, tempPrice = ? WHERE code = ?";
+        String sql = "UPDATE seller_items_" + item.sellerUsername + " SET isAuction = ?, tempPrice = ? WHERE code = ?";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.setBoolean(1, item.isAuction);
-        statement.setLong(2,item.tempPrice);
-        statement.setInt(3,item.getCode());
+        statement.setLong(2, item.tempPrice);
+        statement.setInt(3, item.getCode());
 
         statement.executeUpdate();
 
@@ -299,9 +305,9 @@ public class Database {
         getDBC().close();
     }
 
-    public static void updateSellerWallet(Seller seller)throws SQLException{
+    public static void updateSellerWallet(Seller seller) throws SQLException {
 
-        String sql = "update seller  set walletbalance = " + seller.walletbalance + " where username = '" + seller.getUsername()+"'";
+        String sql = "update seller  set wallet = " + seller.wallet + " where username = '" + seller.getUsername() + "'";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -310,9 +316,9 @@ public class Database {
         getDBC().close();
     }
 
-    public static void updateCustomerWallet(Customer customer)throws SQLException{
+    public static void updateCustomerWallet(Customer customer) throws SQLException {
 
-        String sql = "update customer  set wallet = " + customer.wallet + " where username = '" + customer.getUsername()+"'";
+        String sql = "update customer  set wallet = " + customer.wallet + " where username = '" + customer.getUsername() + "'";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
         statement.executeUpdate();
@@ -321,9 +327,9 @@ public class Database {
         getDBC().close();
     }
 
-    public static void updateApplicantImage(Applicant applicant)throws SQLException{
+    public static void updateApplicantImage(Applicant applicant) throws SQLException {
 
-        if (applicant.applicantKind=="customer") {
+        if (applicant.applicantKind == "customer") {
 
             Customer customer = (Customer) applicant;
             String sql = "update customer  set imageurl = '" + customer.image.getUrl() + "' where username = '" + customer.getUsername() + "'";
@@ -335,10 +341,10 @@ public class Database {
             getDBC().close();
         }
 
-        if (applicant.applicantKind=="seller"){
+        if (applicant.applicantKind == "seller") {
 
             Seller seller = (Seller) applicant;
-            String sql = "update seller  set imageurl = '" + seller.image.getUrl() + "' where username = '" + seller.getUsername()+"'";
+            String sql = "update seller  set imageurl = '" + seller.image.getUrl() + "' where username = '" + seller.getUsername() + "'";
 
             PreparedStatement statement = getDBC().prepareStatement(sql);
             statement.executeUpdate();

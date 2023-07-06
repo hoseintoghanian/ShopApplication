@@ -101,7 +101,7 @@ public class ControllerApplicant {
             txtPWaccount.setText(Application.shop.currentSeller.getPassword());
             txtEMaccount.setText(Application.shop.currentSeller.getEmail());
             txtwpaccount.setText(Application.shop.currentSeller.workplace);
-            txtsellerWB.setText(String.valueOf(Application.shop.currentSeller.walletbalance));
+            txtsellerWB.setText(String.valueOf(Application.shop.currentSeller.wallet));
             imgseller.setImage(Application.shop.currentSeller.image);
 
 
@@ -314,11 +314,11 @@ public class ControllerApplicant {
         if (kind != null) {
 
             if (Application.shop.pageURL.equals("customer.fxml")) {
-                Shop.SortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
+                Shop.sortByKind(Application.shop.allItems, Application.shop.tempItems, kind);
                 showItems("customer", Application.shop.tempItems);
             }
             if (Application.shop.pageURL.equals("seller.fxml")) {
-                Shop.SortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
+                Shop.sortByKind(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems, kind);
                 showItems("seller", Application.shop.currentSeller.tempItems);
             }
 
@@ -330,11 +330,11 @@ public class ControllerApplicant {
     private void filterScore(int sort) {
 
         if (Application.shop.pageURL.equals("customer.fxml")) {
-            Shop.SortByScore(Application.shop.tempItems, sort);
+            Shop.sortByScore(Application.shop.tempItems, sort);
             showItems("customer", Application.shop.tempItems);
         }
         if (Application.shop.pageURL.equals("seller.fxml")) {
-            Shop.SortByScore(Application.shop.currentSeller.tempItems, sort);
+            Shop.sortByScore(Application.shop.currentSeller.tempItems, sort);
             showItems("seller", Application.shop.currentSeller.tempItems);
         }
     }
@@ -342,11 +342,11 @@ public class ControllerApplicant {
     private void filterPrice(int sort) {
 
         if (Application.shop.pageURL.equals("customer.fxml")) {
-            Shop.SortByPrice(Application.shop.tempItems, sort);
+            Shop.sortByPrice(Application.shop.tempItems, sort);
             showItems("customer", Application.shop.tempItems);
         }
         if (Application.shop.pageURL.equals("seller.fxml")) {
-            Shop.SortByPrice(Application.shop.currentSeller.tempItems, sort);
+            Shop.sortByPrice(Application.shop.currentSeller.tempItems, sort);
             showItems("seller", Application.shop.currentSeller.tempItems);
         }
     }
@@ -649,12 +649,12 @@ public class ControllerApplicant {
     public void removeFilters() {
         if (Application.shop.pageURL.equals("customer.fxml")) {
             Application.shop.tempItems.clear();
-            Shop.SortByDate(Application.shop.allItems, Application.shop.tempItems);
+            Shop.sortByDate(Application.shop.allItems, Application.shop.tempItems);
             showItems("customer", Application.shop.tempItems);
         }
         if (Application.shop.pageURL.equals("seller.fxml")) {
             Application.shop.currentSeller.tempItems.clear();
-            Shop.SortByDate(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems);
+            Shop.sortByDate(Application.shop.currentSeller.allItems, Application.shop.currentSeller.tempItems);
             showItems("seller", Application.shop.currentSeller.tempItems);
         }
 
@@ -2241,7 +2241,7 @@ public class ControllerApplicant {
 
                         if (Application.shop.customers.get(i).AuctionItems.get(j).tempPrice == Application.shop.tempItems.get(k).tempPrice) {
 
-                            Application.shop.currentSeller.walletbalance += Application.shop.tempItems.get(k).tempPrice;
+                            Application.shop.currentSeller.wallet += Application.shop.tempItems.get(k).tempPrice;
                             Application.shop.customers.get(i).wallet -= Application.shop.tempItems.get(k).tempPrice;
                             Database.updateCustomerWallet(Application.shop.customers.get(i));
                             Database.updateSellerWallet(Application.shop.currentSeller);

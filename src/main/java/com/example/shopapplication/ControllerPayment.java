@@ -204,7 +204,7 @@ public class ControllerPayment {
 
                                     if (Application.shop.currentCustomer.cartItems.get(i) == Application.shop.sellers.get(j).allItems.get(k)) {
 
-                                        Application.shop.sellers.get(j).walletbalance += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+                                        Application.shop.sellers.get(j).wallet += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
                                         Database.updateSellerWallet(Application.shop.sellers.get(j));
                                         Application.shop.sellers.get(j).allItems.get(k).size -= Application.shop.currentCustomer.cartItems.get(i).tempSize;
 
@@ -222,7 +222,7 @@ public class ControllerPayment {
 
                         Application.shop.currentCustomer.cartItems.clear();
                         for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
-                            Database.addProduct("purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
+                            Database.addProduct("customer_purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
                         }
                     }
                     if (Application.shop.pageURL == "customer.fxml") {

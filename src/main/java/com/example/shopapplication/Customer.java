@@ -14,12 +14,10 @@ public class Customer extends Applicant {
     ArrayList<Item> purchase = new ArrayList<>();
 
     //yek arraylist baraye buy history bezan
-    ArrayList<String> discountCode;//it can be other data structures instead of arraylist
 
     public Customer(String firstname, String lastname, String phoneNumber, String username, String password, String email, Long wallet, String imageurl) {
         super(firstname, lastname, phoneNumber, username, password, email);
         this.wallet=wallet;
-        //File file = new File(imageurl);
         this.image=new Image(imageurl);
         applicantKind = "customer";
     }
