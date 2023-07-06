@@ -281,14 +281,11 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab onSelectionChanged="#displayInfo" text="     Acount     ">
+      <Tab onSelectionChanged="#displayInfo" text="     Account     ">
          <content>
             <AnchorPane fx:id="customerAccountPage" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" onMouseClicked="#loadImage" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/customer.png" />
-                     </image>
+                  <ImageView fx:id="imgcustomer" fitHeight="300.0" fitWidth="300.0" layoutX="1150.0" layoutY="50.0" onMouseClicked="#addProfile" pickOnBounds="true" preserveRatio="true">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -400,7 +397,7 @@
                         <SepiaTone />
                      </effect>
                   </Label>
-                  <Label fx:id="txtWBaccount" layoutX="250.0" layoutY="450.0" text="0">
+                  <Label fx:id="txtWBaccount" layoutX="250.0" layoutY="450.0">
                      <font>
                         <Font name="Book Antiqua" size="25.0" />
                      </font>
@@ -475,6 +472,11 @@
                         </InnerShadow>
                      </effect>
                   </TextField>
+                  <Label layoutX="310.0" layoutY="448.0" text="\$">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
                </children>
                <effect>
                   <InnerShadow height="10.0" radius="4.5" width="10.0" />
