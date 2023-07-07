@@ -8,6 +8,7 @@ import java.util.Objects;
 public class Seller extends Applicant {
     public String workplace;
     public long wallet;
+    public long increaseamount = 0;
     public String chat;
     public Item auction;
 
