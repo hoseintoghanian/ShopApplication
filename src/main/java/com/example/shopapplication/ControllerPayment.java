@@ -57,6 +57,23 @@ public class ControllerPayment {
         ChangeScene2(e, Application.shop.pageURL);
     }
 
+    @FXML
+    private TextField txtPaymentDiscountCode;
+    @FXML
+    private Label txterrordiscountcode;
+    public boolean checkDiscountCode(){
+        if (txtPaymentDiscountCode.getText()==Application.shop.currentCustomer.discountCode.getDiscountCode()){
+            long i = Long.valueOf(labelfinalcost.getText());
+            i-=Application.shop.currentCustomer.discountCode.getDiscountAmount();
+            labelfinalcost.setText(String.valueOf(i));
+            return true;
+        }
+        else {
+            txterrordiscountcode.setText("discount code is invalid");
+            return false;
+        }
+    }
+
     public void displayInfo() {
         int sum = 0;
         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
@@ -102,7 +119,7 @@ public class ControllerPayment {
     @FXML
     private Button buttonPayment;
     @FXML
-    private TextField txtPaymentProvince, txtPaymentCity, txtPaymentPostalCode, txtPaymentName, txtPaymentPhoneNumber, txtPaymentDiscountCode;
+    private TextField txtPaymentProvince, txtPaymentCity, txtPaymentPostalCode, txtPaymentName, txtPaymentPhoneNumber;
 
     public boolean checkBankScene() {
 
@@ -221,17 +238,23 @@ public class ControllerPayment {
 
 
                         Application.shop.currentCustomer.cartItems.clear();
-
+                        new Email(Application.shop.currentCustomer.getEmail(), "your purchase was made successfully");
+                        if (checkDiscountCode()) {
+                            Application.shop.currentCustomer.discountCode.setDiscountCode();
+                            Application.shop.currentCustomer.discountCode.setDiscountAmount();
+                        }
                     }
                     if (Application.shop.pageURL == "customer.fxml") {
                         Application.shop.currentCustomer.wallet += Long.valueOf(labelFinalCost.getText());
                         Database.updateCustomerWallet(Application.shop.currentCustomer);
                         labelFinalCost.setText("0");
+                        new Email(Application.shop.currentCustomer.getEmail(), "your balance has increased");
                     }
                     if (Application.shop.pageURL=="seller.fxml"){
                         Application.shop.currentSeller.wallet+=Long.valueOf(labelFinalCost.getText());
                         Database.updateSellerWallet(Application.shop.currentSeller);
                         labelFinalCost.setText("0");
+                        new Email(Application.shop.currentSeller.getEmail(), "your balance has increased");
                     }
                     txtBankPortalError.setStyle("-fx-text-fill: green;");
                     txtBankPortalError.setText("The purchase was made successfully");
