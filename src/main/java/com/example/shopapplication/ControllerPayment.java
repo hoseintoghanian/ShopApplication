@@ -22,7 +22,7 @@ public class ControllerPayment {
     private String captchaText;
 
     @FXML
-    private Label labelfinalcost, labelFinalCost, txtCaptcha2;
+    private Label labelFinalCost, txtCaptcha2;
     @FXML
     private TextField txtCardNumber, txtCVV2, txtCardExpireMonth, txtCardExpireYear, txtCaptchaInput2, txtCardSecondCode, txtEmail;
     @FXML
@@ -61,40 +61,49 @@ public class ControllerPayment {
     private TextField txtPaymentDiscountCode;
     @FXML
     private Label txterrordiscountcode;
-    public boolean checkDiscountCode(){
-        if (txtPaymentDiscountCode.getText()==Application.shop.currentCustomer.discountCode.getDiscountCode()){
-            long i = Long.valueOf(labelfinalcost.getText());
-            i-=Application.shop.currentCustomer.discountCode.getDiscountAmount();
-            labelfinalcost.setText(String.valueOf(i));
+
+    static long finalCostValue;
+
+    public boolean checkDiscountCode() {
+
+        if (txtPaymentDiscountCode.getText().equals(Application.shop.currentCustomer.discountCode.getDiscountCode())) {
+            finalCostValue = Long.valueOf(labelFinalCost.getText());
+            finalCostValue -= Application.shop.currentCustomer.discountCode.getDiscountAmount();
+            if (finalCostValue < 0) finalCostValue = 0;
+            labelFinalCost.setText(String.valueOf(finalCostValue));
+
+            Application.shop.currentCustomer.discountCode.setDiscountCode();
+            Application.shop.currentCustomer.discountCode.setDiscountAmount();
+
             return true;
-        }
-        else {
+        } else {
             txterrordiscountcode.setText("discount code is invalid");
             return false;
         }
     }
 
     public void displayInfo() {
-        int sum = 0;
-        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
-        }
-        labelfinalcost.setText(String.valueOf(sum));
+        labelFinalCost.setText(String.valueOf(finalCostValue));
 
-        checkPayment();
+        if (!txtPaymentProvince.getText().equals("") &&
+                !txtPaymentCity.getText().equals("") &&
+                !txtPaymentPostalCode.getText().equals("") &&
+                !txtPaymentName.getText().equals("") &&
+                !txtPaymentPhoneNumber.getText().equals("") &&
+                !txtPaymentPostalAddress.getText().equals("")
+        ) {
+            buttonPayment.setDisable(false);
+        } else {
+            buttonPayment.setDisable(true);
+        }
     }
 
     public void displayInfo2() {
         if (Application.shop.pageURL == "payment.fxml") {
-            int sum = 0;
-            for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-                sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
-            }
-            labelFinalCost.setText(String.valueOf(sum));
+            labelFinalCost.setText(String.valueOf(finalCostValue));
         } else if (Application.shop.pageURL == "customer.fxml") {
             labelFinalCost.setText(String.valueOf(Application.shop.currentCustomer.increaseAmount));
-        }
-        else if (Application.shop.pageURL=="seller.fxml"){
+        } else if (Application.shop.pageURL == "seller.fxml") {
             labelFinalCost.setText(String.valueOf(Application.shop.currentSeller.increaseamount));
         }
     }
@@ -179,37 +188,22 @@ public class ControllerPayment {
         return true;
     }
 
-    public void checkPayment() {
-
-        if (!txtPaymentProvince.getText().equals("") &&
-                !txtPaymentCity.getText().equals("") &&
-                !txtPaymentPostalCode.getText().equals("") &&
-                !txtPaymentName.getText().equals("") &&
-                !txtPaymentPhoneNumber.getText().equals("") &&
-                !txtPaymentPostalAddress.getText().equals("")
-        ) {
-            buttonPayment.setDisable(false);
-        } else {
-            buttonPayment.setDisable(true);
-        }
-    }
-
     public void pay() throws SQLException {
 
         Item item;
 
-        if (Application.shop.pageURL=="payment.fxml" || Application.shop.pageURL=="customer.fxml" || Application.shop.pageURL=="seller.fxml") {
+        if (Application.shop.pageURL == "payment.fxml" || Application.shop.pageURL == "customer.fxml" || Application.shop.pageURL == "seller.fxml") {
             checkBankScene();
             if (checkBankScene()) {
-                if (Application.shop.pageURL == "customer.fxml" || Application.shop.pageURL=="seller.fxml" || Application.shop.currentCustomer.wallet >= Long.valueOf(labelFinalCost.getText())) {
+                if (Application.shop.pageURL == "customer.fxml" || Application.shop.pageURL == "seller.fxml" || Application.shop.currentCustomer.wallet >= Long.valueOf(labelFinalCost.getText())) {
 
-                    if (Application.shop.pageURL != "customer.fxml" && Application.shop.pageURL!="seller.fxml") {
+                    if (Application.shop.pageURL != "customer.fxml" && Application.shop.pageURL != "seller.fxml") {
                         Application.shop.currentCustomer.purchase.addAll(Application.shop.currentCustomer.cartItems);
                         Application.shop.currentCustomer.wallet -= Long.valueOf(labelFinalCost.getText());
                         labelFinalCost.setText("0");
                         Database.updateCustomerWallet(Application.shop.currentCustomer);
 
-                        for (int i = Application.shop.currentCustomer.purchase.size()-Application.shop.currentCustomer.cartItems.size(); i<Application.shop.currentCustomer.purchase.size(); i++) {
+                        for (int i = Application.shop.currentCustomer.purchase.size() - Application.shop.currentCustomer.cartItems.size(); i < Application.shop.currentCustomer.purchase.size(); i++) {
                             Database.addProduct("customer_purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
                         }
 
@@ -238,8 +232,8 @@ public class ControllerPayment {
 
 
                         Application.shop.currentCustomer.cartItems.clear();
-                        new Email(Application.shop.currentCustomer.getEmail(), "your purchase was made successfully");
-                        if (checkDiscountCode()) {
+                        new Email(txtEmail.getText(), "your purchase was made successfully");
+                        if (Application.shop.currentCustomer.discountCode.getDiscountCode().equals("")) {
                             Application.shop.currentCustomer.discountCode.setDiscountCode();
                             Application.shop.currentCustomer.discountCode.setDiscountAmount();
                         }
@@ -248,22 +242,24 @@ public class ControllerPayment {
                         Application.shop.currentCustomer.wallet += Long.valueOf(labelFinalCost.getText());
                         Database.updateCustomerWallet(Application.shop.currentCustomer);
                         labelFinalCost.setText("0");
-                        new Email(Application.shop.currentCustomer.getEmail(), "your balance has increased");
+                        new Email(txtEmail.getText(), "your balance has increased");
                     }
-                    if (Application.shop.pageURL=="seller.fxml"){
-                        Application.shop.currentSeller.wallet+=Long.valueOf(labelFinalCost.getText());
+                    if (Application.shop.pageURL == "seller.fxml") {
+                        Application.shop.currentSeller.wallet += Long.valueOf(labelFinalCost.getText());
                         Database.updateSellerWallet(Application.shop.currentSeller);
                         labelFinalCost.setText("0");
-                        new Email(Application.shop.currentSeller.getEmail(), "your balance has increased");
+                        new Email(txtEmail.getText(), "your balance has increased");
                     }
                     txtBankPortalError.setStyle("-fx-text-fill:  #FEC617;");
                     txtBankPortalError.setText("The purchase was\nmade successfully");
+                    finalCostValue = 0;
                     //if (Application.shop.pageURL == "customer.fxml") ChangeScene2(e, "customer.fxml");
                     //if (Application.shop.pageURL == "seller.fxml") ChangeScene2(e, "seller.fxml");
                     return;
-                } else
+                } else {
                     txtBankPortalError.setStyle("-fx-text-fill: red;");
-                txtBankPortalError.setText("the balance is not enough");
+                    txtBankPortalError.setText("the balance is not enough");
+                }
             }
         }
     }

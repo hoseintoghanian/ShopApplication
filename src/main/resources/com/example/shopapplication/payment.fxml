@@ -289,14 +289,14 @@
             </InnerShadow>
          </effect>
       </Button>
-      <Label fx:id="labelfinalcost" layoutX="252.0" layoutY="649.0">
+      <Label fx:id="labelFinalCost" layoutX="240.0" layoutY="649.0">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="315.0" layoutY="654.0" text="\$">
+      <Label layoutX="345.0" layoutY="654.0" text="\$">
          <font>
-            <Font size="25.0" />
+            <Font size="30.0" />
          </font>
       </Label>
       <Label fx:id="txterrordiscountcode" layoutX="953.0" layoutY="515.0" textFill="#c91919">

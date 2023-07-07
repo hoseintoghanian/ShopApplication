@@ -145,7 +145,7 @@ public class ControllerRegister {
         Seller seller = null;
         Customer customer = null;
         Random random = new Random();
-        long randomNumber = random.nextLong(20) + 1;
+        long randomNumber = random.nextLong(10) + 10;
 
         if (buttonSeller.isSelected()) applicantKind = "seller";
         if (buttonCustomer.isSelected()) applicantKind = "customer";

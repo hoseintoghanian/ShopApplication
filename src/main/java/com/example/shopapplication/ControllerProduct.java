@@ -136,6 +136,7 @@ public class ControllerProduct {
             sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
         }
         labelFinalCost.setText(String.valueOf(sum));
+        ControllerPayment.finalCostValue = sum;
     }
 
     public void emojiClick() {

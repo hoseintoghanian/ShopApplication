@@ -167,69 +167,6 @@ public class ControllerApplicant {
         labelIncreaseWalletError.setText("");
     }
 
-    public void showCustomerTables(Customer customer) {
-
-        TableColumn<DiscountCode, String> discountCode = new TableColumn<>("Discount Code");
-        discountCode.setCellValueFactory(new PropertyValueFactory<>("discountCode"));
-        discountCode.setPrefWidth(128);
-
-        TableColumn<DiscountCode, Double> discountAmount = new TableColumn<>("Discount Amount");
-        discountAmount.setCellValueFactory(new PropertyValueFactory<>("discountAmount"));
-        discountAmount.setPrefWidth(170);
-
-
-        TableView<DiscountCode> discountTable = new TableView<>();
-        discountTable.getColumns().addAll(discountCode, discountAmount);
-
-        ObservableList<DiscountCode> dis = FXCollections.observableArrayList(
-                customer.discountCode
-                /*new DiscountCode(100_000),
-                new DiscountCode(70_000),
-                new DiscountCode(200_000)*/
-        );
-        discountTable.setItems(dis);
-
-        discountTable.setLayoutX(1160);
-        discountTable.setLayoutY(470);
-        discountTable.setPrefWidth(300);
-        discountTable.setPrefHeight(200);
-        discountTable.setEffect(innerShadow);
-
-
-        TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        nameColumn.setPrefWidth(120);
-
-        TableColumn<Item, String> brandColumn = new TableColumn<>("Brand");
-        brandColumn.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        brandColumn.setPrefWidth(120);
-
-        TableColumn<Item, String> priceColumn = new TableColumn<>("Price");
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        priceColumn.setPrefWidth(100);
-
-        TableColumn<Item, String> sizeColumn = new TableColumn<>("Size");
-        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("tempSize"));
-        sizeColumn.setPrefWidth(58);
-
-
-        TableView<Item> purchaseTable = new TableView<>();
-        purchaseTable.setItems(FXCollections.observableArrayList(Application.shop.currentCustomer.purchase));
-        purchaseTable.getColumns().addAll(nameColumn, brandColumn, priceColumn, sizeColumn);
-
-        purchaseTable.setLayoutX(705);
-        purchaseTable.setLayoutY(100);
-        purchaseTable.setPrefWidth(400);
-        purchaseTable.setPrefHeight(570);
-        InnerShadow innerShadow = new InnerShadow();
-        innerShadow.setWidth(10);
-        innerShadow.setHeight(10);
-        purchaseTable.setEffect(innerShadow);
-
-
-        customerAccountPage.getChildren().addAll(discountTable, purchaseTable);
-    }
-
 
     //----------------------------------filter parts-------------------------------
     String kind;
@@ -1907,6 +1844,65 @@ public class ControllerApplicant {
         }
     }
 
+    public void showCustomerTables(Customer customer) {
+
+
+        TableColumn<DiscountCode, String> discountCode = new TableColumn<>("Discount Code");
+        discountCode.setCellValueFactory(new PropertyValueFactory<>("discountCode"));
+        discountCode.setPrefWidth(128);
+
+        TableColumn<DiscountCode, Double> discountAmount = new TableColumn<>("Discount Amount");
+        discountAmount.setCellValueFactory(new PropertyValueFactory<>("discountAmount"));
+        discountAmount.setPrefWidth(170);
+
+
+        TableView<DiscountCode> discountTable = new TableView<>();
+        discountTable.getColumns().addAll(discountCode, discountAmount);
+
+        ObservableList<DiscountCode> dis = FXCollections.observableArrayList(customer.discountCode);
+        discountTable.setItems(dis);
+
+        discountTable.setLayoutX(1160);
+        discountTable.setLayoutY(470);
+        discountTable.setPrefWidth(300);
+        discountTable.setPrefHeight(200);
+        discountTable.setEffect(innerShadow);
+
+        TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameColumn.setPrefWidth(120);
+
+        TableColumn<Item, String> brandColumn = new TableColumn<>("Brand");
+        brandColumn.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        brandColumn.setPrefWidth(120);
+
+        TableColumn<Item, String> priceColumn = new TableColumn<>("Price");
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceColumn.setPrefWidth(100);
+
+        TableColumn<Item, String> sizeColumn = new TableColumn<>("Size");
+        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("tempSize"));
+        sizeColumn.setPrefWidth(58);
+
+
+        TableView<Item> purchaseTable = new TableView<>();
+        purchaseTable.setItems(FXCollections.observableArrayList(Application.shop.currentCustomer.purchase));
+        purchaseTable.getColumns().addAll(nameColumn, brandColumn, priceColumn, sizeColumn);
+
+        purchaseTable.setLayoutX(705);
+        purchaseTable.setLayoutY(100);
+        purchaseTable.setPrefWidth(400);
+        purchaseTable.setPrefHeight(570);
+        InnerShadow innerShadow = new InnerShadow();
+        innerShadow.setWidth(10);
+        innerShadow.setHeight(10);
+        purchaseTable.setEffect(innerShadow);
+
+
+        customerAccountPage.getChildren().addAll(discountTable, purchaseTable);
+    }
+
+
     //------------------------------seller chat section------------------
     @FXML
     private TextArea chatTextArea;
@@ -2315,7 +2311,8 @@ public class ControllerApplicant {
         private static final int CAPTCHA_LENGTH = 10;
 
         public DiscountCode(long amount) {
-            discountCode = generateCaptchaText();
+            if (amount == 0) discountCode = "";
+            else discountCode = generateCaptchaText();
             discountAmount = amount;
         }
 

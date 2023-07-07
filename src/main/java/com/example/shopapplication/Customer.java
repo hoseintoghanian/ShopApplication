@@ -14,9 +14,11 @@ public class Customer extends Applicant {
 
     public Customer(String firstname, String lastname, String phoneNumber, String username, String password, String email, Long wallet, String imageurl) {
         super(firstname, lastname, phoneNumber, username, password, email);
-        this.wallet=wallet;
-        this.image=new Image(imageurl);
+        this.wallet = wallet;
+        this.image = new Image(imageurl);
         applicantKind = "customer";
+
+        discountCode = new ControllerApplicant.DiscountCode(0);
     }
 
     public Customer(String username) {

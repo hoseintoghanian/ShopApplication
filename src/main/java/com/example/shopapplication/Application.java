@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
+import java.io.PrintStream;
 import java.sql.SQLException;
 
 public class Application extends javafx.application.Application {
@@ -14,6 +15,8 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void start(Stage stage) throws IOException, SQLException {
+        //System.setErr(new PrintStream("errors.log"));
+
 
         Database.readSellers();
         Database.readCustomers();
@@ -34,8 +37,9 @@ public class Application extends javafx.application.Application {
         stage.centerOnScreen();
         stage.show();
 
-        /*SoundThread t = new SoundThread();
-        t.start();*/
+        SoundThread t = new SoundThread();
+        t.start();
+
     }
 
     public static void main(String[] args) {
