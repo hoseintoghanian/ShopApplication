@@ -94,7 +94,12 @@ public class ControllerApplicant {
         if (txtIncreaseAmount.getText() == "") {
             labelIncreaseWalletError.setText("please enter your desired amount");
         } else if (isNumeric(txtIncreaseAmount.getText())) {
-            Application.shop.currentCustomer.increaseAmount = Long.valueOf(txtIncreaseAmount.getText());
+            if (Application.shop.currentCustomer!=null) {
+                Application.shop.currentCustomer.increaseAmount = Long.valueOf(txtIncreaseAmount.getText());
+            }
+            if (Application.shop.currentSeller!=null) {
+                Application.shop.currentSeller.increaseamount = Long.valueOf(txtIncreaseAmount.getText());
+            }
             changeScene(e, "bankportal.fxml");
         } else if (!isNumeric(txtIncreaseAmount.getText()) && txtIncreaseAmount.getText() != "")
             labelIncreaseWalletError.setText("please enter a valid amount and\nmore than 0");
@@ -131,7 +136,7 @@ public class ControllerApplicant {
             txtWBAccount.setText(String.valueOf(Application.shop.currentCustomer.wallet));
             customerImg.setImage(Application.shop.currentCustomer.image);
 
-            showDiscountCode();
+            showCustomerTables();
         } else if (Application.shop.currentSeller != null) {
             txtFNAccount.setText(Application.shop.currentSeller.getFirstname());
             txtLNAccount.setText(Application.shop.currentSeller.getLastname());
@@ -161,7 +166,7 @@ public class ControllerApplicant {
         labelIncreaseWalletError.setText("");
     }
 
-    public void showDiscountCode() {
+    public void showCustomerTables() {
 
         TableColumn<DiscountCode, String> discountCode = new TableColumn<>("Discount Code");
         discountCode.setCellValueFactory(new PropertyValueFactory<>("discountCode"));
@@ -202,7 +207,7 @@ public class ControllerApplicant {
         priceColumn.setPrefWidth(100);
 
         TableColumn<Item, String> sizeColumn = new TableColumn<>("Size");
-        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
+        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("tempSize"));
         sizeColumn.setPrefWidth(58);
 
 
@@ -2239,18 +2244,20 @@ public class ControllerApplicant {
 
                         if (Application.shop.customers.get(i).AuctionItems.get(j).tempPrice == Application.shop.tempItems.get(k).tempPrice) {
 
+                            item = Application.shop.currentSeller.auction;
                             Application.shop.currentSeller.wallet += Application.shop.tempItems.get(k).tempPrice;
                             Application.shop.customers.get(i).wallet -= Application.shop.tempItems.get(k).tempPrice;
+                            Application.shop.customers.get(i).purchase.add(item);
+                            Database.addProduct("customer_purchase_", item, Application.shop.customers.get(i).getUsername());
                             Database.updateCustomerWallet(Application.shop.customers.get(i));
                             Database.updateSellerWallet(Application.shop.currentSeller);
-                            item = Application.shop.currentSeller.auction;
                             Database.updateItemAuction(item);
                             Application.shop.customers.get(i).AuctionItems.remove(j);
                             Application.shop.currentSeller.allItems.remove(Application.shop.currentSeller.auction);
                             Application.shop.allItems.remove(Application.shop.currentSeller.auction);
                             Application.shop.currentSeller.auction = null;
                             Database.removeProduct(item.sellerUsername, item.getCode());
-                            txtSellMessage.setText("Auction Saled Successfully");
+                            txtSellMessage.setText("Auction Saled\nSuccessfully");
 
                             break outerLoop;
                         }
