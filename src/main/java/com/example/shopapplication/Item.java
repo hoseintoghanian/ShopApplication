@@ -108,6 +108,9 @@ public class Item {
     public LocalDateTime getUploadDate() {
         return uploadDate;
     }
+    public int getTempSize() {
+        return size;
+    }
 
 
     public void calculateScore(int vote) {//vote range is between 0 and 4 // 0 means the best emoji and 4 means the worst
