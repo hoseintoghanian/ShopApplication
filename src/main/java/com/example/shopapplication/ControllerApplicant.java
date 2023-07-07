@@ -137,7 +137,7 @@ public class ControllerApplicant {
             txtWBAccount.setText(String.valueOf(Application.shop.currentCustomer.wallet));
             customerImg.setImage(Application.shop.currentCustomer.image);
 
-            showCustomerTables();
+            showCustomerTables(Application.shop.currentCustomer);
         } else if (Application.shop.currentSeller != null) {
             txtFNAccount.setText(Application.shop.currentSeller.getFirstname());
             txtLNAccount.setText(Application.shop.currentSeller.getLastname());
@@ -167,7 +167,7 @@ public class ControllerApplicant {
         labelIncreaseWalletError.setText("");
     }
 
-    public void showCustomerTables() {
+    public void showCustomerTables(Customer customer) {
 
         TableColumn<DiscountCode, String> discountCode = new TableColumn<>("Discount Code");
         discountCode.setCellValueFactory(new PropertyValueFactory<>("discountCode"));
@@ -182,9 +182,10 @@ public class ControllerApplicant {
         discountTable.getColumns().addAll(discountCode, discountAmount);
 
         ObservableList<DiscountCode> dis = FXCollections.observableArrayList(
-                new DiscountCode(100_000),
+                customer.discountCode
+                /*new DiscountCode(100_000),
                 new DiscountCode(70_000),
-                new DiscountCode(200_000)
+                new DiscountCode(200_000)*/
         );
         discountTable.setItems(dis);
 
@@ -2315,8 +2316,8 @@ public class ControllerApplicant {
     //------------------inner classes-----------------
 
     public static class DiscountCode {
-        private final String discountCode;
-        private final long discountAmount;
+        private String discountCode;
+        private long discountAmount;
 
         private static final String CHARACTERS = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789";
         private static final int CAPTCHA_LENGTH = 10;
@@ -2332,6 +2333,12 @@ public class ControllerApplicant {
 
         public long getDiscountAmount() {
             return discountAmount;
+        }
+        public void setDiscountCode(){
+            this.discountCode = "";
+        }
+        public void setDiscountAmount(){
+            this.discountAmount = 0;
         }
 
         private String generateCaptchaText() {
