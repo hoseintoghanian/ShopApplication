@@ -256,8 +256,8 @@ public class ControllerPayment {
                         labelFinalCost.setText("0");
                         new Email(Application.shop.currentSeller.getEmail(), "your balance has increased");
                     }
-                    txtBankPortalError.setStyle("-fx-text-fill: green;");
-                    txtBankPortalError.setText("The purchase was made successfully");
+                    txtBankPortalError.setStyle("-fx-text-fill:  #FEC617;");
+                    txtBankPortalError.setText("The purchase was\nmade successfully");
                     //if (Application.shop.pageURL == "customer.fxml") ChangeScene2(e, "customer.fxml");
                     //if (Application.shop.pageURL == "seller.fxml") ChangeScene2(e, "seller.fxml");
                     return;

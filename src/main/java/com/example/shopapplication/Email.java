@@ -7,9 +7,6 @@ import java.util.Properties;
 public class Email {
     final String senderUsername = "michaelfaho@gmail.com";
     final String senderPassword = "lywldvxdynmqqoja";
-    String recipientEmail = "";
-    String messageText = "";
-
 
     public Email(String recipientEmail, String messageText) {
         // SMTP server properties

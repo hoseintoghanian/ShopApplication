@@ -265,26 +265,56 @@
       </Tab>
       <Tab onSelectionChanged="#displayAuctionTab" text="     Auction     ">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#displayAuctionTab" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
+          <AnchorPane fx:id="sellerAuctionPage" minHeight="0.0" minWidth="0.0" onMouseClicked="#displayAuctionTab" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E5BA1D;">
                <children>
-                  <Label layoutX="400.0" layoutY="40.0" text="your auction" textFill="#323aa4">
+                  <Label layoutX="400.0" layoutY="30.0" text="your auction" textFill="#014463">
                      <font>
                         <Font name="Book Antiqua" size="70.0" />
                      </font>
                   </Label>
                   <ImageView fx:id="auctionImage" fitHeight="600.0" fitWidth="600.0" layoutX="850.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="100.0" layoutY="400.0" text="max bid :">
+                  <Label layoutX="100.0" layoutY="370.0" text="max bid :">
                      <font>
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
-                  <Button layoutX="400.0" layoutY="580.0" mnemonicParsing="false" onAction="#sellAuction" prefHeight="50.0" prefWidth="395.0" text="Sale">
+                  <Label layoutX="100.0" layoutY="170.0" text="Name     :">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="270.0" text="Brand     :">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelAuctionName" layoutX="320.0" layoutY="170.0">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelAuctionBrand" layoutX="320.0" layoutY="270.0">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelAuctionMaxBid" layoutX="320.0" layoutY="370.0">
+                     <font>
+                        <Font name="Book Antiqua" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txtSellMessage" alignment="CENTER" layoutX="322.0" layoutY="600.0" prefHeight="58.0" prefWidth="565.0" textFill="#026148">
+                     <font>
+                        <Font name="Book Antiqua Italic" size="45.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="salseButton" disable="true" layoutX="394.0" layoutY="600.0" mnemonicParsing="false" onAction="#sellAuction" prefHeight="50.0" prefWidth="400.0" text="Sale" visible="false">
                      <effect>
-                        <DropShadow height="10.0" radius="7.0" width="20.0">
+                        <DropShadow height="20.0" radius="9.5" width="20.0">
                            <input>
-                              <InnerShadow height="10.0" radius="4.5" width="10.0">
+                              <InnerShadow height="20.0" radius="9.5" width="20.0">
                                  <color>
-                                    <Color red="0.09473684430122375" green="0.09473684430122375" blue="0.09473684430122375" />
+                                    <Color red="0.5684210658073425" green="0.46052631735801697" blue="0.13684210181236267" />
                                  </color>
                                  <input>
                                     <SepiaTone />
@@ -292,7 +322,7 @@
                               </InnerShadow>
                            </input>
                            <color>
-                              <Color red="0.6736842393875122" green="0.6040701866149902" blue="0.20959064364433289" />
+                              <Color red="0.410526305437088" green="0.36541908979415894" blue="0.13988304138183594" />
                            </color>
                         </DropShadow>
                      </effect>
@@ -300,36 +330,6 @@
                         <Font name="Book Antiqua" size="30.0" />
                      </font>
                   </Button>
-                  <Label layoutX="100.0" layoutY="200.0" text="Name     :">
-                     <font>
-                        <Font name="Book Antiqua" size="45.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="100.0" layoutY="300.0" text="Brand     :">
-                     <font>
-                        <Font name="Book Antiqua" size="45.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelAuctionName" layoutX="320.0" layoutY="200.0">
-                     <font>
-                        <Font name="Book Antiqua" size="45.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelAuctionBrand" layoutX="320.0" layoutY="300.0">
-                     <font>
-                        <Font name="Book Antiqua" size="45.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelAuctionMaxBid" layoutX="320.0" layoutY="400.0">
-                     <font>
-                        <Font name="Book Antiqua" size="45.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="txtSellMessage" layoutX="68.0" layoutY="544.0" textFill="#3fcc2c">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
                </children>
                <effect>
                   <InnerShadow height="10.0" radius="4.5" width="10.0" />

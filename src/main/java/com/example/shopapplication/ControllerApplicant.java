@@ -2134,12 +2134,13 @@ public class ControllerApplicant {
 
     //----------------------------------Auction page------------------------------------
     @FXML
-    private AnchorPane auctionPage;
+    private AnchorPane auctionPage, sellerAuctionPage;
     @FXML
-    private Label labelAuctionName, labelAuctionBrand, labelAuctionMaxBid, txtSellMessage;
+    private Label labelAuctionName, labelAuctionBrand, labelAuctionMaxBid, txtSellMessage, auctionTimeLabel;
     @FXML
     private ImageView auctionImage;
-
+    @FXML
+    private Button salseButton;
 
     public void displayAuctionTab() {
 
@@ -2148,6 +2149,26 @@ public class ControllerApplicant {
             labelAuctionBrand.setText(Application.shop.currentSeller.auction.brand);
             labelAuctionMaxBid.setText(Application.shop.currentSeller.auction.tempPrice + " $");
             auctionImage.setImage(Application.shop.currentSeller.auction.image);
+
+            salseButton.setDisable(false);
+            salseButton.setVisible(true);
+
+            Timer timer = new Timer(Application.shop.currentSeller.auction.uploadDate, new Button(), new TextField(), "Time remaining :      %02d : %02d : %02d");
+            timer.timerLabel.setFont(new Font("Book Antiqua", 45));
+            timer.timerLabel.setLayoutX(100);
+            timer.timerLabel.setLayoutY(470);
+            timer.timerLabel.setStyle("-fx-background-color:  #E5BA1D");
+
+            auctionTimeLabel = timer.timerLabel;
+
+            sellerAuctionPage.getChildren().add(auctionTimeLabel);
+        } else {
+            labelAuctionName.setText("");
+            labelAuctionBrand.setText("");
+            labelAuctionMaxBid.setText("");
+            txtSellMessage.setText("");
+            auctionImage.setImage(null);
+            sellerAuctionPage.getChildren().remove(auctionTimeLabel);
         }
     }
 
@@ -2176,29 +2197,6 @@ public class ControllerApplicant {
             brand.setFont(new Font("Book Antiqua", 25));
             brand.setLayoutX(200);
             brand.setLayoutY(55);
-
-
-            int hour = 0, minute = 0, second = 0;
-            if (Application.shop.tempItems.get(i).uploadDate.toLocalTime().getHour() - LocalTime.now().getHour() >= 0)
-                hour = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getHour() - LocalTime.now().getHour();
-            else
-                hour = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getHour() - LocalTime.now().getHour() + 24;
-            if (Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getMinute() >= 0)
-                minute = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getMinute();
-            else
-                minute = -Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getMinute();
-            if (Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getSecond() >= 0)
-                second = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getSecond();
-            else
-                second = -Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getSecond();
-
-
-            Timer timer = new Timer(hour, minute, second);
-            timer.timerLabel.setFont(new Font("Book Antiqua", 25));
-            timer.timerLabel.setLayoutX(200);
-            timer.timerLabel.setLayoutY(100);
-            timer.timerLabel.setStyle("-fx-text-fill: #179C86");
-
 
             Label price = new Label("Max Bid  :  " + Application.shop.tempItems.get(i).tempPrice + " $");
             price.setFont(new Font("Book Antiqua", 25));
@@ -2236,11 +2234,19 @@ public class ControllerApplicant {
                     }
 
             });
+
             button.setEffect(new DropShadow());
             button.setPrefWidth(50);
             button.setPrefHeight(30);
             button.setLayoutX(590);
             button.setLayoutY(155);
+
+
+            Timer timer = new Timer(Application.shop.tempItems.get(i).uploadDate, button, bid, "Time remaining :         %02d : %02d : %02d");
+            timer.timerLabel.setFont(new Font("Book Antiqua", 25));
+            timer.timerLabel.setLayoutX(200);
+            timer.timerLabel.setLayoutY(100);
+            timer.timerLabel.setStyle("-fx-text-fill: #014463");
 
 
             AnchorPane anchorPane = new AnchorPane();
@@ -2254,18 +2260,6 @@ public class ControllerApplicant {
 
             anchorPane.getChildren().addAll(imageView, name, brand, price, timer.timerLabel, bid, button);
             auctionPage.getChildren().add(anchorPane);
-
-
-
-            if (timer.timerLabel.getText().equals("Time's up!") ||
-                    LocalDateTime.now().getDayOfMonth() - Application.shop.tempItems.get(i).uploadDate.getDayOfMonth() > 1) {
-
-                Application.shop.tempItems.get(i).isAuction = false;
-                Application.shop.tempItems.remove(Application.shop.tempItems.get(i));
-                Application.shop.allItems.remove(Application.shop.tempItems.get(i));
-                System.out.println(555);
-                auction();
-            }
 
 
             icount++;
@@ -2302,7 +2296,14 @@ public class ControllerApplicant {
                             Application.shop.allItems.remove(Application.shop.currentSeller.auction);
                             Application.shop.currentSeller.auction = null;
                             Database.removeProduct(item.sellerUsername, item.getCode());
-                            txtSellMessage.setText("Auction Saled\nSuccessfully");
+
+                            salseButton.setDisable(true);
+                            salseButton.setVisible(false);
+
+                            Application.shop.currentSeller.auction = null;
+                            displayAuctionTab();
+
+                            txtSellMessage.setText("Auction sold successfully");
 
                             break outerLoop;
                         }
@@ -2334,10 +2335,12 @@ public class ControllerApplicant {
         public long getDiscountAmount() {
             return discountAmount;
         }
-        public void setDiscountCode(){
+
+        public void setDiscountCode() {
             this.discountCode = "";
         }
-        public void setDiscountAmount(){
+
+        public void setDiscountAmount() {
             this.discountAmount = 0;
         }
 
