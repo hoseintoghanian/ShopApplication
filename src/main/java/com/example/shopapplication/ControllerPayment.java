@@ -77,6 +77,9 @@ public class ControllerPayment {
         } else if (Application.shop.pageURL == "customer.fxml") {
             labelFinalCost.setText(String.valueOf(Application.shop.currentCustomer.increaseAmount));
         }
+        else if (Application.shop.pageURL=="seller.fxml"){
+            labelFinalCost.setText(String.valueOf(Application.shop.currentSeller.increaseamount));
+        }
     }
 
     public void captcha2() {
@@ -120,7 +123,7 @@ public class ControllerPayment {
                     return false;
                 }
             }
-            if (txtCVV2.getText().length() != 4) {
+            if (txtCVV2.getText().length() != 4 && txtCVV2.getText().length() != 3) {
                 txtBankPortalError.setText("cvv2 is invalid");
                 return false;
             }
@@ -178,16 +181,20 @@ public class ControllerPayment {
 
         Item item;
 
-        if (Application.shop.pageURL.equals("payment.fxml") || Application.shop.pageURL.equals("customer.fxml")) {
+        if (Application.shop.pageURL=="payment.fxml" || Application.shop.pageURL=="customer.fxml" || Application.shop.pageURL=="seller.fxml") {
             checkBankScene();
             if (checkBankScene()) {
-                if (Application.shop.currentCustomer.wallet >= Long.valueOf(labelFinalCost.getText()) || Application.shop.pageURL == "customer.fxml") {
+                if (Application.shop.pageURL == "customer.fxml" || Application.shop.pageURL=="seller.fxml" || Application.shop.currentCustomer.wallet >= Long.valueOf(labelFinalCost.getText())) {
 
-                    if (Application.shop.pageURL != "customer.fxml") {
+                    if (Application.shop.pageURL != "customer.fxml" && Application.shop.pageURL!="seller.fxml") {
                         Application.shop.currentCustomer.purchase.addAll(Application.shop.currentCustomer.cartItems);
                         Application.shop.currentCustomer.wallet -= Long.valueOf(labelFinalCost.getText());
                         labelFinalCost.setText("0");
                         Database.updateCustomerWallet(Application.shop.currentCustomer);
+
+                        for (int i = Application.shop.currentCustomer.purchase.size()-Application.shop.currentCustomer.cartItems.size(); i<Application.shop.currentCustomer.purchase.size(); i++) {
+                            Database.addProduct("customer_purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
+                        }
 
                         for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
                             for (int j = 0; j < Application.shop.sellers.size(); j++) {
@@ -198,6 +205,7 @@ public class ControllerPayment {
                                         Application.shop.sellers.get(j).wallet += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
                                         Database.updateSellerWallet(Application.shop.sellers.get(j));
                                         Application.shop.sellers.get(j).allItems.get(k).size -= Application.shop.currentCustomer.cartItems.get(i).tempSize;
+                                        Database.updateItem(Application.shop.sellers.get(j).allItems.get(k));
 
                                         if (Application.shop.sellers.get(j).allItems.get(k).size == 0) {
 
@@ -211,14 +219,18 @@ public class ControllerPayment {
                             }
                         }
 
+
                         Application.shop.currentCustomer.cartItems.clear();
-                        for (int i = 0; i < Application.shop.currentCustomer.purchase.size(); i++) {
-                            Database.addProduct("customer_purchase_", Application.shop.currentCustomer.purchase.get(i), Application.shop.currentCustomer.getUsername());
-                        }
+
                     }
                     if (Application.shop.pageURL == "customer.fxml") {
                         Application.shop.currentCustomer.wallet += Long.valueOf(labelFinalCost.getText());
                         Database.updateCustomerWallet(Application.shop.currentCustomer);
+                        labelFinalCost.setText("0");
+                    }
+                    if (Application.shop.pageURL=="seller.fxml"){
+                        Application.shop.currentSeller.wallet+=Long.valueOf(labelFinalCost.getText());
+                        Database.updateSellerWallet(Application.shop.currentSeller);
                         labelFinalCost.setText("0");
                     }
                     txtBankPortalError.setStyle("-fx-text-fill: green;");
