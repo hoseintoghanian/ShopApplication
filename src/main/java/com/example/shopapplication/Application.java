@@ -39,7 +39,6 @@ public class Application extends javafx.application.Application {
 
         SoundThread t = new SoundThread();
         t.start();
-
     }
 
     public static void main(String[] args) {
