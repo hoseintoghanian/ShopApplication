@@ -76,7 +76,7 @@ public class ControllerRegister {
 
     public void login(ActionEvent e) throws IOException {
 
-        if (!txtLoginUsername.getText().equals("") && !txtLoginPass.getText().equals("")) {
+        if (!txtLoginUsername.getText().equals("") && !txtLoginPass.getText().equals("") && txtCaptchaInput.getText()!="") {
 
             Seller seller = new Seller(txtLoginUsername.getText());
             Customer customer = new Customer(txtLoginUsername.getText());
@@ -127,7 +127,7 @@ public class ControllerRegister {
         if (buttonSeller.isSelected()) applicantKind = "seller";
         if (buttonCustomer.isSelected()) applicantKind = "customer";
 
-        if (registerCheck(applicantKind)) {
+        //if (registerCheck(applicantKind)) {
 
             seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText(), Long.valueOf(0), "customer.png", "");
             if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
@@ -172,7 +172,7 @@ public class ControllerRegister {
             } else {
                 txtRegister.setText("Invalid username");
             }
-        }
+        //}
     }
 
     private boolean registerCheck(String applicantKind) {
