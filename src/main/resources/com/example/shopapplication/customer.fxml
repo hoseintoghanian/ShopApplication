@@ -224,22 +224,6 @@
                                     </DropShadow>
                                  </effect>
                               </MenuButton>
-                              <Button layoutX="260.0" layoutY="369.0" mnemonicParsing="false" onAction="#filterPurchase" prefWidth="105.0" text="purchase history">
-                                 <effect>
-                                    <DropShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                             <input>
-                                                <ColorAdjust />
-                                             </input>
-                                          </InnerShadow>
-                                       </input>
-                                       <color>
-                                          <Color red="0.06480000168085098" green="0.5461537837982178" blue="0.8100000023841858" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </Button>
                            </children>
                         </AnchorPane>
                         <AnchorPane maxWidth="1100.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="1100.0">

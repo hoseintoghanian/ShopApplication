@@ -293,15 +293,6 @@ public class ControllerApplicant {
         kind = "snack";
     }
 
-    public void filterPurchase() {
-
-        if (Application.shop.pageURL.equals("customer.fxml")) {
-            Application.shop.tempItems.clear();
-            Application.shop.tempItems.addAll(Application.shop.currentCustomer.purchase);
-            showItems("customer", Application.shop.tempItems);
-        }
-    }
-
     private void filterScore(int sort) {
 
         if (Application.shop.pageURL.equals("customer.fxml")) {
