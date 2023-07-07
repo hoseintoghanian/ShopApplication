@@ -144,6 +144,8 @@ public class ControllerRegister {
         boolean validUsername = true;
         Seller seller = null;
         Customer customer = null;
+        Random random = new Random();
+        long randomNumber = random.nextLong(20) + 1;
 
         if (buttonSeller.isSelected()) applicantKind = "seller";
         if (buttonCustomer.isSelected()) applicantKind = "customer";
@@ -156,6 +158,7 @@ public class ControllerRegister {
             }
 
             customer = new Customer(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), Long.valueOf(1000), "customer.png");
+            customer.discountCode = new ControllerApplicant.DiscountCode(randomNumber);
             if (Application.shop.customers.contains(customer) || Application.shop.sellers.contains(new Seller(customer.getUsername())) || txtUserName.getText().equals("admin")) {
                 validUsername = false;
             }
@@ -279,7 +282,7 @@ public class ControllerRegister {
     }
 
     public void forgotPassword() {
-       if (!txtLoginUsername.getText().equals("")) {
+        if (!txtLoginUsername.getText().equals("")) {
 
             Seller seller = new Seller(txtLoginUsername.getText());
             Customer customer = new Customer(txtLoginUsername.getText());
