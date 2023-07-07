@@ -26,6 +26,8 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -48,7 +50,6 @@ public class ControllerApplicant {
             client.start();
         }
     }
-
 
 
     //-------------------------------------------------------------------------
@@ -94,10 +95,10 @@ public class ControllerApplicant {
         if (txtIncreaseAmount.getText() == "") {
             labelIncreaseWalletError.setText("please enter your desired amount");
         } else if (isNumeric(txtIncreaseAmount.getText())) {
-            if (Application.shop.currentCustomer!=null) {
+            if (Application.shop.currentCustomer != null) {
                 Application.shop.currentCustomer.increaseAmount = Long.valueOf(txtIncreaseAmount.getText());
             }
-            if (Application.shop.currentSeller!=null) {
+            if (Application.shop.currentSeller != null) {
                 Application.shop.currentSeller.increaseamount = Long.valueOf(txtIncreaseAmount.getText());
             }
             changeScene(e, "bankportal.fxml");
@@ -191,7 +192,7 @@ public class ControllerApplicant {
         discountTable.setLayoutY(470);
         discountTable.setPrefWidth(300);
         discountTable.setPrefHeight(200);
-        discountTable.setEffect(new InnerShadow());
+        discountTable.setEffect(innerShadow);
 
 
         TableColumn<Item, String> nameColumn = new TableColumn<>("Name");
@@ -2048,7 +2049,10 @@ public class ControllerApplicant {
                 button = new Button("auction");
 
                 button.setOnAction(ev -> {
+
                     Item item = items.get(finalI);
+                    item.uploadDate = LocalDateTime.now();
+
                     if (Application.shop.currentSeller.auction == null) {
                         Application.shop.currentSeller.auction = item;
                         item.isAuction = true;
@@ -2163,52 +2167,80 @@ public class ControllerApplicant {
             imageView.setFitHeight(200);
 
             Label name = new Label("Name :  " + Application.shop.tempItems.get(i).name);
-            name.setFont(new Font("Arial", 25));
+            name.setFont(new Font("Book Antiqua", 25));
             name.setLayoutX(200);
             name.setLayoutY(10);
 
             Label brand = new Label("Brand :  " + Application.shop.tempItems.get(i).brand);
-            brand.setFont(new Font("Arial", 25));
+            brand.setFont(new Font("Book Antiqua", 25));
             brand.setLayoutX(200);
-            brand.setLayoutY(60);
+            brand.setLayoutY(55);
+
+
+            int hour = 0, minute = 0, second = 0;
+            if (Application.shop.tempItems.get(i).uploadDate.toLocalTime().getHour() - LocalTime.now().getHour() >= 0)
+                hour = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getHour() - LocalTime.now().getHour();
+            else
+                hour = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getHour() - LocalTime.now().getHour() + 24;
+            if (Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getMinute() >= 0)
+                minute = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getMinute();
+            else
+                minute = -Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getMinute();
+            if (Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getSecond() >= 0)
+                second = Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getSecond();
+            else
+                second = -Application.shop.tempItems.get(i).uploadDate.toLocalTime().getMinute() - LocalTime.now().getSecond();
+
+
+            Timer timer = new Timer(hour, minute, second);
+            timer.timerLabel.setFont(new Font("Book Antiqua", 25));
+            timer.timerLabel.setLayoutX(200);
+            timer.timerLabel.setLayoutY(100);
+            timer.timerLabel.setStyle("-fx-text-fill: #179C86");
+
 
             Label price = new Label("Max Bid  :  " + Application.shop.tempItems.get(i).tempPrice + " $");
-            price.setFont(new Font("Arial", 25));
+            price.setFont(new Font("Book Antiqua", 25));
             price.setLayoutX(200);
-            price.setLayoutY(110);
+            price.setLayoutY(150);
 
             TextField bid = new TextField();
             bid.setPromptText("offer a price");
             bid.setEffect(new DropShadow());
             bid.setPrefWidth(150);
             bid.setPrefHeight(30);
-            bid.setLayoutX(400);
-            bid.setLayoutY(160);
+            bid.setLayoutX(425);
+            bid.setLayoutY(155);
+            bid.setAlignment(Pos.CENTER);
+
 
             Button button = new Button("bid");
             button.setFont(new Font(15));
             button.setOnAction(ev -> {
 
-                if (Application.shop.currentCustomer.wallet > Integer.parseInt(bid.getText())) {
-                    if (Integer.parseInt(bid.getText()) > Application.shop.tempItems.get(finalI).tempPrice) {
-                        Application.shop.currentCustomer.wallet -= Application.shop.tempItems.get(finalI).tempPrice;
-                        Application.shop.tempItems.get(finalI).tempPrice = Integer.parseInt(bid.getText());
-                        price.setText("Max Bid  :  " + Application.shop.tempItems.get(finalI).tempPrice + " $");
-                        Application.shop.currentCustomer.AuctionItems.add(Application.shop.tempItems.get(finalI));
-                        try {
-                            Database.updateItemAuction(Application.shop.tempItems.get(finalI));
-                        } catch (SQLException e) {
-                            throw new RuntimeException(e);
+                if (!bid.getText().equals(""))
+                    if (Application.shop.currentCustomer.wallet > Integer.parseInt(bid.getText())) {
+                        if (Integer.parseInt(bid.getText()) > Application.shop.tempItems.get(finalI).tempPrice) {
+                            Application.shop.currentCustomer.wallet -= Application.shop.tempItems.get(finalI).tempPrice;
+                            Application.shop.tempItems.get(finalI).tempPrice = Integer.parseInt(bid.getText());
+                            price.setText("Max Bid  :  " + Application.shop.tempItems.get(finalI).tempPrice + " $");
+                            bid.setText("");
+                            Application.shop.currentCustomer.AuctionItems.add(Application.shop.tempItems.get(finalI));
+                            try {
+                                Database.updateItemAuction(Application.shop.tempItems.get(finalI));
+                            } catch (SQLException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     }
-                }
 
             });
             button.setEffect(new DropShadow());
             button.setPrefWidth(50);
             button.setPrefHeight(30);
-            button.setLayoutX(580);
-            button.setLayoutY(160);
+            button.setLayoutX(590);
+            button.setLayoutY(155);
+
 
             AnchorPane anchorPane = new AnchorPane();
             anchorPane.setLayoutX(50);
@@ -2219,11 +2251,23 @@ public class ControllerApplicant {
             anchorPane.setStyle("-fx-background-color: #FFCF21;");
             anchorPane.setEffect(new DropShadow());
 
-            anchorPane.getChildren().addAll(imageView, name, brand, price, bid, button);
+            anchorPane.getChildren().addAll(imageView, name, brand, price, timer.timerLabel, bid, button);
             auctionPage.getChildren().add(anchorPane);
 
-            icount++;
 
+
+            if (timer.timerLabel.getText().equals("Time's up!") ||
+                    LocalDateTime.now().getDayOfMonth() - Application.shop.tempItems.get(i).uploadDate.getDayOfMonth() > 1) {
+
+                Application.shop.tempItems.get(i).isAuction = false;
+                Application.shop.tempItems.remove(Application.shop.tempItems.get(i));
+                Application.shop.allItems.remove(Application.shop.tempItems.get(i));
+                System.out.println(555);
+                auction();
+            }
+
+
+            icount++;
             if (icount > 1) {
                 jcount++;
                 icount = 0;

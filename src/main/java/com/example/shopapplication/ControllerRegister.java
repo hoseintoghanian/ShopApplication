@@ -5,13 +5,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Objects;
 import java.util.Random;
 
 public class ControllerRegister {
@@ -76,45 +78,64 @@ public class ControllerRegister {
 
     public void login(ActionEvent e) throws IOException {
 
-        if (!txtLoginUsername.getText().equals("") && !txtLoginPass.getText().equals("") && txtCaptchaInput.getText()!="") {
+        if (!txtLoginUsername.getText().equals("") && !txtLoginPass.getText().equals("")) {
 
             Seller seller = new Seller(txtLoginUsername.getText());
             Customer customer = new Customer(txtLoginUsername.getText());
 
-            if (Application.shop.admin.getUsername().equals(txtLoginUsername.getText())) {
+            if (Application.shop.admin.getUsername().equals(txtLoginUsername.getText()) && Application.shop.admin.getPassword().equals(txtLoginPass.getText())) {
                 Application.shop.pageURL = "admin.fxml";
                 changeScene(e, "admin.fxml");
 
             } else {
                 if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(customer)) {
-                    if (Application.shop.sellers.contains(seller)) {
-                        seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
-                        Application.shop.pageURL = "seller.fxml";
-                        Application.shop.currentSeller = seller;
-                        Application.shop.currentCustomer = null;
-                    }
+
                     if (Application.shop.customers.contains(customer)) {
+
                         customer = Application.shop.customers.get(Application.shop.customers.indexOf(customer));
-                        Application.shop.pageURL = "customer.fxml";
-                        Application.shop.currentCustomer = customer;
-                        Application.shop.currentSeller = null;
+
+                        if (customer.getPassword().equals(txtLoginPass.getText())) {
+
+                            Application.shop.pageURL = "customer.fxml";
+                            Application.shop.currentCustomer = customer;
+                            Application.shop.currentSeller = null;
+
+                            if (txtCaptchaInput.getText().equals(captchaText)) {
+                                changeScene(e, Application.shop.pageURL);
+                            } else {
+                                txtCaptchaInput.clear();
+                                txtLoginError.setText("Incorrect captcha");
+                            }
+
+                        } else txtLoginError.setText("Password is incorrect");
                     }
 
-                    if (Objects.equals(Application.shop.admin.getPassword(), txtLoginPass.getText()) ||
-                            Objects.equals(seller.getPassword(), txtLoginPass.getText()) ||
-                            Objects.equals(customer.getPassword(), txtLoginPass.getText())
-                    ) {
-                        if (txtCaptchaInput.getText().equals(captchaText)) {
-                            changeScene(e, Application.shop.pageURL);
-                        } else {
-                            txtCaptchaInput.clear();
-                            txtLoginError.setText("incorrect captcha");
-                        }
-                    } else txtLoginError.setText("PassWord is incorrect");
+                    if (Application.shop.sellers.contains(seller)) {
+
+                        seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
+
+                        if (seller.getPassword().equals(txtLoginPass.getText())) {
+                            if (seller.allowToLogin) {
+
+                                Application.shop.pageURL = "seller.fxml";
+                                Application.shop.currentSeller = seller;
+                                Application.shop.currentCustomer = null;
+
+                                if (txtCaptchaInput.getText().equals(captchaText)) {
+                                    changeScene(e, Application.shop.pageURL);
+                                } else {
+                                    txtCaptchaInput.clear();
+                                    txtLoginError.setText("Incorrect captcha");
+                                }
+
+                            } else txtLoginError.setText("You're not allow to login yet");
+
+                        } else txtLoginError.setText("Password is incorrect");
+                    }
 
                 } else txtLoginError.setText("Username is invalid\nplease sign up first");
             }
-        } else txtLoginError.setText("please fill all the blanks");
+        } else txtLoginError.setText("Please fill all the blanks");
     }
 
     public void Register() {
@@ -127,9 +148,9 @@ public class ControllerRegister {
         if (buttonSeller.isSelected()) applicantKind = "seller";
         if (buttonCustomer.isSelected()) applicantKind = "customer";
 
-        //if (registerCheck(applicantKind)) {
+        if (registerCheck(applicantKind)) {
 
-            seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText(), Long.valueOf(0), "customer.png", "");
+            seller = new Seller(txtFirstname.getText(), txtLastname.getText(), txtPhoneNumber.getText(), txtUserName.getText(), txtPass.getText(), txtEmail.getText(), txtWorkPlace.getText(), Long.valueOf(0), "customer.png", "", false);
             if (Application.shop.sellers.contains(seller) || Application.shop.customers.contains(new Customer(seller.getUsername())) || txtUserName.getText().equals("admin")) {
                 validUsername = false;
             }
@@ -172,7 +193,7 @@ public class ControllerRegister {
             } else {
                 txtRegister.setText("Invalid username");
             }
-        //}
+        }
     }
 
     private boolean registerCheck(String applicantKind) {
@@ -255,5 +276,25 @@ public class ControllerRegister {
         }
 
         return true;
+    }
+
+    public void forgotPassword() {
+       if (!txtLoginUsername.getText().equals("")) {
+
+            Seller seller = new Seller(txtLoginUsername.getText());
+            Customer customer = new Customer(txtLoginUsername.getText());
+
+            if (Application.shop.customers.contains(customer)) {
+                customer = Application.shop.customers.get(Application.shop.customers.indexOf(customer));
+                new Email(customer.getEmail(), "your password is : " + customer.getPassword());
+            }
+            if (Application.shop.sellers.contains(seller)) {
+                seller = Application.shop.sellers.get(Application.shop.sellers.indexOf(seller));
+                new Email(seller.getEmail(), "your password is : " + seller.getPassword());
+            }
+
+            txtLoginError.setText("We have sent your\npassword to your Gmail");
+
+        } else txtLoginError.setText("enter your username !");
     }
 }

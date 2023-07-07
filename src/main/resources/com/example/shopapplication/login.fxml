@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -42,7 +43,7 @@
             </InnerShadow>
          </effect>
         </Button>
-        <Button fx:id="buttonLogin" layoutX="300.0" layoutY="357.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="120.0" text="Login">
+        <Button fx:id="buttonLogin" layoutX="300.0" layoutY="370.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="120.0" text="Login">
             <font>
                 <Font name="Book Antiqua" size="24.0" />
             </font>
@@ -61,7 +62,7 @@
             </InnerShadow>
          </effect>
         </Button>
-        <TextField fx:id="txtLoginUsername" layoutX="200.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
+        <TextField fx:id="txtLoginUsername" layoutX="210.0" layoutY="100.0" opacity="0.5" prefWidth="300.0" promptText="Username">
             <font>
                 <Font name="Book Antiqua" size="24.0" />
             </font>
@@ -76,7 +77,7 @@
                </input></InnerShadow>
          </effect>
         </TextField>
-        <PasswordField fx:id="txtLoginPass" layoutX="200.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="987.5999999999999">
+        <PasswordField fx:id="txtLoginPass" layoutX="210.0" layoutY="190.0" opacity="0.5" prefWidth="300.0" promptText="Password">
             <font>
                 <Font name="Book Antiqua" size="24.0" />
             </font>
@@ -90,7 +91,7 @@
                </input></InnerShadow>
          </effect>
         </PasswordField>
-      <Label fx:id="txtCaptcha" layoutX="214.0" layoutY="279.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
+      <Label fx:id="txtCaptcha" layoutX="214.0" layoutY="280.0" onMouseClicked="#captcha" prefWidth="130.0" text="Captcha" textFill="WHITE">
          <font>
             <Font name="Book Antiqua" size="30.0" />
          </font>
@@ -101,7 +102,7 @@
                </input>
             </SepiaTone>
          </effect></Label>
-      <TextField fx:id="txtCaptchaInput" alignment="CENTER" layoutX="360.0" layoutY="274.0" opacity="0.5" prefHeight="50.0" prefWidth="151.0" promptText="Captcha">
+      <TextField fx:id="txtCaptchaInput" alignment="CENTER" layoutX="360.0" layoutY="280.0" opacity="0.5" prefHeight="50.0" prefWidth="150.0" promptText="Captcha">
          <font>
             <Font name="Book Antiqua" size="20.0" />
          </font>
@@ -114,10 +115,11 @@
                      </input></DropShadow>
                </input></InnerShadow>
          </effect></TextField>
-      <Label fx:id="txtLoginError" layoutX="215.0" layoutY="600.0" textFill="#cc2424">
+      <Label fx:id="txtLoginError" alignment="CENTER" layoutX="140.0" layoutY="600.0" prefWidth="450.0" textFill="#cc2424">
          <font>
             <Font name="Book Antiqua Italic" size="30.0" />
          </font>
       </Label>
+      <Hyperlink layoutX="312.0" layoutY="237.0" onAction="#forgotPassword" text="forgot password" />
     </children>
 </AnchorPane>

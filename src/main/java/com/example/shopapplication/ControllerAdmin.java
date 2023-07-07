@@ -660,7 +660,7 @@ public class ControllerAdmin {
     }
 
 
-    //------------------------------------chat---------------------------------
+    //------------------------------------sellers page---------------------------------
     @FXML
     private TextArea chatTextArea;
     @FXML
@@ -668,11 +668,11 @@ public class ControllerAdmin {
     @FXML
     private ImageView chatBackgroundImg, imgTheme1, imgTheme2, imgTheme3, imgTheme4, imgTheme5, imgTheme6, imgTheme7;
     @FXML
-    private Label chatPageFirstname, chatPageLastname, chatPageUsername;
+    private Label chatPageFirstname, chatPageLastname, chatPagePhone, chatPageUsername, chatPagePassword, chatPageEmail, chatPageWorkPlace;
     @FXML
-    private MenuButton sellersMenuButton;
+    private MenuButton sellersMenuButton, loginRequestsMenu;
     @FXML
-    private Button sendButton;
+    private Button sendButton, allowButton;
 
     public void setChatBackground() {
 
@@ -712,11 +712,16 @@ public class ControllerAdmin {
         chatText.setText("");
         chatTextArea.setDisable(true);
         sendButton.setDisable(true);
+        allowButton.setDisable(true);
+        allowButton.setVisible(false);
+        loginRequestsMenu.setDisable(true);
+        loginRequestsMenu.setVisible(false);
 
         sellersMenuButton.getItems().clear();
+        loginRequestsMenu.getItems().clear();
 
         for (int i = 0; i < Application.shop.sellers.size(); i++) {
-            MenuItem menuItem = new MenuItem(Application.shop.sellers.get(i).getLastname());
+            MenuItem menuItem = new MenuItem(Application.shop.sellers.get(i).getUsername());
             int finalI = i;
             menuItem.setOnAction(ev -> {
                 Application.shop.currentSeller = Application.shop.sellers.get(finalI);
@@ -725,12 +730,34 @@ public class ControllerAdmin {
                 chatTextArea.setDisable(false);
                 sendButton.setDisable(false);
 
-                chatPageFirstname.setText("Firstname : " + Application.shop.currentSeller.getFirstname());
-                chatPageLastname.setText("Lastname  : " + Application.shop.currentSeller.getLastname());
-                chatPageUsername.setText("Username : " + Application.shop.currentSeller.getUsername());
+                if (!Application.shop.currentSeller.allowToLogin) {
+                    allowButton.setDisable(false);
+                    allowButton.setVisible(true);
+                }
+
+                chatPageFirstname.setText("Firstname   : " + Application.shop.currentSeller.getFirstname());
+                chatPageLastname.setText("Lastname    : " + Application.shop.currentSeller.getLastname());
+                chatPagePhone.setText("Phone         : " + Application.shop.currentSeller.getPhoneNumber());
+                chatPageUsername.setText("Username   : " + Application.shop.currentSeller.getUsername());
+                chatPagePassword.setText("Password    : " + Application.shop.currentSeller.getPassword());
+                chatPageEmail.setText("E-mail        : " + Application.shop.currentSeller.getEmail());
+                chatPageWorkPlace.setText("Work place : " + Application.shop.currentSeller.workplace);
             });
+
             sellersMenuButton.getItems().add(menuItem);
+
+            if (!Application.shop.sellers.get(i).allowToLogin) {
+                loginRequestsMenu.getItems().add(menuItem);
+                loginRequestsMenu.setDisable(false);
+                loginRequestsMenu.setVisible(true);
+            }
         }
+    }
+
+    public void allowSellersToLogin() throws SQLException {
+        Application.shop.currentSeller.allowToLogin = true;
+        Database.updateSeller(Application.shop.currentSeller);
+        displayChatPage();
     }
 
     public void send() throws SQLException {
@@ -752,6 +779,7 @@ public class ControllerAdmin {
             if (!msg.equals("")) chatText.setText(chatText.getText() + "\n" + msg);
         }
     }
+
 
 //------------------------------inner classes--------------------------------
 

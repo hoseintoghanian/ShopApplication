@@ -109,7 +109,7 @@ public class Item {
         return uploadDate;
     }
     public int getTempSize() {
-        return size;
+        return tempSize;
     }
 
 

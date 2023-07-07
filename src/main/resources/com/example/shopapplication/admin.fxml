@@ -504,12 +504,12 @@
                               </DropShadow>
                            </effect>
                         </ScrollPane>
-                        <Label fx:id="chatPageFirstname" layoutX="30.0" layoutY="130.0" text="Firstname : ">
+                        <Label fx:id="chatPageFirstname" layoutX="30.0" layoutY="120.0" text="Firstname   : ">
                            <font>
                               <Font name="Book Antiqua Italic" size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="chatPageUsername" layoutX="30.0" layoutY="230.0" text="Username :">
+                        <Label fx:id="chatPagePhone" layoutX="30.0" layoutY="230.0" text="Phone         : ">
                            <font>
                               <Font name="Book Antiqua Italic" size="25.0" />
                            </font>
@@ -672,7 +672,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <MenuButton fx:id="sellersMenuButton" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Sellers">
+                        <MenuButton fx:id="sellersMenuButton" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Sellers">
                            <font>
                               <Font name="Book Antiqua" size="15.0" />
                            </font>
@@ -692,11 +692,70 @@
                               </SepiaTone>
                            </effect>
                         </MenuButton>
-                        <Label fx:id="chatPageLastname" layoutX="30.0" layoutY="180.0" text="Lastname  : ">
+                        <Label fx:id="chatPageLastname" layoutX="30.0" layoutY="175.0" text="Lastname    : ">
                            <font>
                               <Font name="Book Antiqua Italic" size="25.0" />
                            </font>
                         </Label>
+                        <MenuButton fx:id="loginRequestsMenu" disable="true" layoutX="30.0" layoutY="550.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Login Requests" visible="false">
+                           <font>
+                              <Font name="Book Antiqua" size="15.0" />
+                           </font>
+                           <effect>
+                              <SepiaTone>
+                                 <input>
+                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <DropShadow height="10.0" radius="4.5" width="10.0">
+                                             <color>
+                                                <Color red="1.0" green="0.8125925660133362" blue="0.06296296417713165" />
+                                             </color>
+                                          </DropShadow>
+                                       </input>
+                                    </InnerShadow>
+                                 </input>
+                              </SepiaTone>
+                           </effect>
+                        </MenuButton>
+                        <Label fx:id="chatPageUsername" layoutX="30.0" layoutY="285.0" text="Username   : ">
+                           <font>
+                              <Font name="Book Antiqua Italic" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="chatPagePassword" layoutX="30.0" layoutY="340.0" text="Password    : ">
+                           <font>
+                              <Font name="Book Antiqua Italic" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="chatPageEmail" layoutX="30.0" layoutY="395.0" text="E-mail        : ">
+                           <font>
+                              <Font name="Book Antiqua Italic" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="chatPageWorkPlace" layoutX="30.0" layoutY="450.0" text="Work place : ">
+                           <font>
+                              <Font name="Book Antiqua Italic" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="allowButton" disable="true" layoutX="215.0" layoutY="550.0" mnemonicParsing="false" onAction="#allowSellersToLogin" prefHeight="40.0" prefWidth="150.0" text="allow login" visible="false">
+                           <font>
+                              <Font name="Book Antiqua" size="17.0" />
+                           </font>
+                           <effect>
+                              <SepiaTone>
+                                 <input>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0">
+                                       <input>
+                                          <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                                       </input>
+                                       <color>
+                                          <Color red="0.6842105388641357" green="0.575750470161438" blue="0.14191032946109772" />
+                                       </color>
+                                    </DropShadow>
+                                 </input>
+                              </SepiaTone>
+                           </effect>
+                        </Button>
                      </children>
                   </AnchorPane>
                </content>
