@@ -325,6 +325,11 @@
                         <Font name="Book Antiqua" size="45.0" />
                      </font>
                   </Label>
+                  <Label fx:id="txtSellMessage" layoutX="68.0" layoutY="544.0" textFill="#3fcc2c">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
                </children>
                <effect>
                   <InnerShadow height="10.0" radius="4.5" width="10.0" />
