@@ -282,9 +282,14 @@ public class Database {
     }
 
     public static void updateItem(Item item) throws SQLException {
-        String sql = "update seller_items_" + item.sellerUsername + " set comments = '" + item.comments + "' where code = " + item.getCode();
+
+        String sql = "update seller_items_" + item.sellerUsername + " set comments = ?, size = ? where code = ?";
 
         PreparedStatement statement = getDBC().prepareStatement(sql);
+        statement.setString(1, item.comments);
+        statement.setInt(2, item.size);
+        statement.setInt(3, item.getCode());
+
         statement.executeUpdate();
 
         statement.close();
