@@ -10,6 +10,7 @@ public class Customer extends Applicant {
     ArrayList<Item> AuctionItems = new ArrayList<>();
     ArrayList<Item> cartItems = new ArrayList<>();
     ArrayList<Item> purchase = new ArrayList<>();
+    ControllerApplicant.DiscountCode discountCode;
 
     public Customer(String firstname, String lastname, String phoneNumber, String username, String password, String email, Long wallet, String imageurl) {
         super(firstname, lastname, phoneNumber, username, password, email);
