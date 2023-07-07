@@ -127,6 +127,16 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
+                  <Label layoutX="278.0" layoutY="503.0" text="\$" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="285.0" layoutY="553.0" text="\$" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane maxWidth="1100.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="1100.0">
