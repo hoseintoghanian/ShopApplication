@@ -1997,6 +1997,8 @@ public class ControllerApplicant {
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
                     }
+
+                    Application.shop.pageURL = "customer.fxml";
                 }
             });
             imageView.setFitWidth(150);
@@ -2207,7 +2209,7 @@ public class ControllerApplicant {
                 if (!bid.getText().equals(""))
                     if (Application.shop.currentCustomer.wallet > Integer.parseInt(bid.getText())) {
                         if (Integer.parseInt(bid.getText()) > Application.shop.tempItems.get(finalI).tempPrice) {
-                            Application.shop.currentCustomer.wallet -= Application.shop.tempItems.get(finalI).tempPrice;
+                            //Application.shop.currentCustomer.wallet -= Application.shop.tempItems.get(finalI).tempPrice;
                             Application.shop.tempItems.get(finalI).tempPrice = Integer.parseInt(bid.getText());
                             price.setText("Max Bid  :  " + Application.shop.tempItems.get(finalI).tempPrice + " $");
                             bid.setText("");

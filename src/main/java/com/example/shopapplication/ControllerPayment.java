@@ -232,7 +232,6 @@ public class ControllerPayment {
 
 
                         Application.shop.currentCustomer.cartItems.clear();
-                        new Email(txtEmail.getText(), "your purchase was made successfully");
                         if (Application.shop.currentCustomer.discountCode.getDiscountCode().equals("")) {
                             Application.shop.currentCustomer.discountCode.setDiscountCode();
                             Application.shop.currentCustomer.discountCode.setDiscountAmount();
@@ -253,6 +252,8 @@ public class ControllerPayment {
                     txtBankPortalError.setStyle("-fx-text-fill:  #FEC617;");
                     txtBankPortalError.setText("The purchase was\nmade successfully");
                     finalCostValue = 0;
+                    Application.shop.pageURL="customer.fxml";
+                    new Email(txtEmail.getText(), "your purchase was made successfully");
                     //if (Application.shop.pageURL == "customer.fxml") ChangeScene2(e, "customer.fxml");
                     //if (Application.shop.pageURL == "seller.fxml") ChangeScene2(e, "seller.fxml");
                     return;

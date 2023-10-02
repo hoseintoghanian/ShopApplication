@@ -27,9 +27,9 @@
    <children>
       <TabPane prefHeight="750.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab fx:id="TBankAccount" text="     Bank Account     ">
+          <Tab fx:id="TBankAccount" onSelectionChanged="#displayBankPage" text="     Bank Account     ">
             <content>
-              <AnchorPane fx:id="bankPage" minHeight="0.0" minWidth="0.0" onMouseEntered="#displayBankPage" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane fx:id="bankPage" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="50.0" layoutY="50.0" text="Bank Accounts :">
                            <font>
@@ -57,54 +57,16 @@
                               </DropShadow>
                            </effect>
                         </Separator>
-                        <MenuButton layoutX="65.0" layoutY="70.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="160.0" text="Incom">
+                        <Label layoutX="65.0" layoutY="70.0" text="Incom">
                            <font>
-                              <Font name="Book Antiqua" size="15.0" />
+                              <Font name="Book Antiqua" size="35.0" />
                            </font>
-                           <effect>
-                              <SepiaTone>
-                                 <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <DropShadow height="10.0" radius="4.5" width="10.0">
-                                             <color>
-                                                <Color red="1.0" green="0.8125925660133362" blue="0.06296296417713165" />
-                                             </color>
-                                          </DropShadow>
-                                       </input>
-                                    </InnerShadow>
-                                 </input>
-                              </SepiaTone>
-                           </effect>
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Upload by Month" />
-                              <MenuItem mnemonicParsing="false" text="Upload by Year" />
-                           </items>
-                        </MenuButton>
-                        <MenuButton layoutX="615.0" layoutY="70.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="160.0" text="Cost">
+                        </Label>
+                        <Label layoutX="615.0" layoutY="70.0" text="Cost">
                            <font>
-                              <Font name="Book Antiqua" size="15.0" />
+                              <Font name="Book Antiqua" size="35.0" />
                            </font>
-                           <effect>
-                              <SepiaTone>
-                                 <input>
-                                    <InnerShadow height="10.0" radius="4.5" width="10.0">
-                                       <input>
-                                          <DropShadow height="10.0" radius="4.5" width="10.0">
-                                             <color>
-                                                <Color red="1.0" green="0.8125925660133362" blue="0.06296296417713165" />
-                                             </color>
-                                          </DropShadow>
-                                       </input>
-                                    </InnerShadow>
-                                 </input>
-                              </SepiaTone>
-                           </effect>
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Upload by Month" />
-                              <MenuItem mnemonicParsing="false" text="Upload by Year" />
-                           </items>
-                        </MenuButton>
+                        </Label>
                      </children></AnchorPane>
             </content>
           </Tab>

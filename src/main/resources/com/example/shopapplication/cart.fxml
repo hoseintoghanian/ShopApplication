@@ -17,7 +17,7 @@
    <children>
       <SplitPane dividerPositions="0.29797979797979796" nodeOrientation="RIGHT_TO_LEFT" prefHeight="750.0" prefWidth="1500.0">
          <items>
-            <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: #E5BA1D;">
+            <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" onMouseEntered="#showItems" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: #E5BA1D;">
                <effect>
                   <InnerShadow />
                </effect>
@@ -41,7 +41,7 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <ImageView fitHeight="174.0" fitWidth="231.0" layoutX="84.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="174.0" fitWidth="231.0" layoutX="84.0" layoutY="288.0" onDragEntered="#showItems" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../gif/post-purchase-dribbble-animated-400x300.gif" />
                      </image>
@@ -127,7 +127,7 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label layoutX="278.0" layoutY="503.0" text="\$" textAlignment="CENTER">
+                  <Label layoutX="285.0" layoutY="503.0" text="\$" textAlignment="CENTER">
                      <font>
                         <Font size="25.0" />
                      </font>

@@ -129,15 +129,6 @@ public class ControllerProduct {
             }
     }
 
-    public void displayInfo2() {
-        int sum = 0;
-        labelWalletBalance.setText(String.valueOf(Application.shop.currentCustomer.wallet));
-        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
-            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
-        }
-        labelFinalCost.setText(String.valueOf(sum));
-        ControllerPayment.finalCostValue = sum;
-    }
 
     public void emojiClick() {
 
@@ -342,6 +333,8 @@ public class ControllerProduct {
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
                     }
+
+                    Application.shop.pageURL = "cart.fxml";
                 }
             });
             imageView.setFitWidth(200);
@@ -425,6 +418,14 @@ public class ControllerProduct {
 
             icount++;
         }
-        displayInfo2();
+
+
+        int sum = 0;
+        labelWalletBalance.setText(String.valueOf(Application.shop.currentCustomer.wallet));
+        for (int i = 0; i < Application.shop.currentCustomer.cartItems.size(); i++) {
+            sum += Application.shop.currentCustomer.cartItems.get(i).price * Application.shop.currentCustomer.cartItems.get(i).tempSize;
+        }
+        labelFinalCost.setText(String.valueOf(sum));
+        ControllerPayment.finalCostValue = sum;
     }
 }

@@ -165,7 +165,7 @@
                                     <Image url="@../img/cart.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="205.0" layoutY="510.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="160.0" fitWidth="160.0" layoutX="205.0" layoutY="510.0" onMouseEntered="#showCustomer" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/auction/auction%202.png" />
                                  </image>

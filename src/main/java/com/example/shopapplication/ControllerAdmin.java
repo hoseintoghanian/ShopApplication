@@ -48,7 +48,6 @@ public class ControllerAdmin {
         innerShadow.setWidth(10);
         innerShadow.setHeight(10);
 
-
         server = new Server();
         server.start();
     }
