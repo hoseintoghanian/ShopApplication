@@ -4,43 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c27bb2b-471e-4ac6-a8f8-d909fe43ae5e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c27bb2b-471e-4ac6-a8f8-d909fe43ae5e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_11_01_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_11_01_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_11_05_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_30_2023_11_05_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_1_24_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_1_24_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_1_52_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_1_52_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_3_28_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_3_28_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_3_40_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_3_40_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_3_42_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_3_42_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_4_02_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_4_02_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_32_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_32_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_51_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_1_2023_6_51_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2023_12_56_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2023_12_56_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_7_2023_1_21_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_7_2023_1_21_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_7_2023_4_25_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_7_2023_4_25_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/ControllerProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/SoundThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopapplication/SoundThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/cart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shopapplication/customer.fxml" afterDir="false" />
+    <list default="true" id="4f78f9f4-58bf-4276-8a43-19a06325ec03" name="Changes" comment="the last">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,13 +187,7 @@
       <workItem from="1690280284551" duration="46000" />
       <workItem from="1694797557045" duration="55000" />
       <workItem from="1695607690251" duration="124000" />
-    </task>
-    <task id="LOCAL-00049" summary="update supermarket images (protein foods)">
-      <created>1687891412393</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1687891412393</updated>
+      <workItem from="1696244602203" duration="323000" />
     </task>
     <task id="LOCAL-00050" summary="update supermarket images (protein foods)">
       <created>1687891428391</created>
@@ -565,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688765709291</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="the last">
+      <created>1696244729785</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1696244729785</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="emojiEntered and emojiClick method in ControllerProduct" />
     <MESSAGE value="admin controller section add Warehouse and displayInfo" />
     <MESSAGE value="login errors" />
     <MESSAGE value="create purchase table (database) for customers" />
@@ -608,7 +574,8 @@
     <MESSAGE value="remove purchase filter" />
     <MESSAGE value="fix discount code" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="the last" />
+    <option name="LAST_COMMIT_MESSAGE" value="the last" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
